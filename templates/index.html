@@ -1148,9 +1148,14 @@ function _providerDotCls(state) {
   return "hc-warn"; // no_key or unknown
 }
 function _providerTitle(provider, info) {
-  const label = { groq: "Groq", gemini: "Gemini", openai: "ChatGPT" }[provider] || provider;
+  const label = { groq: "Groq", gemini: "Gemini", openai: "ChatGPT",
+                  huggingface: "HuggingFace", openrouter: "OpenRouter" }[provider] || provider;
   if (info.state === "healthy")         return label + " \u2014 healthy";
-  if (info.state === "no_key")          return label + " \u2014 no key configured";
+  if (info.state === "no_key") {
+    if (info.anonymous_ok)              return label + " \u2014 anonymous (add HF_TOKEN for higher limits)";
+    const keyHint = { openrouter: "add OPENROUTER_API_KEY (free at openrouter.ai)" }[provider] || "no key configured";
+    return label + " \u2014 " + keyHint;
+  }
   if (info.state === "quota_exhausted") {
     const mins = info.retry_in ? Math.ceil(info.retry_in / 60) + " min" : "unknown";
     return label + " \u2014 quota exhausted, retry in " + mins;
@@ -1186,11 +1191,13 @@ async function checkHealth() {
       return `<span class="hc-item"${title}><span class="hc-dot ${cls}"></span><span class="hc-name ${nameCls}">${c.label}</span></span>`;
     }).join("");
 
-    // ── AI provider dots (Groq, Gemini, ChatGPT) ─────────────────────────────
+    // ── AI provider dots (Groq, Gemini, ChatGPT, HuggingFace, OpenRouter) ──────
     const AI_PROVIDERS = [
-      { key: "groq",   label: "Groq"    },
-      { key: "gemini", label: "Gemini"  },
-      { key: "openai", label: "ChatGPT" },
+      { key: "groq",        label: "Groq"        },
+      { key: "gemini",      label: "Gemini"      },
+      { key: "openai",      label: "ChatGPT"     },
+      { key: "huggingface", label: "HuggingFace" },
+      { key: "openrouter",  label: "OpenRouter"  },
     ];
     const aiItems = AI_PROVIDERS.map(c => {
       const info  = prov[c.key] || { state: h[c.key] ? "healthy" : "no_key" };

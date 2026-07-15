@@ -3,16 +3,18 @@ Fieldnote Provider Router
 Centralized AI provider state tracker with automatic quota-aware fallback.
 
 Priority order (cheapest/freest first — never incur billing unless no free option exists):
-  1. Groq   — free tier, fast (llama-3.3-70b-versatile → llama-3.1-8b-instant → llama3-8b-8192)
-  2. Gemini — free tier, generous limits (gemini-2.0-flash → gemini-1.5-flash → gemini-1.5-flash-8b)
-  3. OpenAI — billed; used ONLY when Groq and Gemini are both exhausted/unavailable
+  1. Groq         — free tier, fast (llama-3.3-70b-versatile → llama-3.1-8b-instant)
+  2. Gemini       — free tier, generous limits (gemini-2.0-flash → gemini-1.5-flash)
+  3. OpenAI       — billed; used ONLY when free options exhausted
+  4. HuggingFace  — free serverless inference; anonymous OK, better with HF_TOKEN
+  5. OpenRouter   — free-model router; requires OPENROUTER_API_KEY (free account)
 
 Blackout rules:
   insufficient_quota / billing error  → 2-hour blackout (quota_exhausted)
   regular rate-limit (429)            → 30-second backout + backoff within the call (rate_limited)
   auth error (401 / 403)              → permanent blackout until restart (auth_error)
   model not found (404)               → try next model in the list, not a provider blackout
-  no key configured                   → no_key (skipped silently)
+  no key configured                   → no_key (skipped silently, amber for optional providers)
 
 The module singleton `_status` tracks state across all calls without requiring persistence.
 """
@@ -49,9 +51,11 @@ def _now() -> float:
 def _init_status() -> None:
     """Initialise state for each provider; picks up keys added without restart."""
     providers = {
-        "groq":   os.getenv("GROQ_API_KEY") or os.getenv("GROQ"),
-        "gemini": os.getenv("Google_API_Key") or os.getenv("Gemini") or os.getenv("GOOGLE_API_KEY"),
-        "openai": os.getenv("CHATGPT") or os.getenv("OPENAI_API_KEY"),
+        "groq":        os.getenv("GROQ_API_KEY") or os.getenv("GROQ"),
+        "gemini":      os.getenv("Google_API_Key") or os.getenv("Gemini") or os.getenv("GOOGLE_API_KEY"),
+        "openai":      os.getenv("CHATGPT") or os.getenv("OPENAI_API_KEY"),
+        "huggingface": os.getenv("HF_TOKEN"),          # optional: anonymous access allowed
+        "openrouter":  os.getenv("OPENROUTER_API_KEY"),  # optional: free account at openrouter.ai
     }
     with _lock:
         for provider, key in providers.items():
@@ -74,7 +78,15 @@ def _get_key(provider: str) -> str:
                 or os.getenv("GOOGLE_API_KEY") or "")
     if provider == "openai":
         return os.getenv("CHATGPT") or os.getenv("OPENAI_API_KEY") or ""
+    if provider == "huggingface":
+        return os.getenv("HF_TOKEN") or ""
+    if provider == "openrouter":
+        return os.getenv("OPENROUTER_API_KEY") or ""
     return ""
+
+
+# Providers that work without an API key (anonymous, lower rate limits)
+_ANONYMOUS_OK: set[str] = {"huggingface"}
 
 
 def _classify_error(err: str) -> str:
@@ -125,7 +137,7 @@ def _mark_healthy(provider: str) -> None:
 
 
 def _is_available(provider: str) -> bool:
-    if not _get_key(provider):
+    if not _get_key(provider) and provider not in _ANONYMOUS_OK:
         return False
     with _lock:
         s     = _status.get(provider, {})
@@ -312,29 +324,169 @@ def _call_openai_chat(messages: list, max_tokens: int, temperature: float) -> st
     raise RuntimeError("OpenAI chat failed. Last: " + str(last_err))
 
 
+
+# ── HuggingFace Serverless Inference ──────────────────────────────────────────
+
+HF_MODELS = [
+    "meta-llama/Llama-3.1-8B-Instruct",
+    "mistralai/Mistral-7B-Instruct-v0.3",
+]
+
+
+def _call_huggingface(prompt: str, max_tokens: int, json_mode: bool) -> str:
+    try:
+        from huggingface_hub import InferenceClient
+    except ImportError:
+        raise RuntimeError("huggingface_hub not installed; run: pip install huggingface_hub")
+    token = _get_key("huggingface") or None  # None = anonymous
+    client = InferenceClient(token=token)
+    if json_mode:
+        prompt = prompt + chr(10) + chr(10) + "Respond with valid JSON only. No markdown fences."
+    last_err: Any = None
+    for model in HF_MODELS:
+        try:
+            resp = client.chat.completions.create(
+                model=model,
+                messages=[{"role": "user", "content": prompt}],
+                max_tokens=max_tokens,
+                temperature=0.2,
+            )
+            _mark_healthy("huggingface")
+            return resp.choices[0].message.content
+        except Exception as e:
+            err = str(e)
+            last_err = e
+            if "404" in err or "model" in err.lower() and "not found" in err.lower():
+                continue
+            kind = _mark_error("huggingface", err)
+            if kind in (_STATE_QUOTA, _STATE_AUTH):
+                raise
+            if kind == _STATE_RATE:
+                time.sleep(5)
+                continue
+            raise
+    raise RuntimeError("All HuggingFace models failed. Last: " + str(last_err))
+
+
+def _call_huggingface_chat(messages: list, max_tokens: int, temperature: float) -> str:
+    try:
+        from huggingface_hub import InferenceClient
+    except ImportError:
+        raise RuntimeError("huggingface_hub not installed")
+    token = _get_key("huggingface") or None
+    client = InferenceClient(token=token)
+    try:
+        resp = client.chat.completions.create(
+            model=HF_MODELS[0],
+            messages=messages,
+            max_tokens=max_tokens,
+            temperature=temperature,
+        )
+        _mark_healthy("huggingface")
+        return resp.choices[0].message.content
+    except Exception as e:
+        _mark_error("huggingface", str(e))
+        raise
+
+
+# ── OpenRouter Free-Model Router ───────────────────────────────────────────────
+
+OPENROUTER_MODELS = [
+    "openrouter/auto",
+    "meta-llama/llama-3.2-3b-instruct:free",
+    "mistralai/mistral-7b-instruct:free",
+]
+
+
+def _call_openrouter(prompt: str, max_tokens: int, json_mode: bool) -> str:
+    key = _get_key("openrouter")
+    if not key:
+        raise RuntimeError("OPENROUTER_API_KEY not configured — get a free key at openrouter.ai")
+    from openai import OpenAI
+    client = OpenAI(
+        api_key=key,
+        base_url="https://openrouter.ai/api/v1",
+        default_headers={"HTTP-Referer": "https://fieldnote.app", "X-Title": "Fieldnote"},
+    )
+    kwargs: dict = dict(
+        messages=[{"role": "user", "content": prompt}],
+        max_tokens=max_tokens,
+        temperature=0.2,
+    )
+    if json_mode:
+        kwargs["response_format"] = {"type": "json_object"}
+    last_err: Any = None
+    for model in OPENROUTER_MODELS:
+        try:
+            resp = client.chat.completions.create(model=model, **kwargs)
+            _mark_healthy("openrouter")
+            return resp.choices[0].message.content
+        except Exception as e:
+            err = str(e)
+            last_err = e
+            if "404" in err or "model_not_found" in err.lower():
+                continue
+            kind = _mark_error("openrouter", err)
+            if kind in (_STATE_QUOTA, _STATE_AUTH):
+                raise
+            if kind == _STATE_RATE:
+                time.sleep(3)
+                continue
+            raise
+    raise RuntimeError("All OpenRouter models failed. Last: " + str(last_err))
+
+
+def _call_openrouter_chat(messages: list, max_tokens: int, temperature: float) -> str:
+    key = _get_key("openrouter")
+    if not key:
+        raise RuntimeError("OPENROUTER_API_KEY not configured")
+    from openai import OpenAI
+    client = OpenAI(
+        api_key=key,
+        base_url="https://openrouter.ai/api/v1",
+        default_headers={"HTTP-Referer": "https://fieldnote.app", "X-Title": "Fieldnote"},
+    )
+    try:
+        resp = client.chat.completions.create(
+            model=OPENROUTER_MODELS[0],
+            messages=messages,
+            max_tokens=max_tokens,
+            temperature=temperature,
+        )
+        _mark_healthy("openrouter")
+        return resp.choices[0].message.content
+    except Exception as e:
+        _mark_error("openrouter", str(e))
+        raise
+
+
 # ── Public API ─────────────────────────────────────────────────────────────────
 
-# Ordered: free first, billed last
-_PROVIDERS = ["groq", "gemini", "openai"]
+# Ordered: free first, billed last, then free-tier-with-optional-key
+_PROVIDERS = ["groq", "gemini", "openai", "huggingface", "openrouter"]
 
 _IMPL: dict[str, Any] = {
-    "groq":   _call_groq,
-    "gemini": _call_gemini,
-    "openai": _call_openai,
+    "groq":        _call_groq,
+    "gemini":      _call_gemini,
+    "openai":      _call_openai,
+    "huggingface": _call_huggingface,
+    "openrouter":  _call_openrouter,
 }
 
 _CHAT_IMPL: dict[str, Any] = {
-    "groq":   _call_groq_chat,
-    "gemini": _call_gemini_chat,
-    "openai": _call_openai_chat,
+    "groq":        _call_groq_chat,
+    "gemini":      _call_gemini_chat,
+    "openai":      _call_openai_chat,
+    "huggingface": _call_huggingface_chat,
+    "openrouter":  _call_openrouter_chat,
 }
 
 
 def call_llm_smart(prompt: str, max_tokens: int = 4000, json_mode: bool = True) -> str:
     """
     Route to the best available free provider; fall back down the list.
-    Priority: Groq (free) -> Gemini (free tier) -> OpenAI (billed last resort).
-    Raises RuntimeError only when ALL providers are exhausted.
+    Priority: Groq -> Gemini -> OpenAI -> HuggingFace -> OpenRouter.
+    Raises RuntimeError only when ALL five providers are exhausted.
     """
     _init_status()  # pick up keys added without restart
     tried: list[str] = []
@@ -390,7 +542,9 @@ def provider_status() -> dict:
     for provider in _PROVIDERS:
         key = _get_key(provider)
         if not key:
-            out[provider] = {"state": "no_key", "retry_in": None, "last_error": ""}
+            # Anonymous-OK providers show no_key (amber, not red) but are still usable
+            out[provider] = {"state": "no_key", "retry_in": None, "last_error": "",
+                             "anonymous_ok": provider in _ANONYMOUS_OK}
             continue
         with _lock:
             s     = dict(_status.get(provider, {}))
@@ -403,8 +557,9 @@ def provider_status() -> dict:
         if state in (_STATE_RATE, _STATE_QUOTA) and until != float("inf"):
             retry_in = max(0, int(until - now))
         out[provider] = {
-            "state":      state,
-            "retry_in":   retry_in,
-            "last_error": s.get("last_error", "")[:200],
+            "state":        state,
+            "retry_in":     retry_in,
+            "last_error":   s.get("last_error", "")[:200],
+            "anonymous_ok": provider in _ANONYMOUS_OK,
         }
     return out
