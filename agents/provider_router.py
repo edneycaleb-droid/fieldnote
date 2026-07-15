@@ -29,6 +29,16 @@ from typing import Any
 
 log = logging.getLogger("fieldnote.provider_router")
 
+# Map provider names to the env-var names the router reads
+KEY_ENV_MAP: dict[str, str] = {
+    "groq":        "GROQ",
+    "gemini":      "Gemini",
+    "openai":      "CHATGPT",
+    "huggingface": "HF_TOKEN",
+    "openrouter":  "OPENROUTER_API_KEY",
+}
+
+
 # ── Provider state constants ───────────────────────────────────────────────────
 
 _STATE_HEALTHY = "healthy"
@@ -90,19 +100,26 @@ _ANONYMOUS_OK: set[str] = {"huggingface"}
 
 
 def _classify_error(err: str) -> str:
-    """Return the blackout category for an error string."""
+    """Return the blackout category for an error string.
+    429 is checked FIRST — it is always a short rate-limit, never quota_exhausted,
+    even when the message text happens to contain the word 'quota'.
+    """
     el = err.lower()
+    # HTTP 429 / explicit rate-limit keywords → short 30-s backout
+    if ("429" in err or "rate_limit" in el or "rate limit" in el
+            or "rate_limit_reached" in el or "too_many_requests" in el
+            or "too many requests" in el):
+        return _STATE_RATE
+    # Billing / quota exhaustion → 2-hour blackout
     if ("insufficient_quota" in el or "exceeded your current quota" in el
-            or "billing" in el or "payment" in el or "resource_exhausted" in el):
+            or "billing" in el or "payment" in el or "resource_exhausted" in el
+            or "quota_exceeded" in el):
         return _STATE_QUOTA
+    # Auth errors → permanent blackout until restart
     if ("401" in err or "403" in err or "invalid_api_key" in el
             or "invalid api key" in el or "permission_denied" in el
             or "unauthenticated" in el):
         return _STATE_AUTH
-    if ("429" in err or "rate_limit" in el or "rate limit" in el
-            or "too_many_requests" in el or "too many requests" in el
-            or "quota" in el):
-        return _STATE_RATE
     return ""
 
 
@@ -156,7 +173,13 @@ def _is_available(provider: str) -> bool:
 
 # ── Model lists ────────────────────────────────────────────────────────────────
 
-GROQ_MODELS   = ["llama-3.3-70b-versatile", "llama-3.1-8b-instant", "llama3-8b-8192"]
+GROQ_MODELS   = [
+    "llama-3.3-70b-versatile",    # best quality
+    "llama-3.1-8b-instant",       # fast, lower quota pressure
+    "gemma2-9b-it",               # different family = separate quota bucket
+    "mixtral-8x7b-32768",         # Mixtral — another quota bucket
+    "llama3-8b-8192",             # legacy alias fallback
+]
 GEMINI_MODELS = ["gemini-2.0-flash", "gemini-1.5-flash", "gemini-1.5-flash-8b"]
 OPENAI_MODELS = ["gpt-4o-mini", "gpt-4o"]
 
