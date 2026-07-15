@@ -1803,16 +1803,9 @@ def api_chat():
             msgs.append({"role": h["role"], "content": h["content"]})
     msgs.append({"role": "user", "content": message})
     try:
-        if OPENAI_API_KEY:
-            resp     = OpenAI(api_key=OPENAI_API_KEY).chat.completions.create(
-                model=OPENAI_MODELS[0], messages=msgs, max_tokens=900, temperature=0.7)
-            provider = OPENAI_MODELS[0]
-        else:
-            resp     = Groq(api_key=GROQ_API_KEY).chat.completions.create(
-                model=GROQ_MODELS[0], messages=msgs, max_tokens=900, temperature=0.7)
-            provider = GROQ_MODELS[0]
-        return jsonify({"answer": resp.choices[0].message.content,
-                        "skill_used": skill_name, "provider": provider})
+        answer, provider = provider_router.call_llm_smart(
+            messages=msgs, max_tokens=900, json_mode=False, temperature=0.7)
+        return jsonify({"answer": answer, "skill_used": skill_name, "provider": provider})
     except Exception as exc:
         return jsonify({"error": str(exc)}), 500
 
@@ -3490,16 +3483,9 @@ def api_chat():
             msgs.append({"role": h["role"], "content": h["content"]})
     msgs.append({"role": "user", "content": message})
     try:
-        if OPENAI_API_KEY:
-            resp     = OpenAI(api_key=OPENAI_API_KEY).chat.completions.create(
-                model=OPENAI_MODELS[0], messages=msgs, max_tokens=900, temperature=0.7)
-            provider = OPENAI_MODELS[0]
-        else:
-            resp     = Groq(api_key=GROQ_API_KEY).chat.completions.create(
-                model=GROQ_MODELS[0], messages=msgs, max_tokens=900, temperature=0.7)
-            provider = GROQ_MODELS[0]
-        return jsonify({"answer": resp.choices[0].message.content,
-                        "skill_used": skill_name, "provider": provider})
+        answer, provider = provider_router.call_llm_smart(
+            messages=msgs, max_tokens=900, json_mode=False, temperature=0.7)
+        return jsonify({"answer": answer, "skill_used": skill_name, "provider": provider})
     except Exception as exc:
         return jsonify({"error": str(exc)}), 500
 
