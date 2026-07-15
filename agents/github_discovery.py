@@ -324,7 +324,15 @@ def _save_discovered_skill(skill: dict, repo: dict, index: dict) -> tuple[str, s
         github_ctx    = f"[{repo['full_name']}] stars={repo['stars']}"
         try:
             import app as _a2
-            skill_a2 = _a2._extract_skill_chatgpt(transcript, knowledge_ctx, existing_md)
+            import agents.provider_router as _pr
+            base2    = _a2._build_prompt(transcript, knowledge_ctx, existing_md)
+            preamble2 = (
+                "You are Fieldnote's EDUCATOR AI. Your lens is conceptual clarity, "
+                "thorough descriptions, and how this skill connects to others in the library.\n\n"
+            )
+            import json as _json2
+            raw2, _prov2 = _pr.call_llm_smart(preamble2 + base2, max_tokens=4000, json_mode=True)
+            skill_a2 = _json2.loads(raw2)
             skill_b2 = skill  # use the original merged as the "B" candidate
             skill    = _a2._judge_arena(skill_a2, skill_b2, github_ctx, _emit_log)
             action   = skill.get("action", "enhance")
