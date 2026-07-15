@@ -1,7 +1,7 @@
 # 🧠 Fieldnote Skill Library
 
 > Everything I learn from YouTube — auto-extracted and synced by AI.
-> **2 skills** · Last synced: 2026-07-15 20:19 UTC
+> **2 skills** · Last synced: 2026-07-15 20:20 UTC
 
 ---
 
@@ -9,7 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [Skill 7Ee482](skills/building_ai_agents.md) | Skill 7Ee482 | `Hermes` `HY3` `Noose Portal` `Hermes Agent Plus Grok 4.5` | `ai` `automation` `productivity` |
+| [Skill A7C79B](skills/building_ai_agents.md) | Skill A7C79B | `Hermes Agent` `Firecrawl` `SiaXNG` `DuckDuckGoSearch` | `ai` `automation` `productivity` |
 | [Efficiently Running Large AI Models on Local Machines](skills/running_large_models_locally.md) | This skill teaches how to run large AI models on local machines with limited RAM | `Colibri` `AntiRaz` `DS4` `Lama CPP` | `ai` `optimization` `modeling` |
 
 ---
