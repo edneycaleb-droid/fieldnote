@@ -1243,9 +1243,10 @@ setInterval(async () => {
 }, 60000);
 
 // ── Playlist handling ─────────────────────────────────────────────────────────
-let _playlistId   = null;
-let _playlistIds  = [];
-let _playlistMeta = {};   // video_id → title
+let _playlistId      = null;
+let _playlistIds     = [];
+let _playlistMeta    = {};   // video_id → title (kept for compat)
+let _playlistEvtSrc  = null; // active EventSource for playlist SSE
 
 async function fetchMeta(url) {
   // Show skeleton while loading
