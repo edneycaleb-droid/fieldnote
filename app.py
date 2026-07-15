@@ -2314,69 +2314,6 @@ _boot_scheduler()
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=False)
-# ── Groq LLM ─────────────────────────────────────────────────────────────────
-
-def call_groq(prompt: str, max_tokens: int = 4000) -> str:
-    """Call Groq with per-model fallback and exponential backoff on 429 rate limits."""
-    client = Groq(api_key=GROQ_API_KEY)
-    last_err = None
-    for model in GROQ_MODELS:
-        for attempt in range(3):
-            try:
-                resp = client.chat.completions.create(
-                    model=model,
-                    messages=[{"role": "user", "content": prompt}],
-                    max_tokens=max_tokens,
-                    response_format={"type": "json_object"},
-                )
-                return resp.choices[0].message.content
-            except Exception as e:
-                err = str(e)
-                last_err = e
-                if any(k in err for k in ("decommissioned", "404", "model_not_found")):
-                    break  # try next model immediately
-                if "429" in err or "rate_limit" in err.lower() or "rate limit" in err.lower():
-                    wait = (2 ** attempt) + random.uniform(0, 1)
-                    time.sleep(wait)
-                    continue
-                raise  # non-retryable error
-    raise RuntimeError(f"All Groq models failed. Last error: {last_err}")
-
-
-
-def call_openai(prompt: str, max_tokens: int = 4000, json_mode: bool = True) -> str:
-    """Call OpenAI (GPT-4o-mini default) with JSON or plain-text output."""
-    client   = OpenAI(api_key=OPENAI_API_KEY)
-    messages = [{"role": "user", "content": prompt}]
-    kwargs: dict = dict(messages=messages, max_tokens=max_tokens, temperature=0.2)
-    if json_mode:
-        kwargs["response_format"] = {"type": "json_object"}
-    last_err = None
-    for model in OPENAI_MODELS:
-        try:
-            resp = client.chat.completions.create(model=model, **kwargs)
-            return resp.choices[0].message.content
-        except Exception as e:
-            last_err = e
-            err = str(e)
-            if "404" in err or "model_not_found" in err:
-                continue   # try next model
-            raise          # non-retryable (auth, rate-limit, etc.)
-    raise RuntimeError(f"All OpenAI models failed. Last: {last_err}")
-
-
-def call_llm(prompt: str, max_tokens: int = 4000, json_mode: bool = True) -> str:
-    """Try OpenAI first (higher quality), fall back to Groq."""
-    if OPENAI_API_KEY:
-        try:
-            return call_openai(prompt, max_tokens=max_tokens, json_mode=json_mode)
-        except Exception as e:
-            if "401" in str(e) or "invalid_api_key" in str(e).lower():
-                raise   # bad key — don't silently fall through
-            # transient / quota error — fall back to Groq
-    return call_groq(prompt, max_tokens=max_tokens)
-
-
 # ── Package auto-installer ────────────────────────────────────────────────────
 
 _PKG_BLOCKLIST = {
@@ -2482,33 +2419,6 @@ def _extract_skill_ai(
     return json.loads(raw)
 
 
-
-
-# ── AI Arena: three providers, one judge ─────────────────────────────────────
-
-def _extract_skill_chatgpt(transcript: str, knowledge_ctx: str, existing_content: str = "") -> dict:
-    """ChatGPT pass — educator lens: depth, clarity, concept relationships."""
-    base     = _build_prompt(transcript, knowledge_ctx, existing_content)
-    preamble = (
-        "You are Fieldnote's EDUCATOR AI. Your lens is conceptual clarity, "
-        "thorough descriptions, and how this skill connects to others in the library."
-        + chr(10) + chr(10)
-    )
-    raw = call_openai(preamble + base, max_tokens=4000, json_mode=True)
-    return json.loads(raw)
-
-
-def _extract_skill_groq(transcript: str, knowledge_ctx: str, existing_content: str = "") -> dict:
-    """Groq pass — practitioner lens: actionable steps, every tool and command."""
-    base     = _build_prompt(transcript, knowledge_ctx, existing_content)
-    preamble = (
-        "You are Fieldnote's PRACTITIONER AI. Your lens is specific actionable steps "
-        "a developer can follow immediately, and every concrete tool, command, "
-        "and library mentioned in the transcript."
-        + chr(10) + chr(10)
-    )
-    raw = call_groq(preamble + base, max_tokens=4000)
-    return json.loads(raw)
 
 
 def _github_readme_context(repos: list) -> str:
