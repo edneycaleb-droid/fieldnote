@@ -454,7 +454,27 @@ def transcript_from_captions(video_id: str) -> str:
     return " ".join(e["text"] for e in entries)
 
 
-def transcript_from_whisper(url: str, video_id: str, emit) -> str:
+_FW_MODEL_DIR = "/tmp/fw_models"
+
+
+def _transcribe_local(mp3_path: str, emit) -> str:
+    """Local CPU transcription via faster-whisper tiny model — no API quota, no billing."""
+    try:
+        from faster_whisper import WhisperModel
+    except ImportError:
+        raise RuntimeError("faster-whisper not installed — run: pip install faster-whisper")
+    os.makedirs(_FW_MODEL_DIR, exist_ok=True)
+    emit("🖥️  Loading local Whisper model (tiny ≈39 MB, cached after first run) …", "warning")
+    model = WhisperModel("tiny", device="cpu", compute_type="int8",
+                         download_root=_FW_MODEL_DIR)
+    emit("📝  Transcribing locally — may take 2–4 min on CPU …", "warning")
+    segments, info = model.transcribe(mp3_path, beam_size=1, vad_filter=True)
+    text = " ".join(seg.text.strip() for seg in segments)
+    emit(f"✅  Local transcription done ({len(text.split()):,} words, lang: {info.language})", "success")
+    return text
+
+
+def transcript_from_whisper(url: str, video_id: str, emit) -> tuple[str, str]:
     client  = Groq(api_key=GROQ_API_KEY)
     tmp_dir = tempfile.mkdtemp()
     raw_out = os.path.join(tmp_dir, f"{video_id}.%(ext)s")
@@ -503,18 +523,32 @@ def transcript_from_whisper(url: str, video_id: str, emit) -> str:
                 response_format="text",
             )
     except Exception as _whisper_err:
+        _msg      = str(_whisper_err)
+        _is_quota = any(k in _msg.lower() for k in
+                        ("quota", "billing", "insufficient", "exceeded", "resource_exhausted"))
+        _is_auth  = ("401" in _msg or "403" in _msg
+                     or "invalid_api_key" in _msg.lower())
+        if _is_quota or _is_auth:
+            _kind = "quota exhausted" if _is_quota else "auth error"
+            emit(f"⚠️  Groq Whisper {_kind} — falling back to local transcription (slower) …",
+                 "warning")
+            try:
+                _local = _transcribe_local(mp3_out, emit)
+                shutil.rmtree(tmp_dir, ignore_errors=True)
+                return _local, "whisper-local"
+            except Exception as _local_err:
+                emit(f"⚠️  Local transcription failed: {str(_local_err)[:80]}", "warning")
         shutil.rmtree(tmp_dir, ignore_errors=True)
-        _msg = str(_whisper_err)
-        if any(k in _msg.lower() for k in ("quota", "billing", "insufficient", "exceeded", "resource_exhausted")):
+        if _is_quota:
             raise RuntimeError(
-                "Groq Whisper quota exhausted â audio transcription unavailable until quota resets"
+                "Groq Whisper quota exhausted — audio transcription unavailable until quota resets"
             ) from _whisper_err
-        if "401" in _msg or "403" in _msg or "invalid_api_key" in _msg.lower():
-            raise RuntimeError("Groq Whisper auth error â check GROQ secret") from _whisper_err
+        if _is_auth:
+            raise RuntimeError("Groq Whisper auth error — check GROQ secret") from _whisper_err
         raise
 
     shutil.rmtree(tmp_dir, ignore_errors=True)
-    return result if isinstance(result, str) else result.text
+    return (result if isinstance(result, str) else result.text), "whisper"
 
 
 def get_transcript(url: str, video_id: str, emit) -> tuple[str, str]:
@@ -525,8 +559,8 @@ def get_transcript(url: str, video_id: str, emit) -> tuple[str, str]:
     except Exception as e:
         emit(f"⚠  No captions ({type(e).__name__}) — switching to Whisper …", "warning")
     try:
-        text = transcript_from_whisper(url, video_id, emit)
-        return text, "whisper"
+        text, method = transcript_from_whisper(url, video_id, emit)
+        return text, method
     except RuntimeError as _werr:
         if "quota exhausted" in str(_werr).lower() or "auth error" in str(_werr).lower():
             emit(f"⚠  {_werr}", "warning")

@@ -141,8 +141,9 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
 .res-words { font-size: 0.75rem; color: var(--muted); }
 
 .method-pill { font-size: 0.7rem; font-weight: 600; border-radius: 20px; padding: 2px 9px; }
-.mp-captions { background: #0d2010; color: var(--green); }
-.mp-whisper  { background: #1a1030; color: var(--purple); }
+.mp-captions      { background: #0d2010; color: var(--green); }
+.mp-whisper       { background: #1a1030; color: var(--purple); }
+.mp-whisper-local { background: #0a1628; color: var(--blue); }
 
 /* ── GitHub repos section ── */
 .repo-grid { display: flex; flex-direction: column; gap: 6px; }
@@ -1017,7 +1018,7 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
             <div class="skill-row-title">{{ s.title }}</div>
             <div class="skill-row-meta">
               {% if s.source_title %}{{ s.source_title[:40] }}{% endif %}
-              {% if s.method %} · {{ "🎙 Whisper" if s.method == "whisper" else "✓ Captions" }}{% endif %}
+              {% if s.method %} · {{ "🎙 Whisper" if s.method == "whisper" else ("🖥️ Whisper (local)" if s.method == "whisper-local" else "✓ Captions") }}{% endif %}
             </div>
           </div>
           <div class="skill-row-tags">
@@ -1621,6 +1622,8 @@ function renderResult(d) {
 
   const mp = d.transcript_method === "whisper"
     ? `<span class="method-pill mp-whisper">🎙 Whisper</span>`
+    : d.transcript_method === "whisper-local"
+    ? `<span class="method-pill mp-whisper-local">🖥️ Whisper (local)</span>`
     : `<span class="method-pill mp-captions">✓ Captions</span>`;
   document.getElementById("res-method").innerHTML = mp;
   document.getElementById("res-words").textContent =
