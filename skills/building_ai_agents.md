@@ -16,37 +16,30 @@ Building AI agents can help automate tasks, make decisions, and improve over tim
 10. **Implement loops to automate review cycles and improvements**: Implement loops to automate review cycles and improvements, ensuring continuous improvement of your AI agent.
 11. **Utilize Record and Replay feature for knowledge work tasks**: Utilize the Record and Replay feature to automate knowledge work tasks, such as filling out forms or data entry.
 12. **Utilize Hermes Agent Plus Grok 4.5 for advanced AI tasks**: Utilize Hermes Agent Plus Grok 4.5 for advanced AI tasks such as creating images, videos, and voiceovers.
-13. **Drop Grok 4.5 into custom workflows for improved performance**: Drop Grok 4.5 into custom workflows for improved performance and efficiency.
-14. **Use a fast model like GLM 5.2 for normal chatting and Grok 4.5 for complex tasks**: Use a fast model like GLM 5.2 for normal chatting and Grok 4.5 for complex tasks such as image and video creation.
-15. **Leverage the video agent for creating B-roll videos with talking avatars and voiceovers**: Leverage the video agent for creating B-roll videos with talking avatars and voiceovers.
-16. **Implement Hermes Oracle for pulling in the newest news and creating SEO blog posts**: Implement Hermes Oracle for pulling in the newest news and creating SEO blog posts.
-17. **Utilize the memory system for logging tasks and providing context to agents**: Utilize the memory system for logging tasks and providing context to agents.
+13. **Drop Grok 4.5 into custom workflows for improved performance**: Drop Grok 4.5 into custom workflows for improved performance.
+14. **Update Hermes using the command 'hermes update' in your terminal**: Update Hermes to access new features and improvements.
+15. **Utilize the new pruning and archiving features to clean up old sessions**: Use the new pruning and archiving features to clean up old sessions and keep your workspace organized.
+16. **Export valuable sessions using the new export tool**: Export valuable sessions to keep them safe and accessible.
+17. **Test the new HY3 model on Noose Portal while it's free**: Test the new HY3 model to see its capabilities and limitations.
 
 ## Tools
-* Cloud Code
-* Superpowers
-* Everything Cloud Code
+* Hermes Agent Plus Grok 4.5
+* HY3
+* Noose Portal
+* Superpowers plugin
+* Everything Cloud Code plugin
 * Roof Flow
 * Open Design
 * Obsidian Skills
-* Codex
-* GPT-5.6 Sol
-* Record and Replay
-* Hermes Agent Plus Grok 4.5
-* GLM 5.2
-* Video Agent
-* Hermes Oracle
 
 ## Concepts
-* AI agents
-* Automation
-* Reverse prompting
-* Definition of done (DOD)
 * Custom workflows
 * Model routing
 * Video creation
 * SEO optimization
-* Memory systems
+* Model updating
+* Session management
+* Model testing
 
 ## Related Skills
 * running_large_models_locally
@@ -61,3 +54,4 @@ Building AI agents can help automate tasks, make decisions, and improve over tim
 | 2026-07-15 | [6 Claude Code GitHub Repos That Change Everything](https://youtu.be/L2JKgj7WzU4?is=PdIv7xTFQeAN-hd6) | whisper |
 | 2026-07-15 | [OpenAI Just Merged ChatGPT and Codex. This Changes Everything. ](https://youtu.be/Fv0XfyLT3xU?is=9y4oL_AQ0iKtojbO) | whisper |
 | 2026-07-15 | [Hermes Agent + Grok 4.5 Is INSANE!](https://youtube.com/watch?v=mCv8t7LZ5SA) | whisper |
+| 2026-07-15 | [NEW Hermes Update Makes It 10X More Powerful](https://youtube.com/watch?v=zKAPTvv9TEw) | whisper |
