@@ -1325,6 +1325,7 @@ async function runSingleVideo(url, videoId) {
   logWrap.style.display = "block";
   logLines.innerHTML = "";
   setStatus("Starting parallel agents …", "");
+  _initVerifyPanel();
 
   if (_currentES) { _currentES.close(); _currentES = null; }
 
