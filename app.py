@@ -432,8 +432,17 @@ def get_playlist_video_ids(playlist_id: str) -> list[str]:
         capture_output=True, text=True, timeout=60,
     )
     # Extract valid video IDs from stdout (11-char alphanumeric strings)
+    id_pat = r'^[a-zA-Z0-9_-]{11}' + '$'
     ids = [l.strip() for l in r.stdout.strip().splitlines()
-           if re.match(r'^[a-zA-Z0-9_-]{11}
+           if re.match(id_pat, l.strip())][:20]
+    if ids:
+        return ids
+    # No IDs from stdout — surface the real error from stderr
+    stderr_clean = r.stderr.strip().split('\n')
+    errors = [l for l in stderr_clean
+              if l and not l.startswith('WARNING:') and 'Deprecated' not in l]
+    msg = errors[0] if errors else (r.stderr[:200] or "yt-dlp returned no video IDs")
+    raise RuntimeError(f"Could not read playlist: {msg}")
 
 
 # ── Transcript helpers ────────────────────────────────────────────────────────
@@ -2304,89 +2313,6 @@ _boot_scheduler()
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=False)
-, l.strip())][:20]
-    if ids:
-        return ids
-    # No IDs from stdout — surface the real error from stderr
-    stderr_clean = r.stderr.strip().split('\n')
-    # Filter out deprecation/warning lines to surface the real error
-    errors = [l for l in stderr_clean
-              if l and not l.startswith('WARNING:') and 'Deprecated' not in l]
-    msg = errors[0] if errors else (r.stderr[:200] or "yt-dlp returned no video IDs")
-    raise RuntimeError(f"Could not read playlist: {msg}")
-
-
-# ── Transcript helpers ────────────────────────────────────────────────────────
-
-def transcript_from_captions(video_id: str) -> str:
-    from youtube_transcript_api import YouTubeTranscriptApi
-    entries = YouTubeTranscriptApi.get_transcript(video_id)
-    return " ".join(e["text"] for e in entries)
-
-
-def transcript_from_whisper(url: str, video_id: str, emit) -> str:
-    client  = Groq(api_key=GROQ_API_KEY)
-    tmp_dir = tempfile.mkdtemp()
-    raw_out = os.path.join(tmp_dir, f"{video_id}.%(ext)s")
-    mp3_out = os.path.join(tmp_dir, f"{video_id}.mp3")
-
-    emit("⬇  No captions — downloading audio via yt-dlp …", "warning")
-    dl = subprocess.run(
-        ["yt-dlp",
-         "-f", "bestaudio[abr<=64]/bestaudio/worst",
-         "-x", "--audio-format", "mp3", "--audio-quality", "5",
-         "--no-playlist", "-o", raw_out, url],
-        capture_output=True, text=True, timeout=300,
-    )
-    if dl.returncode != 0:
-        raise RuntimeError(f"yt-dlp failed: {dl.stderr[-400:]}")
-
-    if not os.path.exists(mp3_out):
-        found = [f for f in os.listdir(tmp_dir) if video_id in f]
-        if not found:
-            raise RuntimeError("Audio file not found after yt-dlp download.")
-        src = os.path.join(tmp_dir, found[0])
-        subprocess.run(
-            ["ffmpeg", "-i", src, "-q:a", "5", "-ar", "16000", "-ac", "1",
-             mp3_out, "-y"],
-            capture_output=True, timeout=120,
-        )
-
-    size_mb = os.path.getsize(mp3_out) / 1024 / 1024
-    emit(f"🎵  Audio ready ({size_mb:.1f} MB) — transcribing …", "warning")
-
-    if size_mb > MAX_AUDIO_MB:
-        emit(f"✂  Clipping to first {CLIP_SECONDS // 60} min …", "warning")
-        clipped = os.path.join(tmp_dir, f"{video_id}_clip.mp3")
-        subprocess.run(
-            ["ffmpeg", "-i", mp3_out, "-t", str(CLIP_SECONDS),
-             "-q:a", "5", "-ar", "16000", "-ac", "1", clipped, "-y"],
-            capture_output=True, timeout=60,
-        )
-        mp3_out = clipped
-
-    with open(mp3_out, "rb") as f:
-        result = client.audio.transcriptions.create(
-            file=(os.path.basename(mp3_out), f),
-            model=WHISPER_MODEL,
-            response_format="text",
-        )
-
-    shutil.rmtree(tmp_dir, ignore_errors=True)
-    return result if isinstance(result, str) else result.text
-
-
-def get_transcript(url: str, video_id: str, emit) -> tuple[str, str]:
-    try:
-        text = transcript_from_captions(video_id)
-        emit("✅  Captions found — transcript ready.", "success")
-        return text, "captions"
-    except Exception as e:
-        emit(f"⚠  No captions ({type(e).__name__}) — switching to Whisper …", "warning")
-    text = transcript_from_whisper(url, video_id, emit)
-    return text, "whisper"
-
-
 # ── Groq LLM ─────────────────────────────────────────────────────────────────
 
 def call_groq(prompt: str, max_tokens: int = 4000) -> str:
