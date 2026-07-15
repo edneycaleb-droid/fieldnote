@@ -1,0 +1,138 @@
+{
+  "concepts": {
+    "AI agents": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Automation": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Reverse prompting": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Definition of done (DOD)": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Identity files": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Context window": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Playbooks": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Manager agent": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Sub-agents": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    }
+  },
+  "tools": {
+    "Anthropic": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Haiku": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Sonnet": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Opus": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Fable": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Zoom": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Gmail": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    }
+  },
+  "skill_map": {
+    "building_ai_agents": {
+      "concepts": [
+        "AI agents",
+        "Automation",
+        "Reverse prompting",
+        "Definition of done (DOD)",
+        "Identity files",
+        "Context window",
+        "Playbooks",
+        "Manager agent",
+        "Sub-agents"
+      ],
+      "tools": [
+        "Anthropic",
+        "Haiku",
+        "Sonnet",
+        "Opus",
+        "Fable",
+        "Zoom",
+        "Gmail"
+      ],
+      "tags": [
+        "ai",
+        "automation",
+        "agent",
+        "productivity"
+      ],
+      "step_count": 7
+    }
+  },
+  "relationships": {
+    "building_ai_agents": {}
+  },
+  "updated_at": "2026-07-15T19:24:58.427315+00:00",
+  "total_skills": 1
+}
