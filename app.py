@@ -523,8 +523,18 @@ def get_transcript(url: str, video_id: str, emit) -> tuple[str, str]:
         return text, "captions"
     except Exception as e:
         emit(f"⚠  No captions ({type(e).__name__}) — switching to Whisper …", "warning")
-    text = transcript_from_whisper(url, video_id, emit)
-    return text, "whisper"
+    try:
+        text = transcript_from_whisper(url, video_id, emit)
+        return text, "whisper"
+    except RuntimeError as whisper_err:
+        if "Groq Whisper quota exhausted" in str(whisper_err):
+            emit(
+                "⚠  Groq Whisper quota exhausted — audio-only videos cannot be transcribed "
+                "until quota resets. Skipping audio transcription.",
+                "warning",
+            )
+            return "", "none"
+        raise
 
 
 # ── Groq LLM ─────────────────────────────────────────────────────────────────
