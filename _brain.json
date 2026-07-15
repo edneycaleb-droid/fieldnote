@@ -155,6 +155,30 @@
       "skills": [
         "running_large_models_locally"
       ]
+    },
+    "Computer use": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Loops": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Record and Replay": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Automated review cycles": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
     }
   },
   "tools": {
@@ -201,7 +225,7 @@
       ]
     },
     "Codex": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "building_ai_agents"
       ]
@@ -301,42 +325,39 @@
       "skills": [
         "running_large_models_locally"
       ]
+    },
+    "GPT-5.6 Sol": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Record and Replay": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
     }
   },
   "skill_map": {
     "building_ai_agents": {
       "concepts": [
-        "AI agents",
-        "Automation",
-        "Reverse prompting",
-        "Definition of done (DOD)",
-        "Token optimization",
-        "Agent swarms",
-        "Second Brain",
-        "Note-taking",
-        "Design artifacts"
+        "Computer use",
+        "Loops",
+        "Record and Replay",
+        "Automated review cycles"
       ],
       "tools": [
-        "Cloud Code",
-        "Superpowers",
-        "Everything Cloud Code",
-        "Roof Flow",
-        "Open Design",
-        "Obsidian Skills",
-        "Anthropic",
-        "Haiku",
-        "Sonnet",
-        "Opus",
-        "Fable",
-        "Zoom"
+        "Codex",
+        "GPT-5.6 Sol",
+        "Record and Replay"
       ],
       "tags": [
         "ai",
         "automation",
-        "productivity",
-        "cloudcode"
+        "productivity"
       ],
-      "step_count": 8
+      "step_count": 3
     },
     "running_large_models_locally": {
       "concepts": [
@@ -365,6 +386,6 @@
     "building_ai_agents": {},
     "running_large_models_locally": {}
   },
-  "updated_at": "2026-07-15T20:06:33.186462+00:00",
+  "updated_at": "2026-07-15T20:08:01.928431+00:00",
   "total_skills": 2
 }
