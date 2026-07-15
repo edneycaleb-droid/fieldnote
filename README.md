@@ -1,7 +1,7 @@
 # 🧠 Fieldnote Skill Library
 
 > Everything I learn from YouTube — auto-extracted and synced by AI.
-> **1 skill** · Last synced: 2026-07-15 19:31 UTC
+> **1 skill** · Last synced: 2026-07-15 19:59 UTC
 
 ---
 
@@ -9,7 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [Building Effective AI Agents for Automation](skills/building_ai_agents.md) | Learn to create AI agents that can automate tasks, make decisions, and improve o | `Anthropic` `Haiku` `Sonnet` `Opus` | `ai` `automation` `agent` |
+| [Skill 9F31E4](skills/building_ai_agents.md) | Skill 9F31E4 | `Anthropic` `Haiku` `Sonnet` `Opus` | `ai` `automation` `productivity` |
 
 ---
 

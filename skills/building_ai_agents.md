@@ -14,6 +14,10 @@ Building AI agents can help automate tasks, make decisions, and improve over tim
 8. **Utilize the in-app browser for task automation and workflow optimization**: Use the in-app browser to automate tasks, access external tools, and optimize workflows.
 9. **Create skills to automate repetitive tasks and workflows**: Create skills to automate repetitive tasks and workflows, and use the in-app browser to access relevant information.
 10. **Use annotation tools for efficient communication with the AI agent**: Use annotation tools to communicate with the AI agent and provide feedback.
+11. **Set up a new project in Claude to organize chats, files, and instructions**: Set up a new project in Claude to organize chats, files, and instructions around one ongoing task or topic.
+12. **Use connectors to connect Claude with third-party tools**: Use connectors to connect Claude with third-party tools and access information from those tools.
+13. **Turn a workflow into a skill for repeatable tasks**: Turn a workflow into a skill for repeatable tasks, allowing you to execute the workflow with a single command.
+14. **Schedule tasks to run automatically at a specified time**: Schedule tasks to run automatically at a specified time, allowing you to automate tasks and workflows.
 
 ## Tools and Concepts
 * Anthropic: A platform for building AI agents
@@ -25,13 +29,9 @@ Building AI agents can help automate tasks, make decisions, and improve over tim
 * Context window: The agent's workspace for performing tasks
 * Playbooks: Procedures for the agent to follow
 * Manager agent: An agent that coordinates sub-agents and tasks
-* Sub-agents: Agents that perform specific tasks under the manager agent
-* In-app browser: A browser within the AI agent platform for accessing external tools and information
-* Skills: Automated workflows for repetitive tasks
-* Annotation tools: Tools for providing feedback and communicating with the AI agent
-
-## Related Skills
-* None
+* Connectors: Tools for connecting Claude with third-party tools
+* Skills: Repeatable workflows that can be executed with a single command
+* Projects: Dedicated workspaces for organizing chats, files, and instructions around one ongoing task or topic
 
 ## Sources
 
@@ -39,3 +39,4 @@ Building AI agents can help automate tasks, make decisions, and improve over tim
 |------|-------|------------|
 | 2026-07-15 | [You’re Not Behind (Yet): How to Build Your First AI Agent (Full Guide)](https://youtu.be/Bm84BAtOfQw?is=ahImoTzYnRVzfR5t) | whisper |
 | 2026-07-15 | [Codex and Claude Shipped Browser Updates. This Changes Everything.](https://youtu.be/juPDqb89dew?is=pb3WFUXn6KXAsWc0) | whisper |
+| 2026-07-15 | [Claude Just Changed Completely: Here's How It Works (In 2026)](https://youtu.be/bj04doEDOY4?is=5JQU-XeZJQCPGKc2) | whisper |
