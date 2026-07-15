@@ -15,6 +15,12 @@ Building AI agents can help automate tasks, make decisions, and improve over tim
 9. **Use computer use to automate testing of your app**: Utilize computer use to automate testing of your app, reducing manual effort and increasing efficiency.
 10. **Implement loops to automate review cycles and improvements**: Implement loops to automate review cycles and improvements, ensuring continuous improvement of your AI agent.
 11. **Utilize Record and Replay feature for knowledge work tasks**: Utilize the Record and Replay feature to automate knowledge work tasks, such as filling out forms or data entry.
+12. **Utilize Hermes Agent Plus Grok 4.5 for advanced AI tasks**: Utilize Hermes Agent Plus Grok 4.5 for advanced AI tasks such as creating images, videos, and voiceovers.
+13. **Drop Grok 4.5 into custom workflows for improved performance**: Drop Grok 4.5 into custom workflows for improved performance and efficiency.
+14. **Use a fast model like GLM 5.2 for normal chatting and Grok 4.5 for complex tasks**: Use a fast model like GLM 5.2 for normal chatting and Grok 4.5 for complex tasks such as image and video creation.
+15. **Leverage the video agent for creating B-roll videos with talking avatars and voiceovers**: Leverage the video agent for creating B-roll videos with talking avatars and voiceovers.
+16. **Implement Hermes Oracle for pulling in the newest news and creating SEO blog posts**: Implement Hermes Oracle for pulling in the newest news and creating SEO blog posts.
+17. **Utilize the memory system for logging tasks and providing context to agents**: Utilize the memory system for logging tasks and providing context to agents.
 
 ## Tools
 * Cloud Code
@@ -26,21 +32,24 @@ Building AI agents can help automate tasks, make decisions, and improve over tim
 * Codex
 * GPT-5.6 Sol
 * Record and Replay
+* Hermes Agent Plus Grok 4.5
+* GLM 5.2
+* Video Agent
+* Hermes Oracle
 
 ## Concepts
 * AI agents
 * Automation
 * Reverse prompting
 * Definition of done (DOD)
-* Token optimization
-* Agent swarms
-* Second Brain
-* Note-taking
-* Design artifacts
-* Computer use
-* Loops
-* Record and Replay
-* Automated review cycles
+* Custom workflows
+* Model routing
+* Video creation
+* SEO optimization
+* Memory systems
+
+## Related Skills
+* running_large_models_locally
 
 ## Sources
 
@@ -51,3 +60,4 @@ Building AI agents can help automate tasks, make decisions, and improve over tim
 | 2026-07-15 | [Claude Just Changed Completely: Here's How It Works (In 2026)](https://youtu.be/bj04doEDOY4?is=5JQU-XeZJQCPGKc2) | whisper |
 | 2026-07-15 | [6 Claude Code GitHub Repos That Change Everything](https://youtu.be/L2JKgj7WzU4?is=PdIv7xTFQeAN-hd6) | whisper |
 | 2026-07-15 | [OpenAI Just Merged ChatGPT and Codex. This Changes Everything. ](https://youtu.be/Fv0XfyLT3xU?is=9y4oL_AQ0iKtojbO) | whisper |
+| 2026-07-15 | [Hermes Agent + Grok 4.5 Is INSANE!](https://youtube.com/watch?v=mCv8t7LZ5SA) | whisper |
