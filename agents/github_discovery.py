@@ -272,7 +272,7 @@ def _extract_from_repo(repo: dict, readme: str, index: dict) -> dict:
                 "You are Fieldnote's EDUCATOR AI. Your lens is conceptual clarity, "
                 "thorough descriptions, and how this skill connects to others in the library.\n\n"
             )
-            raw, _prov = provider_router.call_llm_smart(preamble + base, max_tokens=4000, json_mode=True)
+            raw = provider_router.call_llm_smart(preamble + base, max_tokens=4000, json_mode=True)
             import json as _json
             return _json.loads(raw)
 
@@ -283,7 +283,7 @@ def _extract_from_repo(repo: dict, readme: str, index: dict) -> dict:
                 "a developer can follow immediately, and every concrete tool, command, "
                 "and library mentioned in the transcript.\n\n"
             )
-            raw, _prov = provider_router.call_llm_smart(preamble + base, max_tokens=4000, json_mode=True)
+            raw = provider_router.call_llm_smart(preamble + base, max_tokens=4000, json_mode=True)
             import json as _json
             return _json.loads(raw)
 
@@ -332,7 +332,7 @@ def _save_discovered_skill(skill: dict, repo: dict, index: dict) -> tuple[str, s
                 "thorough descriptions, and how this skill connects to others in the library.\n\n"
             )
             import json as _json2
-            raw2, _prov2 = _pr.call_llm_smart(preamble2 + base2, max_tokens=4000, json_mode=True)
+            raw2 = _pr.call_llm_smart(preamble2 + base2, max_tokens=4000, json_mode=True)
             skill_a2 = _json2.loads(raw2)
             skill_b2 = skill  # use the original merged as the "B" candidate
             skill    = _a2._judge_arena(skill_a2, skill_b2, github_ctx, _emit_log)

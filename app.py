@@ -1316,7 +1316,7 @@ def process():
 
     if not url:
         return jsonify({"error": "No URL provided."}), 400
-    if not GROQ_API_KEY and not OPENAI_API_KEY:
+    if not GROQ_API_KEY and not OPENAI_API_KEY and not (os.getenv("Google_API_Key") or os.getenv("Gemini") or os.getenv("GOOGLE_API_KEY")):
         return jsonify({
             "error": "No LLM key — add GROQ or CHATGPT in Tools › Secrets."
         }), 500
@@ -1714,7 +1714,7 @@ def api_chat():
     history    = data.get("history", [])
     if not message:
         return jsonify({"error": "No message"}), 400
-    if not GROQ_API_KEY and not OPENAI_API_KEY:
+    if not GROQ_API_KEY and not OPENAI_API_KEY and not (os.getenv("Google_API_Key") or os.getenv("Gemini") or os.getenv("GOOGLE_API_KEY")):
         return jsonify({"error": "No LLM key configured (add GROQ or CHATGPT secret)"}), 503
     index         = load_index()
     context_parts = []
@@ -1796,7 +1796,7 @@ def api_briefing():
     index      = load_index()
     if not index:
         return jsonify({"error": "No skills in library yet"}), 400
-    if not GROQ_API_KEY and not OPENAI_API_KEY:
+    if not GROQ_API_KEY and not OPENAI_API_KEY and not (os.getenv("Google_API_Key") or os.getenv("Gemini") or os.getenv("GOOGLE_API_KEY")):
         return jsonify({"error": "No LLM key configured"}), 503
     nl = chr(10)
     if skill_name and skill_name in index:
@@ -3019,7 +3019,7 @@ def process():
 
     if not url:
         return jsonify({"error": "No URL provided."}), 400
-    if not GROQ_API_KEY and not OPENAI_API_KEY:
+    if not GROQ_API_KEY and not OPENAI_API_KEY and not (os.getenv("Google_API_Key") or os.getenv("Gemini") or os.getenv("GOOGLE_API_KEY")):
         return jsonify({
             "error": "No LLM key — add GROQ or CHATGPT in Tools › Secrets."
         }), 500
@@ -3412,7 +3412,7 @@ def api_chat():
     history    = data.get("history", [])
     if not message:
         return jsonify({"error": "No message"}), 400
-    if not GROQ_API_KEY and not OPENAI_API_KEY:
+    if not GROQ_API_KEY and not OPENAI_API_KEY and not (os.getenv("Google_API_Key") or os.getenv("Gemini") or os.getenv("GOOGLE_API_KEY")):
         return jsonify({"error": "No LLM key configured (add GROQ or CHATGPT secret)"}), 503
     index         = load_index()
     context_parts = []
@@ -3494,7 +3494,7 @@ def api_briefing():
     index      = load_index()
     if not index:
         return jsonify({"error": "No skills in library yet"}), 400
-    if not GROQ_API_KEY and not OPENAI_API_KEY:
+    if not GROQ_API_KEY and not OPENAI_API_KEY and not (os.getenv("Google_API_Key") or os.getenv("Gemini") or os.getenv("GOOGLE_API_KEY")):
         return jsonify({"error": "No LLM key configured"}), 503
     nl = chr(10)
     if skill_name and skill_name in index:
