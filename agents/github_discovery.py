@@ -261,18 +261,42 @@ def _extract_from_repo(repo: dict, readme: str, index: dict) -> dict:
         f"topics={','.join(repo.get('topics',[]))}"
     )
 
+    import agents.provider_router as provider_router
+
     skill_a = skill_b = None
     with ThreadPoolExecutor(max_workers=2, thread_name_prefix="fn-disc") as pool:
-        fa = pool.submit(_a._extract_skill_chatgpt, transcript, knowledge_ctx, "")
-        fb = pool.submit(_a._extract_skill_groq,    transcript, knowledge_ctx, "")
+        # Use provider_router for automatic quota fallback in both passes
+        def _educator_pass():
+            base     = _a._build_prompt(transcript, knowledge_ctx, "")
+            preamble = (
+                "You are Fieldnote's EDUCATOR AI. Your lens is conceptual clarity, "
+                "thorough descriptions, and how this skill connects to others in the library.\n\n"
+            )
+            raw, _prov = provider_router.call_llm_smart(preamble + base, max_tokens=4000, json_mode=True)
+            import json as _json
+            return _json.loads(raw)
+
+        def _practitioner_pass():
+            base     = _a._build_prompt(transcript, knowledge_ctx, "")
+            preamble = (
+                "You are Fieldnote's PRACTITIONER AI. Your lens is specific actionable steps "
+                "a developer can follow immediately, and every concrete tool, command, "
+                "and library mentioned in the transcript.\n\n"
+            )
+            raw, _prov = provider_router.call_llm_smart(preamble + base, max_tokens=4000, json_mode=True)
+            import json as _json
+            return _json.loads(raw)
+
+        fa = pool.submit(_educator_pass)
+        fb = pool.submit(_practitioner_pass)
         try:
             skill_a = fa.result(timeout=90)
         except Exception as e:
-            log.warning("ChatGPT extraction failed: %s", e)
+            log.warning("Educator extraction failed: %s", e)
         try:
             skill_b = fb.result(timeout=90)
         except Exception as e:
-            log.warning("Groq extraction failed: %s", e)
+            log.warning("Practitioner extraction failed: %s", e)
 
     if not skill_a and not skill_b:
         raise ValueError("Both extractions failed for " + repo["full_name"])
