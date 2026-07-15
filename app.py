@@ -40,6 +40,7 @@ import agents.auto_agent      as auto_agent
 import agents.github_discovery as github_discovery
 import agents.code_sync        as code_sync
 import agents.verify_agent     as verify_agent
+import agents.pipeline_guard   as pipeline_guard
 
 app = Flask(__name__)
 
@@ -1059,6 +1060,7 @@ def run_job(job_id: str, url: str, video_id: str):
 
             # Judge synthesizes the winner
             skill = _judge_arena(skill_a, skill_b, github_ctx, emit)
+            skill = pipeline_guard.sanitize(skill, emit)
 
             action         = skill.get("action", "create")
             enhance_target = skill.get("enhance_target")
@@ -1079,6 +1081,7 @@ def run_job(job_id: str, url: str, video_id: str):
                 try:
                     skill_a2 = _extract_skill_chatgpt(transcript, knowledge_ctx, existing_md)
                     skill    = _judge_arena(skill_a2, skill_b, github_ctx, emit)
+                    skill    = pipeline_guard.sanitize(skill, emit)
                     action         = skill.get("action", "enhance")
                     enhance_target = skill.get("enhance_target")
                     skill_name     = _compute_skill_name(skill, action, enhance_target, existing_index)
