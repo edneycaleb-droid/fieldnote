@@ -339,6 +339,9 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
 .hc-ok    { background: var(--green); }
 .hc-warn  { background: var(--amber); }
 .hc-err   { background: var(--red); }
+.hc-quota { background: #e05050; box-shadow: 0 0 4px #e05050; }
+.hc-rate  { background: var(--amber); animation: hc-pulse 1.5s ease-in-out infinite; }
+@keyframes hc-pulse { 0%,100%{opacity:1} 50%{opacity:.45} }
 .hc-name  { color: var(--muted); }
 .hc-name.bad  { color: var(--red); font-weight: 600; }
 .hc-name.warn { color: var(--amber); }
@@ -761,7 +764,7 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
   </div>
 </header>
 
-<!-- System health bar (only shown when a required tool is missing) -->
+<!-- System health bar -->
 <div id="health-bar" style="display:none">
   <span class="hc-label">System:</span>
   <div class="hc-items" id="hc-items"></div>
