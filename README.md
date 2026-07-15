@@ -1,7 +1,7 @@
 # 🧠 Fieldnote Skill Library
 
 > Everything I learn from YouTube — auto-extracted and synced by AI.
-> **2 skills** · Last synced: 2026-07-15 20:21 UTC
+> **3 skills** · Last synced: 2026-07-15 21:56 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Building AI Agents with LangChain](skills/building_ai_agents_with_langchain.md) | This skill teaches how to build applications powered by Large Language Models (L | `LangChain` `Deep Agents` `LangGraph` `LangSmith` | `ai` `automation` `productivity` |
 | [Skill 98B7A1](skills/building_ai_agents.md) | Skill 98B7A1 | `Hermes Agent` `Hermes Agent Plus Grok 4.5` `Firecrawl` `SiaXNG` | `ai` `automation` `productivity` |
 | [Efficiently Running Large AI Models on Local Machines](skills/running_large_models_locally.md) | This skill teaches how to run large AI models on local machines with limited RAM | `Colibri` `AntiRaz` `DS4` `Lama CPP` | `ai` `optimization` `modeling` |
 
