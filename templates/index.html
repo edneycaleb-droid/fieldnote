@@ -1209,6 +1209,20 @@ async function checkHealth() {
   } catch (e) { /* health check is non-critical */ }
 }
 
+// Poll provider status every 60 s independently (fast path for quota recovery feedback)
+setInterval(async () => {
+  try {
+    const pr = await fetch("/api/provider-status").then(r => r.json());
+    const AI_PROVIDERS = [
+      { key: "groq",   label: "Groq AI" },
+      { key: "openai", label: "ChatGPT" },
+      { key: "gemini", label: "Gemini"  },
+    ];
+    const anyIssue = AI_PROVIDERS.some(p => (pr[p.key] || {}).state !== "healthy");
+    if (anyIssue) checkHealth();  // trigger full refresh to show dots
+  } catch (e) { /* non-critical */ }
+}, 60000);
+
 // ── Playlist handling ─────────────────────────────────────────────────────────
 let _playlistId   = null;
 let _playlistIds  = [];
