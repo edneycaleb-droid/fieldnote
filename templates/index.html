@@ -1407,6 +1407,80 @@ function appendLog(msg, kind) {
   c.scrollTop = c.scrollHeight;
 }
 
+// ── Verify panel ─────────────────────────────────────────────────────────────
+const _verifyChecks = {};   // name → element
+
+function _initVerifyPanel() {
+  const panel = document.getElementById("res-verify");
+  const grid  = document.getElementById("verify-checks");
+  grid.innerHTML = "";
+  Object.keys(_verifyChecks).forEach(k => delete _verifyChecks[k]);
+  // Pre-render 8 pending placeholders so user sees something immediately
+  const LABELS = [
+    ["skill_file",      "Skill file"],
+    ["index_entry",     "Index entry"],
+    ["dca_schedule",    "DCA schedule"],
+    ["brain_graph",     "Brain graph"],
+    ["github_skill",    "GitHub skill sync"],
+    ["code_sync",       "Code sync"],
+    ["scheduler",       "Scheduler health"],
+    ["index_integrity", "Index integrity"],
+  ];
+  LABELS.forEach(([name, label]) => {
+    const el = document.createElement("div");
+    el.className = "verify-check vc-pending";
+    el.id = `vc-${name}`;
+    el.innerHTML = `<span class="vc-icon">⬜</span>
+      <span class="vc-label">${label}</span>
+      <span class="vc-detail">…</span>`;
+    grid.appendChild(el);
+    _verifyChecks[name] = el;
+  });
+  panel.style.display = "";
+  document.getElementById("verify-summary").textContent = "running…";
+  document.getElementById("verify-summary").className = "verify-summary";
+}
+
+function renderVerifyCheck(chk) {
+  // Called for each verify_check SSE event (one per check, streams live)
+  const panel = document.getElementById("res-verify");
+  panel.style.display = "";
+
+  const icon   = chk.passed ? "✅" : (chk.fixed ? "🔧" : "❌");
+  const cls    = chk.passed ? "vc-passed" : (chk.fixed ? "vc-fixed" : "vc-failed");
+  const detail = chk.fix_desc || chk.detail || "";
+
+  let el = document.getElementById(`vc-${chk.name}`);
+  if (!el) {
+    el = document.createElement("div");
+    el.id = `vc-${chk.name}`;
+    document.getElementById("verify-checks").appendChild(el);
+  }
+  el.className = `verify-check ${cls}`;
+  el.innerHTML = `<span class="vc-icon">${icon}</span>
+    <span class="vc-label" title="${esc(detail)}">${esc(chk.label)}</span>
+    <span class="vc-detail">${esc(detail.slice(0,24))}</span>`;
+}
+
+function renderVerifyDone(v) {
+  // Called once all checks are in (verify_done event or from done payload)
+  if (!v || !v.checks) return;
+  // Re-render all checks (covers the case where done arrives before check events)
+  v.checks.forEach(c => renderVerifyCheck(c));
+
+  const sumEl = document.getElementById("verify-summary");
+  if (v.all_ok && v.total_fixed === 0) {
+    sumEl.textContent = "✅ All systems go";
+    sumEl.className   = "verify-summary vs-ok";
+  } else if (v.total_failed === 0) {
+    sumEl.textContent = `🔧 ${v.total_fixed} auto-fixed`;
+    sumEl.className   = "verify-summary vs-fixed";
+  } else {
+    sumEl.textContent = `⚠ ${v.total_failed} need attention`;
+    sumEl.className   = "verify-summary vs-fail";
+  }
+}
+
 // ── Render result (NotebookLM style) ─────────────────────────────────────────
 function renderResult(d) {
   const isEnhance = d.action === "enhance";
