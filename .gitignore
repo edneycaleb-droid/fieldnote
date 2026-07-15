@@ -28,3 +28,6 @@ Thumbs.db
 # Replit
 .replit.nix
 replit.nix
+
+# faster-whisper model cache (downloaded automatically, not committed)
+.cache/
