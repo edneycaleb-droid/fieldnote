@@ -1139,32 +1139,73 @@ document.getElementById("url-input").addEventListener("input", e => {
 });
 
 // ── System health check ───────────────────────────────────────────────────────
+// State label → CSS class for AI provider dots
+function _providerDotCls(state) {
+  if (state === "healthy")          return "hc-ok";
+  if (state === "rate_limited")     return "hc-rate";
+  if (state === "quota_exhausted")  return "hc-quota";
+  if (state === "auth_error")       return "hc-err";
+  return "hc-warn"; // no_key or unknown
+}
+function _providerTitle(provider, info) {
+  const label = { groq: "Groq", gemini: "Gemini", openai: "ChatGPT" }[provider] || provider;
+  if (info.state === "healthy")         return label + " \u2014 healthy";
+  if (info.state === "no_key")          return label + " \u2014 no key configured";
+  if (info.state === "quota_exhausted") {
+    const mins = info.retry_in ? Math.ceil(info.retry_in / 60) + " min" : "unknown";
+    return label + " \u2014 quota exhausted, retry in " + mins;
+  }
+  if (info.state === "rate_limited") {
+    return label + " \u2014 rate-limited, retry in " + (info.retry_in || "?") + "s";
+  }
+  if (info.state === "auth_error")      return label + " \u2014 auth error (check secret)";
+  return label;
+}
+
 async function checkHealth() {
   try {
-    const r = await fetch("/api/health");
-    const h = await r.json();
-    const CHECKS = [
-      { key: "groq",    label: "Groq",    required: false, fix: "Add GROQ secret for free LLM fallback" },
-      { key: "chatgpt", label: "ChatGPT", required: false, fix: "Add CHATGPT secret for GPT-4o quality" },
+    const [hr, pr] = await Promise.all([
+      fetch("/api/health"),
+      fetch("/api/provider-status").catch(() => null),
+    ]);
+    const h = await hr.json();
+    const prov = pr ? await pr.json().catch(() => ({})) : {};
+
+    // ── Tool dots (yt-dlp, ffmpeg, GitHub, npx) ──────────────────────────────
+    const TOOLS = [
       { key: "ytdlp",  label: "yt-dlp",  required: true,  fix: "yt-dlp not found — transcript fallback unavailable" },
       { key: "ffmpeg", label: "ffmpeg",  required: false, fix: "ffmpeg missing — Whisper audio conversion unavailable" },
       { key: "github", label: "GitHub",  required: false, fix: "Add GITHUB_TOKEN for 5 000 req/hr (optional)" },
       { key: "npx",    label: "npx",     required: false, fix: "npx missing — npm MCP servers need Node.js" },
     ];
-    let anyBad = false;
-    const items = CHECKS.map(c => {
+    const toolItems = TOOLS.map(c => {
       const ok = h[c.key];
-      if (!ok && c.required) anyBad = true;
-      const cls = ok ? "hc-ok" : c.required ? "hc-err" : "hc-warn";
-      const nameCls = ok ? "" : c.required ? "bad" : "warn";
-      const title = ok ? "" : ` title="${esc(c.fix)}"`;
-      return `<span class="hc-item"${title}><span class="hc-dot ${cls}"></span>
-              <span class="hc-name ${nameCls}">${c.label}</span></span>`;
+      const cls      = ok ? "hc-ok" : c.required ? "hc-err" : "hc-warn";
+      const nameCls  = ok ? "" : c.required ? "bad" : "warn";
+      const title    = ok ? "" : ` title="${esc(c.fix)}"`;
+      return `<span class="hc-item"${title}><span class="hc-dot ${cls}"></span><span class="hc-name ${nameCls}">${c.label}</span></span>`;
     }).join("");
-    document.getElementById("hc-items").innerHTML = items;
-    // Show bar only if something is missing (any check failed)
-    const anyMissing = CHECKS.some(c => !h[c.key]);
-    document.getElementById("health-bar").style.display = anyMissing ? "flex" : "none";
+
+    // ── AI provider dots (Groq, Gemini, ChatGPT) ─────────────────────────────
+    const AI_PROVIDERS = [
+      { key: "groq",   label: "Groq"    },
+      { key: "gemini", label: "Gemini"  },
+      { key: "openai", label: "ChatGPT" },
+    ];
+    const aiItems = AI_PROVIDERS.map(c => {
+      const info  = prov[c.key] || { state: h[c.key] ? "healthy" : "no_key" };
+      const cls   = _providerDotCls(info.state);
+      const tip   = esc(_providerTitle(c.key, info));
+      const warn  = (info.state !== "healthy" && info.state !== "no_key");
+      const nameCls = warn ? (info.state === "quota_exhausted" || info.state === "auth_error" ? "bad" : "warn") : "";
+      return `<span class="hc-item" title="${tip}"><span class="hc-dot ${cls}"></span><span class="hc-name ${nameCls}">${c.label}</span></span>`;
+    }).join("");
+
+    const sep = `<span style="color:var(--muted);opacity:.35;margin:0 2px">│</span>`;
+    document.getElementById("hc-items").innerHTML = aiItems + sep + toolItems;
+
+    // Always show the bar so AI quota status is always visible
+    document.getElementById("health-bar").style.display = "flex";
   } catch (e) { /* health check is non-critical */ }
 }
 
