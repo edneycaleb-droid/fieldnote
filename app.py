@@ -1875,17 +1875,9 @@ def api_briefing():
             + "**Power Tools**: most frequent tools/libraries"
         )
     try:
-        if OPENAI_API_KEY:
-            resp = OpenAI(api_key=OPENAI_API_KEY).chat.completions.create(
-                model=OPENAI_MODELS[0],
-                messages=[{"role": "user", "content": prompt}],
-                max_tokens=1200, temperature=0.5)
-        else:
-            resp = Groq(api_key=GROQ_API_KEY).chat.completions.create(
-                model=GROQ_MODELS[0],
-                messages=[{"role": "user", "content": prompt}],
-                max_tokens=1200, temperature=0.5)
-        return jsonify({"briefing": resp.choices[0].message.content})
+        briefing, _prov = provider_router.call_llm_smart(
+            prompt=prompt, max_tokens=1200, json_mode=False, temperature=0.5)
+        return jsonify({"briefing": briefing})
     except Exception as exc:
         return jsonify({"error": str(exc)}), 500
 
@@ -3546,21 +3538,20 @@ def api_briefing():
             )
         prompt = (
             "Generate a briefing for this skill library:" + nl + nl
+            + nl.join(lines) + nl + nl
+            + "Format:" + nl
+            + "**Overview**: domains covered" + nl
+            + "**Top Skills**: 5 most valuable" + nl
+            + "**Learning Paths**: 2-3 sequences" + nl
+            + "**Knowledge Gaps**: what to add next" + nl
+            + "**Power Tools**: most frequent tools/libraries"
+        )
     try:
         briefing, _prov = provider_router.call_llm_smart(
             prompt=prompt, max_tokens=1200, json_mode=False, temperature=0.5)
         return jsonify({"briefing": briefing})
     except Exception as exc:
         return jsonify({"error": str(exc)}), 500
-        else:
-            resp = Groq(api_key=GROQ_API_KEY).chat.completions.create(
-                model=GROQ_MODELS[0],
-                messages=[{"role": "user", "content": prompt}],
-                max_tokens=1200, temperature=0.5)
-        return jsonify({"briefing": resp.choices[0].message.content})
-    except Exception as exc:
-        return jsonify({"error": str(exc)}), 500
-
 
 @app.route("/mcp/sse")
 def mcp_sse():
