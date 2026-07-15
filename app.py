@@ -58,8 +58,9 @@ WHISPER_MODEL = "whisper-large-v3"
 MAX_AUDIO_MB  = 24
 CLIP_SECONDS  = 1200  # 20-min clip when audio too large
 
-_jobs: dict = {}         # {job_id: {"queue": Queue, "done": bool}}
-_mcp_sessions: dict = {}  # {session_id: queue.Queue}
+_jobs: dict = {}          # {job_id: {"queue": Queue, "done": bool}}
+_playlist_jobs: dict = {}  # {pjob_id: {"events": list, "done": bool, "total": int}}
+_mcp_sessions: dict = {}   # {session_id: queue.Queue}
 
 
 # ── Local key store ────────────────────────────────────────────────────────────
@@ -422,7 +423,7 @@ def get_video_metadata(video_id: str) -> dict:
 
 def get_playlist_video_ids(playlist_id: str) -> list[str]:
     """
-    Return up to 20 video IDs from a playlist.
+    Return ALL video IDs from a playlist (no cap).
     Robust against yt-dlp deprecation warnings that cause non-zero exit codes:
     we parse stdout regardless of returncode as long as we got at least one ID.
     """
@@ -430,12 +431,12 @@ def get_playlist_video_ids(playlist_id: str) -> list[str]:
         ["yt-dlp", "--flat-playlist", "--print", "id", "--ignore-errors",
          "--no-warnings",
          f"https://www.youtube.com/playlist?list={playlist_id}"],
-        capture_output=True, text=True, timeout=60,
+        capture_output=True, text=True, timeout=120,
     )
     # Extract valid video IDs from stdout (11-char alphanumeric strings)
     id_pat = r'^[a-zA-Z0-9_-]{11}' + '$'
     ids = [l.strip() for l in r.stdout.strip().splitlines()
-           if re.match(id_pat, l.strip())][:20]
+           if re.match(id_pat, l.strip())]
     if ids:
         return ids
     # No IDs from stdout — surface the real error from stderr
@@ -454,7 +455,7 @@ def transcript_from_captions(video_id: str) -> str:
     return " ".join(e["text"] for e in entries)
 
 
-_FW_MODEL_DIR = "/tmp/fw_models"
+_FW_MODEL_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".cache", "fw_models")
 
 
 def _transcribe_local(mp3_path: str, emit) -> str:
@@ -1446,9 +1447,63 @@ def api_provider_status():
     return jsonify(provider_router.provider_status())
 
 
+
+@app.route("/run-playlist", methods=["POST"])
+def run_playlist_endpoint():
+    """Start server-side background processing of an entire playlist."""
+    data        = request.get_json(silent=True) or {}
+    playlist_id = (data.get("playlist_id") or "").strip()
+    if not playlist_id:
+        return jsonify({"error": "playlist_id required"}), 400
+    try:
+        ids = get_playlist_video_ids(playlist_id)
+    except Exception as ex:
+        return jsonify({"error": str(ex)}), 400
+    if not ids:
+        return jsonify({"error": "No videos found in playlist"}), 400
+
+    pjob_id = str(uuid.uuid4())[:8]
+    _playlist_jobs[pjob_id] = {
+        "events": [],
+        "done":   False,
+        "total":  len(ids),
+    }
+    threading.Thread(
+        target=run_playlist_job, args=(pjob_id, ids), daemon=True
+    ).start()
+    return jsonify({"pjob_id": pjob_id, "total": len(ids)})
+
+
+@app.route("/stream-playlist/<pjob_id>")
+def stream_playlist(pjob_id):
+    """SSE stream of per-video events for a playlist job.
+    Uses an index into a growing list so reconnects get caught up from the start."""
+    pjob = _playlist_jobs.get(pjob_id)
+    if not pjob:
+        return "Playlist job not found", 404
+
+    def generate():
+        idx = 0
+        while True:
+            evs = pjob["events"]
+            if idx < len(evs):
+                for ev in evs[idx:]:
+                    yield f"data: {json.dumps(ev)}\n\n"
+                idx = len(evs)
+            if pjob.get("done") and idx >= len(pjob["events"]):
+                break
+            time.sleep(0.4)
+
+    return Response(
+        stream_with_context(generate()),
+        content_type="text/event-stream",
+        headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
+    )
+
+
 @app.route("/api/playlist_ids")
 def api_playlist_ids():
-    """Return all video IDs in a playlist (up to 20)."""
+    """Return all video IDs in a playlist (no limit)."""
     playlist_id = request.args.get("list", "").strip()
     if not playlist_id:
         return jsonify({"error": "list param required"}), 400
