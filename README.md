@@ -1,7 +1,7 @@
 # 🧠 Fieldnote Skill Library
 
 > Everything I learn from YouTube — auto-extracted and synced by AI.
-> **1 skill** · Last synced: 2026-07-15 19:59 UTC
+> **1 skill** · Last synced: 2026-07-15 20:03 UTC
 
 ---
 
@@ -9,7 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [Skill 9F31E4](skills/building_ai_agents.md) | Skill 9F31E4 | `Anthropic` `Haiku` `Sonnet` `Opus` | `ai` `automation` `productivity` |
+| [Skill Ebff0B](skills/building_ai_agents.md) | Skill Ebff0B | `Cloud Code` `Superpowers` `Everything Cloud Code` `Roof Flow` | `ai` `automation` `productivity` |
 
 ---
 
