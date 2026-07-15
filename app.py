@@ -41,6 +41,7 @@ import agents.github_discovery as github_discovery
 import agents.code_sync        as code_sync
 import agents.verify_agent     as verify_agent
 import agents.pipeline_guard   as pipeline_guard
+import agents.provider_router  as provider_router
 
 app = Flask(__name__)
 
