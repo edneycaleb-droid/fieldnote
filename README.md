@@ -1,7 +1,7 @@
 # 🧠 Fieldnote Skill Library
 
 > Everything I learn from YouTube — auto-extracted and synced by AI.
-> **0 skills** · Last synced: 2026-07-15 17:13 UTC
+> **1 skill** · Last synced: 2026-07-15 17:13 UTC
 
 ---
 
@@ -9,7 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| *(no skills yet)* | | | |
+| [AI Arena Test Skill](skills/ai_arena_test_skill.md) | Live sync verification: confirms skills auto-push to GitHub on every save. | `ChatGPT` `Groq` `GitHub API` | `AI` `sync` `arena` |
 
 ---
 
