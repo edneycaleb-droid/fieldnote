@@ -209,6 +209,24 @@
       "skills": [
         "building_ai_agents"
       ]
+    },
+    "Model updating": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Session management": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Model testing": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
     }
   },
   "tools": {
@@ -391,29 +409,44 @@
       "skills": [
         "building_ai_agents"
       ]
+    },
+    "Hermes": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "HY3": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Noose Portal": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
     }
   },
   "skill_map": {
     "building_ai_agents": {
       "concepts": [
-        "Custom workflows",
-        "Model routing",
-        "Video creation",
-        "SEO optimization",
-        "Memory systems"
+        "Model updating",
+        "Session management",
+        "Model testing"
       ],
       "tools": [
-        "Hermes Agent Plus Grok 4.5",
-        "GLM 5.2",
-        "Video Agent",
-        "Hermes Oracle"
+        "Hermes",
+        "HY3",
+        "Noose Portal"
       ],
       "tags": [
         "ai",
         "automation",
         "productivity"
       ],
-      "step_count": 6
+      "step_count": 4
     },
     "running_large_models_locally": {
       "concepts": [
@@ -442,6 +475,6 @@
     "building_ai_agents": {},
     "running_large_models_locally": {}
   },
-  "updated_at": "2026-07-15T20:19:20.739999+00:00",
+  "updated_at": "2026-07-15T20:19:49.739603+00:00",
   "total_skills": 2
 }
