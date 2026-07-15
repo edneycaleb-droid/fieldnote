@@ -2118,7 +2118,9 @@ function prependSkill(d) {
       <div class="skill-row-info">
         <div class="skill-row-title">${esc(d.title || fname)}</div>
         <div class="skill-row-meta">${esc(d.source_title||'')} · ${
-          d.transcript_method === "whisper" ? "🎙 Whisper" : "✓ Captions"}</div>
+          d.transcript_method === "whisper" ? "🎙 Whisper"
+          : d.transcript_method === "whisper-local" ? "🖥️ Whisper (local)"
+          : "✓ Captions"}</div>
       </div>
       <div class="skill-row-tags">${tagsHtml}</div>
       <span class="skill-row-arrow">›</span>
