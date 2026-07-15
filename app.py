@@ -495,12 +495,22 @@ def transcript_from_whisper(url: str, video_id: str, emit) -> str:
         )
         mp3_out = clipped
 
-    with open(mp3_out, "rb") as f:
-        result = client.audio.transcriptions.create(
-            file=(os.path.basename(mp3_out), f),
-            model=WHISPER_MODEL,
-            response_format="text",
-        )
+    try:
+        with open(mp3_out, "rb") as f:
+            result = client.audio.transcriptions.create(
+                file=(os.path.basename(mp3_out), f),
+                model=WHISPER_MODEL,
+                response_format="text",
+            )
+    except Exception as e:
+        shutil.rmtree(tmp_dir, ignore_errors=True)
+        err = str(e)
+        if any(k in err.lower() for k in ("insufficient_quota", "quota_exceeded", "rate_limit", "429", "auth", "401")):
+            raise RuntimeError(
+                "Groq Whisper quota exhausted or auth error — audio-only videos cannot be "
+                "transcribed until quota resets. Original error: " + err
+            ) from e
+        raise
 
     shutil.rmtree(tmp_dir, ignore_errors=True)
     return result if isinstance(result, str) else result.text
@@ -690,19 +700,19 @@ def _extract_skill_ai(
 # ── AI Arena: three providers, one judge ─────────────────────────────────────
 
 def _extract_skill_chatgpt(transcript: str, knowledge_ctx: str, existing_content: str = "") -> dict:
-    """ChatGPT pass — educator lens: depth, clarity, concept relationships."""
+    """Educator-lens extraction — routed via provider_router for automatic fallback."""
     base     = _build_prompt(transcript, knowledge_ctx, existing_content)
     preamble = (
         "You are Fieldnote's EDUCATOR AI. Your lens is conceptual clarity, "
         "thorough descriptions, and how this skill connects to others in the library."
         + chr(10) + chr(10)
     )
-    raw = call_openai(preamble + base, max_tokens=4000, json_mode=True)
+    raw, _prov = provider_router.call_llm_smart(preamble + base, max_tokens=4000, json_mode=True)
     return json.loads(raw)
 
 
 def _extract_skill_groq(transcript: str, knowledge_ctx: str, existing_content: str = "") -> dict:
-    """Groq pass — practitioner lens: actionable steps, every tool and command."""
+    """Practitioner-lens extraction — routed via provider_router for automatic fallback."""
     base     = _build_prompt(transcript, knowledge_ctx, existing_content)
     preamble = (
         "You are Fieldnote's PRACTITIONER AI. Your lens is specific actionable steps "
@@ -710,7 +720,7 @@ def _extract_skill_groq(transcript: str, knowledge_ctx: str, existing_content: s
         "and library mentioned in the transcript."
         + chr(10) + chr(10)
     )
-    raw = call_groq(preamble + base, max_tokens=4000)
+    raw, _prov = provider_router.call_llm_smart(preamble + base, max_tokens=4000, json_mode=True)
     return json.loads(raw)
 
 
