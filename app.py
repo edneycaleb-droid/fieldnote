@@ -798,8 +798,9 @@ def _compute_skill_name(
     enhance_target: str | None,
     existing_index: dict,
 ) -> str:
-    name = re.sub(r"[^a-z0-9_]", "_",
-                  skill.get("skill_name", "unnamed").lower()).strip("_")
+    _raw = skill.get("skill_name")
+    _sn  = str(_raw).strip() if _raw and not isinstance(_raw, (dict, list)) else ""
+    name = re.sub(r"[^a-z0-9_]", "_", (_sn or "unnamed").lower()).strip("_")
     if not name:
         name = f"skill_{uuid.uuid4().hex[:6]}"
     if action == "enhance" and enhance_target and enhance_target in existing_index:
