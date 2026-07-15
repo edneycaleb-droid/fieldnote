@@ -803,9 +803,13 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
     <!-- Playlist queue (shown when playlist URL detected) -->
     <div id="playlist-queue" style="display:none">
       <div class="pq-header">
-        <span class="pq-title">📋 <span id="pq-count">0</span> videos in playlist</span>
-        <button class="pq-run" id="pq-run-btn" onclick="runPlaylist()">Run All</button>
+        <span class="pq-title">📋 <span id="pq-count">—</span> videos</span>
+        <span id="pq-stat" class="pq-stat"></span>
+        <button class="pq-run" id="pq-run-btn" onclick="runPlaylist()">▶ Run All</button>
         <button class="pq-dismiss" onclick="dismissPlaylist()">✕</button>
+      </div>
+      <div class="pq-bar-wrap" id="pq-bar-wrap" style="display:none">
+        <div class="pq-bar" id="pq-bar"></div>
       </div>
       <div class="pq-progress" id="pq-progress"></div>
     </div>

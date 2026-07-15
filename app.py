@@ -1275,6 +1275,84 @@ def run_job(job_id: str, url: str, video_id: str):
         _jobs[job_id]["done"] = True
 
 
+# ── Server-side playlist queue ────────────────────────────────────────────────
+
+def run_playlist_job(pjob_id: str, ids: list[str]) -> None:
+    """Process a full playlist in the background: 2 videos concurrently."""
+    pjob      = _playlist_jobs[pjob_id]
+    total     = len(ids)
+    completed = 0
+    failed    = 0
+    _lock     = threading.Lock()
+
+    def _process(i: int, video_id: str) -> None:
+        nonlocal completed, failed
+        url = f"https://www.youtube.com/watch?v={video_id}"
+        try:
+            meta  = get_video_metadata(video_id)
+            title = meta.get("title") or video_id
+        except Exception:
+            title = video_id
+
+        pjob["events"].append({
+            "type": "video_start", "video_id": video_id,
+            "index": i, "total": total, "title": title,
+        })
+
+        sub_id = str(uuid.uuid4())[:8]
+        _jobs[sub_id] = {"queue": queue.Queue(), "done": False}
+        try:
+            run_job(sub_id, url, video_id)   # synchronous in this worker thread
+            # Drain sub-job messages; capture the final done event
+            done_msg = None
+            sub_q = _jobs[sub_id]["queue"]
+            while True:
+                try:
+                    msg = sub_q.get_nowait()
+                    if msg.get("type") == "done":
+                        done_msg = msg
+                except queue.Empty:
+                    break
+            if done_msg and done_msg.get("ok"):
+                with _lock:
+                    completed += 1
+                pjob["events"].append({
+                    "type": "video_done", "video_id": video_id,
+                    "index": i, "skill": done_msg,
+                })
+            else:
+                err = (done_msg or {}).get("error", "quality filtered")
+                with _lock:
+                    failed += 1
+                pjob["events"].append({
+                    "type": "video_error", "video_id": video_id,
+                    "index": i, "error": str(err)[:120],
+                })
+        except Exception as exc:
+            with _lock:
+                failed += 1
+            pjob["events"].append({
+                "type": "video_error", "video_id": video_id,
+                "index": i, "error": str(exc)[:120],
+            })
+        finally:
+            _jobs.pop(sub_id, None)
+
+    with ThreadPoolExecutor(max_workers=2, thread_name_prefix="pq") as pool:
+        futs = [pool.submit(_process, i, vid) for i, vid in enumerate(ids)]
+        for fut in as_completed(futs):
+            try:
+                fut.result()
+            except Exception:
+                pass
+
+    pjob["done"] = True
+    pjob["events"].append({
+        "type": "playlist_done",
+        "total": total, "completed": completed, "failed": failed,
+    })
+
+
 # ── Flask routes ──────────────────────────────────────────────────────────────
 
 @app.route("/api/enhancement-queue")
