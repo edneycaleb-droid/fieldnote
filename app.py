@@ -1412,14 +1412,6 @@ def api_provider_status():
     return jsonify(provider_router.provider_status())
 
 
-
-
-@app.route("/api/provider-status")
-def api_provider_status():
-    """Live AI-provider health: state + seconds_until_retry for each provider."""
-    return jsonify(provider_router.provider_status())
-
-
 @app.route("/api/playlist_ids")
 def api_playlist_ids():
     """Return all video IDs in a playlist (up to 20)."""
