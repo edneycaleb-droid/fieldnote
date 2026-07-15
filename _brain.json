@@ -125,6 +125,36 @@
       "skills": [
         "building_ai_agents"
       ]
+    },
+    "Mixture of experts models": {
+      "freq": 1,
+      "skills": [
+        "running_large_models_locally"
+      ]
+    },
+    "Model pruning": {
+      "freq": 1,
+      "skills": [
+        "running_large_models_locally"
+      ]
+    },
+    "Expert caching": {
+      "freq": 1,
+      "skills": [
+        "running_large_models_locally"
+      ]
+    },
+    "SSD optimization": {
+      "freq": 1,
+      "skills": [
+        "running_large_models_locally"
+      ]
+    },
+    "Predictive routing": {
+      "freq": 1,
+      "skills": [
+        "running_large_models_locally"
+      ]
     }
   },
   "tools": {
@@ -241,6 +271,36 @@
       "skills": [
         "building_ai_agents"
       ]
+    },
+    "Colibri": {
+      "freq": 1,
+      "skills": [
+        "running_large_models_locally"
+      ]
+    },
+    "AntiRaz": {
+      "freq": 1,
+      "skills": [
+        "running_large_models_locally"
+      ]
+    },
+    "DS4": {
+      "freq": 1,
+      "skills": [
+        "running_large_models_locally"
+      ]
+    },
+    "Lama CPP": {
+      "freq": 1,
+      "skills": [
+        "running_large_models_locally"
+      ]
+    },
+    "VLLM": {
+      "freq": 1,
+      "skills": [
+        "running_large_models_locally"
+      ]
     }
   },
   "skill_map": {
@@ -277,11 +337,34 @@
         "cloudcode"
       ],
       "step_count": 8
+    },
+    "running_large_models_locally": {
+      "concepts": [
+        "Mixture of experts models",
+        "Model pruning",
+        "Expert caching",
+        "SSD optimization",
+        "Predictive routing"
+      ],
+      "tools": [
+        "Colibri",
+        "AntiRaz",
+        "DS4",
+        "Lama CPP",
+        "VLLM"
+      ],
+      "tags": [
+        "ai",
+        "optimization",
+        "modeling"
+      ],
+      "step_count": 5
     }
   },
   "relationships": {
-    "building_ai_agents": {}
+    "building_ai_agents": {},
+    "running_large_models_locally": {}
   },
-  "updated_at": "2026-07-15T20:03:36.196615+00:00",
-  "total_skills": 1
+  "updated_at": "2026-07-15T20:06:33.186462+00:00",
+  "total_skills": 2
 }
