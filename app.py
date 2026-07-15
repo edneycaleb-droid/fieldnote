@@ -502,14 +502,15 @@ def transcript_from_whisper(url: str, video_id: str, emit) -> str:
                 model=WHISPER_MODEL,
                 response_format="text",
             )
-    except Exception as e:
+    except Exception as _whisper_err:
         shutil.rmtree(tmp_dir, ignore_errors=True)
-        err = str(e)
-        if any(k in err.lower() for k in ("insufficient_quota", "quota_exceeded", "rate_limit", "429", "auth", "401")):
+        _msg = str(_whisper_err)
+        if any(k in _msg.lower() for k in ("quota", "billing", "insufficient", "exceeded", "resource_exhausted")):
             raise RuntimeError(
-                "Groq Whisper quota exhausted or auth error — audio-only videos cannot be "
-                "transcribed until quota resets. Original error: " + err
-            ) from e
+                "Groq Whisper quota exhausted â audio transcription unavailable until quota resets"
+            ) from _whisper_err
+        if "401" in _msg or "403" in _msg or "invalid_api_key" in _msg.lower():
+            raise RuntimeError("Groq Whisper auth error â check GROQ secret") from _whisper_err
         raise
 
     shutil.rmtree(tmp_dir, ignore_errors=True)
@@ -526,13 +527,9 @@ def get_transcript(url: str, video_id: str, emit) -> tuple[str, str]:
     try:
         text = transcript_from_whisper(url, video_id, emit)
         return text, "whisper"
-    except RuntimeError as whisper_err:
-        if "Groq Whisper quota exhausted" in str(whisper_err):
-            emit(
-                "⚠  Groq Whisper quota exhausted — audio-only videos cannot be transcribed "
-                "until quota resets. Skipping audio transcription.",
-                "warning",
-            )
+    except RuntimeError as _werr:
+        if "quota exhausted" in str(_werr).lower() or "auth error" in str(_werr).lower():
+            emit(f"⚠  {_werr}", "warning")
             return "", "none"
         raise
 
@@ -540,59 +537,19 @@ def get_transcript(url: str, video_id: str, emit) -> tuple[str, str]:
 # ── Groq LLM ─────────────────────────────────────────────────────────────────
 
 def call_groq(prompt: str, max_tokens: int = 4000) -> str:
-    """Call Groq with per-model fallback and exponential backoff on 429 rate limits."""
-    client = Groq(api_key=GROQ_API_KEY)
-    last_err = None
-    for model in GROQ_MODELS:
-        for attempt in range(3):
-            try:
-                resp = client.chat.completions.create(
-                    model=model,
-                    messages=[{"role": "user", "content": prompt}],
-                    max_tokens=max_tokens,
-                    response_format={"type": "json_object"},
-                )
-                return resp.choices[0].message.content
-            except Exception as e:
-                err = str(e)
-                last_err = e
-                if any(k in err for k in ("decommissioned", "404", "model_not_found")):
-                    break  # try next model immediately
-                if "429" in err or "rate_limit" in err.lower() or "rate limit" in err.lower():
-                    wait = (2 ** attempt) + random.uniform(0, 1)
-                    time.sleep(wait)
-                    continue
-                raise  # non-retryable error
-    raise RuntimeError(f"All Groq models failed. Last error: {last_err}")
+    """Delegate to provider_router (Groq firstâfree, then Gemini, then OpenAI as last resort)."""
+    return provider_router.call_llm_smart(prompt, max_tokens=max_tokens, json_mode=True)
 
 
 
 def call_openai(prompt: str, max_tokens: int = 4000, json_mode: bool = True) -> str:
-    """Call OpenAI (GPT-4o-mini default) with JSON or plain-text output."""
-    client   = OpenAI(api_key=OPENAI_API_KEY)
-    messages = [{"role": "user", "content": prompt}]
-    kwargs: dict = dict(messages=messages, max_tokens=max_tokens, temperature=0.2)
-    if json_mode:
-        kwargs["response_format"] = {"type": "json_object"}
-    last_err = None
-    for model in OPENAI_MODELS:
-        try:
-            resp = client.chat.completions.create(model=model, **kwargs)
-            return resp.choices[0].message.content
-        except Exception as e:
-            last_err = e
-            err = str(e)
-            if "404" in err or "model_not_found" in err:
-                continue   # try next model
-            raise          # non-retryable (auth, rate-limit, etc.)
-    raise RuntimeError(f"All OpenAI models failed. Last: {last_err}")
+    """Delegate to provider_router (Groq firstâfree, then Gemini, then OpenAI as last resort)."""
+    return provider_router.call_llm_smart(prompt, max_tokens=max_tokens, json_mode=json_mode)
 
 
 def call_llm(prompt: str, max_tokens: int = 4000, json_mode: bool = True) -> str:
-    """Route via provider_router for automatic quota/health-aware fallback."""
-    content, _prov = provider_router.call_llm_smart(
-        prompt=prompt, max_tokens=max_tokens, json_mode=json_mode)
-    return content
+    """Route to best available free provider (Groq -> Gemini -> OpenAI as last resort)."""
+    return provider_router.call_llm_smart(prompt, max_tokens=max_tokens, json_mode=json_mode)
 
 
 # ── Package auto-installer ────────────────────────────────────────────────────
@@ -712,7 +669,7 @@ def _extract_skill_chatgpt(transcript: str, knowledge_ctx: str, existing_content
         "thorough descriptions, and how this skill connects to others in the library."
         + chr(10) + chr(10)
     )
-    raw, _prov = provider_router.call_llm_smart(preamble + base, max_tokens=4000, json_mode=True)
+    raw = provider_router.call_llm_smart(preamble + base, max_tokens=4000, json_mode=True)
     return json.loads(raw)
 
 
@@ -725,7 +682,7 @@ def _extract_skill_groq(transcript: str, knowledge_ctx: str, existing_content: s
         "and library mentioned in the transcript."
         + chr(10) + chr(10)
     )
-    raw, _prov = provider_router.call_llm_smart(preamble + base, max_tokens=4000, json_mode=True)
+    raw = provider_router.call_llm_smart(preamble + base, max_tokens=4000, json_mode=True)
     return json.loads(raw)
 
 
@@ -1449,6 +1406,12 @@ def api_health():
         "npx":     check(["npx",      "--version"]),
     })
 
+@app.route("/api/provider-status")
+def api_provider_status():
+    """Return live AI provider health (quota / rate-limit / auth state)."""
+    return jsonify(provider_router.provider_status())
+
+
 
 
 @app.route("/api/provider-status")
@@ -1805,8 +1768,7 @@ def api_chat():
             msgs.append({"role": h["role"], "content": h["content"]})
     msgs.append({"role": "user", "content": message})
     try:
-        answer, provider = provider_router.call_llm_smart(
-            messages=msgs, max_tokens=900, json_mode=False, temperature=0.7)
+        answer, provider = provider_router.call_chat_smart(msgs, max_tokens=900, temperature=0.7)
         return jsonify({"answer": answer, "skill_used": skill_name, "provider": provider})
     except Exception as exc:
         return jsonify({"error": str(exc)}), 500
@@ -1877,8 +1839,8 @@ def api_briefing():
             + "**Power Tools**: most frequent tools/libraries"
         )
     try:
-        briefing, _prov = provider_router.call_llm_smart(
-            prompt=prompt, max_tokens=1200, json_mode=False, temperature=0.5)
+        briefing, _prov = provider_router.call_chat_smart(
+            [{"role": "user", "content": prompt}], max_tokens=1200, temperature=0.5)
         return jsonify({"briefing": briefing})
     except Exception as exc:
         return jsonify({"error": str(exc)}), 500
@@ -2426,6 +2388,33 @@ def _extract_skill_ai(
     return json.loads(raw)
 
 
+
+
+# ── AI Arena: three providers, one judge ─────────────────────────────────────
+
+def _extract_skill_chatgpt(transcript: str, knowledge_ctx: str, existing_content: str = "") -> dict:
+    """ChatGPT pass — educator lens: depth, clarity, concept relationships."""
+    base     = _build_prompt(transcript, knowledge_ctx, existing_content)
+    preamble = (
+        "You are Fieldnote's EDUCATOR AI. Your lens is conceptual clarity, "
+        "thorough descriptions, and how this skill connects to others in the library."
+        + chr(10) + chr(10)
+    )
+    raw = provider_router.call_llm_smart(preamble + base, max_tokens=4000, json_mode=True)
+    return json.loads(raw)
+
+
+def _extract_skill_groq(transcript: str, knowledge_ctx: str, existing_content: str = "") -> dict:
+    """Groq pass — practitioner lens: actionable steps, every tool and command."""
+    base     = _build_prompt(transcript, knowledge_ctx, existing_content)
+    preamble = (
+        "You are Fieldnote's PRACTITIONER AI. Your lens is specific actionable steps "
+        "a developer can follow immediately, and every concrete tool, command, "
+        "and library mentioned in the transcript."
+        + chr(10) + chr(10)
+    )
+    raw = provider_router.call_llm_smart(preamble + base, max_tokens=4000, json_mode=True)
+    return json.loads(raw)
 
 
 def _github_readme_context(repos: list) -> str:
@@ -3477,8 +3466,7 @@ def api_chat():
             msgs.append({"role": h["role"], "content": h["content"]})
     msgs.append({"role": "user", "content": message})
     try:
-        answer, provider = provider_router.call_llm_smart(
-            messages=msgs, max_tokens=900, json_mode=False, temperature=0.7)
+        answer, provider = provider_router.call_chat_smart(msgs, max_tokens=900, temperature=0.7)
         return jsonify({"answer": answer, "skill_used": skill_name, "provider": provider})
     except Exception as exc:
         return jsonify({"error": str(exc)}), 500
@@ -3549,8 +3537,8 @@ def api_briefing():
             + "**Power Tools**: most frequent tools/libraries"
         )
     try:
-        briefing, _prov = provider_router.call_llm_smart(
-            prompt=prompt, max_tokens=1200, json_mode=False, temperature=0.5)
+        briefing, _prov = provider_router.call_chat_smart(
+            [{"role": "user", "content": prompt}], max_tokens=1200, temperature=0.5)
         return jsonify({"briefing": briefing})
     except Exception as exc:
         return jsonify({"error": str(exc)}), 500

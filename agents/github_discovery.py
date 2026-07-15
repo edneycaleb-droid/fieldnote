@@ -292,14 +292,15 @@ def _extract_from_repo(repo: dict, readme: str, index: dict) -> dict:
         try:
             skill_a = fa.result(timeout=90)
         except Exception as e:
-            log.warning("Educator extraction failed: %s", e)
+            log.warning("Educator-lens extraction failed (all providers tried): %s", e)
         try:
             skill_b = fb.result(timeout=90)
         except Exception as e:
-            log.warning("Practitioner extraction failed: %s", e)
+            log.warning("Practitioner-lens extraction failed (all providers tried): %s", e)
 
     if not skill_a and not skill_b:
-        raise ValueError("Both extractions failed for " + repo["full_name"])
+        raise ValueError("Both lens extractions failed for " + repo["full_name"]
+                         + " — all AI providers may be quota-exhausted")
 
     merged = _a._judge_arena(skill_a, skill_b, github_ctx, _emit_log)
     return merged
