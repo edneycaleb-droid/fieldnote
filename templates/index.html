@@ -2591,6 +2591,7 @@ function esc(s) {
 // ── Startup ───────────────────────────────────────────────────────────────────
 window.addEventListener("load", () => {
   checkHealth();
+  setInterval(checkHealth, 60000); // refresh provider quota state every minute
 
   // Handle ?enhance=skill_name — show a contextual hint from skill detail page
   const params    = new URLSearchParams(window.location.search);
