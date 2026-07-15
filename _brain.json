@@ -270,6 +270,36 @@
       "skills": [
         "building_ai_agents"
       ]
+    },
+    "Large Language Models (LLMs)": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents_with_langchain"
+      ]
+    },
+    "Model Interoperability": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents_with_langchain"
+      ]
+    },
+    "Real-time Data Augmentation": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents_with_langchain"
+      ]
+    },
+    "Rapid Prototyping": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents_with_langchain"
+      ]
+    },
+    "Agent Orchestration": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents_with_langchain"
+      ]
     }
   },
   "tools": {
@@ -500,6 +530,30 @@
       "skills": [
         "building_ai_agents"
       ]
+    },
+    "LangChain": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents_with_langchain"
+      ]
+    },
+    "Deep Agents": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents_with_langchain"
+      ]
+    },
+    "LangGraph": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents_with_langchain"
+      ]
+    },
+    "LangSmith": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents_with_langchain"
+      ]
     }
   },
   "skill_map": {
@@ -542,6 +596,28 @@
         "modeling"
       ],
       "step_count": 5
+    },
+    "building_ai_agents_with_langchain": {
+      "concepts": [
+        "Large Language Models (LLMs)",
+        "Model Interoperability",
+        "Real-time Data Augmentation",
+        "Rapid Prototyping",
+        "Agent Orchestration"
+      ],
+      "tools": [
+        "LangChain",
+        "Deep Agents",
+        "LangGraph",
+        "LangSmith"
+      ],
+      "tags": [
+        "ai",
+        "automation",
+        "productivity",
+        "cloudcode"
+      ],
+      "step_count": 5
     }
   },
   "relationships": {
@@ -554,8 +630,9 @@
       "building_ai_agents": [
         "Mixture of experts models"
       ]
-    }
+    },
+    "building_ai_agents_with_langchain": {}
   },
-  "updated_at": "2026-07-15T20:21:18.009685+00:00",
-  "total_skills": 2
+  "updated_at": "2026-07-15T21:56:54.343776+00:00",
+  "total_skills": 3
 }
