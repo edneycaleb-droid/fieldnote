@@ -1284,70 +1284,125 @@ function hidePreview() {
   document.getElementById("video-preview").style.display = "none";
 }
 async function showPlaylistQueue(listId) {
-  const qDiv  = document.getElementById("playlist-queue");
-  const prog  = document.getElementById("pq-progress");
-  const count = document.getElementById("pq-count");
+  // Show the panel immediately — no blocking fetch required.
+  const qDiv = document.getElementById("playlist-queue");
   qDiv.style.display = "block";
-  count.textContent  = "…";
-  prog.innerHTML     = '<div class="pq-item"><span class="pq-item-dot running"></span> Loading playlist…</div>';
-  try {
-    const r = await fetch(`/api/playlist_ids?list=${encodeURIComponent(listId)}`);
-    let d;
-    try { d = await r.json(); } catch { d = {}; }
-
-    if (!r.ok || d.error) {
-      // Surface a clean error — not a raw JS exception string
-      const msg = d.error || `Server error ${r.status}`;
-      prog.innerHTML = `<span style="color:var(--red)">⚠ ${esc(msg)}</span>`;
-      count.textContent = "0";
-      _playlistIds = [];
-      return;
-    }
-
-    _playlistIds = d.ids || [];
-    count.textContent = _playlistIds.length;
-    if (!_playlistIds.length) {
-      prog.innerHTML = '<span style="color:var(--muted)">No videos found in playlist.</span>';
-      return;
-    }
-    prog.innerHTML = _playlistIds.map((id, i) =>
-      `<div class="pq-item" id="pqi-${id}">
-         <span class="pq-item-dot" id="pqd-${id}"></span>
-         <span id="pqt-${id}">${id}</span>
-       </div>`
-    ).join("");
-  } catch (e) {
-    prog.innerHTML = `<span style="color:var(--red)">⚠ Could not reach server — check your connection.</span>`;
-    _playlistIds = [];
-  }
+  document.getElementById("pq-count").textContent = "…";
+  document.getElementById("pq-stat").textContent  = "Ready — click ▶ Run All";
+  document.getElementById("pq-progress").innerHTML =
+    '<div style="color:var(--muted);font-size:.78rem;padding:1px 0">' +
+    'All videos will be processed in the background. Skills appear as each one completes.</div>';
+  // Fetch total count in the background (non-blocking) for the counter display
+  fetch(`/api/playlist_ids?list=${encodeURIComponent(listId)}`)
+    .then(r => r.json())
+    .then(d => {
+      if (d.ids && d.ids.length) {
+        document.getElementById("pq-count").textContent = d.ids.length;
+        _playlistIds = d.ids;
+      } else if (d.error) {
+        document.getElementById("pq-stat").textContent = "⚠ " + d.error;
+      }
+    })
+    .catch(() => {});
 }
 function dismissPlaylist() {
+  if (_playlistEvtSrc) { _playlistEvtSrc.close(); _playlistEvtSrc = null; }
   _playlistId  = null;
   _playlistIds = [];
   document.getElementById("playlist-queue").style.display = "none";
 }
 async function runPlaylist() {
-  if (!_playlistIds.length) return;
-  const btn = document.getElementById("pq-run-btn");
-  btn.disabled = true;
-  const baseUrl = `https://youtube.com/watch?v=`;
-  for (let i = 0; i < _playlistIds.length; i++) {
-    const vid = _playlistIds[i];
-    const dot  = document.getElementById(`pqd-${vid}`);
-    const txt  = document.getElementById(`pqt-${vid}`);
-    if (dot) dot.className = "pq-item-dot running";
-    document.getElementById("pq-count").textContent = `${i+1}/${_playlistIds.length}`;
-    try {
-      await runSingleVideo(baseUrl + vid, vid);
-      if (dot) dot.className = "pq-item-dot done";
-      if (txt && _playlistMeta[vid]) txt.textContent = _playlistMeta[vid];
-    } catch (e) {
-      if (dot) dot.className = "pq-item-dot error";
+  if (!_playlistId) return;
+  const btn     = document.getElementById("pq-run-btn");
+  const barWrap = document.getElementById("pq-bar-wrap");
+  const bar     = document.getElementById("pq-bar");
+  const stat    = document.getElementById("pq-stat");
+  const prog    = document.getElementById("pq-progress");
+
+  btn.disabled       = true;
+  btn.textContent    = "Starting…";
+  barWrap.style.display = "block";
+  bar.style.width    = "0";
+  bar.style.background = "var(--accent)";
+  prog.innerHTML     = "";
+
+  let total = 0, done = 0, fail = 0;
+
+  try {
+    const r = await fetch("/run-playlist", {
+      method:  "POST",
+      headers: {"Content-Type": "application/json"},
+      body:    JSON.stringify({playlist_id: _playlistId}),
+    });
+    const d = await r.json();
+    if (d.error) {
+      stat.textContent = "⚠ " + d.error;
+      btn.disabled = false; btn.textContent = "▶ Run All"; return;
     }
-    await new Promise(r => setTimeout(r, 800)); // brief pause between videos
+
+    total = d.total;
+    document.getElementById("pq-count").textContent = total;
+    btn.textContent  = "Running…";
+    stat.textContent = `0 / ${total}`;
+
+    if (_playlistEvtSrc) { _playlistEvtSrc.close(); _playlistEvtSrc = null; }
+    _playlistEvtSrc = new EventSource(`/stream-playlist/${d.pjob_id}`);
+
+    _playlistEvtSrc.onmessage = (e) => {
+      const msg = JSON.parse(e.data);
+
+      if (msg.type === "video_start") {
+        // Create dot row on the fly if not already there
+        if (!document.getElementById(`pqi-${msg.video_id}`)) {
+          prog.insertAdjacentHTML("beforeend",
+            `<div class="pq-item" id="pqi-${msg.video_id}">` +
+            `<span class="pq-item-dot running" id="pqd-${msg.video_id}"></span>` +
+            `<span id="pqt-${msg.video_id}">${esc(msg.title || msg.video_id)}</span></div>`);
+        } else {
+          const dot = document.getElementById(`pqd-${msg.video_id}`);
+          if (dot) dot.className = "pq-item-dot running";
+          const txt = document.getElementById(`pqt-${msg.video_id}`);
+          if (txt && msg.title) txt.textContent = msg.title;
+        }
+        document.getElementById(`pqi-${msg.video_id}`)
+          ?.scrollIntoView?.({behavior:"smooth", block:"nearest"});
+        stat.textContent = `${msg.index + 1} / ${total} starting…`;
+      }
+
+      else if (msg.type === "video_done") {
+        const dot = document.getElementById(`pqd-${msg.video_id}`);
+        if (dot) dot.className = "pq-item-dot done";
+        done++;
+        bar.style.width = Math.round((done + fail) / total * 100) + "%";
+        stat.textContent = `${done + fail} / ${total} · ${done} ✓${fail ? " · " + fail + " ✗" : ""}`;
+        if (msg.skill && msg.skill.ok) prependSkill(msg.skill);
+      }
+
+      else if (msg.type === "video_error") {
+        const dot = document.getElementById(`pqd-${msg.video_id}`);
+        if (dot) dot.className = "pq-item-dot error";
+        fail++;
+        bar.style.width = Math.round((done + fail) / total * 100) + "%";
+        stat.textContent = `${done + fail} / ${total} · ${done} ✓ · ${fail} ✗`;
+      }
+
+      else if (msg.type === "playlist_done") {
+        _playlistEvtSrc.close(); _playlistEvtSrc = null;
+        btn.disabled    = false;
+        btn.textContent = msg.failed > 0 ? "↺ Retry" : "✓ Done";
+        bar.style.width = "100%";
+        bar.style.background = msg.failed > 0 ? "var(--amber)" : "var(--green)";
+        stat.textContent = `${msg.completed} saved${msg.failed ? " · " + msg.failed + " filtered/failed" : " · all succeeded"}`;
+      }
+    };
+
+    _playlistEvtSrc.onerror = () => { /* EventSource auto-reconnects; silence noise */ };
+
+  } catch (err) {
+    btn.disabled    = false;
+    btn.textContent = "▶ Run All";
+    stat.textContent = "Error: " + err.message;
   }
-  btn.disabled = false;
-  btn.textContent = "✓ All done";
 }
 
 // ── Main process ──────────────────────────────────────────────────────────────
@@ -1404,17 +1459,10 @@ async function runProcess() {
     return;
   }
 
-  // Playlist URL — run the queue if already loaded, otherwise fetch first
-  if (_playlistIds.length > 0) { runPlaylist(); return; }
-
+  // Playlist — show panel immediately then start server-side background queue
+  if (!_playlistId) _playlistId = listId;
   await showPlaylistQueue(listId);
-  if (_playlistIds.length > 0) {
-    runPlaylist();
-  } else {
-    // showPlaylistQueue already showed the specific error in the panel —
-    // just surface a short status so it's not silent
-    setStatus("Playlist could not be loaded — see details above.", "error");
-  }
+  runPlaylist();
 }
 
 function normalizeYtUrl(url) {
