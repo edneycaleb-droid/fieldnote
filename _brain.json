@@ -127,9 +127,10 @@
       ]
     },
     "Mixture of experts models": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "running_large_models_locally"
+        "running_large_models_locally",
+        "building_ai_agents"
       ]
     },
     "Model pruning": {
@@ -247,6 +248,24 @@
       ]
     },
     "Workspace organization": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Mixture of agents": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Self-checking agent": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Completion contracts": {
       "freq": 1,
       "skills": [
         "building_ai_agents"
@@ -411,7 +430,7 @@
       ]
     },
     "Hermes Agent Plus Grok 4.5": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "building_ai_agents"
       ]
@@ -453,7 +472,7 @@
       ]
     },
     "Hermes Agent": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "building_ai_agents"
       ]
@@ -486,23 +505,19 @@
   "skill_map": {
     "building_ai_agents": {
       "concepts": [
-        "Web search",
-        "Web extract",
-        "Agent memory",
-        "Workspace organization"
+        "Mixture of agents",
+        "Mixture of experts models",
+        "Self-checking agent",
+        "Completion contracts"
       ],
       "tools": [
         "Hermes Agent",
-        "Firecrawl",
-        "SiaXNG",
-        "DuckDuckGoSearch",
-        "TavillionXR"
+        "Hermes Agent Plus Grok 4.5"
       ],
       "tags": [
         "ai",
         "automation",
-        "productivity",
-        "cloudcode"
+        "productivity"
       ],
       "step_count": 4
     },
@@ -530,9 +545,17 @@
     }
   },
   "relationships": {
-    "building_ai_agents": {},
-    "running_large_models_locally": {}
+    "building_ai_agents": {
+      "running_large_models_locally": [
+        "Mixture of experts models"
+      ]
+    },
+    "running_large_models_locally": {
+      "building_ai_agents": [
+        "Mixture of experts models"
+      ]
+    }
   },
-  "updated_at": "2026-07-15T20:20:32.078612+00:00",
+  "updated_at": "2026-07-15T20:21:18.009685+00:00",
   "total_skills": 2
 }
