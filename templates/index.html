@@ -489,6 +489,46 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
 }
 .dca-due { color: #fbbf24; border-color: #5c3d00; background: #1a1200; }
 
+/* ── Verification panel ── */
+.verify-panel {
+  margin: 10px 0 4px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.verify-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 7px 12px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  font-size: 0.68rem; font-weight: 700; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 0.07em;
+}
+.verify-summary { font-weight: 600; font-size: 0.68rem; }
+.verify-summary.vs-ok    { color: var(--green); }
+.verify-summary.vs-fixed { color: var(--amber); }
+.verify-summary.vs-fail  { color: var(--red); }
+.verify-checks {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 0;
+}
+.verify-check {
+  display: flex; align-items: center; gap: 6px;
+  padding: 6px 11px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  font-size: 0.71rem;
+}
+.verify-check:last-child { border-right: none; }
+.vc-icon  { font-size: 0.8rem; flex-shrink: 0; }
+.vc-label { color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.vc-detail { color: var(--muted); font-size: 0.63rem; margin-left: auto; white-space: nowrap; }
+.vc-pending .vc-icon { opacity: 0.35; }
+.vc-passed  { background: transparent; }
+.vc-fixed   { background: rgba(245,158,11,0.05); }
+.vc-failed  { background: rgba(239,68,68,0.06); }
+
 /* ── AI Arena attribution strip ── */
 .arena-row { display: flex; flex-wrap: wrap; gap: 5px; margin: 10px 0 4px; }
 .arena-badge {
@@ -798,6 +838,15 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
           <div class="nb-desc" id="res-desc"></div>
           <div id="res-arena" class="arena-row" style="display:none"></div>
           <div id="res-quality" class="quality-row" style="display:none"></div>
+
+          <!-- Verification panel — streams live during processing -->
+          <div id="res-verify" class="verify-panel" style="display:none">
+            <div class="verify-header">
+              <span>⚙ System checks</span>
+              <span id="verify-summary" class="verify-summary"></span>
+            </div>
+            <div id="verify-checks" class="verify-checks"></div>
+          </div>
 
           <div class="nb-section-label">Key Topics</div>
           <div class="nb-topics-row">
@@ -1298,6 +1347,8 @@ async function runSingleVideo(url, videoId) {
         if (msg.type === "meta" && msg.data?.title) {
           _playlistMeta[videoId] = msg.data.title;
         }
+        if (msg.type === "verify_check") { renderVerifyCheck(msg.check); return; }
+        if (msg.type === "verify_done")  { renderVerifyDone(msg);        return; }
         if (msg.type === "done") {
           _currentES.close();
           reset(btn);
@@ -1306,6 +1357,7 @@ async function runSingleVideo(url, videoId) {
             updateStats(msg.stats);
             prependSkill(msg);
             refreshConnections();
+            if (msg.verify) renderVerifyDone(msg.verify);
             setStatus("Done — skill saved to library.", "ok");
             resolve(msg);
           } else {

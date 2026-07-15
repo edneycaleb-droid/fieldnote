@@ -39,6 +39,7 @@ import agents.scheduler       as scheduler_mod
 import agents.auto_agent      as auto_agent
 import agents.github_discovery as github_discovery
 import agents.code_sync        as code_sync
+import agents.verify_agent     as verify_agent
 
 app = Flask(__name__)
 
@@ -1142,6 +1143,16 @@ def run_job(job_id: str, url: str, video_id: str):
                 "success",
             )
 
+            # ── Post-save verification + auto-fix ─────────────────────────────
+            emit("🔍  Verifying all systems …", "info")
+            verify_result = verify_agent.verify_and_fix(
+                skill_name=skill_name,
+                skill_path=skill_path,
+                emit=emit,
+                emit_check=lambda chk: q.put({"type": "verify_check", "check": chk}),
+            )
+            q.put({"type": "verify_done", **verify_result.to_dict()})
+
             if mcp_connections:
                 emit(
                     f"🔌  MCP: {len(mcp_connections)} connection(s) configured",
@@ -1204,6 +1215,7 @@ def run_job(job_id: str, url: str, video_id: str):
                 "quality":           qr.to_dict(),
                 "dca":               load_index().get(skill_name, {}).get("_dca", {}),
                 "sync_repo":         github_sync.repo_url(),
+                "verify":            verify_result.to_dict(),
             })
 
     except Exception as e:
@@ -2150,6 +2162,20 @@ def api_watchlist_remove():
     body = request.get_json(silent=True) or {}
     url  = (body.get("url") or "").strip()
     return jsonify(auto_agent.remove_from_watchlist(url))
+
+
+@app.route("/api/verify/log")
+def api_verify_log():
+    """Last 100 post-save verification runs."""
+    import agents.verify_agent as va
+    path = va._log_path()
+    if not os.path.exists(path):
+        return jsonify([])
+    try:
+        with open(path) as f:
+            return jsonify(json.load(f))
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 
 @app.route("/api/sync/status")
