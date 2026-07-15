@@ -28,6 +28,8 @@ from urllib.request import urlopen, Request as _UReq
 from urllib.parse import urlencode as _urlencode
 
 from flask import Flask, render_template, request, jsonify, Response, stream_with_context, redirect
+
+log = logging.getLogger("fieldnote.app")
 from groq import Groq
 from openai import OpenAI
 
@@ -709,7 +711,11 @@ def _extract_skill_chatgpt(transcript: str, knowledge_ctx: str, existing_content
 
 
 def _extract_skill_groq(transcript: str, knowledge_ctx: str, existing_content: str = "") -> dict:
-    """Practitioner-lens extraction — routed via provider_router for automatic fallback."""
+    """Practitioner-lens extraction — routed via provider_router for automatic fallback.
+    Sleeps 4 s before calling so it never fires Groq simultaneously with the ChatGPT
+    extractor (both default to Groq first), avoiding a concurrent 429 that blacks out
+    Groq for both calls."""
+    time.sleep(4)
     base     = _build_prompt(transcript, knowledge_ctx, existing_content)
     preamble = (
         "You are Fieldnote's PRACTITIONER AI. Your lens is specific actionable steps "
@@ -1265,11 +1271,9 @@ def run_job(job_id: str, url: str, video_id: str):
             })
 
     except Exception as e:
-        import traceback
-        tb = traceback.format_exc()
+        import traceback as _tb
+        log.error("run_job error: %s", _tb.format_exc())   # server log only
         emit(f"❌  {e}", "error")
-        if len(tb) > 100:
-            emit(tb[:600], "error")
         q.put({"type": "done", "ok": False, "error": str(e)})
     finally:
         _jobs[job_id]["done"] = True
@@ -1518,6 +1522,30 @@ def api_health():
         "github":  bool(os.getenv("GITHUBPAT") or os.getenv("GITHUB_TOKEN") or os.getenv("GH_TOKEN") or os.getenv("GITHUB")),
         "npx":     check(["npx",      "--version"]),
     })
+
+
+@app.route("/api/save-key", methods=["POST"])
+def api_save_key():
+    """Save an API key to local_keys.json and activate it instantly (no restart needed)."""
+    data     = request.get_json(silent=True) or {}
+    provider = (data.get("provider") or "").strip().lower()
+    value    = (data.get("value") or "").strip()
+    if not provider or not value:
+        return jsonify({"error": "provider and value required"}), 400
+
+    env_map = getattr(provider_router, "KEY_ENV_MAP", {})
+    env_var = env_map.get(provider)
+    if not env_var:
+        return jsonify({"error": f"Unknown provider: {provider}"}), 400
+
+    save_local_key(env_var, value)
+    # Reset provider state so it is retried immediately
+    provider_router.refresh_provider_key(provider)
+    # Re-init provider_router status to pick up the new key
+    provider_router._init_status()
+
+    return jsonify({"ok": True, "provider": provider, "env_var": env_var})
+
 
 @app.route("/api/provider-status")
 def api_provider_status():
