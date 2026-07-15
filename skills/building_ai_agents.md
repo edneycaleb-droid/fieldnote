@@ -12,6 +12,9 @@ Building AI agents can help automate tasks, make decisions, and improve over tim
 6. **Install Roof Flow for advanced agent management and token optimization**: Install Roof Flow to manage advanced agent swarms and optimize token usage.
 7. **Install Open Design for enhanced design capabilities**: Install Open Design to access enhanced design capabilities and templates for building modern websites.
 8. **Install Obsidian Skills for integration with Second Brain and note-taking**: Install Obsidian Skills to integrate your AI with your Second Brain and note-taking system.
+9. **Use computer use to automate testing of your app**: Utilize computer use to automate testing of your app, reducing manual effort and increasing efficiency.
+10. **Implement loops to automate review cycles and improvements**: Implement loops to automate review cycles and improvements, ensuring continuous improvement of your AI agent.
+11. **Utilize Record and Replay feature for knowledge work tasks**: Utilize the Record and Replay feature to automate knowledge work tasks, such as filling out forms or data entry.
 
 ## Tools
 * Cloud Code
@@ -20,12 +23,9 @@ Building AI agents can help automate tasks, make decisions, and improve over tim
 * Roof Flow
 * Open Design
 * Obsidian Skills
-* Anthropic
-* Haiku
-* Sonnet
-* Opus
-* Fable
-* Zoom
+* Codex
+* GPT-5.6 Sol
+* Record and Replay
 
 ## Concepts
 * AI agents
@@ -37,6 +37,10 @@ Building AI agents can help automate tasks, make decisions, and improve over tim
 * Second Brain
 * Note-taking
 * Design artifacts
+* Computer use
+* Loops
+* Record and Replay
+* Automated review cycles
 
 ## Sources
 
@@ -46,3 +50,4 @@ Building AI agents can help automate tasks, make decisions, and improve over tim
 | 2026-07-15 | [Codex and Claude Shipped Browser Updates. This Changes Everything.](https://youtu.be/juPDqb89dew?is=pb3WFUXn6KXAsWc0) | whisper |
 | 2026-07-15 | [Claude Just Changed Completely: Here's How It Works (In 2026)](https://youtu.be/bj04doEDOY4?is=5JQU-XeZJQCPGKc2) | whisper |
 | 2026-07-15 | [6 Claude Code GitHub Repos That Change Everything](https://youtu.be/L2JKgj7WzU4?is=PdIv7xTFQeAN-hd6) | whisper |
+| 2026-07-15 | [OpenAI Just Merged ChatGPT and Codex. This Changes Everything. ](https://youtu.be/Fv0XfyLT3xU?is=9y4oL_AQ0iKtojbO) | whisper |

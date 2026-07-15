@@ -1,7 +1,7 @@
 # 🧠 Fieldnote Skill Library
 
 > Everything I learn from YouTube — auto-extracted and synced by AI.
-> **2 skills** · Last synced: 2026-07-15 20:06 UTC
+> **2 skills** · Last synced: 2026-07-15 20:08 UTC
 
 ---
 
@@ -9,8 +9,8 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Skill Cd9943](skills/building_ai_agents.md) | Skill Cd9943 | `Codex` `GPT-5.6 Sol` `Record and Replay` `Cloud Code` | `ai` `automation` `productivity` |
 | [Efficiently Running Large AI Models on Local Machines](skills/running_large_models_locally.md) | This skill teaches how to run large AI models on local machines with limited RAM | `Colibri` `AntiRaz` `DS4` `Lama CPP` | `ai` `optimization` `modeling` |
-| [Skill Ebff0B](skills/building_ai_agents.md) | Skill Ebff0B | `Cloud Code` `Superpowers` `Everything Cloud Code` `Roof Flow` | `ai` `automation` `productivity` |
 
 ---
 
