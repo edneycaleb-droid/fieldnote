@@ -1,25 +1,25 @@
 {
   "concepts": {
     "AI agents": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "building_ai_agents"
       ]
     },
     "Automation": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "building_ai_agents"
       ]
     },
     "Reverse prompting": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "building_ai_agents"
       ]
     },
     "Definition of done (DOD)": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "building_ai_agents"
       ]
@@ -95,41 +95,71 @@
       "skills": [
         "building_ai_agents"
       ]
+    },
+    "Token optimization": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Agent swarms": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Second Brain": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Note-taking": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Design artifacts": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
     }
   },
   "tools": {
     "Anthropic": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "building_ai_agents"
       ]
     },
     "Haiku": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "building_ai_agents"
       ]
     },
     "Sonnet": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "building_ai_agents"
       ]
     },
     "Opus": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "building_ai_agents"
       ]
     },
     "Fable": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "building_ai_agents"
       ]
     },
     "Zoom": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "building_ai_agents"
       ]
@@ -175,6 +205,42 @@
       "skills": [
         "building_ai_agents"
       ]
+    },
+    "Cloud Code": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Superpowers": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Everything Cloud Code": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Roof Flow": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Open Design": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Obsidian Skills": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
     }
   },
   "skill_map": {
@@ -184,35 +250,38 @@
         "Automation",
         "Reverse prompting",
         "Definition of done (DOD)",
-        "Connectors",
-        "Skills",
-        "Projects",
-        "Scheduled tasks"
+        "Token optimization",
+        "Agent swarms",
+        "Second Brain",
+        "Note-taking",
+        "Design artifacts"
       ],
       "tools": [
+        "Cloud Code",
+        "Superpowers",
+        "Everything Cloud Code",
+        "Roof Flow",
+        "Open Design",
+        "Obsidian Skills",
         "Anthropic",
         "Haiku",
         "Sonnet",
         "Opus",
         "Fable",
-        "Zoom",
-        "Claude",
-        "Gmail",
-        "Google Drive",
-        "Notion"
+        "Zoom"
       ],
       "tags": [
         "ai",
         "automation",
         "productivity",
-        "claude"
+        "cloudcode"
       ],
-      "step_count": 14
+      "step_count": 8
     }
   },
   "relationships": {
     "building_ai_agents": {}
   },
-  "updated_at": "2026-07-15T19:59:16.107536+00:00",
+  "updated_at": "2026-07-15T20:03:36.196615+00:00",
   "total_skills": 1
 }
