@@ -589,15 +589,10 @@ def call_openai(prompt: str, max_tokens: int = 4000, json_mode: bool = True) -> 
 
 
 def call_llm(prompt: str, max_tokens: int = 4000, json_mode: bool = True) -> str:
-    """Try OpenAI first (higher quality), fall back to Groq."""
-    if OPENAI_API_KEY:
-        try:
-            return call_openai(prompt, max_tokens=max_tokens, json_mode=json_mode)
-        except Exception as e:
-            if "401" in str(e) or "invalid_api_key" in str(e).lower():
-                raise   # bad key — don't silently fall through
-            # transient / quota error — fall back to Groq
-    return call_groq(prompt, max_tokens=max_tokens)
+    """Route via provider_router for automatic quota/health-aware fallback."""
+    content, _prov = provider_router.call_llm_smart(
+        prompt=prompt, max_tokens=max_tokens, json_mode=json_mode)
+    return content
 
 
 # ── Package auto-installer ────────────────────────────────────────────────────
