@@ -1,0 +1,30 @@
+# Local API keys / secrets — never commit these
+fieldnote_mcp/local_keys.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Env
+.env
+.env.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Replit
+.replit.nix
+replit.nix

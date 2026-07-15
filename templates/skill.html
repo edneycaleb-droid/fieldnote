@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>{{ meta.get('title', filename) }} — Fieldnote</title>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<style>
+:root {
+  --bg:      #08080f; --surface: #0f0f1a; --border: #1c1c2e; --border2: #252538;
+  --text:    #e2e2f0; --muted:   #5a5a7a; --accent: #7c5bf6; --green: #10b981;
+  --amber:   #f59e0b; --red:    #ef4444;  --purple: #a78bfa; --blue: #7ab0f5;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--text); min-height: 100vh; }
+
+header { background: var(--surface); border-bottom: 1px solid var(--border);
+  padding: 14px 16px; display: flex; align-items: center; gap: 12px;
+  position: sticky; top: 0; z-index: 10; }
+.back-btn { background: none; border: 1px solid var(--border2); color: var(--muted);
+  border-radius: 8px; padding: 6px 12px; font-size: 0.82rem; cursor: pointer;
+  text-decoration: none; white-space: nowrap; transition: border-color .15s; }
+.back-btn:hover { border-color: var(--accent); color: var(--text); }
+.header-title { font-size: 0.9rem; color: var(--muted); overflow: hidden;
+  text-overflow: ellipsis; white-space: nowrap; flex: 1; }
+.header-actions { display: flex; gap: 8px; flex-shrink: 0; }
+.hbtn { background: none; border: 1px solid var(--border2); color: var(--muted);
+  border-radius: 8px; padding: 6px 12px; font-size: 0.8rem; cursor: pointer;
+  text-decoration: none; transition: all .15s; -webkit-appearance: none; }
+.hbtn:hover { border-color: var(--accent); color: var(--text); }
+.hbtn-del:hover { border-color: var(--red); color: var(--red); }
+
+.container { max-width: 700px; margin: 0 auto; padding: 24px 16px 60px; }
+
+/* ── Meta card ── */
+.meta-card { background: var(--surface); border: 1px solid var(--border);
+  border-radius: 16px; padding: 20px; margin-bottom: 16px; }
+.meta-title { font-size: 1.2rem; font-weight: 700; color: #fff; }
+.meta-desc  { font-size: 0.88rem; color: #9898b8; margin-top: 6px; line-height: 1.6; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+.chip { border-radius: 20px; padding: 4px 12px; font-size: 0.78rem; }
+.chip-tag  { background: #100a20; border: 1px solid #2a1a4a; color: var(--purple); }
+.chip-tool { background: #0a1020; border: 1px solid #2a3a5a; color: var(--blue); }
+.chip-rel  { background: var(--bg); border: 1px solid var(--border2); color: var(--accent);
+  text-decoration: none; transition: border-color .15s; }
+.chip-rel:hover { border-color: var(--accent); }
+.pill { border-radius: 20px; padding: 3px 10px; font-size: 0.72rem; font-weight: 600; }
+.pill-captions { background: #0d2010; color: var(--green); }
+.pill-whisper  { background: #1a1030; color: var(--purple); }
+.pill-enhance  { background: #1a1030; color: var(--purple); }
+.pill-create   { background: #0d2010; color: var(--green); }
+
+/* ── Source row ── */
+.source-row { margin-top: 14px; display: flex; align-items: center; gap: 10px; }
+.source-thumb { width: 80px; height: 45px; object-fit: cover; border-radius: 6px;
+  background: var(--border); flex-shrink: 0; }
+.source-info  { font-size: 0.78rem; }
+.source-info a { color: var(--accent); text-decoration: none; }
+.source-info a:hover { text-decoration: underline; }
+.source-meta { color: var(--muted); margin-top: 3px; }
+
+/* ── History card ── */
+.hist-card { background: var(--surface); border: 1px solid var(--border);
+  border-radius: 16px; padding: 16px 20px; margin-bottom: 16px; }
+.hist-label { font-size: 0.7rem; color: var(--muted2, #3a3a55); text-transform: uppercase;
+  letter-spacing: .08em; margin-bottom: 10px; }
+.hist-list { display: flex; flex-direction: column; gap: 8px; }
+.hist-row  { display: flex; align-items: flex-start; gap: 10px; }
+.hist-dot  { width: 8px; height: 8px; border-radius: 50%; margin-top: 5px; flex-shrink: 0; }
+.hist-dot-create  { background: var(--green); }
+.hist-dot-enhance { background: var(--purple); }
+.hist-body { flex: 1; }
+.hist-action { font-size: 0.78rem; font-weight: 600;
+  color: var(--green); }
+.hist-action.enhance { color: var(--purple); }
+.hist-src  { font-size: 0.75rem; color: var(--muted); margin-top: 1px; }
+.hist-src a { color: var(--accent); text-decoration: none; }
+.hist-src a:hover { text-decoration: underline; }
+.hist-date { font-size: 0.7rem; color: var(--muted); white-space: nowrap; flex-shrink: 0; }
+
+/* ── GitHub repos ── */
+.repo-grid { display: flex; flex-direction: column; gap: 6px; margin-top: 10px; }
+.repo-card { background: var(--bg); border: 1px solid var(--border2);
+  border-radius: 10px; padding: 10px 12px; display: flex; align-items: flex-start;
+  gap: 10px; text-decoration: none; color: inherit; transition: border-color .15s; }
+.repo-card:hover { border-color: var(--accent); }
+.repo-left  { flex: 1; overflow: hidden; }
+.repo-right { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; flex-shrink: 0; }
+.repo-name  { font-size: 0.84rem; font-weight: 600; color: var(--text); }
+.repo-desc  { font-size: 0.73rem; color: var(--muted); margin-top: 2px; }
+.rb { font-size: 0.65rem; font-weight: 700; border-radius: 4px; padding: 2px 7px; white-space: nowrap; }
+.rb-mcp  { background: #1a0a3a; color: var(--purple); border: 1px solid #3a1a6a; }
+.rb-repo { background: #0a1020; color: var(--blue);   border: 1px solid #1a2a4a; }
+.stars   { font-size: 0.72rem; color: var(--amber); }
+
+/* ── Sec labels ── */
+.sec-label { font-size: 0.7rem; color: #3a3a55; text-transform: uppercase;
+  letter-spacing: .08em; margin: 14px 0 8px; }
+
+/* ── Content card ── */
+.content-card { background: var(--surface); border: 1px solid var(--border);
+  border-radius: 16px; padding: 20px 22px; }
+
+/* Markdown body */
+.md-body h1 { font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 12px; display: none; }
+.md-body h2 { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--muted); font-weight: 600; margin: 20px 0 8px; padding-top: 16px;
+  border-top: 1px solid var(--border); }
+.md-body h2:first-of-type { border-top: none; padding-top: 0; margin-top: 0; }
+.md-body h3 { font-size: 0.95rem; font-weight: 600; color: var(--text); margin: 12px 0 6px; }
+.md-body p  { font-size: 0.88rem; color: #b8b8d0; line-height: 1.7; margin-bottom: 10px; }
+.md-body ul, .md-body ol { padding-left: 20px; }
+.md-body li { font-size: 0.88rem; color: #b8b8d0; line-height: 1.7; margin-bottom: 4px; }
+.md-body code { background: #1a1a2e; border: 1px solid var(--border2);
+  border-radius: 4px; padding: 1px 6px; font-size: 0.83rem;
+  font-family: "SF Mono","Fira Code",monospace; color: #c8b3fa; }
+.md-body pre  { background: #0c0c18; border: 1px solid var(--border2);
+  border-radius: 10px; padding: 14px 16px; overflow-x: auto; margin: 10px 0; }
+.md-body pre code { background: none; border: none; padding: 0;
+  font-size: 0.82rem; color: #c0d4f5; }
+.md-body strong { color: var(--text); }
+.md-body a { color: var(--accent); }
+.md-body blockquote { border-left: 3px solid var(--accent); padding-left: 14px;
+  color: var(--muted); font-style: italic; margin: 10px 0; }
+/* Sources table */
+.md-body table { width: 100%; border-collapse: collapse; font-size: 0.82rem; margin: 8px 0; }
+.md-body th { text-align: left; color: var(--muted); font-weight: 600;
+  padding: 6px 10px; border-bottom: 1px solid var(--border2); }
+.md-body td { padding: 6px 10px; border-bottom: 1px solid var(--border);
+  color: #b8b8d0; vertical-align: top; }
+.md-body tr:last-child td { border-bottom: none; }
+
+/* Delete modal */
+.overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.7);
+  z-index: 100; align-items: center; justify-content: center; }
+.overlay.show { display: flex; }
+.modal { background: var(--surface); border: 1px solid var(--border);
+  border-radius: 16px; padding: 24px; max-width: 320px; width: 90%; }
+.modal h3 { font-size: 1rem; margin-bottom: 10px; }
+.modal p  { font-size: 0.85rem; color: var(--muted); margin-bottom: 20px; }
+.modal-btns { display: flex; gap: 8px; }
+.mbtn { flex: 1; padding: 10px; border-radius: 10px; font-size: 0.88rem;
+  font-weight: 600; cursor: pointer; border: none; -webkit-appearance: none; }
+.mbtn-cancel { background: var(--border2); color: var(--text); }
+.mbtn-del    { background: var(--red); color: #fff; }
+</style>
+</head>
+<body>
+
+<header>
+  <a class="back-btn" href="/">← Back</a>
+  <span class="header-title">{{ meta.get('title', filename) }}</span>
+  <div class="header-actions">
+    <a class="hbtn" href="/?enhance={{ name }}" title="Go to home page and paste a new video URL to enhance this skill">🎬 Enhance</a>
+    <a class="hbtn" href="/skills/{{ filename }}/raw" download="{{ filename }}">⬇ Raw</a>
+    <button class="hbtn hbtn-del" onclick="showDelete()">🗑 Delete</button>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- Meta card -->
+  <div class="meta-card">
+    <div class="meta-title">{{ meta.get('title', filename) }}</div>
+    {% if meta.get('description') %}
+    <div class="meta-desc">{{ meta['description'] }}</div>
+    {% endif %}
+
+    <div class="chips">
+      {% for t in meta.get('tags', []) %}
+        <span class="chip chip-tag">{{ t }}</span>
+      {% endfor %}
+      {% for t in meta.get('tools', [])[:8] %}
+        <span class="chip chip-tool">{{ t }}</span>
+      {% endfor %}
+      {% if meta.get('action') %}
+        <span class="pill pill-{{ meta.action }}">
+          {{ '🔄 Enhanced' if meta.action == 'enhance' else '✨ Created' }}
+        </span>
+      {% endif %}
+      {% if meta.get('method') %}
+        <span class="pill {{ 'pill-whisper' if meta.method == 'whisper' else 'pill-captions' }}">
+          {{ '🎙 Whisper' if meta.method == 'whisper' else '✓ Captions' }}
+        </span>
+      {% endif %}
+    </div>
+
+    {% if meta.get('related_skills') %}
+    <div style="margin-top:12px">
+      <div class="sec-label">Related Skills</div>
+      <div class="chips" style="margin-top:0">
+        {% for r in meta.related_skills %}
+          <a class="chip chip-rel" href="/skills/{{ r }}.md">{{ r }}</a>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    {% if meta.get('source_url') %}
+    <div class="source-row">
+      {% if meta.get('video_id') %}
+      <img class="source-thumb"
+           src="https://img.youtube.com/vi/{{ meta.video_id }}/mqdefault.jpg" alt="">
+      {% endif %}
+      <div class="source-info">
+        <a href="{{ meta.source_url }}" target="_blank" rel="noopener">
+          {{ meta.get('source_title') or 'Watch source video' }} ↗
+        </a>
+        <div class="source-meta">
+          {% if meta.get('word_count') %}{{ '{:,}'.format(meta.word_count) }} words · {% endif %}
+          {% if meta.get('updated_at') %}Updated {{ meta.updated_at[:10] }}{% endif %}
+          {% if history %} · {{ history|length + 1 }} source{{ 's' if history|length > 0 else '' }}{% endif %}
+        </div>
+      </div>
+    </div>
+    {% endif %}
+
+    {% if meta.get('github_repos') %}
+    <div style="margin-top:14px">
+      <div class="sec-label">GitHub Repos Discovered</div>
+      <div class="repo-grid">
+        {% for r in meta.github_repos[:4] %}
+        <a class="repo-card" href="{{ r.url }}" target="_blank" rel="noopener">
+          <div class="repo-left">
+            <div class="repo-name">{{ r.full_name }}</div>
+            {% if r.language %}<div class="repo-desc">{{ r.language }}</div>{% endif %}
+          </div>
+          <div class="repo-right">
+            {% if r.is_mcp %}<span class="rb rb-mcp">🔌 MCP</span>
+            {% else %}<span class="rb rb-repo">📦</span>{% endif %}
+            {% if r.stars %}<span class="stars">⭐ {{ r.stars }}</span>{% endif %}
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+
+    {% if mcp_connections %}
+    <div style="margin-top:14px">
+      <div class="sec-label">MCP Connections from this Skill</div>
+      <div style="display:flex;flex-direction:column;gap:6px;margin-top:6px">
+        {% for c in mcp_connections %}
+        <div style="background:var(--bg);border:1px solid var(--border2);border-radius:10px;
+                    padding:10px 12px;display:flex;align-items:center;gap:10px">
+          <div style="width:8px;height:8px;border-radius:50%;flex-shrink:0;
+                      background:{{ '#10b981' if not c.needs_auth else '#f59e0b' }}"></div>
+          <div style="flex:1;overflow:hidden">
+            <div style="font-size:.84rem;font-weight:600">{{ c.name }}</div>
+            <div style="font-size:.72rem;color:var(--muted);margin-top:2px">
+              {{ c.tool }}
+              {% if c.repo_url %} · <a href="{{ c.repo_url }}" target="_blank"
+                style="color:var(--accent)">GitHub ↗</a>{% endif %}
+            </div>
+            {% if c.install_hint %}
+            <div style="font-size:.7rem;color:var(--amber);margin-top:2px;
+                        font-family:'SF Mono','Fira Code',monospace">⚡ {{ c.install_hint }}</div>
+            {% endif %}
+          </div>
+          <span style="font-size:.65rem;font-weight:700;border-radius:4px;padding:2px 7px;
+                       background:#1a1030;color:var(--purple);border:1px solid #2a1a5a">
+            {{ c.source }}</span>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endif %}
+  </div>
+
+  <!-- Update history -->
+  {% if history %}
+  <div class="hist-card">
+    <div class="hist-label">Update History ({{ history|length }} enhancement{{ 's' if history|length != 1 else '' }})</div>
+    <div class="hist-list">
+      {% for h in history|reverse %}
+      <div class="hist-row">
+        <div class="hist-dot hist-dot-{{ h.action }}"></div>
+        <div class="hist-body">
+          <div class="hist-action {{ h.action }}">
+            {{ '🔄 Enhanced' if h.action == 'enhance' else '✨ Created' }}
+          </div>
+          <div class="hist-src">
+            {% if h.source_url %}
+              <a href="{{ h.source_url }}" target="_blank" rel="noopener">
+                {{ h.source_title or 'Source video' }} ↗
+              </a>
+              · {{ '🎙 Whisper' if h.method == 'whisper' else '✓ Captions' }}
+            {% endif %}
+          </div>
+        </div>
+        <div class="hist-date">{{ h.updated_at[:10] if h.updated_at else '' }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- Rendered content -->
+  <div class="content-card">
+    <div class="md-body" id="md-body"></div>
+  </div>
+
+</div>
+
+<!-- Delete modal -->
+<div class="overlay" id="del-overlay">
+  <div class="modal">
+    <h3>Delete this skill?</h3>
+    <p>This will permanently remove <strong>{{ filename }}</strong> and its entire history. Cannot be undone.</p>
+    <div class="modal-btns">
+      <button class="mbtn mbtn-cancel" onclick="hideDelete()">Cancel</button>
+      <button class="mbtn mbtn-del"    onclick="confirmDelete()">Delete</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const raw = {{ content | tojson }};
+document.getElementById("md-body").innerHTML = marked.parse(raw);
+
+function showDelete()    { document.getElementById("del-overlay").classList.add("show"); }
+function hideDelete()    { document.getElementById("del-overlay").classList.remove("show"); }
+async function confirmDelete() {
+  const r = await fetch(`/skills/{{ filename }}/delete`, { method: "POST" });
+  if (r.ok) window.location.href = "/";
+  else { hideDelete(); alert("Delete failed."); }
+}
+</script>
+</body>
+</html>

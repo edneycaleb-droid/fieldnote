@@ -1,0 +1,2366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Fieldnote</title>
+<style>
+:root {
+  --bg:       #08080f;
+  --surface:  #0f0f1a;
+  --border:   #1c1c2e;
+  --border2:  #252538;
+  --text:     #e2e2f0;
+  --muted:    #5a5a7a;
+  --muted2:   #3a3a55;
+  --accent:   #7c5bf6;
+  --accent-d: #5a3fd4;
+  --green:    #10b981;
+  --amber:    #f59e0b;
+  --red:      #ef4444;
+  --purple:   #a78bfa;
+  --blue:     #7ab0f5;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-text-size-adjust: 100%; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+       background: var(--bg); color: var(--text); min-height: 100vh; }
+
+/* ── Layout ── */
+header { background: var(--surface); border-bottom: 1px solid var(--border);
+         padding: 14px 20px; position: sticky; top: 0; z-index: 10;
+         display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.logo  { font-size: 1.05rem; font-weight: 700; letter-spacing: -0.02em; color: #fff;
+         display: flex; align-items: center; gap: 7px; white-space: nowrap; }
+.stats { display: flex; gap: 12px; flex-shrink: 0; }
+.stat  { text-align: center; }
+.stat-n { font-size: 0.95rem; font-weight: 700; color: var(--accent); line-height: 1; }
+.stat-l { font-size: 0.6rem; color: var(--muted); text-transform: uppercase;
+          letter-spacing: 0.06em; }
+.stat-mcp  .stat-n { color: var(--purple); }
+.stat-repo .stat-n { color: var(--blue); }
+
+.container { max-width: 700px; margin: 0 auto; padding: 24px 16px 80px; }
+.container.nb-active { max-width: 1040px; }
+
+/* ── Cards ── */
+.card { background: var(--surface); border: 1px solid var(--border);
+        border-radius: 16px; padding: 20px; margin-bottom: 16px; }
+
+/* ── Input row ── */
+.label { font-size: 0.72rem; color: var(--muted); text-transform: uppercase;
+         letter-spacing: 0.07em; margin-bottom: 10px; display: block; }
+.url-row { display: flex; gap: 8px; }
+input[type=text], input[type=search] {
+  flex: 1; background: var(--bg); border: 1px solid var(--border2);
+  border-radius: 12px; padding: 13px 16px; color: var(--text);
+  font-size: 0.95rem; outline: none; transition: border-color .18s;
+  -webkit-appearance: none; }
+input[type=text]:focus, input[type=search]:focus { border-color: var(--accent); }
+input::placeholder { color: var(--muted2); }
+input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
+
+#run-btn {
+  background: var(--accent); border: none; border-radius: 12px;
+  padding: 13px 22px; color: #fff; font-size: 0.95rem; font-weight: 600;
+  cursor: pointer; white-space: nowrap; transition: background .18s;
+  -webkit-appearance: none; }
+#run-btn:hover:not(:disabled) { background: var(--accent-d); }
+#run-btn:disabled { background: var(--border2); color: var(--muted); cursor: default; }
+
+/* ── Video preview ── */
+#video-preview { display: none; margin-top: 14px; padding: 12px;
+  background: var(--bg); border: 1px solid var(--border2); border-radius: 12px;
+  align-items: center; gap: 12px; }
+#preview-thumb { width: 80px; height: 45px; object-fit: cover;
+  border-radius: 6px; flex-shrink: 0; background: var(--border); }
+.preview-info { overflow: hidden; }
+#preview-title  { font-size: 0.88rem; font-weight: 600; color: var(--text);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#preview-author { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
+#playlist-badge { font-size: 0.7rem; font-weight: 600; color: var(--amber);
+  background: #2a1f00; border-radius: 4px; padding: 2px 6px;
+  display: none; margin-top: 4px; }
+
+/* ── Status & log ── */
+#status { font-size: 0.82rem; color: var(--muted); margin-top: 10px; min-height: 18px; }
+#status.ok    { color: var(--green); }
+#status.error { color: var(--red); }
+
+#log-wrap { display: none; margin-top: 12px;
+  background: var(--bg); border: 1px solid var(--border2); border-radius: 10px; }
+#log-lines { max-height: 220px; overflow-y: auto; padding: 10px 14px;
+  display: flex; flex-direction: column; gap: 3px; }
+.ll { font-size: 0.78rem; line-height: 1.5; font-family: "SF Mono","Fira Code",monospace; }
+.ll-info    { color: var(--muted); }
+.ll-success { color: var(--green); }
+.ll-warning { color: var(--amber); }
+.ll-error   { color: var(--red); }
+
+/* ── Result card ── */
+#result { display: none; }
+.res-header { display: flex; gap: 12px; margin-bottom: 18px; align-items: flex-start; }
+.action-badge { border-radius: 6px; padding: 3px 9px; font-size: 0.72rem;
+  font-weight: 700; white-space: nowrap; margin-top: 2px; }
+.badge-create  { background: #0d2010; color: var(--green); }
+.badge-enhance { background: #1a1030; color: var(--purple); }
+.res-title  { font-size: 1.1rem; font-weight: 700; color: #fff; }
+.res-desc   { font-size: 0.85rem; color: #9898b8; margin-top: 4px; line-height: 1.5; }
+.res-method { margin-top: 8px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+
+.sec-label { font-size: 0.7rem; color: var(--muted2); text-transform: uppercase;
+  letter-spacing: 0.08em; margin: 16px 0 8px; }
+.divider { border: none; border-top: 1px solid var(--border); margin: 14px 0; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { background: var(--bg); border: 1px solid var(--border2); border-radius: 20px;
+  padding: 4px 12px; font-size: 0.78rem; color: var(--muted); }
+.chip-tool    { border-color: #2a3a5a; color: var(--blue);   background: #0a1020; }
+.chip-tag     { border-color: #3a2a5a; color: var(--purple); background: #100a20; }
+.chip-ok      { border-color: #1a3a2a; color: var(--green);  background: #041008; }
+.chip-fail    { border-color: #3a1a1a; color: var(--red);    background: #100404; }
+.chip-related { border-color: var(--border2); color: var(--accent); background: var(--bg);
+  text-decoration: none; cursor: pointer; transition: border-color .15s; }
+.chip-related:hover { border-color: var(--accent); }
+
+.steps-list { list-style: none; }
+.step-row { display: flex; gap: 10px; padding: 9px 0;
+  border-bottom: 1px solid var(--border); align-items: flex-start; }
+.step-row:last-child { border-bottom: none; }
+.step-n { background: var(--border2); color: var(--muted); border-radius: 50%;
+  width: 22px; height: 22px; min-width: 22px; display: flex; align-items: center;
+  justify-content: center; font-size: 0.72rem; font-weight: 700; margin-top: 1px; }
+.step-txt { font-size: 0.87rem; color: #c8c8e0; line-height: 1.5; }
+
+.res-thumb-row { display: flex; align-items: center; gap: 10px; }
+.res-thumb { width: 72px; height: 40px; object-fit: cover; border-radius: 6px;
+  background: var(--border); flex-shrink: 0; }
+.res-source { font-size: 0.78rem; }
+.res-source a { color: var(--accent); text-decoration: none; }
+.res-source a:hover { text-decoration: underline; }
+.res-words { font-size: 0.75rem; color: var(--muted); }
+
+.method-pill { font-size: 0.7rem; font-weight: 600; border-radius: 20px; padding: 2px 9px; }
+.mp-captions { background: #0d2010; color: var(--green); }
+.mp-whisper  { background: #1a1030; color: var(--purple); }
+
+/* ── GitHub repos section ── */
+.repo-grid { display: flex; flex-direction: column; gap: 6px; }
+.repo-card { background: var(--bg); border: 1px solid var(--border2);
+  border-radius: 10px; padding: 10px 12px; display: flex; align-items: flex-start;
+  gap: 10px; text-decoration: none; color: inherit; transition: border-color .15s; }
+.repo-card:hover { border-color: var(--accent); }
+.repo-left  { flex: 1; overflow: hidden; }
+.repo-right { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; flex-shrink: 0; }
+.repo-name  { font-size: 0.85rem; font-weight: 600; color: var(--text);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.repo-desc  { font-size: 0.74rem; color: var(--muted); margin-top: 2px;
+  overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.repo-meta  { font-size: 0.7rem; color: var(--muted2); margin-top: 4px; }
+.rb { font-size: 0.65rem; font-weight: 700; border-radius: 4px; padding: 2px 7px; white-space: nowrap; }
+.rb-mcp  { background: #1a0a3a; color: var(--purple); border: 1px solid #3a1a6a; }
+.rb-repo { background: #0a1020; color: var(--blue);   border: 1px solid #1a2a4a; }
+.rb-py   { background: #100a20; color: #c084fc;       border: 1px solid #2a1a4a; }
+.rb-ts   { background: #0a1a10; color: #4ade80;       border: 1px solid #1a3a20; }
+.stars   { font-size: 0.72rem; color: var(--amber); }
+
+/* ── Auth / OAuth prompts — interactive widget ── */
+.auth-card { background: #0c0906; border: 1px solid #3a1f06;
+  border-radius: 14px; padding: 16px; margin-bottom: 10px;
+  transition: border-color .2s; }
+.auth-card.auth-success { border-color: #1a4a2a; background: #060f08; }
+
+.auth-card-header { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+.auth-card-icon  { font-size: 1rem; flex-shrink: 0; }
+.auth-card-title { font-size: 0.88rem; font-weight: 700; color: var(--amber); flex: 1; }
+.auth-dismiss { background: none; border: none; color: var(--muted);
+  cursor: pointer; font-size: 0.85rem; padding: 0; }
+.auth-dismiss:hover { color: var(--text); }
+
+/* Tabs: One-click OAuth vs paste */
+.auth-tabs { display: flex; gap: 6px; margin-bottom: 12px; }
+.auth-tab { background: var(--bg); border: 1px solid var(--border2);
+  border-radius: 8px; padding: 5px 12px; font-size: 0.76rem; font-weight: 600;
+  cursor: pointer; color: var(--muted); transition: all .15s; -webkit-appearance: none; }
+.auth-tab.active { border-color: var(--accent); color: var(--text); background: #12102a; }
+.auth-tab-pane { display: none; }
+.auth-tab-pane.active { display: block; }
+
+/* Device flow pane */
+.auth-device-btn { width: 100%; background: #2a1060; border: 1px solid var(--accent);
+  border-radius: 10px; padding: 10px; color: #fff; font-size: 0.88rem;
+  font-weight: 600; cursor: pointer; transition: background .15s; -webkit-appearance: none; }
+.auth-device-btn:hover { background: var(--accent); }
+.auth-device-btn:disabled { opacity: .5; cursor: default; }
+.auth-device-code { margin-top: 12px; text-align: center; display: none; }
+.auth-code-display { font-size: 1.5rem; font-weight: 800; letter-spacing: .15em;
+  color: var(--amber); font-family: "SF Mono","Fira Code",monospace;
+  background: #1a0e00; border: 1px solid #4a2e00;
+  border-radius: 10px; padding: 10px 16px; margin-bottom: 10px; display: inline-block; }
+.auth-device-open { display: inline-block; font-size: 0.8rem; color: var(--accent);
+  text-decoration: none; margin-bottom: 8px; }
+.auth-device-open:hover { text-decoration: underline; }
+.auth-poll-status { font-size: 0.75rem; color: var(--muted); }
+.auth-poll-status.waiting { color: var(--amber); }
+.auth-setup-hint { font-size: 0.75rem; color: #a06030; line-height: 1.6;
+  background: #0f0800; border: 1px solid #2a1a00; border-radius: 8px;
+  padding: 8px 12px; margin-top: 8px; }
+.auth-setup-hint a { color: var(--blue); }
+
+/* Paste / API key pane */
+.auth-get-btn { display: flex; align-items: center; gap: 6px; width: 100%;
+  background: var(--bg); border: 1px solid var(--border2);
+  border-radius: 10px; padding: 9px 12px; font-size: 0.82rem; font-weight: 600;
+  color: var(--text); cursor: pointer; transition: border-color .15s;
+  text-decoration: none; -webkit-appearance: none; margin-bottom: 8px; }
+.auth-get-btn:hover { border-color: var(--accent); }
+.auth-paste-row { display: flex; gap: 6px; }
+.auth-input { flex: 1; background: #0a0806; border: 1px solid #3a2a10;
+  border-radius: 8px; padding: 9px 12px; color: var(--text);
+  font-size: 0.82rem; font-family: "SF Mono","Fira Code",monospace;
+  outline: none; transition: border-color .15s; -webkit-appearance: none; }
+.auth-input:focus { border-color: var(--amber); }
+.auth-activate-btn { background: var(--amber); border: none; border-radius: 8px;
+  padding: 9px 14px; color: #000; font-size: 0.82rem; font-weight: 700;
+  cursor: pointer; white-space: nowrap; transition: opacity .15s; -webkit-appearance: none; }
+.auth-activate-btn:hover { opacity: .85; }
+.auth-activate-btn:disabled { opacity: .4; cursor: default; }
+.auth-scopes { font-size: 0.7rem; color: #7a5a30; margin-top: 6px; }
+
+/* Success state */
+.auth-success-msg { display: flex; align-items: center; gap: 8px;
+  font-size: 0.88rem; font-weight: 600; color: var(--green); }
+.auth-success-sub { font-size: 0.75rem; color: #4a8a5a; margin-top: 3px; }
+
+/* ── MCP Connections card ── */
+.conn-list { display: flex; flex-direction: column; gap: 6px; }
+.conn-row  { display: flex; align-items: center; gap: 10px; padding: 10px 12px;
+  background: var(--bg); border: 1px solid var(--border); border-radius: 10px; }
+.conn-row:hover { border-color: var(--border2); }
+.conn-info { flex: 1; overflow: hidden; }
+.conn-name { font-size: 0.85rem; font-weight: 600;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.conn-sub  { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
+.conn-hint { font-size: 0.7rem; color: var(--amber); margin-top: 2px;
+  font-family: "SF Mono","Fira Code",monospace; }
+.src-badge { font-size: 0.65rem; font-weight: 700; border-radius: 4px;
+  padding: 2px 7px; white-space: nowrap; flex-shrink: 0; }
+.src-npm   { background: #0d1a10; color: #4ade80; border: 1px solid #1a3a20; }
+.src-pip   { background: #1a1030; color: var(--purple); border: 1px solid #2a1a5a; }
+.src-local { background: #0a1020; color: var(--blue);   border: 1px solid #1a2a4a; }
+.src-uvx   { background: #1a0a2a; color: #c084fc; border: 1px solid #2a1a4a; }
+.src-npm_unavailable { background: #1a1500; color: var(--amber); border: 1px solid #3a3000; }
+.status-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+.dot-ready { background: var(--green); }
+.dot-auth  { background: var(--amber); }
+.dot-pend  { background: var(--muted); }
+.config-path { font-size: 0.72rem; color: var(--muted); font-family: monospace; margin-top: 10px; }
+.config-path a { color: var(--accent); text-decoration: none; }
+
+/* ── Skill library ── */
+.lib-header { display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 12px; gap: 10px; }
+.tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.tag-btn { background: var(--bg); border: 1px solid var(--border2);
+  border-radius: 20px; padding: 4px 12px; font-size: 0.75rem; color: var(--muted);
+  cursor: pointer; transition: all .15s; -webkit-appearance: none; }
+.tag-btn:hover, .tag-btn.active { background: #1a1030; border-color: var(--accent); color: var(--purple); }
+.tag-btn.all { color: var(--text); }
+
+.skill-list { display: flex; flex-direction: column; gap: 6px; }
+.skill-row { display: flex; align-items: center; gap: 12px; padding: 12px 14px;
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 12px; text-decoration: none; color: var(--text);
+  transition: border-color .15s; }
+.skill-row:hover { border-color: var(--accent); }
+.skill-row-info { flex: 1; overflow: hidden; }
+.skill-row-title { font-size: 0.9rem; font-weight: 600;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.skill-row-meta { font-size: 0.72rem; color: var(--muted); margin-top: 2px; }
+.skill-row-arrow { color: var(--muted2); flex-shrink: 0; }
+.skill-row-tags { display: flex; gap: 4px; flex-shrink: 0; }
+.sr-tag { font-size: 0.65rem; color: var(--purple); background: #100a20;
+  border: 1px solid #2a1a4a; border-radius: 4px; padding: 1px 6px; }
+
+.empty { color: var(--muted2); font-size: 0.85rem; text-align: center; padding: 24px 0; }
+
+/* ── Section collapse ── */
+.sec-toggle { background: none; border: none; color: var(--muted); font-size: 0.75rem;
+  cursor: pointer; padding: 0; margin-left: 6px; }
+.sec-toggle:hover { color: var(--text); }
+.collapsible { overflow: hidden; transition: max-height .25s ease; }
+.collapsible.closed { max-height: 0 !important; }
+
+/* ── AI Connections card ── */
+.ai-card { background: var(--surface); border: 1px solid var(--border);
+  border-radius: 16px; padding: 18px 20px; }
+.ai-tabs { display: flex; gap: 4px; margin-bottom: 14px; }
+.ai-tab { flex:1; padding: 8px 10px; border-radius: 9px; font-size: 0.78rem;
+  font-weight: 600; cursor: pointer; border: 1px solid var(--border2);
+  background: var(--bg); color: var(--muted); transition: all .15s;
+  -webkit-appearance: none; text-align: center; }
+.ai-tab.active { background: #1a1030; border-color: var(--accent); color: var(--purple); }
+.ai-pane { display: none; }
+.ai-pane.active { display: block; }
+.ai-step { font-size: 0.8rem; color: var(--muted); line-height: 1.7; margin-bottom: 10px; }
+.ai-step strong { color: var(--text); }
+.ai-snippet { position: relative; background: #050510;
+  border: 1px solid var(--border2); border-radius: 10px;
+  padding: 12px 14px; margin: 8px 0; font-family: "SF Mono","Fira Code",monospace;
+  font-size: 0.74rem; color: #a0c4fa; white-space: pre-wrap; overflow-x: auto;
+  word-break: break-all; }
+.ai-copy { position: absolute; top: 8px; right: 8px;
+  background: var(--bg); border: 1px solid var(--border2);
+  border-radius: 6px; padding: 3px 9px; font-size: 0.7rem; color: var(--muted);
+  cursor: pointer; -webkit-appearance: none; transition: all .15s; }
+.ai-copy:hover { border-color: var(--accent); color: var(--text); }
+.ai-url-row { display: flex; align-items: center; gap: 8px; margin: 8px 0; }
+.ai-url { flex: 1; background: #050510; border: 1px solid var(--border2);
+  border-radius: 8px; padding: 8px 12px; font-family: "SF Mono","Fira Code",monospace;
+  font-size: 0.76rem; color: #a0c4fa; overflow: hidden; text-overflow: ellipsis;
+  white-space: nowrap; }
+.ai-url-copy { background: var(--bg); border: 1px solid var(--border2);
+  border-radius: 8px; padding: 7px 12px; font-size: 0.76rem; color: var(--muted);
+  cursor: pointer; -webkit-appearance: none; flex-shrink: 0;
+  transition: border-color .15s; }
+.ai-url-copy:hover { border-color: var(--accent); color: var(--text); }
+.ai-note { font-size: 0.72rem; color: var(--muted); margin-top: 6px; line-height: 1.6; }
+.ai-link { color: var(--accent); text-decoration: none; }
+.ai-link:hover { text-decoration: underline; }
+
+/* ── Health bar ── */
+#health-bar { background: #0c0800; border-bottom: 1px solid #2a1a00;
+  padding: 5px 20px; display: flex; align-items: center; gap: 12px;
+  font-size: 0.72rem; flex-wrap: wrap; }
+.hc-label { color: var(--muted); white-space: nowrap; }
+.hc-items { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; flex: 1; }
+.hc-item  { display: flex; align-items: center; gap: 5px; }
+.hc-dot   { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.hc-ok    { background: var(--green); }
+.hc-warn  { background: var(--amber); }
+.hc-err   { background: var(--red); }
+.hc-name  { color: var(--muted); }
+.hc-name.bad  { color: var(--red); font-weight: 600; }
+.hc-name.warn { color: var(--amber); }
+.hc-close { background: none; border: none; color: var(--muted); cursor: pointer;
+  font-size: 0.8rem; margin-left: auto; padding: 0 2px; flex-shrink: 0; }
+
+/* ── Playlist queue ── */
+#playlist-queue { background: #080c0f; border: 1px solid #1a2a3a;
+  border-radius: 12px; padding: 12px 14px; margin-top: 12px; }
+.pq-header { display: flex; align-items: center; gap: 8px; font-size: 0.82rem; }
+.pq-title  { flex: 1; color: var(--blue); font-weight: 600; }
+.pq-run    { background: var(--accent); border: none; border-radius: 8px;
+  padding: 5px 12px; color: #fff; font-size: 0.78rem; font-weight: 600;
+  cursor: pointer; -webkit-appearance: none; }
+.pq-run:disabled { opacity: .45; cursor: default; }
+.pq-dismiss { background: none; border: none; color: var(--muted);
+  cursor: pointer; font-size: 0.8rem; -webkit-appearance: none; }
+.pq-progress { margin-top: 8px; font-size: 0.74rem; color: var(--muted); line-height: 1.8; }
+.pq-item { display: flex; align-items: center; gap: 6px; }
+.pq-item-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--border2); flex-shrink: 0; }
+.pq-item-dot.done    { background: var(--green); }
+.pq-item-dot.running { background: var(--amber); }
+.pq-item-dot.error   { background: var(--red); }
+
+/* ── Result footer ── */
+.result-footer { display: flex; align-items: center; gap: 10px; margin-top: 18px;
+  padding-top: 14px; border-top: 1px solid var(--border); }
+.rf-view { flex: 1; font-size: 0.82rem; color: var(--accent); text-decoration: none; font-weight: 600; }
+.rf-view:hover { text-decoration: underline; }
+.rf-btn { background: var(--bg); border: 1px solid var(--border2);
+  border-radius: 8px; padding: 7px 13px; color: var(--muted);
+  font-size: 0.8rem; cursor: pointer; transition: border-color .15s; -webkit-appearance: none; }
+.rf-btn:hover { border-color: var(--accent); color: var(--text); }
+
+/* ── Notebook Workspace (2-column: source guide + studio) ── */
+.nb-workspace {
+  display: grid;
+  grid-template-columns: 1fr 272px;
+  gap: 14px;
+  align-items: start;
+  margin-bottom: 16px;
+}
+@media (max-width: 860px) { .nb-workspace { grid-template-columns: 1fr; } }
+.nb-main-col { min-width: 0; }
+.nb-studio-col { min-width: 0; }
+
+/* ── Source Guide header (NB style) ── */
+.nb-guide-header {
+  display: flex; gap: 14px; align-items: flex-start;
+  padding-bottom: 14px; border-bottom: 1px solid var(--border); margin-bottom: 14px;
+}
+.nb-guide-thumb {
+  width: 110px; height: 62px; object-fit: cover; border-radius: 8px;
+  background: var(--border); flex-shrink: 0;
+}
+.nb-guide-meta { flex: 1; overflow: hidden; }
+.nb-badge-row { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; flex-wrap: wrap; }
+.nb-guide-title { font-size: 1.05rem; font-weight: 700; color: #fff; line-height: 1.3; margin-bottom: 4px; }
+.nb-guide-source { font-size: 0.78rem; }
+.nb-guide-source a { color: var(--accent); text-decoration: none; }
+.nb-guide-source a:hover { text-decoration: underline; }
+
+/* ── Guide / Chat tab toggle ── */
+.nb-guide-toggle {
+  display: flex; gap: 3px; padding: 3px;
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: 10px; margin-bottom: 14px;
+}
+.ngt-btn {
+  flex: 1; padding: 7px 10px; border: none; border-radius: 8px;
+  font-size: 0.78rem; font-weight: 600; cursor: pointer;
+  color: var(--muted); background: transparent;
+  transition: all .15s; -webkit-appearance: none;
+}
+.ngt-btn.active { background: var(--surface); color: var(--text); border: 1px solid var(--border2); }
+
+/* ── Source Guide content ── */
+.nb-desc { font-size: 0.88rem; color: #9898b8; line-height: 1.6; margin-bottom: 14px; }
+.nb-section-label {
+  font-size: 0.68rem; color: var(--muted2); text-transform: uppercase;
+  letter-spacing: 0.08em; margin: 14px 0 8px;
+}
+.nb-topics-row { display: flex; flex-direction: column; gap: 5px; margin-bottom: 4px; }
+.nb-topics-row .chips { gap: 4px; }
+
+/* ── Chat panel ── */
+.nb-chat-messages {
+  min-height: 180px; max-height: 360px; overflow-y: auto;
+  display: flex; flex-direction: column; gap: 10px;
+  padding: 4px 0 10px; margin-bottom: 8px;
+}
+.chat-bubble {
+  max-width: 88%; padding: 9px 13px; border-radius: 12px;
+  font-size: 0.84rem; line-height: 1.5;
+}
+.chat-bubble-user {
+  background: #130c35; border: 1px solid #2a1a60;
+  color: var(--purple); align-self: flex-end; border-bottom-right-radius: 3px;
+}
+.chat-bubble-ai {
+  background: var(--bg); border: 1px solid var(--border2);
+  color: var(--text); align-self: flex-start; border-bottom-left-radius: 3px;
+}
+.chat-bubble-ai strong { color: #fff; }
+.chat-bubble-thinking {
+  background: var(--bg); border: 1px solid var(--border2);
+  color: var(--muted); align-self: flex-start;
+  font-style: italic; font-size: 0.78rem; border-bottom-left-radius: 3px;
+}
+.nb-chat-suggestions { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 10px; }
+.chat-suggestion {
+  background: var(--bg); border: 1px solid var(--border2);
+  border-radius: 20px; padding: 5px 11px; font-size: 0.75rem;
+  color: var(--muted); cursor: pointer; transition: all .15s; -webkit-appearance: none;
+}
+.chat-suggestion:hover { border-color: var(--accent); color: var(--text); }
+.nb-chat-input-row { display: flex; gap: 7px; align-items: center; }
+.nb-chat-input-row input { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
+.chat-send-btn {
+  background: var(--accent); border: none; border-radius: 10px;
+  width: 38px; height: 38px; color: #fff; font-size: 1.1rem; font-weight: 600;
+  cursor: pointer; flex-shrink: 0; transition: background .15s; -webkit-appearance: none;
+  display: flex; align-items: center; justify-content: center;
+}
+.chat-send-btn:hover { background: var(--accent-d); }
+.chat-send-btn:disabled { background: var(--border2); cursor: default; }
+.chat-empty { font-size: 0.82rem; color: var(--muted); text-align: center; padding: 24px 0; }
+
+/* ── Quality gate row ── */
+.quality-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 6px 0 2px; }
+.quality-score {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 3px 10px; border-radius: 20px; font-size: 0.7rem; font-weight: 700;
+  border: 1px solid; letter-spacing: 0.02em;
+}
+.qs-allow  { background: #081a10; border-color: #1a5c30; color: #4ade80; }
+.qs-reduce { background: #1a1200; border-color: #5c3d00; color: #fbbf24; }
+.qs-deny   { background: #1a0808; border-color: #5c1a1a; color: #f87171; }
+.quality-finding {
+  font-size: 0.65rem; color: var(--muted); padding: 2px 7px;
+  background: var(--bg2); border-radius: 12px; border: 1px solid var(--border);
+}
+.quality-finding.fail { color: #f87171; border-color: #5c1a1a; background: #1a0808; }
+.dca-badge {
+  font-size: 0.65rem; color: var(--muted); padding: 2px 8px;
+  background: var(--bg2); border-radius: 12px; border: 1px solid var(--border2);
+  margin-left: auto;
+}
+.dca-due { color: #fbbf24; border-color: #5c3d00; background: #1a1200; }
+
+/* ── AI Arena attribution strip ── */
+.arena-row { display: flex; flex-wrap: wrap; gap: 5px; margin: 10px 0 4px; }
+.arena-badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 3px 9px; border-radius: 20px; font-size: 0.7rem; font-weight: 600;
+  border: 1px solid; letter-spacing: 0.02em;
+}
+.arena-chatgpt { background: #081a10; border-color: #1a5c30; color: #4ade80; }
+.arena-groq    { background: #0d0820; border-color: #3b1a6b; color: #a78bfa; }
+.arena-merged  { background: #0d1a2e; border-color: #1a4a7a; color: #60a5fa; }
+.arena-github  { background: #0e0e10; border-color: #3a3a45; color: #94a3b8; }
+
+/* ── Studio sidebar ── */
+.studio-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 16px; padding: 16px; position: sticky; top: 68px;
+}
+.studio-tabs {
+  display: flex; gap: 2px; background: var(--bg);
+  border: 1px solid var(--border); border-radius: 10px;
+  padding: 3px; margin-bottom: 14px;
+}
+.studio-tab {
+  flex: 1; padding: 6px 4px; border: none; border-radius: 8px;
+  font-size: 0.7rem; font-weight: 600; cursor: pointer;
+  color: var(--muted); background: transparent;
+  transition: all .15s; -webkit-appearance: none; white-space: nowrap;
+}
+.studio-tab.active { background: var(--surface); color: var(--text); border: 1px solid var(--border2); }
+.studio-pane { display: none; }
+.studio-pane.active { display: block; }
+
+/* Brain */
+.brain-stat-row { display: flex; gap: 8px; margin-bottom: 14px; }
+.brain-stat-box { flex: 1; text-align: center; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 8px 4px; }
+.brain-stat-n { font-size: 1.1rem; font-weight: 700; color: var(--accent); }
+.brain-stat-l { font-size: 0.6rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.brain-sec-label { font-size: 0.64rem; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.07em; margin: 12px 0 7px; }
+.brain-sec-label:first-child { margin-top: 0; }
+.brain-pills { display: flex; flex-wrap: wrap; gap: 4px; }
+.brain-pill {
+  border-radius: 20px; padding: 3px 9px; font-size: 0.72rem;
+  cursor: default; border: 1px solid var(--border2); color: var(--muted); background: var(--bg);
+}
+.brain-pill.concept { border-color: #2a1a5a; color: var(--purple); background: #0e0920; }
+.brain-pill.tool    { border-color: #1a2a50; color: var(--blue);   background: #070d1c; }
+.brain-pill.hi { opacity: 1; } .brain-pill.md { opacity: .72; } .brain-pill.lo { opacity: .48; }
+.brain-edge { display: flex; gap: 6px; align-items: baseline; font-size: 0.74rem; padding: 5px 0; border-bottom: 1px solid var(--border); }
+.brain-edge:last-child { border-bottom: none; }
+.brain-edge-names { flex: 1; color: var(--text); font-weight: 600; }
+.brain-edge-shared { color: var(--muted); font-size: 0.68rem; }
+.brain-empty { font-size: 0.82rem; color: var(--muted); text-align: center; padding: 16px 0; }
+
+/* Notes */
+.notes-area {
+  width: 100%; min-height: 180px; background: var(--bg);
+  border: 1px solid var(--border2); border-radius: 10px; padding: 10px 12px;
+  color: var(--text); font-size: 0.84rem; line-height: 1.6;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  resize: vertical; outline: none; transition: border-color .15s; -webkit-appearance: none;
+}
+.notes-area:focus { border-color: var(--accent); }
+.notes-save-row { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+.notes-save-btn {
+  background: var(--bg); border: 1px solid var(--border2);
+  border-radius: 8px; padding: 6px 14px; font-size: 0.78rem; font-weight: 600;
+  color: var(--muted); cursor: pointer; transition: all .15s; -webkit-appearance: none;
+}
+.notes-save-btn:hover { border-color: var(--accent); color: var(--text); }
+
+/* Study Guide */
+.briefing-btn {
+  width: 100%; background: linear-gradient(135deg,#140c38 0%,#0a1428 100%);
+  border: 1px solid var(--accent); border-radius: 10px; padding: 10px;
+  color: var(--purple); font-size: 0.82rem; font-weight: 600;
+  cursor: pointer; transition: all .15s; -webkit-appearance: none; margin-bottom: 12px;
+}
+.briefing-btn:hover { background: #1a1050; border-color: var(--purple); }
+.briefing-btn:disabled { opacity: .5; cursor: default; }
+.briefing-content {
+  font-size: 0.78rem; color: #9898b8; line-height: 1.75;
+  white-space: pre-wrap; word-break: break-word;
+}
+.briefing-content strong, .briefing-content b { color: var(--text); display: block; margin-top: 8px; }
+
+/* ── Agents panel ── */
+.agents-panel { padding: 4px 0; }
+.agents-section-label {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 8px;
+  display: flex; align-items: center; gap: 6px;
+}
+.agents-badge {
+  font-size: 0.62rem; background: #1a1200; color: #fbbf24;
+  border: 1px solid #5c3d00; border-radius: 8px; padding: 1px 6px;
+}
+.agents-loading { font-size: 0.75rem; color: var(--muted); padding: 6px 0; }
+.agents-jobs-list { display: flex; flex-direction: column; gap: 8px; }
+.agent-job {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 10px; padding: 10px 12px;
+}
+.agent-job-header {
+  display: flex; align-items: center; gap: 6px; margin-bottom: 4px;
+}
+.agent-job-name  { font-size: 0.8rem; font-weight: 600; color: var(--text); flex: 1; }
+.agent-job-status {
+  font-size: 0.65rem; padding: 2px 8px; border-radius: 20px; font-weight: 700;
+  border: 1px solid;
+}
+.ajs-idle    { color: var(--muted); border-color: var(--border2); background: var(--bg); }
+.ajs-running { color: #fbbf24; border-color: #5c3d00; background: #1a1200; animation: pulse .8s infinite alternate; }
+.ajs-ok      { color: #4ade80; border-color: #1a5c30; background: #081a10; }
+.ajs-error   { color: #f87171; border-color: #5c1a1a; background: #1a0808; }
+.ajs-disabled{ color: #666; border-color: #333; background: var(--bg); }
+@keyframes pulse { from { opacity:.6 } to { opacity:1 } }
+.agent-job-desc  { font-size: 0.7rem; color: var(--muted); margin-bottom: 6px; }
+.agent-job-times { font-size: 0.66rem; color: #666; margin-bottom: 8px; }
+.agent-job-times span { color: var(--muted); }
+.agent-job-actions { display: flex; gap: 6px; }
+.aj-btn {
+  font-size: 0.68rem; padding: 3px 10px; border-radius: 8px;
+  border: 1px solid var(--border2); background: var(--bg); color: var(--muted);
+  cursor: pointer; transition: all .15s;
+}
+.aj-btn:hover  { border-color: var(--accent); color: var(--text); }
+.aj-btn.run    { border-color: #1a5c30; color: #4ade80; background: #081a10; }
+.aj-btn.run:hover { background: #0d2b18; }
+.aj-btn.dis    { border-color: #5c3d00; color: #fbbf24; background: #1a1200; }
+
+/* ── Discovery stats ── */
+.discovery-stats {
+  background: var(--bg2); border: 1px solid var(--border); border-radius: 10px;
+  padding: 10px 12px; margin-bottom: 8px;
+}
+.disc-counters { display: flex; gap: 14px; margin-bottom: 8px; flex-wrap: wrap; }
+.disc-counter  { text-align: center; }
+.disc-counter-num  { font-size: 1.1rem; font-weight: 700; color: var(--text); line-height: 1.2; }
+.disc-counter-lbl  { font-size: 0.6rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+.disc-btn {
+  font-size: 0.68rem; padding: 3px 10px; border-radius: 8px; cursor: pointer;
+  border: 1px solid #1a5c30; color: #4ade80; background: #081a10; transition: all .15s;
+}
+.disc-btn:hover { background: #0d2b18; }
+.disc-btn:disabled { opacity: .5; cursor: default; }
+.discovery-recent { display: flex; flex-direction: column; gap: 5px; margin-bottom: 8px; }
+.disc-entry {
+  background: var(--bg2); border: 1px solid var(--border); border-radius: 8px;
+  padding: 7px 10px; font-size: 0.7rem;
+}
+.disc-entry-top  { display: flex; align-items: center; gap: 6px; margin-bottom: 2px; }
+.disc-entry-repo { flex: 1; color: var(--muted); font-size: 0.64rem;
+                   white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.disc-action {
+  font-size: 0.6rem; padding: 1px 6px; border-radius: 10px; font-weight: 700; border: 1px solid; flex-shrink: 0;
+}
+.da-create  { color: #4ade80; border-color: #1a5c30; background: #081a10; }
+.da-enhance { color: #60a5fa; border-color: #1a3a5c; background: #081828; }
+.da-denied  { color: #666;    border-color: #333;    background: var(--bg); }
+.da-error   { color: #f87171; border-color: #5c1a1a; background: #1a0808; }
+.disc-entry-skill { color: var(--text); font-weight: 600; }
+.disc-entry-meta  { color: #555; font-size: 0.62rem; }
+.disc-empty { font-size: 0.74rem; color: var(--muted); text-align: center; padding: 6px 0; }
+
+/* ── Watchlist */
+.watchlist-add-row { display: flex; gap: 6px; margin-bottom: 10px; }
+.watchlist-url-input {
+  flex: 1; background: var(--bg); border: 1px solid var(--border2);
+  border-radius: 8px; padding: 6px 10px; color: var(--text); font-size: 0.75rem;
+  outline: none;
+}
+.watchlist-url-input:focus { border-color: var(--accent); }
+.wl-add-btn {
+  background: var(--bg2); border: 1px solid var(--accent); border-radius: 8px;
+  padding: 6px 12px; color: var(--purple); font-size: 0.75rem; font-weight: 600;
+  cursor: pointer; white-space: nowrap;
+}
+.wl-add-btn:hover { background: #1a1050; }
+.watchlist-list { display: flex; flex-direction: column; gap: 6px; }
+.wl-entry {
+  background: var(--bg2); border: 1px solid var(--border); border-radius: 9px;
+  padding: 8px 10px; font-size: 0.72rem;
+}
+.wl-entry-top    { display: flex; align-items: center; gap: 6px; margin-bottom: 3px; }
+.wl-entry-label  { flex: 1; color: var(--text); font-weight: 600;
+                   white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.wl-status {
+  font-size: 0.62rem; padding: 1px 7px; border-radius: 12px; font-weight: 700; border: 1px solid;
+}
+.wls-pending    { color: var(--muted); border-color: var(--border2); }
+.wls-processing { color: #fbbf24; border-color: #5c3d00; animation: pulse .8s infinite alternate; }
+.wls-done       { color: #4ade80; border-color: #1a5c30; }
+.wls-error      { color: #f87171; border-color: #5c1a1a; }
+.wl-entry-url   { color: #555; font-size: 0.65rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.wl-remove-btn  {
+  font-size: 0.62rem; padding: 1px 6px; border-radius: 6px;
+  border: 1px solid var(--border); background: none; color: #666;
+  cursor: pointer; flex-shrink: 0;
+}
+.wl-remove-btn:hover { color: #f87171; border-color: #5c1a1a; }
+.wl-empty { font-size: 0.75rem; color: var(--muted); padding: 6px 0; text-align: center; }
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">⚡ Fieldnote</div>
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-n" id="stat-skills">{{ stats.skills }}</div>
+      <div class="stat-l">Skills</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n" id="stat-tools">{{ stats.tools }}</div>
+      <div class="stat-l">Tools</div>
+    </div>
+    <div class="stat">
+      <div class="stat-n" id="stat-pkgs">{{ stats.packages }}</div>
+      <div class="stat-l">Packages</div>
+    </div>
+    <div class="stat stat-repo">
+      <div class="stat-n" id="stat-repos">{{ stats.repos }}</div>
+      <div class="stat-l">Repos</div>
+    </div>
+    <div class="stat stat-mcp">
+      <div class="stat-n" id="stat-mcp">{{ stats.mcp }}</div>
+      <div class="stat-l">MCP</div>
+    </div>
+  </div>
+</header>
+
+<!-- System health bar (only shown when a required tool is missing) -->
+<div id="health-bar" style="display:none">
+  <span class="hc-label">System:</span>
+  <div class="hc-items" id="hc-items"></div>
+  <button class="hc-close" onclick="document.getElementById('health-bar').style.display='none'">✕</button>
+</div>
+
+<div class="container">
+
+  <!-- Input card -->
+  <div class="card">
+    <span class="label">YouTube URL or Playlist</span>
+    <div class="url-row">
+      <input type="text" id="url-input"
+        placeholder="https://youtube.com/watch?v=… or /playlist?list=…"
+        autocomplete="off" autocorrect="off" spellcheck="false">
+      <button id="run-btn" onclick="runProcess()">Run</button>
+    </div>
+
+    <div id="video-preview">
+      <img id="preview-thumb" src="" alt="">
+      <div class="preview-info">
+        <div id="preview-title"></div>
+        <div id="preview-author"></div>
+        <span id="playlist-badge">📋 Playlist</span>
+      </div>
+    </div>
+
+    <!-- Playlist queue (shown when playlist URL detected) -->
+    <div id="playlist-queue" style="display:none">
+      <div class="pq-header">
+        <span class="pq-title">📋 <span id="pq-count">0</span> videos in playlist</span>
+        <button class="pq-run" id="pq-run-btn" onclick="runPlaylist()">Run All</button>
+        <button class="pq-dismiss" onclick="dismissPlaylist()">✕</button>
+      </div>
+      <div class="pq-progress" id="pq-progress"></div>
+    </div>
+
+    <div id="status"></div>
+    <div id="log-wrap"><div id="log-lines"></div></div>
+  </div>
+
+  <!-- Auth prompts (shown when credentials are needed) -->
+  <div id="auth-prompts"></div>
+
+  <!-- Notebook Workspace: Source Guide (left) + Studio (right) -->
+  <div id="nb-workspace" class="nb-workspace" style="display:none">
+
+    <!-- Left: Source Guide card -->
+    <div class="nb-main-col">
+      <div class="card" id="result" style="display:none">
+
+        <!-- NB-style header: thumb + title/meta -->
+        <div class="nb-guide-header">
+          <img class="nb-guide-thumb" id="res-thumb" src="" alt="">
+          <div class="nb-guide-meta">
+            <div class="nb-badge-row">
+              <div class="action-badge badge-create" id="res-badge">✨ New skill</div>
+              <span id="res-method"></span>
+            </div>
+            <div class="nb-guide-title" id="res-title"></div>
+            <div class="nb-guide-source" id="res-source"></div>
+            <div style="font-size:.72rem;color:var(--muted);margin-top:2px" id="res-words"></div>
+          </div>
+        </div>
+
+        <!-- Source Guide / Chat tabs -->
+        <div class="nb-guide-toggle">
+          <button class="ngt-btn active" id="ngt-guide" onclick="nbGuideTab('guide')">📋 Source Guide</button>
+          <button class="ngt-btn"        id="ngt-chat"  onclick="nbGuideTab('chat')">💬 Chat</button>
+        </div>
+
+        <!-- Source Guide pane -->
+        <div id="nb-guide-pane">
+          <div class="nb-desc" id="res-desc"></div>
+          <div id="res-arena" class="arena-row" style="display:none"></div>
+          <div id="res-quality" class="quality-row" style="display:none"></div>
+
+          <div class="nb-section-label">Key Topics</div>
+          <div class="nb-topics-row">
+            <div class="chips" id="res-tools"></div>
+            <div class="chips" id="res-concepts"></div>
+            <div class="chips" id="res-tags"></div>
+          </div>
+
+          <div class="nb-section-label">Steps &amp; Insights</div>
+          <ul class="steps-list" id="res-steps"></ul>
+
+          <div id="res-pkg-sec" style="display:none">
+            <div class="nb-section-label">Packages auto-installed</div>
+            <div class="chips" id="res-pkgs"></div>
+          </div>
+
+          <div id="res-related-sec" style="display:none">
+            <div class="nb-section-label">Related skills</div>
+            <div class="chips" id="res-related"></div>
+          </div>
+
+          <div id="res-github-sec" style="display:none">
+            <div class="nb-section-label" style="display:flex;align-items:center;gap:4px">
+              GitHub repos discovered
+              <button class="sec-toggle" onclick="toggleSec('github-repos')">▾</button>
+            </div>
+            <div class="collapsible" id="github-repos" style="max-height:800px">
+              <div class="repo-grid" id="res-repos"></div>
+            </div>
+          </div>
+
+          <div class="result-footer">
+            <a class="rf-view" id="res-skill-link" href="#">View full skill →</a>
+            <a class="rf-view" id="res-gh-link" href="#" target="_blank" rel="noopener"
+               style="display:none;color:var(--green)">🐙 View on GitHub →</a>
+            <button class="rf-btn" onclick="rerunLast()">🔄 Re-run</button>
+            <button class="rf-btn" onclick="clearAndFocus()">＋ New video</button>
+          </div>
+        </div>
+
+        <!-- Chat pane (shown when Chat tab active) -->
+        <div id="nb-chat-pane" style="display:none">
+          <div id="chat-messages" class="nb-chat-messages">
+            <div class="chat-empty">Ask anything about this skill — steps, tools, how to apply it…</div>
+          </div>
+          <div id="chat-suggestions" class="nb-chat-suggestions"></div>
+          <div class="nb-chat-input-row">
+            <input id="chat-input" type="text"
+                   placeholder="Ask anything about this skill…"
+                   onkeydown="if(event.key==='Enter')sendChat()">
+            <button class="chat-send-btn" id="chat-send-btn" onclick="sendChat()">↑</button>
+          </div>
+        </div>
+
+      </div><!-- #result -->
+    </div><!-- .nb-main-col -->
+
+    <!-- Right: Studio (Brain + Notes + Study Guide) -->
+    <div class="nb-studio-col">
+      <div class="studio-card">
+        <div class="studio-tabs">
+          <button class="studio-tab active" onclick="studioTab('brain')">🧠 Brain</button>
+          <button class="studio-tab"        onclick="studioTab('notes')">📝 Notes</button>
+          <button class="studio-tab"        onclick="studioTab('guide')">📄 Guide</button>
+          <button class="studio-tab"        onclick="studioTab('agents')">🤖 Agents</button>
+        </div>
+
+        <!-- Brain -->
+        <div class="studio-pane active" id="studio-pane-brain">
+          <div id="brain-content">
+            <div class="brain-empty">Process a video to build your knowledge map</div>
+          </div>
+        </div>
+
+        <!-- Notes -->
+        <div class="studio-pane" id="studio-pane-notes">
+          <textarea id="notes-area" class="notes-area"
+                    placeholder="Your notes about this skill…"
+                    oninput="_notesDirty=true"></textarea>
+          <div class="notes-save-row">
+            <button class="notes-save-btn" onclick="saveNotes()">Save Notes</button>
+            <span id="notes-saved-msg"
+                  style="font-size:.74rem;color:var(--green);display:none">✓ Saved</span>
+          </div>
+        </div>
+
+        <!-- Study Guide -->
+        <div class="studio-pane" id="studio-pane-guide">
+          <button class="briefing-btn" id="briefing-btn" onclick="generateBriefing()">
+            ✨ Generate Study Guide
+          </button>
+          <div id="briefing-content" class="briefing-content"></div>
+        </div>
+
+        <!-- Agents -->
+        <div class="studio-pane" id="studio-pane-agents">
+          <div class="agents-panel">
+
+            <div class="agents-section-label">🔄 Scheduled Jobs</div>
+            <div id="agents-jobs-list" class="agents-jobs-list">
+              <div class="agents-loading">Loading…</div>
+            </div>
+
+            <div class="agents-section-label" style="margin-top:16px">🔭 GitHub Discovery
+              <span class="agents-badge" id="discovery-stats-badge" style="display:none"></span>
+            </div>
+            <div id="discovery-stats" class="discovery-stats">
+              <div class="agents-loading">Loading…</div>
+            </div>
+            <div id="discovery-recent" class="discovery-recent" style="display:none"></div>
+
+            <div class="agents-section-label" style="margin-top:14px">📋 Watchlist
+              <span class="agents-badge" id="watchlist-pending-badge" style="display:none"></span>
+            </div>
+            <div class="watchlist-add-row">
+              <input id="watchlist-url" type="text" class="watchlist-url-input"
+                     placeholder="YouTube URL to process automatically…"
+                     onkeydown="if(event.key==='Enter')addToWatchlist()">
+              <button class="wl-add-btn" onclick="addToWatchlist()">＋ Add</button>
+            </div>
+            <div id="watchlist-list" class="watchlist-list">
+              <div class="agents-loading">Loading…</div>
+            </div>
+
+          </div>
+        </div>
+
+      </div><!-- .studio-card -->
+    </div><!-- .nb-studio-col -->
+
+  </div><!-- #nb-workspace -->
+
+
+  <!-- Skill Library -->
+  <div class="card">
+    <div class="lib-header">
+      <span class="label" style="margin:0">Skill Library</span>
+      <input type="search" id="search-input" placeholder="Search …" oninput="filterSkills()">
+      <a id="gh-repo-link" href="https://github.com/edneycaleb-droid/fieldnote"
+         target="_blank" rel="noopener"
+         style="font-size:.74rem;color:var(--green);text-decoration:none;white-space:nowrap"
+         title="View skill library on GitHub">🐙 GitHub</a>
+      <button onclick="syncAllToGitHub()" id="gh-sync-btn"
+              style="font-size:.72rem;padding:4px 10px;background:var(--bg);border:1px solid var(--border2);
+                     border-radius:8px;color:var(--muted);cursor:pointer;white-space:nowrap"
+              title="Push all skills to GitHub now">↑ Sync</button>
+    </div>
+
+    {% if all_tags %}
+    <div class="tag-row" id="tag-row">
+      <button class="tag-btn all active" onclick="filterByTag('')">All</button>
+      {% for tag in all_tags %}
+      <button class="tag-btn" onclick="filterByTag('{{ tag }}')">{{ tag }}</button>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <div class="skill-list" id="skill-list">
+      {% if skills %}
+        {% for s in skills %}
+        <a class="skill-row" href="/skills/{{ s.file }}"
+           data-title="{{ s.title|lower }}"
+           data-tags="{{ s.tags | join(' ') | lower }}">
+          <div class="skill-row-info">
+            <div class="skill-row-title">{{ s.title }}</div>
+            <div class="skill-row-meta">
+              {% if s.source_title %}{{ s.source_title[:40] }}{% endif %}
+              {% if s.method %} · {{ "🎙 Whisper" if s.method == "whisper" else "✓ Captions" }}{% endif %}
+            </div>
+          </div>
+          <div class="skill-row-tags">
+            {% for t in s.tags[:2] %}<span class="sr-tag">{{ t }}</span>{% endfor %}
+          </div>
+          <span class="skill-row-arrow">›</span>
+        </a>
+        {% endfor %}
+      {% else %}
+        <div class="empty" id="lib-empty">No skills yet — paste a YouTube URL and hit Run.</div>
+      {% endif %}
+    </div>
+  </div>
+
+  <!-- ── AI Connections ──────────────────────────────────────────────────── -->
+  <div class="ai-card">
+    <div class="lib-header" style="margin-bottom:12px">
+      <span class="label" style="margin:0">🤖 AI Connections</span>
+      <span style="font-size:.72rem;color:var(--muted)">Let Claude &amp; ChatGPT read this library</span>
+    </div>
+
+    <div class="ai-tabs">
+      <button class="ai-tab active" onclick="aiTab('claude')">Claude</button>
+      <button class="ai-tab"       onclick="aiTab('chatgpt')">ChatGPT</button>
+    </div>
+
+    <!-- Claude pane -->
+    <div class="ai-pane active" id="ai-pane-claude">
+      <p class="ai-step"><strong>Option A — Claude.ai (remote, no install)</strong><br>
+        In Claude.ai → Settings → Integrations → Add integration → paste the MCP URL below.</p>
+      <div class="ai-url-row">
+        <span class="ai-url" id="claude-sse-url">{{ base_url }}/mcp/sse</span>
+        <button class="ai-url-copy" onclick="copyText('claude-sse-url', this)">Copy</button>
+      </div>
+
+      <p class="ai-step" style="margin-top:14px"><strong>Option B — Claude Desktop (local, full speed)</strong><br>
+        Download <code>fieldnote_mcp/fieldnote_server.py</code> to your machine, then add to your
+        <a class="ai-link" href="https://modelcontextprotocol.io/quickstart/user" target="_blank" rel="noopener">Claude Desktop config ↗</a>:</p>
+      <div class="ai-snippet" id="claude-desktop-snippet">Loading…<button class="ai-copy" onclick="copyText('claude-desktop-snippet', this)">Copy</button></div>
+
+      <p class="ai-note">Once connected, Claude can call: <code>list_skills</code> · <code>get_skill</code> · <code>search_skills</code> · <code>get_all_tools</code> · <code>get_all_concepts</code> · <code>get_library_stats</code></p>
+    </div>
+
+    <!-- ChatGPT pane -->
+    <div class="ai-pane" id="ai-pane-chatgpt">
+      <p class="ai-step"><strong>Step 1 — Open ChatGPT → Explore GPTs → Create a GPT</strong></p>
+      <p class="ai-step"><strong>Step 2 — Go to Configure → Actions → Create new action</strong></p>
+      <p class="ai-step"><strong>Step 3 — Paste the OpenAPI spec URL:</strong></p>
+      <div class="ai-url-row">
+        <span class="ai-url" id="openapi-url">{{ base_url }}/openapi.json</span>
+        <button class="ai-url-copy" onclick="copyText('openapi-url', this)">Copy</button>
+      </div>
+      <p class="ai-step" style="margin-top:4px">ChatGPT will auto-import all endpoints. Hit "Import from URL" in the Actions editor.</p>
+      <p class="ai-step" style="margin-top:10px"><strong>What ChatGPT gets access to:</strong></p>
+      <div class="ai-url-row" style="gap:6px;flex-wrap:wrap">
+        <span class="chip chip-tool">list_skills</span>
+        <span class="chip chip-tool">get_skill_content</span>
+        <span class="chip chip-tool">health_check</span>
+      </div>
+      <p class="ai-note" style="margin-top:10px">
+        Tip: Give your GPT a system prompt like <em>"You have access to a Fieldnote skill library via actions. When asked how to do something technical, search the library first."</em>
+      </p>
+      <p class="ai-note">
+        <a class="ai-link" href="{{ base_url }}/openapi.json" target="_blank">View OpenAPI spec ↗</a>
+        &nbsp;·&nbsp;
+        <a class="ai-link" href="{{ base_url }}/api/skills" target="_blank">Browse skills API ↗</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- MCP Connections -->
+  <div class="card" id="connections-card">
+    <div class="lib-header">
+      <span class="label" style="margin:0">🔌 MCP Connections</span>
+      <button class="sec-toggle" onclick="toggleSec('conn-list-wrap')" style="font-size:.8rem;color:var(--muted)">▾</button>
+    </div>
+    <div class="collapsible" id="conn-list-wrap" style="max-height:2000px">
+      <div class="conn-list" id="conn-list">
+        {% if mcp_connections %}
+          {% for c in mcp_connections %}
+          <div class="conn-row">
+            <div class="status-dot {{ 'dot-auth' if c.needs_auth else 'dot-ready' }}"></div>
+            <div class="conn-info">
+              <div class="conn-name">{{ c.name }}</div>
+              <div class="conn-sub">
+                {{ c.tool }}
+                {% if c.repo_url %} · <a href="{{ c.repo_url }}" target="_blank" rel="noopener" style="color:var(--accent)">GitHub ↗</a>{% endif %}
+              </div>
+              {% if c.install_hint %}
+              <div class="conn-hint">{{ c.install_hint }}</div>
+              {% endif %}
+            </div>
+            <span class="src-badge src-{{ c.source }}">{{ c.source }}</span>
+          </div>
+          {% endfor %}
+        {% else %}
+          <div class="empty">No MCP connections yet — they auto-register when a video mentions supported tools.</div>
+        {% endif %}
+      </div>
+      <div class="config-path" id="mcp-config-hint">
+        {% if mcp_connections %}
+        Config: <code>fieldnote_mcp/mcp_config.json</code> · <a href="/api/mcp/config" target="_blank">View JSON ↗</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ── Metadata preview ──────────────────────────────────────────────────────────
+let _metaTimer, _currentES;
+
+document.getElementById("url-input").addEventListener("input", e => {
+  clearTimeout(_metaTimer);
+  const url = e.target.value.trim();
+  if (!url) { hidePreview(); return; }
+  _metaTimer = setTimeout(() => fetchMeta(url), 600);
+});
+
+// ── System health check ───────────────────────────────────────────────────────
+async function checkHealth() {
+  try {
+    const r = await fetch("/api/health");
+    const h = await r.json();
+    const CHECKS = [
+      { key: "groq",    label: "Groq",    required: false, fix: "Add GROQ secret for free LLM fallback" },
+      { key: "chatgpt", label: "ChatGPT", required: false, fix: "Add CHATGPT secret for GPT-4o quality" },
+      { key: "ytdlp",  label: "yt-dlp",  required: true,  fix: "yt-dlp not found — transcript fallback unavailable" },
+      { key: "ffmpeg", label: "ffmpeg",  required: false, fix: "ffmpeg missing — Whisper audio conversion unavailable" },
+      { key: "github", label: "GitHub",  required: false, fix: "Add GITHUB_TOKEN for 5 000 req/hr (optional)" },
+      { key: "npx",    label: "npx",     required: false, fix: "npx missing — npm MCP servers need Node.js" },
+    ];
+    let anyBad = false;
+    const items = CHECKS.map(c => {
+      const ok = h[c.key];
+      if (!ok && c.required) anyBad = true;
+      const cls = ok ? "hc-ok" : c.required ? "hc-err" : "hc-warn";
+      const nameCls = ok ? "" : c.required ? "bad" : "warn";
+      const title = ok ? "" : ` title="${esc(c.fix)}"`;
+      return `<span class="hc-item"${title}><span class="hc-dot ${cls}"></span>
+              <span class="hc-name ${nameCls}">${c.label}</span></span>`;
+    }).join("");
+    document.getElementById("hc-items").innerHTML = items;
+    // Show bar only if something is missing (any check failed)
+    const anyMissing = CHECKS.some(c => !h[c.key]);
+    document.getElementById("health-bar").style.display = anyMissing ? "flex" : "none";
+  } catch (e) { /* health check is non-critical */ }
+}
+
+// ── Playlist handling ─────────────────────────────────────────────────────────
+let _playlistId   = null;
+let _playlistIds  = [];
+let _playlistMeta = {};   // video_id → title
+
+async function fetchMeta(url) {
+  // Show skeleton while loading
+  document.getElementById("preview-thumb").src          = "";
+  document.getElementById("preview-title").textContent  = "Loading…";
+  document.getElementById("preview-author").textContent = "";
+  document.getElementById("playlist-badge").style.display = "none";
+  document.getElementById("video-preview").style.display  = "flex";
+
+  try {
+    const r = await fetch(`/metadata?url=${encodeURIComponent(url)}`);
+    if (!r.ok) { hidePreview(); dismissPlaylist(); return; }
+    const d = await r.json();
+    if (d.error || !d.video_id) { hidePreview(); dismissPlaylist(); return; }
+    document.getElementById("preview-thumb").src          = d.thumbnail;
+    document.getElementById("preview-title").textContent  = d.title  || "YouTube Video";
+    document.getElementById("preview-author").textContent = d.author || "";
+    document.getElementById("playlist-badge").style.display = d.is_playlist ? "inline-block" : "none";
+
+    // Playlist: load queue
+    if (d.is_playlist && d.playlist_id) {
+      _playlistId = d.playlist_id;
+      showPlaylistQueue(d.playlist_id);
+    } else {
+      dismissPlaylist();
+    }
+  } catch { hidePreview(); dismissPlaylist(); }
+}
+function hidePreview() {
+  document.getElementById("video-preview").style.display = "none";
+}
+async function showPlaylistQueue(listId) {
+  const qDiv  = document.getElementById("playlist-queue");
+  const prog  = document.getElementById("pq-progress");
+  const count = document.getElementById("pq-count");
+  qDiv.style.display = "block";
+  count.textContent  = "…";
+  prog.innerHTML     = '<div class="pq-item"><span class="pq-item-dot running"></span> Loading playlist…</div>';
+  try {
+    const r  = await fetch(`/api/playlist_ids?list=${encodeURIComponent(listId)}`);
+    const d  = await r.json();
+    _playlistIds = d.ids || [];
+    count.textContent = _playlistIds.length;
+    prog.innerHTML = _playlistIds.map((id, i) =>
+      `<div class="pq-item" id="pqi-${id}">
+         <span class="pq-item-dot" id="pqd-${id}"></span>
+         <span id="pqt-${id}">${id}</span>
+       </div>`
+    ).join("");
+  } catch (e) {
+    prog.innerHTML = `<span style="color:var(--red)">Failed to load playlist: ${esc(String(e))}</span>`;
+  }
+}
+function dismissPlaylist() {
+  _playlistId  = null;
+  _playlistIds = [];
+  document.getElementById("playlist-queue").style.display = "none";
+}
+async function runPlaylist() {
+  if (!_playlistIds.length) return;
+  const btn = document.getElementById("pq-run-btn");
+  btn.disabled = true;
+  const baseUrl = `https://youtube.com/watch?v=`;
+  for (let i = 0; i < _playlistIds.length; i++) {
+    const vid = _playlistIds[i];
+    const dot  = document.getElementById(`pqd-${vid}`);
+    const txt  = document.getElementById(`pqt-${vid}`);
+    if (dot) dot.className = "pq-item-dot running";
+    document.getElementById("pq-count").textContent = `${i+1}/${_playlistIds.length}`;
+    try {
+      await runSingleVideo(baseUrl + vid, vid);
+      if (dot) dot.className = "pq-item-dot done";
+      if (txt && _playlistMeta[vid]) txt.textContent = _playlistMeta[vid];
+    } catch (e) {
+      if (dot) dot.className = "pq-item-dot error";
+    }
+    await new Promise(r => setTimeout(r, 800)); // brief pause between videos
+  }
+  btn.disabled = false;
+  btn.textContent = "✓ All done";
+}
+
+// ── Main process ──────────────────────────────────────────────────────────────
+let _lastUrl = "";
+
+async function syncAllToGitHub() {
+  const btn = document.getElementById("gh-sync-btn");
+  if (btn) { btn.textContent = "↑ Syncing…"; btn.disabled = true; }
+  try {
+    const r = await fetch("/api/github/sync", { method: "POST" });
+    const d = await r.json();
+    if (btn) {
+      if (d.ok) {
+        btn.textContent = `✓ ${d.pushed.length} synced`;
+        btn.style.color = "var(--green)";
+      } else {
+        btn.textContent = "✗ Failed";
+        btn.style.color = "#f87171";
+        console.error("GitHub sync error:", d.error);
+      }
+      setTimeout(() => {
+        btn.textContent = "↑ Sync"; btn.disabled = false;
+        btn.style.color = "var(--muted)";
+      }, 3000);
+    }
+  } catch(e) {
+    if (btn) { btn.textContent = "↑ Sync"; btn.disabled = false; }
+  }
+}
+
+function rerunLast() {
+  if (!_lastUrl) return;
+  document.getElementById("url-input").value = _lastUrl;
+  runProcess();
+}
+function clearAndFocus() {
+  document.getElementById("url-input").value = "";
+  document.getElementById("url-input").focus();
+  document.getElementById("result").style.display = "none";
+  hidePreview();
+  dismissPlaylist();
+}
+
+async function runProcess() {
+  const url = document.getElementById("url-input").value.trim();
+  if (!url) { setStatus("Paste a YouTube URL first.", "error"); return; }
+  const vid = extractVideoId(url);
+  if (vid) return runSingleVideo(url, vid);
+  // Pure playlist URL — run the queue if it's already loaded
+  if (_playlistIds.length > 0) { runPlaylist(); return; }
+  // Playlist URL but queue not loaded yet — fetch then run
+  const listMatch = url.match(/[?&]list=([A-Za-z0-9_-]+)/);
+  if (listMatch) {
+    await showPlaylistQueue(listMatch[1]);
+    if (_playlistIds.length > 0) { runPlaylist(); return; }
+  }
+  setStatus("Could not find a YouTube video ID or playlist in that URL.", "error");
+}
+
+function extractVideoId(url) {
+  const m = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/|youtube\.com\/shorts\/)([a-zA-Z0-9_-]{11})/);
+  return m ? m[1] : null;
+}
+
+async function runSingleVideo(url, videoId) {
+  _lastUrl = url;
+  const btn = document.getElementById("run-btn");
+  btn.disabled = true; btn.textContent = "Running …";
+  document.getElementById("result").style.display = "none";
+  document.getElementById("auth-prompts").innerHTML = "";
+
+  const logWrap  = document.getElementById("log-wrap");
+  const logLines = document.getElementById("log-lines");
+  logWrap.style.display = "block";
+  logLines.innerHTML = "";
+  setStatus("Starting parallel agents …", "");
+
+  if (_currentES) { _currentES.close(); _currentES = null; }
+
+  try {
+    const r = await fetch("/process", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ url }),
+    });
+    const { job_id, error } = await r.json();
+    if (error) { showErr(error); reset(btn); throw new Error(error); }
+
+    await new Promise((resolve, reject) => {
+      _currentES = new EventSource(`/stream/${job_id}`);
+      _currentES.onmessage = e => {
+        const msg = JSON.parse(e.data);
+        if (msg.type === "ping")          return;
+        if (msg.type === "log")           { appendLog(msg.msg, msg.kind); return; }
+        if (msg.type === "oauth_required"){ renderAuthPrompt(msg.auth); return; }
+        if (msg.type === "meta" && msg.data?.title) {
+          _playlistMeta[videoId] = msg.data.title;
+        }
+        if (msg.type === "done") {
+          _currentES.close();
+          reset(btn);
+          if (msg.ok) {
+            renderResult(msg);
+            updateStats(msg.stats);
+            prependSkill(msg);
+            refreshConnections();
+            setStatus("Done — skill saved to library.", "ok");
+            resolve(msg);
+          } else {
+            showErr(msg.error || "Something went wrong.");
+            reject(new Error(msg.error || "Job failed"));
+          }
+        }
+      };
+      _currentES.onerror = () => {
+        _currentES.close();
+        reset(btn);
+        reject(new Error("Stream connection lost"));
+      };
+    });
+
+  } catch (e) {
+    if (e.message !== "Job failed") showErr(e.message);
+    reset(btn);
+  }
+}
+
+function reset(btn) {
+  btn.disabled = false; btn.textContent = "Run";
+}
+function setStatus(msg, cls) {
+  const el = document.getElementById("status");
+  el.textContent = msg; el.className = cls || "";
+}
+function showErr(msg) {
+  setStatus(msg, "error");
+  // Append retry button to status line
+  const el = document.getElementById("status");
+  if (_lastUrl) {
+    const btn = document.createElement("button");
+    btn.textContent = " Retry ↺";
+    btn.style.cssText = "margin-left:8px;background:none;border:1px solid var(--red);color:var(--red);border-radius:6px;padding:2px 8px;font-size:.75rem;cursor:pointer;vertical-align:middle";
+    btn.onclick = rerunLast;
+    el.appendChild(btn);
+  }
+}
+function appendLog(msg, kind) {
+  const el = document.createElement("div");
+  el.className = `ll ll-${kind || "info"}`;
+  el.textContent = msg;
+  const c = document.getElementById("log-lines");
+  c.appendChild(el);
+  c.scrollTop = c.scrollHeight;
+}
+
+// ── Render result (NotebookLM style) ─────────────────────────────────────────
+function renderResult(d) {
+  const isEnhance = d.action === "enhance";
+  const badge = document.getElementById("res-badge");
+  badge.textContent = isEnhance ? "🔄 Enhanced" : "✨ New skill";
+  badge.className   = `action-badge ${isEnhance ? "badge-enhance" : "badge-create"}`;
+
+  document.getElementById("res-title").textContent = d.title || "Untitled";
+  document.getElementById("res-desc").textContent  = d.description || "";
+
+  const mp = d.transcript_method === "whisper"
+    ? `<span class="method-pill mp-whisper">🎙 Whisper</span>`
+    : `<span class="method-pill mp-captions">✓ Captions</span>`;
+  document.getElementById("res-method").innerHTML = mp;
+  document.getElementById("res-words").textContent =
+    (d.transcript_words || 0).toLocaleString() + " words";
+
+  const sl = document.getElementById("res-steps");
+  sl.innerHTML = (d.steps || []).map((s, i) =>
+    `<li class="step-row"><span class="step-n">${i+1}</span>
+     <span class="step-txt">${esc(s)}</span></li>`
+  ).join("") || "<li class='step-row'><span class='step-txt' style='color:var(--muted)'>No steps extracted.</span></li>";
+
+  setChips("res-tools",    d.tools    || [], "chip chip-tool");
+  setChips("res-concepts", d.concepts || [], "chip");
+  setChips("res-tags",     d.tags     || [], "chip chip-tag");
+
+  const pkgSec = document.getElementById("res-pkg-sec");
+  if ((d.python_packages || []).length) {
+    document.getElementById("res-pkgs").innerHTML =
+      (d.python_packages || []).map(p => {
+        const cls = (d.installed||[]).includes(p) ? "chip chip-ok"
+                  : (d.failed||[]).includes(p)    ? "chip chip-fail" : "chip";
+        return `<span class="${cls}">${esc(p)}</span>`;
+      }).join("");
+    pkgSec.style.display = "block";
+  } else {
+    pkgSec.style.display = "none";
+  }
+
+  const relSec   = document.getElementById("res-related-sec");
+  const relLinks = (d.related_skills || []).filter(Boolean);
+  if (relLinks.length) {
+    document.getElementById("res-related").innerHTML =
+      relLinks.map(n => `<a href="/skills/${n}.md" class="chip chip-related">${esc(n)}</a>`).join("");
+    relSec.style.display = "block";
+  } else {
+    relSec.style.display = "none";
+  }
+
+  const repos = d.github_repos || [];
+  if (repos.length) {
+    document.getElementById("res-repos").innerHTML = repos.map(r => repoCardHtml(r)).join("");
+    document.getElementById("res-github-sec").style.display = "block";
+  } else {
+    document.getElementById("res-github-sec").style.display = "none";
+  }
+
+  if (d.thumbnail) document.getElementById("res-thumb").src = d.thumbnail;
+  const srcEl = document.getElementById("res-source");
+  srcEl.innerHTML = d.source_title
+    ? `<a href="https://youtube.com/watch?v=${d.video_id}" target="_blank" rel="noopener">${esc(d.source_title)}</a>`
+    : `<a href="https://youtube.com/watch?v=${d.video_id}" target="_blank" rel="noopener">Watch source video ↗</a>`;
+
+  const skillLink = document.getElementById("res-skill-link");
+  if (skillLink && d.skill_name) {
+    skillLink.href      = `/skills/${d.skill_name}.md`;
+    skillLink.textContent = `View full skill: ${d.skill_name} →`;
+  }
+
+  // ── GitHub sync link ──
+  const ghLink = document.getElementById("res-gh-link");
+  if (ghLink && d.sync_repo && d.skill_name) {
+    ghLink.href = d.sync_repo + "/blob/main/skills/" + d.skill_name + ".md";
+    ghLink.style.display = "";
+  }
+
+  // ── Quality gate row ──
+  const qr     = d.quality || {};
+  const qEl    = document.getElementById("res-quality");
+  if (qEl && qr.score !== undefined) {
+    const dec    = qr.decision || "allow";
+    const pct    = Math.round((qr.score || 0) * 100);
+    const emoji  = dec === "allow" ? "✅" : dec === "reduce" ? "⚠️" : "❌";
+    const label  = dec === "allow" ? "High quality" : dec === "reduce" ? "Review suggested" : "Low quality";
+    let html = `<span class="quality-score qs-${dec}">${emoji} ${pct}% · ${label}</span>`;
+    // Show any failed gates as pills
+    (qr.findings || []).filter(f => !f.passed).forEach(f => {
+      html += `<span class="quality-finding fail">✗ ${esc(f.gate)}</span>`;
+    });
+    // DCA schedule badge
+    const dca = d.dca || {};
+    if (dca.next_enhancement) {
+      const due  = dca.due ? " dca-due" : "";
+      const lbl  = dca.due ? `🔄 Due for update (${esc(dca.label)})` : `Next: ${esc(dca.next_enhancement)}`;
+      html += `<span class="dca-badge${due}" title="Enhancement schedule level ${dca.level}">${lbl}</span>`;
+    }
+    qEl.innerHTML  = html;
+    qEl.style.display = "";
+  } else if (qEl) {
+    qEl.style.display = "none";
+  }
+
+  // ── Arena attribution badges ──
+  const arena    = d.arena || {};
+  const arenaEl  = document.getElementById("res-arena");
+  if (arena.steps_a !== undefined || arena.steps_b !== undefined) {
+    const sa = arena.steps_a || 0, sb = arena.steps_b || 0, sm = arena.steps_merged || 0;
+    const gh = arena.github_tools_added || 0;
+    arenaEl.innerHTML =
+      `<span class="arena-badge arena-chatgpt">🤖 ChatGPT ${sa} steps</span>` +
+      `<span class="arena-badge arena-groq">⚡ Groq ${sb} steps</span>` +
+      `<span class="arena-badge arena-merged">🏆 Merged → ${sm}</span>` +
+      (gh > 0 ? `<span class="arena-badge arena-github">🐙 +${gh} GitHub tools</span>` : "");
+    arenaEl.style.display = "";
+  } else {
+    arenaEl.style.display = "none";
+  }
+
+  // ── Show NB workspace ──
+  document.getElementById("nb-workspace").style.display = "";
+  document.getElementById("result").style.display = "block";
+  document.querySelector(".container").classList.add("nb-active");
+
+  // ── Reset state ──
+  _currentSkill = d.skill_name || "";
+  _chatHistory  = [];
+  _notesDirty   = false;
+  nbGuideTab("guide");
+  studioTab("brain");
+  loadBrain();
+  loadNotes(_currentSkill);
+
+  // ── Seed chat suggestions ──
+  const topics = (d.tools || []).slice(0,2).concat((d.concepts || []).slice(0,2));
+  const qs = topics.length
+    ? [`How does ${topics[0]} work?`,
+       `What is ${topics[1] || topics[0]} used for?`,
+       "How do I apply this in practice?"]
+    : ["What are the key steps?", "How do I get started?", "What are common pitfalls?"];
+  document.getElementById("chat-suggestions").innerHTML =
+    qs.map(q => `<button class="chat-suggestion" onclick="chatSuggest(this)">${esc(q)}</button>`).join("");
+  document.getElementById("chat-suggestions").style.display = "";
+  document.getElementById("chat-messages").innerHTML =
+    '<div class="chat-empty">Ask anything about this skill — steps, tools, how to apply it…</div>';
+}
+
+function repoCardHtml(r) {
+  const langBadge = r.language
+    ? `<span class="rb rb-${r.language.toLowerCase() === 'typescript' ? 'ts' : 'py'}">${esc(r.language)}</span>` : "";
+  const mcpBadge = r.is_mcp ? `<span class="rb rb-mcp">🔌 MCP</span>` : `<span class="rb rb-repo">📦</span>`;
+  const stars = r.stars ? `<span class="stars">⭐ ${r.stars.toLocaleString()}</span>` : "";
+  return `
+    <a class="repo-card" href="${esc(r.url)}" target="_blank" rel="noopener">
+      <div class="repo-left">
+        <div class="repo-name">${esc(r.full_name)}</div>
+        ${r.description ? `<div class="repo-desc">${esc(r.description)}</div>` : ""}
+        <div class="repo-meta">for: ${esc(r.tool || "")}</div>
+      </div>
+      <div class="repo-right">
+        ${mcpBadge}
+        ${langBadge}
+        ${stars}
+      </div>
+    </a>`;
+}
+
+// ── Auth / OAuth prompts — one-click interactive widget ───────────────────────
+const _shownAuth  = new Set();
+const _pollTimers = {};   // service → interval id
+
+function renderAuthPrompt(auth) {
+  if (_shownAuth.has(auth.service)) return;
+  _shownAuth.add(auth.service);
+
+  const svc        = auth.service;
+  const secret     = auth.secret     || "";
+  const url        = auth.url        || "#";
+  const desc       = auth.description|| svc;
+  const scopes     = auth.scopes     || "";
+  const hint       = auth.paste_hint || "Paste key here…";
+  const hasDevice  = !!auth.device_flow;   // GitHub device flow available
+  const isOauth    = auth.type === "oauth";
+
+  // Label for the "get key" button changes by service type
+  const getLabel = isOauth  ? "⚡ Open OAuth Setup ↗"
+                 : hasDevice ? "📋 Get token manually ↗"
+                 :             "⚡ Get API key (pre-filled) ↗";
+
+  // Build tabs: show Device Flow tab only for GitHub-style services
+  const tabsHtml = hasDevice ? `
+    <div class="auth-tabs">
+      <button class="auth-tab active" onclick="authTab(event,'${svc}','device')">🔐 One-Click OAuth</button>
+      <button class="auth-tab"       onclick="authTab(event,'${svc}','paste')">📋 Paste Token</button>
+    </div>` : "";
+
+  const devicePane = hasDevice ? `
+    <div class="auth-tab-pane active" id="auth-pane-device-${svc}">
+      <button class="auth-device-btn" id="auth-devbtn-${svc}"
+              onclick="startDeviceFlow('${svc}','${secret}')">
+        🔐 Authorize with GitHub — one click
+      </button>
+      <div class="auth-device-code" id="auth-devcode-${svc}">
+        <div class="auth-code-display" id="auth-devcode-val-${svc}"></div>
+        <div><a class="auth-device-open" id="auth-devcode-link-${svc}"
+                target="_blank" rel="noopener">🔗 Open GitHub approval page ↗</a></div>
+        <div class="auth-poll-status waiting" id="auth-devcode-status-${svc}">
+          ⏳ Waiting for you to approve on GitHub…
+        </div>
+      </div>
+      <div class="auth-setup-hint" id="auth-devsetup-${svc}" style="display:none">
+        One-time setup needed: <a href="https://github.com/settings/applications/new"
+        target="_blank">register a GitHub OAuth App ↗</a>, set both URLs to this app's URL,
+        then save the Client ID below as <code>GITHUB_OAUTH_CLIENT_ID</code> and try again.
+        <br><br>
+        <div class="auth-paste-row" style="margin-top:4px">
+          <input class="auth-input" id="auth-clientid-input-${svc}"
+                 placeholder="Client ID (paste here)">
+          <button class="auth-activate-btn"
+                  onclick="saveAndRetry('${svc}','GITHUB_OAUTH_CLIENT_ID',
+                           document.getElementById('auth-clientid-input-${svc}').value)">
+            Save &amp; Retry
+          </button>
+        </div>
+      </div>
+    </div>` : "";
+
+  const pastePane = `
+    <div class="auth-tab-pane ${hasDevice ? "" : "active"}"
+         id="auth-pane-paste-${svc}">
+      <a class="auth-get-btn" href="${esc(url)}" target="_blank" rel="noopener">
+        ${getLabel}
+      </a>
+      <div class="auth-paste-row">
+        <input type="password" class="auth-input" id="auth-input-${svc}"
+               placeholder="${esc(hint)}"
+               oninput="document.getElementById('auth-act-${svc}').disabled=!this.value.trim()">
+        <button class="auth-activate-btn" id="auth-act-${svc}"
+                onclick="activateKey('${svc}','${secret}')" disabled>
+          Activate
+        </button>
+      </div>
+      ${scopes ? `<div class="auth-scopes">Scopes: ${esc(scopes)}</div>` : ""}
+    </div>`;
+
+  const successDiv = `
+    <div id="auth-success-${svc}" style="display:none">
+      <div class="auth-success-msg">✅ ${esc(desc)} connected</div>
+      <div class="auth-success-sub">Active immediately — MCP will use it on the next run.</div>
+    </div>`;
+
+  const div = document.createElement("div");
+  div.className = "auth-card";
+  div.id = `auth-${svc}`;
+  div.innerHTML = `
+    <div class="auth-card-header">
+      <span class="auth-card-icon">${isOauth || hasDevice ? "🔐" : "🔑"}</span>
+      <span class="auth-card-title">${esc(desc)} needed</span>
+      <button class="auth-dismiss" onclick="dismissAuth('${svc}')">✕</button>
+    </div>
+    ${tabsHtml}
+    ${devicePane}
+    ${pastePane}
+    ${successDiv}`;
+
+  document.getElementById("auth-prompts").appendChild(div);
+}
+
+function authTab(e, svc, tab) {
+  const card = document.getElementById(`auth-${svc}`);
+  card.querySelectorAll(".auth-tab").forEach(b => b.classList.remove("active"));
+  e.target.classList.add("active");
+  card.querySelectorAll(".auth-tab-pane").forEach(p => p.classList.remove("active"));
+  const pane = document.getElementById(`auth-pane-${tab}-${svc}`);
+  if (pane) pane.classList.add("active");
+}
+
+function dismissAuth(svc) {
+  clearInterval(_pollTimers[svc]);
+  const el = document.getElementById(`auth-${svc}`);
+  if (el) el.remove();
+}
+
+// ── GitHub Device Flow ────────────────────────────────────────────────────────
+async function startDeviceFlow(svc, secret) {
+  const btn      = document.getElementById(`auth-devbtn-${svc}`);
+  const codeDiv  = document.getElementById(`auth-devcode-${svc}`);
+  const codeVal  = document.getElementById(`auth-devcode-val-${svc}`);
+  const codeLink = document.getElementById(`auth-devcode-link-${svc}`);
+  const status   = document.getElementById(`auth-devcode-status-${svc}`);
+  const setup    = document.getElementById(`auth-devsetup-${svc}`);
+
+  btn.disabled = true;
+  btn.textContent = "⏳ Starting OAuth flow…";
+
+  try {
+    const r = await fetch("/oauth/github/device/start");
+    const d = await r.json();
+
+    if (d.error === "no_client_id") {
+      btn.style.display = "none";
+      if (setup) setup.style.display = "block";
+      return;
+    }
+    if (d.error) {
+      btn.disabled = false;
+      btn.textContent = "🔐 Authorize with GitHub — one click";
+      if (status) { status.className = "auth-poll-status"; status.textContent = "Error: " + d.error; }
+      return;
+    }
+
+    // Show code + open verification URL
+    codeVal.textContent  = d.user_code || "";
+    codeLink.href        = d.verification_uri || "https://github.com/login/device";
+    codeDiv.style.display = "block";
+    btn.style.display    = "none";
+    window.open(d.verification_uri || "https://github.com/login/device", "_blank");
+
+    // Poll every interval seconds (default 5, respect slow_down)
+    let pollInterval = (d.interval || 5) * 1000;
+    const deviceCode = d.device_code;
+    const expiresAt  = Date.now() + ((d.expires_in || 900) * 1000);
+
+    _pollTimers[svc] = setInterval(async () => {
+      if (Date.now() > expiresAt) {
+        clearInterval(_pollTimers[svc]);
+        status.className = "auth-poll-status";
+        status.textContent = "⏰ Code expired — click Authorize to restart.";
+        btn.style.display = "block";
+        btn.disabled = false;
+        btn.textContent = "🔐 Authorize with GitHub — one click";
+        codeDiv.style.display = "none";
+        return;
+      }
+
+      try {
+        const pr = await fetch("/oauth/github/device/poll", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ device_code: deviceCode }),
+        });
+        const pd = await pr.json();
+
+        if (pd.ok && pd.activated) {
+          clearInterval(_pollTimers[svc]);
+          showAuthSuccess(svc, secret, "GitHub OAuth");
+        } else if (pd.error === "slow_down") {
+          pollInterval += 5000;
+        } else if (pd.error && pd.error !== "authorization_pending") {
+          clearInterval(_pollTimers[svc]);
+          status.className = "auth-poll-status";
+          status.textContent = "Error: " + pd.error;
+        }
+      } catch (_) { /* network blip — keep polling */ }
+    }, pollInterval);
+
+  } catch (ex) {
+    btn.disabled = false;
+    btn.textContent = "🔐 Authorize with GitHub — one click";
+    console.error("device flow:", ex);
+  }
+}
+
+// ── Paste / API key activation ────────────────────────────────────────────────
+async function activateKey(svc, secret) {
+  const input = document.getElementById(`auth-input-${svc}`);
+  const btn   = document.getElementById(`auth-act-${svc}`);
+  const value = (input?.value || "").trim();
+  if (!value) return;
+
+  btn.disabled = true;
+  btn.textContent = "Saving…";
+
+  try {
+    const r = await fetch("/api/secrets/set", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name: secret, value }),
+    });
+    const d = await r.json();
+    if (d.ok) {
+      showAuthSuccess(svc, secret, d.name);
+    } else {
+      btn.disabled = false;
+      btn.textContent = "Activate";
+      alert("Save failed: " + (d.error || "unknown error"));
+    }
+  } catch (ex) {
+    btn.disabled = false;
+    btn.textContent = "Activate";
+    console.error("activateKey:", ex);
+  }
+}
+
+async function saveAndRetry(svc, secret, value) {
+  value = (value || "").trim();
+  if (!value) return;
+  await fetch("/api/secrets/set", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ name: secret, value }),
+  });
+  // Re-attempt device flow now that client ID is saved
+  document.getElementById(`auth-devsetup-${svc}`).style.display = "none";
+  const btn = document.getElementById(`auth-devbtn-${svc}`);
+  if (btn) { btn.style.display = "block"; btn.disabled = false; }
+  startDeviceFlow(svc, secret);
+}
+
+function showAuthSuccess(svc, secret, label) {
+  const card    = document.getElementById(`auth-${svc}`);
+  const success = document.getElementById(`auth-success-${svc}`);
+  if (!card || !success) return;
+  clearInterval(_pollTimers[svc]);
+  // Hide all panes
+  card.querySelectorAll(".auth-tab-pane, .auth-tabs, .auth-device-code").forEach(
+    el => el.style.display = "none"
+  );
+  card.classList.add("auth-success");
+  success.style.display = "block";
+  // Update success message with the actual label
+  const msg = success.querySelector(".auth-success-msg");
+  if (msg) msg.textContent = `✅ ${label} connected`;
+  // Refresh MCP panel so the dot goes green
+  setTimeout(refreshConnections, 800);
+}
+
+// ── MCP Connections refresh ───────────────────────────────────────────────────
+async function refreshConnections() {
+  try {
+    const r = await fetch("/api/mcp/connections");
+    const conns = await r.json();
+    const list = document.getElementById("conn-list");
+    const hint = document.getElementById("mcp-config-hint");
+
+    if (!conns.length) {
+      list.innerHTML = '<div class="empty">No MCP connections yet.</div>';
+      hint.innerHTML = "";
+      return;
+    }
+
+    list.innerHTML = conns.map(c => {
+      const dotCls  = c.needs_auth ? "dot-auth" : c.status === "ready" ? "dot-ready" : "dot-pend";
+      const srcCls  = `src-${(c.source||"").replace(/[^a-z0-9_]/g,"_")}`;
+      const repoLink = c.repo_url
+        ? ` · <a href="${esc(c.repo_url)}" target="_blank" rel="noopener" style="color:var(--accent)">GitHub ↗</a>` : "";
+      const hint2 = c.install_hint
+        ? `<div class="conn-hint">⚡ ${esc(c.install_hint)}</div>` : "";
+      return `
+        <div class="conn-row">
+          <div class="status-dot ${dotCls}"></div>
+          <div class="conn-info">
+            <div class="conn-name">${esc(c.name)}</div>
+            <div class="conn-sub">${esc(c.tool)}${repoLink}</div>
+            ${hint2}
+          </div>
+          <span class="src-badge ${srcCls}">${esc(c.source)}</span>
+        </div>`;
+    }).join("");
+
+    hint.innerHTML = `Config: <code>fieldnote_mcp/mcp_config.json</code> · <a href="/api/mcp/config" target="_blank">View JSON ↗</a>`;
+  } catch (e) {
+    console.warn("refreshConnections:", e);
+  }
+}
+
+// ── Stats update ──────────────────────────────────────────────────────────────
+function updateStats(s) {
+  if (!s) return;
+  document.getElementById("stat-skills").textContent = s.skills   || 0;
+  document.getElementById("stat-tools").textContent  = s.tools    || 0;
+  document.getElementById("stat-pkgs").textContent   = s.packages || 0;
+  document.getElementById("stat-repos").textContent  = s.repos    || 0;
+  document.getElementById("stat-mcp").textContent    = s.mcp      || 0;
+}
+
+// ── Prepend to library ────────────────────────────────────────────────────────
+function prependSkill(d) {
+  const list  = document.getElementById("skill-list");
+  const empty = document.getElementById("lib-empty");
+  if (empty) empty.remove();
+  const fname    = d.skill_name + ".md";
+  const tags     = (d.tags || []).slice(0, 2);
+  const tagsHtml = tags.map(t => `<span class="sr-tag">${esc(t)}</span>`).join("");
+  const existing = list.querySelector(`[href="/skills/${fname}"]`);
+  if (existing) existing.remove();
+  list.insertAdjacentHTML("afterbegin", `
+    <a class="skill-row" href="/skills/${fname}"
+       data-title="${(d.title||'').toLowerCase()}"
+       data-tags="${(d.tags||[]).join(' ').toLowerCase()}">
+      <div class="skill-row-info">
+        <div class="skill-row-title">${esc(d.title || fname)}</div>
+        <div class="skill-row-meta">${esc(d.source_title||'')} · ${
+          d.transcript_method === "whisper" ? "🎙 Whisper" : "✓ Captions"}</div>
+      </div>
+      <div class="skill-row-tags">${tagsHtml}</div>
+      <span class="skill-row-arrow">›</span>
+    </a>`);
+}
+
+// ── Library filter ────────────────────────────────────────────────────────────
+let _activeTag = "";
+function filterByTag(tag) {
+  _activeTag = tag;
+  document.querySelectorAll(".tag-btn").forEach(b => {
+    b.classList.toggle("active",
+      tag === "" ? b.classList.contains("all") : b.textContent === tag);
+  });
+  applyFilter();
+}
+function filterSkills() { applyFilter(); }
+function applyFilter() {
+  const q   = document.getElementById("search-input").value.trim().toLowerCase();
+  const tag = _activeTag;
+  let any   = false;
+  document.querySelectorAll(".skill-row").forEach(row => {
+    const t = row.dataset.title || "";
+    const g = row.dataset.tags  || "";
+    const show = (!q || t.includes(q) || g.includes(q)) && (!tag || g.includes(tag.toLowerCase()));
+    row.style.display = show ? "flex" : "none";
+    if (show) any = true;
+  });
+  let noRes = document.getElementById("no-results");
+  if (!any) {
+    if (!noRes) {
+      noRes = document.createElement("div");
+      noRes.id = "no-results"; noRes.className = "empty";
+      noRes.textContent = "No skills match.";
+      document.getElementById("skill-list").appendChild(noRes);
+    }
+  } else if (noRes) {
+    noRes.remove();
+  }
+}
+
+// ── Collapse sections ─────────────────────────────────────────────────────────
+function toggleSec(id) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.classList.toggle("closed");
+}
+
+
+// ── Notebook UI state ─────────────────────────────────────────────────────────
+let _chatHistory  = [];
+let _currentSkill = "";
+let _notesDirty   = false;
+
+function nbGuideTab(tab) {
+  const isChat = tab === 'chat';
+  document.getElementById('nb-guide-pane').style.display = isChat ? 'none' : '';
+  document.getElementById('nb-chat-pane').style.display  = isChat ? ''     : 'none';
+  document.getElementById('ngt-guide').classList.toggle('active', !isChat);
+  document.getElementById('ngt-chat').classList.toggle('active',   isChat);
+  if (isChat) document.getElementById('chat-input').focus();
+}
+
+const STUDIO_TABS = ['brain','notes','guide','agents'];
+function studioTab(tab) {
+  document.querySelectorAll('.studio-tab').forEach((b, i) =>
+    b.classList.toggle('active', STUDIO_TABS[i] === tab));
+  STUDIO_TABS.forEach(t =>
+    document.getElementById('studio-pane-' + t).classList.toggle('active', t === tab));
+  if (tab === 'agents') loadAgents();
+}
+
+// ── Agents panel ──────────────────────────────────────────────────────────────
+
+let _agentsTimer = null;
+
+async function loadAgents() {
+  try {
+    const [sRes, wRes, dRes] = await Promise.all([
+      fetch('/api/scheduler/status').then(r => r.json()),
+      fetch('/api/watchlist').then(r => r.json()),
+      fetch('/api/discovery/stats').then(r => r.json()).catch(() => null),
+    ]);
+    renderAgentJobs(sRes.jobs || []);
+    renderDiscovery(dRes);
+    renderWatchlist(wRes.entries || []);
+    // Auto-refresh while pane is visible
+    clearTimeout(_agentsTimer);
+    _agentsTimer = setTimeout(() => {
+      if (document.getElementById('studio-pane-agents').classList.contains('active'))
+        loadAgents();
+    }, 8000);
+  } catch(e) {
+    document.getElementById('agents-jobs-list').innerHTML =
+      '<div class="agents-loading">Could not load scheduler status.</div>';
+  }
+}
+
+function renderDiscovery(d) {
+  const statsEl  = document.getElementById('discovery-stats');
+  const recentEl = document.getElementById('discovery-recent');
+  const badge    = document.getElementById('discovery-stats-badge');
+  if (!statsEl) return;
+
+  if (!d) {
+    statsEl.innerHTML = '<div class="disc-empty">Stats unavailable</div>';
+    return;
+  }
+
+  const total = (d.skills_created||0) + (d.skills_enhanced||0);
+  if (total > 0 && badge) { badge.textContent = total + ' learned'; badge.style.display = ''; }
+  else if (badge) badge.style.display = 'none';
+
+  statsEl.innerHTML = `
+    <div class="disc-counters">
+      <div class="disc-counter">
+        <div class="disc-counter-num">${d.total_repos_seen||0}</div>
+        <div class="disc-counter-lbl">Repos seen</div>
+      </div>
+      <div class="disc-counter">
+        <div class="disc-counter-num" style="color:#4ade80">${d.skills_created||0}</div>
+        <div class="disc-counter-lbl">Created</div>
+      </div>
+      <div class="disc-counter">
+        <div class="disc-counter-num" style="color:#60a5fa">${d.skills_enhanced||0}</div>
+        <div class="disc-counter-lbl">Enhanced</div>
+      </div>
+      <div class="disc-counter">
+        <div class="disc-counter-num" style="color:#f87171">${d.errors||0}</div>
+        <div class="disc-counter-lbl">Errors</div>
+      </div>
+    </div>
+    <button class="disc-btn" onclick="runAgentNow('discover')">🔭 Discover now</button>
+  `;
+
+  const recent = d.recent_discoveries || [];
+  if (!recent.length) {
+    recentEl.innerHTML = '<div class="disc-empty">No discoveries yet — runs in ~30 min.</div>';
+    recentEl.style.display = '';
+    return;
+  }
+  recentEl.style.display = '';
+  recentEl.innerHTML = recent.map(e => {
+    const act = e.action === 'create'  ? '<span class="disc-action da-create">＋ created</span>'
+              : e.action === 'enhance' ? '<span class="disc-action da-enhance">↑ enhanced</span>'
+              : e.action === 'quality_denied' ? '<span class="disc-action da-denied">✗ denied</span>'
+              : '<span class="disc-action da-error">! error</span>';
+    const skill = e.skill_name
+      ? `<a class="disc-entry-skill" href="/skills/${esc(e.skill_name)}.md">${esc(e.skill_name)}</a>`
+      : '';
+    const stars = e.stars ? ` · ⭐ ${e.stars.toLocaleString()}` : '';
+    const q     = e.quality_score !== undefined ? ` · ${Math.round(e.quality_score*100)}%` : '';
+    const when  = e.processed_at ? ` · ${relTime(e.processed_at)}` : '';
+    return `<div class="disc-entry">
+      <div class="disc-entry-top">
+        <span class="disc-entry-repo" title="${esc(e.repo)}">${esc(e.repo)}</span>
+        ${act}
+      </div>
+      ${skill ? `<div>${skill}<span class="disc-entry-meta">${stars}${q}${when}</span></div>` : `<div class="disc-entry-meta">${stars}${q}${when}</div>`}
+    </div>`;
+  }).join('');
+}
+
+function renderAgentJobs(jobs) {
+  const el = document.getElementById('agents-jobs-list');
+  if (!jobs.length) { el.innerHTML = '<div class="agents-loading">No jobs registered.</div>'; return; }
+  el.innerHTML = jobs.map(j => {
+    let cls  = 'ajs-idle', lbl = 'Idle';
+    if (!j.enabled)  { cls = 'ajs-disabled'; lbl = 'Off'; }
+    else if (j.running) { cls = 'ajs-running'; lbl = '⚙ Running'; }
+    else if (j.last_error) { cls = 'ajs-error'; lbl = 'Error'; }
+    else if (j.runs_ok > 0) { cls = 'ajs-ok';    lbl = `✓ ${j.runs_ok} ok`; }
+    const hr  = (j.interval_secs / 3600).toFixed(j.interval_secs % 3600 === 0 ? 0 : 1);
+    const last = j.last_run  ? `Last: ${relTime(j.last_run)}`  : 'Never run';
+    const next = j.next_run  ? `Next: ${relTime(j.next_run)}`  : '';
+    const res  = j.last_result ? JSON.stringify(j.last_result).slice(0,60) : '';
+    return `<div class="agent-job">
+      <div class="agent-job-header">
+        <span class="agent-job-name">${esc(j.name)} <span style="color:#555;font-weight:400">(every ${hr}h)</span></span>
+        <span class="agent-job-status ${cls}">${lbl}</span>
+      </div>
+      <div class="agent-job-desc">${esc(j.description)}</div>
+      <div class="agent-job-times"><span>${last}</span>${next ? '  ·  <span>'+next+'</span>' : ''}${res ? '  ·  <span title="'+esc(j.last_result && JSON.stringify(j.last_result))+'">'+esc(res)+'…</span>' : ''}</div>
+      <div class="agent-job-actions">
+        <button class="aj-btn run" onclick="runAgentNow('${esc(j.name)}')" ${j.running?'disabled':''}>▶ Run now</button>
+        <button class="aj-btn dis"  onclick="toggleAgent('${esc(j.name)}',${!j.enabled})">${j.enabled ? '⏸ Pause' : '▶ Enable'}</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+async function runAgentNow(name) {
+  const res = await fetch('/api/scheduler/run/' + name, {method:'POST'}).then(r=>r.json());
+  if (res.ok) { setTimeout(loadAgents, 500); }
+  else         { alert('Error: ' + (res.error || 'unknown')); }
+}
+
+async function toggleAgent(name, enabled) {
+  await fetch('/api/scheduler/toggle/' + name, {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({enabled}),
+  });
+  loadAgents();
+}
+
+function renderWatchlist(entries) {
+  const el     = document.getElementById('watchlist-list');
+  const badge  = document.getElementById('watchlist-pending-badge');
+  const pending = entries.filter(e => e.status === 'pending').length;
+  if (pending) { badge.textContent = pending + ' pending'; badge.style.display = ''; }
+  else           badge.style.display = 'none';
+
+  if (!entries.length) {
+    el.innerHTML = '<div class="wl-empty">No URLs queued — add one above.</div>';
+    return;
+  }
+  el.innerHTML = entries.slice().reverse().map(e => {
+    const scls = `wls-${e.status}`;
+    const lbl  = e.label || e.url;
+    const skill = e.skill_name ? ` → <a href="/skills/${esc(e.skill_name)}.md" style="color:var(--green)">${esc(e.skill_name)}</a>` : '';
+    return `<div class="wl-entry">
+      <div class="wl-entry-top">
+        <span class="wl-entry-label" title="${esc(e.url)}">${esc(lbl)}</span>
+        <span class="wl-status ${scls}">${esc(e.status)}</span>
+        <button class="wl-remove-btn" onclick="removeWatchlist('${esc(e.url)}')">✕</button>
+      </div>
+      <div class="wl-entry-url">${esc(e.url)}${skill}</div>
+    </div>`;
+  }).join('');
+}
+
+async function addToWatchlist() {
+  const inp = document.getElementById('watchlist-url');
+  const url = (inp.value || '').trim();
+  if (!url) return;
+  const res = await fetch('/api/watchlist', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({url, label: url}),
+  }).then(r => r.json());
+  if (res.ok) { inp.value = ''; loadAgents(); }
+  else         alert(res.error || 'Failed to add');
+}
+
+async function removeWatchlist(url) {
+  await fetch('/api/watchlist/remove', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({url}),
+  });
+  loadAgents();
+}
+
+function relTime(iso) {
+  if (!iso) return '?';
+  const diff = (Date.now() - new Date(iso).getTime()) / 1000;
+  if (diff < 0) {
+    const abs = Math.abs(diff);
+    if (abs < 60) return 'in a moment';
+    if (abs < 3600) return `in ${Math.round(abs/60)}m`;
+    if (abs < 86400) return `in ${Math.round(abs/3600)}h`;
+    return `in ${Math.round(abs/86400)}d`;
+  }
+  if (diff < 60) return 'just now';
+  if (diff < 3600) return `${Math.round(diff/60)}m ago`;
+  if (diff < 86400) return `${Math.round(diff/3600)}h ago`;
+  return `${Math.round(diff/86400)}d ago`;
+}
+
+async function sendChat() {
+  const input = document.getElementById('chat-input');
+  const msg   = (input.value || '').trim();
+  if (!msg) return;
+  const btn = document.getElementById('chat-send-btn');
+  btn.disabled = true;
+  input.value  = '';
+  document.getElementById('chat-suggestions').style.display = 'none';
+  const empty = document.querySelector('.chat-empty');
+  if (empty) empty.remove();
+  const msgs = document.getElementById('chat-messages');
+  const addBubble = (text, cls) => {
+    const d = document.createElement('div');
+    d.className   = 'chat-bubble ' + cls;
+    d.textContent = text;
+    msgs.appendChild(d);
+    msgs.scrollTop = msgs.scrollHeight;
+    return d;
+  };
+  addBubble(msg, 'chat-bubble-user');
+  const thinking = addBubble('Thinking…', 'chat-bubble-thinking');
+  _chatHistory.push({role: 'user', content: msg});
+  try {
+    const res  = await fetch('/api/chat', {
+      method: 'POST', headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({message: msg, skill: _currentSkill, history: _chatHistory.slice(-6)})
+    });
+    const data = await res.json();
+    thinking.remove();
+    if (data.answer) {
+      addBubble(data.answer, 'chat-bubble-ai');
+      _chatHistory.push({role: 'assistant', content: data.answer});
+    } else {
+      addBubble('Error: ' + (data.error || 'Unknown'), 'chat-bubble-thinking');
+    }
+  } catch (e) {
+    thinking.remove();
+    addBubble('Connection error', 'chat-bubble-thinking');
+  } finally {
+    btn.disabled = false;
+    input.focus();
+  }
+}
+
+function chatSuggest(btn) {
+  document.getElementById('chat-input').value = btn.textContent;
+  nbGuideTab('chat');
+  sendChat();
+}
+
+async function loadBrain() {
+  try {
+    const data = await (await fetch('/api/brain')).json();
+    renderBrain(data);
+  } catch (e) {
+    document.getElementById('brain-content').innerHTML =
+      '<div class="brain-empty">Failed to load brain data</div>';
+  }
+}
+
+function renderBrain(data) {
+  const el = document.getElementById('brain-content');
+  if (!data || data.empty || !data.total_skills) {
+    el.innerHTML = '<div class="brain-empty">Process a video to build your knowledge map</div>';
+    return;
+  }
+  let h = '';
+  h += `<div class="brain-stat-row">
+    <div class="brain-stat-box"><div class="brain-stat-n">${data.total_skills}</div><div class="brain-stat-l">Skills</div></div>
+    <div class="brain-stat-box"><div class="brain-stat-n">${data.top_concepts.length}</div><div class="brain-stat-l">Concepts</div></div>
+    <div class="brain-stat-box"><div class="brain-stat-n">${data.top_tools.length}</div><div class="brain-stat-l">Tools</div></div>
+  </div>`;
+  if (data.top_concepts.length) {
+    h += '<div class="brain-sec-label">Top Concepts</div><div class="brain-pills">';
+    const mxC = data.top_concepts[0].freq;
+    data.top_concepts.slice(0,14).forEach(c => {
+      const r = c.freq/mxC; const cls = r>.66?'hi':r>.33?'md':'lo';
+      h += `<span class="brain-pill concept ${cls}" title="${esc(c.skills.join(', '))}">${esc(c.name)}</span>`;
+    });
+    h += '</div>';
+  }
+  if (data.top_tools.length) {
+    h += '<div class="brain-sec-label">Power Tools</div><div class="brain-pills">';
+    const mxT = data.top_tools[0].freq;
+    data.top_tools.slice(0,14).forEach(t => {
+      const r = t.freq/mxT; const cls = r>.66?'hi':r>.33?'md':'lo';
+      h += `<span class="brain-pill tool ${cls}" title="${esc(t.skills.join(', '))}">${esc(t.name)}</span>`;
+    });
+    h += '</div>';
+  }
+  if (data.relationships.length) {
+    h += '<div class="brain-sec-label">Skill Connections</div>';
+    data.relationships.slice(0,6).forEach(e => {
+      h += `<div class="brain-edge">
+        <span class="brain-edge-names">${esc(e.a)} ↔ ${esc(e.b)}</span>
+        <span class="brain-edge-shared">${e.shared.slice(0,3).map(esc).join(', ')}</span>
+      </div>`;
+    });
+  }
+  el.innerHTML = h;
+}
+
+async function loadNotes(skillName) {
+  if (!skillName) return;
+  try {
+    const data = await (await fetch('/api/notes/' + encodeURIComponent(skillName))).json();
+    document.getElementById('notes-area').value = data.note || '';
+    _notesDirty = false;
+  } catch (e) {}
+}
+
+async function saveNotes() {
+  const saved = document.getElementById('notes-saved-msg');
+  try {
+    await fetch('/api/notes/' + encodeURIComponent(_currentSkill), {
+      method: 'POST', headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({note: document.getElementById('notes-area').value})
+    });
+    _notesDirty = false;
+    saved.style.display = '';
+    setTimeout(() => { saved.style.display = 'none'; }, 2000);
+  } catch (e) {}
+}
+
+async function generateBriefing() {
+  const btn = document.getElementById('briefing-btn');
+  const out = document.getElementById('briefing-content');
+  btn.disabled = true; btn.textContent = '⏳ Generating…'; out.textContent = '';
+  try {
+    const data = await (await fetch('/api/briefing', {
+      method: 'POST', headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({skill: _currentSkill})
+    })).json();
+    if (data.briefing) {
+      out.innerHTML = data.briefing
+        .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+        .replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>');
+    } else {
+      out.textContent = data.error || 'Failed to generate';
+    }
+  } catch (e) { out.textContent = 'Connection error'; }
+  finally { btn.disabled = false; btn.textContent = '✨ Regenerate'; }
+}
+
+
+// ── AI Connections ────────────────────────────────────────────────────────────
+(function initAiConnections() {
+  const BASE = "{{ base_url }}" || window.location.origin;
+
+  // Populate Claude Desktop config snippet
+  const desktopCfg = JSON.stringify({
+    mcpServers: {
+      fieldnote: {
+        command: "python",
+        args: ["/path/to/fieldnote_mcp/fieldnote_server.py"],
+        env: {},
+      }
+    }
+  }, null, 2);
+  const el = document.getElementById("claude-desktop-snippet");
+  if (el) el.childNodes[0].textContent = desktopCfg;
+
+  // Fix URLs in case base_url was empty at render time
+  ["claude-sse-url","openapi-url"].forEach(id => {
+    const node = document.getElementById(id);
+    if (node && !node.textContent.startsWith("http")) {
+      node.textContent = id === "claude-sse-url"
+        ? BASE + "/mcp/sse"
+        : BASE + "/openapi.json";
+    }
+  });
+
+  // Fix template links in ChatGPT pane
+  document.querySelectorAll(".ai-pane a[href^='/']").forEach(a => {
+    a.href = BASE + a.getAttribute("href");
+  });
+})();
+
+function aiTab(name) {
+  document.querySelectorAll(".ai-tab").forEach((t,i) => {
+    const panes = ["claude","chatgpt"];
+    t.classList.toggle("active", panes[i] === name);
+  });
+  document.querySelectorAll(".ai-pane").forEach(p => {
+    p.classList.toggle("active", p.id === "ai-pane-" + name);
+  });
+}
+
+function copyText(id, btn) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  // Get text content excluding child buttons
+  let text = "";
+  el.childNodes.forEach(n => { if (n.nodeType === Node.TEXT_NODE) text += n.textContent; });
+  if (!text.trim()) text = el.textContent.replace(/Copy$/,"").trim();
+  navigator.clipboard.writeText(text.trim()).then(() => {
+    const orig = btn.textContent;
+    btn.textContent = "✓ Copied";
+    btn.style.color = "var(--green)";
+    setTimeout(() => { btn.textContent = orig; btn.style.color = ""; }, 1800);
+  }).catch(() => {
+    // Fallback
+    const ta = document.createElement("textarea");
+    ta.value = text.trim();
+    document.body.appendChild(ta); ta.select();
+    document.execCommand("copy");
+    document.body.removeChild(ta);
+    btn.textContent = "✓"; setTimeout(() => btn.textContent = "Copy", 1400);
+  });
+}
+
+// ── Util ──────────────────────────────────────────────────────────────────────
+function setChips(id, items, cls) {
+  document.getElementById(id).innerHTML = items.length
+    ? items.map(t => `<span class="${cls}">${esc(t)}</span>`).join("")
+    : `<span style="color:var(--muted2);font-size:.8rem">None identified</span>`;
+}
+function esc(s) {
+  return String(s || "")
+    .replace(/&/g,"&amp;").replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+
+// ── Startup ───────────────────────────────────────────────────────────────────
+window.addEventListener("load", () => {
+  checkHealth();
+
+  // Handle ?enhance=skill_name — show a contextual hint from skill detail page
+  const params    = new URLSearchParams(window.location.search);
+  const enhanceHint = params.get("enhance");
+  if (enhanceHint) {
+    const hint = document.createElement("div");
+    hint.style.cssText = "background:#0d0520;border:1px solid #3a1a6a;border-radius:10px;" +
+      "padding:10px 14px;font-size:.82rem;color:#c8b3fa;display:flex;align-items:center;gap:8px;margin-top:10px";
+    hint.innerHTML = `🔄 Paste a new YouTube video URL above to <strong>enhance "${esc(enhanceHint)}"</strong> ` +
+      `— the AI will merge it automatically. <button onclick="this.parentElement.remove()" ` +
+      `style="margin-left:auto;background:none;border:none;color:#6a5a8a;cursor:pointer">✕</button>`;
+    document.querySelector(".card").appendChild(hint);
+    // Clean URL without reloading
+    history.replaceState({}, "", "/");
+  }
+});
+</script>
+</body>
+</html>
