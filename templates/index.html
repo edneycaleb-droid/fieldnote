@@ -1213,10 +1213,25 @@ async function showPlaylistQueue(listId) {
   count.textContent  = "…";
   prog.innerHTML     = '<div class="pq-item"><span class="pq-item-dot running"></span> Loading playlist…</div>';
   try {
-    const r  = await fetch(`/api/playlist_ids?list=${encodeURIComponent(listId)}`);
-    const d  = await r.json();
+    const r = await fetch(`/api/playlist_ids?list=${encodeURIComponent(listId)}`);
+    let d;
+    try { d = await r.json(); } catch { d = {}; }
+
+    if (!r.ok || d.error) {
+      // Surface a clean error — not a raw JS exception string
+      const msg = d.error || `Server error ${r.status}`;
+      prog.innerHTML = `<span style="color:var(--red)">⚠ ${esc(msg)}</span>`;
+      count.textContent = "0";
+      _playlistIds = [];
+      return;
+    }
+
     _playlistIds = d.ids || [];
     count.textContent = _playlistIds.length;
+    if (!_playlistIds.length) {
+      prog.innerHTML = '<span style="color:var(--muted)">No videos found in playlist.</span>';
+      return;
+    }
     prog.innerHTML = _playlistIds.map((id, i) =>
       `<div class="pq-item" id="pqi-${id}">
          <span class="pq-item-dot" id="pqd-${id}"></span>
@@ -1224,7 +1239,8 @@ async function showPlaylistQueue(listId) {
        </div>`
     ).join("");
   } catch (e) {
-    prog.innerHTML = `<span style="color:var(--red)">Failed to load playlist: ${esc(String(e))}</span>`;
+    prog.innerHTML = `<span style="color:var(--red)">⚠ Could not reach server — check your connection.</span>`;
+    _playlistIds = [];
   }
 }
 function dismissPlaylist() {
@@ -1300,21 +1316,58 @@ function clearAndFocus() {
 async function runProcess() {
   const url = document.getElementById("url-input").value.trim();
   if (!url) { setStatus("Paste a YouTube URL first.", "error"); return; }
-  const vid = extractVideoId(url);
+  const vid     = extractVideoId(url);
+  const listId  = extractPlaylistId(url);
+
   if (vid) return runSingleVideo(url, vid);
-  // Pure playlist URL — run the queue if it's already loaded
-  if (_playlistIds.length > 0) { runPlaylist(); return; }
-  // Playlist URL but queue not loaded yet — fetch then run
-  const listMatch = url.match(/[?&]list=([A-Za-z0-9_-]+)/);
-  if (listMatch) {
-    await showPlaylistQueue(listMatch[1]);
-    if (_playlistIds.length > 0) { runPlaylist(); return; }
+
+  if (!listId) {
+    setStatus("Could not find a YouTube video ID or playlist in that URL.", "error");
+    return;
   }
-  setStatus("Could not find a YouTube video ID or playlist in that URL.", "error");
+
+  // Playlist URL — run the queue if already loaded, otherwise fetch first
+  if (_playlistIds.length > 0) { runPlaylist(); return; }
+
+  await showPlaylistQueue(listId);
+  if (_playlistIds.length > 0) {
+    runPlaylist();
+  } else {
+    // showPlaylistQueue already showed the specific error in the panel —
+    // just surface a short status so it's not silent
+    setStatus("Playlist could not be loaded — see details above.", "error");
+  }
+}
+
+function normalizeYtUrl(url) {
+  // m.youtube.com / music.youtube.com → www.youtube.com
+  url = url.replace(/https?:\/\/(?:m|music)\.youtube\.com/, "https://www.youtube.com");
+  // youtu.be/<id>[?...] → youtube.com/watch?v=<id>&...
+  const short = url.match(/https?:\/\/youtu\.be\/([a-zA-Z0-9_-]{11})(.*)/);
+  if (short) {
+    const tail = short[2] ? short[2].replace(/^\?/, "&") : "";
+    url = `https://www.youtube.com/watch?v=${short[1]}${tail}`;
+  }
+  return url;
 }
 
 function extractVideoId(url) {
-  const m = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/|youtube\.com\/shorts\/)([a-zA-Z0-9_-]{11})/);
+  url = normalizeYtUrl(url);
+  for (const p of [
+    /[?&]v=([a-zA-Z0-9_-]{11})/,
+    /youtube\.com\/embed\/([a-zA-Z0-9_-]{11})/,
+    /youtube\.com\/shorts\/([a-zA-Z0-9_-]{11})/,
+    /youtube\.com\/v\/([a-zA-Z0-9_-]{11})/,
+  ]) {
+    const m = url.match(p);
+    if (m) return m[1];
+  }
+  return null;
+}
+
+function extractPlaylistId(url) {
+  url = normalizeYtUrl(url);
+  const m = url.match(/[?&]list=([a-zA-Z0-9_-]+)/);
   return m ? m[1] : null;
 }
 
