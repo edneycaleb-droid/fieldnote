@@ -227,6 +227,30 @@
       "skills": [
         "building_ai_agents"
       ]
+    },
+    "Web search": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Web extract": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Agent memory": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Workspace organization": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
     }
   },
   "tools": {
@@ -427,24 +451,58 @@
       "skills": [
         "building_ai_agents"
       ]
+    },
+    "Hermes Agent": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Firecrawl": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "SiaXNG": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "DuckDuckGoSearch": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "TavillionXR": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
     }
   },
   "skill_map": {
     "building_ai_agents": {
       "concepts": [
-        "Model updating",
-        "Session management",
-        "Model testing"
+        "Web search",
+        "Web extract",
+        "Agent memory",
+        "Workspace organization"
       ],
       "tools": [
-        "Hermes",
-        "HY3",
-        "Noose Portal"
+        "Hermes Agent",
+        "Firecrawl",
+        "SiaXNG",
+        "DuckDuckGoSearch",
+        "TavillionXR"
       ],
       "tags": [
         "ai",
         "automation",
-        "productivity"
+        "productivity",
+        "cloudcode"
       ],
       "step_count": 4
     },
@@ -475,6 +533,6 @@
     "building_ai_agents": {},
     "running_large_models_locally": {}
   },
-  "updated_at": "2026-07-15T20:19:49.739603+00:00",
+  "updated_at": "2026-07-15T20:20:32.078612+00:00",
   "total_skills": 2
 }
