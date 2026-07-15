@@ -174,36 +174,39 @@ def _call_groq(prompt: str, max_tokens: int, json_mode: bool) -> str:
         kwargs["response_format"] = {"type": "json_object"}
     last_err: Any = None
     for model in GROQ_MODELS:
-        for attempt in range(3):
-            try:
-                resp = client.chat.completions.create(model=model, **kwargs)
-                _mark_healthy("groq")
-                return resp.choices[0].message.content
-            except Exception as e:
-                err = str(e)
-                last_err = e
-                if any(k in err for k in ("decommissioned", "404", "model_not_found")):
-                    break  # try next model
-                kind = _mark_error("groq", err)
-                if kind in (_STATE_QUOTA, _STATE_AUTH):
-                    raise  # escalate immediately — blackout set
-                if kind == _STATE_RATE:
-                    wait = (2 ** attempt) + random.uniform(0, 1)
-                    time.sleep(wait)
-                    continue
-                raise  # unexpected error
-    raise RuntimeError("All Groq models failed. Last: " + str(last_err))
+        try:
+            resp = client.chat.completions.create(model=model, **kwargs)
+            _mark_healthy("groq")
+            return resp.choices[0].message.content
+        except Exception as e:
+            err = str(e)
+            last_err = e
+            if any(k in err for k in ("decommissioned", "404", "model_not_found")):
+                continue  # try next model
+            kind = _mark_error("groq", err)
+            if kind in (_STATE_QUOTA, _STATE_AUTH):
+                raise  # escalate immediately — blackout set
+            if kind == _STATE_RATE:
+                # Rate-limited on this model — try next smaller model immediately,
+                # do NOT sleep here (caller has fallback providers waiting)
+                log.warning("Groq rate-limited on %s, trying next model", model)
+                continue
+            raise  # unexpected error
+    # All models rate-limited: mark provider and raise so router falls through to Gemini
+    _mark_error("groq", "429 rate_limit all_models")
+    raise RuntimeError("All Groq models rate-limited. Last: " + str(last_err))
 
 
 def _call_gemini(prompt: str, max_tokens: int, json_mode: bool) -> str:
     import google.generativeai as genai
     genai.configure(api_key=_get_key("gemini"))
+    # response_mime_type added in SDK >=0.4; we use prompt instruction for compat
+    if json_mode:
+        prompt = prompt + chr(10) + chr(10) + "Respond with valid JSON only. No markdown fences or prose."
+    gen_cfg: dict[str, Any] = {"max_output_tokens": max_tokens, "temperature": 0.2}
     last_err: Any = None
     for model_name in GEMINI_MODELS:
         try:
-            gen_cfg: dict[str, Any] = {"max_output_tokens": max_tokens, "temperature": 0.2}
-            if json_mode:
-                gen_cfg["response_mime_type"] = "application/json"
             model = genai.GenerativeModel(model_name, generation_config=gen_cfg)
             resp  = model.generate_content(prompt)
             _mark_healthy("gemini")
@@ -211,7 +214,7 @@ def _call_gemini(prompt: str, max_tokens: int, json_mode: bool) -> str:
         except Exception as e:
             err = str(e)
             last_err = e
-            if "404" in err or "not found" in err.lower():
+            if any(k in err for k in ("404", "not found", "deprecated")):
                 continue  # try next model
             kind = _mark_error("gemini", err)
             if kind in (_STATE_QUOTA, _STATE_AUTH):
@@ -480,6 +483,21 @@ _CHAT_IMPL: dict[str, Any] = {
     "huggingface": _call_huggingface_chat,
     "openrouter":  _call_openrouter_chat,
 }
+
+
+
+def refresh_provider_key(provider: str) -> None:
+    """Reset a provider from no_key / auth_error to healthy so it is retried.
+    Call after saving a new API key so changes take effect without restart."""
+    _init_status()
+    with _lock:
+        if provider in _status:
+            current = _status[provider].get("state", _STATE_HEALTHY)
+            if current in (_STATE_NO_KEY, _STATE_AUTH, _STATE_QUOTA):
+                _status[provider]["state"] = _STATE_HEALTHY
+                _status[provider]["until"] = 0.0
+                _status[provider]["last_error"] = ""
+                log.info("Provider %s key refreshed → healthy", provider)
 
 
 def call_llm_smart(prompt: str, max_tokens: int = 4000, json_mode: bool = True) -> str:
