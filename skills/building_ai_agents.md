@@ -16,33 +16,30 @@ Building AI agents can help automate tasks, make decisions, and improve over tim
 10. **Implement loops to automate review cycles and improvements**: Implement loops to automate review cycles and improvements, ensuring continuous improvement of your AI agent.
 11. **Utilize Record and Replay feature for knowledge work tasks**: Utilize the Record and Replay feature to automate knowledge work tasks, such as filling out forms or data entry.
 12. **Utilize Hermes Agent Plus Grok 4.5 for advanced AI tasks**: Utilize Hermes Agent Plus Grok 4.5 for advanced AI tasks such as creating images, videos, and voiceovers.
-13. **Utilize Hermes Agent's new web search feature to find relevant information**: Use Hermes Agent's web search feature to find relevant information and improve agent performance.
-14. **Use Hermes Agent's web extract feature to pull content from web pages**: Use Hermes Agent's web extract feature to pull content from web pages and automate tasks.
-15. **Implement search and extract in custom workflows for improved performance**: Implement search and extract in custom workflows to improve agent performance and automation capabilities.
-16. **Use a workspace to organize projects and keep track of progress**: Use a workspace to organize projects and keep track of progress, ensuring efficient agent management.
+13. **Utilize Hermes Agent's new web search feature to find relevant information**: Utilize Hermes Agent's new web search feature to find relevant information.
+14. **Update to Hermes Agent v0.18 to utilize the new mixture of agents feature**: Update to Hermes Agent v0.18 to utilize the new mixture of agents feature.
+15. **Create a named preset to consult multiple models on a task before writing the final answer**: Create a named preset to consult multiple models on a task before writing the final answer.
+16. **Use the journey timeline to review and edit the agent's memory**: Use the journey timeline to review and edit the agent's memory.
+17. **Utilize the completion contracts feature to define a checkable definition of done for tasks**: Utilize the completion contracts feature to define a checkable definition of done for tasks.
 
 ## Tools
-* Hermes
-* Hermes Agent Plus Grok 4.5
-* Superpowers plugin
-* Everything Cloud Code plugin
+* Hermes Agent
+* Superpowers
+* Everything Cloud Code
 * Roof Flow
 * Open Design
 * Obsidian Skills
-* Firecrawl
-* SiaXNG
-* DuckDuckGoSearch
-* TavillionXR
+* Hermes Agent Plus Grok 4.5
 
 ## Concepts
-* Model updating
-* Session management
-* Model testing
-* Custom workflows
 * Web search
 * Web extract
 * Agent memory
 * Workspace organization
+* Mixture of agents
+* Mixture of experts models
+* Self-checking agent
+* Completion contracts
 
 ## Related Skills
 * running_large_models_locally
@@ -59,3 +56,4 @@ Building AI agents can help automate tasks, make decisions, and improve over tim
 | 2026-07-15 | [Hermes Agent + Grok 4.5 Is INSANE!](https://youtube.com/watch?v=mCv8t7LZ5SA) | whisper |
 | 2026-07-15 | [NEW Hermes Update Makes It 10X More Powerful](https://youtube.com/watch?v=zKAPTvv9TEw) | whisper |
 | 2026-07-15 | [New Update Makes Hermes 60X More Powerful](https://youtube.com/watch?v=lTbk1Ko6r90) | whisper |
+| 2026-07-15 | [Hermes Agent V0.18 Is GAME OVER](https://youtube.com/watch?v=ZrAVfs6wgVg) | whisper |
