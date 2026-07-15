@@ -1309,17 +1309,23 @@ def index():
 
 @app.route("/metadata")
 def metadata():
-    url      = request.args.get("url", "").strip()
-    video_id = extract_video_id(url)
-    if not video_id:
-        return jsonify({"error": "No video ID found"}), 400
-    meta                = get_video_metadata(video_id)
+    url         = normalize_youtube_url(request.args.get("url", "").strip())
+    video_id    = extract_video_id(url)
+    playlist_id = extract_playlist_id(url)
+
+    if not video_id and not playlist_id:
+        return jsonify({"error": "No video ID or playlist found"}), 400
+
+    if video_id:
+        meta = get_video_metadata(video_id)
+    else:
+        # Pure playlist URL — no single-video thumbnail, still valid
+        meta = {"title": "YouTube Playlist", "author": "", "thumbnail": ""}
+
     meta["video_id"]    = video_id
-    playlist_id         = extract_playlist_id(url)
     meta["is_playlist"] = bool(playlist_id)
     meta["playlist_id"] = playlist_id
     return jsonify(meta)
-
 
 @app.route("/process", methods=["POST"])
 def process():
@@ -3179,20 +3185,6 @@ def index():
         mcp_connections=mcp_agent.get_connections(),
         base_url=base_url,
     )
-
-
-@app.route("/metadata")
-def metadata():
-    url      = request.args.get("url", "").strip()
-    video_id = extract_video_id(url)
-    if not video_id:
-        return jsonify({"error": "No video ID found"}), 400
-    meta                = get_video_metadata(video_id)
-    meta["video_id"]    = video_id
-    playlist_id         = extract_playlist_id(url)
-    meta["is_playlist"] = bool(playlist_id)
-    meta["playlist_id"] = playlist_id
-    return jsonify(meta)
 
 
 @app.route("/process", methods=["POST"])

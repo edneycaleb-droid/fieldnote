@@ -1182,11 +1182,16 @@ async function fetchMeta(url) {
     const r = await fetch(`/metadata?url=${encodeURIComponent(url)}`);
     if (!r.ok) { hidePreview(); dismissPlaylist(); return; }
     const d = await r.json();
-    if (d.error || !d.video_id) { hidePreview(); dismissPlaylist(); return; }
-    document.getElementById("preview-thumb").src          = d.thumbnail;
-    document.getElementById("preview-title").textContent  = d.title  || "YouTube Video";
+    if (d.error) { hidePreview(); dismissPlaylist(); return; }
+
+    // Pure playlist URL has no video_id — show a playlist-mode preview
+    const isPlaylistOnly = !d.video_id && d.is_playlist;
+    document.getElementById("preview-thumb").src = d.thumbnail || "";
+    document.getElementById("preview-thumb").style.display = d.thumbnail ? "" : "none";
+    document.getElementById("preview-title").textContent  = d.title  || (isPlaylistOnly ? "YouTube Playlist" : "YouTube Video");
     document.getElementById("preview-author").textContent = d.author || "";
     document.getElementById("playlist-badge").style.display = d.is_playlist ? "inline-block" : "none";
+    document.getElementById("video-preview").style.display = "flex";
 
     // Playlist: load queue
     if (d.is_playlist && d.playlist_id) {
@@ -1360,6 +1365,10 @@ async function runSingleVideo(url, videoId) {
             refreshConnections();
             if (msg.verify) renderVerifyDone(msg.verify);
             setStatus("Done — skill saved to library.", "ok");
+            // Clear input so user can immediately paste the next URL
+            const inp = document.getElementById("url-input");
+            inp.value = "";
+            inp.focus();
             resolve(msg);
           } else {
             showErr(msg.error || "Something went wrong.");
@@ -1718,9 +1727,11 @@ function renderAuthPrompt(auth) {
       <div class="auth-paste-row">
         <input type="password" class="auth-input" id="auth-input-${svc}"
                placeholder="${esc(hint)}"
-               oninput="document.getElementById('auth-act-${svc}').disabled=!this.value.trim()">
+               oninput="checkAuthInput('${svc}')"
+               onchange="checkAuthInput('${svc}')"
+               onpaste="setTimeout(()=>checkAuthInput('${svc}'),0)">
         <button class="auth-activate-btn" id="auth-act-${svc}"
-                onclick="activateKey('${svc}','${secret}')" disabled>
+                onclick="activateKey('${svc}','${secret}')">
           Activate
         </button>
       </div>
@@ -1846,11 +1857,22 @@ async function startDeviceFlow(svc, secret) {
 }
 
 // ── Paste / API key activation ────────────────────────────────────────────────
+function checkAuthInput(svc) {
+  // Works for oninput, onchange, and post-paste (via setTimeout)
+  // Covers autofill from iOS password manager which skips oninput
+  const input = document.getElementById(`auth-input-${svc}`);
+  const btn   = document.getElementById(`auth-act-${svc}`);
+  if (!input || !btn) return;
+  const hasValue = !!input.value.trim();
+  btn.style.opacity  = hasValue ? "1"   : "0.4";
+  btn.style.cursor   = hasValue ? "pointer" : "default";
+}
+
 async function activateKey(svc, secret) {
   const input = document.getElementById(`auth-input-${svc}`);
   const btn   = document.getElementById(`auth-act-${svc}`);
   const value = (input?.value || "").trim();
-  if (!value) return;
+  if (!value) { input?.focus(); return; }
 
   btn.disabled = true;
   btn.textContent = "Saving…";
