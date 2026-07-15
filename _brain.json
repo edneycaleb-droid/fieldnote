@@ -1,25 +1,25 @@
 {
   "concepts": {
     "AI agents": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "building_ai_agents"
       ]
     },
     "Automation": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "building_ai_agents"
       ]
     },
     "Reverse prompting": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "building_ai_agents"
       ]
     },
     "Definition of done (DOD)": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "building_ai_agents"
       ]
@@ -53,46 +53,94 @@
       "skills": [
         "building_ai_agents"
       ]
+    },
+    "In-app browser": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Skills": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Workflows": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Annotation tools": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
     }
   },
   "tools": {
     "Anthropic": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "building_ai_agents"
       ]
     },
     "Haiku": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "building_ai_agents"
       ]
     },
     "Sonnet": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "building_ai_agents"
       ]
     },
     "Opus": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "building_ai_agents"
       ]
     },
     "Fable": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "building_ai_agents"
       ]
     },
     "Zoom": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "building_ai_agents"
       ]
     },
     "Gmail": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Codex": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Google Docs": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Notion": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Twitter": {
       "freq": 1,
       "skills": [
         "building_ai_agents"
@@ -106,11 +154,10 @@
         "Automation",
         "Reverse prompting",
         "Definition of done (DOD)",
-        "Identity files",
-        "Context window",
-        "Playbooks",
-        "Manager agent",
-        "Sub-agents"
+        "In-app browser",
+        "Skills",
+        "Workflows",
+        "Annotation tools"
       ],
       "tools": [
         "Anthropic",
@@ -119,7 +166,10 @@
         "Opus",
         "Fable",
         "Zoom",
-        "Gmail"
+        "Codex",
+        "Google Docs",
+        "Notion",
+        "Twitter"
       ],
       "tags": [
         "ai",
@@ -127,12 +177,12 @@
         "agent",
         "productivity"
       ],
-      "step_count": 7
+      "step_count": 9
     }
   },
   "relationships": {
     "building_ai_agents": {}
   },
-  "updated_at": "2026-07-15T19:24:58.427315+00:00",
+  "updated_at": "2026-07-15T19:31:05.918361+00:00",
   "total_skills": 1
 }
