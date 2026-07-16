@@ -952,6 +952,100 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
   animation: spin .7s linear infinite; flex-shrink: 0;
 }
 
+/* ── Integration Agent status strip ─────────────────────────────────────── */
+.integ-agent-strip {
+  background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 12px; padding: 10px 14px; margin-bottom: 16px;
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+}
+.ias-dot {
+  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+  background: var(--muted);
+}
+.ias-dot.active  { background: #4ade80; box-shadow: 0 0 6px #4ade8088; }
+.ias-dot.running { background: #fbbf24; animation: pulse 1s infinite; }
+@keyframes pulse { 0%,100%{ opacity:1 } 50%{ opacity:.4 } }
+.ias-title { font-size: .78rem; font-weight: 700; color: var(--text); }
+.ias-meta  { font-size: .68rem; color: var(--muted); }
+.ias-stats { display: flex; gap: 10px; flex-wrap: wrap; margin-left: auto; }
+.ias-stat  { font-size: .65rem; color: var(--muted); white-space: nowrap; }
+.ias-stat span { font-weight: 700; }
+.ias-stat .ok   { color: #4ade80; }
+.ias-stat .warn { color: #fbbf24; }
+.ias-stat .err  { color: #f87171; }
+.ias-run-btn {
+  font-size: .68rem; padding: 4px 12px; border-radius: 8px; cursor: pointer;
+  border: 1px solid var(--accent); color: var(--purple); background: #100a20;
+  -webkit-appearance: none; transition: all .15s; white-space: nowrap;
+  flex-shrink: 0;
+}
+.ias-run-btn:hover   { background: #1a1050; }
+.ias-run-btn:disabled{ opacity: .5; cursor: default; }
+
+/* Setup steps accordion */
+.ic-accordion {
+  border-top: 1px solid var(--border); padding-top: 8px; margin-top: 2px;
+}
+.ic-accordion-toggle {
+  display: flex; align-items: center; gap: 6px; cursor: pointer;
+  font-size: .7rem; color: var(--muted); background: none; border: none;
+  padding: 0; -webkit-appearance: none; width: 100%; text-align: left;
+  transition: color .15s;
+}
+.ic-accordion-toggle:hover { color: var(--text); }
+.ic-accordion-chevron {
+  font-size: .6rem; transition: transform .2s; display: inline-block;
+}
+.ic-accordion-chevron.open { transform: rotate(90deg); }
+.ic-accordion-body {
+  display: none; padding-top: 8px;
+}
+.ic-accordion-body.open { display: block; }
+
+/* Setup steps list */
+.ic-steps {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-direction: column; gap: 5px;
+}
+.ic-step {
+  display: flex; gap: 8px; font-size: .7rem; color: var(--muted); line-height: 1.45;
+}
+.ic-step-num {
+  width: 18px; height: 18px; border-radius: 50%; border: 1px solid var(--border2);
+  color: var(--muted); font-size: .6rem; font-weight: 700; display: flex;
+  align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;
+}
+
+/* Features unlocked list */
+.ic-features-list {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-direction: column; gap: 4px;
+}
+.ic-feature {
+  display: flex; gap: 6px; font-size: .7rem; color: var(--muted);
+}
+.ic-feature::before { content: '✓'; color: #4ade80; font-weight: 700; flex-shrink: 0; }
+
+/* Last-verified & Re-verify row */
+.ic-footer-row {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+}
+.ic-last-checked {
+  font-size: .62rem; color: #555; flex: 1;
+}
+.ic-reverify-btn {
+  font-size: .65rem; padding: 3px 10px; border-radius: 8px; cursor: pointer;
+  border: 1px solid var(--border2); color: var(--muted); background: var(--bg);
+  -webkit-appearance: none; transition: all .15s; flex-shrink: 0;
+}
+.ic-reverify-btn:hover { border-color: #4ade80; color: #4ade80; }
+
+/* Suggestion cards (lighter style) */
+.integ-card.ic-suggested {
+  border-style: dashed; border-color: #2a1a6a; background: #07050f;
+  opacity: .92;
+}
+
 /* ── API Key modal ────────────────────────────────────────────────────────── */
 #key-modal-backdrop {
   display: none; position: fixed; inset: 0; background: rgba(0,0,0,.65);
@@ -1063,6 +1157,21 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
       Connect your AI providers. Every integration has a free path — paid ones are never required.
     </div>
   </div>
+
+  <!-- Integration Agent status strip -->
+  <div class="integ-agent-strip" id="integ-agent-strip">
+    <div class="ias-dot" id="ias-dot"></div>
+    <div>
+      <div class="ias-title">🤖 Integration Agent</div>
+      <div class="ias-meta" id="ias-meta">Loading…</div>
+    </div>
+    <div class="ias-stats" id="ias-stats"></div>
+    <button class="ias-run-btn" id="ias-run-btn" onclick="runIntegrationAgent()">▶ Run Now</button>
+  </div>
+
+  <!-- Event log (latest events from agent) -->
+  <div id="integ-events-strip" style="display:none;margin-bottom:12px"></div>
+
   <div id="integ-awaiting-section" style="display:none">
     <div class="integ-section-label">⚠ Awaiting Setup</div>
     <div class="integ-grid" id="integ-awaiting-grid"></div>
@@ -1070,6 +1179,10 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
   <div id="integ-connected-section" style="display:none">
     <div class="integ-section-label">✓ Connected</div>
     <div class="integ-grid" id="integ-connected-grid"></div>
+  </div>
+  <div id="integ-suggestions-section" style="display:none">
+    <div class="integ-section-label">💡 Agent Suggestions</div>
+    <div class="integ-grid" id="integ-suggestions-grid"></div>
   </div>
   <div id="integ-loading" style="text-align:center;padding:40px;color:var(--muted);font-size:.8rem">
     Loading integrations…
