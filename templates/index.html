@@ -3251,8 +3251,223 @@ function esc(s) {
 }
 
 // ── Startup ───────────────────────────────────────────────────────────────────
+// ── Integrations tab ──────────────────────────────────────────────────────────
+
+let _integLoaded = false;
+let _integTimer  = null;
+
+function switchMainTab(name) {
+  // Buttons
+  document.querySelectorAll('.main-tab-btn').forEach(b =>
+    b.classList.toggle('active', b.id === 'tab-btn-' + name));
+  // Sections
+  const lib   = document.getElementById('main-library');
+  const integ = document.getElementById('main-integrations');
+  if (name === 'integrations') {
+    if (lib)   lib.style.display   = 'none';
+    if (integ) integ.style.display = '';
+    if (!_integLoaded) loadIntegrations();
+    else refreshIntegBadge();
+  } else {
+    if (lib)   lib.style.display   = '';
+    if (integ) integ.style.display = 'none';
+  }
+}
+
+async function loadIntegrations() {
+  try {
+    const data = await fetch('/api/integrations').then(r => r.json());
+    _integLoaded = true;
+    renderIntegrations(data.integrations || []);
+    refreshIntegBadgeFromCount(data.pending || 0);
+  } catch(e) {
+    document.getElementById('integ-loading').textContent = 'Could not load integrations.';
+  }
+}
+
+function refreshIntegBadge() {
+  fetch('/api/integrations').then(r => r.json()).then(d => {
+    renderIntegrations(d.integrations || []);
+    refreshIntegBadgeFromCount(d.pending || 0);
+  }).catch(() => {});
+}
+
+function refreshIntegBadgeFromCount(n) {
+  const badge = document.getElementById('integ-pending-count');
+  if (!badge) return;
+  if (n > 0) { badge.textContent = n; badge.classList.remove('hidden'); }
+  else        { badge.classList.add('hidden'); }
+}
+
+function renderIntegrations(items) {
+  document.getElementById('integ-loading').style.display = 'none';
+
+  const awaiting   = items.filter(i => i.status === 'pending' || i.status === 'error');
+  const connected  = items.filter(i => i.status === 'connected' || i.status === 'anonymous');
+
+  const awSec  = document.getElementById('integ-awaiting-section');
+  const conSec = document.getElementById('integ-connected-section');
+  const awGrid = document.getElementById('integ-awaiting-grid');
+  const conGrid= document.getElementById('integ-connected-grid');
+
+  if (awaiting.length) {
+    awSec.style.display  = '';
+    awGrid.innerHTML = awaiting.map(i => renderIntegCard(i)).join('');
+  } else {
+    awSec.style.display  = 'none';
+  }
+
+  if (connected.length) {
+    conSec.style.display = '';
+    conGrid.innerHTML = connected.map(i => renderIntegCard(i)).join('');
+  } else {
+    conSec.style.display = 'none';
+  }
+}
+
+function renderIntegCard(item) {
+  const cardCls   = { connected:'ic-connected', error:'ic-error',
+                      pending:'ic-pending', anonymous:'ic-anonymous' }[item.status] || 'ic-pending';
+  const badgeCls  = { connected:'icb-connected', error:'icb-error',
+                      pending:'icb-pending', anonymous:'icb-anonymous' }[item.status] || 'icb-pending';
+  const badgeTxt  = { connected:'✓ Connected', error:'⚠ Auth Error',
+                      pending:'Awaiting Setup', anonymous:'● Anonymous' }[item.status] || 'Awaiting';
+
+  // Pill badges
+  let pills = '';
+  if (item.required)    pills += `<span class="ic-pill icp-required">REQUIRED</span>`;
+  if (!item.required)   pills += `<span class="ic-pill icp-optional">OPTIONAL</span>`;
+  if (item.free === true)  pills += `<span class="ic-pill icp-free">FREE</span>`;
+  if (item.free === false) pills += `<span class="ic-pill icp-paid">PAID</span>`;
+
+  // Key input row (only for api_key type)
+  const keyRow = item.auth_type === 'api_key' ? `
+    <div class="ic-key-row">
+      <input class="ic-key-input ${item.has_key ? 'has-key' : ''}"
+             type="password"
+             id="ickey-${esc(item.id)}"
+             placeholder="${esc(item.key_placeholder || 'Paste key here…')}"
+             autocomplete="off" spellcheck="false"
+             onkeydown="if(event.key==='Enter')authenticateIntegration('${esc(item.id)}')">
+      <a class="ic-key-link" href="${esc(item.key_url)}" target="_blank" rel="noopener"
+         title="${esc(item.key_url_label || 'Get key')}">
+        🔗 ${esc((item.key_url_label || 'Get key').replace(' →',''))}
+      </a>
+    </div>` : '';
+
+  // Auth button text/state
+  let btnState = 'state-idle', btnContent = '🔑 Authenticate';
+  if (item.status === 'connected')  { btnState = 'state-connected';  btnContent = '✓ Authenticated'; }
+  if (item.status === 'anonymous')  { btnState = 'state-anonymous';  btnContent = '● Works anonymously'; }
+  if (item.status === 'error')      { btnState = 'state-error';      btnContent = '⚠ Retry Authentication'; }
+  if (item.auth_type === 'oauth')   { btnState = (item.status === 'connected' ? 'state-connected' : 'state-idle');
+                                      if (item.status !== 'connected') btnContent = '🔗 Connect with ' + item.label; }
+
+  const isClickable = item.status !== 'connected' && item.status !== 'anonymous';
+  const clickHandler = isClickable ? `onclick="authenticateIntegration('${esc(item.id)}')"` : '';
+
+  const detailTxt = item.status_detail || '';
+
+  return `<div class="integ-card ${cardCls}" id="icard-${esc(item.id)}">
+    <div class="ic-head">
+      <div class="ic-icon" style="border-color:${esc(item.color||'var(--border2)')}20">${esc(item.icon||'🔌')}</div>
+      <div class="ic-meta">
+        <div class="ic-label">${esc(item.label)}</div>
+        <div class="ic-tagline">${esc(item.tagline||'')}</div>
+      </div>
+      <span class="ic-status-badge ${badgeCls}">${badgeTxt}</span>
+    </div>
+    <div class="ic-pills">${pills}</div>
+    <div class="ic-desc">${esc(item.description||'')}</div>
+    ${keyRow}
+    <button class="ic-auth-btn ${btnState}" id="icbtn-${esc(item.id)}" ${clickHandler}>
+      ${btnContent}
+    </button>
+    <div class="ic-detail ${item.status==='connected'?'det-ok':item.status==='error'?'det-err':''}"
+         id="icdet-${esc(item.id)}">${esc(detailTxt)}</div>
+  </div>`;
+}
+
+async function authenticateIntegration(iid) {
+  const btn  = document.getElementById('icbtn-' + iid);
+  const det  = document.getElementById('icdet-' + iid);
+  const inp  = document.getElementById('ickey-' + iid);
+
+  if (!btn) return;
+
+  // Get key value (for api_key integrations)
+  const keyVal = inp ? inp.value.trim() : '';
+
+  // If no key typed and it's an api_key type, focus the input
+  if (inp && !keyVal && !inp.classList.contains('has-key')) {
+    inp.focus();
+    det.textContent = 'Paste your API key above, then click Authenticate.';
+    det.className   = 'ic-detail det-err';
+    return;
+  }
+
+  // Show loading state
+  btn.className   = 'ic-auth-btn state-loading';
+  btn.innerHTML   = '<span class="ic-spinner"></span> Verifying…';
+  btn.disabled    = true;
+  det.textContent = 'Connecting to provider…';
+  det.className   = 'ic-detail';
+
+  try {
+    // If a new key was typed, save + verify; otherwise just verify existing key
+    const endpoint = keyVal
+      ? `/api/integrations/${iid}/save-key`
+      : `/api/integrations/${iid}/verify`;
+    const body = keyVal ? JSON.stringify({key: keyVal}) : '{}';
+
+    const res = await fetch(endpoint, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body,
+    });
+    const d = await res.json();
+
+    if (d.ok) {
+      btn.className   = 'ic-auth-btn state-connected';
+      btn.innerHTML   = '✓ Authenticated';
+      btn.disabled    = false;
+      det.textContent = d.detail || 'Connected successfully';
+      det.className   = 'ic-detail det-ok';
+      // Update card border
+      const card = document.getElementById('icard-' + iid);
+      if (card) {
+        card.className = card.className.replace(/ic-\w+/, 'ic-connected');
+      }
+      // Update status badge
+      const badge = card ? card.querySelector('.ic-status-badge') : null;
+      if (badge) { badge.textContent = '✓ Connected'; badge.className = 'ic-status-badge icb-connected'; }
+      if (inp) inp.classList.add('has-key');
+      // Refresh pending count
+      setTimeout(refreshIntegBadge, 500);
+      // Refresh health dots
+      checkHealth();
+    } else {
+      btn.className   = 'ic-auth-btn state-error';
+      btn.innerHTML   = '⚠ Retry Authentication';
+      btn.disabled    = false;
+      det.textContent = d.error || 'Authentication failed';
+      det.className   = 'ic-detail det-err';
+    }
+  } catch(e) {
+    btn.className   = 'ic-auth-btn state-error';
+    btn.innerHTML   = '⚠ Retry Authentication';
+    btn.disabled    = false;
+    det.textContent = 'Network error — check your connection';
+    det.className   = 'ic-detail det-err';
+  }
+}
+
 window.addEventListener("load", () => {
   loadIntelFeed();
+  // Pre-fetch integrations so badge shows on load without switching tab
+  fetch('/api/integrations').then(r=>r.json()).then(d => {
+    refreshIntegBadgeFromCount(d.pending || 0);
+  }).catch(() => {});
   checkHealth();
   setInterval(checkHealth, 60000); // refresh provider quota state every minute
 
@@ -3272,5 +3487,6 @@ window.addEventListener("load", () => {
   }
 });
 </script>
+</div><!-- #main-library -->
 </body>
 </html>
