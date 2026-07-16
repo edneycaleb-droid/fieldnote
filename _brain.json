@@ -464,13 +464,68 @@
       "skills": [
         "openai_agents_sdk"
       ]
+    },
+    "LLM": {
+      "freq": 1,
+      "skills": [
+        "build_production_ready_llm_applications_with_haystack"
+      ]
+    },
+    "AI Orchestration": {
+      "freq": 1,
+      "skills": [
+        "build_production_ready_llm_applications_with_haystack"
+      ]
+    },
+    "Context Engineering": {
+      "freq": 1,
+      "skills": [
+        "build_production_ready_llm_applications_with_haystack"
+      ]
+    },
+    "Modular Pipelines": {
+      "freq": 1,
+      "skills": [
+        "build_production_ready_llm_applications_with_haystack"
+      ]
+    },
+    "Agent Workflows": {
+      "freq": 1,
+      "skills": [
+        "build_production_ready_llm_applications_with_haystack"
+      ]
+    },
+    "Context engineering": {
+      "freq": 1,
+      "skills": [
+        "build_production_ready_llm_applications_with_haystack"
+      ]
+    },
+    "Model- and vendor-agnostic": {
+      "freq": 1,
+      "skills": [
+        "build_production_ready_llm_applications_with_haystack"
+      ]
+    },
+    "Modular and customizable": {
+      "freq": 1,
+      "skills": [
+        "build_production_ready_llm_applications_with_haystack"
+      ]
+    },
+    "Extensible ecosystem": {
+      "freq": 1,
+      "skills": [
+        "build_production_ready_llm_applications_with_haystack"
+      ]
     }
   },
   "tools": {
     "Anthropic": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
-        "building_ai_agents"
+        "building_ai_agents",
+        "build_production_ready_llm_applications_with_haystack"
       ]
     },
     "Haiku": {
@@ -782,9 +837,10 @@
       ]
     },
     "Docker": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "astrbot_deployment"
+        "astrbot_deployment",
+        "build_production_ready_llm_applications_with_haystack"
       ]
     },
     "Docker Compose": {
@@ -845,6 +901,78 @@
       "freq": 1,
       "skills": [
         "openai_agents_sdk"
+      ]
+    },
+    "Haystack": {
+      "freq": 1,
+      "skills": [
+        "build_production_ready_llm_applications_with_haystack"
+      ]
+    },
+    "OpenAI": {
+      "freq": 1,
+      "skills": [
+        "build_production_ready_llm_applications_with_haystack"
+      ]
+    },
+    "Mistral": {
+      "freq": 1,
+      "skills": [
+        "build_production_ready_llm_applications_with_haystack"
+      ]
+    },
+    "Cohere": {
+      "freq": 1,
+      "skills": [
+        "build_production_ready_llm_applications_with_haystack"
+      ]
+    },
+    "Hugging Face": {
+      "freq": 1,
+      "skills": [
+        "build_production_ready_llm_applications_with_haystack"
+      ]
+    },
+    "Azure OpenAI": {
+      "freq": 1,
+      "skills": [
+        "build_production_ready_llm_applications_with_haystack"
+      ]
+    },
+    "AWS Bedrock": {
+      "freq": 1,
+      "skills": [
+        "build_production_ready_llm_applications_with_haystack"
+      ]
+    },
+    "PyTorch": {
+      "freq": 1,
+      "skills": [
+        "build_production_ready_llm_applications_with_haystack"
+      ]
+    },
+    "Transformers": {
+      "freq": 1,
+      "skills": [
+        "build_production_ready_llm_applications_with_haystack"
+      ]
+    },
+    "Gemini": {
+      "freq": 1,
+      "skills": [
+        "build_production_ready_llm_applications_with_haystack"
+      ]
+    },
+    "GPT-4": {
+      "freq": 1,
+      "skills": [
+        "build_production_ready_llm_applications_with_haystack"
+      ]
+    },
+    "Rag": {
+      "freq": 1,
+      "skills": [
+        "build_production_ready_llm_applications_with_haystack"
       ]
     }
   },
@@ -1014,6 +1142,43 @@
         "multi-agent"
       ],
       "step_count": 9
+    },
+    "build_production_ready_llm_applications_with_haystack": {
+      "concepts": [
+        "LLM",
+        "AI Orchestration",
+        "Context Engineering",
+        "Modular Pipelines",
+        "Agent Workflows",
+        "Context engineering",
+        "Model- and vendor-agnostic",
+        "Modular and customizable",
+        "Extensible ecosystem"
+      ],
+      "tools": [
+        "Haystack",
+        "Docker",
+        "OpenAI",
+        "Mistral",
+        "Anthropic",
+        "Cohere",
+        "Hugging Face",
+        "Azure OpenAI",
+        "AWS Bedrock",
+        "PyTorch",
+        "Transformers",
+        "Gemini",
+        "GPT-4",
+        "Rag"
+      ],
+      "tags": [
+        "ai",
+        "automation",
+        "orchestration",
+        "llm",
+        "nlp"
+      ],
+      "step_count": 8
     }
   },
   "relationships": {
@@ -1058,6 +1223,9 @@
     "astrbot_deployment": {
       "openai_agents_sdk": [
         "LLMs"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "Docker"
       ]
     },
     "openai_agents_sdk": {
@@ -1076,8 +1244,13 @@
       "astrbot_deployment": [
         "LLMs"
       ]
+    },
+    "build_production_ready_llm_applications_with_haystack": {
+      "astrbot_deployment": [
+        "Docker"
+      ]
     }
   },
-  "updated_at": "2026-07-16T18:40:15.842736+00:00",
-  "total_skills": 6
+  "updated_at": "2026-07-16T18:40:41.679576+00:00",
+  "total_skills": 7
 }
