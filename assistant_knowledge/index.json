@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "integration-agent-2026-07-16",
+      "title": "Integration Agent Health Event",
+      "category": "session_learnings",
+      "confidence": "verified",
+      "updated_at": "2026-07-16T12:42:50.047714+00:00",
+      "path": "session_learnings/integration-agent-2026-07-16.md"
+    },
+    {
       "slug": "langchain-ai--langchain",
       "title": "Discovered: langchain-ai/langchain",
       "category": "discoveries",
@@ -33,5 +41,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-16T12:09:23.553234+00:00"
+  "updated_at": "2026-07-16T12:42:50.049151+00:00"
 }
