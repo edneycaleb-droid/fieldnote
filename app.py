@@ -237,7 +237,7 @@ def _relevance_score(meta: dict, quick_tools: list[str]) -> int:
         return 0
     skill_tokens = set(
         t.lower()
-        for t in meta.get("tools", []) + meta.get("tags", []) + meta.get("concepts", [])
+        for t in _nsl(meta.get("tools")) + _nsl(meta.get("tags")) + _nsl(meta.get("concepts"))
     )
     score = 0
     for qt in quick_tools:
@@ -357,11 +357,25 @@ def _build_sources_section(sources: list[dict]) -> str:
     )
 
 
-def _dedup_list(new_items: list, old_items: list) -> list:
-    """Merge two lists, deduplicating case-insensitively, preserving order."""
+def _nsl(v) -> list:
+    """Null-safe list — returns [] for None; splits comma-strings; passes lists through.
+    Use everywhere dict.get() on LLM JSON or disk JSON might return None instead of [].
+    dict.get('key', []) is NOT safe: if key exists with value null, get() returns None."""
+    if isinstance(v, list):
+        return v
+    if v is None:
+        return []
+    if isinstance(v, str):
+        return [x.strip() for x in v.split(",") if x.strip()]
+    return []
+
+
+def _dedup_list(new_items, old_items) -> list:
+    """Merge two lists, deduplicating case-insensitively, preserving order.
+    Accepts None for either argument — treated as empty list."""
     seen: set[str] = set()
     result: list   = []
-    for item in new_items + old_items:
+    for item in _nsl(new_items) + _nsl(old_items):
         key = str(item).lower().strip()
         if key not in seen and key:
             seen.add(key)
