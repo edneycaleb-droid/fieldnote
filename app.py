@@ -1128,6 +1128,7 @@ def run_job(job_id: str, url: str, video_id: str):
         with ThreadPoolExecutor(max_workers=8, thread_name_prefix="fn") as pool:
 
             # ── Phase 1: metadata + transcript in parallel ────────────────────
+            set_stage("transcript")
             emit("⚡  Phase 1: metadata ∥ transcript …", "info")
             meta_f  = pool.submit(get_video_metadata, video_id)
             trans_f = pool.submit(get_transcript, url, video_id, emit)
@@ -1168,6 +1169,7 @@ def run_job(job_id: str, url: str, video_id: str):
                 )
 
             # ── Phase 2: ChatGPT ∥ Groq ∥ GitHub — AI Arena ─────────────────
+            set_stage("extraction")
             emit("⚡  Phase 2: ChatGPT ∥ Groq ∥ GitHub — Arena mode …", "info")
 
             knowledge_ctx  = get_skills_context(quick_tools)
@@ -1198,6 +1200,7 @@ def run_job(job_id: str, url: str, video_id: str):
                 emit(f"⚠  Groq failed ({exc_b})", "warning")
 
             # Judge synthesizes the winner
+            set_stage("judge")
             skill = _judge_arena(skill_a, skill_b, github_ctx, emit)
             skill = pipeline_guard.sanitize(skill, emit)
 
@@ -1247,6 +1250,7 @@ def run_job(job_id: str, url: str, video_id: str):
                 emit(f"🔗  Merging into: {skill_name}", "info")
 
             # ── Phase 3: all heavy work in parallel ───────────────────────────
+            set_stage("save")
             emit("⚡  Phase 3: save ∥ packages ∥ MCP ∥ clone ∥ supplemental search …", "info")
 
             ai_tools    = _nsl(skill.get("tools"))
