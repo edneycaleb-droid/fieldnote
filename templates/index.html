@@ -2294,6 +2294,26 @@ async function runSingleVideo(url, videoId) {
 function reset(btn) {
   btn.disabled = false; btn.textContent = "Run";
 }
+// ── Stage progress ────────────────────────────────────────────────────────────
+const _STAGE_LABELS = {
+  init:       "⏳ Starting…",
+  transcript: "📥 Getting transcript…",
+  extraction: "🤖 AI extraction…",
+  judge:      "⚖️  Arena judging…",
+  save:       "💾 Saving skill…",
+  verify:     "✅ Verifying…",
+};
+function updateStageProgress(stage) {
+  const label = _STAGE_LABELS[stage] || stage;
+  setStatus(label, "progress");
+  // Update the stage dots in the progress bar if present
+  document.querySelectorAll(".stage-dot").forEach(dot => {
+    dot.classList.toggle("active",   dot.dataset.stage === stage);
+    dot.classList.toggle("done",
+      Object.keys(_STAGE_LABELS).indexOf(dot.dataset.stage) <
+      Object.keys(_STAGE_LABELS).indexOf(stage));
+  });
+}
 function setStatus(msg, cls) {
   const el = document.getElementById("status");
   el.textContent = msg; el.className = cls || "";
