@@ -2902,52 +2902,6 @@ def openapi_spec():
     return jsonify(spec)
 
 
-    """Full OpenAPI 3.0 spec — paste the URL into a ChatGPT Custom GPT Action."""
-    domain = os.getenv("REPLIT_DEV_DOMAIN","")
-    base   = f"https://{domain}" if domain else request.url_root.rstrip("/")
-    spec   = {
-        "openapi": "3.1.0",
-        "info": {
-            "title":       "Fieldnote Skill Library",
-            "description": "Search and retrieve AI skills extracted from YouTube videos. Each skill contains steps, tools, concepts, and code references.",
-            "version":     "2.0.0",
-        },
-        "servers": [{"url": base}],
-        "paths": {
-            "/api/skills": {
-                "get": {
-                    "operationId": "listSkills",
-                    "summary":     "List all skills",
-                    "description": "Returns every skill in the library with title, description, tags, tools, and concepts.",
-                    "parameters": [
-                        {"name":"q",   "in":"query","schema":{"type":"string"},"description":"Keyword filter"},
-                        {"name":"tag", "in":"query","schema":{"type":"string"},"description":"Tag filter"},
-                    ],
-                    "responses": {"200":{"description":"Array of skill summaries","content":{"application/json":{"schema": {"type": "array", "items": {"type": "object", "additionalProperties": True}}}}}},
-                }
-            },
-            "/api/skills/{name}/content": {
-                "get": {
-                    "operationId": "getSkillContent",
-                    "summary":     "Get a skill's full markdown content",
-                    "description": "Returns the complete skill markdown with all steps, tools, concepts, and source references.",
-                    "parameters": [{"name":"name","in":"path","required":True,"schema":{"type":"string"},"description":"Skill name (no .md)"}],
-                    "responses": {"200":{"description":"Skill with full content","content":{"application/json":{"schema": {"type": "object", "additionalProperties": True}}}},
-                                  "404":{"description":"Skill not found"}},
-                }
-            },
-            "/api/health": {
-                "get": {
-                    "operationId": "getHealth",
-                    "summary":     "System health status",
-                    "responses":   {"200":{"description":"Health check results"}},
-                }
-            },
-        },
-    }
-    return jsonify(spec)
-
-
 # ── Per-skill content API ────────────────────────────────────────────────────
 
 @app.route("/api/skills/<name>/content")
