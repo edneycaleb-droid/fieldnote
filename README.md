@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **8 skills** · Last synced: 2026-07-16 18:41 UTC
+> **9 skills** · Last synced: 2026-07-16 18:42 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Efficient Code Review with AI: Building a Persistent Graph Map and Reducing Tokens](skills/incremental_code_review.md) | Efficient code review with AI requires intelligent tools to minimize token waste | `Tree-sitter` `code-review-graph` `MCP` `Claude Code` | `ai` `automation` `code-review` |
 | [SwanLab: An Open-Source AI Training Analysis and Visualization Platform](skills/swanlab_ai_training_analysis_platform.md) | SwanLab is an open-source AI training analysis and visualization platform that s | `SwanLab` `PyTorch` `Transformers` `LLaMA Factory` | `ai` `training` `analysis` |
 | [Building Production-Ready LLM Applications with Haystack: An Open-Source AI Orchestration Framework](skills/build_production_ready_llm_applications_with_haystack.md) | Haystack is an open-source AI orchestration framework for building production-re | `Haystack` `Docker` `OpenAI` `Mistral` | `ai` `automation` `orchestration` |
 | [Building Lightweight Multi-Agent Workflows with the OpenAI Agents SDK](skills/openai_agents_sdk.md) | Learn how to harness the power of the OpenAI Agents SDK to build efficient, scal | `OpenAI Agents SDK` `LangGraph` `LangSmith` `Deep Agents` | `ai` `automation` `langchain` |
