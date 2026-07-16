@@ -1,0 +1,29 @@
+{
+  "entries": [
+    {
+      "slug": "gpt-actions-openapi-compatibility",
+      "title": "GPT Actions OpenAPI compatibility",
+      "category": "decisions",
+      "confidence": "verified",
+      "updated_at": "2026-07-16T05:46:52.706970+00:00",
+      "path": "decisions/gpt-actions-openapi-compatibility.md"
+    },
+    {
+      "slug": "architecture",
+      "title": "Fieldnote Architecture Notes",
+      "category": "architecture",
+      "confidence": "verified",
+      "updated_at": "",
+      "path": "architecture.md"
+    },
+    {
+      "slug": "preferences",
+      "title": "Assistant Preferences",
+      "category": "preferences",
+      "confidence": "verified",
+      "updated_at": "",
+      "path": "preferences.md"
+    }
+  ],
+  "updated_at": "2026-07-16T05:46:52.707709+00:00"
+}
