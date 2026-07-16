@@ -45,6 +45,7 @@ import agents.verify_agent     as verify_agent
 import agents.pipeline_guard   as pipeline_guard
 import agents.provider_router  as provider_router
 import agents.transcript_pipeline as transcript_pipeline
+import agents.skill_validator   as skill_validator
 
 app = Flask(__name__)
 
