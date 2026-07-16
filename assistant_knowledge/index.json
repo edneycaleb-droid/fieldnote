@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "integration-agent-2026-07-16",
+      "title": "Integration Agent Health Event",
+      "category": "session_learnings",
+      "confidence": "verified",
+      "updated_at": "2026-07-16T22:40:15.636910+00:00",
+      "path": "session_learnings/integration-agent-2026-07-16.md"
+    },
+    {
       "slug": "tirth8205--code-review-graph",
       "title": "Discovered: tirth8205/code-review-graph",
       "category": "discoveries",
@@ -55,14 +63,6 @@
       "confidence": "verified",
       "updated_at": "2026-07-16T18:41:12.244627+00:00",
       "path": "discoveries/free-alt-swanhubx--swanlab.md"
-    },
-    {
-      "slug": "integration-agent-2026-07-16",
-      "title": "Integration Agent Health Event",
-      "category": "session_learnings",
-      "confidence": "verified",
-      "updated_at": "2026-07-16T14:10:00.220086+00:00",
-      "path": "session_learnings/integration-agent-2026-07-16.md"
     },
     {
       "slug": "full-audit-report-2026-07-16",
@@ -145,5 +145,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-16T18:42:39.677483+00:00"
+  "updated_at": "2026-07-16T22:40:15.638785+00:00"
 }
