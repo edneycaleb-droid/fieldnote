@@ -3366,14 +3366,14 @@ function esc(s) {
 // ── Startup ───────────────────────────────────────────────────────────────────
 // ── Integrations tab ──────────────────────────────────────────────────────────
 
-let _integLoaded = false;
-let _integTimer  = null;
+let _integLoaded  = false;
+let _agentStatus  = null;   // latest data from /api/integration-agent/status
+let _agentPollTimer = null;
 
+/* ── Tab switching ──────────────────────────────────────────────────────── */
 function switchMainTab(name) {
-  // Buttons
   document.querySelectorAll('.main-tab-btn').forEach(b =>
     b.classList.toggle('active', b.id === 'tab-btn-' + name));
-  // Sections
   const lib   = document.getElementById('main-library');
   const integ = document.getElementById('main-integrations');
   if (name === 'integrations') {
@@ -3381,17 +3381,25 @@ function switchMainTab(name) {
     if (integ) integ.style.display = '';
     if (!_integLoaded) loadIntegrations();
     else refreshIntegBadge();
+    startAgentPoll();
   } else {
     if (lib)   lib.style.display   = '';
     if (integ) integ.style.display = 'none';
+    stopAgentPoll();
   }
 }
 
+/* ── Load & render ──────────────────────────────────────────────────────── */
 async function loadIntegrations() {
   try {
-    const data = await fetch('/api/integrations').then(r => r.json());
+    const [data, agentData] = await Promise.all([
+      fetch('/api/integrations').then(r => r.json()),
+      fetch('/api/integration-agent/status').then(r => r.json()).catch(() => null),
+    ]);
     _integLoaded = true;
+    _agentStatus = agentData;
     renderIntegrations(data.integrations || []);
+    renderAgentStrip(agentData);
     refreshIntegBadgeFromCount(data.pending || 0);
   } catch(e) {
     document.getElementById('integ-loading').textContent = 'Could not load integrations.';
@@ -3399,8 +3407,12 @@ async function loadIntegrations() {
 }
 
 function refreshIntegBadge() {
-  fetch('/api/integrations').then(r => r.json()).then(d => {
+  Promise.all([
+    fetch('/api/integrations').then(r => r.json()),
+    fetch('/api/integration-agent/status').then(r => r.json()).catch(() => null),
+  ]).then(([d, ag]) => {
     renderIntegrations(d.integrations || []);
+    renderAgentStrip(ag);
     refreshIntegBadgeFromCount(d.pending || 0);
   }).catch(() => {});
 }
@@ -3412,78 +3424,246 @@ function refreshIntegBadgeFromCount(n) {
   else        { badge.classList.add('hidden'); }
 }
 
-function renderIntegrations(items) {
-  document.getElementById('integ-loading').style.display = 'none';
+/* ── Agent status strip ─────────────────────────────────────────────────── */
+function renderAgentStrip(ag) {
+  if (!ag) return;
+  _agentStatus = ag;
 
-  const awaiting   = items.filter(i => i.status === 'pending' || i.status === 'error');
-  const connected  = items.filter(i => i.status === 'connected' || i.status === 'anonymous');
+  const dot  = document.getElementById('ias-dot');
+  const meta = document.getElementById('ias-meta');
+  const stats= document.getElementById('ias-stats');
+  const evEl = document.getElementById('integ-events-strip');
+  if (!dot || !meta || !stats) return;
 
-  const awSec  = document.getElementById('integ-awaiting-section');
-  const conSec = document.getElementById('integ-connected-section');
-  const awGrid = document.getElementById('integ-awaiting-grid');
-  const conGrid= document.getElementById('integ-connected-grid');
+  const lastRun = ag.last_run ? _relTime(ag.last_run) : 'Never';
+  dot.className  = ag.last_run ? 'ias-dot active' : 'ias-dot';
+  meta.textContent = ag.last_run ? `Last check: ${lastRun}` : 'Not yet run — click Run Now';
 
-  if (awaiting.length) {
-    awSec.style.display  = '';
-    awGrid.innerHTML = awaiting.map(i => renderIntegCard(i)).join('');
+  const s = ag.summary || {};
+  const v = s.verified || 0;
+  const nf= (s.newly_failed || []).length || 0;
+  const nc= (s.newly_connected || []).length || 0;
+  const sg= s.suggestion_count || (ag.suggestions || []).length || 0;
+  const chk= Object.keys(ag.checks || {}).length;
+
+  stats.innerHTML = [
+    chk  ? `<span class="ias-stat"><span class="ok">${v}</span>/${chk} verified</span>` : '',
+    nf   ? `<span class="ias-stat"><span class="err">${nf}</span> failed</span>` : '',
+    nc   ? `<span class="ias-stat"><span class="ok">+${nc}</span> auto-activated</span>` : '',
+    sg   ? `<span class="ias-stat"><span class="warn">${sg}</span> suggestion${sg!==1?'s':''}</span>` : '',
+  ].filter(Boolean).join('');
+
+  // Recent events (last 3)
+  const events = (ag.events || []).slice(0, 3);
+  if (events.length) {
+    evEl.style.display = '';
+    evEl.innerHTML = events.map(ev => {
+      const cls = ev.type === 'failed' ? 'det-err' : ev.type === 'auto_detected' ? 'det-ok' : '';
+      return `<div style="font-size:.65rem;padding:3px 6px;color:var(--muted)" class="${cls}">
+        ${esc(ev.msg)} <span style="opacity:.5">${_relTime(ev.ts)}</span>
+      </div>`;
+    }).join('');
   } else {
-    awSec.style.display  = 'none';
-  }
-
-  if (connected.length) {
-    conSec.style.display = '';
-    conGrid.innerHTML = connected.map(i => renderIntegCard(i)).join('');
-  } else {
-    conSec.style.display = 'none';
+    evEl.style.display = 'none';
   }
 }
 
+function _relTime(iso) {
+  if (!iso) return '—';
+  const diff = Math.floor((Date.now() - new Date(iso).getTime()) / 1000);
+  if (diff < 5)    return 'just now';
+  if (diff < 60)   return `${diff}s ago`;
+  if (diff < 3600) return `${Math.floor(diff/60)}m ago`;
+  if (diff < 86400)return `${Math.floor(diff/3600)}h ago`;
+  return `${Math.floor(diff/86400)}d ago`;
+}
+
+function startAgentPoll() {
+  stopAgentPoll();
+  _agentPollTimer = setInterval(() => {
+    fetch('/api/integration-agent/status').then(r => r.json()).then(ag => {
+      renderAgentStrip(ag);
+    }).catch(() => {});
+  }, 15000);  // every 15s while on this tab
+}
+
+function stopAgentPoll() {
+  if (_agentPollTimer) { clearInterval(_agentPollTimer); _agentPollTimer = null; }
+}
+
+async function runIntegrationAgent() {
+  const btn = document.getElementById('ias-run-btn');
+  const dot = document.getElementById('ias-dot');
+  const meta= document.getElementById('ias-meta');
+  if (btn) { btn.disabled = true; btn.textContent = '⚙ Running…'; }
+  if (dot) dot.className = 'ias-dot running';
+  if (meta) meta.textContent = 'Agent running…';
+  try {
+    await fetch('/api/integration-agent/run', {method:'POST'});
+    // Poll until last_run updates
+    let attempts = 0;
+    const poll = setInterval(async () => {
+      attempts++;
+      if (attempts > 20) { clearInterval(poll); return; }
+      try {
+        const ag = await fetch('/api/integration-agent/status').then(r => r.json());
+        renderAgentStrip(ag);
+        // Also refresh card data
+        const d = await fetch('/api/integrations').then(r => r.json());
+        renderIntegrations(d.integrations || []);
+        refreshIntegBadgeFromCount(d.pending || 0);
+        clearInterval(poll);
+        if (btn) { btn.disabled = false; btn.textContent = '▶ Run Now'; }
+      } catch(e) {}
+    }, 3000);
+  } catch(e) {
+    if (btn) { btn.disabled = false; btn.textContent = '▶ Run Now'; }
+    if (dot) dot.className = 'ias-dot';
+  }
+}
+
+/* ── Render sections ────────────────────────────────────────────────────── */
+function renderIntegrations(items) {
+  document.getElementById('integ-loading').style.display = 'none';
+
+  const awaiting    = items.filter(i => i.status === 'pending' || i.status === 'error');
+  const connected   = items.filter(i => i.status === 'connected' || i.status === 'anonymous');
+  const suggested   = items.filter(i => i.status === 'suggested');
+
+  const secCfg = [
+    { secId:'integ-awaiting-section',    gridId:'integ-awaiting-grid',    list: awaiting },
+    { secId:'integ-connected-section',   gridId:'integ-connected-grid',   list: connected },
+    { secId:'integ-suggestions-section', gridId:'integ-suggestions-grid', list: suggested },
+  ];
+  for (const { secId, gridId, list } of secCfg) {
+    const sec  = document.getElementById(secId);
+    const grid = document.getElementById(gridId);
+    if (!sec || !grid) continue;
+    if (list.length) {
+      sec.style.display  = '';
+      grid.innerHTML = list.map(i => renderIntegCard(i)).join('');
+    } else {
+      sec.style.display  = 'none';
+    }
+  }
+}
+
+/* ── Card renderer ──────────────────────────────────────────────────────── */
 function renderIntegCard(item) {
-  const cardCls   = { connected:'ic-connected', error:'ic-error',
-                      pending:'ic-pending', anonymous:'ic-anonymous' }[item.status] || 'ic-pending';
-  const badgeCls  = { connected:'icb-connected', error:'icb-error',
-                      pending:'icb-pending', anonymous:'icb-anonymous' }[item.status] || 'icb-pending';
-  const badgeTxt  = { connected:'✓ Connected', error:'⚠ Auth Error',
-                      pending:'Awaiting Setup', anonymous:'● Anonymous' }[item.status] || 'Awaiting';
+  const isSuggested = item.status === 'suggested';
+  const cardCls = {
+    connected: 'ic-connected', error: 'ic-error',
+    pending: 'ic-pending', anonymous: 'ic-anonymous', suggested: 'ic-suggested',
+  }[item.status] || 'ic-pending';
+
+  const badgeCls = {
+    connected: 'icb-connected', error: 'icb-error',
+    pending: 'icb-pending', anonymous: 'icb-anonymous', suggested: 'icb-pending',
+  }[item.status] || 'icb-pending';
+
+  const badgeTxt = {
+    connected: '✓ Connected', error: '⚠ Auth Error',
+    pending: 'Awaiting Setup', anonymous: '● Anonymous', suggested: '💡 Suggested',
+  }[item.status] || 'Awaiting';
 
   // Pill badges
   let pills = '';
-  if (item.required)    pills += `<span class="ic-pill icp-required">REQUIRED</span>`;
-  if (!item.required)   pills += `<span class="ic-pill icp-optional">OPTIONAL</span>`;
-  if (item.free === true)  pills += `<span class="ic-pill icp-free">FREE</span>`;
-  if (item.free === false) pills += `<span class="ic-pill icp-paid">PAID</span>`;
+  if (item.required)          pills += `<span class="ic-pill icp-required">REQUIRED</span>`;
+  else if (!isSuggested)      pills += `<span class="ic-pill icp-optional">OPTIONAL</span>`;
+  if (item.free === true)     pills += `<span class="ic-pill icp-free">FREE</span>`;
+  if (item.free === false)    pills += `<span class="ic-pill icp-paid">PAID</span>`;
+  if (isSuggested)            pills += `<span class="ic-pill" style="color:#a78bfa;border-color:#3b1d6e;background:#0a0518">AGENT</span>`;
 
-  // Key input row (only for api_key type)
-  const keyRow = item.auth_type === 'api_key' ? `
+  // Description (allow HTML from registry)
+  const descHtml = (item.description || '').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
+
+  // Key input row
+  const hasKeyInput = item.auth_type === 'api_key' && item.key_env && !isSuggested;
+  const keyRow = hasKeyInput ? `
     <div class="ic-key-row">
       <input class="ic-key-input ${item.has_key ? 'has-key' : ''}"
-             type="password"
-             id="ickey-${esc(item.id)}"
-             placeholder="${esc(item.key_placeholder || 'Paste key here…')}"
+             type="password" id="ickey-${esc(item.id)}"
+             placeholder="${esc(item.key_placeholder || 'Paste API key here…')}"
              autocomplete="off" spellcheck="false"
              onkeydown="if(event.key==='Enter')authenticateIntegration('${esc(item.id)}')">
-      <a class="ic-key-link" href="${esc(item.key_url)}" target="_blank" rel="noopener"
-         title="${esc(item.key_url_label || 'Get key')}">
-        🔗 ${esc((item.key_url_label || 'Get key').replace(' →',''))}
+      <a class="ic-key-link" href="${esc(item.key_url)}" target="_blank" rel="noopener">
+        🔗 ${esc((item.key_url_label||'Get key').replace(' →',''))}
       </a>
+    </div>` : (item.key_url && isSuggested) ? `
+    <a class="ic-key-link" href="${esc(item.key_url)}" target="_blank" rel="noopener"
+       style="display:inline-flex;margin-top:2px">
+      🔗 ${esc((item.key_url_label||'Learn more').replace(' →',''))}
+    </a>` : '';
+
+  // Auth / action button
+  let btnState = 'state-idle', btnContent = '🔑 Authenticate';
+  if (item.status === 'connected')  { btnState = 'state-connected'; btnContent = '✓ Authenticated'; }
+  if (item.status === 'anonymous')  { btnState = 'state-anonymous'; btnContent = '● Works anonymously'; }
+  if (item.status === 'error')      { btnState = 'state-error';     btnContent = '⚠ Retry Authentication'; }
+  const isClickable = !isSuggested && item.status !== 'anonymous';
+  const clickHandler = isClickable && item.status !== 'connected'
+    ? `onclick="authenticateIntegration('${esc(item.id)}')"` : '';
+
+  const authBtn = isSuggested ? '' : `
+    <button class="ic-auth-btn ${btnState}" id="icbtn-${esc(item.id)}" ${clickHandler}>
+      ${btnContent}
+    </button>`;
+
+  // Re-verify button for connected integrations
+  const reVerifyBtn = (item.status === 'connected' && !isSuggested) ? `
+    <button class="ic-reverify-btn" onclick="reVerifyIntegration('${esc(item.id)}')">↺ Re-verify</button>` : '';
+
+  // Last-verified timestamp from agent
+  const lastChecked = item.last_checked
+    ? `<span class="ic-last-checked">Last verified: ${_relTime(item.last_checked)}</span>` : '';
+
+  // Footer row (detail + last-checked + re-verify)
+  const detailCls = item.status === 'connected' ? 'det-ok' : item.status === 'error' ? 'det-err' : '';
+  const detailTxt = item.agent_detail || item.status_detail || '';
+  const footerRow = `
+    <div class="ic-footer-row">
+      <div class="ic-detail ${detailCls}" id="icdet-${esc(item.id)}">${esc(detailTxt)}</div>
+      ${lastChecked}
+      ${reVerifyBtn}
+    </div>`;
+
+  // Setup steps accordion
+  const steps = item.setup_steps || [];
+  const startOpen = item.status === 'pending' || item.status === 'error' || isSuggested;
+  const stepsHtml = steps.length ? `
+    <div class="ic-accordion">
+      <button class="ic-accordion-toggle" onclick="toggleAccordion('icsteps-${esc(item.id)}', this)">
+        <span class="ic-accordion-chevron ${startOpen ? 'open' : ''}">▶</span>
+        📖 Setup Guide (${steps.length} step${steps.length!==1?'s':''})
+      </button>
+      <div class="ic-accordion-body ${startOpen ? 'open' : ''}" id="icsteps-${esc(item.id)}">
+        <ol class="ic-steps">
+          ${steps.map(s => `<li class="ic-step">
+            <span class="ic-step-num">${steps.indexOf(s)+1}</span>
+            <span>${s.replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&')}</span>
+          </li>`).join('')}
+        </ol>
+      </div>
     </div>` : '';
 
-  // Auth button text/state
-  let btnState = 'state-idle', btnContent = '🔑 Authenticate';
-  if (item.status === 'connected')  { btnState = 'state-connected';  btnContent = '✓ Authenticated'; }
-  if (item.status === 'anonymous')  { btnState = 'state-anonymous';  btnContent = '● Works anonymously'; }
-  if (item.status === 'error')      { btnState = 'state-error';      btnContent = '⚠ Retry Authentication'; }
-  if (item.auth_type === 'oauth')   { btnState = (item.status === 'connected' ? 'state-connected' : 'state-idle');
-                                      if (item.status !== 'connected') btnContent = '🔗 Connect with ' + item.label; }
-
-  const isClickable = item.status !== 'connected' && item.status !== 'anonymous';
-  const clickHandler = isClickable ? `onclick="authenticateIntegration('${esc(item.id)}')"` : '';
-
-  const detailTxt = item.status_detail || '';
+  // Features unlocked accordion
+  const features = item.features_unlocked || [];
+  const featHtml = features.length ? `
+    <div class="ic-accordion">
+      <button class="ic-accordion-toggle" onclick="toggleAccordion('icfeat-${esc(item.id)}', this)">
+        <span class="ic-accordion-chevron">▶</span>
+        ✨ Features Unlocked (${features.length})
+      </button>
+      <div class="ic-accordion-body" id="icfeat-${esc(item.id)}">
+        <ul class="ic-features-list">
+          ${features.map(f => `<li class="ic-feature">${esc(f)}</li>`).join('')}
+        </ul>
+      </div>
+    </div>` : '';
 
   return `<div class="integ-card ${cardCls}" id="icard-${esc(item.id)}">
     <div class="ic-head">
-      <div class="ic-icon" style="border-color:${esc(item.color||'var(--border2)')}20">${esc(item.icon||'🔌')}</div>
+      <div class="ic-icon" style="background:${esc(item.color||'#333')}18;border-color:${esc(item.color||'var(--border2)')}33">${esc(item.icon||'🔌')}</div>
       <div class="ic-meta">
         <div class="ic-label">${esc(item.label)}</div>
         <div class="ic-tagline">${esc(item.tagline||'')}</div>
@@ -3491,27 +3671,31 @@ function renderIntegCard(item) {
       <span class="ic-status-badge ${badgeCls}">${badgeTxt}</span>
     </div>
     <div class="ic-pills">${pills}</div>
-    <div class="ic-desc">${esc(item.description||'')}</div>
+    <div class="ic-desc">${descHtml}</div>
     ${keyRow}
-    <button class="ic-auth-btn ${btnState}" id="icbtn-${esc(item.id)}" ${clickHandler}>
-      ${btnContent}
-    </button>
-    <div class="ic-detail ${item.status==='connected'?'det-ok':item.status==='error'?'det-err':''}"
-         id="icdet-${esc(item.id)}">${esc(detailTxt)}</div>
+    ${authBtn}
+    ${footerRow}
+    ${stepsHtml}
+    ${featHtml}
   </div>`;
 }
 
-async function authenticateIntegration(iid) {
-  const btn  = document.getElementById('icbtn-' + iid);
-  const det  = document.getElementById('icdet-' + iid);
-  const inp  = document.getElementById('ickey-' + iid);
+function toggleAccordion(bodyId, btn) {
+  const body    = document.getElementById(bodyId);
+  const chevron = btn ? btn.querySelector('.ic-accordion-chevron') : null;
+  if (!body) return;
+  const open = body.classList.toggle('open');
+  if (chevron) chevron.classList.toggle('open', open);
+}
 
+/* ── Authentication ─────────────────────────────────────────────────────── */
+async function authenticateIntegration(iid) {
+  const btn = document.getElementById('icbtn-' + iid);
+  const det = document.getElementById('icdet-' + iid);
+  const inp = document.getElementById('ickey-' + iid);
   if (!btn) return;
 
-  // Get key value (for api_key integrations)
   const keyVal = inp ? inp.value.trim() : '';
-
-  // If no key typed and it's an api_key type, focus the input
   if (inp && !keyVal && !inp.classList.contains('has-key')) {
     inp.focus();
     det.textContent = 'Paste your API key above, then click Authenticate.';
@@ -3519,59 +3703,68 @@ async function authenticateIntegration(iid) {
     return;
   }
 
-  // Show loading state
-  btn.className   = 'ic-auth-btn state-loading';
-  btn.innerHTML   = '<span class="ic-spinner"></span> Verifying…';
-  btn.disabled    = true;
+  btn.className = 'ic-auth-btn state-loading';
+  btn.innerHTML = '<span class="ic-spinner"></span> Verifying…';
+  btn.disabled  = true;
   det.textContent = 'Connecting to provider…';
   det.className   = 'ic-detail';
 
   try {
-    // If a new key was typed, save + verify; otherwise just verify existing key
-    const endpoint = keyVal
-      ? `/api/integrations/${iid}/save-key`
-      : `/api/integrations/${iid}/verify`;
-    const body = keyVal ? JSON.stringify({key: keyVal}) : '{}';
-
+    const endpoint = keyVal ? `/api/integrations/${iid}/save-key` : `/api/integrations/${iid}/verify`;
     const res = await fetch(endpoint, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body,
+      body: JSON.stringify(keyVal ? {key: keyVal} : {}),
     });
     const d = await res.json();
 
     if (d.ok) {
-      btn.className   = 'ic-auth-btn state-connected';
-      btn.innerHTML   = '✓ Authenticated';
-      btn.disabled    = false;
+      btn.className = 'ic-auth-btn state-connected';
+      btn.innerHTML = '✓ Authenticated';
+      btn.disabled  = false;
       det.textContent = d.detail || 'Connected successfully';
       det.className   = 'ic-detail det-ok';
-      // Update card border
       const card = document.getElementById('icard-' + iid);
       if (card) {
-        card.className = card.className.replace(/ic-\w+/, 'ic-connected');
+        card.className = card.className.replace(/ic-\w+/g, 'ic-connected');
+        const badge = card.querySelector('.ic-status-badge');
+        if (badge) { badge.textContent = '✓ Connected'; badge.className = 'ic-status-badge icb-connected'; }
       }
-      // Update status badge
-      const badge = card ? card.querySelector('.ic-status-badge') : null;
-      if (badge) { badge.textContent = '✓ Connected'; badge.className = 'ic-status-badge icb-connected'; }
       if (inp) inp.classList.add('has-key');
-      // Refresh pending count
-      setTimeout(refreshIntegBadge, 500);
-      // Refresh health dots
+      setTimeout(refreshIntegBadge, 600);
       checkHealth();
     } else {
-      btn.className   = 'ic-auth-btn state-error';
-      btn.innerHTML   = '⚠ Retry Authentication';
-      btn.disabled    = false;
+      btn.className = 'ic-auth-btn state-error';
+      btn.innerHTML = '⚠ Retry Authentication';
+      btn.disabled  = false;
       det.textContent = d.error || 'Authentication failed';
       det.className   = 'ic-detail det-err';
     }
   } catch(e) {
-    btn.className   = 'ic-auth-btn state-error';
-    btn.innerHTML   = '⚠ Retry Authentication';
-    btn.disabled    = false;
+    btn.className = 'ic-auth-btn state-error';
+    btn.innerHTML = '⚠ Retry Authentication';
+    btn.disabled  = false;
     det.textContent = 'Network error — check your connection';
     det.className   = 'ic-detail det-err';
+  }
+}
+
+async function reVerifyIntegration(iid) {
+  const btn = document.querySelector(`#icard-${iid} .ic-reverify-btn`);
+  const det = document.getElementById('icdet-' + iid);
+  if (btn) { btn.disabled = true; btn.textContent = '⚙…'; }
+  try {
+    const d = await fetch(`/api/integrations/${iid}/verify`, {
+      method:'POST', headers:{'Content-Type':'application/json'}, body:'{}',
+    }).then(r => r.json());
+    if (det) {
+      det.textContent = d.ok ? (d.detail || 'Still connected ✓') : (d.error || 'Verification failed');
+      det.className   = `ic-detail ${d.ok ? 'det-ok' : 'det-err'}`;
+    }
+  } catch(e) {
+    if (det) { det.textContent = 'Network error'; det.className = 'ic-detail det-err'; }
+  } finally {
+    if (btn) { btn.disabled = false; btn.textContent = '↺ Re-verify'; }
   }
 }
 
