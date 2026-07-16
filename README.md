@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **3 skills** · Last synced: 2026-07-16 13:30 UTC
+> **4 skills** · Last synced: 2026-07-16 18:38 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Building Resilient AI Agents with LangGraph](skills/building_resilient_ai_agents_with_langgraph.md) | This skill teaches how to build, manage, and deploy long-running, stateful AI ag | `LangGraph` `LangSmith` `Deep Agents` `LangChain` | `ai` `automation` `langchain` |
 | [Building Effective AI Agents for Automation and Productivity](skills/building_ai_agents.md) | Building AI agents can help automate tasks, make decisions, and improve over tim | `Claude` `Claude Code` `Codex` `Hermes Agent` | `ai` `automation` `productivity` |
 | [Efficiently Running Large AI Models on Local Machines](skills/running_large_models_locally.md) | This skill teaches how to run large AI models on local machines with limited RAM | `ollama` `llama.cpp` `Colibri` `vLLM` | `ai` `optimization` `modeling` |
 | [Building AI Agents with LangChain](skills/building_ai_agents_with_langchain.md) | This skill teaches how to build applications powered by Large Language Models (L | `LangChain` `LangChain-Groq` `LangChain-OpenAI` `LangGraph` | `ai` `automation` `productivity` |
