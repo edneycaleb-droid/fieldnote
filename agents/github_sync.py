@@ -275,6 +275,121 @@ def sync_brain(brain: dict) -> bool:
         return _commit_and_push("chore: update brain graph")
 
 
+KNOWLEDGE_DIR    = WORKSPACE / "assistant_knowledge"
+KNOWLEDGE_CATS   = {"decisions", "discoveries", "session_learnings", "preferences", "architecture"}
+KNOWLEDGE_MIRROR = MIRROR_DIR / "assistant_knowledge"
+
+
+def sync_knowledge_entry(entry: dict) -> dict:
+    """Write one knowledge entry to assistant_knowledge/ and push.
+    
+    entry fields: category, slug, title, content, sources, confidence
+    Returns {"ok": bool, "path": str, "error": str|None}
+    """
+    if not _token():
+        return {"ok": False, "error": "No GitHub token configured"}
+
+    category   = (entry.get("category") or "").strip().lower()
+    slug       = re.sub(r"[^a-z0-9_-]", "-", (entry.get("slug") or "").strip().lower()).strip("-")
+    title      = (entry.get("title") or slug).strip()
+    content    = (entry.get("content") or "").strip()
+    sources    = entry.get("sources") or []
+    confidence = (entry.get("confidence") or "unverified").strip()
+
+    # Whitelist — reject anything outside the approved categories
+    if category not in KNOWLEDGE_CATS:
+        return {"ok": False, "error": f"Invalid category '{category}'. Allowed: {sorted(KNOWLEDGE_CATS)}"}
+    if not slug:
+        return {"ok": False, "error": "slug is required"}
+
+    now = datetime.now(timezone.utc).isoformat()
+
+    # Build markdown with YAML frontmatter
+    sources_yaml = "\n".join(f'  - "{s}"' for s in sources) if sources else "  []"
+    if sources:
+        sources_block = "sources:\n" + sources_yaml
+    else:
+        sources_block = "sources: []"
+
+    # For flat-file categories (preferences, architecture) use root-level file
+    if category in {"preferences", "architecture"}:
+        rel_path = f"assistant_knowledge/{slug}.md"
+    else:
+        rel_path = f"assistant_knowledge/{category}/{slug}.md"
+
+    markdown = f"""---
+category: {category}
+slug: {slug}
+title: {title}
+confidence: {confidence}
+{sources_block}
+updated_at: "{now}"
+---
+
+{content}
+"""
+
+    # Write locally
+    local_path = WORKSPACE / rel_path
+    local_path.parent.mkdir(parents=True, exist_ok=True)
+    local_path.write_text(markdown, encoding="utf-8")
+
+    # Rebuild local index.json
+    _rebuild_knowledge_index()
+
+    # Sync to mirror and push
+    with _lock:
+        if not _ensure_mirror():
+            return {"ok": False, "error": "Could not initialise git mirror", "path": rel_path}
+
+        # Copy entire assistant_knowledge/ into mirror
+        mirror_ak = MIRROR_DIR / "assistant_knowledge"
+        if KNOWLEDGE_DIR.exists():
+            for src in KNOWLEDGE_DIR.rglob("*"):
+                if src.is_file():
+                    dst = mirror_ak / src.relative_to(KNOWLEDGE_DIR)
+                    dst.parent.mkdir(parents=True, exist_ok=True)
+                    dst.write_text(src.read_text(encoding="utf-8"), encoding="utf-8")
+
+        ok = _commit_and_push(f"knowledge({category}): {title[:60]}")
+        return {"ok": ok, "path": rel_path, "error": None if ok else "Push failed"}
+
+
+def _rebuild_knowledge_index() -> None:
+    """Scan assistant_knowledge/ and rebuild index.json."""
+    entries = []
+    if not KNOWLEDGE_DIR.exists():
+        return
+    for md_file in sorted(KNOWLEDGE_DIR.rglob("*.md")):
+        try:
+            text = md_file.read_text(encoding="utf-8")
+            # Parse simple YAML frontmatter
+            meta: dict = {}
+            if text.startswith("---"):
+                fm_end = text.index("---", 3)
+                for line in text[3:fm_end].splitlines():
+                    if ":" in line:
+                        k, _, v = line.partition(":")
+                        meta[k.strip()] = v.strip().strip('"')
+            entries.append({
+                "slug":       meta.get("slug", md_file.stem),
+                "title":      meta.get("title", md_file.stem),
+                "category":   meta.get("category", "unknown"),
+                "confidence": meta.get("confidence", "unverified"),
+                "updated_at": meta.get("updated_at", ""),
+                "path":       str(md_file.relative_to(KNOWLEDGE_DIR)),
+            })
+        except Exception:
+            pass
+    entries.sort(key=lambda x: x["updated_at"], reverse=True)
+    idx_path = KNOWLEDGE_DIR / "index.json"
+    idx_path.write_text(
+        json.dumps({"entries": entries, "updated_at": datetime.now(timezone.utc).isoformat()},
+                   indent=2),
+        encoding="utf-8",
+    )
+
+
 def sync_all(skills_dir_path: str, index: dict) -> dict:
     """Full library sync — all skills + README + brain. For manual trigger."""
     if not _token():
