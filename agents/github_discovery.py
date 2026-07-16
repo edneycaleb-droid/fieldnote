@@ -524,7 +524,48 @@ def discover_and_learn() -> dict:
         "detail":          results_detail,
     }
     log.info("Discovery complete: %s", summary)
+
+    # Write a summary discovery entry to assistant_knowledge/ so ChatGPT sees it
+    if created + enhanced > 0:
+        _record_cycle_to_knowledge(summary, results_detail)
+
     return summary
+
+
+def _record_cycle_to_knowledge(summary: dict, detail: list) -> None:
+    """Persist each successfully discovered skill into assistant_knowledge/discoveries/."""
+    try:
+        import agents.github_sync as gs
+        for item in detail:
+            if "skill" not in item:
+                continue
+            repo  = item["repo"]
+            skill = item["skill"]
+            action = item.get("action", "create")
+            stars  = item.get("stars", 0)
+            quality = item.get("quality", 0)
+            slug   = re.sub(r"[^a-z0-9-]", "-", repo.lower().replace("/", "--"))[:60]
+            content = (
+                f"## GitHub Discovery\n\n"
+                f"**Repository:** [{repo}](https://github.com/{repo})\n"
+                f"**Stars:** {stars:,}\n"
+                f"**Action:** {action}\n"
+                f"**Skill created:** `{skill}`\n"
+                f"**Quality score:** {quality:.0%}\n\n"
+                f"This skill was autonomously discovered and extracted from the repository README "
+                f"by Fieldnote's GitHub Discovery Agent."
+            )
+            gs.sync_knowledge_entry({
+                "category":   "discoveries",
+                "slug":       slug,
+                "title":      f"Discovered: {repo}",
+                "content":    content,
+                "sources":    [f"https://github.com/{repo}"],
+                "confidence": "verified" if quality >= 0.8 else "inferred",
+            })
+            log.info("Discovery: recorded knowledge entry for %s", repo)
+    except Exception as exc:
+        log.warning("Could not write discovery to knowledge base: %s", exc)
 
 
 # ── Discovery log API helpers ─────────────────────────────────────────────────
