@@ -1,13 +1,13 @@
 {
   "concepts": {
     "AI agents": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "building_ai_agents"
       ]
     },
     "Automation": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "building_ai_agents"
       ]
@@ -254,7 +254,7 @@
       ]
     },
     "Mixture of agents": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "building_ai_agents"
       ]
@@ -299,6 +299,48 @@
       "freq": 1,
       "skills": [
         "building_ai_agents_with_langchain"
+      ]
+    },
+    "Personalization": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Integration": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Repeatability": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Model interoperability": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Real-time data augmentation": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Rapid prototyping": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Agent orchestration": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
       ]
     }
   },
@@ -370,7 +412,7 @@
       ]
     },
     "Claude": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "building_ai_agents"
       ]
@@ -382,7 +424,7 @@
       ]
     },
     "Cloud Code": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "building_ai_agents"
       ]
@@ -460,7 +502,7 @@
       ]
     },
     "Hermes Agent Plus Grok 4.5": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "building_ai_agents"
       ]
@@ -502,19 +544,19 @@
       ]
     },
     "Hermes Agent": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "building_ai_agents"
       ]
     },
     "Firecrawl": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "building_ai_agents"
       ]
     },
     "SiaXNG": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "building_ai_agents"
       ]
@@ -554,26 +596,93 @@
       "skills": [
         "building_ai_agents_with_langchain"
       ]
+    },
+    "ClaudeCode": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Claude Co-work": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Connectors": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Superpowers plugin": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "DuckD": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "AIVectorMemory": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "JDTLS": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "LSP4J-MCP": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
     }
   },
   "skill_map": {
     "building_ai_agents": {
       "concepts": [
+        "AI agents",
+        "Personalization",
+        "Automation",
+        "Integration",
+        "Repeatability",
         "Mixture of agents",
-        "Mixture of experts models",
-        "Self-checking agent",
-        "Completion contracts"
+        "Model interoperability",
+        "Real-time data augmentation",
+        "Rapid prototyping",
+        "Agent orchestration"
       ],
       "tools": [
+        "Claude",
+        "ClaudeCode",
+        "Claude Co-work",
+        "Connectors",
+        "Superpowers plugin",
+        "Cloud Code",
         "Hermes Agent",
-        "Hermes Agent Plus Grok 4.5"
+        "Hermes Agent Plus Grok 4.5",
+        "Firecrawl",
+        "SiaXNG",
+        "DuckD",
+        "AIVectorMemory",
+        "JDTLS",
+        "LSP4J-MCP"
       ],
       "tags": [
         "ai",
         "automation",
-        "productivity"
+        "productivity",
+        "cloudcode"
       ],
-      "step_count": 4
+      "step_count": 12
     },
     "running_large_models_locally": {
       "concepts": [
@@ -633,6 +742,6 @@
     },
     "building_ai_agents_with_langchain": {}
   },
-  "updated_at": "2026-07-15T21:56:54.343776+00:00",
+  "updated_at": "2026-07-16T04:45:22.888215+00:00",
   "total_skills": 3
 }
