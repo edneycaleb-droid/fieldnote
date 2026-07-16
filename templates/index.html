@@ -2190,6 +2190,13 @@ function extractPlaylistId(url) {
 async function runSingleVideo(url, videoId) {
   _lastUrl = url;
   const btn = document.getElementById("run-btn");
+
+  // ── Duplicate-submission guard ─────────────────────────────────────────────
+  if (_videoRunning.has(videoId)) {
+    setStatus("⏳ This video is already being processed — reconnecting …", "");
+    // Fall through: server will return already_running=true with existing job_id
+  }
+
   btn.disabled = true; btn.textContent = "Running …";
   document.getElementById("result").style.display = "none";
   document.getElementById("auth-prompts").innerHTML = "";
@@ -2198,10 +2205,12 @@ async function runSingleVideo(url, videoId) {
   const logLines = document.getElementById("log-lines");
   logWrap.style.display = "block";
   logLines.innerHTML = "";
-  setStatus("Starting parallel agents …", "");
+  if (!_videoRunning.has(videoId)) setStatus("Starting parallel agents …", "");
   _initVerifyPanel();
 
   if (_currentES) { _currentES.close(); _currentES = null; }
+
+  const _releaseVideo = () => _videoRunning.delete(videoId);
 
   try {
     const r = await fetch("/process", {
@@ -2209,8 +2218,14 @@ async function runSingleVideo(url, videoId) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ url }),
     });
-    const { job_id, error } = await r.json();
-    if (error) { showErr(error); reset(btn); throw new Error(error); }
+    const d = await r.json();
+    const { job_id, error, already_running } = d;
+    if (error) { showErr(error); reset(btn); _releaseVideo(); throw new Error(error); }
+
+    _videoRunning.set(videoId, job_id);
+    if (already_running) {
+      appendLog("⏳ Reconnecting to existing job for this video …", "warning");
+    }
 
     await new Promise((resolve, reject) => {
       _currentES = new EventSource(`/stream/${job_id}`);
@@ -2225,36 +2240,53 @@ async function runSingleVideo(url, videoId) {
         if (msg.type === "verify_check") { renderVerifyCheck(msg.check); return; }
         if (msg.type === "verify_done")  { renderVerifyDone(msg);        return; }
         if (msg.type === "done") {
-          _currentES.close();
-          reset(btn);
+          _currentES.close(); _currentES = null;
+          reset(btn); _releaseVideo();
           if (msg.ok) {
             renderResult(msg);
             updateStats(msg.stats);
             prependSkill(msg);
             refreshConnections();
             if (msg.verify) renderVerifyDone(msg.verify);
-            setStatus("Done — skill saved to library.", "ok");
-            // Clear input so user can immediately paste the next URL
+            // ── Completion receipt ─────────────────────────────────────────
+            const rc = msg.receipt || {};
+            const words  = ((rc.transcript_words || msg.transcript_words) || 0).toLocaleString();
+            const mLabel = {
+              captions:      "📋 captions",
+              yt_dlp_subs:   "🔤 auto-subs",
+              whisper:       "☁ Groq Whisper",
+              whisper_local: "🖥 CPU Whisper",
+              none:          "❌ none",
+            }[rc.transcript_method || msg.transcript_method] || (rc.transcript_method || msg.transcript_method || "?");
+            const degraded = rc.is_degraded
+              ? ` · ⚡ ${rc.degraded_reason || "degraded fallback"}`
+              : "";
+            const verified = msg.verify?.overall === "ok" ? " · ✔ verified" : "";
+            setStatus(
+              `✅ Saved · ${words} words · ${mLabel}${degraded}${verified}`,
+              "ok"
+            );
+            // Return to READY: clear input so next URL can be pasted immediately
             const inp = document.getElementById("url-input");
-            inp.value = "";
-            inp.focus();
+            inp.value = ""; inp.focus();
             resolve(msg);
           } else {
+            // Terminal failure — show error + retry button; input stays for easy retry
             showErr(msg.error || "Something went wrong.");
             reject(new Error(msg.error || "Job failed"));
           }
         }
       };
       _currentES.onerror = () => {
-        _currentES.close();
-        reset(btn);
-        reject(new Error("Stream connection lost"));
+        if (_currentES) { _currentES.close(); _currentES = null; }
+        reset(btn); _releaseVideo();
+        reject(new Error("Stream connection lost — please retry"));
       };
     });
 
   } catch (e) {
     if (e.message !== "Job failed") showErr(e.message);
-    reset(btn);
+    reset(btn); _releaseVideo();
   }
 }
 
