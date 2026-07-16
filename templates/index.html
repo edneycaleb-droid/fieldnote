@@ -742,6 +742,39 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
 .wl-remove-btn:hover { color: #f87171; border-color: #5c1a1a; }
 .wl-empty { font-size: 0.75rem; color: var(--muted); padding: 6px 0; text-align: center; }
 
+/* ── API Key modal ────────────────────────────────────────────────────────── */
+#key-modal-backdrop {
+  display: none; position: fixed; inset: 0; background: rgba(0,0,0,.65);
+  z-index: 900; align-items: center; justify-content: center; }
+#key-modal-backdrop.open { display: flex; }
+#key-modal {
+  background: #0f0f1a; border: 1px solid var(--border2); border-radius: 16px;
+  width: min(92vw, 400px); padding: 22px 20px; position: relative; }
+.km-head { display: flex; align-items: center; gap: 10px; margin-bottom: 4px; }
+.km-icon { font-size: 1.4rem; }
+.km-title { font-size: 1rem; font-weight: 700; color: var(--text); flex: 1; }
+.km-close { background: none; border: none; color: var(--muted); font-size: 1rem;
+  cursor: pointer; -webkit-appearance: none; padding: 2px 4px; }
+.km-desc  { font-size: 0.8rem; color: var(--muted); line-height: 1.5; margin: 10px 0 6px; }
+.km-link  { display: inline-block; font-size: 0.78rem; color: var(--accent);
+  text-decoration: none; margin-bottom: 14px; }
+.km-link:hover { text-decoration: underline; }
+.km-row   { display: flex; gap: 8px; }
+.km-input { flex: 1; background: var(--bg); border: 1px solid var(--border2);
+  border-radius: 10px; padding: 10px 12px; color: var(--text); font-size: 0.85rem;
+  outline: none; -webkit-appearance: none; font-family: "SF Mono","Fira Code",monospace; }
+.km-input:focus { border-color: var(--accent); }
+.km-save  { background: var(--accent); border: none; border-radius: 10px;
+  padding: 10px 16px; color: #fff; font-size: 0.85rem; font-weight: 700;
+  cursor: pointer; white-space: nowrap; -webkit-appearance: none; }
+.km-save:disabled { opacity: .45; cursor: default; }
+.km-status { font-size: 0.75rem; margin-top: 8px; min-height: 18px; }
+.km-status.ok  { color: var(--green); }
+.km-status.err { color: var(--red); }
+/* Make no_key provider dots show a pointer to hint they're clickable */
+.hc-item.clickable { cursor: pointer; }
+.hc-item.clickable:hover .hc-name { color: var(--accent); }
+
 </style>
 </head>
 <body>
@@ -777,6 +810,26 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
   <span class="hc-label">System:</span>
   <div class="hc-items" id="hc-items"></div>
   <button class="hc-close" onclick="document.getElementById('health-bar').style.display='none'">✕</button>
+</div>
+
+<!-- API key modal -->
+<div id="key-modal-backdrop" onclick="if(event.target===this)closeKeyModal()">
+  <div id="key-modal">
+    <div class="km-head">
+      <span class="km-icon" id="km-icon">🔑</span>
+      <span class="km-title" id="km-title">Add API Key</span>
+      <button class="km-close" onclick="closeKeyModal()">✕</button>
+    </div>
+    <p class="km-desc" id="km-desc"></p>
+    <a class="km-link" id="km-link" href="#" target="_blank" rel="noopener"></a>
+    <div class="km-row">
+      <input class="km-input" type="password" id="km-input"
+             placeholder="Paste your key here…" autocomplete="off" spellcheck="false"
+             onkeydown="if(event.key==='Enter')saveProviderKey()">
+      <button class="km-save" id="km-save" onclick="saveProviderKey()">Save</button>
+    </div>
+    <div class="km-status" id="km-status"></div>
+  </div>
 </div>
 
 <div class="container">
@@ -1212,12 +1265,14 @@ async function checkHealth() {
       { key: "openrouter",  label: "OpenRouter"  },
     ];
     const aiItems = AI_PROVIDERS.map(c => {
-      const info  = prov[c.key] || { state: h[c.key] ? "healthy" : "no_key" };
-      const cls   = _providerDotCls(info.state);
-      const tip   = esc(_providerTitle(c.key, info));
-      const warn  = (info.state !== "healthy" && info.state !== "no_key");
-      const nameCls = warn ? (info.state === "quota_exhausted" || info.state === "auth_error" ? "bad" : "warn") : "";
-      return `<span class="hc-item" title="${tip}"><span class="hc-dot ${cls}"></span><span class="hc-name ${nameCls}">${c.label}</span></span>`;
+      const info      = prov[c.key] || { state: h[c.key] ? "healthy" : "no_key" };
+      const cls       = _providerDotCls(info.state);
+      const tip       = esc(_providerTitle(c.key, info));
+      const warn      = (info.state !== "healthy" && info.state !== "no_key");
+      const nameCls   = warn ? (info.state === "quota_exhausted" || info.state === "auth_error" ? "bad" : "warn") : "";
+      const clickable = (info.state === "no_key" || info.state === "auth_error") ? "clickable" : "";
+      const onclick   = clickable ? ` onclick="openKeyModal('${c.key}')"` : "";
+      return `<span class="hc-item ${clickable}" title="${tip}"${onclick}><span class="hc-dot ${cls}"></span><span class="hc-name ${nameCls}">${c.label}</span></span>`;
     }).join("");
 
     const sep = `<span style="color:var(--muted);opacity:.35;margin:0 2px">│</span>`;
@@ -1241,6 +1296,79 @@ setInterval(async () => {
     if (anyIssue) checkHealth();  // trigger full refresh to show dots
   } catch (e) { /* non-critical */ }
 }, 60000);
+
+// ── API key management ────────────────────────────────────────────────────────
+const _KEY_PROVIDERS = {
+  groq:        { icon: "⚡", label: "Groq",        var: "GROQ",
+                 desc: "Free, fast inference for Llama & Gemma models. The primary AI provider for Fieldnote.",
+                 link: "https://console.groq.com/keys", linkLabel: "Get a free key at console.groq.com/keys" },
+  gemini:      { icon: "✨", label: "Gemini",       var: "Gemini",
+                 desc: "Google's free AI Studio key unlocks Gemini 2.0 Flash as a Groq fallback. Note: Cloud Console keys have zero quota — use AI Studio.",
+                 link: "https://aistudio.google.com/app/apikey", linkLabel: "Get a free AI Studio key at aistudio.google.com" },
+  openai:      { icon: "🤖", label: "ChatGPT",      var: "CHATGPT",
+                 desc: "OpenAI key for GPT-4o-mini / GPT-4o. Used as a paid fallback when free tiers are exhausted.",
+                 link: "https://platform.openai.com/api-keys", linkLabel: "Get a key at platform.openai.com/api-keys" },
+  huggingface: { icon: "🤗", label: "HuggingFace",  var: "HF_TOKEN",
+                 desc: "Free read token gives access to Llama 3.1 and Mistral via serverless inference — great backup when Groq is rate-limited.",
+                 link: "https://huggingface.co/settings/tokens", linkLabel: "Get a free token at huggingface.co/settings/tokens" },
+  openrouter:  { icon: "🔀", label: "OpenRouter",   var: "OPENROUTER_API_KEY",
+                 desc: "Routes to many free models (Llama, Mistral, etc.) via a single free key — no credit card needed.",
+                 link: "https://openrouter.ai/keys", linkLabel: "Get a free key at openrouter.ai/keys" },
+};
+
+let _kmProvider = null;
+
+function openKeyModal(provider) {
+  const p = _KEY_PROVIDERS[provider];
+  if (!p) return;
+  _kmProvider = provider;
+  document.getElementById("km-icon").textContent  = p.icon;
+  document.getElementById("km-title").textContent = p.label + " API Key";
+  document.getElementById("km-desc").textContent  = p.desc;
+  const link = document.getElementById("km-link");
+  link.textContent = p.linkLabel;
+  link.href        = p.link;
+  document.getElementById("km-input").value  = "";
+  document.getElementById("km-status").textContent = "";
+  document.getElementById("km-status").className   = "km-status";
+  document.getElementById("key-modal-backdrop").classList.add("open");
+  setTimeout(() => document.getElementById("km-input").focus(), 80);
+}
+
+function closeKeyModal() {
+  document.getElementById("key-modal-backdrop").classList.remove("open");
+  _kmProvider = null;
+}
+
+async function saveProviderKey() {
+  const val = document.getElementById("km-input").value.trim();
+  if (!val || !_kmProvider) return;
+  const btn = document.getElementById("km-save");
+  const st  = document.getElementById("km-status");
+  btn.disabled = true;
+  st.textContent = "Saving…"; st.className = "km-status";
+  try {
+    const r = await fetch("/api/save-key", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({provider: _kmProvider, value: val}),
+    });
+    const d = await r.json();
+    if (d.ok) {
+      st.textContent = `✓ ${_KEY_PROVIDERS[_kmProvider]?.label} key saved — activating…`;
+      st.className = "km-status ok";
+      setTimeout(() => { closeKeyModal(); checkHealth(); }, 1200);
+    } else {
+      st.textContent = "⚠ " + (d.error || "Save failed");
+      st.className = "km-status err";
+      btn.disabled = false;
+    }
+  } catch (e) {
+    st.textContent = "⚠ Network error";
+    st.className = "km-status err";
+    btn.disabled = false;
+  }
+}
 
 // ── Playlist handling ─────────────────────────────────────────────────────────
 let _playlistId      = null;
