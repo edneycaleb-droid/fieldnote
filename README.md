@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **7 skills** · Last synced: 2026-07-16 18:40 UTC
+> **8 skills** · Last synced: 2026-07-16 18:41 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [SwanLab: An Open-Source AI Training Analysis and Visualization Platform](skills/swanlab_ai_training_analysis_platform.md) | SwanLab is an open-source AI training analysis and visualization platform that s | `SwanLab` `PyTorch` `Transformers` `LLaMA Factory` | `ai` `training` `analysis` |
 | [Building Production-Ready LLM Applications with Haystack: An Open-Source AI Orchestration Framework](skills/build_production_ready_llm_applications_with_haystack.md) | Haystack is an open-source AI orchestration framework for building production-re | `Haystack` `Docker` `OpenAI` `Mistral` | `ai` `automation` `orchestration` |
 | [Building Lightweight Multi-Agent Workflows with the OpenAI Agents SDK](skills/openai_agents_sdk.md) | Learn how to harness the power of the OpenAI Agents SDK to build efficient, scal | `OpenAI Agents SDK` `LangGraph` `LangSmith` `Deep Agents` | `ai` `automation` `langchain` |
 | [Deploying AstrBot: A Comprehensive Guide to Open-Source All-in-One Agent Chatbot Platform](skills/astrbot_deployment.md) | AstrBot is an open-source, all-in-one agent chatbot platform that integrates wit | `uv tool` `Docker` `Docker Compose` `AstrBot App` | `ai` `chatbots` `conversational-ai` |
