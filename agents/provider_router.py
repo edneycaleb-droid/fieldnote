@@ -491,6 +491,10 @@ def _call_openrouter_chat(messages: list, max_tokens: int, temperature: float) -
 # Ordered: free first, billed last, then free-tier-with-optional-key
 _PROVIDERS = ["groq", "gemini", "openai", "huggingface", "openrouter"]
 
+# Providers that are genuinely free (no billing risk).
+# Use call_llm_free_only() / call_chat_free_only() to guarantee zero spend.
+FREE_PROVIDERS = ["groq", "gemini", "huggingface", "openrouter"]
+
 _IMPL: dict[str, Any] = {
     "groq":        _call_groq,
     "gemini":      _call_gemini,
