@@ -742,6 +742,66 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
 .wl-remove-btn:hover { color: #f87171; border-color: #5c1a1a; }
 .wl-empty { font-size: 0.75rem; color: var(--muted); padding: 6px 0; text-align: center; }
 
+/* ── Intelligence Feed card ─────────────────────────────────────────────────── */
+.intel-card { background: var(--surface); border: 1px solid var(--border);
+  border-radius: 16px; padding: 16px; margin-bottom: 14px; }
+.intel-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+.intel-title  { font-size: 0.88rem; font-weight: 700; color: var(--text); flex: 1; }
+.intel-live   { font-size: 0.62rem; color: var(--green); border: 1px solid #1a4a2a;
+  background: #060f08; border-radius: 10px; padding: 2px 8px; }
+.intel-tabs   { display: flex; gap: 4px; margin-bottom: 12px; }
+.intel-tab    { background: var(--bg); border: 1px solid var(--border2); border-radius: 8px;
+  padding: 4px 12px; font-size: 0.75rem; font-weight: 600; color: var(--muted);
+  cursor: pointer; -webkit-appearance: none; transition: all .15s; }
+.intel-tab.active { background: #0d1a30; border-color: var(--blue); color: var(--blue); }
+.intel-pane   { display: none; }
+.intel-pane.active { display: block; }
+
+/* Feed entries */
+.if-feed { display: flex; flex-direction: column; gap: 6px; }
+.if-entry { background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 10px; padding: 9px 12px; }
+.if-entry-top { display: flex; align-items: center; gap: 6px; margin-bottom: 4px; }
+.if-entry-source { font-size: 0.6rem; padding: 1px 7px; border-radius: 10px;
+  font-weight: 700; border: 1px solid; flex-shrink: 0; }
+.ifs-github  { color: #4ade80; border-color: #1a5c30; background: #060f08; }
+.ifs-chatgpt { color: #c084fc; border-color: #3a1a6a; background: #0d0518; }
+.if-entry-title { font-size: 0.78rem; font-weight: 600; color: var(--text); flex: 1;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.if-conf { font-size: 0.6rem; padding: 1px 6px; border-radius: 8px; border: 1px solid; flex-shrink: 0; }
+.ifc-verified   { color: #4ade80; border-color: #1a5c30; }
+.ifc-inferred   { color: #60a5fa; border-color: #1a3a5c; }
+.ifc-speculative{ color: #fbbf24; border-color: #5c3d00; }
+.if-entry-body  { font-size: 0.72rem; color: var(--muted); line-height: 1.5;
+  max-height: 48px; overflow: hidden; position: relative; }
+.if-entry-body::after { content: ''; position: absolute; bottom: 0; right: 0;
+  width: 40px; height: 1.2em; background: linear-gradient(to right, transparent, var(--bg2)); }
+.if-entry-meta { font-size: 0.62rem; color: #555; margin-top: 4px; }
+
+/* Discovery stats bar */
+.if-stat-row { display: flex; gap: 16px; background: var(--bg2); border: 1px solid var(--border);
+  border-radius: 10px; padding: 8px 12px; margin-bottom: 8px; flex-wrap: wrap; }
+.if-stat { text-align: center; }
+.if-stat-n { font-size: 1rem; font-weight: 700; color: var(--text); line-height: 1.2; }
+.if-stat-l { font-size: 0.58rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+.if-actions { display: flex; gap: 6px; margin-bottom: 10px; flex-wrap: wrap; }
+.if-run-btn { font-size: 0.72rem; padding: 4px 12px; border-radius: 8px; cursor: pointer;
+  border: 1px solid var(--accent); color: var(--purple); background: #100a20;
+  -webkit-appearance: none; transition: all .15s; }
+.if-run-btn:hover { background: #1a1050; }
+.if-run-btn:disabled { opacity: .45; cursor: default; }
+.if-next { font-size: 0.68rem; color: var(--muted); padding: 4px 0; align-self: center; }
+.if-empty { font-size: 0.74rem; color: var(--muted); text-align: center; padding: 12px 0; }
+
+/* Knowledge category pills */
+.kc-pill { display: inline-block; font-size: 0.6rem; padding: 1px 7px; border-radius: 10px;
+  font-weight: 700; border: 1px solid; margin-right: 4px; }
+.kcp-decisions        { color: #fbbf24; border-color: #5c3d00; background: #1a1200; }
+.kcp-discoveries      { color: #4ade80; border-color: #1a5c30; background: #060f08; }
+.kcp-session_learnings{ color: #60a5fa; border-color: #1a3a5c; background: #060e18; }
+.kcp-preferences      { color: #c084fc; border-color: #3a1a6a; background: #0d0518; }
+.kcp-architecture     { color: #fb923c; border-color: #5c2a00; background: #180a00; }
+
 /* ── API Key modal ────────────────────────────────────────────────────────── */
 #key-modal-backdrop {
   display: none; position: fixed; inset: 0; background: rgba(0,0,0,.65);
