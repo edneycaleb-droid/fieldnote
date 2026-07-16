@@ -1606,6 +1606,22 @@ def api_integration_save_key(iid):
     })
 
 
+@app.route("/api/integration-agent/status")
+def api_integration_agent_status():
+    """Live status of the Integration Agent (last run, checks, suggestions, events)."""
+    from agents.integration_agent import get_status
+    return jsonify(get_status())
+
+
+@app.route("/api/integration-agent/run", methods=["POST"])
+def api_integration_agent_run():
+    """Trigger the Integration Agent immediately (runs in background thread)."""
+    import threading
+    from agents.integration_agent import run_agent
+    threading.Thread(target=run_agent, daemon=True, name="fn-integ-agent-manual").start()
+    return jsonify({"ok": True, "message": "Integration agent started — refresh in ~15 seconds"})
+
+
 @app.route("/api/integrations/<iid>/verify", methods=["POST"])
 def api_integration_verify(iid):
     """Re-verify an already-saved key without changing it."""
@@ -3123,6 +3139,14 @@ def _boot_scheduler():
         description="Fallback: push any source-code changes not yet caught by the file watcher",
         interval_hours=0.167,   # every 10 minutes
         fn=lambda: github_sync.sync_code(label="scheduler"),
+    )
+
+    import agents.integration_agent as _integ_agent
+    s.register(
+        name="integrations",
+        description="Health-check all integrations, auto-detect new Replit Secrets, suggest missing ones",
+        interval_hours=0.5,     # every 30 minutes
+        fn=_integ_agent.run_agent,
     )
 
     s.start()
