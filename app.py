@@ -146,7 +146,7 @@ def repair_index() -> tuple[int, int]:
     md_names = {f[:-3] for f in os.listdir(SKILLS_DIR) if f.endswith(".md")}
     removed  = 0
     added    = 0
-    for name in list(index.keys()):
+    for name in list(index.keys():
         if name not in md_names:
             del index[name]
             removed += 1
@@ -181,8 +181,8 @@ def list_skills() -> list[dict]:
             "name":         name,
             "title":        meta.get("title") or name,
             "description":  meta.get("description", ""),
-            "tags":         meta.get("tags", []),
-            "tools":        meta.get("tools", []),
+            "tags":         _nsl(meta.get("tags"),
+            "tools":        _nsl(meta.get("tools"),
             "source_title": meta.get("source_title", ""),
             "source_url":   meta.get("source_url", ""),
             "video_id":     meta.get("video_id", ""),
@@ -203,13 +203,13 @@ def get_global_stats() -> dict:
     all_tools: set = set()
     all_pkgs:  set = set()
     for m in index.values():
-        all_tools.update(_nsl(m.get("tools")))
-        all_pkgs.update(_nsl(m.get("python_packages")))
+        all_tools.update(_nsl(m.get("tools"))
+        all_pkgs.update(_nsl(m.get("python_packages"))
 
     repos_dir  = "fieldnote_repos"
     repo_count = sum(
         1 for d in os.listdir(repos_dir)
-        if os.path.isdir(os.path.join(repos_dir, d))
+        if os.path.isdir(os.path.join(repos_dir, d)
     ) if os.path.exists(repos_dir) else 0
 
     return {
@@ -217,7 +217,7 @@ def get_global_stats() -> dict:
         "tools":    len(all_tools),
         "packages": len(all_pkgs),
         "repos":    repo_count,
-        "mcp":      len(mcp_agent.get_connections()),
+        "mcp":      len(mcp_agent.get_connections(),
     }
 
 
@@ -225,7 +225,7 @@ def get_all_tags() -> list[str]:
     index = load_index()
     tags: set = set()
     for m in index.values():
-        tags.update(_nsl(m.get("tags")))
+        tags.update(_nsl(m.get("tags"))
     return sorted(tags)
 
 
@@ -237,7 +237,7 @@ def _relevance_score(meta: dict, quick_tools: list[str]) -> int:
         return 0
     skill_tokens = set(
         t.lower()
-        for t in _nsl(meta.get("tools")) + _nsl(meta.get("tags")) + _nsl(meta.get("concepts"))
+        for t in _nsl(meta.get("tools") + _nsl(meta.get("tags") + _nsl(meta.get("concepts")
     )
     score = 0
     for qt in quick_tools:
@@ -264,19 +264,19 @@ def get_skills_context(quick_tools: list[str] | None = None) -> str:
 
     # Score and sort skills by relevance to current video
     scored = sorted(
-        (((_relevance_score(m, quick_tools or []), name, m) for name, m in index.items())),
+        (((_relevance_score(m, quick_tools or []), name, m) for name, m in index.items()),
         key=lambda x: x[0],
         reverse=True,
     )
 
     lines: list[str] = ["=== EXISTING SKILL INDEX ===\n"]
     for _, name, m in scored[:30]:
-        tools    = ", ".join(m.get("tools",    [])[:6]) or "none"
-        tags     = ", ".join(m.get("tags",     [])[:4]) or "none"
-        concepts = ", ".join(m.get("concepts", [])[:4]) or "none"
-        pkgs     = ", ".join(m.get("python_packages", [])[:4]) or "none"
-        steps_preview = "; ".join(m.get("steps", [])[:2])
-        sources_count = len(m.get("history", [])) + 1
+        tools    = ", ".join(_nsl(m.get("tools")[:6]) or "none"
+        tags     = ", ".join(_nsl(m.get("tags")[:4]) or "none"
+        concepts = ", ".join(_nsl(m.get("concepts")[:4]) or "none"
+        pkgs     = ", ".join(_nsl(m.get("python_packages")[:4]) or "none"
+        steps_preview = "; ".join(_nsl(m.get("steps")[:2])
+        sources_count = len(m.get("history", []) + 1
         lines.append(
             f"SKILL: {name}\n"
             f"  title: {m.get('title','')}\n"
@@ -292,7 +292,7 @@ def get_skills_context(quick_tools: list[str] | None = None) -> str:
     # Full markdown for top 5 most relevant skills
     top_with_content = [
         (score, name, m) for score, name, m in scored[:5]
-        if os.path.exists(os.path.join(SKILLS_DIR, f"{name}.md"))
+        if os.path.exists(os.path.join(SKILLS_DIR, f"{name}.md")
     ]
     if top_with_content:
         lines.append("\n=== FULL CONTENT OF TOP RELEVANT SKILLS ===\n")
@@ -427,7 +427,7 @@ def get_video_metadata(video_id: str) -> dict:
             f"?url=https://youtube.com/watch?v={video_id}&format=json"
         )
         with urlopen(oembed, timeout=6) as r:
-            d = json.loads(r.read())
+            d = json.loads(r.read()
         return {
             "title":     d.get("title", ""),
             "author":    d.get("author_name", ""),
@@ -457,7 +457,7 @@ def get_playlist_video_ids(playlist_id: str) -> list[str]:
     # Extract valid video IDs from stdout (11-char alphanumeric strings)
     id_pat = r'^[a-zA-Z0-9_-]{11}' + '$'
     ids = [l.strip() for l in r.stdout.strip().splitlines()
-           if re.match(id_pat, l.strip())]
+           if re.match(id_pat, l.strip()]
     if ids:
         return ids
     # No IDs from stdout — surface the real error from stderr
@@ -476,7 +476,7 @@ def transcript_from_captions(video_id: str) -> str:
     return " ".join(e["text"] for e in entries)
 
 
-_FW_MODEL_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".cache", "fw_models")
+_FW_MODEL_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__), ".cache", "fw_models")
 
 
 def _transcribe_local(mp3_path: str, emit) -> str:
@@ -492,7 +492,7 @@ def _transcribe_local(mp3_path: str, emit) -> str:
     emit("📝  Transcribing locally — may take 2–4 min on CPU …", "warning")
     segments, info = model.transcribe(mp3_path, beam_size=1, vad_filter=True)
     text = " ".join(seg.text.strip() for seg in segments)
-    emit(f"✅  Local transcription done ({len(text.split()):,} words, lang: {info.language})", "success")
+    emit(f"✅  Local transcription done ({len(text.split():,} words, lang: {info.language})", "success")
     return text
 
 
@@ -547,9 +547,9 @@ def transcript_from_whisper(url: str, video_id: str, emit) -> tuple[str, str]:
     except Exception as _whisper_err:
         _msg      = str(_whisper_err)
         _is_quota = any(k in _msg.lower() for k in
-                        ("quota", "billing", "insufficient", "exceeded", "resource_exhausted"))
+                        ("quota", "billing", "insufficient", "exceeded", "resource_exhausted")
         _is_auth  = ("401" in _msg or "403" in _msg
-                     or "invalid_api_key" in _msg.lower())
+                     or "invalid_api_key" in _msg.lower()
         if _is_quota or _is_auth:
             _kind = "quota exhausted" if _is_quota else "auth error"
             emit(f"⚠️  Groq Whisper {_kind} — falling back to local transcription (slower) …",
@@ -571,8 +571,8 @@ def transcript_from_whisper(url: str, video_id: str, emit) -> tuple[str, str]:
 
     # Groq SDK 1.5+ always returns Transcription (never raw str).
     # Extract .text safely — raise immediately if None/empty so the caller can fallback.
-    raw_text = result.text if (hasattr(result, "text") and isinstance(result.text, str)) else ""
-    if not raw_text or len(raw_text.strip()) < 10:
+    raw_text = result.text if (hasattr(result, "text") and isinstance(result.text, str) else ""
+    if not raw_text or len(raw_text.strip() < 10:
         raise RuntimeError(
             "Groq Whisper returned empty text — audio may be silent, too short, or unsupported."
         )
@@ -709,7 +709,7 @@ def _extract_skill_ai(
     knowledge_ctx: str,
     existing_content: str = "",
 ) -> dict:
-    raw = call_llm(_build_prompt(transcript, knowledge_ctx, existing_content))
+    raw = call_llm(_build_prompt(transcript, knowledge_ctx, existing_content)
     return json.loads(raw)
 
 
@@ -771,8 +771,8 @@ def _github_readme_context(repos: list) -> str:
         except Exception:
             lines.append(
                 "[" + (fn or "?") + "]"
-                + " stars=" + str(repo.get("stars", 0))
-                + " lang=" + str(repo.get("language", ""))
+                + " stars=" + str(repo.get("stars", 0)
+                + " lang=" + str(repo.get("language", "")
             )
     return chr(10).join(lines) if lines else "No README context available."
 
@@ -841,9 +841,9 @@ def _judge_arena(skill_a: dict, skill_b: dict, github_ctx: str, emit) -> dict:
     except Exception as exc:
         emit("⚠  Judge LLM failed (" + str(exc)[:80] + "), falling back to ChatGPT result", "warning")
         result = dict(skill_a)
-        result["tools"]    = list(dict.fromkeys(((skill_a.get("tools") or []) + (skill_b.get("tools") or []))))
-        result["concepts"] = list(dict.fromkeys(((skill_a.get("concepts") or []) + (skill_b.get("concepts") or []))))
-        result["steps"]    = list(dict.fromkeys(((skill_a.get("steps") or []) + (skill_b.get("steps") or []))))[:12]
+        result["tools"]    = list(dict.fromkeys(((skill_a.get("tools") or []) + (skill_b.get("tools") or []))
+        result["concepts"] = list(dict.fromkeys(((skill_a.get("concepts") or []) + (skill_b.get("concepts") or []))
+        result["steps"]    = list(dict.fromkeys(((skill_a.get("steps") or []) + (skill_b.get("steps") or []))[:12]
         result["_arena"]   = {"title_winner": "chatgpt", "desc_winner": "chatgpt",
                               "steps_a": a_steps, "steps_b": b_steps,
                               "steps_merged": len(result["steps"]),
@@ -854,8 +854,8 @@ def _judge_arena(skill_a: dict, skill_b: dict, github_ctx: str, emit) -> dict:
     emit(
         "🏆  Arena: " + str(a_steps) + " ChatGPT + " + str(b_steps) + " Groq steps"
         + " → " + str(sm) + " merged"
-        + " | title: " + str(arena.get("title_winner", "?"))
-        + " | desc: " + str(arena.get("desc_winner", "?")),
+        + " | title: " + str(arena.get("title_winner", "?")
+        + " | desc: " + str(arena.get("desc_winner", "?"),
         "success",
     )
     return result
@@ -868,12 +868,12 @@ def _compute_skill_name(
     existing_index: dict,
 ) -> str:
     _raw = skill.get("skill_name")
-    _sn  = str(_raw).strip() if _raw and not isinstance(_raw, (dict, list)) else ""
-    name = re.sub(r"[^a-z0-9_]", "_", (_sn or "unnamed").lower()).strip("_")
+    _sn  = str(_raw).strip() if _raw and not isinstance(_raw, (dict, list) else ""
+    name = re.sub(r"[^a-z0-9_]", "_", (_sn or "unnamed").lower().strip("_")
     if not name:
         name = f"skill_{uuid.uuid4().hex[:6]}"
     if action == "enhance" and enhance_target and enhance_target in existing_index:
-        name = re.sub(r"[^a-z0-9_]", "_", enhance_target.lower()).strip("_")
+        name = re.sub(r"[^a-z0-9_]", "_", enhance_target.lower().strip("_")
     return name
 
 
@@ -932,7 +932,7 @@ def _save_skill(
         f"# {skill.get('title', 'Skill')}\n\n"
         f"{skill.get('description', '')}\n\n"
         "## Steps\n" +
-        "\n".join(f"- {s}" for s in skill.get("steps", []))
+        "\n".join(f"- {s}" for s in _nsl(skill.get("steps"))
     )
 
     # Strip any Sources section the AI may have included (we manage it ourselves)
@@ -953,11 +953,11 @@ def _save_skill(
     prev  = index.get(skill_name, {})
 
     # Merge and deduplicate all list fields (new AI output wins order, old fills gaps)
-    merged_tools    = _dedup_list(skill.get("tools", []),           prev.get("tools", []))
-    merged_tags     = _dedup_list(skill.get("tags", []),            prev.get("tags", []))
-    merged_concepts = _dedup_list(skill.get("concepts", []),        prev.get("concepts", []))
-    merged_packages = _dedup_list(skill.get("python_packages", []), prev.get("python_packages", []))
-    merged_related  = _dedup_list(skill.get("related_skills", []),  prev.get("related_skills", []))
+    merged_tools    = _dedup_list(_nsl(skill.get("tools"),           _nsl(prev.get("tools"))
+    merged_tags     = _dedup_list(_nsl(skill.get("tags"),            _nsl(prev.get("tags"))
+    merged_concepts = _dedup_list(_nsl(skill.get("concepts"),        _nsl(prev.get("concepts"))
+    merged_packages = _dedup_list(_nsl(skill.get("python_packages"), _nsl(prev.get("python_packages"))
+    merged_related  = _dedup_list(_nsl(skill.get("related_skills"),  _nsl(prev.get("related_skills"))
 
     # History entry for this update
     history_entry = {
@@ -983,7 +983,7 @@ def _save_skill(
         "concepts":        merged_concepts,
         "python_packages": merged_packages,
         "related_skills":  merged_related,
-        "steps":           skill.get("steps", []),
+        "steps":           _nsl(skill.get("steps"),
         "source_url":      url,
         "source_title":    meta.get("title", ""),
         "video_id":        video_id,
@@ -1004,7 +1004,7 @@ def _save_skill(
         "mcp_connections": [c["name"] for c in mcp_connections],
         "created_at":      prev.get("created_at", now),
         "updated_at":      now,
-        "_dca":            skill_quality.advance_dca(prev.get("_dca", {}))
+        "_dca":            skill_quality.advance_dca(prev.get("_dca", {})
                            if action == "enhance"
                            else skill_quality.dca_schedule(1, now),
     }
@@ -1086,8 +1086,8 @@ def run_job(job_id: str, url: str, video_id: str):
             transcript, method, trans_result = trans_f.result(timeout=300)
 
             # Hard guard — transcript is always str but may be empty when all stages fail
-            if not transcript or len(transcript.strip()) < 10:
-                stage_summary = ", ".join(getattr(trans_result, "stage_log", [])) or "none recorded"
+            if not transcript or len(transcript.strip() < 10:
+                stage_summary = ", ".join(getattr(trans_result, "stage_log", []) or "none recorded"
                 raise RuntimeError(
                     "Transcript unavailable — all acquisition methods failed. "
                     f"Stages tried: {stage_summary}. "
@@ -1095,7 +1095,7 @@ def run_job(job_id: str, url: str, video_id: str):
                     "Please retry in a few minutes."
                 )
 
-            word_count = len(transcript.split())
+            word_count = len(transcript.split()
             if getattr(trans_result, "is_degraded", False):
                 emit(
                     f"📝  {word_count:,} words via {method} "
@@ -1196,12 +1196,12 @@ def run_job(job_id: str, url: str, video_id: str):
             # ── Phase 3: all heavy work in parallel ───────────────────────────
             emit("⚡  Phase 3: save ∥ packages ∥ MCP ∥ clone ∥ supplemental search …", "info")
 
-            ai_tools    = skill.get("tools", [])
+            ai_tools    = _nsl(skill.get("tools")
             mcp_targets = [r for r in github_results
                            if r.get("is_mcp") or r.get("npm_package")]
 
             pkg_f   = pool.submit(_install_pkgs,
-                                  skill.get("python_packages", []), emit)
+                                  _nsl(skill.get("python_packages"), emit)
             mcp_f   = pool.submit(mcp_agent.process_repos,     mcp_targets,    emit)
             clone_f = pool.submit(github_agent.clone_best_repos, github_results, emit)
             supp_f  = pool.submit(_supplemental_github_search,
@@ -1226,10 +1226,10 @@ def run_job(job_id: str, url: str, video_id: str):
                 skill, skill_name, url, meta, method, word_count,
                 video_id, action, github_results, mcp_connections,
             )
-            source_count = len(load_index().get(skill_name, {}).get("history", [])) + 1
+            source_count = len(load_index().get(skill_name, {}).get("history", []) + 1
             emit(
                 f"💾  Skill saved: {skill_name}.md "
-                f"(fed by {source_count} video source(s))",
+                f"(fed by {source_count} video source(s)",
                 "success",
             )
 
@@ -1265,7 +1265,7 @@ def run_job(job_id: str, url: str, video_id: str):
                         "warning",
                     )
 
-            total = len(load_index())
+            total = len(load_index()
             emit(
                 f"🎉  Done! {total} skill(s) · "
                 f"{len(mcp_connections)} MCP · "
@@ -1279,12 +1279,12 @@ def run_job(job_id: str, url: str, video_id: str):
                 "ok":                True,
                 "title":             skill.get("title"),
                 "description":       skill.get("description"),
-                "steps":             skill.get("steps", []),
-                "tools":             skill.get("tools", []),
-                "concepts":          skill.get("concepts", []),
-                "tags":              skill.get("tags", []),
-                "related_skills":    skill.get("related_skills", []),
-                "python_packages":   skill.get("python_packages", []),
+                "steps":             _nsl(skill.get("steps"),
+                "tools":             _nsl(skill.get("tools"),
+                "concepts":          _nsl(skill.get("concepts"),
+                "tags":              _nsl(skill.get("tags"),
+                "related_skills":    _nsl(skill.get("related_skills"),
+                "python_packages":   _nsl(skill.get("python_packages"),
                 "installed":         installed,
                 "failed":            failed,
                 "skill_file":        skill_path,
@@ -1320,7 +1320,7 @@ def run_job(job_id: str, url: str, video_id: str):
 
     except Exception as e:
         import traceback as _tb
-        log.error("run_job error: %s", _tb.format_exc())   # server log only
+        log.error("run_job error: %s", _tb.format_exc()   # server log only
         emit(f"❌  {e}", "error")
         q.put({"type": "done", "ok": False, "error": str(e)})
     finally:
@@ -1352,7 +1352,7 @@ def run_playlist_job(pjob_id: str, ids: list[str]) -> None:
             "index": i, "total": total, "title": title,
         })
 
-        sub_id = str(uuid.uuid4())[:8]
+        sub_id = str(uuid.uuid4()[:8]
         _jobs[sub_id] = {"queue": queue.Queue(), "done": False}
         try:
             run_job(sub_id, url, video_id)   # synchronous in this worker thread
@@ -1436,8 +1436,8 @@ def api_github_sync():
 def api_github_status():
     return jsonify({
         "repo":    github_sync.repo_url(),
-        "enabled": bool(os.getenv("GITHUBPAT") or os.getenv("GITHUB_TOKEN") or os.getenv("GH_TOKEN") or os.getenv("GITHUB")),
-        "skills":  len(load_index()),
+        "enabled": bool(os.getenv("GITHUBPAT") or os.getenv("GITHUB_TOKEN") or os.getenv("GH_TOKEN") or os.getenv("GITHUB"),
+        "skills":  len(load_index(),
     })
 
 
@@ -1457,7 +1457,7 @@ def index():
 
 @app.route("/metadata")
 def metadata():
-    url         = normalize_youtube_url(request.args.get("url", "").strip())
+    url         = normalize_youtube_url(request.args.get("url", "").strip()
     video_id    = extract_video_id(url)
     playlist_id = extract_playlist_id(url)
 
@@ -1482,7 +1482,7 @@ def process():
 
     if not url:
         return jsonify({"error": "No URL provided."}), 400
-    if not GROQ_API_KEY and not OPENAI_API_KEY and not (os.getenv("Google_API_Key") or os.getenv("Gemini") or os.getenv("GOOGLE_API_KEY")):
+    if not GROQ_API_KEY and not OPENAI_API_KEY and not (os.getenv("Google_API_Key") or os.getenv("Gemini") or os.getenv("GOOGLE_API_KEY"):
         return jsonify({
             "error": "No LLM key — add GROQ or CHATGPT in Tools › Secrets."
         }), 500
@@ -1498,7 +1498,7 @@ def process():
     if existing and not _jobs.get(existing, {}).get("done", True):
         return jsonify({"job_id": existing, "already_running": True})
 
-    job_id        = str(uuid.uuid4())[:8]
+    job_id        = str(uuid.uuid4()[:8]
     _jobs[job_id] = {"queue": queue.Queue(), "done": False}
     _video_active[video_id] = job_id
     threading.Thread(
@@ -1526,7 +1526,7 @@ def stream(job_id):
                 yield 'data: {"type":"ping"}\n\n'
 
     return Response(
-        stream_with_context(generate()),
+        stream_with_context(generate(),
         content_type="text/event-stream",
         headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
     )
@@ -1549,12 +1549,12 @@ def api_skills():
 
 @app.route("/api/mcp/connections")
 def api_mcp_connections():
-    return jsonify(mcp_agent.get_connections())
+    return jsonify(mcp_agent.get_connections()
 
 
 @app.route("/api/mcp/config")
 def api_mcp_config():
-    return jsonify(mcp_agent.load_config())
+    return jsonify(mcp_agent.load_config()
 
 
 @app.route("/api/health")
@@ -1570,11 +1570,11 @@ def api_health():
     return jsonify({
         "groq":    bool(GROQ_API_KEY),
         "chatgpt": bool(OPENAI_API_KEY),
-        "github_sync": bool(os.getenv("GITHUBPAT") or os.getenv("GITHUB_TOKEN") or os.getenv("GH_TOKEN") or os.getenv("GITHUB")),
+        "github_sync": bool(os.getenv("GITHUBPAT") or os.getenv("GITHUB_TOKEN") or os.getenv("GH_TOKEN") or os.getenv("GITHUB"),
         "sync_repo":   github_sync.repo_url(),
         "ytdlp":   check(["yt-dlp",  "--version"]),
         "ffmpeg":  check(["ffmpeg",   "-version"]),
-        "github":  bool(os.getenv("GITHUBPAT") or os.getenv("GITHUB_TOKEN") or os.getenv("GH_TOKEN") or os.getenv("GITHUB")),
+        "github":  bool(os.getenv("GITHUBPAT") or os.getenv("GITHUB_TOKEN") or os.getenv("GH_TOKEN") or os.getenv("GITHUB"),
         "npx":     check(["npx",      "--version"]),
     })
 
@@ -1605,7 +1605,7 @@ def api_save_key():
 @app.route("/api/provider-status")
 def api_provider_status():
     """Return live AI provider health (quota / rate-limit / auth state)."""
-    return jsonify(provider_router.provider_status())
+    return jsonify(provider_router.provider_status()
 
 
 # ── Integrations hub ──────────────────────────────────────────────────────────
@@ -1678,7 +1678,7 @@ def api_integration_save_key(iid):
 def api_integration_agent_status():
     """Live status of the Integration Agent (last run, checks, suggestions, events)."""
     from agents.integration_agent import get_status
-    return jsonify(get_status())
+    return jsonify(get_status()
 
 
 @app.route("/api/integration-agent/run", methods=["POST"])
@@ -1735,7 +1735,7 @@ def run_playlist_endpoint():
     if not ids:
         return jsonify({"error": "No videos found in playlist"}), 400
 
-    pjob_id = str(uuid.uuid4())[:8]
+    pjob_id = str(uuid.uuid4()[:8]
     _playlist_jobs[pjob_id] = {
         "events": [],
         "done":   False,
@@ -1768,7 +1768,7 @@ def stream_playlist(pjob_id):
             time.sleep(0.4)
 
     return Response(
-        stream_with_context(generate()),
+        stream_with_context(generate(),
         content_type="text/event-stream",
         headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
     )
@@ -1922,17 +1922,17 @@ def _mcp_call_tool(name: str, args: dict) -> dict:
         limit = min(int(args.get("limit") or 25), 100)
         skills = []
         for skill_name, meta in index.items():
-            if tag and tag not in [t.lower() for t in meta.get("tags", [])]:
+            if tag and tag not in [t.lower() for t in _nsl(meta.get("tags")]:
                 continue
             skills.append({
                 "name":         skill_name,
                 "title":        meta.get("title", skill_name),
                 "description":  meta.get("description", ""),
-                "tags":         meta.get("tags", []),
-                "tools":        meta.get("tools", [])[:10],
-                "concepts":     meta.get("concepts", [])[:6],
+                "tags":         _nsl(meta.get("tags"),
+                "tools":        _nsl(meta.get("tools")[:10],
+                "concepts":     _nsl(meta.get("concepts")[:6],
                 "updated_at":   meta.get("updated_at", ""),
-                "source_count": len(meta.get("history", [])) + 1,
+                "source_count": len(meta.get("history", []) + 1,
             })
         skills.sort(key=lambda x: x["updated_at"], reverse=True)
         return {"skills": skills[:limit], "total": len(index)}
@@ -1952,10 +1952,10 @@ def _mcp_call_tool(name: str, args: dict) -> dict:
             content = fh.read()
         return {
             "name": skill_name, "title": meta.get("title", skill_name),
-            "description": meta.get("description", ""), "tags": meta.get("tags", []),
-            "tools": meta.get("tools", []), "concepts": meta.get("concepts", []),
-            "steps": meta.get("steps", []), "packages": meta.get("python_packages", []),
-            "source_count": len(meta.get("history", [])) + 1,
+            "description": meta.get("description", ""), "tags": _nsl(meta.get("tags"),
+            "tools": _nsl(meta.get("tools"), "concepts": _nsl(meta.get("concepts"),
+            "steps": _nsl(meta.get("steps"), "packages": _nsl(meta.get("python_packages"),
+            "source_count": len(meta.get("history", []) + 1,
             "updated_at": meta.get("updated_at", ""), "content": content,
         }
 
@@ -1964,31 +1964,31 @@ def _mcp_call_tool(name: str, args: dict) -> dict:
         results = []
         for skill_name, meta in index.items():
             hay = " ".join([meta.get("title",""), meta.get("description",""),
-                            " ".join(meta.get("tags",[])), " ".join(meta.get("tools",[])),
-                            " ".join(meta.get("concepts",[])), " ".join(meta.get("steps",[]))]).lower()
+                            " ".join(_nsl(meta.get("tags")), " ".join(_nsl(meta.get("tools")),
+                            " ".join(_nsl(meta.get("concepts")), " ".join(_nsl(meta.get("steps"))]).lower()
             score = sum(hay.count(w) for w in query.split() if w)
             if score:
                 results.append({"name": skill_name, "title": meta.get("title", skill_name),
                                  "description": meta.get("description",""), "score": score,
-                                 "tags": meta.get("tags",[]), "tools": meta.get("tools",[])[:6]})
+                                 "tags": _nsl(meta.get("tags"), "tools": _nsl(meta.get("tools")[:6]})
         results.sort(key=lambda x: x["score"], reverse=True)
         return {"results": results[:12], "query": query}
 
     elif name == "get_all_tools":
         tools: set = set()
-        for m in index.values(): tools.update(m.get("tools",[]))
+        for m in index.values(): tools.update(_nsl(m.get("tools"))
         return {"tools": sorted(tools), "count": len(tools)}
 
     elif name == "get_all_concepts":
         concepts: set = set()
-        for m in index.values(): concepts.update(m.get("concepts",[]))
+        for m in index.values(): concepts.update(_nsl(m.get("concepts"))
         return {"concepts": sorted(concepts), "count": len(concepts)}
 
     elif name == "get_library_stats":
         tools: set = set(); concepts: set = set(); pkgs: set = set()
         for m in index.values():
-            tools.update(m.get("tools",[])); concepts.update(m.get("concepts",[]))
-            pkgs.update(m.get("python_packages",[]))
+            tools.update(_nsl(m.get("tools")); concepts.update(_nsl(m.get("concepts"))
+            pkgs.update(_nsl(m.get("python_packages"))
         return {"skills": len(index), "tools": len(tools), "concepts": len(concepts), "packages": len(pkgs)}
 
 
@@ -2016,7 +2016,7 @@ def _mcp_call_tool(name: str, args: dict) -> dict:
 
     elif name == "get_all_packages":
         pkgs: set = set()
-        for m in index.values(): pkgs.update(m.get("python_packages", []))
+        for m in index.values(): pkgs.update(_nsl(m.get("python_packages"))
         return {"packages": sorted(pkgs), "count": len(pkgs)}
 
     elif name == "get_mcp_connections":
@@ -2053,9 +2053,9 @@ def _mcp_call_tool(name: str, args: dict) -> dict:
         return {
             "providers": prov,
             "github_repo": github_sync.repo_url(),
-            "github_configured": bool(os.getenv("GITHUBPAT") or os.getenv("GITHUB_TOKEN") or os.getenv("GITHUB")),
-            "groq_configured":   bool(os.getenv("GROQ") or os.getenv("GROQ_API_KEY")),
-            "openai_configured": bool(os.getenv("CHATGPT") or os.getenv("OPENAI_API_KEY")),
+            "github_configured": bool(os.getenv("GITHUBPAT") or os.getenv("GITHUB_TOKEN") or os.getenv("GITHUB"),
+            "groq_configured":   bool(os.getenv("GROQ") or os.getenv("GROQ_API_KEY"),
+            "openai_configured": bool(os.getenv("CHATGPT") or os.getenv("OPENAI_API_KEY"),
         }
 
     elif name == "list_github_files":
@@ -2076,7 +2076,7 @@ def _mcp_call_tool(name: str, args: dict) -> dict:
         import urllib.error
         try:
             with urlopen(req, timeout=10) as resp:
-                data = json.loads(resp.read())
+                data = json.loads(resp.read()
             if isinstance(data, list):
                 return {"path": path, "items": [
                     {"name": i["name"], "type": i["type"], "path": i["path"],
@@ -2109,9 +2109,9 @@ def _mcp_call_tool(name: str, args: dict) -> dict:
         import urllib.error, base64
         try:
             with urlopen(req, timeout=15) as resp:
-                data = json.loads(resp.read())
+                data = json.loads(resp.read()
             if data.get("encoding") == "base64":
-                content = base64.b64decode(data["content"].replace("\n","\n")).decode("utf-8", errors="replace")
+                content = base64.b64decode(data["content"].replace("\n","\n").decode("utf-8", errors="replace")
             else:
                 content = data.get("content", "")
             return {"path": path, "name": data.get("name"), "size": data.get("size"),
@@ -2176,8 +2176,8 @@ def _update_brain(skill: dict, skill_name: str) -> None:
     brain.setdefault("tools", {})
     brain.setdefault("skill_map", {})
     brain.setdefault("relationships", {})
-    concepts = skill.get("concepts", [])
-    tools    = skill.get("tools", [])
+    concepts = _nsl(skill.get("concepts")
+    tools    = _nsl(skill.get("tools")
     for c in concepts:
         brain["concepts"].setdefault(c, {"freq": 0, "skills": []})
         brain["concepts"][c]["freq"] += 1
@@ -2191,8 +2191,8 @@ def _update_brain(skill: dict, skill_name: str) -> None:
     brain["skill_map"][skill_name] = {
         "concepts":   concepts,
         "tools":      tools,
-        "tags":       skill.get("tags", []),
-        "step_count": len(skill.get("steps", [])),
+        "tags":       _nsl(skill.get("tags"),
+        "step_count": len(_nsl(skill.get("steps")),
     }
     brain["relationships"].setdefault(skill_name, {})
     for other, od in brain["skill_map"].items():
@@ -2200,7 +2200,7 @@ def _update_brain(skill: dict, skill_name: str) -> None:
             continue
         shared = list(
             set(concepts + tools) &
-            set(od.get("concepts", []) + od.get("tools", []))
+            set(_nsl(od.get("concepts") + _nsl(od.get("tools"))
         )
         if shared:
             brain["relationships"][skill_name][other] = shared[:6]
@@ -2244,7 +2244,7 @@ def api_packages():
     """All Python packages discovered across all skills."""
     index = load_index()
     pkgs: set = set()
-    for m in index.values(): pkgs.update(m.get("python_packages", []))
+    for m in index.values(): pkgs.update(_nsl(m.get("python_packages"))
     return jsonify({"packages": sorted(pkgs), "count": len(pkgs)})
 
 
@@ -2267,12 +2267,12 @@ def api_snapshot():
             "name":         skill_name,
             "title":        meta.get("title", skill_name),
             "description":  meta.get("description", ""),
-            "tags":         meta.get("tags", []),
-            "tools":        meta.get("tools", []),
-            "concepts":     meta.get("concepts", []),
-            "steps":        meta.get("steps", []),
-            "packages":     meta.get("python_packages", []),
-            "source_count": len(meta.get("history", [])) + 1,
+            "tags":         _nsl(meta.get("tags"),
+            "tools":        _nsl(meta.get("tools"),
+            "concepts":     _nsl(meta.get("concepts"),
+            "steps":        _nsl(meta.get("steps"),
+            "packages":     _nsl(meta.get("python_packages"),
+            "source_count": len(meta.get("history", []) + 1,
             "updated_at":   meta.get("updated_at", ""),
             "content":      content,
         })
@@ -2280,8 +2280,8 @@ def api_snapshot():
 
     all_tools: set = set(); all_concepts: set = set(); all_pkgs: set = set()
     for m in index.values():
-        all_tools.update(m.get("tools",[])); all_concepts.update(m.get("concepts",[]))
-        all_pkgs.update(m.get("python_packages",[]))
+        all_tools.update(_nsl(m.get("tools")); all_concepts.update(_nsl(m.get("concepts"))
+        all_pkgs.update(_nsl(m.get("python_packages"))
 
     brain_path = os.path.join(SKILLS_DIR, "_brain.json")
     brain_summary = {}
@@ -2294,7 +2294,7 @@ def api_snapshot():
             brain_summary = {
                 "top_concepts": [{"name":k,"freq":v["freq"]} for k,v in tc],
                 "top_tools":    [{"name":k,"freq":v["freq"]} for k,v in tt],
-                "relationships_count": sum(len(v) for v in b.get("relationships",{}).values()),
+                "relationships_count": sum(len(v) for v in b.get("relationships",{}).values(),
             }
         except Exception:
             pass
@@ -2329,7 +2329,7 @@ def api_github_repo():
     try:
         req = _UReq(api_url, headers=headers)
         with urlopen(req, timeout=10) as resp:
-            data = json.loads(resp.read())
+            data = json.loads(resp.read()
         if isinstance(data, list):
             return jsonify({"repo": repo_url, "path": path, "items": [
                 {"name": i["name"], "type": i["type"], "path": i["path"],
@@ -2359,9 +2359,9 @@ def api_github_repo_file():
         import base64
         req = _UReq(api_url, headers=headers)
         with urlopen(req, timeout=15) as resp:
-            data = json.loads(resp.read())
+            data = json.loads(resp.read()
         if data.get("encoding") == "base64":
-            content = base64.b64decode(data["content"].replace("\n","")).decode("utf-8", errors="replace")
+            content = base64.b64decode(data["content"].replace("\n","").decode("utf-8", errors="replace")
         else:
             content = data.get("content","")
         return jsonify({"path": path, "name": data.get("name"), "size": data.get("size"),
@@ -2381,7 +2381,7 @@ def api_knowledge():
     if idx_path.exists():
         try:
             import json as _json
-            data = _json.loads(idx_path.read_text())
+            data = _json.loads(idx_path.read_text()
             # Enrich with full content
             for e in data.get("entries", []):
                 fpath = ak_dir / e["path"]
@@ -2408,7 +2408,7 @@ def api_knowledge_upsert():
 
     # Basic validation
     required = {"category", "slug", "title", "content"}
-    missing  = required - set(data.keys())
+    missing  = required - set(data.keys()
     if missing:
         return jsonify({"ok": False, "error": f"Missing fields: {sorted(missing)}"}), 400
 
@@ -2441,7 +2441,7 @@ def api_brain():
         edges = []
         for skill, connected in brain.get("relationships", {}).items():
             for other, shared in connected.items():
-                key = tuple(sorted([skill, other]))
+                key = tuple(sorted([skill, other])
                 if key not in seen:
                     seen.add(key)
                     edges.append({"a": skill, "b": other, "shared": shared})
@@ -2466,7 +2466,7 @@ def api_chat():
     history    = data.get("history", [])
     if not message:
         return jsonify({"error": "No message"}), 400
-    if not GROQ_API_KEY and not OPENAI_API_KEY and not (os.getenv("Google_API_Key") or os.getenv("Gemini") or os.getenv("GOOGLE_API_KEY")):
+    if not GROQ_API_KEY and not OPENAI_API_KEY and not (os.getenv("Google_API_Key") or os.getenv("Gemini") or os.getenv("GOOGLE_API_KEY"):
         return jsonify({"error": "No LLM key configured (add GROQ or CHATGPT secret)"}), 503
     index         = load_index()
     context_parts = []
@@ -2481,13 +2481,13 @@ def api_chat():
         for sn, meta in index.items():
             hay = " ".join([
                 meta.get("title", ""), meta.get("description", ""),
-                " ".join(meta.get("tools", [])),
-                " ".join(meta.get("concepts", [])),
-                " ".join(meta.get("tags", [])),
+                " ".join(_nsl(meta.get("tools")),
+                " ".join(_nsl(meta.get("concepts")),
+                " ".join(_nsl(meta.get("tags")),
             ]).lower()
             score = sum(hay.count(w) for w in msg_lower.split() if len(w) > 2)
             if score:
-                scored.append((score, sn))
+                scored.append((score, sn)
         scored.sort(reverse=True)
         for _, sn in scored[:3]:
             md_path = os.path.join(SKILLS_DIR, sn + ".md")
@@ -2531,7 +2531,7 @@ def _load_notes() -> dict:
 
 @app.route("/api/notes/<name>", methods=["GET", "POST"])
 def api_notes(name: str):
-    name  = re.sub(r"[^a-z0-9_]", "_", name.lower()).strip("_")
+    name  = re.sub(r"[^a-z0-9_]", "_", name.lower().strip("_")
     notes = _load_notes()
     if request.method == "GET":
         return jsonify({"note": notes.get(name, "")})
@@ -2548,7 +2548,7 @@ def api_briefing():
     index      = load_index()
     if not index:
         return jsonify({"error": "No skills in library yet"}), 400
-    if not GROQ_API_KEY and not OPENAI_API_KEY and not (os.getenv("Google_API_Key") or os.getenv("Gemini") or os.getenv("GOOGLE_API_KEY")):
+    if not GROQ_API_KEY and not OPENAI_API_KEY and not (os.getenv("Google_API_Key") or os.getenv("Gemini") or os.getenv("GOOGLE_API_KEY"):
         return jsonify({"error": "No LLM key configured"}), 503
     nl = chr(10)
     if skill_name and skill_name in index:
@@ -2565,8 +2565,8 @@ def api_briefing():
         )
     else:
         lines = []
-        for sn, meta in list(index.items())[:10]:
-            tools_str = ", ".join(meta.get("tools", [])[:3])
+        for sn, meta in list(index.items()[:10]:
+            tools_str = ", ".join(_nsl(meta.get("tools")[:3])
             lines.append(
                 "- **" + meta.get("title", sn) + "**: "
                 + meta.get("description", "")[:80]
@@ -2593,7 +2593,7 @@ def api_briefing():
 @app.route("/mcp/sse")
 def mcp_sse():
     """SSE transport endpoint — Claude connects here for a persistent MCP session."""
-    sid = str(uuid.uuid4())[:8]
+    sid = str(uuid.uuid4()[:8]
     q   = queue.Queue()
     _mcp_sessions[sid] = q
 
@@ -2615,7 +2615,7 @@ def mcp_sse():
         _mcp_sessions.pop(sid, None)
 
     return Response(
-        stream_with_context(generate()),
+        stream_with_context(generate(),
         content_type="text/event-stream",
         headers={"Cache-Control":"no-cache","X-Accel-Buffering":"no"},
     )
@@ -2891,7 +2891,7 @@ def openapi_spec():
 @app.route("/api/skills/<name>/content")
 def api_skill_content(name: str):
     """Return a skill's full markdown + metadata — used by ChatGPT and Claude."""
-    name     = re.sub(r"[^a-z0-9_]","_", name.lower()).strip("_")
+    name     = re.sub(r"[^a-z0-9_]","_", name.lower().strip("_")
     md_path  = os.path.join(SKILLS_DIR, f"{name}.md")
     if not os.path.exists(md_path):
         # case-insensitive search
@@ -2908,12 +2908,12 @@ def api_skill_content(name: str):
         "name":         name,
         "title":        meta.get("title", name),
         "description":  meta.get("description",""),
-        "tags":         meta.get("tags",[]),
-        "tools":        meta.get("tools",[]),
-        "concepts":     meta.get("concepts",[]),
-        "steps":        meta.get("steps",[]),
-        "python_packages": meta.get("python_packages",[]),
-        "source_count": len(meta.get("history",[])) + 1,
+        "tags":         _nsl(meta.get("tags"),
+        "tools":        _nsl(meta.get("tools"),
+        "concepts":     _nsl(meta.get("concepts"),
+        "steps":        _nsl(meta.get("steps"),
+        "python_packages": _nsl(meta.get("python_packages"),
+        "source_count": len(meta.get("history",[]) + 1,
         "updated_at":   meta.get("updated_at",""),
         "content":      content,
     })
@@ -2992,7 +2992,7 @@ def _gh_post(url: str, params: dict) -> dict:
                  headers={"Accept": "application/json",
                           "User-Agent": "Fieldnote/4.0"})
     with urlopen(req, timeout=12) as r:
-        return json.loads(r.read())
+        return json.loads(r.read()
 
 
 @app.route("/oauth/github/device/start")
@@ -3076,14 +3076,14 @@ def api_secrets_check():
     body  = request.get_json() or {}
     names = [n for n in (body.get("names") or [])
              if re.match(r'^[A-Z][A-Z0-9_]{1,80}$', n)]
-    return jsonify({n: bool(os.getenv(n)) for n in names})
+    return jsonify({n: bool(os.getenv(n) for n in names})
 
 
 # ── Scheduler API ─────────────────────────────────────────────────────────────
 
 @app.route("/api/scheduler/status")
 def api_scheduler_status():
-    return jsonify(scheduler_mod.scheduler.status())
+    return jsonify(scheduler_mod.scheduler.status()
 
 
 @app.route("/api/scheduler/run/<job_name>", methods=["POST"])
@@ -3095,8 +3095,8 @@ def api_scheduler_run(job_name: str):
 @app.route("/api/scheduler/toggle/<job_name>", methods=["POST"])
 def api_scheduler_toggle(job_name: str):
     body    = request.get_json(silent=True) or {}
-    enabled = bool(body.get("enabled", True))
-    return jsonify(scheduler_mod.scheduler.set_enabled(job_name, enabled))
+    enabled = bool(body.get("enabled", True)
+    return jsonify(scheduler_mod.scheduler.set_enabled(job_name, enabled)
 
 
 # ── Watchlist API ─────────────────────────────────────────────────────────────
@@ -3115,14 +3115,14 @@ def api_watchlist_add():
         return jsonify({"ok": False, "error": "url required"}), 400
     if not extract_video_id(url):
         return jsonify({"ok": False, "error": "Invalid YouTube URL"}), 400
-    return jsonify(auto_agent.add_to_watchlist(url, label))
+    return jsonify(auto_agent.add_to_watchlist(url, label)
 
 
 @app.route("/api/watchlist/remove", methods=["POST"])
 def api_watchlist_remove():
     body = request.get_json(silent=True) or {}
     url  = (body.get("url") or "").strip()
-    return jsonify(auto_agent.remove_from_watchlist(url))
+    return jsonify(auto_agent.remove_from_watchlist(url)
 
 
 @app.route("/api/verify/log")
@@ -3134,7 +3134,7 @@ def api_verify_log():
         return jsonify([])
     try:
         with open(path) as f:
-            return jsonify(json.load(f))
+            return jsonify(json.load(f)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
 
@@ -3157,12 +3157,12 @@ def api_sync_push():
 
 @app.route("/api/discovery/stats")
 def api_discovery_stats():
-    return jsonify(github_discovery.discovery_stats())
+    return jsonify(github_discovery.discovery_stats()
 
 
 @app.route("/api/discovery/log")
 def api_discovery_log():
-    return jsonify(github_discovery.load_discovery_log())
+    return jsonify(github_discovery.load_discovery_log()
 
 
 @app.route("/api/watchlist/run-now", methods=["POST"])
