@@ -342,6 +342,30 @@
       "skills": [
         "building_ai_agents"
       ]
+    },
+    "Comprehensive memory": {
+      "freq": 1,
+      "skills": [
+        "building_resilient_ai_agents_with_langgraph"
+      ]
+    },
+    "Durable execution": {
+      "freq": 1,
+      "skills": [
+        "building_resilient_ai_agents_with_langgraph"
+      ]
+    },
+    "Human-in-the-loop": {
+      "freq": 1,
+      "skills": [
+        "building_resilient_ai_agents_with_langgraph"
+      ]
+    },
+    "Stateful agents": {
+      "freq": 1,
+      "skills": [
+        "building_resilient_ai_agents_with_langgraph"
+      ]
     }
   },
   "tools": {
@@ -574,27 +598,31 @@
       ]
     },
     "LangChain": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "building_ai_agents_with_langchain"
+        "building_ai_agents_with_langchain",
+        "building_resilient_ai_agents_with_langgraph"
       ]
     },
     "Deep Agents": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "building_ai_agents_with_langchain"
+        "building_ai_agents_with_langchain",
+        "building_resilient_ai_agents_with_langgraph"
       ]
     },
     "LangGraph": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "building_ai_agents_with_langchain"
+        "building_ai_agents_with_langchain",
+        "building_resilient_ai_agents_with_langgraph"
       ]
     },
     "LangSmith": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "building_ai_agents_with_langchain"
+        "building_ai_agents_with_langchain",
+        "building_resilient_ai_agents_with_langgraph"
       ]
     },
     "ClaudeCode": {
@@ -727,6 +755,27 @@
         "cloudcode"
       ],
       "step_count": 5
+    },
+    "building_resilient_ai_agents_with_langgraph": {
+      "concepts": [
+        "Comprehensive memory",
+        "Durable execution",
+        "Human-in-the-loop",
+        "Stateful agents"
+      ],
+      "tools": [
+        "LangGraph",
+        "LangSmith",
+        "Deep Agents",
+        "LangChain"
+      ],
+      "tags": [
+        "ai",
+        "automation",
+        "langchain",
+        "productivity"
+      ],
+      "step_count": 7
     }
   },
   "relationships": {
@@ -740,8 +789,23 @@
         "Mixture of experts models"
       ]
     },
-    "building_ai_agents_with_langchain": {}
+    "building_ai_agents_with_langchain": {
+      "building_resilient_ai_agents_with_langgraph": [
+        "LangSmith",
+        "Deep Agents",
+        "LangChain",
+        "LangGraph"
+      ]
+    },
+    "building_resilient_ai_agents_with_langgraph": {
+      "building_ai_agents_with_langchain": [
+        "LangSmith",
+        "Deep Agents",
+        "LangChain",
+        "LangGraph"
+      ]
+    }
   },
-  "updated_at": "2026-07-16T04:45:22.888215+00:00",
-  "total_skills": 3
+  "updated_at": "2026-07-16T18:38:11.811152+00:00",
+  "total_skills": 4
 }
