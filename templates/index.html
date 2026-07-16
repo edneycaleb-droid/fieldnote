@@ -3651,7 +3651,7 @@ async function generateBriefing() {
     }
   });
 
-  // Load schema health indicator when ChatGPT pane is first opened
+  // Load schema health indicator + cache result for gptConnect()
   (function loadSchemaHealth() {
     const badge  = document.getElementById("schema-health-badge");
     const stats  = document.getElementById("schema-health-stats");
@@ -3660,12 +3660,14 @@ async function generateBriefing() {
     fetch("/api/schema/health")
       .then(r => r.ok ? r.json() : Promise.reject(r.status))
       .then(d => {
+        // Cache for the one-touch connect button (avoids async fetch inside click handler)
+        window._gptSchemaHealth = d;
         if (d.chatgpt_compatible) {
-          badge.textContent = "✅ Validated for ChatGPT — 0 errors";
-          badge.style.color = "var(--green,#4ade80)";
+          badge.textContent = "✅ Validated — " + d.operation_count + " ops · 0 errors";
+          badge.style.color = "var(--green)";
         } else {
-          badge.textContent = `⚠ ${d.error_count} schema error(s) — see console`;
-          badge.style.color = "var(--yellow,#facc15)";
+          badge.textContent = "⚠ " + d.error_count + " schema error(s)";
+          badge.style.color = "var(--amber)";
           errsEl.textContent = (d.errors || []).slice(0, 3).join(" · ");
           errsEl.style.display = "";
         }
@@ -3674,10 +3676,13 @@ async function generateBriefing() {
         document.getElementById("sh-schemas").textContent   = d.schema_count;
         document.getElementById("sh-version").textContent   = d.openapi_version;
         stats.style.display = "";
+        // Set URL in overlay now that BASE is known
+        const ou = document.getElementById("gpt-overlay-url");
+        if (ou) ou.textContent = BASE + "/openapi-gpt.json";
       })
       .catch(() => {
-        badge.textContent = "⚠ Could not load schema health";
-        badge.style.color = "var(--yellow,#facc15)";
+        badge.textContent = "⚠ Could not reach server";
+        badge.style.color = "var(--amber)";
       });
   })();
 
@@ -3685,6 +3690,9 @@ async function generateBriefing() {
   document.querySelectorAll(".ai-pane a[href^='/']").forEach(a => {
     a.href = BASE + a.getAttribute("href");
   });
+
+  // Restore persisted GPT setup state on page load
+  gptInitUI();
 })();
 
 function aiTab(name) {
