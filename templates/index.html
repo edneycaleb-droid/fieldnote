@@ -1425,6 +1425,141 @@ setInterval(async () => {
   } catch (e) { /* non-critical */ }
 }, 60000);
 
+// ── Intelligence Feed ─────────────────────────────────────────────────────────
+let _intelTimer = null;
+
+function intelTab(name) {
+  document.querySelectorAll('.intel-tab').forEach((t,i) =>
+    t.classList.toggle('active', ['github','knowledge'][i] === name));
+  document.querySelectorAll('.intel-pane').forEach(p =>
+    p.classList.toggle('active', p.id === 'intel-pane-' + name));
+}
+
+async function loadIntelFeed() {
+  try {
+    const [dStats, dLog, kb, sched] = await Promise.all([
+      fetch('/api/discovery/stats').then(r=>r.json()).catch(()=>null),
+      fetch('/api/discovery/log').then(r=>r.json()).catch(()=>null),
+      fetch('/api/knowledge').then(r=>r.json()).catch(()=>null),
+      fetch('/api/scheduler/status').then(r=>r.json()).catch(()=>null),
+    ]);
+
+    // ── GitHub Discoveries pane ──────────────────────────────────────────────
+    if (dStats) {
+      document.getElementById('ids-seen').textContent    = dStats.total_repos_seen    ?? 0;
+      document.getElementById('ids-created').textContent = dStats.skills_created       ?? 0;
+      document.getElementById('ids-enhanced').textContent= dStats.skills_enhanced      ?? 0;
+      document.getElementById('ids-denied').textContent  = dStats.quality_denied       ?? 0;
+      document.getElementById('ids-errors').textContent  = dStats.errors               ?? 0;
+    }
+
+    // Next-run time from scheduler
+    if (sched) {
+      const disc = (sched.jobs || []).find(j => j.name === 'discover');
+      if (disc) {
+        const nextEl = document.getElementById('if-disc-next');
+        const btn    = document.getElementById('if-disc-btn');
+        if (disc.running) {
+          nextEl.textContent = '⚙ Running…';
+          btn.disabled = true; btn.textContent = '⚙ Running…';
+        } else {
+          btn.disabled = false; btn.textContent = '🔭 Run discovery now';
+          nextEl.textContent = disc.next_run ? `Next: ${relTime(disc.next_run)}` : '';
+        }
+      }
+    }
+
+    // Full discovery log feed
+    if (dLog && typeof dLog === 'object') {
+      const entries = Object.entries(dLog)
+        .map(([repo, v]) => ({ repo, ...v }))
+        .sort((a,b) => (b.processed_at||'') > (a.processed_at||'') ? 1 : -1);
+      const feedEl = document.getElementById('if-disc-feed');
+      if (!entries.length) {
+        feedEl.innerHTML = '<div class="if-empty">No repos processed yet — hit Run to start.</div>';
+      } else {
+        feedEl.innerHTML = entries.map(e => {
+          const actionCls = {create:'da-create',enhance:'da-enhance',
+            quality_denied:'da-denied',error:'da-error',skipped_no_readme:'da-denied'}[e.action] || 'da-denied';
+          const actionLbl = {create:'＋ created',enhance:'↑ enhanced',
+            quality_denied:'✗ denied',error:'⚠ error',skipped_no_readme:'⊘ no README'}[e.action] || e.action;
+          const stars  = e.stars  ? `⭐ ${(e.stars||0).toLocaleString()} · ` : '';
+          const qual   = e.quality_score !== undefined ? `${Math.round(e.quality_score*100)}% quality · ` : '';
+          const when   = e.processed_at ? relTime(e.processed_at) : '';
+          const skill  = e.skill_name
+            ? `<a href="/skills/${esc(e.skill_name)}.md" style="color:var(--green);text-decoration:none">${esc(e.skill_name)}</a> · `
+            : (e.error ? `<span style="color:#f87171;font-size:.68rem">${esc((e.error||'').slice(0,80))}</span> · ` : '');
+          return `<div class="if-entry">
+            <div class="if-entry-top">
+              <span class="if-entry-source ifs-github">GitHub</span>
+              <span class="if-entry-title">${esc(e.repo)}</span>
+              <span class="disc-action ${actionCls}">${actionLbl}</span>
+            </div>
+            <div class="if-entry-meta">${skill}${stars}${qual}${when}</div>
+          </div>`;
+        }).join('');
+      }
+    }
+
+    // ── ChatGPT Knowledge pane ───────────────────────────────────────────────
+    if (kb) {
+      const entries = (kb.entries || []).filter(e => e.slug !== 'preferences' && e.slug !== 'architecture' || e.updated_at);
+      document.getElementById('if-kb-count').textContent =
+        `${entries.length} entr${entries.length === 1 ? 'y' : 'ies'} across ${[...new Set(entries.map(e=>e.category))].length} categories`;
+
+      const feedEl = document.getElementById('if-kb-feed');
+      if (!entries.length) {
+        feedEl.innerHTML = '<div class="if-empty">Nothing written yet — ChatGPT will populate this as you chat.</div>';
+      } else {
+        feedEl.innerHTML = entries.map(e => {
+          const catCls = `kcp-${esc(e.category)}`;
+          const confCls = `ifc-${esc(e.confidence || 'inferred')}`;
+          const bodyText = (e.content || '').replace(/^---[\s\S]*?---\n*/,'').trim().slice(0,160);
+          const when = e.updated_at ? relTime(e.updated_at) : '';
+          return `<div class="if-entry">
+            <div class="if-entry-top">
+              <span class="if-entry-source ifs-chatgpt">ChatGPT</span>
+              <span class="if-entry-title">${esc(e.title)}</span>
+              <span class="if-conf ${confCls}">${esc(e.confidence||'inferred')}</span>
+            </div>
+            <div class="if-entry-top" style="margin-bottom:0">
+              <span class="kc-pill ${catCls}">${esc(e.category)}</span>
+              <span class="if-entry-meta">${when}</span>
+            </div>
+            ${bodyText ? `<div class="if-entry-body" style="margin-top:4px">${esc(bodyText)}…</div>` : ''}
+          </div>`;
+        }).join('');
+      }
+    }
+
+    // Refresh badge
+    const badge = document.getElementById('intel-live-badge');
+    const ref   = document.getElementById('intel-refreshed');
+    if (badge) badge.style.color = 'var(--green)';
+    if (ref)   ref.textContent   = 'refreshed ' + relTime(new Date().toISOString());
+
+  } catch(e) {
+    console.warn('Intel feed error', e);
+  }
+
+  // Auto-refresh every 12 s
+  clearTimeout(_intelTimer);
+  _intelTimer = setTimeout(loadIntelFeed, 12000);
+}
+
+async function runIntelDiscovery() {
+  const btn = document.getElementById('if-disc-btn');
+  btn.disabled = true; btn.textContent = '⚙ Starting…';
+  try {
+    const r = await fetch('/api/scheduler/run/discover', {method:'POST'}).then(r=>r.json());
+    btn.textContent = r.ok ? '⚙ Running…' : '⚠ ' + (r.error||'failed');
+    setTimeout(loadIntelFeed, 2000);
+  } catch(e) {
+    btn.textContent = '⚠ Error';
+    btn.disabled = false;
+  }
+}
+
 // ── API key management ────────────────────────────────────────────────────────
 const _KEY_PROVIDERS = {
   groq:        { icon: "⚡", label: "Groq",        var: "GROQ",
