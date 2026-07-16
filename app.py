@@ -1292,6 +1292,7 @@ def run_job(job_id: str, url: str, video_id: str):
 
             # ── Post-save verification + auto-fix ─────────────────────────────
             emit("🔍  Verifying all systems …", "info")
+            set_stage("verify")
             verify_result = verify_agent.verify_and_fix(
                 skill_name=skill_name,
                 skill_path=skill_path,
@@ -1377,9 +1378,13 @@ def run_job(job_id: str, url: str, video_id: str):
 
     except Exception as e:
         import traceback as _tb
-        log.error("run_job error: %s", _tb.format_exc())   # server log only
-        emit(f"❌  {e}", "error")
-        q.put({"type": "done", "ok": False, "error": str(e)})
+        log.error("run_job error [stage=%s run_id=%s]: %s",
+                  _jobs[job_id].get("stage", "?"), run_id, _tb.format_exc())
+        stage   = _jobs[job_id].get("stage", "processing")
+        friendly = _classify_stage_error(e, stage)
+        emit(f"❌  {friendly}", "error")
+        q.put({"type": "done", "ok": False, "error": friendly,
+               "stage": stage, "run_id": run_id})
     finally:
         _jobs[job_id]["done"] = True
         _video_active.pop(video_id, None)   # release dedup lock
