@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "scheduler-jobs-and-sync",
+      "title": "Scheduler Jobs and Sync Architecture",
+      "category": "architecture",
+      "confidence": "verified",
+      "updated_at": "2026-07-16T13:25:04.843592+00:00",
+      "path": "scheduler-jobs-and-sync.md"
+    },
+    {
       "slug": "integration-agent-2026-07-16",
       "title": "Integration Agent Health Event",
       "category": "session_learnings",
@@ -49,5 +57,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-16T13:16:26.572146+00:00"
+  "updated_at": "2026-07-16T13:25:04.845178+00:00"
 }
