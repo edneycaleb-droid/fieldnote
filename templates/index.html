@@ -3705,6 +3705,318 @@ function aiTab(name) {
   });
 }
 
+// ── GPT One-Touch Connect ─────────────────────────────────────────────────────
+// Architecture note: window.open() MUST be called synchronously inside the
+// click handler to avoid popup-blocker rejection. Schema health is pre-fetched
+// on pane init (window._gptSchemaHealth) so the button handler stays sync.
+
+const _GPT_KEY      = "fieldnote-gpt-setup";
+const _GPT_BUILDER  = "https://chatgpt.com/gpts/editor";
+const _GPT_PROMPT   = `You are a personal AI learning assistant with complete access to my Fieldnote knowledge library — a curated database of AI, development, and productivity skills I've extracted from YouTube videos.
+
+ALWAYS start by calling getFullSnapshot to load my full library context, or use listSkills + getSkillContent for targeted lookups. When I ask how to do something technical, search my library FIRST and anchor your answer in my actual notes, not generic info.
+
+You also have full access to my GitHub repo via listGithubFiles and readGithubFile — use these to read skill files, code, or configs directly from source. Check getProviderStatus if I ask about AI provider issues. Use getRecentActivity to see what I've been learning lately. Use getKnowledgeBase to read my personal assistant knowledge entries.
+
+Cross-reference related skills proactively. When you find a relevant skill, always fetch its FULL content — summaries aren't enough.`;
+
+function _gptLoad() {
+  try { return JSON.parse(localStorage.getItem(_GPT_KEY) || "null"); } catch { return null; }
+}
+function _gptSave(data) {
+  try { localStorage.setItem(_GPT_KEY, JSON.stringify({...data, ts: new Date().toISOString()})); } catch {}
+}
+
+function gptInitUI() {
+  const s = _gptLoad();
+  if (!s) return;
+  if (s.status === "connected")    _gptShowStatus("connected");
+  else if (s.status === "partial") _gptShowStatus("partial");
+}
+
+function _gptShowStatus(status) {
+  const el  = document.getElementById("gpt-connection-status");
+  const btn = document.getElementById("gpt-connect-btn");
+  if (!el) return;
+  el.style.display = "";
+  if (status === "connected") {
+    el.innerHTML =
+      `<div class="gpt-status-pill gpt-pill-connected">
+        <span class="gpt-pill-label">✅ Connected to ChatGPT</span>
+        <span class="gpt-pill-spacer"></span>
+        <button class="gpt-status-action" onclick="gptTestConnection()">Test Connection</button>
+        <button class="gpt-status-action" onclick="gptReset()">Reset</button>
+       </div>`;
+    if (btn) btn.textContent = "↺ Reconnect";
+  } else {
+    el.innerHTML =
+      `<div class="gpt-status-pill gpt-pill-inprogress">
+        <span class="gpt-pill-label">⏸ Setup in progress</span>
+        <span class="gpt-pill-spacer"></span>
+        <button class="gpt-status-action action-primary" onclick="gptConnect()">Resume Setup</button>
+        <button class="gpt-status-action" onclick="gptReset()">Reset</button>
+       </div>`;
+  }
+}
+
+// ── Progress stepper helpers ──────────────────────────────────────────────────
+// steps: 1=validate 2=copy 3=open 4=await 5=done
+const _GPS_IDS = ["validate","copy","open","await","done"];
+
+function _gptStep(n, state, note) {
+  const wrap = document.getElementById("gpt-progress-wrap");
+  if (wrap) wrap.style.display = "";
+  _GPS_IDS.forEach((id, i) => {
+    const dot = document.getElementById("gps-" + id);
+    const lbl = document.getElementById("gps-label-" + id);
+    const con = document.getElementById("gps-conn-" + (i + 1)); // connector after this step
+    if (!dot) return;
+    const stepNum = i + 1;
+    if (stepNum < n)        { dot.className = "gps-dot done";  if (lbl) lbl.className = "gps-label done"; }
+    else if (stepNum === n) {
+      dot.className = "gps-dot " + (state === "error" ? "error" : "active");
+      if (lbl) lbl.className = "gps-label " + (state === "error" ? "" : "active");
+    } else                  { dot.className = "gps-dot";        if (lbl) lbl.className = "gps-label"; }
+    if (con) con.className = stepNum < n ? "gps-connector done" : "gps-connector";
+  });
+  const noteEl = document.getElementById("gpt-progress-note");
+  if (noteEl) noteEl.textContent = note || "";
+}
+
+// ── Write text to clipboard (sync execCommand fallback, async API preferred) ──
+async function _gptClip(text) {
+  if (navigator.clipboard) {
+    try { await navigator.clipboard.writeText(text); return true; } catch {}
+  }
+  // execCommand fallback (works in older Safari / WebView)
+  try {
+    const ta = document.createElement("textarea");
+    ta.value = text; ta.style.cssText = "position:fixed;top:-9999px;left:-9999px;opacity:0";
+    document.body.appendChild(ta); ta.focus(); ta.select();
+    const ok = document.execCommand("copy");
+    document.body.removeChild(ta);
+    return ok;
+  } catch { return false; }
+}
+
+// ── Main connect function ─────────────────────────────────────────────────────
+async function gptConnect() {
+  const btn = document.getElementById("gpt-connect-btn");
+  if (btn) { btn.disabled = true; btn.textContent = "⏳ Connecting…"; }
+
+  const schemaUrl = (window.BASE || window.location.origin) + "/openapi-gpt.json";
+
+  // ── Step 1: Validate (use cached result; avoid async inside click handler) ──
+  _gptStep(1, "active", "Checking schema…");
+  const health = window._gptSchemaHealth;
+
+  if (!health) {
+    // Health not cached yet — fetch it now (we'll be async from here)
+    _gptStep(1, "active", "Fetching schema health…");
+    let h;
+    try { h = await fetch("/api/schema/health").then(r => r.json()); window._gptSchemaHealth = h; }
+    catch {
+      _gptStep(1, "error", "Cannot reach Fieldnote server — is the app running?");
+      if (btn) { btn.disabled = false; btn.textContent = "⚡ Connect Fieldnote to ChatGPT"; }
+      return;
+    }
+    if (!h.chatgpt_compatible) {
+      _gptStep(1, "error", "Schema has " + h.error_count + " error(s) — use Revalidate below");
+      if (btn) { btn.disabled = false; btn.textContent = "⚡ Connect Fieldnote to ChatGPT"; }
+      return;
+    }
+    // Health loaded async — window.open will likely be blocked by popup blocker.
+    // Show overlay with manual Open GPT Builder button instead.
+    _gptStep(2, "active", "Schema valid — open GPT Builder manually");
+    _gptSave({status: "partial", schema_url: schemaUrl});
+    _gptShowStatus("partial");
+    _gptShowOverlay({clipOk: false, winOpened: false, schemaUrl, popupBlocked: true});
+    if (btn) { btn.disabled = false; btn.textContent = "↺ Restart Setup"; }
+    return;
+  }
+
+  if (!health.chatgpt_compatible) {
+    _gptStep(1, "error", "Schema has " + health.error_count + " error(s) — click Revalidate below");
+    if (btn) { btn.disabled = false; btn.textContent = "⚡ Connect Fieldnote to ChatGPT"; }
+    return;
+  }
+
+  _gptStep(1, "done");
+  _gptStep(2, "active", "Copying schema URL…");
+
+  // ── Step 2 & 3: Copy URL + open builder (both sync — health was cached) ──
+  // window.open MUST come before any await to survive popup blockers.
+  const builderWin = window.open(_GPT_BUILDER, "_blank", "noopener,noreferrer");
+  _gptStep(2, "done");
+  _gptStep(3, "active", "Opening GPT Builder…");
+
+  const clipOk = await _gptClip(schemaUrl);
+
+  _gptStep(3, "done");
+  _gptStep(4, "active", "Complete setup in the new tab →");
+
+  _gptSave({status: "partial", schema_url: schemaUrl});
+  _gptShowStatus("partial");
+  _gptShowOverlay({clipOk, winOpened: !!builderWin, schemaUrl, popupBlocked: !builderWin});
+
+  if (btn) { btn.disabled = false; btn.textContent = "↺ Restart Setup"; }
+}
+
+// ── Guided overlay ────────────────────────────────────────────────────────────
+function _gptShowOverlay({clipOk, winOpened, schemaUrl, popupBlocked}) {
+  const ov = document.getElementById("gpt-overlay");
+  if (!ov) return;
+  ov.style.display = "";
+
+  const csClip = document.getElementById("gpt-cs-clip");
+  const csWin  = document.getElementById("gpt-cs-win");
+  if (csClip) {
+    csClip.className = clipOk ? "gpt-copy-status-ok" : "gpt-copy-status-warn";
+    csClip.textContent = clipOk
+      ? "✅ Schema URL copied to clipboard — paste with ⌘V / Ctrl+V"
+      : "⚠ Clipboard unavailable — use the Copy button in step 2 below";
+  }
+  if (csWin) {
+    csWin.className = winOpened ? "gpt-copy-status-ok" : "gpt-copy-status-warn";
+    csWin.textContent = winOpened
+      ? "✅ GPT Builder opened in new tab"
+      : (popupBlocked
+          ? "⚠ Pop-up blocked — click \"Open GPT Builder ↗\" below to open manually"
+          : "⚠ Builder tab may not have opened — use the button below");
+  }
+
+  const urlEl = document.getElementById("gpt-overlay-url");
+  if (urlEl) urlEl.textContent = schemaUrl;
+}
+
+function gptMarkConnected() {
+  _gptSave({status: "connected"});
+  _gptStep(5, "done", "Connected ✓");
+  _gptShowStatus("connected");
+  const ov = document.getElementById("gpt-overlay");
+  if (ov) ov.style.display = "none";
+}
+
+function gptReset() {
+  try { localStorage.removeItem(_GPT_KEY); } catch {}
+  const st = document.getElementById("gpt-connection-status");
+  if (st) st.style.display = "none";
+  const pw = document.getElementById("gpt-progress-wrap");
+  if (pw) pw.style.display = "none";
+  const ov = document.getElementById("gpt-overlay");
+  if (ov) ov.style.display = "none";
+  const tp = document.getElementById("gpt-test-panel");
+  if (tp) tp.style.display = "none";
+  const btn = document.getElementById("gpt-connect-btn");
+  if (btn) { btn.textContent = "⚡ Connect Fieldnote to ChatGPT"; btn.disabled = false; }
+}
+
+// ── Revalidate ────────────────────────────────────────────────────────────────
+async function gptRevalidate() {
+  window._gptSchemaHealth = null;
+  const badge = document.getElementById("schema-health-badge");
+  const stats = document.getElementById("schema-health-stats");
+  const errs  = document.getElementById("schema-health-errors");
+  if (badge) { badge.textContent = "⏳ Revalidating…"; badge.style.color = ""; }
+  if (stats) stats.style.display = "none";
+  if (errs)  errs.style.display  = "none";
+  try {
+    const d = await fetch("/api/schema/health").then(r => r.json());
+    window._gptSchemaHealth = d;
+    if (badge) {
+      badge.textContent = d.chatgpt_compatible
+        ? "✅ Validated — " + d.operation_count + " ops · 0 errors"
+        : "⚠ " + d.error_count + " schema error(s)";
+      badge.style.color = d.chatgpt_compatible ? "var(--green)" : "var(--amber)";
+    }
+    if (stats) {
+      document.getElementById("sh-endpoints").textContent = d.endpoint_count;
+      document.getElementById("sh-ops").textContent       = d.operation_count;
+      document.getElementById("sh-schemas").textContent   = d.schema_count;
+      document.getElementById("sh-version").textContent   = d.openapi_version;
+      stats.style.display = "";
+    }
+    if (!d.chatgpt_compatible && errs) {
+      errs.textContent = (d.errors || []).slice(0, 3).join(" · ");
+      errs.style.display = "";
+    }
+  } catch {
+    if (badge) { badge.textContent = "⚠ Could not reach server"; badge.style.color = "var(--amber)"; }
+  }
+}
+
+// ── Copy helpers ──────────────────────────────────────────────────────────────
+async function gptCopySchemaUrl(btn) {
+  const url = (window.BASE || window.location.origin) + "/openapi-gpt.json";
+  const ok  = await _gptClip(url);
+  if (btn) {
+    const orig = btn.textContent;
+    btn.textContent = ok ? "✓ Copied" : "✓";
+    btn.style.color = "var(--green)";
+    setTimeout(() => { btn.textContent = orig; btn.style.color = ""; }, 1800);
+  }
+}
+
+async function gptCopyPrompt(btn) {
+  const ok = await _gptClip(_GPT_PROMPT);
+  if (btn) {
+    const orig = btn.textContent;
+    btn.textContent = ok ? "✓ Copied" : "Open Advanced to copy manually";
+    btn.style.color = ok ? "var(--green)" : "var(--amber)";
+    setTimeout(() => { btn.textContent = orig; btn.style.color = ""; }, 2200);
+  }
+}
+
+// ── Test Connection ───────────────────────────────────────────────────────────
+async function gptTestConnection() {
+  const panel = document.getElementById("gpt-test-panel");
+  if (!panel) return;
+  panel.style.display = "";
+  panel.innerHTML = '<div class="gpt-test-header" style="color:var(--muted)">🔄 Testing Fieldnote endpoints…</div>';
+
+  const TESTS = [
+    {label: "Schema health",   url: "/api/schema/health",   ok: d => d.chatgpt_compatible, detail: d => d.operation_count + " operations"},
+    {label: "Skills list",     url: "/api/skills",          ok: d => Array.isArray(d),     detail: d => d.length + " skills"},
+    {label: "Brain map",       url: "/api/brain",           ok: d => "total_skills" in d,  detail: d => d.total_skills + " skills indexed"},
+    {label: "Activity log",    url: "/api/activity",        ok: d => "activity" in d,      detail: d => d.total + " events"},
+    {label: "Knowledge base",  url: "/api/knowledge",       ok: d => "entries" in d,       detail: d => d.count + " entries"},
+    {label: "Provider status", url: "/api/provider-status", ok: d => typeof d === "object" && d !== null, detail: d => Object.keys(d).join(", ")},
+  ];
+
+  const results = await Promise.all(TESTS.map(async t => {
+    try {
+      const d = await fetch(t.url).then(r => r.json());
+      return {label: t.label, ok: t.ok(d), detail: t.detail(d)};
+    } catch(e) {
+      return {label: t.label, ok: false, detail: e.message};
+    }
+  }));
+
+  const health = window._gptSchemaHealth || {};
+  const opCount = health.operation_count || 16;
+  const passing = results.filter(r => r.ok).length;
+  const allPass = passing === results.length;
+
+  let h = `<div class="gpt-test-header" style="color:${allPass ? "var(--green)" : "var(--amber)"}">
+    ${allPass ? "✅" : "⚠"} Fieldnote server: ${passing}/${results.length} checks passed
+  </div>
+  <div class="gpt-test-note">
+    ${opCount} operations available in the ChatGPT-compatible schema.<br>
+    To verify ChatGPT imported them all: open your Custom GPT → <em>Configure</em> → <em>Actions</em> → count the functions (should be ${opCount}).
+    Missing ops mean ChatGPT hasn't imported the latest schema — re-import from URL to refresh.
+  </div>`;
+
+  results.forEach(r => {
+    h += `<div class="gpt-test-row">
+      <span class="${r.ok ? "gpt-t-ok" : "gpt-t-fail"}">${r.ok ? "✓" : "✗"}</span>
+      <span style="color:var(--text)">${r.label}</span>
+      <span style="color:var(--muted);font-size:.72rem;margin-left:auto">${r.detail}</span>
+    </div>`;
+  });
+
+  panel.innerHTML = h;
+}
+
 function copyText(id, btn) {
   const el = document.getElementById(id);
   if (!el) return;
