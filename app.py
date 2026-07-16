@@ -1553,6 +1553,89 @@ def api_provider_status():
     return jsonify(provider_router.provider_status())
 
 
+# ── Integrations hub ──────────────────────────────────────────────────────────
+
+@app.route("/api/integrations")
+def api_integrations():
+    """Return the full integrations registry with live connection status."""
+    from fieldnote_mcp.integrations_registry import get_all_statuses
+    items = get_all_statuses(local_keys_file=LOCAL_KEYS_FILE)
+    pending = sum(1 for i in items if i["status"] == "pending")
+    return jsonify({"integrations": items, "pending": pending})
+
+
+@app.route("/api/integrations/<iid>/save-key", methods=["POST"])
+def api_integration_save_key(iid):
+    """
+    Save + live-verify an integration API key.
+    Body: {"key": "<value>"}
+    Returns: {"ok", "status", "detail"?, "error"?}
+    """
+    from fieldnote_mcp.integrations_registry import REGISTRY, verify_integration
+    data = request.get_json(silent=True) or {}
+    key  = (data.get("key") or "").strip()
+    if not key:
+        return jsonify({"ok": False, "error": "key is required"}), 400
+
+    # Find registry entry
+    entry = next((e for e in REGISTRY if e["id"] == iid), None)
+    if not entry:
+        return jsonify({"ok": False, "error": f"Unknown integration: {iid}"}), 404
+
+    env_var = entry["key_env"]
+
+    # Save locally (persists across restarts)
+    save_local_key(env_var, key)
+
+    # Refresh provider router state if this is an LLM provider
+    if iid in getattr(provider_router, "KEY_ENV_MAP", {}):
+        provider_router.refresh_provider_key(iid)
+        provider_router._init_status()
+
+    # Live verification — actually hits the provider API
+    result = verify_integration(iid, key)
+    status = "connected" if result["ok"] else "error"
+
+    return jsonify({
+        "ok":     result["ok"],
+        "status": status,
+        "detail": result.get("detail", ""),
+        "error":  result.get("error", ""),
+        "iid":    iid,
+        "env_var": env_var,
+    })
+
+
+@app.route("/api/integrations/<iid>/verify", methods=["POST"])
+def api_integration_verify(iid):
+    """Re-verify an already-saved key without changing it."""
+    from fieldnote_mcp.integrations_registry import REGISTRY, verify_integration
+    entry = next((e for e in REGISTRY if e["id"] == iid), None)
+    if not entry:
+        return jsonify({"ok": False, "error": f"Unknown integration: {iid}"}), 404
+
+    env_var = entry["key_env"]
+    # Load key from env or local file
+    try:
+        import json as _json
+        with open(LOCAL_KEYS_FILE) as f:
+            saved = _json.load(f)
+    except Exception:
+        saved = {}
+    key = (os.environ.get(env_var) or "").strip() or saved.get(env_var, "").strip()
+
+    if not key:
+        return jsonify({"ok": False, "error": "No key saved yet", "status": "pending"})
+
+    result = verify_integration(iid, key)
+    return jsonify({
+        "ok":     result["ok"],
+        "status": "connected" if result["ok"] else "error",
+        "detail": result.get("detail", ""),
+        "error":  result.get("error", ""),
+    })
+
+
 
 @app.route("/run-playlist", methods=["POST"])
 def run_playlist_endpoint():
