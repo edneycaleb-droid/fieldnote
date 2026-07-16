@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "full-audit-report-2026-07-16",
+      "title": "Full System Audit Report \u2014 2026-07-16",
+      "category": "session_learnings",
+      "confidence": "verified",
+      "updated_at": "2026-07-16T13:29:38.033951+00:00",
+      "path": "session_learnings/full-audit-report-2026-07-16.md"
+    },
+    {
       "slug": "session-continuity-2026-07-16",
       "title": "Session Continuity \u2014 Full Audit State 2026-07-16",
       "category": "session_learnings",
@@ -81,5 +89,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-16T13:28:06.678762+00:00"
+  "updated_at": "2026-07-16T13:29:38.035493+00:00"
 }
