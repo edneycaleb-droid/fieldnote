@@ -765,8 +765,9 @@ def _judge_arena(skill_a: dict, skill_b: dict, github_ctx: str, emit) -> dict:
     if not skill_a and not skill_b:
         raise ValueError("Both AI extractions failed — nothing to judge")
 
-    a_steps = len((skill_a or {}).get("steps", []))
-    b_steps = len((skill_b or {}).get("steps", []))
+    # Use `or []` not just default= — LLM may write "steps": null (key present, value None)
+    a_steps = len((skill_a or {}).get("steps") or [])
+    b_steps = len((skill_b or {}).get("steps") or [])
 
     # Graceful single-provider fallback
     if not skill_a:
@@ -823,16 +824,16 @@ def _judge_arena(skill_a: dict, skill_b: dict, github_ctx: str, emit) -> dict:
     except Exception as exc:
         emit("⚠  Judge LLM failed (" + str(exc)[:80] + "), falling back to ChatGPT result", "warning")
         result = dict(skill_a)
-        result["tools"]    = list(dict.fromkeys((skill_a.get("tools", []) + skill_b.get("tools", []))))
-        result["concepts"] = list(dict.fromkeys((skill_a.get("concepts", []) + skill_b.get("concepts", []))))
-        result["steps"]    = list(dict.fromkeys((skill_a.get("steps", []) + skill_b.get("steps", []))))[:12]
+        result["tools"]    = list(dict.fromkeys(((skill_a.get("tools") or []) + (skill_b.get("tools") or []))))
+        result["concepts"] = list(dict.fromkeys(((skill_a.get("concepts") or []) + (skill_b.get("concepts") or []))))
+        result["steps"]    = list(dict.fromkeys(((skill_a.get("steps") or []) + (skill_b.get("steps") or []))))[:12]
         result["_arena"]   = {"title_winner": "chatgpt", "desc_winner": "chatgpt",
                               "steps_a": a_steps, "steps_b": b_steps,
                               "steps_merged": len(result["steps"]),
                               "github_tools_added": 0, "note": "manual_merge"}
 
     arena = result.get("_arena", {})
-    sm    = len(result.get("steps", []))
+    sm    = len(result.get("steps") or [])
     emit(
         "🏆  Arena: " + str(a_steps) + " ChatGPT + " + str(b_steps) + " Groq steps"
         + " → " + str(sm) + " merged"
