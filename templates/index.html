@@ -1704,35 +1704,124 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
     <!-- ChatGPT pane -->
     <div class="ai-pane" id="ai-pane-chatgpt">
 
-      <!-- Step 1 -->
-      <p class="ai-step"><strong>Step 1 — Create a Custom GPT</strong><br>
-        ChatGPT → top-right avatar → <em>My GPTs</em> → <em>Create a GPT</em> → <em>Configure</em> tab</p>
+      <!-- ── Persisted connection status (shown when connected / in-progress) ── -->
+      <div id="gpt-connection-status" style="display:none"></div>
 
-      <!-- Step 2: one URL -->
-      <p class="ai-step" style="margin-top:10px"><strong>Step 2 — Add Action (one URL)</strong><br>
-        Scroll to <em>Actions</em> → <em>Create new action</em> → <em>Import from URL</em> → paste:</p>
-      <div class="ai-url-row">
-        <span class="ai-url" id="openapi-url">{{ base_url }}/openapi-gpt.json</span>
-        <button class="ai-url-copy" onclick="copyText('openapi-url', this)">Copy URL</button>
-      </div>
+      <!-- ── Primary one-touch connect button ── -->
+      <button id="gpt-connect-btn" class="gpt-connect-btn" onclick="gptConnect()">
+        ⚡ Connect Fieldnote to ChatGPT
+      </button>
 
-      <!-- Schema health indicator -->
-      <div id="schema-health-card" style="margin-top:8px;padding:8px 10px;border-radius:8px;background:var(--surface2,#1e2030);border:1px solid var(--border,#2a2d3a);font-size:.73rem;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-        <span id="schema-health-badge" style="font-size:.8rem">⏳ Checking schema…</span>
+      <!-- ── Schema health card ── -->
+      <div id="schema-health-card" style="padding:8px 11px;border-radius:9px;background:#06060e;border:1px solid var(--border2);font-size:.74rem;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+        <span id="schema-health-badge" style="font-size:.79rem">⏳ Validating schema…</span>
         <span id="schema-health-stats" style="color:var(--muted);display:none">
           <span id="sh-endpoints">–</span> endpoints ·
-          <span id="sh-ops">–</span> operations ·
+          <span id="sh-ops">–</span> ops ·
           <span id="sh-schemas">–</span> schemas ·
           OpenAPI <span id="sh-version">–</span>
         </span>
-        <span id="schema-health-errors" style="color:var(--red,#f87171);display:none"></span>
+        <span id="schema-health-errors" style="color:var(--red);display:none"></span>
       </div>
-      <p class="ai-step" style="margin-top:4px;font-size:.75rem;color:var(--muted)">
-        ChatGPT imports all 16 operations automatically. Zero validation errors. Done — save the GPT.</p>
 
-      <!-- Step 3: system prompt -->
-      <p class="ai-step" style="margin-top:12px"><strong>Step 3 — Paste this system prompt</strong></p>
-      <div class="ai-snippet" id="chatgpt-system-prompt" style="white-space:pre-wrap;font-size:.72rem;max-height:140px;overflow-y:auto">You are a personal AI learning assistant with complete access to my Fieldnote knowledge library — a curated database of AI, development, and productivity skills I've extracted from YouTube videos.
+      <!-- ── Progress stepper (hidden until button clicked) ── -->
+      <div id="gpt-progress-wrap" class="gpt-progress-wrap" style="display:none">
+        <div class="gpt-progress-track">
+          <div class="gps-step"><div id="gps-validate" class="gps-dot"></div><span id="gps-label-validate" class="gps-label">Validate</span></div>
+          <div id="gps-conn-1" class="gps-connector"></div>
+          <div class="gps-step"><div id="gps-copy"     class="gps-dot"></div><span id="gps-label-copy"     class="gps-label">Copy</span></div>
+          <div id="gps-conn-2" class="gps-connector"></div>
+          <div class="gps-step"><div id="gps-open"     class="gps-dot"></div><span id="gps-label-open"     class="gps-label">Open</span></div>
+          <div id="gps-conn-3" class="gps-connector"></div>
+          <div class="gps-step"><div id="gps-await"    class="gps-dot"></div><span id="gps-label-await"    class="gps-label">Setup</span></div>
+          <div id="gps-conn-4" class="gps-connector"></div>
+          <div class="gps-step"><div id="gps-done"     class="gps-dot"></div><span id="gps-label-done"     class="gps-label">Done</span></div>
+        </div>
+        <div id="gpt-progress-note" class="gpt-progress-note"></div>
+      </div>
+
+      <!-- ── Guided overlay (shown when schema valid and builder opened) ── -->
+      <div id="gpt-overlay" style="display:none">
+        <div class="gpt-overlay-card">
+          <div class="gpt-overlay-head">
+            <span class="gpt-overlay-title">📋 Complete setup in ChatGPT</span>
+            <button class="gpt-overlay-close" onclick="document.getElementById('gpt-overlay').style.display='none'" aria-label="Close">✕</button>
+          </div>
+
+          <!-- clipboard / window status -->
+          <div class="gpt-copy-statuses">
+            <div id="gpt-cs-clip"></div>
+            <div id="gpt-cs-win"></div>
+          </div>
+
+          <!-- step-by-step instructions -->
+          <ol class="gpt-step-list">
+            <li>
+              <strong>Create a Custom GPT</strong>
+              ChatGPT → top-right avatar → <em>My GPTs</em> → <em>Create a GPT</em> → <em>Configure</em> tab
+            </li>
+            <li>
+              <strong>Add the Action (paste schema URL)</strong>
+              Scroll to <em>Actions</em> → <em>Create new action</em> → <em>Import from URL</em> → paste:
+              <div class="gpt-url-inline">
+                <span class="gpt-url-inline-text" id="gpt-overlay-url"></span>
+                <button class="gpt-url-inline-copy" onclick="gptCopySchemaUrl(this)">Copy</button>
+              </div>
+            </li>
+            <li>
+              <strong>Paste the system prompt</strong>
+              In the <em>Instructions</em> field, paste:
+              <button class="gpt-copy-prompt-btn" id="gpt-copy-prompt-btn" onclick="gptCopyPrompt(this)">📋 Copy System Prompt</button>
+            </li>
+            <li>
+              <strong>Allow the action when prompted</strong>
+              ChatGPT will display a security confirmation — tap <em>Allow</em>. This is mandatory; Fieldnote cannot skip it.
+            </li>
+            <li>
+              <strong>Save the GPT</strong>
+              Click <em>Confirm</em> or <em>Save</em> in the top-right corner.
+            </li>
+          </ol>
+
+          <div class="gpt-security-note">
+            ⚠ ChatGPT requires 1–2 confirmation taps for external API actions. This is a ChatGPT platform security requirement — no external site can bypass it.
+          </div>
+
+          <div class="gpt-overlay-actions">
+            <button class="gpt-mark-connected" onclick="gptMarkConnected()">✓ Mark as Connected</button>
+            <button class="gpt-dismiss-btn"    onclick="document.getElementById('gpt-overlay').style.display='none'">Dismiss</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Test connection result panel (shown after "Test Connection") ── -->
+      <div id="gpt-test-panel" class="gpt-test-panel" style="display:none"></div>
+
+      <!-- ── Secondary fallback buttons ── -->
+      <div class="gpt-secondary-row" style="margin-top:10px">
+        <button class="gpt-sec-btn" id="gpt-fallback-url"    onclick="gptCopySchemaUrl(this)">Copy Schema URL</button>
+        <button class="gpt-sec-btn" id="gpt-fallback-prompt" onclick="gptCopyPrompt(this)">Copy System Prompt</button>
+        <button class="gpt-sec-btn"                          onclick="gptRevalidate()">↺ Revalidate</button>
+        <button class="gpt-sec-btn"                          onclick="window.open('https://chatgpt.com/gpts/editor','_blank','noopener,noreferrer')">Open GPT Builder ↗</button>
+      </div>
+
+      <!-- ── Advanced / manual setup (collapsed by default) ── -->
+      <details class="gpt-advanced-details" id="gpt-advanced-details">
+        <summary class="gpt-advanced-summary">Advanced — manual setup &amp; spec links</summary>
+        <div class="gpt-advanced-body">
+
+          <p class="ai-step" style="margin-top:10px"><strong>Step 1 — Create a Custom GPT</strong><br>
+            ChatGPT → top-right avatar → <em>My GPTs</em> → <em>Create a GPT</em> → <em>Configure</em> tab</p>
+
+          <p class="ai-step" style="margin-top:10px"><strong>Step 2 — Add Action (one URL)</strong><br>
+            Scroll to <em>Actions</em> → <em>Create new action</em> → <em>Import from URL</em> → paste:</p>
+          <div class="ai-url-row">
+            <span class="ai-url" id="openapi-url">{{ base_url }}/openapi-gpt.json</span>
+            <button class="ai-url-copy" onclick="copyText('openapi-url', this)">Copy URL</button>
+          </div>
+
+          <p class="ai-step" style="margin-top:10px"><strong>Step 3 — Paste this system prompt</strong></p>
+          <div class="ai-snippet" id="chatgpt-system-prompt" style="white-space:pre-wrap;font-size:.72rem;max-height:140px;overflow-y:auto">You are a personal AI learning assistant with complete access to my Fieldnote knowledge library — a curated database of AI, development, and productivity skills I've extracted from YouTube videos.
 
 ALWAYS start by calling getFullSnapshot to load my full library context, or use listSkills + getSkillContent for targeted lookups. When I ask how to do something technical, search my library FIRST and anchor your answer in my actual notes, not generic info.
 
@@ -1740,38 +1829,40 @@ You also have full access to my GitHub repo via listGithubFiles and readGithubFi
 
 Cross-reference related skills proactively. When you find a relevant skill, always fetch its FULL content — summaries aren't enough.<button class="ai-copy" onclick="copyText('chatgpt-system-prompt', this)">Copy</button></div>
 
-      <!-- Full access list -->
-      <p class="ai-step" style="margin-top:12px"><strong>Full access ChatGPT gets (16 operations):</strong></p>
-      <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:4px">
-        <span class="chip chip-tool">getFullSnapshot</span>
-        <span class="chip chip-tool">listSkills</span>
-        <span class="chip chip-tool">getSkillContent</span>
-        <span class="chip chip-tool">getBrainMap</span>
-        <span class="chip chip-tool">getRecentActivity</span>
-        <span class="chip chip-tool">getAllPackages</span>
-        <span class="chip chip-tool">getMcpConnections</span>
-        <span class="chip chip-tool">getProviderStatus</span>
-        <span class="chip chip-tool">listGithubFiles</span>
-        <span class="chip chip-tool">readGithubFile</span>
-        <span class="chip chip-tool">getHealth</span>
-        <span class="chip chip-tool">getKnowledgeBase</span>
-        <span class="chip chip-tool">upsertKnowledgeEntry</span>
-        <span class="chip chip-tool">getDiscoveryStats</span>
-        <span class="chip chip-tool">getDiscoveryLog</span>
-        <span class="chip chip-tool">triggerSchedulerJob</span>
-      </div>
+          <p class="ai-step" style="margin-top:12px"><strong>Operations imported (16):</strong></p>
+          <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:4px">
+            <span class="chip chip-tool">getFullSnapshot</span>
+            <span class="chip chip-tool">listSkills</span>
+            <span class="chip chip-tool">getSkillContent</span>
+            <span class="chip chip-tool">getBrainMap</span>
+            <span class="chip chip-tool">getRecentActivity</span>
+            <span class="chip chip-tool">getAllPackages</span>
+            <span class="chip chip-tool">getMcpConnections</span>
+            <span class="chip chip-tool">getProviderStatus</span>
+            <span class="chip chip-tool">listGithubFiles</span>
+            <span class="chip chip-tool">readGithubFile</span>
+            <span class="chip chip-tool">getHealth</span>
+            <span class="chip chip-tool">getKnowledgeBase</span>
+            <span class="chip chip-tool">upsertKnowledgeEntry</span>
+            <span class="chip chip-tool">getDiscoveryStats</span>
+            <span class="chip chip-tool">getDiscoveryLog</span>
+            <span class="chip chip-tool">triggerSchedulerJob</span>
+          </div>
 
-      <p class="ai-note" style="margin-top:10px">
-        <a class="ai-link" href="{{ base_url }}/openapi-gpt.json" target="_blank">GPT schema (3.0.0) ↗</a>
-        &nbsp;·&nbsp;
-        <a class="ai-link" href="{{ base_url }}/openapi.json" target="_blank">Standard schema (3.1.0) ↗</a>
-        &nbsp;·&nbsp;
-        <a class="ai-link" href="{{ base_url }}/api/snapshot" target="_blank">Live snapshot ↗</a>
-        &nbsp;·&nbsp;
-        <a class="ai-link" href="{{ base_url }}/api/github/repo" target="_blank">GitHub repo ↗</a>
-      </p>
-    </div>
-  </div>
+          <p class="ai-note" style="margin-top:10px">
+            <a class="ai-link" href="{{ base_url }}/openapi-gpt.json" target="_blank">GPT schema (3.0.0) ↗</a>
+            &nbsp;·&nbsp;
+            <a class="ai-link" href="{{ base_url }}/openapi.json" target="_blank">Standard schema (3.1.0) ↗</a>
+            &nbsp;·&nbsp;
+            <a class="ai-link" href="{{ base_url }}/api/snapshot" target="_blank">Live snapshot ↗</a>
+            &nbsp;·&nbsp;
+            <a class="ai-link" href="{{ base_url }}/api/github/repo" target="_blank">GitHub repo ↗</a>
+          </p>
+        </div><!-- /.gpt-advanced-body -->
+      </details>
+
+    </div><!-- /#ai-pane-chatgpt -->
+  </div><!-- /.ai-card -->
 
   <!-- MCP Connections -->
   <div class="card" id="connections-card">
