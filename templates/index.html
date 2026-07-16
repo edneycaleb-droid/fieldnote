@@ -2233,6 +2233,7 @@ async function runSingleVideo(url, videoId) {
         const msg = JSON.parse(e.data);
         if (msg.type === "ping")          return;
         if (msg.type === "log")           { appendLog(msg.msg, msg.kind); return; }
+        if (msg.type === "stage")         { updateStageProgress(msg.stage); return; }
         if (msg.type === "oauth_required"){ renderAuthPrompt(msg.auth); return; }
         if (msg.type === "meta" && msg.data?.title) {
           _playlistMeta[videoId] = msg.data.title;
