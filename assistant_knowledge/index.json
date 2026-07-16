@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "langchain-ai--langchain",
+      "title": "Discovered: langchain-ai/langchain",
+      "category": "discoveries",
+      "confidence": "verified",
+      "updated_at": "2026-07-16T12:09:23.552457+00:00",
+      "path": "discoveries/langchain-ai--langchain.md"
+    },
+    {
       "slug": "gpt-actions-openapi-compatibility",
       "title": "GPT Actions OpenAPI compatibility",
       "category": "decisions",
@@ -25,5 +33,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-16T05:46:52.707709+00:00"
+  "updated_at": "2026-07-16T12:09:23.553234+00:00"
 }
