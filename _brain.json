@@ -518,6 +518,36 @@
       "skills": [
         "build_production_ready_llm_applications_with_haystack"
       ]
+    },
+    "AI training analysis": {
+      "freq": 1,
+      "skills": [
+        "swanlab_ai_training_analysis_platform"
+      ]
+    },
+    "Experiment tracking": {
+      "freq": 1,
+      "skills": [
+        "swanlab_ai_training_analysis_platform"
+      ]
+    },
+    "Visualization": {
+      "freq": 1,
+      "skills": [
+        "swanlab_ai_training_analysis_platform"
+      ]
+    },
+    "Collaboration": {
+      "freq": 1,
+      "skills": [
+        "swanlab_ai_training_analysis_platform"
+      ]
+    },
+    "Model training": {
+      "freq": 1,
+      "skills": [
+        "swanlab_ai_training_analysis_platform"
+      ]
     }
   },
   "tools": {
@@ -946,15 +976,17 @@
       ]
     },
     "PyTorch": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "build_production_ready_llm_applications_with_haystack"
+        "build_production_ready_llm_applications_with_haystack",
+        "swanlab_ai_training_analysis_platform"
       ]
     },
     "Transformers": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "build_production_ready_llm_applications_with_haystack"
+        "build_production_ready_llm_applications_with_haystack",
+        "swanlab_ai_training_analysis_platform"
       ]
     },
     "Gemini": {
@@ -973,6 +1005,30 @@
       "freq": 1,
       "skills": [
         "build_production_ready_llm_applications_with_haystack"
+      ]
+    },
+    "SwanLab": {
+      "freq": 1,
+      "skills": [
+        "swanlab_ai_training_analysis_platform"
+      ]
+    },
+    "LLaMA Factory": {
+      "freq": 1,
+      "skills": [
+        "swanlab_ai_training_analysis_platform"
+      ]
+    },
+    "TensorFlow": {
+      "freq": 1,
+      "skills": [
+        "swanlab_ai_training_analysis_platform"
+      ]
+    },
+    "TensorBoard": {
+      "freq": 1,
+      "skills": [
+        "swanlab_ai_training_analysis_platform"
       ]
     }
   },
@@ -1179,6 +1235,33 @@
         "nlp"
       ],
       "step_count": 8
+    },
+    "swanlab_ai_training_analysis_platform": {
+      "concepts": [
+        "AI training analysis",
+        "Experiment tracking",
+        "Visualization",
+        "Collaboration",
+        "Model training"
+      ],
+      "tools": [
+        "SwanLab",
+        "PyTorch",
+        "Transformers",
+        "LLaMA Factory",
+        "TensorFlow",
+        "TensorBoard"
+      ],
+      "tags": [
+        "ai",
+        "training",
+        "analysis",
+        "visualization",
+        "collaboration",
+        "mlops",
+        "model-versioning"
+      ],
+      "step_count": 10
     }
   },
   "relationships": {
@@ -1248,9 +1331,19 @@
     "build_production_ready_llm_applications_with_haystack": {
       "astrbot_deployment": [
         "Docker"
+      ],
+      "swanlab_ai_training_analysis_platform": [
+        "PyTorch",
+        "Transformers"
+      ]
+    },
+    "swanlab_ai_training_analysis_platform": {
+      "build_production_ready_llm_applications_with_haystack": [
+        "PyTorch",
+        "Transformers"
       ]
     }
   },
-  "updated_at": "2026-07-16T18:40:41.679576+00:00",
-  "total_skills": 7
+  "updated_at": "2026-07-16T18:41:07.891869+00:00",
+  "total_skills": 8
 }
