@@ -443,8 +443,11 @@ def get_all_statuses(local_keys_file: str | None = None) -> list[dict]:
         e["last_checked"] = chk.get("last_checked")
         e["agent_detail"] = chk.get("detail", "")
 
-        # Suggestions have no key_env — always 'pending' informational
+        # Suggestions: if a key_env is set and the key is now present the
+        # user has connected it — drop the card so the suggestion clears.
         if entry.get("is_suggestion"):
+            if key_env and key_val:
+                continue   # already connected — don't show as a suggestion
             e["status"]        = "suggested"
             e["status_detail"] = "Agent suggestion based on your skill library"
             result.append(e)
