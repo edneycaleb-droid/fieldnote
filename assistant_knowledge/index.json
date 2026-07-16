@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "langchain-ai--langgraph",
+      "title": "Discovered: langchain-ai/langgraph",
+      "category": "discoveries",
+      "confidence": "verified",
+      "updated_at": "2026-07-16T18:42:32.181676+00:00",
+      "path": "discoveries/langchain-ai--langgraph.md"
+    },
+    {
       "slug": "free-alt-swanhubx--swanlab",
       "title": "Free alt: SwanLab \u2192 replaces GPT-4",
       "category": "discoveries",
@@ -97,5 +105,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-16T18:41:12.330308+00:00"
+  "updated_at": "2026-07-16T18:42:32.183731+00:00"
 }
