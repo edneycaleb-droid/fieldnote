@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **3 skills** · Last synced: 2026-07-16 12:22 UTC
+> **3 skills** · Last synced: 2026-07-16 13:30 UTC
 
 ---
 
@@ -9,9 +9,9 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [Building Effective AI Agents for Automation and Productivity](skills/building_ai_agents.md) | Building AI agents can help automate tasks, make decisions, and improve over tim | `Claude` `ClaudeCode` `Claude Co-work` `Connectors` | `ai` `automation` `productivity` |
-| [Building AI Agents with LangChain](skills/building_ai_agents_with_langchain.md) | This skill teaches how to build applications powered by Large Language Models (L | `LangChain` `Deep Agents` `LangGraph` `LangSmith` | `ai` `automation` `productivity` |
-| [Efficiently Running Large AI Models on Local Machines](skills/running_large_models_locally.md) | This skill teaches how to run large AI models on local machines with limited RAM | `Colibri` `AntiRaz` `DS4` `Lama CPP` | `ai` `optimization` `modeling` |
+| [Building Effective AI Agents for Automation and Productivity](skills/building_ai_agents.md) | Building AI agents can help automate tasks, make decisions, and improve over tim | `Claude` `Claude Code` `Codex` `Hermes Agent` | `ai` `automation` `productivity` |
+| [Efficiently Running Large AI Models on Local Machines](skills/running_large_models_locally.md) | This skill teaches how to run large AI models on local machines with limited RAM | `ollama` `llama.cpp` `Colibri` `vLLM` | `ai` `optimization` `modeling` |
+| [Building AI Agents with LangChain](skills/building_ai_agents_with_langchain.md) | This skill teaches how to build applications powered by Large Language Models (L | `LangChain` `LangChain-Groq` `LangChain-OpenAI` `LangGraph` | `ai` `automation` `productivity` |
 
 ---
 
@@ -79,7 +79,7 @@ Every YouTube URL goes through the **Fieldnote AI Arena**:
 
 | Step | Free Provider | Paid Alternative | Role |
 |------|--------------|-----------------|------|
-| 1. Transcribe | Groq Whisper · faster-whisper | — | Audio → text |
+| 1. Transcribe | YouTube captions (instant, free) → Groq Whisper → faster-whisper (local CPU) | — | Text acquisition — captions tried first, Whisper only if captions unavailable |
 | 2. Extract A  | Groq llama-3.3-70b | OpenAI GPT-4o-mini | Educator lens — depth & concepts |
 | 3. Extract B  | Groq llama-3.3-70b | OpenAI GPT-4o-mini | Practitioner lens — steps & tools |
 | 4. Discover   | GitHub API (free) | — | Real repos using these tools |
@@ -98,7 +98,9 @@ Each skill contains: structured steps, tools, concepts, tags, source attribution
 | **Free-Alt Pairing** | On discovery | When a paid-tool repo is found, automatically finds + extracts a free alternative |
 | **DCA Enhancer** | Every 6h | Re-runs extraction on existing skills to improve quality over time |
 | **Watchlist Processor** | Every 1h | Processes queued YouTube URLs |
-| **GitHub Sync** | Every 10min | Mirrors all source code + skills to this repo |
+| **Source Sync** | Every 10min | Mirrors source code changes to this repo (fast path; also runs on every file save) |
+| **Full Library Sync** | Every 24h | Full push of all skills, README, and brain graph |
+| **Integration Agent** | Every 30min | Health-checks all providers, auto-detects new Replit Secrets, suggests complementary integrations |
 
 ---
 
