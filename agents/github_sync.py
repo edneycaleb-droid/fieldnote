@@ -26,15 +26,22 @@ SOURCE_INCLUDE = [
 ]
 # Never push these — they contain Replit internals / may embed credentials
 SOURCE_NEVER  = {".replit", "replit.nix", "replit.toml", ".env", ".env.*"}
-SOURCE_DIRS = ["agents", "templates"]
+SOURCE_DIRS = ["agents", "templates", "fieldnote_mcp"]
 
 # Never copy these into the mirror
 SOURCE_EXCLUDE_DIRS  = {
     "__pycache__", ".fieldnote_mirror", "fieldnote_repos",
     "fieldnote_skills", ".git", "node_modules", ".agents",
-    "fieldnote_mcp",
 }
-SOURCE_EXCLUDE_FILES = {"local_keys.json", ".env"}
+# Never copy these files — secrets, runtime state, and Replit-specific config
+SOURCE_EXCLUDE_FILES = {
+    "local_keys.json", ".env",
+    "integration_agent_status.json",  # runtime state — changes every 30 min
+    "integration_dynamic.json",        # runtime state — agent suggestions
+    "status.json",                     # runtime state
+    "mcp_config.json",                 # Replit-specific paths
+    "install.log",                     # install log
+}
 SOURCE_EXTENSIONS    = {".py", ".html", ".css", ".js", ".md", ".txt",
                         ".toml", ".nix", ".json", ".replit"}
 
@@ -226,7 +233,7 @@ Every YouTube URL goes through the **Fieldnote AI Arena**:
 
 | Step | Free Provider | Paid Alternative | Role |
 |------|--------------|-----------------|------|
-| 1. Transcribe | Groq Whisper · faster-whisper | — | Audio → text |
+| 1. Transcribe | YouTube captions (instant, free) → Groq Whisper → faster-whisper (local CPU) | — | Text acquisition — captions tried first, Whisper only if captions unavailable |
 | 2. Extract A  | Groq llama-3.3-70b | OpenAI GPT-4o-mini | Educator lens — depth & concepts |
 | 3. Extract B  | Groq llama-3.3-70b | OpenAI GPT-4o-mini | Practitioner lens — steps & tools |
 | 4. Discover   | GitHub API (free) | — | Real repos using these tools |
@@ -245,7 +252,9 @@ Each skill contains: structured steps, tools, concepts, tags, source attribution
 | **Free-Alt Pairing** | On discovery | When a paid-tool repo is found, automatically finds + extracts a free alternative |
 | **DCA Enhancer** | Every 6h | Re-runs extraction on existing skills to improve quality over time |
 | **Watchlist Processor** | Every 1h | Processes queued YouTube URLs |
-| **GitHub Sync** | Every 10min | Mirrors all source code + skills to this repo |
+| **Source Sync** | Every 10min | Mirrors source code changes to this repo (fast path; also runs on every file save) |
+| **Full Library Sync** | Every 24h | Full push of all skills, README, and brain graph |
+| **Integration Agent** | Every 30min | Health-checks all providers, auto-detects new Replit Secrets, suggests complementary integrations |
 
 ---
 
