@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "free-alt-swanhubx--swanlab",
+      "title": "Free alt: SwanLab \u2192 replaces GPT-4",
+      "category": "discoveries",
+      "confidence": "verified",
+      "updated_at": "2026-07-16T18:41:12.244627+00:00",
+      "path": "discoveries/free-alt-swanhubx--swanlab.md"
+    },
+    {
       "slug": "integration-agent-2026-07-16",
       "title": "Integration Agent Health Event",
       "category": "session_learnings",
@@ -89,5 +97,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-16T14:10:00.225891+00:00"
+  "updated_at": "2026-07-16T18:41:12.330308+00:00"
 }
