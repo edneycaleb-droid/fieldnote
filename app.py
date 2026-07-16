@@ -1692,6 +1692,57 @@ _MCP_TOOLS = [
         "description": "High-level stats: skill count, total tools, concepts, packages.",
         "inputSchema": {"type": "object", "properties": {}},
     },
+    {
+        "name": "get_recent_activity",
+        "description": "Return the most recent skill creations and enhancements, newest first. Useful to understand what was learned lately.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "limit": {"type": "integer", "description": "Max results, default 20"},
+            },
+        },
+    },
+    {
+        "name": "get_all_packages",
+        "description": "List every Python package discovered across all skills (pip-installable names).",
+        "inputSchema": {"type": "object", "properties": {}},
+    },
+    {
+        "name": "get_mcp_connections",
+        "description": "List every MCP (Model Context Protocol) server connection configured in the workspace — name, type, command/URL, and which skills use it.",
+        "inputSchema": {"type": "object", "properties": {}},
+    },
+    {
+        "name": "get_brain_map",
+        "description": "Return the concept/tool relationship graph — which skills share tools or concepts, the most frequent concepts and tools, and the full skill map.",
+        "inputSchema": {"type": "object", "properties": {}},
+    },
+    {
+        "name": "get_system_status",
+        "description": "Return AI provider health (Groq, Gemini, OpenAI, HuggingFace, OpenRouter state/quota), system tool availability, and the GitHub sync repo URL.",
+        "inputSchema": {"type": "object", "properties": {}},
+    },
+    {
+        "name": "list_github_files",
+        "description": "List files and directories at a path in the Fieldnote GitHub repository. Leave path empty for the root.",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "path": {"type": "string", "description": "Subdirectory path (optional, default = repo root)"},
+            },
+        },
+    },
+    {
+        "name": "read_github_file",
+        "description": "Read the raw text content of any file in the Fieldnote GitHub repository (skills, code, configs).",
+        "inputSchema": {
+            "type": "object",
+            "properties": {
+                "path": {"type": "string", "description": "File path within the repo, e.g. skills/claude_code.md"},
+            },
+            "required": ["path"],
+        },
+    },
 ]
 
 
@@ -1772,6 +1823,136 @@ def _mcp_call_tool(name: str, args: dict) -> dict:
             tools.update(m.get("tools",[])); concepts.update(m.get("concepts",[]))
             pkgs.update(m.get("python_packages",[]))
         return {"skills": len(index), "tools": len(tools), "concepts": len(concepts), "packages": len(pkgs)}
+
+
+    elif name == "get_recent_activity":
+        limit = min(int(args.get("limit") or 20), 100)
+        events = []
+        for skill_name, meta in index.items():
+            for h in meta.get("history", []):
+                events.append({
+                    "skill": skill_name,
+                    "title": meta.get("title", skill_name),
+                    "action": h.get("action", "create"),
+                    "source_title": h.get("source_title", ""),
+                    "source_url": h.get("source_url", ""),
+                    "timestamp": h.get("timestamp", ""),
+                })
+            if not meta.get("history"):
+                events.append({
+                    "skill": skill_name, "title": meta.get("title", skill_name),
+                    "action": "create", "source_title": meta.get("source_title",""),
+                    "source_url": meta.get("source_url",""), "timestamp": meta.get("updated_at",""),
+                })
+        events.sort(key=lambda x: x["timestamp"], reverse=True)
+        return {"activity": events[:limit], "total_events": len(events)}
+
+    elif name == "get_all_packages":
+        pkgs: set = set()
+        for m in index.values(): pkgs.update(m.get("python_packages", []))
+        return {"packages": sorted(pkgs), "count": len(pkgs)}
+
+    elif name == "get_mcp_connections":
+        conns = mcp_agent.get_connections()
+        # Enrich with which skills use each connection
+        usage: dict = {}
+        for skill_name, meta in index.items():
+            for c in meta.get("mcp_connections", []):
+                usage.setdefault(c, []).append(skill_name)
+        for conn in conns:
+            conn["used_by_skills"] = usage.get(conn.get("name",""), [])
+        return {"connections": conns, "count": len(conns)}
+
+    elif name == "get_brain_map":
+        brain_path = os.path.join(SKILLS_DIR, "_brain.json")
+        if not os.path.exists(brain_path):
+            return {"empty": True}
+        with open(brain_path) as _f:
+            brain = json.load(_f)
+        tc = sorted(brain.get("concepts", {}).items(), key=lambda x: x[1]["freq"], reverse=True)[:30]
+        tt = sorted(brain.get("tools",    {}).items(), key=lambda x: x[1]["freq"], reverse=True)[:30]
+        return {
+            "total_skills": brain.get("total_skills", 0),
+            "top_concepts": [{"name": k, "freq": v["freq"], "skills": v["skills"]} for k, v in tc],
+            "top_tools":    [{"name": k, "freq": v["freq"], "skills": v["skills"]} for k, v in tt],
+            "skill_map":    brain.get("skill_map", {}),
+            "relationships": brain.get("relationships", {}),
+            "updated_at":   brain.get("updated_at", ""),
+        }
+
+    elif name == "get_system_status":
+        provider_router._init_status()
+        prov = provider_router.provider_status()
+        return {
+            "providers": prov,
+            "github_repo": github_sync.repo_url(),
+            "github_configured": bool(os.getenv("GITHUBPAT") or os.getenv("GITHUB_TOKEN") or os.getenv("GITHUB")),
+            "groq_configured":   bool(os.getenv("GROQ") or os.getenv("GROQ_API_KEY")),
+            "openai_configured": bool(os.getenv("CHATGPT") or os.getenv("OPENAI_API_KEY")),
+        }
+
+    elif name == "list_github_files":
+        path = (args.get("path") or "").strip("/")
+        repo_url = github_sync.repo_url()
+        if not repo_url:
+            return {"error": "No GitHub repo configured"}
+        # Parse owner/repo from URL
+        parts = repo_url.rstrip("/").split("/")
+        if len(parts) < 2:
+            return {"error": "Cannot parse repo URL: " + repo_url}
+        owner, repo = parts[-2], parts[-1]
+        token = os.getenv("GITHUBPAT") or os.getenv("GITHUB_TOKEN") or os.getenv("GITHUB") or ""
+        api_url = f"https://api.github.com/repos/{owner}/{repo}/contents/{path}"
+        req = _UReq(api_url, headers={"Accept": "application/vnd.github+json",
+                                       "User-Agent": "Fieldnote/2.0"})
+        if token: req.add_header("Authorization", "Bearer " + token)
+        import urllib.error
+        try:
+            with urlopen(req, timeout=10) as resp:
+                data = json.loads(resp.read())
+            if isinstance(data, list):
+                return {"path": path, "items": [
+                    {"name": i["name"], "type": i["type"], "path": i["path"],
+                     "size": i.get("size", 0), "sha": i["sha"]}
+                    for i in data
+                ]}
+            return {"path": path, "item": {"name": data.get("name"), "type": data.get("type"),
+                    "size": data.get("size")}}
+        except urllib.error.HTTPError as e:
+            return {"error": f"GitHub API error {e.code}: {e.reason}"}
+        except Exception as exc:
+            return {"error": str(exc)}
+
+    elif name == "read_github_file":
+        path = (args.get("path") or "").strip("/")
+        if not path:
+            return {"error": "path is required"}
+        repo_url = github_sync.repo_url()
+        if not repo_url:
+            return {"error": "No GitHub repo configured"}
+        parts = repo_url.rstrip("/").split("/")
+        if len(parts) < 2:
+            return {"error": "Cannot parse repo URL: " + repo_url}
+        owner, repo = parts[-2], parts[-1]
+        token = os.getenv("GITHUBPAT") or os.getenv("GITHUB_TOKEN") or os.getenv("GITHUB") or ""
+        api_url = f"https://api.github.com/repos/{owner}/{repo}/contents/{path}"
+        req = _UReq(api_url, headers={"Accept": "application/vnd.github+json",
+                                       "User-Agent": "Fieldnote/2.0"})
+        if token: req.add_header("Authorization", "Bearer " + token)
+        import urllib.error, base64
+        try:
+            with urlopen(req, timeout=15) as resp:
+                data = json.loads(resp.read())
+            if data.get("encoding") == "base64":
+                content = base64.b64decode(data["content"].replace("\n","\n")).decode("utf-8", errors="replace")
+            else:
+                content = data.get("content", "")
+            return {"path": path, "name": data.get("name"), "size": data.get("size"),
+                    "content": content, "sha": data.get("sha")}
+        except urllib.error.HTTPError as e:
+            return {"error": f"GitHub API error {e.code}: {e.reason}"}
+        except Exception as exc:
+            return {"error": str(exc)}
 
     return {"error": f"Unknown tool: {name}"}
 
@@ -1865,6 +2046,161 @@ def _update_brain(skill: dict, skill_name: str) -> None:
         github_sync.sync_brain(brain)
     except Exception:
         pass
+
+
+
+@app.route("/api/activity")
+def api_activity():
+    """Recent skill creation/enhancement history, newest first."""
+    limit = min(int(request.args.get("limit") or 30), 200)
+    index = load_index()
+    events = []
+    for skill_name, meta in index.items():
+        for h in meta.get("history", []):
+            events.append({
+                "skill": skill_name, "title": meta.get("title", skill_name),
+                "action": h.get("action","create"), "source_title": h.get("source_title",""),
+                "source_url": h.get("source_url",""), "timestamp": h.get("timestamp",""),
+            })
+        if not meta.get("history"):
+            events.append({
+                "skill": skill_name, "title": meta.get("title", skill_name),
+                "action": "create", "source_title": meta.get("source_title",""),
+                "source_url": meta.get("source_url",""), "timestamp": meta.get("updated_at",""),
+            })
+    events.sort(key=lambda x: x["timestamp"], reverse=True)
+    return jsonify({"activity": events[:limit], "total": len(events)})
+
+
+@app.route("/api/packages")
+def api_packages():
+    """All Python packages discovered across all skills."""
+    index = load_index()
+    pkgs: set = set()
+    for m in index.values(): pkgs.update(m.get("python_packages", []))
+    return jsonify({"packages": sorted(pkgs), "count": len(pkgs)})
+
+
+@app.route("/api/snapshot")
+def api_snapshot():
+    """Complete library snapshot in one call — skills (with full content), tools, concepts,
+    packages, MCP connections, brain summary, and provider status. Designed for AI context loading."""
+    index  = load_index()
+    skills = []
+    for skill_name, meta in index.items():
+        md_path = os.path.join(SKILLS_DIR, f"{skill_name}.md")
+        content = ""
+        if os.path.exists(md_path):
+            try:
+                with open(md_path) as f:
+                    content = f.read()
+            except Exception:
+                pass
+        skills.append({
+            "name":         skill_name,
+            "title":        meta.get("title", skill_name),
+            "description":  meta.get("description", ""),
+            "tags":         meta.get("tags", []),
+            "tools":        meta.get("tools", []),
+            "concepts":     meta.get("concepts", []),
+            "steps":        meta.get("steps", []),
+            "packages":     meta.get("python_packages", []),
+            "source_count": len(meta.get("history", [])) + 1,
+            "updated_at":   meta.get("updated_at", ""),
+            "content":      content,
+        })
+    skills.sort(key=lambda x: x["updated_at"], reverse=True)
+
+    all_tools: set = set(); all_concepts: set = set(); all_pkgs: set = set()
+    for m in index.values():
+        all_tools.update(m.get("tools",[])); all_concepts.update(m.get("concepts",[]))
+        all_pkgs.update(m.get("python_packages",[]))
+
+    brain_path = os.path.join(SKILLS_DIR, "_brain.json")
+    brain_summary = {}
+    if os.path.exists(brain_path):
+        try:
+            with open(brain_path) as f:
+                b = json.load(f)
+            tc = sorted(b.get("concepts",{}).items(), key=lambda x: x[1]["freq"], reverse=True)[:15]
+            tt = sorted(b.get("tools",{}).items(), key=lambda x: x[1]["freq"], reverse=True)[:15]
+            brain_summary = {
+                "top_concepts": [{"name":k,"freq":v["freq"]} for k,v in tc],
+                "top_tools":    [{"name":k,"freq":v["freq"]} for k,v in tt],
+                "relationships_count": sum(len(v) for v in b.get("relationships",{}).values()),
+            }
+        except Exception:
+            pass
+
+    return jsonify({
+        "skills":       skills,
+        "total_skills": len(skills),
+        "all_tools":    sorted(all_tools),
+        "all_concepts": sorted(all_concepts),
+        "all_packages": sorted(all_pkgs),
+        "mcp_connections": mcp_agent.get_connections(),
+        "brain_summary": brain_summary,
+        "provider_status": provider_router.provider_status(),
+        "github_repo":  github_sync.repo_url(),
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+    })
+
+
+@app.route("/api/github/repo")
+def api_github_repo():
+    """List files in the Fieldnote GitHub repository at an optional path."""
+    path      = (request.args.get("path") or "").strip("/")
+    repo_url  = github_sync.repo_url()
+    if not repo_url:
+        return jsonify({"error": "No GitHub repo configured. Set up GitHub sync first."}), 400
+    parts = repo_url.rstrip("/").split("/")
+    owner, repo = parts[-2], parts[-1]
+    token = os.getenv("GITHUBPAT") or os.getenv("GITHUB_TOKEN") or os.getenv("GITHUB") or ""
+    api_url = f"https://api.github.com/repos/{owner}/{repo}/contents/{path}"
+    headers = {"Accept": "application/vnd.github+json", "User-Agent": "Fieldnote/2.0"}
+    if token: headers["Authorization"] = "Bearer " + token
+    try:
+        req = _UReq(api_url, headers=headers)
+        with urlopen(req, timeout=10) as resp:
+            data = json.loads(resp.read())
+        if isinstance(data, list):
+            return jsonify({"repo": repo_url, "path": path, "items": [
+                {"name": i["name"], "type": i["type"], "path": i["path"],
+                 "size": i.get("size",0)} for i in data
+            ]})
+        return jsonify({"repo": repo_url, "path": path, "item": data})
+    except Exception as exc:
+        return jsonify({"error": str(exc)}), 500
+
+
+@app.route("/api/github/repo-file")
+def api_github_repo_file():
+    """Read the raw content of any file in the Fieldnote GitHub repository."""
+    path     = (request.args.get("path") or "").strip("/")
+    if not path:
+        return jsonify({"error": "path query param required"}), 400
+    repo_url = github_sync.repo_url()
+    if not repo_url:
+        return jsonify({"error": "No GitHub repo configured."}), 400
+    parts = repo_url.rstrip("/").split("/")
+    owner, repo = parts[-2], parts[-1]
+    token = os.getenv("GITHUBPAT") or os.getenv("GITHUB_TOKEN") or os.getenv("GITHUB") or ""
+    api_url = f"https://api.github.com/repos/{owner}/{repo}/contents/{path}"
+    headers = {"Accept": "application/vnd.github+json", "User-Agent": "Fieldnote/2.0"}
+    if token: headers["Authorization"] = "Bearer " + token
+    try:
+        import base64
+        req = _UReq(api_url, headers=headers)
+        with urlopen(req, timeout=15) as resp:
+            data = json.loads(resp.read())
+        if data.get("encoding") == "base64":
+            content = base64.b64decode(data["content"].replace("\n","")).decode("utf-8", errors="replace")
+        else:
+            content = data.get("content","")
+        return jsonify({"path": path, "name": data.get("name"), "size": data.get("size"),
+                        "content": content, "sha": data.get("sha")})
+    except Exception as exc:
+        return jsonify({"error": str(exc)}), 500
 
 
 @app.route("/api/brain")
@@ -2080,6 +2416,140 @@ def mcp_message():
 
 @app.route("/openapi.json")
 def openapi_spec():
+    """Full OpenAPI 3.1 spec — one URL gives ChatGPT complete read access to Fieldnote."""
+    domain = os.getenv("REPLIT_DEV_DOMAIN","")
+    base   = f"https://{domain}" if domain else request.url_root.rstrip("/")
+    spec   = {
+        "openapi": "3.1.0",
+        "info": {
+            "title":       "Fieldnote — Complete Knowledge Library API",
+            "description": (
+                "Full read access to a personal AI skill library built from YouTube videos. "
+                "Includes every skill (full markdown), all discovered tools, Python packages, "
+                "concepts, MCP server connections, the concept/tool brain map, recent activity, "
+                "AI provider health, and direct read access to the Fieldnote GitHub repository. "
+                "USAGE GUIDE: Call /api/snapshot first to load the full library context. "
+                "Use /api/skills for fast browsing, /api/skills/{name}/content for a single full skill, "
+                "/api/github/repo to browse the repo, /api/github/repo-file?path=X to read any file."
+            ),
+            "version": "3.0.0",
+        },
+        "servers": [{"url": base, "description": "Fieldnote live server"}],
+        "paths": {
+            "/api/snapshot": {
+                "get": {
+                    "operationId": "getFullSnapshot",
+                    "summary": "Complete library snapshot (everything in one call)",
+                    "description": (
+                        "Returns ALL skills with full markdown content, every tool, concept, and package "
+                        "across the library, all MCP connections, the brain summary (concept/tool graph), "
+                        "AI provider status, and the GitHub repo URL. Call this first to load full context."
+                    ),
+                    "responses": {"200": {"description": "Full snapshot of the Fieldnote library"}},
+                }
+            },
+            "/api/skills": {
+                "get": {
+                    "operationId": "listSkills",
+                    "summary": "List all skills with metadata",
+                    "description": "Returns every skill with title, description, tags, tools, concepts, and update date. Filter by keyword or tag.",
+                    "parameters": [
+                        {"name":"q",     "in":"query","schema":{"type":"string"},"description":"Keyword filter across title/description/tools/tags"},
+                        {"name":"tag",   "in":"query","schema":{"type":"string"},"description":"Filter by tag"},
+                        {"name":"limit", "in":"query","schema":{"type":"integer"},"description":"Max results (default 100)"},
+                    ],
+                    "responses": {"200": {"description": "Array of skill summaries"}},
+                }
+            },
+            "/api/skills/{name}/content": {
+                "get": {
+                    "operationId": "getSkillContent",
+                    "summary": "Full skill — complete markdown + all metadata",
+                    "description": "Returns the entire skill markdown (steps, tools, code, source references) plus all metadata.",
+                    "parameters": [{"name":"name","in":"path","required":True,"schema":{"type":"string"},"description":"Skill name (no .md extension)"}],
+                    "responses": {
+                        "200": {"description": "Full skill content and metadata"},
+                        "404": {"description": "Skill not found"},
+                    },
+                }
+            },
+            "/api/brain": {
+                "get": {
+                    "operationId": "getBrainMap",
+                    "summary": "Concept & tool relationship graph",
+                    "description": "Shows which concepts and tools appear most often, which skills share them, and how skills are related to each other.",
+                    "responses": {"200": {"description": "Brain map with top concepts, tools, and skill relationships"}},
+                }
+            },
+            "/api/activity": {
+                "get": {
+                    "operationId": "getRecentActivity",
+                    "summary": "Recent skill creation and enhancement history",
+                    "description": "Shows the most recently created or enhanced skills, what video they came from, and when.",
+                    "parameters": [{"name":"limit","in":"query","schema":{"type":"integer"},"description":"Max events (default 30)"}],
+                    "responses": {"200": {"description": "Activity log newest-first"}},
+                }
+            },
+            "/api/packages": {
+                "get": {
+                    "operationId": "getAllPackages",
+                    "summary": "All Python packages discovered across skills",
+                    "description": "Returns every pip-installable package name mentioned across all skills.",
+                    "responses": {"200": {"description": "Sorted package list with count"}},
+                }
+            },
+            "/api/mcp/connections": {
+                "get": {
+                    "operationId": "getMcpConnections",
+                    "summary": "All MCP server connections",
+                    "description": "Lists every Model Context Protocol server configured in the workspace — name, type, command/URL, and which skills reference it.",
+                    "responses": {"200": {"description": "MCP connection list"}},
+                }
+            },
+            "/api/provider-status": {
+                "get": {
+                    "operationId": "getProviderStatus",
+                    "summary": "AI provider health (Groq, Gemini, OpenAI, etc.)",
+                    "description": "Returns live state for each AI provider: healthy / rate_limited / quota_exhausted / auth_error / no_key.",
+                    "responses": {"200": {"description": "Provider status map"}},
+                }
+            },
+            "/api/github/repo": {
+                "get": {
+                    "operationId": "listGithubFiles",
+                    "summary": "List files in the Fieldnote GitHub repository",
+                    "description": "Browse any directory of the Fieldnote GitHub repo. Leave path empty for the root.",
+                    "parameters": [{"name":"path","in":"query","schema":{"type":"string"},"description":"Directory path (empty = root)"}],
+                    "responses": {
+                        "200": {"description": "File and directory listing"},
+                        "400": {"description": "No GitHub repo configured"},
+                    },
+                }
+            },
+            "/api/github/repo-file": {
+                "get": {
+                    "operationId": "readGithubFile",
+                    "summary": "Read any file from the Fieldnote GitHub repository",
+                    "description": "Fetches and returns the decoded text content of any file in the repo — skills, code, configs, logs.",
+                    "parameters": [{"name":"path","in":"query","required":True,"schema":{"type":"string"},"description":"File path in the repo"}],
+                    "responses": {
+                        "200": {"description": "File content and metadata"},
+                        "500": {"description": "File not found or GitHub error"},
+                    },
+                }
+            },
+            "/api/health": {
+                "get": {
+                    "operationId": "getHealth",
+                    "summary": "System health — tools, AI keys, GitHub sync status",
+                    "responses": {"200": {"description": "Health check results"}},
+                }
+            },
+        },
+    }
+    return jsonify(spec)
+
+
     """Full OpenAPI 3.0 spec — paste the URL into a ChatGPT Custom GPT Action."""
     domain = os.getenv("REPLIT_DEV_DOMAIN","")
     base   = f"https://{domain}" if domain else request.url_root.rstrip("/")
