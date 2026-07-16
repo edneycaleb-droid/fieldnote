@@ -724,7 +724,10 @@ def _extract_skill_chatgpt(transcript: str, knowledge_ctx: str, existing_content
         + chr(10) + chr(10)
     )
     raw = provider_router.call_llm_smart(preamble + base, max_tokens=4000, json_mode=True)
-    return json.loads(raw)
+    d   = json.loads(raw)
+    # Validate immediately — LLM may write "steps": null, "tools": null etc.
+    # dict.get("steps", []) returns None when key exists with null value.
+    return skill_validator.validate_extraction(d, context="chatgpt")
 
 
 def _extract_skill_groq(transcript: str, knowledge_ctx: str, existing_content: str = "") -> dict:
@@ -741,7 +744,9 @@ def _extract_skill_groq(transcript: str, knowledge_ctx: str, existing_content: s
         + chr(10) + chr(10)
     )
     raw = provider_router.call_llm_smart(preamble + base, max_tokens=4000, json_mode=True)
-    return json.loads(raw)
+    d   = json.loads(raw)
+    # Validate immediately — same null-field protection as chatgpt extractor
+    return skill_validator.validate_extraction(d, context="groq")
 
 
 def _github_readme_context(repos: list) -> str:
