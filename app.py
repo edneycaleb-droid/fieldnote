@@ -132,8 +132,11 @@ def load_index() -> dict:
 
 
 def save_index(index: dict):
-    with open(METADATA_FILE, "w") as f:
+    # Atomic write — never corrupt the index if a crash occurs mid-write
+    _tmp = METADATA_FILE + ".tmp"
+    with open(_tmp, "w") as f:
         json.dump(index, f, indent=2, default=str)
+    os.replace(_tmp, METADATA_FILE)
 
 
 def repair_index() -> tuple[int, int]:
@@ -200,8 +203,8 @@ def get_global_stats() -> dict:
     all_tools: set = set()
     all_pkgs:  set = set()
     for m in index.values():
-        all_tools.update(m.get("tools", []))
-        all_pkgs.update(m.get("python_packages", []))
+        all_tools.update(_nsl(m.get("tools")))
+        all_pkgs.update(_nsl(m.get("python_packages")))
 
     repos_dir  = "fieldnote_repos"
     repo_count = sum(
@@ -222,7 +225,7 @@ def get_all_tags() -> list[str]:
     index = load_index()
     tags: set = set()
     for m in index.values():
-        tags.update(m.get("tags", []))
+        tags.update(_nsl(m.get("tags")))
     return sorted(tags)
 
 
