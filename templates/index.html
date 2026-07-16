@@ -3067,6 +3067,7 @@ function esc(s) {
 
 // ── Startup ───────────────────────────────────────────────────────────────────
 window.addEventListener("load", () => {
+  loadIntelFeed();
   checkHealth();
   setInterval(checkHealth, 60000); // refresh provider quota state every minute
 
