@@ -1537,11 +1537,23 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
       <p class="ai-step" style="margin-top:10px"><strong>Step 2 — Add Action (one URL)</strong><br>
         Scroll to <em>Actions</em> → <em>Create new action</em> → <em>Import from URL</em> → paste:</p>
       <div class="ai-url-row">
-        <span class="ai-url" id="openapi-url">{{ base_url }}/openapi.json</span>
+        <span class="ai-url" id="openapi-url">{{ base_url }}/openapi-gpt.json</span>
         <button class="ai-url-copy" onclick="copyText('openapi-url', this)">Copy URL</button>
       </div>
-      <p class="ai-step" style="margin-top:2px;font-size:.75rem;color:var(--muted)">
-        ChatGPT imports all 11 endpoints automatically. Done — save the GPT.</p>
+
+      <!-- Schema health indicator -->
+      <div id="schema-health-card" style="margin-top:8px;padding:8px 10px;border-radius:8px;background:var(--surface2,#1e2030);border:1px solid var(--border,#2a2d3a);font-size:.73rem;display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+        <span id="schema-health-badge" style="font-size:.8rem">⏳ Checking schema…</span>
+        <span id="schema-health-stats" style="color:var(--muted);display:none">
+          <span id="sh-endpoints">–</span> endpoints ·
+          <span id="sh-ops">–</span> operations ·
+          <span id="sh-schemas">–</span> schemas ·
+          OpenAPI <span id="sh-version">–</span>
+        </span>
+        <span id="schema-health-errors" style="color:var(--red,#f87171);display:none"></span>
+      </div>
+      <p class="ai-step" style="margin-top:4px;font-size:.75rem;color:var(--muted)">
+        ChatGPT imports all 16 operations automatically. Zero validation errors. Done — save the GPT.</p>
 
       <!-- Step 3: system prompt -->
       <p class="ai-step" style="margin-top:12px"><strong>Step 3 — Paste this system prompt</strong></p>
@@ -1549,12 +1561,12 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
 
 ALWAYS start by calling getFullSnapshot to load my full library context, or use listSkills + getSkillContent for targeted lookups. When I ask how to do something technical, search my library FIRST and anchor your answer in my actual notes, not generic info.
 
-You also have full access to my GitHub repo via listGithubFiles and readGithubFile — use these to read skill files, code, or configs directly from source. Check getProviderStatus if I ask about AI provider issues. Use getRecentActivity to see what I've been learning lately.
+You also have full access to my GitHub repo via listGithubFiles and readGithubFile — use these to read skill files, code, or configs directly from source. Check getProviderStatus if I ask about AI provider issues. Use getRecentActivity to see what I've been learning lately. Use getKnowledgeBase to read my personal assistant knowledge entries.
 
 Cross-reference related skills proactively. When you find a relevant skill, always fetch its FULL content — summaries aren't enough.<button class="ai-copy" onclick="copyText('chatgpt-system-prompt', this)">Copy</button></div>
 
       <!-- Full access list -->
-      <p class="ai-step" style="margin-top:12px"><strong>Full access ChatGPT gets:</strong></p>
+      <p class="ai-step" style="margin-top:12px"><strong>Full access ChatGPT gets (16 operations):</strong></p>
       <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:4px">
         <span class="chip chip-tool">getFullSnapshot</span>
         <span class="chip chip-tool">listSkills</span>
@@ -1567,10 +1579,17 @@ Cross-reference related skills proactively. When you find a relevant skill, alwa
         <span class="chip chip-tool">listGithubFiles</span>
         <span class="chip chip-tool">readGithubFile</span>
         <span class="chip chip-tool">getHealth</span>
+        <span class="chip chip-tool">getKnowledgeBase</span>
+        <span class="chip chip-tool">upsertKnowledgeEntry</span>
+        <span class="chip chip-tool">getDiscoveryStats</span>
+        <span class="chip chip-tool">getDiscoveryLog</span>
+        <span class="chip chip-tool">triggerSchedulerJob</span>
       </div>
 
       <p class="ai-note" style="margin-top:10px">
-        <a class="ai-link" href="{{ base_url }}/openapi.json" target="_blank">View spec ↗</a>
+        <a class="ai-link" href="{{ base_url }}/openapi-gpt.json" target="_blank">GPT schema (3.0.0) ↗</a>
+        &nbsp;·&nbsp;
+        <a class="ai-link" href="{{ base_url }}/openapi.json" target="_blank">Standard schema (3.1.0) ↗</a>
         &nbsp;·&nbsp;
         <a class="ai-link" href="{{ base_url }}/api/snapshot" target="_blank">Live snapshot ↗</a>
         &nbsp;·&nbsp;
@@ -3362,9 +3381,39 @@ async function generateBriefing() {
     if (node && !node.textContent.startsWith("http")) {
       node.textContent = id === "claude-sse-url"
         ? BASE + "/mcp/sse"
-        : BASE + "/openapi.json";
+        : BASE + "/openapi-gpt.json";
     }
   });
+
+  // Load schema health indicator when ChatGPT pane is first opened
+  (function loadSchemaHealth() {
+    const badge  = document.getElementById("schema-health-badge");
+    const stats  = document.getElementById("schema-health-stats");
+    const errsEl = document.getElementById("schema-health-errors");
+    if (!badge) return;
+    fetch("/api/schema/health")
+      .then(r => r.ok ? r.json() : Promise.reject(r.status))
+      .then(d => {
+        if (d.chatgpt_compatible) {
+          badge.textContent = "✅ Validated for ChatGPT — 0 errors";
+          badge.style.color = "var(--green,#4ade80)";
+        } else {
+          badge.textContent = `⚠ ${d.error_count} schema error(s) — see console`;
+          badge.style.color = "var(--yellow,#facc15)";
+          errsEl.textContent = (d.errors || []).slice(0, 3).join(" · ");
+          errsEl.style.display = "";
+        }
+        document.getElementById("sh-endpoints").textContent = d.endpoint_count;
+        document.getElementById("sh-ops").textContent       = d.operation_count;
+        document.getElementById("sh-schemas").textContent   = d.schema_count;
+        document.getElementById("sh-version").textContent   = d.openapi_version;
+        stats.style.display = "";
+      })
+      .catch(() => {
+        badge.textContent = "⚠ Could not load schema health";
+        badge.style.color = "var(--yellow,#facc15)";
+      });
+  })();
 
   // Fix template links in ChatGPT pane
   document.querySelectorAll(".ai-pane a[href^='/']").forEach(a => {
