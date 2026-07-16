@@ -1577,23 +1577,36 @@ def api_integration_save_key(iid):
     if not key:
         return jsonify({"ok": False, "error": "key is required"}), 400
 
-    # Find registry entry
+    # Find registry entry — may be None for dynamic suggestion cards
     entry = next((e for e in REGISTRY if e["id"] == iid), None)
-    if not entry:
-        return jsonify({"ok": False, "error": f"Unknown integration: {iid}"}), 404
 
-    env_var = entry["key_env"]
+    # For dynamic suggestion cards not in REGISTRY, accept key_env from the request body
+    env_var = entry["key_env"] if entry else data.get("key_env", "").strip()
+    if not env_var:
+        return jsonify({"ok": False, "error": f"Unknown integration: {iid}"}), 404
 
     # Save locally (persists across restarts)
     save_local_key(env_var, key)
 
-    # Refresh provider router state if this is an LLM provider
+    # Refresh provider router if this env_var maps to a known LLM provider
     if iid in getattr(provider_router, "KEY_ENV_MAP", {}):
         provider_router.refresh_provider_key(iid)
         provider_router._init_status()
+    else:
+        # Also check by env_var name in case suggestion uses a standard key name
+        for pid, penv in getattr(provider_router, "KEY_ENV_MAP", {}).items():
+            if penv == env_var:
+                provider_router.refresh_provider_key(pid)
+                provider_router._init_status()
+                break
 
-    # Live verification — actually hits the provider API
-    result = verify_integration(iid, key)
+    # Live verification — only possible for REGISTRY entries with a verify function
+    if entry:
+        result = verify_integration(iid, key)
+    else:
+        # Dynamic suggestion: key is saved; we can't verify without a registry entry
+        result = {"ok": True, "detail": f"Key saved as {env_var} — active immediately"}
+
     status = "connected" if result["ok"] else "error"
 
     return jsonify({

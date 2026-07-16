@@ -3577,8 +3577,8 @@ function renderIntegCard(item) {
   // Description (allow HTML from registry)
   const descHtml = (item.description || '').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&amp;/g,'&');
 
-  // Key input row
-  const hasKeyInput = item.auth_type === 'api_key' && item.key_env && !isSuggested;
+  // Key input row — shown for any card (including suggestions) that has a key_env
+  const hasKeyInput = item.auth_type === 'api_key' && item.key_env;
   const keyRow = hasKeyInput ? `
     <div class="ic-key-row">
       <input class="ic-key-input ${item.has_key ? 'has-key' : ''}"
@@ -3589,25 +3589,26 @@ function renderIntegCard(item) {
       <a class="ic-key-link" href="${esc(item.key_url)}" target="_blank" rel="noopener">
         🔗 ${esc((item.key_url_label||'Get key').replace(' →',''))}
       </a>
-    </div>` : (item.key_url && isSuggested) ? `
+    </div>` : (item.key_url) ? `
     <a class="ic-key-link" href="${esc(item.key_url)}" target="_blank" rel="noopener"
        style="display:inline-flex;margin-top:2px">
       🔗 ${esc((item.key_url_label||'Learn more').replace(' →',''))}
     </a>` : '';
 
-  // Auth / action button
+  // Auth / action button — shown for all cards that have a key_env (including connectable suggestions)
   let btnState = 'state-idle', btnContent = '🔑 Authenticate';
   if (item.status === 'connected')  { btnState = 'state-connected'; btnContent = '✓ Authenticated'; }
   if (item.status === 'anonymous')  { btnState = 'state-anonymous'; btnContent = '● Works anonymously'; }
   if (item.status === 'error')      { btnState = 'state-error';     btnContent = '⚠ Retry Authentication'; }
-  const isClickable = !isSuggested && item.status !== 'anonymous';
+  const isClickable = item.key_env && item.status !== 'anonymous';
   const clickHandler = isClickable && item.status !== 'connected'
     ? `onclick="authenticateIntegration('${esc(item.id)}')"` : '';
 
-  const authBtn = isSuggested ? '' : `
-    <button class="ic-auth-btn ${btnState}" id="icbtn-${esc(item.id)}" ${clickHandler}>
+  const authBtn = item.key_env ? `
+    <button class="ic-auth-btn ${btnState}" id="icbtn-${esc(item.id)}"
+            data-keyenv="${esc(item.key_env)}" ${clickHandler}>
       ${btnContent}
-    </button>`;
+    </button>` : '';
 
   // Re-verify button for connected integrations
   const reVerifyBtn = (item.status === 'connected' && !isSuggested) ? `
@@ -3695,7 +3696,8 @@ async function authenticateIntegration(iid) {
   const inp = document.getElementById('ickey-' + iid);
   if (!btn) return;
 
-  const keyVal = inp ? inp.value.trim() : '';
+  const keyVal  = inp ? inp.value.trim() : '';
+  const keyEnv  = (btn.dataset.keyenv || '').trim(); // populated for suggestion cards
   if (inp && !keyVal && !inp.classList.contains('has-key')) {
     inp.focus();
     det.textContent = 'Paste your API key above, then click Authenticate.';
@@ -3711,10 +3713,13 @@ async function authenticateIntegration(iid) {
 
   try {
     const endpoint = keyVal ? `/api/integrations/${iid}/save-key` : `/api/integrations/${iid}/verify`;
+    // Include key_env in body so the backend can save suggestion-card keys that
+    // aren't registered in the REGISTRY (dynamic suggestions like LangSmith).
+    const bodyObj = keyVal ? {key: keyVal, ...(keyEnv ? {key_env: keyEnv} : {})} : {};
     const res = await fetch(endpoint, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(keyVal ? {key: keyVal} : {}),
+      body: JSON.stringify(bodyObj),
     });
     const d = await res.json();
 
