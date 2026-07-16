@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **5 skills** · Last synced: 2026-07-16 18:38 UTC
+> **6 skills** · Last synced: 2026-07-16 18:40 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Building Lightweight Multi-Agent Workflows with the OpenAI Agents SDK](skills/openai_agents_sdk.md) | Learn how to harness the power of the OpenAI Agents SDK to build efficient, scal | `OpenAI Agents SDK` `LangGraph` `LangSmith` `Deep Agents` | `ai` `automation` `langchain` |
 | [Deploying AstrBot: A Comprehensive Guide to Open-Source All-in-One Agent Chatbot Platform](skills/astrbot_deployment.md) | AstrBot is an open-source, all-in-one agent chatbot platform that integrates wit | `uv tool` `Docker` `Docker Compose` `AstrBot App` | `ai` `chatbots` `conversational-ai` |
 | [Building Resilient AI Agents with LangGraph](skills/building_resilient_ai_agents_with_langgraph.md) | This skill teaches how to build, manage, and deploy long-running, stateful AI ag | `LangGraph` `LangSmith` `Deep Agents` `LangChain` | `ai` `automation` `langchain` |
 | [Building Effective AI Agents for Automation and Productivity](skills/building_ai_agents.md) | Building AI agents can help automate tasks, make decisions, and improve over tim | `Claude` `Claude Code` `Codex` `Hermes Agent` | `ai` `automation` `productivity` |
