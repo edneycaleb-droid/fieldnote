@@ -366,6 +366,60 @@
       "skills": [
         "building_resilient_ai_agents_with_langgraph"
       ]
+    },
+    "conversational AI": {
+      "freq": 1,
+      "skills": [
+        "astrbot_deployment"
+      ]
+    },
+    "agent chatbot": {
+      "freq": 1,
+      "skills": [
+        "astrbot_deployment"
+      ]
+    },
+    "instant messaging apps": {
+      "freq": 1,
+      "skills": [
+        "astrbot_deployment"
+      ]
+    },
+    "LLMs": {
+      "freq": 1,
+      "skills": [
+        "astrbot_deployment"
+      ]
+    },
+    "plugins": {
+      "freq": 1,
+      "skills": [
+        "astrbot_deployment"
+      ]
+    },
+    "integrations": {
+      "freq": 1,
+      "skills": [
+        "astrbot_deployment"
+      ]
+    },
+    "one-click deployment": {
+      "freq": 1,
+      "skills": [
+        "astrbot_deployment"
+      ]
+    },
+    "Docker deployment": {
+      "freq": 1,
+      "skills": [
+        "astrbot_deployment"
+      ]
+    },
+    "desktop application deployment": {
+      "freq": 1,
+      "skills": [
+        "astrbot_deployment"
+      ]
     }
   },
   "tools": {
@@ -672,6 +726,54 @@
       "skills": [
         "building_ai_agents"
       ]
+    },
+    "uv tool": {
+      "freq": 1,
+      "skills": [
+        "astrbot_deployment"
+      ]
+    },
+    "Docker": {
+      "freq": 1,
+      "skills": [
+        "astrbot_deployment"
+      ]
+    },
+    "Docker Compose": {
+      "freq": 1,
+      "skills": [
+        "astrbot_deployment"
+      ]
+    },
+    "AstrBot App": {
+      "freq": 1,
+      "skills": [
+        "astrbot_deployment"
+      ]
+    },
+    "AstrBot Launcher": {
+      "freq": 1,
+      "skills": [
+        "astrbot_deployment"
+      ]
+    },
+    "Replit": {
+      "freq": 1,
+      "skills": [
+        "astrbot_deployment"
+      ]
+    },
+    "RainYun": {
+      "freq": 1,
+      "skills": [
+        "astrbot_deployment"
+      ]
+    },
+    "uv": {
+      "freq": 1,
+      "skills": [
+        "astrbot_deployment"
+      ]
     }
   },
   "skill_map": {
@@ -776,6 +878,39 @@
         "productivity"
       ],
       "step_count": 7
+    },
+    "astrbot_deployment": {
+      "concepts": [
+        "conversational AI",
+        "agent chatbot",
+        "instant messaging apps",
+        "LLMs",
+        "plugins",
+        "integrations",
+        "one-click deployment",
+        "Docker deployment",
+        "desktop application deployment"
+      ],
+      "tools": [
+        "uv tool",
+        "Docker",
+        "Docker Compose",
+        "AstrBot App",
+        "AstrBot Launcher",
+        "Replit",
+        "RainYun",
+        "uv"
+      ],
+      "tags": [
+        "ai",
+        "chatbots",
+        "conversational-ai",
+        "instant-messaging",
+        "astrbot",
+        "deployment",
+        "chatbot"
+      ],
+      "step_count": 12
     }
   },
   "relationships": {
@@ -804,8 +939,9 @@
         "LangChain",
         "LangGraph"
       ]
-    }
+    },
+    "astrbot_deployment": {}
   },
-  "updated_at": "2026-07-16T18:38:11.811152+00:00",
-  "total_skills": 4
+  "updated_at": "2026-07-16T18:38:53.445145+00:00",
+  "total_skills": 5
 }
