@@ -529,8 +529,9 @@ def refresh_provider_key(provider: str) -> None:
 
 def call_llm_smart(prompt: str, max_tokens: int = 4000, json_mode: bool = True) -> str:
     """
-    Route to the best available free provider; fall back down the list.
-    Priority: Groq -> Gemini -> OpenAI -> HuggingFace -> OpenRouter.
+    Route to the best available provider; fall back down the list.
+    Priority: Groq → Gemini → OpenAI → HuggingFace → OpenRouter.
+    OpenAI is only reached when all free providers are exhausted.
     Raises RuntimeError only when ALL five providers are exhausted.
     """
     _init_status()  # pick up keys added without restart
@@ -550,15 +551,43 @@ def call_llm_smart(prompt: str, max_tokens: int = 4000, json_mode: bool = True) 
     raise RuntimeError("All providers exhausted. Errors: " + " | ".join(tried))
 
 
+def call_llm_free_only(prompt: str, max_tokens: int = 4000, json_mode: bool = True) -> str:
+    """
+    Like call_llm_smart but **never touches OpenAI** — zero billing risk.
+    Priority: Groq → Gemini → HuggingFace → OpenRouter.
+    Use this for background agents, discovery, enhancement, and any
+    task where incurring cost is unacceptable.
+    Raises RuntimeError if all free providers are exhausted.
+    """
+    _init_status()
+    tried: list[str] = []
+    for provider in FREE_PROVIDERS:
+        if not _is_available(provider):
+            continue
+        try:
+            result = _IMPL[provider](prompt, max_tokens, json_mode)
+            log.debug("call_llm_free_only: used %s", provider)
+            return result
+        except Exception as e:
+            tried.append(provider + ": " + str(e)[:80])
+            log.warning("Provider %s failed in call_llm_free_only, trying next: %s",
+                        provider, str(e)[:100])
+            continue
+    raise RuntimeError(
+        "All free providers exhausted (Groq, Gemini, HuggingFace, OpenRouter). "
+        "Errors: " + " | ".join(tried)
+    )
+
+
 def call_chat_smart(
     messages: list,
     max_tokens: int = 900,
     temperature: float = 0.7,
 ) -> tuple[str, str]:
     """
-    Route multi-turn chat to the best available free provider.
+    Route multi-turn chat to the best available provider.
     Returns (response_text, provider_name_used).
-    Priority: Groq -> Gemini -> OpenAI.
+    Priority: Groq → Gemini → OpenAI → HuggingFace → OpenRouter.
     """
     _init_status()
     tried: list[str] = []
@@ -574,6 +603,35 @@ def call_chat_smart(
                         provider, str(e)[:100])
             continue
     raise RuntimeError("All providers exhausted for chat. Errors: " + " | ".join(tried))
+
+
+def call_chat_free_only(
+    messages: list,
+    max_tokens: int = 900,
+    temperature: float = 0.7,
+) -> tuple[str, str]:
+    """
+    Multi-turn chat that **never touches OpenAI** — zero billing risk.
+    Returns (response_text, provider_name_used).
+    Priority: Groq → Gemini → HuggingFace → OpenRouter.
+    """
+    _init_status()
+    tried: list[str] = []
+    for provider in FREE_PROVIDERS:
+        if not _is_available(provider):
+            continue
+        try:
+            result = _CHAT_IMPL[provider](messages, max_tokens, temperature)
+            return result, provider
+        except Exception as e:
+            tried.append(provider + ": " + str(e)[:80])
+            log.warning("Provider %s failed in call_chat_free_only, trying next: %s",
+                        provider, str(e)[:100])
+            continue
+    raise RuntimeError(
+        "All free providers exhausted for chat (Groq, Gemini, HuggingFace, OpenRouter). "
+        "Errors: " + " | ".join(tried)
+    )
 
 
 def provider_status() -> dict:
