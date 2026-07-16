@@ -802,6 +802,156 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
 .kcp-preferences      { color: #c084fc; border-color: #3a1a6a; background: #0d0518; }
 .kcp-architecture     { color: #fb923c; border-color: #5c2a00; background: #180a00; }
 
+/* ── Main tab navigation ─────────────────────────────────────────────────── */
+.main-tabs-nav {
+  position: sticky; top: 0; z-index: 90;
+  display: flex; gap: 2px; padding: 0 0 0 0;
+  background: var(--bg); border-bottom: 1px solid var(--border);
+}
+.main-tab-btn {
+  position: relative; display: flex; align-items: center; gap: 7px;
+  padding: 11px 20px; font-size: .82rem; font-weight: 600;
+  color: var(--muted); background: transparent; border: none;
+  border-bottom: 2px solid transparent; cursor: pointer;
+  transition: color .15s, border-color .15s; -webkit-appearance: none;
+  white-space: nowrap;
+}
+.main-tab-btn:hover { color: var(--text); }
+.main-tab-btn.active { color: var(--purple); border-bottom-color: var(--purple); }
+.main-tab-badge {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 18px; height: 18px; padding: 0 5px;
+  border-radius: 9px; font-size: .62rem; font-weight: 700;
+  background: #5c1a1a; color: #f87171; border: 1px solid #7a2020;
+  line-height: 1;
+}
+.main-tab-badge.hidden { display: none; }
+
+/* ── Integrations page ───────────────────────────────────────────────────── */
+#main-integrations { padding: 20px 16px 40px; max-width: 900px; margin: 0 auto; }
+.integ-page-header { margin-bottom: 20px; }
+.integ-page-title  { font-size: 1.1rem; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.integ-page-sub    { font-size: .78rem; color: var(--muted); }
+
+.integ-section-label {
+  font-size: .65rem; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--muted);
+  margin: 20px 0 10px; display: flex; align-items: center; gap: 8px;
+}
+.integ-section-label::after {
+  content: ''; flex: 1; height: 1px; background: var(--border);
+}
+
+.integ-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+@media (max-width: 700px) { .integ-grid { grid-template-columns: 1fr; } }
+
+/* Card */
+.integ-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 14px; padding: 14px 16px; display: flex;
+  flex-direction: column; gap: 10px; transition: border-color .2s;
+}
+.integ-card.ic-connected { border-color: #1a4a2a; }
+.integ-card.ic-error     { border-color: #5c1a1a; }
+.integ-card.ic-pending   { border-color: var(--border); }
+.integ-card.ic-anonymous { border-color: #1a3a5c; }
+
+.ic-head { display: flex; align-items: center; gap: 10px; }
+.ic-icon {
+  width: 36px; height: 36px; border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem; flex-shrink: 0;
+  background: var(--bg2); border: 1px solid var(--border2);
+}
+.ic-meta { flex: 1; min-width: 0; }
+.ic-label   { font-size: .85rem; font-weight: 700; color: var(--text); }
+.ic-tagline { font-size: .65rem; color: var(--muted); margin-top: 1px;
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* Status badge (top-right) */
+.ic-status-badge {
+  font-size: .58rem; font-weight: 700; padding: 2px 8px; border-radius: 10px;
+  border: 1px solid; white-space: nowrap; flex-shrink: 0; align-self: flex-start;
+}
+.icb-connected  { color: #4ade80; border-color: #1a5c30; background: #060f08; }
+.icb-error      { color: #f87171; border-color: #5c1a1a; background: #1a0808; }
+.icb-pending    { color: #fbbf24; border-color: #5c3d00; background: #1a1200; }
+.icb-anonymous  { color: #60a5fa; border-color: #1a3a5c; background: #060e18; }
+
+/* Type pills */
+.ic-pills { display: flex; gap: 5px; flex-wrap: wrap; }
+.ic-pill {
+  font-size: .58rem; font-weight: 700; padding: 1px 7px; border-radius: 8px;
+  border: 1px solid; letter-spacing: .04em;
+}
+.icp-required { color: #f87171; border-color: #5c1a1a; background: #1a0808; }
+.icp-free     { color: #4ade80; border-color: #1a5c30; background: #060f08; }
+.icp-paid     { color: #fbbf24; border-color: #5c3d00; background: #1a1200; }
+.icp-optional { color: #888;    border-color: #333;    background: var(--bg); }
+
+/* Description */
+.ic-desc { font-size: .72rem; color: var(--muted); line-height: 1.5; }
+
+/* Key row */
+.ic-key-row { display: flex; gap: 6px; align-items: center; }
+.ic-key-input {
+  flex: 1; background: var(--bg); border: 1px solid var(--border2);
+  border-radius: 8px; padding: 7px 10px; color: var(--text);
+  font-size: .72rem; font-family: monospace; outline: none;
+  transition: border-color .15s;
+}
+.ic-key-input:focus { border-color: var(--purple); }
+.ic-key-input.has-key { border-color: #1a5c30; }
+.ic-key-link {
+  font-size: .68rem; padding: 6px 10px; border-radius: 8px;
+  border: 1px solid var(--border2); color: var(--muted); background: var(--bg2);
+  text-decoration: none; white-space: nowrap; flex-shrink: 0;
+  transition: all .15s; display: inline-flex; align-items: center; gap: 4px;
+}
+.ic-key-link:hover { border-color: var(--purple); color: var(--purple); }
+
+/* Auth button */
+.ic-auth-btn {
+  width: 100%; padding: 9px; border-radius: 10px; font-size: .78rem;
+  font-weight: 700; cursor: pointer; border: 1px solid; transition: all .2s;
+  -webkit-appearance: none; display: flex; align-items: center;
+  justify-content: center; gap: 7px;
+}
+.ic-auth-btn.state-idle {
+  background: #100a20; border-color: var(--purple); color: var(--purple);
+}
+.ic-auth-btn.state-idle:hover { background: #1a1050; }
+.ic-auth-btn.state-loading {
+  background: var(--bg2); border-color: var(--border2); color: var(--muted);
+  cursor: default;
+}
+.ic-auth-btn.state-connected {
+  background: #060f08; border-color: #1a5c30; color: #4ade80; cursor: default;
+}
+.ic-auth-btn.state-error {
+  background: #1a0808; border-color: #5c1a1a; color: #f87171;
+}
+.ic-auth-btn.state-error:hover { background: #2a0a0a; }
+.ic-auth-btn.state-anonymous {
+  background: #060e18; border-color: #1a3a5c; color: #60a5fa; cursor: default;
+}
+
+/* Detail line under button */
+.ic-detail {
+  font-size: .65rem; color: var(--muted); text-align: center; min-height: 14px;
+  transition: color .2s;
+}
+.ic-detail.det-ok  { color: #4ade80; }
+.ic-detail.det-err { color: #f87171; }
+
+/* Spinner */
+@keyframes spin { to { transform: rotate(360deg); } }
+.ic-spinner {
+  width: 12px; height: 12px; border: 2px solid currentColor;
+  border-top-color: transparent; border-radius: 50%;
+  animation: spin .7s linear infinite; flex-shrink: 0;
+}
+
 /* ── API Key modal ────────────────────────────────────────────────────────── */
 #key-modal-backdrop {
   display: none; position: fixed; inset: 0; background: rgba(0,0,0,.65);
@@ -892,6 +1042,41 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
   </div>
 </div>
 
+<!-- ── Main tab navigation ──────────────────────────────────────────────── -->
+<nav class="main-tabs-nav" id="main-tabs-nav">
+  <button class="main-tab-btn active" id="tab-btn-library"
+          onclick="switchMainTab('library')">
+    📚 Library
+  </button>
+  <button class="main-tab-btn" id="tab-btn-integrations"
+          onclick="switchMainTab('integrations')">
+    🔑 Integrations
+    <span class="main-tab-badge hidden" id="integ-pending-count">0</span>
+  </button>
+</nav>
+
+<!-- ── Integrations page (hidden until tab clicked) ──────────────────────── -->
+<div id="main-integrations" style="display:none">
+  <div class="integ-page-header">
+    <div class="integ-page-title">🔑 Integrations</div>
+    <div class="integ-page-sub">
+      Connect your AI providers. Every integration has a free path — paid ones are never required.
+    </div>
+  </div>
+  <div id="integ-awaiting-section" style="display:none">
+    <div class="integ-section-label">⚠ Awaiting Setup</div>
+    <div class="integ-grid" id="integ-awaiting-grid"></div>
+  </div>
+  <div id="integ-connected-section" style="display:none">
+    <div class="integ-section-label">✓ Connected</div>
+    <div class="integ-grid" id="integ-connected-grid"></div>
+  </div>
+  <div id="integ-loading" style="text-align:center;padding:40px;color:var(--muted);font-size:.8rem">
+    Loading integrations…
+  </div>
+</div>
+
+<div id="main-library">
 <div class="container">
 
   <!-- Input card -->
