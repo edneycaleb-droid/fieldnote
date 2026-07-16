@@ -167,7 +167,10 @@ def _already_processed(full_name: str, log_data: dict) -> bool:
         return False
     try:
         age = datetime.now(timezone.utc) - datetime.fromisoformat(processed_at)
-        return age.days < RECHECK_DAYS
+        # Error entries get a much shorter cooldown (1 day) so transient quota
+        # failures don't freeze a repo out for 3 weeks.
+        recheck = 1 if entry.get("action") == "error" else RECHECK_DAYS
+        return age.days < recheck
     except Exception:
         return False
 
@@ -592,39 +595,36 @@ def _extract_from_repo(repo: dict, readme: str, index: dict) -> dict:
     import agents.provider_router as provider_router
 
     skill_a = skill_b = None
-    with ThreadPoolExecutor(max_workers=2, thread_name_prefix="fn-disc") as pool:
-        # Use provider_router for automatic quota fallback in both passes
-        def _educator_pass():
-            base     = _a._build_prompt(transcript, knowledge_ctx, "")
-            preamble = (
-                "You are Fieldnote's EDUCATOR AI. Your lens is conceptual clarity, "
-                "thorough descriptions, and how this skill connects to others in the library.\n\n"
-            )
-            raw = provider_router.call_llm_smart(preamble + base, max_tokens=4000, json_mode=True)
-            import json as _json
-            return _json.loads(raw)
+    import json as _json
 
-        def _practitioner_pass():
-            base     = _a._build_prompt(transcript, knowledge_ctx, "")
-            preamble = (
-                "You are Fieldnote's PRACTITIONER AI. Your lens is specific actionable steps "
-                "a developer can follow immediately, and every concrete tool, command, "
-                "and library mentioned in the transcript.\n\n"
-            )
-            raw = provider_router.call_llm_smart(preamble + base, max_tokens=4000, json_mode=True)
-            import json as _json
-            return _json.loads(raw)
+    # Run lenses sequentially (not in parallel) so both don't hammer the same
+    # provider simultaneously.  The 5-second gap lets rate-limit backouts clear.
+    base_educator = _a._build_prompt(transcript, knowledge_ctx, "")
+    preamble_educator = (
+        "You are Fieldnote's EDUCATOR AI. Your lens is conceptual clarity, "
+        "thorough descriptions, and how this skill connects to others in the library.\n\n"
+    )
+    try:
+        raw_a = provider_router.call_llm_smart(
+            preamble_educator + base_educator, max_tokens=4000, json_mode=True)
+        skill_a = _json.loads(raw_a)
+    except Exception as e:
+        log.warning("Educator-lens extraction failed (all providers tried): %s", e)
 
-        fa = pool.submit(_educator_pass)
-        fb = pool.submit(_practitioner_pass)
-        try:
-            skill_a = fa.result(timeout=90)
-        except Exception as e:
-            log.warning("Educator-lens extraction failed (all providers tried): %s", e)
-        try:
-            skill_b = fb.result(timeout=90)
-        except Exception as e:
-            log.warning("Practitioner-lens extraction failed (all providers tried): %s", e)
+    time.sleep(5)  # allow short-lived rate-limit backouts to expire before second call
+
+    base_practitioner = _a._build_prompt(transcript, knowledge_ctx, "")
+    preamble_practitioner = (
+        "You are Fieldnote's PRACTITIONER AI. Your lens is specific actionable steps "
+        "a developer can follow immediately, and every concrete tool, command, "
+        "and library mentioned in the transcript.\n\n"
+    )
+    try:
+        raw_b = provider_router.call_llm_smart(
+            preamble_practitioner + base_practitioner, max_tokens=4000, json_mode=True)
+        skill_b = _json.loads(raw_b)
+    except Exception as e:
+        log.warning("Practitioner-lens extraction failed (all providers tried): %s", e)
 
     if not skill_a and not skill_b:
         raise ValueError("Both lens extractions failed for " + repo["full_name"]
