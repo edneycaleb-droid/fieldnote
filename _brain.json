@@ -548,6 +548,54 @@
       "skills": [
         "swanlab_ai_training_analysis_platform"
       ]
+    },
+    "Persistent Graph Map": {
+      "freq": 1,
+      "skills": [
+        "incremental_code_review"
+      ]
+    },
+    "Token Waste Reduction": {
+      "freq": 1,
+      "skills": [
+        "incremental_code_review"
+      ]
+    },
+    "AI Coding Tools": {
+      "freq": 1,
+      "skills": [
+        "incremental_code_review"
+      ]
+    },
+    "Efficient Code Review": {
+      "freq": 1,
+      "skills": [
+        "incremental_code_review"
+      ]
+    },
+    "Code Intelligence": {
+      "freq": 1,
+      "skills": [
+        "incremental_code_review"
+      ]
+    },
+    "Local-First": {
+      "freq": 1,
+      "skills": [
+        "incremental_code_review"
+      ]
+    },
+    "Incremental Updates": {
+      "freq": 1,
+      "skills": [
+        "incremental_code_review"
+      ]
+    },
+    "Graph-Based Analysis": {
+      "freq": 1,
+      "skills": [
+        "incremental_code_review"
+      ]
     }
   },
   "tools": {
@@ -595,9 +643,10 @@
       ]
     },
     "Codex": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
-        "building_ai_agents"
+        "building_ai_agents",
+        "incremental_code_review"
       ]
     },
     "Google Docs": {
@@ -1030,6 +1079,36 @@
       "skills": [
         "swanlab_ai_training_analysis_platform"
       ]
+    },
+    "Tree-sitter": {
+      "freq": 1,
+      "skills": [
+        "incremental_code_review"
+      ]
+    },
+    "code-review-graph": {
+      "freq": 1,
+      "skills": [
+        "incremental_code_review"
+      ]
+    },
+    "MCP": {
+      "freq": 1,
+      "skills": [
+        "incremental_code_review"
+      ]
+    },
+    "Claude Code": {
+      "freq": 1,
+      "skills": [
+        "incremental_code_review"
+      ]
+    },
+    "Gemini CLI": {
+      "freq": 1,
+      "skills": [
+        "incremental_code_review"
+      ]
     }
   },
   "skill_map": {
@@ -1262,6 +1341,36 @@
         "model-versioning"
       ],
       "step_count": 10
+    },
+    "incremental_code_review": {
+      "concepts": [
+        "Persistent Graph Map",
+        "Token Waste Reduction",
+        "AI Coding Tools",
+        "Efficient Code Review",
+        "Code Intelligence",
+        "Local-First",
+        "Incremental Updates",
+        "Graph-Based Analysis"
+      ],
+      "tools": [
+        "Tree-sitter",
+        "code-review-graph",
+        "MCP",
+        "Claude Code",
+        "Codex",
+        "Gemini CLI"
+      ],
+      "tags": [
+        "ai",
+        "automation",
+        "code-review",
+        "productivity",
+        "ai-coding",
+        "orchestration",
+        "efficiency"
+      ],
+      "step_count": 7
     }
   },
   "relationships": {
@@ -1342,8 +1451,9 @@
         "PyTorch",
         "Transformers"
       ]
-    }
+    },
+    "incremental_code_review": {}
   },
-  "updated_at": "2026-07-16T18:41:07.891869+00:00",
-  "total_skills": 8
+  "updated_at": "2026-07-16T18:42:22.566697+00:00",
+  "total_skills": 9
 }
