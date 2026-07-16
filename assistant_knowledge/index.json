@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "audit-phase1-health",
+      "title": "Audit Phase 1 Health",
+      "category": "session_learnings",
+      "confidence": "verified",
+      "updated_at": "2026-07-16T13:16:04.873170+00:00",
+      "path": "session_learnings/audit-phase1-health.md"
+    },
+    {
       "slug": "integration-agent-2026-07-16",
       "title": "Integration Agent Health Event",
       "category": "session_learnings",
@@ -41,5 +49,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-16T13:09:02.231919+00:00"
+  "updated_at": "2026-07-16T13:16:04.874423+00:00"
 }
