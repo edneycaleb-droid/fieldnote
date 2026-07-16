@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "skill-quality-audit-2026-07-16",
+      "title": "Skill Quality Audit \u2014 Before/After 2026-07-16",
+      "category": "session_learnings",
+      "confidence": "verified",
+      "updated_at": "2026-07-16T13:26:21.912741+00:00",
+      "path": "session_learnings/skill-quality-audit-2026-07-16.md"
+    },
+    {
       "slug": "scheduler-jobs-and-sync",
       "title": "Scheduler Jobs and Sync Architecture",
       "category": "architecture",
@@ -57,5 +65,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-16T13:25:04.845178+00:00"
+  "updated_at": "2026-07-16T13:26:21.914225+00:00"
 }
