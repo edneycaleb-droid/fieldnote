@@ -802,14 +802,40 @@ def discover_and_learn() -> dict:
             except Exception as e:
                 log.warning("GitHub sync failed after discovery save: %s", e)
 
+            # ── Paid-service detection → free alternative ────────────────────
+            readme_text = " ".join(repo.get("_readme_words", []))
+            paid_keys   = _detect_paid_services(repo, skill, readme_text)
+            alt_results : list[dict] = []
+
+            if paid_keys:
+                log.info("Discovery: %s uses paid services: %s — finding free alts",
+                         fn, paid_keys)
+                for paid_key in paid_keys[:2]:   # max 2 paid services per repo
+                    alt_repo = _find_best_free_alternative(paid_key, disc_log)
+                    if alt_repo:
+                        seen.add(alt_repo["full_name"])  # don't re-process in main loop
+                        alt_result = _process_free_alternative(
+                            alt_repo, repo, paid_key, disc_log, index
+                        )
+                        if alt_result:
+                            alt_results.append(alt_result)
+                            index = _a.load_index()       # keep index fresh
+                            if alt_result.get("action") == "enhance":
+                                enhanced += 1
+                            else:
+                                created += 1
+                        time.sleep(2)
+
             # Update log
             disc_log[fn] = {
-                "processed_at":   _now_iso(),
-                "skill_name":     skill_name,
-                "action":         action,
-                "stars":          repo["stars"],
-                "quality_score":  round(qr.score, 2),
-                "quality_decision": qr.decision.value,
+                "processed_at":      _now_iso(),
+                "skill_name":        skill_name,
+                "action":            action,
+                "stars":             repo["stars"],
+                "quality_score":     round(qr.score, 2),
+                "quality_decision":  qr.decision.value,
+                "paid_services":     paid_keys,
+                "free_alts_added":   [r["skill"] for r in alt_results],
             }
 
             if action == "enhance":
@@ -819,13 +845,18 @@ def discover_and_learn() -> dict:
                 created += 1
                 log.info("Discovery: created  '%s' from %s", skill_name, fn)
 
-            results_detail.append({
-                "repo":    fn,
-                "skill":   skill_name,
-                "action":  action,
-                "stars":   repo["stars"],
-                "quality": round(qr.score, 2),
-            })
+            result_entry = {
+                "repo":      fn,
+                "skill":     skill_name,
+                "action":    action,
+                "stars":     repo["stars"],
+                "quality":   round(qr.score, 2),
+            }
+            if paid_keys:
+                result_entry["paid_services"]  = paid_keys
+                result_entry["free_alts_added"] = [r["skill"] for r in alt_results]
+            results_detail.append(result_entry)
+            results_detail.extend(alt_results)
 
         except Exception as exc:
             errors += 1
