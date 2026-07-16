@@ -2902,6 +2902,684 @@ def openapi_spec():
     return jsonify(spec)
 
 
+# ── OpenAPI 3.0.0 — ChatGPT Custom GPT Actions (validated, full property schemas) ──
+
+def _build_gpt_spec(base: str) -> dict:
+    """Return a ChatGPT-compatible OpenAPI 3.0.0 spec with every response object
+    property explicitly declared. ChatGPT's action importer rejects schemas that
+    use {"type":"object","additionalProperties":true} without properties.
+
+    Key differences from /openapi.json (3.1.0):
+    • openapi: "3.0.0"  — ChatGPT importer accepts 3.0.x most reliably
+    • All response objects have declared 'properties'
+    • $ref components keep the document DRY
+    • additionalProperties uses a typed sub-schema, never plain True
+    """
+
+    # ── Reusable component schemas ────────────────────────────────────────────
+    schemas = {
+
+        "Error": {
+            "type": "object",
+            "description": "Standard error envelope",
+            "properties": {
+                "error": {"type": "string", "description": "Human-readable error message"},
+                "ok":    {"type": "boolean", "description": "Always false for errors", "default": False}
+            },
+            "required": ["error"]
+        },
+
+        "SkillSummary": {
+            "type": "object",
+            "description": "Skill metadata (no full markdown content)",
+            "properties": {
+                "name":         {"type": "string",  "description": "Skill slug/identifier"},
+                "title":        {"type": "string",  "description": "Human-readable title"},
+                "description":  {"type": "string",  "description": "Short summary"},
+                "tags":         {"type": "array",   "items": {"type": "string"}, "description": "Category tags"},
+                "tools":        {"type": "array",   "items": {"type": "string"}, "description": "Tools and libraries"},
+                "source_title": {"type": "string",  "description": "Source video title"},
+                "source_url":   {"type": "string",  "description": "Source video URL"},
+                "video_id":     {"type": "string",  "description": "YouTube video ID"},
+                "method":       {"type": "string",  "description": "Transcript method: captions | whisper | yt_dlp_subs | whisper_local"},
+                "action":       {"type": "string",  "enum": ["create", "enhance"], "description": "Last action"},
+                "created_at":   {"type": "string",  "description": "ISO 8601 creation timestamp"},
+                "updated_at":   {"type": "string",  "description": "ISO 8601 last-updated timestamp"}
+            },
+            "required": ["name", "title", "description"]
+        },
+
+        "SkillContent": {
+            "type": "object",
+            "description": "Full skill with all metadata and markdown content",
+            "properties": {
+                "name":            {"type": "string",  "description": "Skill slug"},
+                "title":           {"type": "string",  "description": "Human-readable title"},
+                "description":     {"type": "string",  "description": "Short summary"},
+                "tags":            {"type": "array",   "items": {"type": "string"}},
+                "tools":           {"type": "array",   "items": {"type": "string"}},
+                "concepts":        {"type": "array",   "items": {"type": "string"}},
+                "steps":           {"type": "array",   "items": {"type": "string"}, "description": "Ordered step list"},
+                "python_packages": {"type": "array",   "items": {"type": "string"}, "description": "Required pip packages"},
+                "source_count":    {"type": "integer", "description": "Number of source videos"},
+                "updated_at":      {"type": "string",  "description": "ISO 8601 timestamp"},
+                "content":         {"type": "string",  "description": "Full markdown content with all sections"}
+            },
+            "required": ["name", "title", "content"]
+        },
+
+        "BrainNode": {
+            "type": "object",
+            "description": "A concept or tool node in the knowledge graph",
+            "properties": {
+                "name":   {"type": "string",  "description": "Concept or tool name"},
+                "freq":   {"type": "integer", "description": "Number of skills that mention this"},
+                "skills": {"type": "array",   "items": {"type": "string"}, "description": "Top skill slugs that use this"}
+            },
+            "required": ["name", "freq", "skills"]
+        },
+
+        "BrainRelationship": {
+            "type": "object",
+            "description": "Relationship edge between two skills sharing concepts/tools",
+            "properties": {
+                "a":      {"type": "string", "description": "First skill slug"},
+                "b":      {"type": "string", "description": "Second skill slug"},
+                "shared": {"type": "array",  "items": {"type": "string"}, "description": "Shared concept/tool names"}
+            },
+            "required": ["a", "b", "shared"]
+        },
+
+        "ActivityEvent": {
+            "type": "object",
+            "description": "A skill creation or enhancement event",
+            "properties": {
+                "skill":        {"type": "string", "description": "Skill slug"},
+                "title":        {"type": "string", "description": "Skill title"},
+                "action":       {"type": "string", "enum": ["create", "enhance"]},
+                "source_title": {"type": "string", "description": "Source video title"},
+                "source_url":   {"type": "string", "description": "Source video URL"},
+                "timestamp":    {"type": "string", "description": "ISO 8601 timestamp"}
+            },
+            "required": ["skill", "title", "action", "timestamp"]
+        },
+
+        "McpConnection": {
+            "type": "object",
+            "description": "MCP server connection configured in the workspace",
+            "properties": {
+                "name":         {"type": "string",  "description": "Connection name"},
+                "tool":         {"type": "string",  "description": "Tool/package name"},
+                "source":       {"type": "string",  "description": "How it was discovered: skill | manual | agent"},
+                "repo_url":     {"type": "string",  "description": "GitHub repository URL"},
+                "full_name":    {"type": "string",  "description": "GitHub owner/repo"},
+                "needs_auth":   {"type": "boolean", "description": "Requires an API key"},
+                "installed_at": {"type": "string",  "description": "ISO 8601 timestamp"},
+                "status":       {"type": "string",  "enum": ["ready", "pending", "error"]},
+                "install_hint": {"type": "string",  "description": "Setup instructions if auth is needed"}
+            },
+            "required": ["name", "tool", "source"]
+        },
+
+        "ProviderState": {
+            "type": "object",
+            "description": "Health state of a single AI provider",
+            "properties": {
+                "state": {
+                    "type": "string",
+                    "enum": ["healthy", "rate_limited", "quota_exhausted", "auth_error", "no_key", ""],
+                    "description": "Current availability state"
+                },
+                "model":           {"type": "string",  "description": "Active model name"},
+                "blackout_until":  {"type": "number",  "description": "Unix timestamp when blackout expires (0 = none)"},
+                "calls":           {"type": "integer", "description": "Total calls this session"},
+                "has_key":         {"type": "boolean", "description": "API key is configured"}
+            },
+            "required": ["state"]
+        },
+
+        "GithubFileItem": {
+            "type": "object",
+            "description": "File or directory entry in the GitHub repo",
+            "properties": {
+                "name": {"type": "string",  "description": "File or directory name"},
+                "type": {"type": "string",  "enum": ["file", "dir"], "description": "Entry type"},
+                "path": {"type": "string",  "description": "Full path from repo root"},
+                "size": {"type": "integer", "description": "File size in bytes (0 for directories)"}
+            },
+            "required": ["name", "type", "path"]
+        },
+
+        "KnowledgeEntry": {
+            "type": "object",
+            "description": "Entry in the assistant knowledge base",
+            "properties": {
+                "category":   {
+                    "type": "string",
+                    "enum": ["decisions", "discoveries", "session_learnings", "preferences", "architecture"]
+                },
+                "slug":       {"type": "string", "description": "URL-safe identifier"},
+                "title":      {"type": "string", "description": "Human-readable title"},
+                "content":    {"type": "string", "description": "Full markdown content"},
+                "path":       {"type": "string", "description": "File path in the repository"},
+                "sources":    {"type": "array",  "items": {"type": "string"}, "description": "Supporting references"},
+                "confidence": {"type": "string", "enum": ["verified", "inferred", "speculative"]}
+            },
+            "required": ["category", "slug", "title", "content"]
+        },
+
+        "SnapshotSkill": {
+            "type": "object",
+            "description": "Full skill within a snapshot (includes content)",
+            "properties": {
+                "name":         {"type": "string"},
+                "title":        {"type": "string"},
+                "description":  {"type": "string"},
+                "tags":         {"type": "array", "items": {"type": "string"}},
+                "tools":        {"type": "array", "items": {"type": "string"}},
+                "concepts":     {"type": "array", "items": {"type": "string"}},
+                "steps":        {"type": "array", "items": {"type": "string"}},
+                "packages":     {"type": "array", "items": {"type": "string"}},
+                "source_count": {"type": "integer"},
+                "updated_at":   {"type": "string"},
+                "content":      {"type": "string", "description": "Full markdown"}
+            },
+            "required": ["name", "title"]
+        },
+
+        "BrainSummary": {
+            "type": "object",
+            "description": "Abbreviated brain graph for snapshot responses",
+            "properties": {
+                "top_concepts": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "name": {"type": "string"},
+                            "freq": {"type": "integer"}
+                        },
+                        "required": ["name", "freq"]
+                    }
+                },
+                "top_tools": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "name": {"type": "string"},
+                            "freq": {"type": "integer"}
+                        },
+                        "required": ["name", "freq"]
+                    }
+                },
+                "relationships_count": {"type": "integer"}
+            }
+        },
+
+        "DiscoveryRecentItem": {
+            "type": "object",
+            "description": "One recent GitHub discovery result",
+            "properties": {
+                "repo":         {"type": "string", "description": "Repository full_name (owner/repo)"},
+                "action":       {"type": "string", "enum": ["create", "enhance", "quality_denied", "error", "skip"]},
+                "skill_name":   {"type": "string", "description": "Skill created or enhanced"},
+                "processed_at": {"type": "string", "description": "ISO 8601 timestamp"},
+                "quality_score":{"type": "number", "description": "Quality gate score 0–1"},
+                "error":        {"type": "string", "description": "Error message when action=error"}
+            },
+            "required": ["repo", "action", "processed_at"]
+        },
+
+        "DiscoveryLogEntry": {
+            "type": "object",
+            "description": "Discovery log entry for one repository",
+            "properties": {
+                "action":        {"type": "string", "enum": ["create", "enhance", "quality_denied", "error", "skip"]},
+                "skill_name":    {"type": "string"},
+                "processed_at":  {"type": "string"},
+                "quality_score": {"type": "number"},
+                "error":         {"type": "string"}
+            },
+            "required": ["action", "processed_at"]
+        },
+
+    }
+
+    # ── Helper: build a $ref ──────────────────────────────────────────────────
+    def ref(name: str) -> dict:
+        return {"$ref": f"#/components/schemas/{name}"}
+
+    # ── Path definitions ──────────────────────────────────────────────────────
+    paths = {
+
+        "/api/health": {"get": {
+            "operationId": "getHealth",
+            "summary": "System health — tool availability, AI keys, GitHub sync",
+            "description": "Returns availability of yt-dlp, ffmpeg, npx and whether each AI provider key is configured. Safe to poll frequently.",
+            "parameters": [],
+            "responses": {
+                "200": {"description": "Health check", "content": {"application/json": {"schema": {
+                    "type": "object",
+                    "description": "Health status for every system component",
+                    "properties": {
+                        "groq":        {"type": "boolean", "description": "Groq API key configured"},
+                        "chatgpt":     {"type": "boolean", "description": "OpenAI API key configured"},
+                        "github_sync": {"type": "boolean", "description": "GitHub sync PAT configured"},
+                        "sync_repo":   {"type": "string",  "description": "GitHub repository URL"},
+                        "ytdlp":       {"type": "boolean", "description": "yt-dlp installed"},
+                        "ffmpeg":      {"type": "boolean", "description": "ffmpeg installed"},
+                        "github":      {"type": "boolean", "description": "Any GitHub token available"},
+                        "npx":         {"type": "boolean", "description": "npx installed"}
+                    },
+                    "required": ["groq", "chatgpt", "ytdlp", "ffmpeg", "github", "npx"]
+                }}}}
+            }
+        }},
+
+        "/api/provider-status": {"get": {
+            "operationId": "getProviderStatus",
+            "summary": "AI provider health — Groq, Gemini, OpenAI, HuggingFace, OpenRouter",
+            "description": "Returns live state for each AI provider: healthy, rate_limited, quota_exhausted, auth_error, or no_key.",
+            "parameters": [],
+            "responses": {
+                "200": {"description": "Provider states keyed by provider name", "content": {"application/json": {"schema": {
+                    "type": "object",
+                    "description": "Map of provider name to health state",
+                    "properties": {
+                        "groq":        ref("ProviderState"),
+                        "gemini":      ref("ProviderState"),
+                        "openai":      ref("ProviderState"),
+                        "huggingface": ref("ProviderState"),
+                        "openrouter":  ref("ProviderState")
+                    }
+                }}}}
+            }
+        }},
+
+        "/api/snapshot": {"get": {
+            "operationId": "getFullSnapshot",
+            "summary": "Complete library snapshot — everything in one call",
+            "description": "All skills with full markdown, every tool/concept/package, all MCP connections, brain summary, AI provider status, and GitHub repo URL. Call this first to load full context. Response can be large (>100KB for large libraries).",
+            "parameters": [],
+            "responses": {
+                "200": {"description": "Full snapshot", "content": {"application/json": {"schema": {
+                    "type": "object",
+                    "description": "Complete library state",
+                    "properties": {
+                        "skills":          {"type": "array",   "items": ref("SnapshotSkill"), "description": "All skills with content"},
+                        "total_skills":    {"type": "integer", "description": "Total skill count"},
+                        "all_tools":       {"type": "array",   "items": {"type": "string"}, "description": "Every tool mentioned across all skills"},
+                        "all_concepts":    {"type": "array",   "items": {"type": "string"}, "description": "Every concept mentioned"},
+                        "all_packages":    {"type": "array",   "items": {"type": "string"}, "description": "Every pip package mentioned"},
+                        "mcp_connections": {"type": "array",   "items": ref("McpConnection")},
+                        "brain_summary":   ref("BrainSummary"),
+                        "provider_status": {
+                            "type": "object",
+                            "description": "Current AI provider states",
+                            "properties": {
+                                "groq":        ref("ProviderState"),
+                                "gemini":      ref("ProviderState"),
+                                "openai":      ref("ProviderState"),
+                                "huggingface": ref("ProviderState"),
+                                "openrouter":  ref("ProviderState")
+                            }
+                        },
+                        "github_repo":  {"type": "string",  "description": "GitHub repository URL"},
+                        "generated_at": {"type": "string",  "description": "ISO 8601 snapshot timestamp"}
+                    },
+                    "required": ["skills", "total_skills", "generated_at"]
+                }}}}
+            }
+        }},
+
+        "/api/skills": {"get": {
+            "operationId": "listSkills",
+            "summary": "List all skills with metadata",
+            "description": "Returns every skill with title, description, tags, tools, and update date. Filter by keyword (q) or tag. Does not include full markdown — use getSkillContent for that.",
+            "parameters": [
+                {"name": "q",     "in": "query", "schema": {"type": "string"},  "description": "Keyword search across title, description, tags"},
+                {"name": "tag",   "in": "query", "schema": {"type": "string"},  "description": "Filter by exact tag value"},
+                {"name": "limit", "in": "query", "schema": {"type": "integer"}, "description": "Max number of results"},
+            ],
+            "responses": {
+                "200": {"description": "Array of skill summaries", "content": {"application/json": {"schema": {
+                    "type": "array",
+                    "items": ref("SkillSummary"),
+                    "description": "Skills matching the filter, newest first"
+                }}}}
+            }
+        }},
+
+        "/api/skills/{name}/content": {"get": {
+            "operationId": "getSkillContent",
+            "summary": "Full skill — complete markdown and all metadata",
+            "description": "Returns the entire skill markdown with steps, tools, code, and source references plus all metadata. Always fetch full content rather than relying on summaries.",
+            "parameters": [
+                {"name": "name", "in": "path", "required": True,
+                 "schema": {"type": "string"}, "description": "Skill slug (no .md extension), e.g. langchain_rag_pipeline"}
+            ],
+            "responses": {
+                "200": {"description": "Full skill with content", "content": {"application/json": {"schema": ref("SkillContent")}}},
+                "404": {"description": "Skill not found",         "content": {"application/json": {"schema": ref("Error")}}}
+            }
+        }},
+
+        "/api/brain": {"get": {
+            "operationId": "getBrainMap",
+            "summary": "Concept and tool relationship graph",
+            "description": "Shows which concepts/tools appear most often across skills, which skills share them, and how skills relate to each other through shared concepts.",
+            "parameters": [],
+            "responses": {
+                "200": {"description": "Brain map", "content": {"application/json": {"schema": {
+                    "type": "object",
+                    "description": "Full knowledge graph",
+                    "properties": {
+                        "total_skills":   {"type": "integer"},
+                        "top_concepts":   {"type": "array", "items": ref("BrainNode"), "description": "Top 20 concepts by frequency"},
+                        "top_tools":      {"type": "array", "items": ref("BrainNode"), "description": "Top 20 tools by frequency"},
+                        "relationships":  {"type": "array", "items": ref("BrainRelationship"), "description": "Top 30 skill-to-skill edges"},
+                        "updated_at":     {"type": "string", "description": "ISO 8601 timestamp"}
+                    },
+                    "required": ["total_skills", "top_concepts", "top_tools", "relationships"]
+                }}}}
+            }
+        }},
+
+        "/api/activity": {"get": {
+            "operationId": "getRecentActivity",
+            "summary": "Recent skill creation and enhancement history",
+            "description": "Shows the most recently created or enhanced skills, which video they came from, and when. Useful for 'what have I been learning lately?' queries.",
+            "parameters": [
+                {"name": "limit", "in": "query", "schema": {"type": "integer"}, "description": "Max events to return (default 30, max 200)"}
+            ],
+            "responses": {
+                "200": {"description": "Activity log", "content": {"application/json": {"schema": {
+                    "type": "object",
+                    "description": "Paginated activity events",
+                    "properties": {
+                        "activity": {"type": "array",   "items": ref("ActivityEvent"), "description": "Events, newest first"},
+                        "total":    {"type": "integer", "description": "Total number of events available"}
+                    },
+                    "required": ["activity", "total"]
+                }}}}
+            }
+        }},
+
+        "/api/packages": {"get": {
+            "operationId": "getAllPackages",
+            "summary": "All Python packages discovered across skills",
+            "description": "Returns every pip-installable package mentioned across all skills. Useful for generating requirements.txt or checking what packages the library covers.",
+            "parameters": [],
+            "responses": {
+                "200": {"description": "Package list", "content": {"application/json": {"schema": {
+                    "type": "object",
+                    "description": "Aggregated packages",
+                    "properties": {
+                        "packages": {"type": "array",   "items": {"type": "string"}, "description": "Sorted list of package names"},
+                        "count":    {"type": "integer", "description": "Total count"}
+                    },
+                    "required": ["packages", "count"]
+                }}}}
+            }
+        }},
+
+        "/api/mcp/connections": {"get": {
+            "operationId": "getMcpConnections",
+            "summary": "All MCP server connections configured in the workspace",
+            "description": "Lists every Model Context Protocol server — name, source, repo, auth status, and installation hint.",
+            "parameters": [],
+            "responses": {
+                "200": {"description": "MCP connections", "content": {"application/json": {"schema": {
+                    "type": "array",
+                    "items": ref("McpConnection"),
+                    "description": "All registered MCP connections"
+                }}}}
+            }
+        }},
+
+        "/api/knowledge": {"get": {
+            "operationId": "getKnowledgeBase",
+            "summary": "Read the full assistant knowledge base",
+            "description": "Returns every entry the assistant has written to assistant_knowledge/ — decisions, discoveries, session learnings, preferences, architecture notes — with full content.",
+            "parameters": [],
+            "responses": {
+                "200": {"description": "Knowledge base", "content": {"application/json": {"schema": {
+                    "type": "object",
+                    "description": "Full knowledge base",
+                    "properties": {
+                        "entries":    {"type": "array",   "items": ref("KnowledgeEntry"), "description": "All knowledge entries"},
+                        "count":      {"type": "integer", "description": "Total entry count"},
+                        "categories": {"type": "array",   "items": {"type": "string"},    "description": "Valid category names"}
+                    },
+                    "required": ["entries", "count", "categories"]
+                }}}}
+            }
+        }},
+
+        "/api/knowledge/upsert": {"post": {
+            "operationId": "upsertKnowledgeEntry",
+            "summary": "Write or update a knowledge entry",
+            "description": "Write or update a knowledge entry in assistant_knowledge/ and push to GitHub. Records decisions, discoveries, session learnings, preferences, or architecture notes.",
+            "requestBody": {
+                "required": True,
+                "content": {"application/json": {"schema": {
+                    "type": "object",
+                    "description": "Knowledge entry to write",
+                    "properties": {
+                        "category":   {"type": "string", "enum": ["decisions", "discoveries", "session_learnings", "preferences", "architecture"], "description": "Knowledge category"},
+                        "slug":       {"type": "string", "description": "URL-safe identifier, e.g. gpt-actions-schema-fix"},
+                        "title":      {"type": "string", "description": "Human-readable title"},
+                        "content":    {"type": "string", "description": "Full markdown content"},
+                        "sources":    {"type": "array",  "items": {"type": "string"}, "description": "URLs or references"},
+                        "confidence": {"type": "string", "enum": ["verified", "inferred", "speculative"]}
+                    },
+                    "required": ["category", "slug", "title", "content"]
+                }}}
+            },
+            "responses": {
+                "200": {"description": "Entry written and pushed", "content": {"application/json": {"schema": {
+                    "type": "object",
+                    "description": "Write result",
+                    "properties": {
+                        "ok":      {"type": "boolean"},
+                        "path":    {"type": "string",  "description": "File path written"},
+                        "pushed":  {"type": "boolean", "description": "Whether GitHub push succeeded"},
+                        "message": {"type": "string",  "description": "Status message"}
+                    },
+                    "required": ["ok"]
+                }}}},
+                "400": {"description": "Validation error", "content": {"application/json": {"schema": ref("Error")}}},
+                "500": {"description": "Push failed",       "content": {"application/json": {"schema": ref("Error")}}}
+            }
+        }},
+
+        "/api/github/repo": {"get": {
+            "operationId": "listGithubFiles",
+            "summary": "List files in the Fieldnote GitHub repository",
+            "description": "Browse any directory of the Fieldnote GitHub repo. Leave path empty for the root listing.",
+            "parameters": [
+                {"name": "path", "in": "query", "schema": {"type": "string"}, "description": "Directory path from repo root, empty for root"}
+            ],
+            "responses": {
+                "200": {"description": "File listing", "content": {"application/json": {"schema": {
+                    "type": "object",
+                    "description": "Directory listing",
+                    "properties": {
+                        "repo":  {"type": "string", "description": "Repository URL"},
+                        "path":  {"type": "string", "description": "Requested path"},
+                        "items": {"type": "array",  "items": ref("GithubFileItem"), "description": "Files and directories"}
+                    },
+                    "required": ["repo", "path", "items"]
+                }}}},
+                "400": {"description": "No GitHub repo configured", "content": {"application/json": {"schema": ref("Error")}}},
+                "500": {"description": "GitHub API error",           "content": {"application/json": {"schema": ref("Error")}}}
+            }
+        }},
+
+        "/api/github/repo-file": {"get": {
+            "operationId": "readGithubFile",
+            "summary": "Read any file from the Fieldnote GitHub repository",
+            "description": "Fetches and returns the decoded text content of any file in the repo — skills, code, configs.",
+            "parameters": [
+                {"name": "path", "in": "query", "required": True,
+                 "schema": {"type": "string"}, "description": "File path, e.g. skills/claude_code.md or README.md"}
+            ],
+            "responses": {
+                "200": {"description": "File content", "content": {"application/json": {"schema": {
+                    "type": "object",
+                    "description": "File metadata and decoded content",
+                    "properties": {
+                        "path":    {"type": "string",  "description": "File path"},
+                        "name":    {"type": "string",  "description": "Filename"},
+                        "size":    {"type": "integer", "description": "File size in bytes"},
+                        "content": {"type": "string",  "description": "Decoded UTF-8 file content"},
+                        "sha":     {"type": "string",  "description": "Git blob SHA"}
+                    },
+                    "required": ["path", "name", "content"]
+                }}}},
+                "500": {"description": "File not found or GitHub error", "content": {"application/json": {"schema": ref("Error")}}}
+            }
+        }},
+
+        "/api/discovery/stats": {"get": {
+            "operationId": "getDiscoveryStats",
+            "summary": "GitHub discovery agent stats — repos seen, skills created, errors",
+            "description": "Returns aggregate counts and the 10 most recent successful discoveries from the autonomous GitHub learning agent.",
+            "parameters": [],
+            "responses": {
+                "200": {"description": "Discovery statistics", "content": {"application/json": {"schema": {
+                    "type": "object",
+                    "description": "Discovery agent statistics",
+                    "properties": {
+                        "total_repos_seen":   {"type": "integer", "description": "Total repos the agent has evaluated"},
+                        "skills_created":     {"type": "integer", "description": "Skills created from GitHub READMEs"},
+                        "skills_enhanced":    {"type": "integer", "description": "Existing skills updated"},
+                        "quality_denied":     {"type": "integer", "description": "Repos rejected by quality gate"},
+                        "errors":             {"type": "integer", "description": "Processing errors"},
+                        "recent_discoveries": {"type": "array",   "items": ref("DiscoveryRecentItem"), "description": "10 most recent successes"}
+                    },
+                    "required": ["total_repos_seen", "skills_created", "skills_enhanced", "errors", "recent_discoveries"]
+                }}}}
+            }
+        }},
+
+        "/api/discovery/log": {"get": {
+            "operationId": "getDiscoveryLog",
+            "summary": "Full GitHub discovery log — every repo the agent has evaluated",
+            "description": "Complete log of every repository the agent has processed: action taken (create/enhance/quality_denied/error), skill name, quality score, and timestamp. Keys are repo full_names (owner/repo).",
+            "parameters": [],
+            "responses": {
+                "200": {"description": "Discovery log", "content": {"application/json": {"schema": {
+                    "type": "object",
+                    "description": "Map of repository full_name to discovery result",
+                    "additionalProperties": ref("DiscoveryLogEntry")
+                }}}}
+            }
+        }},
+
+        "/api/scheduler/run/{job_name}": {"post": {
+            "operationId": "triggerSchedulerJob",
+            "summary": "Trigger a background agent job immediately",
+            "description": "Run a named scheduler job right now without waiting for its schedule. Use job_name=discover to run a GitHub discovery cycle, enhance for DCA enhancement, sync for GitHub push, watchlist to process queued URLs.",
+            "parameters": [
+                {"name": "job_name", "in": "path", "required": True,
+                 "schema": {"type": "string", "enum": ["discover", "enhance", "sync", "watchlist", "code_sync", "integrations"]},
+                 "description": "Job to trigger immediately"}
+            ],
+            "responses": {
+                "200": {"description": "Job triggered", "content": {"application/json": {"schema": {
+                    "type": "object",
+                    "description": "Job trigger result",
+                    "properties": {
+                        "ok":      {"type": "boolean"},
+                        "job":     {"type": "string",  "description": "Job name that was triggered"},
+                        "message": {"type": "string",  "description": "Status message"},
+                        "ran_at":  {"type": "string",  "description": "ISO 8601 execution timestamp"}
+                    },
+                    "required": ["ok"]
+                }}}},
+                "404": {"description": "Unknown job name", "content": {"application/json": {"schema": ref("Error")}}}
+            }
+        }},
+
+    }  # end paths
+
+    return {
+        "openapi": "3.0.0",
+        "info": {
+            "title": "Fieldnote — Personal AI Knowledge Library",
+            "description": (
+                "Complete read and write access to a personal AI skill library built from YouTube videos. "
+                "Every skill has full markdown content, steps, tools, concepts, and source references. "
+                "Start with getFullSnapshot to load all context at once, or listSkills + getSkillContent "
+                "for targeted queries. Record discoveries and decisions with upsertKnowledgeEntry."
+            ),
+            "version": "4.0.0",
+        },
+        "servers": [{"url": base, "description": "Fieldnote live instance"}],
+        "paths": paths,
+        "components": {"schemas": schemas},
+    }
+
+
+@app.route("/openapi-gpt.json")
+def openapi_gpt_spec():
+    """OpenAPI 3.0.0 schema validated for ChatGPT Custom GPT Actions import.
+
+    Uses explicit property definitions on every response object schema.
+    ChatGPT's action importer rejects {'type':'object','additionalProperties':true}
+    schemas without 'properties'. This endpoint fixes that across all 16 operations.
+    """
+    domain = os.getenv("REPLIT_DEV_DOMAIN", "")
+    base   = f"https://{domain}" if domain else request.url_root.rstrip("/")
+    resp   = jsonify(_build_gpt_spec(base))
+    resp.headers["Access-Control-Allow-Origin"] = "*"
+    resp.headers["Cache-Control"] = "no-cache"
+    return resp
+
+
+@app.route("/api/schema/health")
+def api_schema_health():
+    """Return validation metadata about the GPT-compatible OpenAPI schema.
+    Used by the Integrations page to show schema health indicator."""
+    domain = os.getenv("REPLIT_DEV_DOMAIN", "")
+    base   = f"https://{domain}" if domain else request.url_root.rstrip("/")
+    spec   = _build_gpt_spec(base)
+
+    paths      = spec.get("paths", {})
+    operations = sum(len(v) for v in paths.values())  # count HTTP methods
+    schemas    = spec.get("components", {}).get("schemas", {})
+
+    # Validate: count operations whose 200 responses have no properties on object schemas
+    errors = []
+    for path, methods in paths.items():
+        for method, op in methods.items():
+            op_id = op.get("operationId", f"{method} {path}")
+            for status, resp_def in op.get("responses", {}).items():
+                if status != "200":
+                    continue
+                content = resp_def.get("content", {})
+                for ct, ct_def in content.items():
+                    s = ct_def.get("schema", {})
+                    if s.get("type") == "object" and not s.get("properties") and not s.get("$ref") and s.get("additionalProperties") is True:
+                        errors.append(f"{op_id}: object response missing properties")
+
+    return jsonify({
+        "schema_url":       f"{base}/openapi-gpt.json",
+        "standard_url":     f"{base}/openapi.json",
+        "openapi_version":  spec["openapi"],
+        "info_version":     spec["info"]["version"],
+        "endpoint_count":   len(paths),
+        "operation_count":  operations,
+        "schema_count":     len(schemas),
+        "errors":           errors,
+        "error_count":      len(errors),
+        "chatgpt_compatible": len(errors) == 0,
+        "validated_at":     datetime.now(timezone.utc).isoformat(),
+    })
+
+
 # ── Per-skill content API ────────────────────────────────────────────────────
 
 @app.route("/api/skills/<name>/content")
