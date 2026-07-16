@@ -18,7 +18,7 @@ The system is **free-first**: every capability has a free path. Paid providers a
 - **Free alternative to:** OpenAI GPT-4o-mini, Anthropic Claude
 
 #### 2. Gemini AI Studio (Secondary fallback)
-- **Models:** `gemini-2.0-flash-exp`, `gemini-1.5-flash`, `gemini-1.5-pro`
+- **Models:** `gemini-2.0-flash`, `gemini-1.5-flash-8b`
 - **Free tier:** 1,500 req/day, 1M tokens/min — no credit card
 - **Get key:** https://aistudio.google.com/app/apikey ← **use AI Studio, not Cloud Console**
 - **Secret name:** `Gemini`
@@ -43,23 +43,25 @@ The system is **free-first**: every capability has a free path. Paid providers a
 
 ### Transcription
 
-#### Groq Whisper (Primary cloud transcription)
+The pipeline tries each method in order and stops at the first success:
+
+#### 1. YouTube Captions (First choice — zero compute)
+- **API:** `youtube-transcript-api` (free, no key)
+- **Cost:** Free — reads existing captions track directly from YouTube
+- **Limitation:** Only works if the video has a captions/subtitles track enabled
+
+#### 2. Groq Whisper (Cloud fallback — free tier)
 - **Model:** `whisper-large-v3`
 - **Free tier:** ~8 hours audio/day — no credit card
 - **Same key as:** `GROQ`
 - **Free alternative to:** AssemblyAI, Deepgram, OpenAI Whisper API
 
-#### faster-whisper (Local fallback — always free)
+#### 3. faster-whisper (Local CPU fallback — always free)
 - **Repo:** https://github.com/guillaumekambham/faster-whisper
 - **Cost:** Free forever — runs on CPU in Replit
 - **Models:** `tiny`, `base`, `small`, `medium`, `large-v3`
 - **Free alternative to:** Any paid transcription API
 - **Note:** Model cached at `workspace/.cache/fw_models/` — survives restarts
-
-#### YouTube Captions (First choice — zero compute)
-- **API:** `youtube-transcript-api` (free, no key)
-- **Cost:** Free — scrapes existing captions
-- **Limitation:** Only works if video has captions enabled
 
 ---
 
@@ -98,9 +100,8 @@ Groq (free)
   → llama-3.1-8b-instant     [smallest, fastest]
 
 Gemini (free AI Studio key)
-  → gemini-2.0-flash-exp     [primary]
-  → gemini-1.5-flash         [fallback]
-  → gemini-1.5-pro           [if flash unavailable]
+  → gemini-2.0-flash         [primary]
+  → gemini-1.5-flash-8b      [fallback]
 
 OpenAI (paid — only if both above exhausted)
   → gpt-4o-mini              [default]

@@ -290,6 +290,12 @@ def _detect_new_env_keys() -> dict:
     Scan os.environ for integration env-var names that are set (e.g. via
     Replit Secrets UI) but not yet persisted to local_keys.json.
     Auto-save and activate them.
+
+    Note: nonstandard secret aliases (GROQFREE → GROQ, Langchain → LANGCHAIN_API_KEY)
+    are normalised at import time in agents/provider_router.py, so by the time this
+    function runs the standard names are already visible in os.environ if the
+    nonstandard aliases were the only source.  This function only needs to handle
+    the canonical key_env values registered in the REGISTRY.
     """
     from fieldnote_mcp.integrations_registry import REGISTRY
     import app as _a
