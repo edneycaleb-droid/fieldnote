@@ -2474,7 +2474,7 @@ def openapi_spec():
     domain = os.getenv("REPLIT_DEV_DOMAIN","")
     base   = f"https://{domain}" if domain else request.url_root.rstrip("/")
     spec   = {
-        "openapi": "3.0.0",
+        "openapi": "3.1.0",
         "info": {
             "title":       "Fieldnote — Complete Knowledge Library API",
             "description": (
@@ -2484,7 +2484,7 @@ def openapi_spec():
                 "AI provider health, and direct read access to the Fieldnote GitHub repository. "
                 "Start with getFullSnapshot to load all context at once."
             ),
-            "version": "3.0.0",
+            "version": "3.1.0",
         },
         "servers": [{"url": base}],
         "paths": {
@@ -2495,21 +2495,14 @@ def openapi_spec():
                     "summary": "Read the full assistant knowledge base",
                     "description": "Returns every entry the assistant has written to assistant_knowledge/ — decisions, discoveries, session learnings, preferences, and architecture notes — with full content.",
                     "parameters": [],
-                    "responses": {"200": {"description": "Knowledge base entries", "content": {"application/json": {"schema": {"type": "object"}}}}},
+                    "responses": {"200": {"description": "Knowledge base entries", "content": {"application/json": {"schema": {"type": "object", "additionalProperties": true}}}}},
                 }
             },
             "/api/knowledge/upsert": {
                 "post": {
                     "operationId": "upsertKnowledgeEntry",
                     "summary": "Write or update a knowledge entry in the Fieldnote repo",
-                    "description": (
-                        "Creates or overwrites a structured knowledge entry in assistant_knowledge/ "
-                        "and immediately commits + pushes it to GitHub. "
-                        "Use this to record verified facts, architectural decisions, session learnings, "
-                        "preferences, or discoveries during a conversation. "
-                        "category must be one of: decisions, discoveries, session_learnings, preferences, architecture. "
-                        "confidence should be: verified, inferred, or speculative."
-                    ),
+                    "description": "Write or update a knowledge entry in assistant_knowledge/ and push to GitHub. Records decisions, discoveries, session learnings, preferences, or architecture notes. confidence: verified | inferred | speculative.",
                     "requestBody": {
                         "required": True,
                         "content": {
@@ -2530,7 +2523,7 @@ def openapi_spec():
                         },
                     },
                     "responses": {
-                        "200": {"description": "Entry written and pushed", "content": {"application/json": {"schema": {"type": "object"}}}},
+                        "200": {"description": "Entry written and pushed", "content": {"application/json": {"schema": {"type": "object", "additionalProperties": true}}}},
                         "400": {"description": "Validation error"},
                         "500": {"description": "Push failed"},
                     },
@@ -2542,7 +2535,7 @@ def openapi_spec():
                     "summary": "Complete library snapshot — everything in one call",
                     "description": "Returns all skills with full markdown content, every tool, concept, and package, all MCP connections, the brain summary, AI provider status, and the GitHub repo URL. Call this first to load full context.",
                     "parameters": [],
-                    "responses": {"200": {"description": "Full snapshot", "content": {"application/json": {"schema": {"type": "object"}}}}},
+                    "responses": {"200": {"description": "Full snapshot", "content": {"application/json": {"schema": {"type": "object", "additionalProperties": true}}}}},
                 }
             },
             "/api/skills": {
@@ -2555,7 +2548,7 @@ def openapi_spec():
                         {"name":"tag",   "in":"query","schema":{"type":"string"},"description":"Tag filter"},
                         {"name":"limit", "in":"query","schema":{"type":"integer"},"description":"Max results"},
                     ],
-                    "responses": {"200": {"description": "Skill summaries", "content": {"application/json": {"schema": {"type": "array","items": {"type": "object"}}}}}},
+                    "responses": {"200": {"description": "Skill summaries", "content": {"application/json": {"schema": {"type": "array", "items": {"type": "object", "additionalProperties": true}}}}}},
                 }
             },
             "/api/skills/{name}/content": {
@@ -2565,7 +2558,7 @@ def openapi_spec():
                     "description": "Returns the entire skill markdown with steps, tools, code, and source references plus all metadata.",
                     "parameters": [{"name":"name","in":"path","required":True,"schema":{"type":"string"},"description":"Skill name without .md extension"}],
                     "responses": {
-                        "200": {"description": "Full skill", "content": {"application/json": {"schema": {"type": "object"}}}},
+                        "200": {"description": "Full skill", "content": {"application/json": {"schema": {"type": "object", "additionalProperties": true}}}},
                         "404": {"description": "Not found"},
                     },
                 }
@@ -2576,7 +2569,7 @@ def openapi_spec():
                     "summary": "Concept and tool relationship graph",
                     "description": "Shows which concepts and tools appear most often across skills, which skills share them, and how skills relate to each other.",
                     "parameters": [],
-                    "responses": {"200": {"description": "Brain map", "content": {"application/json": {"schema": {"type": "object"}}}}},
+                    "responses": {"200": {"description": "Brain map", "content": {"application/json": {"schema": {"type": "object", "additionalProperties": true}}}}},
                 }
             },
             "/api/activity": {
@@ -2585,7 +2578,7 @@ def openapi_spec():
                     "summary": "Recent skill creation and enhancement history",
                     "description": "Shows the most recently created or enhanced skills, which video they came from, and when.",
                     "parameters": [{"name":"limit","in":"query","schema":{"type":"integer"},"description":"Max events, default 30"}],
-                    "responses": {"200": {"description": "Activity log", "content": {"application/json": {"schema": {"type": "object"}}}}},
+                    "responses": {"200": {"description": "Activity log", "content": {"application/json": {"schema": {"type": "object", "additionalProperties": true}}}}},
                 }
             },
             "/api/packages": {
@@ -2594,7 +2587,7 @@ def openapi_spec():
                     "summary": "All Python packages discovered across skills",
                     "description": "Returns every pip-installable package name mentioned across all skills.",
                     "parameters": [],
-                    "responses": {"200": {"description": "Package list", "content": {"application/json": {"schema": {"type": "object"}}}}},
+                    "responses": {"200": {"description": "Package list", "content": {"application/json": {"schema": {"type": "object", "additionalProperties": true}}}}},
                 }
             },
             "/api/mcp/connections": {
@@ -2603,7 +2596,7 @@ def openapi_spec():
                     "summary": "All MCP server connections configured in the workspace",
                     "description": "Lists every Model Context Protocol server — name, type, transport, command or URL, and which skills reference it.",
                     "parameters": [],
-                    "responses": {"200": {"description": "MCP connections", "content": {"application/json": {"schema": {"type": "array","items": {"type": "object"}}}}}},
+                    "responses": {"200": {"description": "MCP connections", "content": {"application/json": {"schema": {"type": "array", "items": {"type": "object", "additionalProperties": true}}}}}},
                 }
             },
             "/api/provider-status": {
@@ -2612,7 +2605,7 @@ def openapi_spec():
                     "summary": "AI provider health — Groq, Gemini, OpenAI, HuggingFace, OpenRouter",
                     "description": "Returns live state for each AI provider: healthy, rate_limited, quota_exhausted, auth_error, or no_key.",
                     "parameters": [],
-                    "responses": {"200": {"description": "Provider states", "content": {"application/json": {"schema": {"type": "object"}}}}},
+                    "responses": {"200": {"description": "Provider states", "content": {"application/json": {"schema": {"type": "object", "additionalProperties": true}}}}},
                 }
             },
             "/api/github/repo": {
@@ -2622,7 +2615,7 @@ def openapi_spec():
                     "description": "Browse any directory of the Fieldnote GitHub repo. Leave path empty for the root listing.",
                     "parameters": [{"name":"path","in":"query","schema":{"type":"string"},"description":"Directory path, empty for root"}],
                     "responses": {
-                        "200": {"description": "File listing", "content": {"application/json": {"schema": {"type": "object"}}}},
+                        "200": {"description": "File listing", "content": {"application/json": {"schema": {"type": "object", "additionalProperties": true}}}},
                         "400": {"description": "No GitHub repo configured"},
                     },
                 }
@@ -2634,7 +2627,7 @@ def openapi_spec():
                     "description": "Fetches and returns the decoded text content of any file in the repo — skills, code, configs.",
                     "parameters": [{"name":"path","in":"query","required":True,"schema":{"type":"string"},"description":"File path in the repo, e.g. skills/claude_code.md"}],
                     "responses": {
-                        "200": {"description": "File content", "content": {"application/json": {"schema": {"type": "object"}}}},
+                        "200": {"description": "File content", "content": {"application/json": {"schema": {"type": "object", "additionalProperties": true}}}},
                         "500": {"description": "File not found or GitHub error"},
                     },
                 }
@@ -2644,7 +2637,7 @@ def openapi_spec():
                     "operationId": "getHealth",
                     "summary": "System health — tool availability, AI keys, GitHub sync",
                     "parameters": [],
-                    "responses": {"200": {"description": "Health check", "content": {"application/json": {"schema": {"type": "object"}}}}},
+                    "responses": {"200": {"description": "Health check", "content": {"application/json": {"schema": {"type": "object", "additionalProperties": true}}}}},
                 }
             },
         },
@@ -2656,7 +2649,7 @@ def openapi_spec():
     domain = os.getenv("REPLIT_DEV_DOMAIN","")
     base   = f"https://{domain}" if domain else request.url_root.rstrip("/")
     spec   = {
-        "openapi": "3.0.0",
+        "openapi": "3.1.0",
         "info": {
             "title":       "Fieldnote Skill Library",
             "description": "Search and retrieve AI skills extracted from YouTube videos. Each skill contains steps, tools, concepts, and code references.",
@@ -2673,7 +2666,7 @@ def openapi_spec():
                         {"name":"q",   "in":"query","schema":{"type":"string"},"description":"Keyword filter"},
                         {"name":"tag", "in":"query","schema":{"type":"string"},"description":"Tag filter"},
                     ],
-                    "responses": {"200":{"description":"Array of skill summaries","content":{"application/json":{"schema":{"type":"array","items":{"type":"object"}}}}}},
+                    "responses": {"200":{"description":"Array of skill summaries","content":{"application/json":{"schema": {"type": "array", "items": {"type": "object", "additionalProperties": true}}}}}},
                 }
             },
             "/api/skills/{name}/content": {
@@ -2682,7 +2675,7 @@ def openapi_spec():
                     "summary":     "Get a skill's full markdown content",
                     "description": "Returns the complete skill markdown with all steps, tools, concepts, and source references.",
                     "parameters": [{"name":"name","in":"path","required":True,"schema":{"type":"string"},"description":"Skill name (no .md)"}],
-                    "responses": {"200":{"description":"Skill with full content","content":{"application/json":{"schema":{"type":"object"}}}},
+                    "responses": {"200":{"description":"Skill with full content","content":{"application/json":{"schema": {"type": "object", "additionalProperties": true}}}},
                                   "404":{"description":"Skill not found"}},
                 }
             },
