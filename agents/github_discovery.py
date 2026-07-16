@@ -172,6 +172,334 @@ def _already_processed(full_name: str, log_data: dict) -> bool:
         return False
 
 
+# ── Paid-service detection & free-alternative database ───────────────────────
+
+# Maps paid service keywords → human label + ordered list of free-alternative
+# GitHub search queries.  First result with ≥MIN_STARS and a real README wins.
+PAID_TO_FREE: dict[str, dict] = {
+    "openai": {
+        "label": "OpenAI / GPT",
+        "alternatives": [
+            ("groq python client llm inference free tier stars:>300 sort:stars",  "Groq"),
+            ("ollama run llm locally python stars:>2000 sort:stars",               "Ollama"),
+            ("vllm fast inference openai compatible python stars:>5000 sort:stars","vLLM"),
+            ("litellm openai compatible proxy free stars:>1000 sort:stars",        "LiteLLM"),
+        ],
+    },
+    "gpt-4": {
+        "label": "GPT-4",
+        "alternatives": [
+            ("llama open source llm python stars:>2000 sort:stars",     "Llama"),
+            ("mistral open weight model python stars:>1000 sort:stars", "Mistral"),
+            ("ollama local model serve python stars:>2000 sort:stars",  "Ollama"),
+        ],
+    },
+    "anthropic": {
+        "label": "Anthropic Claude",
+        "alternatives": [
+            ("groq python llama inference free stars:>300 sort:stars",    "Groq"),
+            ("ollama mistral local python stars:>2000 sort:stars",        "Ollama"),
+            ("together ai open source llm api python stars:>500 sort:stars","Together AI"),
+        ],
+    },
+    "pinecone": {
+        "label": "Pinecone",
+        "alternatives": [
+            ("chroma vector database open source python stars:>1000 sort:stars",  "Chroma"),
+            ("qdrant vector search python self hosted stars:>4000 sort:stars",    "Qdrant"),
+            ("faiss facebook vector similarity python stars:>10000 sort:stars",   "FAISS"),
+            ("lancedb local vector database python stars:>1000 sort:stars",       "LanceDB"),
+        ],
+    },
+    "weaviate": {
+        "label": "Weaviate Cloud",
+        "alternatives": [
+            ("qdrant vector search python open source stars:>4000 sort:stars", "Qdrant"),
+            ("chroma open source embedding database stars:>1000 sort:stars",   "Chroma"),
+            ("milvus open source vector database stars:>5000 sort:stars",      "Milvus"),
+        ],
+    },
+    "cohere": {
+        "label": "Cohere",
+        "alternatives": [
+            ("sentence transformers huggingface embedding python stars:>5000 sort:stars",
+             "sentence-transformers"),
+            ("fastembed fast embedding cpu python stars:>500 sort:stars", "FastEmbed"),
+        ],
+    },
+    "replicate": {
+        "label": "Replicate",
+        "alternatives": [
+            ("ollama local model run python stars:>2000 sort:stars",                  "Ollama"),
+            ("diffusers stable diffusion local inference python stars:>5000 sort:stars","Diffusers"),
+            ("comfyui stable diffusion workflow python stars:>2000 sort:stars",        "ComfyUI"),
+        ],
+    },
+    "assemblyai": {
+        "label": "AssemblyAI",
+        "alternatives": [
+            ("faster whisper local transcription python stars:>2000 sort:stars", "Faster-Whisper"),
+            ("whisper openai speech recognition python stars:>50000 sort:stars", "Whisper"),
+            ("insanely fast whisper python stars:>1000 sort:stars",              "insanely-fast-whisper"),
+        ],
+    },
+    "deepgram": {
+        "label": "Deepgram",
+        "alternatives": [
+            ("faster whisper local speech recognition python stars:>2000 sort:stars", "Faster-Whisper"),
+            ("whisper speech recognition local python stars:>50000 sort:stars",       "Whisper"),
+        ],
+    },
+    "elevenlabs": {
+        "label": "ElevenLabs",
+        "alternatives": [
+            ("coqui tts open source text speech python stars:>5000 sort:stars", "Coqui TTS"),
+            ("piper neural text speech local python stars:>2000 sort:stars",    "Piper TTS"),
+            ("bark text speech huggingface python stars:>2000 sort:stars",      "Bark"),
+        ],
+    },
+    "stability ai": {
+        "label": "Stability AI API",
+        "alternatives": [
+            ("diffusers stable diffusion local python huggingface stars:>5000 sort:stars",
+             "Diffusers"),
+            ("automatic1111 stable diffusion webui python stars:>5000 sort:stars",
+             "Automatic1111 WebUI"),
+        ],
+    },
+    "azure openai": {
+        "label": "Azure OpenAI",
+        "alternatives": [
+            ("litellm proxy openai compatible local stars:>1000 sort:stars", "LiteLLM"),
+            ("ollama local llm python stars:>2000 sort:stars",               "Ollama"),
+        ],
+    },
+    "mistral api": {
+        "label": "Mistral API (paid tier)",
+        "alternatives": [
+            ("ollama mistral local python stars:>2000 sort:stars",            "Ollama + Mistral"),
+            ("mistral inference local python stars:>500 sort:stars",          "Mistral local"),
+            ("groq mistral python inference free stars:>300 sort:stars",      "Groq + Mistral"),
+        ],
+    },
+    "voyage ai": {
+        "label": "Voyage AI embeddings",
+        "alternatives": [
+            ("sentence transformers all-minilm embedding python stars:>5000 sort:stars",
+             "sentence-transformers"),
+            ("nomic embed local embedding python stars:>500 sort:stars", "Nomic Embed"),
+        ],
+    },
+}
+
+# Flat keyword → dict key mapping for fast lookup in detection
+_PAID_KEYWORDS: dict[str, str] = {
+    "openai":          "openai",
+    "gpt-4":           "gpt-4",
+    "gpt-3":           "openai",
+    "chatgpt":         "openai",
+    "anthropic":       "anthropic",
+    "claude":          "anthropic",
+    "pinecone":        "pinecone",
+    "weaviate":        "weaviate",
+    "cohere":          "cohere",
+    "replicate":       "replicate",
+    "assemblyai":      "assemblyai",
+    "assembly ai":     "assemblyai",
+    "deepgram":        "deepgram",
+    "elevenlabs":      "elevenlabs",
+    "eleven labs":     "elevenlabs",
+    "stability ai":    "stability ai",
+    "stabilityai":     "stability ai",
+    "azure openai":    "azure openai",
+    "mistral api":     "mistral api",
+    "voyage ai":       "voyage ai",
+    "voyage":          "voyage ai",
+}
+
+
+def _detect_paid_services(repo: dict, skill: dict, readme: str) -> list[str]:
+    """Return the PAID_TO_FREE keys for every paid service detected in this repo."""
+    haystack = " ".join([
+        repo.get("description", ""),
+        " ".join(repo.get("topics", [])),
+        " ".join(skill.get("tools", [])),
+        readme[:4000],
+    ]).lower()
+
+    found: list[str] = []
+    seen:  set[str]  = set()
+    for keyword, key in _PAID_KEYWORDS.items():
+        if keyword in haystack and key not in seen:
+            found.append(key)
+            seen.add(key)
+    return found
+
+
+def _find_best_free_alternative(paid_key: str, disc_log: dict) -> dict | None:
+    """
+    Search GitHub for the best free alternative for a paid service.
+    Tries each query in order, returns the first repo with README ≥ 200 chars
+    that hasn't been processed recently.
+    Returns the repo dict (with _readme populated) or None.
+    """
+    entry = PAID_TO_FREE.get(paid_key)
+    if not entry:
+        return None
+
+    for query, _ in entry["alternatives"]:
+        try:
+            results = _search_repos(query, per_page=5)
+            for repo in results:
+                fn = repo["full_name"]
+                if _already_processed(fn, disc_log):
+                    continue
+                readme = _fetch_readme(repo["owner"], repo["name"])
+                if readme and len(readme) >= 200:
+                    repo["_readme"]       = readme
+                    repo["_readme_words"] = readme.split()
+                    repo["_alt_for"]      = paid_key
+                    log.info("Free alt for '%s': %s (%d ⭐)", paid_key, fn, repo["stars"])
+                    return repo
+            time.sleep(0.4)
+        except Exception as exc:
+            log.warning("Alt search '%s' failed: %s", query, exc)
+
+    return None
+
+
+def _process_free_alternative(
+    alt_repo: dict,
+    paid_repo: dict,
+    paid_key:  str,
+    disc_log:  dict,
+    index:     dict,
+) -> dict | None:
+    """
+    Run the full extraction + quality gate + save pipeline on a free-alternative repo.
+    Returns a result dict on success, or None on failure.
+    """
+    import agents.skill_quality as sq
+    import agents.github_sync   as gs
+    import app as _a
+
+    fn     = alt_repo["full_name"]
+    readme = alt_repo.get("_readme", "")
+    label  = PAID_TO_FREE[paid_key]["label"]
+
+    log.info("Processing free alt %s (for %s)", fn, label)
+    try:
+        skill  = _extract_from_repo(alt_repo, readme, index)
+        qr     = sq.quality_gate(skill)
+        log.info("Alt %s quality: %s %.0f%%", fn, qr.decision.value, qr.score * 100)
+
+        if qr.decision == sq.QualityDecision.DENY:
+            disc_log[fn] = {
+                "processed_at":  _now_iso(),
+                "skill_name":    None,
+                "action":        "quality_denied",
+                "stars":         alt_repo["stars"],
+                "quality_score": round(qr.score, 2),
+                "alt_for":       paid_repo["full_name"],
+            }
+            return None
+
+        skill_name, action = _save_discovered_skill(skill, alt_repo, index)
+        index = _a.load_index()
+
+        try:
+            gs.sync_skill(skill_name, _a.SKILLS_DIR, index)
+        except Exception as exc:
+            log.warning("GitHub sync failed for alt skill: %s", exc)
+
+        disc_log[fn] = {
+            "processed_at":   _now_iso(),
+            "skill_name":     skill_name,
+            "action":         action,
+            "stars":          alt_repo["stars"],
+            "quality_score":  round(qr.score, 2),
+            "quality_decision": qr.decision.value,
+            "alt_for":        paid_repo["full_name"],
+            "free_of":        label,
+        }
+
+        # Record the pairing in assistant_knowledge/
+        _record_free_alt_pairing(
+            paid_repo   = paid_repo,
+            alt_repo    = alt_repo,
+            paid_label  = label,
+            skill_name  = skill_name,
+            quality     = qr.score,
+        )
+
+        log.info("Free alt saved: '%s' (free of %s)", skill_name, label)
+        return {
+            "repo":        fn,
+            "skill":       skill_name,
+            "action":      action,
+            "stars":       alt_repo["stars"],
+            "quality":     round(qr.score, 2),
+            "free_of":     label,
+            "paired_with": paid_repo["full_name"],
+        }
+
+    except Exception as exc:
+        log.error("Alt extraction failed for %s: %s", fn, exc)
+        disc_log[fn] = {
+            "processed_at": _now_iso(),
+            "skill_name":   None,
+            "action":       "error",
+            "error":        str(exc)[:200],
+            "stars":        alt_repo.get("stars", 0),
+            "alt_for":      paid_repo["full_name"],
+        }
+        return None
+
+
+def _record_free_alt_pairing(
+    paid_repo:  dict,
+    alt_repo:   dict,
+    paid_label: str,
+    skill_name: str,
+    quality:    float,
+) -> None:
+    """Write a knowledge entry linking the paid repo to its free alternative."""
+    try:
+        import agents.github_sync as gs
+        paid_fn = paid_repo["full_name"]
+        alt_fn  = alt_repo["full_name"]
+        slug    = re.sub(r"[^a-z0-9-]", "-",
+                         f"free-alt-{alt_fn}".lower().replace("/", "--"))[:60]
+        content = (
+            f"## Free Alternative Pairing\n\n"
+            f"**Paid / quota-limited service detected:** {paid_label} "
+            f"([{paid_fn}](https://github.com/{paid_fn}))\n\n"
+            f"**Free alternative added:** [{alt_fn}](https://github.com/{alt_fn}) "
+            f"⭐ {alt_repo['stars']:,}\n\n"
+            f"**Skill created:** `{skill_name}` (quality {quality:.0%})\n\n"
+            f"### Why this alternative?\n"
+            f"{PAID_TO_FREE.get(alt_repo.get('_alt_for',''), {}).get('label', paid_label)} "
+            f"requires paid API access or has strict quota limits. "
+            f"**{alt_fn.split('/')[-1]}** provides equivalent or similar capability "
+            f"with {alt_repo['stars']:,} stars and is fully open-source / free to self-host.\n\n"
+            f"These two skills are complementary — use the free alternative when "
+            f"cost or quota is a concern."
+        )
+        gs.sync_knowledge_entry({
+            "category":   "discoveries",
+            "slug":       slug,
+            "title":      f"Free alt: {alt_fn.split('/')[-1]} → replaces {paid_label}",
+            "content":    content,
+            "sources":    [
+                f"https://github.com/{paid_fn}",
+                f"https://github.com/{alt_fn}",
+            ],
+            "confidence": "verified" if quality >= 0.8 else "inferred",
+        })
+    except Exception as exc:
+        log.warning("Could not record alt pairing in knowledge base: %s", exc)
+
+
 # ── Dynamic query builder ──────────────────────────────────────────────────────
 
 def _build_dynamic_queries(index: dict) -> list[str]:
