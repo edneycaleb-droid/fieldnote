@@ -427,10 +427,7 @@ def get_transcript_robust(url: str, video_id: str, emit: Callable) -> Transcript
 
     def _download_audio() -> str:
         nonlocal tmp_audio_dir
-        if audio_path:
-            return audio_path
         tmp  = tempfile.mkdtemp(prefix="fn_audio_")
-        nonlocal tmp_audio_dir
         tmp_audio_dir = tmp
         raw  = os.path.join(tmp, f"{video_id}.%(ext)s")
         mp3  = os.path.join(tmp, f"{video_id}.mp3")

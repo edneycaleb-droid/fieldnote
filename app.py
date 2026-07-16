@@ -44,6 +44,7 @@ import agents.code_sync        as code_sync
 import agents.verify_agent     as verify_agent
 import agents.pipeline_guard   as pipeline_guard
 import agents.provider_router  as provider_router
+import agents.transcript_pipeline as transcript_pipeline
 
 app = Flask(__name__)
 
@@ -62,6 +63,7 @@ CLIP_SECONDS  = 1200  # 20-min clip when audio too large
 
 _jobs: dict = {}          # {job_id: {"queue": Queue, "done": bool}}
 _playlist_jobs: dict = {}  # {pjob_id: {"events": list, "done": bool, "total": int}}
+_video_active: dict = {}   # {video_id: job_id} — jobs currently in-flight (dedup guard)
 _mcp_sessions: dict = {}   # {session_id: queue.Queue}
 
 
@@ -550,25 +552,25 @@ def transcript_from_whisper(url: str, video_id: str, emit) -> tuple[str, str]:
             raise RuntimeError("Groq Whisper auth error — check GROQ secret") from _whisper_err
         raise
 
+    # Groq SDK 1.5+ always returns Transcription (never raw str).
+    # Extract .text safely — raise immediately if None/empty so the caller can fallback.
+    raw_text = result.text if (hasattr(result, "text") and isinstance(result.text, str)) else ""
+    if not raw_text or len(raw_text.strip()) < 10:
+        raise RuntimeError(
+            "Groq Whisper returned empty text — audio may be silent, too short, or unsupported."
+        )
     shutil.rmtree(tmp_dir, ignore_errors=True)
-    return (result if isinstance(result, str) else result.text), "whisper"
+    return raw_text, "whisper"
 
 
-def get_transcript(url: str, video_id: str, emit) -> tuple[str, str]:
-    try:
-        text = transcript_from_captions(video_id)
-        emit("✅  Captions found — transcript ready.", "success")
-        return text, "captions"
-    except Exception as e:
-        emit(f"⚠  No captions ({type(e).__name__}) — switching to Whisper …", "warning")
-    try:
-        text, method = transcript_from_whisper(url, video_id, emit)
-        return text, method
-    except RuntimeError as _werr:
-        if "quota exhausted" in str(_werr).lower() or "auth error" in str(_werr).lower():
-            emit(f"⚠  {_werr}", "warning")
-            return "", "none"
-        raise
+def get_transcript(url: str, video_id: str, emit):
+    """
+    Acquire transcript via the robust multi-stage fallback pipeline.
+    Returns (text: str, method: str, result: TranscriptResult).
+    text is ALWAYS a str (never None); result.ok=False when all stages failed.
+    """
+    result = transcript_pipeline.get_transcript_robust(url, video_id, emit)
+    return result.text, result.method, result
 
 
 # ── Groq LLM ─────────────────────────────────────────────────────────────────
@@ -1063,9 +1065,27 @@ def run_job(job_id: str, url: str, video_id: str):
             q.put({"type": "meta", "data": meta})
             emit(f"📺  {meta['title'] or 'Video identified'}", "info")
 
-            transcript, method = trans_f.result(timeout=300)
+            transcript, method, trans_result = trans_f.result(timeout=300)
+
+            # Hard guard — transcript is always str but may be empty when all stages fail
+            if not transcript or len(transcript.strip()) < 10:
+                stage_summary = ", ".join(getattr(trans_result, "stage_log", [])) or "none recorded"
+                raise RuntimeError(
+                    "Transcript unavailable — all acquisition methods failed. "
+                    f"Stages tried: {stage_summary}. "
+                    "The video may be private, have no audio, or providers are quota-limited. "
+                    "Please retry in a few minutes."
+                )
+
             word_count = len(transcript.split())
-            emit(f"📝  {word_count:,} words via {method}", "success")
+            if getattr(trans_result, "is_degraded", False):
+                emit(
+                    f"📝  {word_count:,} words via {method} "
+                    f"⚡ degraded ({trans_result.degraded_reason or 'lower quality fallback'})",
+                    "warning",
+                )
+            else:
+                emit(f"📝  {word_count:,} words via {method}", "success")
 
             # Quick regex scan — used for early GitHub search AND relevance scoring
             quick_tools = github_agent.quick_tool_scan(transcript)
@@ -1254,6 +1274,16 @@ def run_job(job_id: str, url: str, video_id: str):
                 "transcript_words":  word_count,
                 "transcript_method": method,
                 "video_id":          video_id,
+                "receipt": {
+                    "transcript_words":  word_count,
+                    "transcript_method": method,
+                    "is_degraded":      getattr(trans_result, "is_degraded",     False),
+                    "degraded_reason":  getattr(trans_result, "degraded_reason", None),
+                    "stage_log":        getattr(trans_result, "stage_log",        []),
+                    "content_hash":     getattr(trans_result, "content_hash",     ""),
+                    "fallback_reason":  getattr(trans_result, "fallback_reason",  None),
+                    "outcome":          "success",
+                },
                 "action":            action,
                 "thumbnail":         meta.get("thumbnail", ""),
                 "source_title":      meta.get("title", ""),
@@ -1277,6 +1307,7 @@ def run_job(job_id: str, url: str, video_id: str):
         q.put({"type": "done", "ok": False, "error": str(e)})
     finally:
         _jobs[job_id]["done"] = True
+        _video_active.pop(video_id, None)   # release dedup lock
 
 
 # ── Server-side playlist queue ────────────────────────────────────────────────
@@ -1444,8 +1475,14 @@ def process():
             "error": "Could not find a YouTube video ID in that URL."
         }), 400
 
+    # Dedup: if this video is already in-flight, reattach the caller to its stream
+    existing = _video_active.get(video_id)
+    if existing and not _jobs.get(existing, {}).get("done", True):
+        return jsonify({"job_id": existing, "already_running": True})
+
     job_id        = str(uuid.uuid4())[:8]
     _jobs[job_id] = {"queue": queue.Queue(), "done": False}
+    _video_active[video_id] = job_id
     threading.Thread(
         target=run_job, args=(job_id, url, video_id), daemon=True
     ).start()

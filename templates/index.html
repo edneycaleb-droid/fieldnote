@@ -1621,6 +1621,7 @@ Cross-reference related skills proactively. When you find a relevant skill, alwa
 <script>
 // ── Metadata preview ──────────────────────────────────────────────────────────
 let _metaTimer, _currentES;
+let _videoRunning = new Map();   // videoId → jobId for in-flight dedup
 
 document.getElementById("url-input").addEventListener("input", e => {
   clearTimeout(_metaTimer);
