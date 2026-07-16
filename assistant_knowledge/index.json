@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "provider-config-and-aliases",
+      "title": "Provider Configuration and Secret Alias Map",
+      "category": "architecture",
+      "confidence": "verified",
+      "updated_at": "2026-07-16T13:26:36.786897+00:00",
+      "path": "provider-config-and-aliases.md"
+    },
+    {
       "slug": "skill-quality-audit-2026-07-16",
       "title": "Skill Quality Audit \u2014 Before/After 2026-07-16",
       "category": "session_learnings",
@@ -65,5 +73,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-16T13:26:21.914225+00:00"
+  "updated_at": "2026-07-16T13:26:36.788229+00:00"
 }
