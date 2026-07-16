@@ -2420,32 +2420,27 @@ def openapi_spec():
     domain = os.getenv("REPLIT_DEV_DOMAIN","")
     base   = f"https://{domain}" if domain else request.url_root.rstrip("/")
     spec   = {
-        "openapi": "3.1.0",
+        "openapi": "3.0.0",
         "info": {
             "title":       "Fieldnote — Complete Knowledge Library API",
             "description": (
                 "Full read access to a personal AI skill library built from YouTube videos. "
-                "Includes every skill (full markdown), all discovered tools, Python packages, "
-                "concepts, MCP server connections, the concept/tool brain map, recent activity, "
+                "Includes every skill with full markdown, all tools, packages, concepts, "
+                "MCP server connections, concept/tool brain map, recent activity, "
                 "AI provider health, and direct read access to the Fieldnote GitHub repository. "
-                "USAGE GUIDE: Call /api/snapshot first to load the full library context. "
-                "Use /api/skills for fast browsing, /api/skills/{name}/content for a single full skill, "
-                "/api/github/repo to browse the repo, /api/github/repo-file?path=X to read any file."
+                "Start with getFullSnapshot to load all context at once."
             ),
             "version": "3.0.0",
         },
-        "servers": [{"url": base, "description": "Fieldnote live server"}],
+        "servers": [{"url": base}],
         "paths": {
             "/api/snapshot": {
                 "get": {
                     "operationId": "getFullSnapshot",
-                    "summary": "Complete library snapshot (everything in one call)",
-                    "description": (
-                        "Returns ALL skills with full markdown content, every tool, concept, and package "
-                        "across the library, all MCP connections, the brain summary (concept/tool graph), "
-                        "AI provider status, and the GitHub repo URL. Call this first to load full context."
-                    ),
-                    "responses": {"200": {"description": "Full snapshot of the Fieldnote library"}},
+                    "summary": "Complete library snapshot — everything in one call",
+                    "description": "Returns all skills with full markdown content, every tool, concept, and package, all MCP connections, the brain summary, AI provider status, and the GitHub repo URL. Call this first to load full context.",
+                    "parameters": [],
+                    "responses": {"200": {"description": "Full snapshot", "content": {"application/json": {"schema": {"type": "object"}}}}},
                 }
             },
             "/api/skills": {
@@ -2454,40 +2449,41 @@ def openapi_spec():
                     "summary": "List all skills with metadata",
                     "description": "Returns every skill with title, description, tags, tools, concepts, and update date. Filter by keyword or tag.",
                     "parameters": [
-                        {"name":"q",     "in":"query","schema":{"type":"string"},"description":"Keyword filter across title/description/tools/tags"},
-                        {"name":"tag",   "in":"query","schema":{"type":"string"},"description":"Filter by tag"},
-                        {"name":"limit", "in":"query","schema":{"type":"integer"},"description":"Max results (default 100)"},
+                        {"name":"q",     "in":"query","schema":{"type":"string"},"description":"Keyword filter"},
+                        {"name":"tag",   "in":"query","schema":{"type":"string"},"description":"Tag filter"},
+                        {"name":"limit", "in":"query","schema":{"type":"integer"},"description":"Max results"},
                     ],
-                    "responses": {"200": {"description": "Array of skill summaries"}},
+                    "responses": {"200": {"description": "Skill summaries", "content": {"application/json": {"schema": {"type": "array","items": {"type": "object"}}}}}},
                 }
             },
             "/api/skills/{name}/content": {
                 "get": {
                     "operationId": "getSkillContent",
-                    "summary": "Full skill — complete markdown + all metadata",
-                    "description": "Returns the entire skill markdown (steps, tools, code, source references) plus all metadata.",
-                    "parameters": [{"name":"name","in":"path","required":True,"schema":{"type":"string"},"description":"Skill name (no .md extension)"}],
+                    "summary": "Full skill — complete markdown and all metadata",
+                    "description": "Returns the entire skill markdown with steps, tools, code, and source references plus all metadata.",
+                    "parameters": [{"name":"name","in":"path","required":True,"schema":{"type":"string"},"description":"Skill name without .md extension"}],
                     "responses": {
-                        "200": {"description": "Full skill content and metadata"},
-                        "404": {"description": "Skill not found"},
+                        "200": {"description": "Full skill", "content": {"application/json": {"schema": {"type": "object"}}}},
+                        "404": {"description": "Not found"},
                     },
                 }
             },
             "/api/brain": {
                 "get": {
                     "operationId": "getBrainMap",
-                    "summary": "Concept & tool relationship graph",
-                    "description": "Shows which concepts and tools appear most often, which skills share them, and how skills are related to each other.",
-                    "responses": {"200": {"description": "Brain map with top concepts, tools, and skill relationships"}},
+                    "summary": "Concept and tool relationship graph",
+                    "description": "Shows which concepts and tools appear most often across skills, which skills share them, and how skills relate to each other.",
+                    "parameters": [],
+                    "responses": {"200": {"description": "Brain map", "content": {"application/json": {"schema": {"type": "object"}}}}},
                 }
             },
             "/api/activity": {
                 "get": {
                     "operationId": "getRecentActivity",
                     "summary": "Recent skill creation and enhancement history",
-                    "description": "Shows the most recently created or enhanced skills, what video they came from, and when.",
-                    "parameters": [{"name":"limit","in":"query","schema":{"type":"integer"},"description":"Max events (default 30)"}],
-                    "responses": {"200": {"description": "Activity log newest-first"}},
+                    "description": "Shows the most recently created or enhanced skills, which video they came from, and when.",
+                    "parameters": [{"name":"limit","in":"query","schema":{"type":"integer"},"description":"Max events, default 30"}],
+                    "responses": {"200": {"description": "Activity log", "content": {"application/json": {"schema": {"type": "object"}}}}},
                 }
             },
             "/api/packages": {
@@ -2495,33 +2491,36 @@ def openapi_spec():
                     "operationId": "getAllPackages",
                     "summary": "All Python packages discovered across skills",
                     "description": "Returns every pip-installable package name mentioned across all skills.",
-                    "responses": {"200": {"description": "Sorted package list with count"}},
+                    "parameters": [],
+                    "responses": {"200": {"description": "Package list", "content": {"application/json": {"schema": {"type": "object"}}}}},
                 }
             },
             "/api/mcp/connections": {
                 "get": {
                     "operationId": "getMcpConnections",
-                    "summary": "All MCP server connections",
-                    "description": "Lists every Model Context Protocol server configured in the workspace — name, type, command/URL, and which skills reference it.",
-                    "responses": {"200": {"description": "MCP connection list"}},
+                    "summary": "All MCP server connections configured in the workspace",
+                    "description": "Lists every Model Context Protocol server — name, type, transport, command or URL, and which skills reference it.",
+                    "parameters": [],
+                    "responses": {"200": {"description": "MCP connections", "content": {"application/json": {"schema": {"type": "array","items": {"type": "object"}}}}}},
                 }
             },
             "/api/provider-status": {
                 "get": {
                     "operationId": "getProviderStatus",
-                    "summary": "AI provider health (Groq, Gemini, OpenAI, etc.)",
-                    "description": "Returns live state for each AI provider: healthy / rate_limited / quota_exhausted / auth_error / no_key.",
-                    "responses": {"200": {"description": "Provider status map"}},
+                    "summary": "AI provider health — Groq, Gemini, OpenAI, HuggingFace, OpenRouter",
+                    "description": "Returns live state for each AI provider: healthy, rate_limited, quota_exhausted, auth_error, or no_key.",
+                    "parameters": [],
+                    "responses": {"200": {"description": "Provider states", "content": {"application/json": {"schema": {"type": "object"}}}}},
                 }
             },
             "/api/github/repo": {
                 "get": {
                     "operationId": "listGithubFiles",
                     "summary": "List files in the Fieldnote GitHub repository",
-                    "description": "Browse any directory of the Fieldnote GitHub repo. Leave path empty for the root.",
-                    "parameters": [{"name":"path","in":"query","schema":{"type":"string"},"description":"Directory path (empty = root)"}],
+                    "description": "Browse any directory of the Fieldnote GitHub repo. Leave path empty for the root listing.",
+                    "parameters": [{"name":"path","in":"query","schema":{"type":"string"},"description":"Directory path, empty for root"}],
                     "responses": {
-                        "200": {"description": "File and directory listing"},
+                        "200": {"description": "File listing", "content": {"application/json": {"schema": {"type": "object"}}}},
                         "400": {"description": "No GitHub repo configured"},
                     },
                 }
@@ -2530,10 +2529,10 @@ def openapi_spec():
                 "get": {
                     "operationId": "readGithubFile",
                     "summary": "Read any file from the Fieldnote GitHub repository",
-                    "description": "Fetches and returns the decoded text content of any file in the repo — skills, code, configs, logs.",
-                    "parameters": [{"name":"path","in":"query","required":True,"schema":{"type":"string"},"description":"File path in the repo"}],
+                    "description": "Fetches and returns the decoded text content of any file in the repo — skills, code, configs.",
+                    "parameters": [{"name":"path","in":"query","required":True,"schema":{"type":"string"},"description":"File path in the repo, e.g. skills/claude_code.md"}],
                     "responses": {
-                        "200": {"description": "File content and metadata"},
+                        "200": {"description": "File content", "content": {"application/json": {"schema": {"type": "object"}}}},
                         "500": {"description": "File not found or GitHub error"},
                     },
                 }
@@ -2541,8 +2540,9 @@ def openapi_spec():
             "/api/health": {
                 "get": {
                     "operationId": "getHealth",
-                    "summary": "System health — tools, AI keys, GitHub sync status",
-                    "responses": {"200": {"description": "Health check results"}},
+                    "summary": "System health — tool availability, AI keys, GitHub sync",
+                    "parameters": [],
+                    "responses": {"200": {"description": "Health check", "content": {"application/json": {"schema": {"type": "object"}}}}},
                 }
             },
         },
