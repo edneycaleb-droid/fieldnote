@@ -29,6 +29,18 @@ from typing import Any
 
 log = logging.getLogger("fieldnote.provider_router")
 
+# ── Nonstandard secret alias normalisation ────────────────────────────────────
+# Maps user-defined Replit Secret names → the standard env-var names the rest
+# of the codebase expects.  Only fills the standard name when it is NOT already
+# set; never overwrites a real primary key.  Values are never logged.
+_KEY_ALIASES: dict[str, str] = {
+    "GROQFREE":  "GROQ",              # backup Groq key stored under alternate name
+    "Langchain": "LANGCHAIN_API_KEY", # LangSmith tracing key stored under alternate name
+}
+for _ka_src, _ka_dst in _KEY_ALIASES.items():
+    if os.getenv(_ka_src) and not os.getenv(_ka_dst):
+        os.environ[_ka_dst] = os.environ[_ka_src]  # type: ignore[assignment]
+
 # Map provider names to the env-var names the router reads
 KEY_ENV_MAP: dict[str, str] = {
     "groq":        "GROQ",
@@ -82,7 +94,7 @@ _init_status()
 
 def _get_key(provider: str) -> str:
     if provider == "groq":
-        return os.getenv("GROQ_API_KEY") or os.getenv("GROQ") or ""
+        return os.getenv("GROQ_API_KEY") or os.getenv("GROQ") or os.getenv("GROQFREE") or ""
     if provider == "gemini":
         return (os.getenv("Google_API_Key") or os.getenv("Gemini")
                 or os.getenv("GOOGLE_API_KEY") or "")
