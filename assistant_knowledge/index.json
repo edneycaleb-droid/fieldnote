@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "session-continuity-2026-07-16",
+      "title": "Session Continuity \u2014 Full Audit State 2026-07-16",
+      "category": "session_learnings",
+      "confidence": "verified",
+      "updated_at": "2026-07-16T13:28:06.677178+00:00",
+      "path": "session_learnings/session-continuity-2026-07-16.md"
+    },
+    {
       "slug": "provider-config-and-aliases",
       "title": "Provider Configuration and Secret Alias Map",
       "category": "architecture",
@@ -73,5 +81,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-16T13:26:36.788229+00:00"
+  "updated_at": "2026-07-16T13:28:06.678762+00:00"
 }
