@@ -132,8 +132,11 @@ def load_index() -> dict:
 
 
 def save_index(index: dict):
-    with open(METADATA_FILE, "w") as f:
+    # Atomic write — never leave a half-written index on crash
+    _tmp = METADATA_FILE + ".tmp"
+    with open(_tmp, "w") as f:
         json.dump(index, f, indent=2, default=str)
+    os.replace(_tmp, METADATA_FILE)
 
 
 def repair_index() -> tuple[int, int]:
@@ -178,8 +181,8 @@ def list_skills() -> list[dict]:
             "name":         name,
             "title":        meta.get("title") or name,
             "description":  meta.get("description", ""),
-            "tags":         meta.get("tags", []),
-            "tools":        meta.get("tools", []),
+            "tags":         _nsl(meta.get("tags")),
+            "tools":        _nsl(meta.get("tools")),
             "source_title": meta.get("source_title", ""),
             "source_url":   meta.get("source_url", ""),
             "video_id":     meta.get("video_id", ""),
@@ -200,8 +203,8 @@ def get_global_stats() -> dict:
     all_tools: set = set()
     all_pkgs:  set = set()
     for m in index.values():
-        all_tools.update(m.get("tools", []))
-        all_pkgs.update(m.get("python_packages", []))
+        all_tools.update(_nsl(m.get("tools")))
+        all_pkgs.update(_nsl(m.get("python_packages")))
 
     repos_dir  = "fieldnote_repos"
     repo_count = sum(
@@ -222,7 +225,7 @@ def get_all_tags() -> list[str]:
     index = load_index()
     tags: set = set()
     for m in index.values():
-        tags.update(m.get("tags", []))
+        tags.update(_nsl(m.get("tags")))
     return sorted(tags)
 
 
@@ -234,7 +237,7 @@ def _relevance_score(meta: dict, quick_tools: list[str]) -> int:
         return 0
     skill_tokens = set(
         t.lower()
-        for t in meta.get("tools", []) + meta.get("tags", []) + meta.get("concepts", [])
+        for t in _nsl(meta.get("tools")) + _nsl(meta.get("tags")) + _nsl(meta.get("concepts"))
     )
     score = 0
     for qt in quick_tools:
@@ -268,11 +271,11 @@ def get_skills_context(quick_tools: list[str] | None = None) -> str:
 
     lines: list[str] = ["=== EXISTING SKILL INDEX ===\n"]
     for _, name, m in scored[:30]:
-        tools    = ", ".join(m.get("tools",    [])[:6]) or "none"
-        tags     = ", ".join(m.get("tags",     [])[:4]) or "none"
-        concepts = ", ".join(m.get("concepts", [])[:4]) or "none"
-        pkgs     = ", ".join(m.get("python_packages", [])[:4]) or "none"
-        steps_preview = "; ".join(m.get("steps", [])[:2])
+        tools    = ", ".join(_nsl(m.get("tools"))[:6]) or "none"
+        tags     = ", ".join(_nsl(m.get("tags"))[:4]) or "none"
+        concepts = ", ".join(_nsl(m.get("concepts"))[:4]) or "none"
+        pkgs     = ", ".join(_nsl(m.get("python_packages"))[:4]) or "none"
+        steps_preview = "; ".join(_nsl(m.get("steps"))[:2])
         sources_count = len(m.get("history", [])) + 1
         lines.append(
             f"SKILL: {name}\n"
@@ -354,11 +357,22 @@ def _build_sources_section(sources: list[dict]) -> str:
     )
 
 
-def _dedup_list(new_items: list, old_items: list) -> list:
-    """Merge two lists, deduplicating case-insensitively, preserving order."""
+
+def _nsl(v) -> list:
+    """Null-safe list — returns [] for None; splits comma-strings; passes lists through.
+    Safe replacement for dict.get('key', []) when value may be null in LLM/disk JSON:
+    dict.get('key', []) returns None if key exists with null value; _nsl(d.get('key')) is safe."""
+    if isinstance(v, list): return v
+    if v is None:           return []
+    if isinstance(v, str):  return [x.strip() for x in v.split(",") if x.strip()]
+    return []
+
+def _dedup_list(new_items, old_items) -> list:
+    """Merge two lists, deduplicating case-insensitively, preserving order.
+    Accepts None for either argument — treated as empty list."""
     seen: set[str] = set()
     result: list   = []
-    for item in new_items + old_items:
+    for item in _nsl(new_items) + _nsl(old_items):
         key = str(item).lower().strip()
         if key not in seen and key:
             seen.add(key)
@@ -915,7 +929,7 @@ def _save_skill(
         f"# {skill.get('title', 'Skill')}\n\n"
         f"{skill.get('description', '')}\n\n"
         "## Steps\n" +
-        "\n".join(f"- {s}" for s in skill.get("steps", []))
+        "\n".join(f"- {s}" for s in _nsl(skill.get("steps")))
     )
 
     # Strip any Sources section the AI may have included (we manage it ourselves)
@@ -927,20 +941,22 @@ def _save_skill(
     # Append the authoritative Sources section
     markdown += _build_sources_section(all_sources)
 
-    # ── Write file ────────────────────────────────────────────────────────────
-    with open(skill_path, "w") as f:
+    # ── Write file (atomic: write to .tmp then rename) ───────────────────────
+    _tmp_md = skill_path + ".tmp"
+    with open(_tmp_md, "w") as f:
         f.write(markdown)
+    os.replace(_tmp_md, skill_path)
 
     # ── Update metadata index ─────────────────────────────────────────────────
     index = load_index()
     prev  = index.get(skill_name, {})
 
     # Merge and deduplicate all list fields (new AI output wins order, old fills gaps)
-    merged_tools    = _dedup_list(skill.get("tools", []),           prev.get("tools", []))
-    merged_tags     = _dedup_list(skill.get("tags", []),            prev.get("tags", []))
-    merged_concepts = _dedup_list(skill.get("concepts", []),        prev.get("concepts", []))
-    merged_packages = _dedup_list(skill.get("python_packages", []), prev.get("python_packages", []))
-    merged_related  = _dedup_list(skill.get("related_skills", []),  prev.get("related_skills", []))
+    merged_tools    = _dedup_list(_nsl(skill.get("tools")),           _nsl(prev.get("tools")))
+    merged_tags     = _dedup_list(_nsl(skill.get("tags")),            _nsl(prev.get("tags")))
+    merged_concepts = _dedup_list(_nsl(skill.get("concepts")),        _nsl(prev.get("concepts")))
+    merged_packages = _dedup_list(_nsl(skill.get("python_packages")), _nsl(prev.get("python_packages")))
+    merged_related  = _dedup_list(_nsl(skill.get("related_skills")),  _nsl(prev.get("related_skills")))
 
     # History entry for this update
     history_entry = {
@@ -966,7 +982,7 @@ def _save_skill(
         "concepts":        merged_concepts,
         "python_packages": merged_packages,
         "related_skills":  merged_related,
-        "steps":           skill.get("steps", []),
+        "steps":           _nsl(skill.get("steps")),
         "source_url":      url,
         "source_title":    meta.get("title", ""),
         "video_id":        video_id,
@@ -1179,12 +1195,12 @@ def run_job(job_id: str, url: str, video_id: str):
             # ── Phase 3: all heavy work in parallel ───────────────────────────
             emit("⚡  Phase 3: save ∥ packages ∥ MCP ∥ clone ∥ supplemental search …", "info")
 
-            ai_tools    = skill.get("tools", [])
+            ai_tools    = _nsl(skill.get("tools"))
             mcp_targets = [r for r in github_results
                            if r.get("is_mcp") or r.get("npm_package")]
 
             pkg_f   = pool.submit(_install_pkgs,
-                                  skill.get("python_packages", []), emit)
+                                  _nsl(skill.get("python_packages")), emit)
             mcp_f   = pool.submit(mcp_agent.process_repos,     mcp_targets,    emit)
             clone_f = pool.submit(github_agent.clone_best_repos, github_results, emit)
             supp_f  = pool.submit(_supplemental_github_search,
@@ -1262,12 +1278,12 @@ def run_job(job_id: str, url: str, video_id: str):
                 "ok":                True,
                 "title":             skill.get("title"),
                 "description":       skill.get("description"),
-                "steps":             skill.get("steps", []),
-                "tools":             skill.get("tools", []),
-                "concepts":          skill.get("concepts", []),
-                "tags":              skill.get("tags", []),
-                "related_skills":    skill.get("related_skills", []),
-                "python_packages":   skill.get("python_packages", []),
+                "steps":             _nsl(skill.get("steps")),
+                "tools":             _nsl(skill.get("tools")),
+                "concepts":          _nsl(skill.get("concepts")),
+                "tags":              _nsl(skill.get("tags")),
+                "related_skills":    _nsl(skill.get("related_skills")),
+                "python_packages":   _nsl(skill.get("python_packages")),
                 "installed":         installed,
                 "failed":            failed,
                 "skill_file":        skill_path,
@@ -1905,15 +1921,15 @@ def _mcp_call_tool(name: str, args: dict) -> dict:
         limit = min(int(args.get("limit") or 25), 100)
         skills = []
         for skill_name, meta in index.items():
-            if tag and tag not in [t.lower() for t in meta.get("tags", [])]:
+            if tag and tag not in [t.lower() for t in _nsl(meta.get("tags"))]:
                 continue
             skills.append({
                 "name":         skill_name,
                 "title":        meta.get("title", skill_name),
                 "description":  meta.get("description", ""),
-                "tags":         meta.get("tags", []),
-                "tools":        meta.get("tools", [])[:10],
-                "concepts":     meta.get("concepts", [])[:6],
+                "tags":         _nsl(meta.get("tags")),
+                "tools":        _nsl(meta.get("tools"))[:10],
+                "concepts":     _nsl(meta.get("concepts"))[:6],
                 "updated_at":   meta.get("updated_at", ""),
                 "source_count": len(meta.get("history", [])) + 1,
             })
@@ -1935,9 +1951,9 @@ def _mcp_call_tool(name: str, args: dict) -> dict:
             content = fh.read()
         return {
             "name": skill_name, "title": meta.get("title", skill_name),
-            "description": meta.get("description", ""), "tags": meta.get("tags", []),
-            "tools": meta.get("tools", []), "concepts": meta.get("concepts", []),
-            "steps": meta.get("steps", []), "packages": meta.get("python_packages", []),
+            "description": meta.get("description", ""), "tags": _nsl(meta.get("tags")),
+            "tools": _nsl(meta.get("tools")), "concepts": _nsl(meta.get("concepts")),
+            "steps": _nsl(meta.get("steps")), "packages": _nsl(meta.get("python_packages")),
             "source_count": len(meta.get("history", [])) + 1,
             "updated_at": meta.get("updated_at", ""), "content": content,
         }
@@ -1947,31 +1963,31 @@ def _mcp_call_tool(name: str, args: dict) -> dict:
         results = []
         for skill_name, meta in index.items():
             hay = " ".join([meta.get("title",""), meta.get("description",""),
-                            " ".join(meta.get("tags",[])), " ".join(meta.get("tools",[])),
-                            " ".join(meta.get("concepts",[])), " ".join(meta.get("steps",[]))]).lower()
+                            " ".join(_nsl(meta.get("tags"))), " ".join(_nsl(meta.get("tools"))),
+                            " ".join(_nsl(meta.get("concepts"))), " ".join(_nsl(meta.get("steps")))]).lower()
             score = sum(hay.count(w) for w in query.split() if w)
             if score:
                 results.append({"name": skill_name, "title": meta.get("title", skill_name),
                                  "description": meta.get("description",""), "score": score,
-                                 "tags": meta.get("tags",[]), "tools": meta.get("tools",[])[:6]})
+                                 "tags": _nsl(meta.get("tags")), "tools": _nsl(meta.get("tools"))[:6]})
         results.sort(key=lambda x: x["score"], reverse=True)
         return {"results": results[:12], "query": query}
 
     elif name == "get_all_tools":
         tools: set = set()
-        for m in index.values(): tools.update(m.get("tools",[]))
+        for m in index.values(): tools.update(_nsl(m.get("tools")))
         return {"tools": sorted(tools), "count": len(tools)}
 
     elif name == "get_all_concepts":
         concepts: set = set()
-        for m in index.values(): concepts.update(m.get("concepts",[]))
+        for m in index.values(): concepts.update(_nsl(m.get("concepts")))
         return {"concepts": sorted(concepts), "count": len(concepts)}
 
     elif name == "get_library_stats":
         tools: set = set(); concepts: set = set(); pkgs: set = set()
         for m in index.values():
-            tools.update(m.get("tools",[])); concepts.update(m.get("concepts",[]))
-            pkgs.update(m.get("python_packages",[]))
+            tools.update(_nsl(m.get("tools"))); concepts.update(_nsl(m.get("concepts")))
+            pkgs.update(_nsl(m.get("python_packages")))
         return {"skills": len(index), "tools": len(tools), "concepts": len(concepts), "packages": len(pkgs)}
 
 
@@ -1999,7 +2015,7 @@ def _mcp_call_tool(name: str, args: dict) -> dict:
 
     elif name == "get_all_packages":
         pkgs: set = set()
-        for m in index.values(): pkgs.update(m.get("python_packages", []))
+        for m in index.values(): pkgs.update(_nsl(m.get("python_packages")))
         return {"packages": sorted(pkgs), "count": len(pkgs)}
 
     elif name == "get_mcp_connections":
@@ -2159,8 +2175,8 @@ def _update_brain(skill: dict, skill_name: str) -> None:
     brain.setdefault("tools", {})
     brain.setdefault("skill_map", {})
     brain.setdefault("relationships", {})
-    concepts = skill.get("concepts", [])
-    tools    = skill.get("tools", [])
+    concepts = _nsl(skill.get("concepts"))
+    tools    = _nsl(skill.get("tools"))
     for c in concepts:
         brain["concepts"].setdefault(c, {"freq": 0, "skills": []})
         brain["concepts"][c]["freq"] += 1
@@ -2174,8 +2190,8 @@ def _update_brain(skill: dict, skill_name: str) -> None:
     brain["skill_map"][skill_name] = {
         "concepts":   concepts,
         "tools":      tools,
-        "tags":       skill.get("tags", []),
-        "step_count": len(skill.get("steps", [])),
+        "tags":       _nsl(skill.get("tags")),
+        "step_count": len(_nsl(skill.get("steps"))),
     }
     brain["relationships"].setdefault(skill_name, {})
     for other, od in brain["skill_map"].items():
@@ -2183,7 +2199,7 @@ def _update_brain(skill: dict, skill_name: str) -> None:
             continue
         shared = list(
             set(concepts + tools) &
-            set(od.get("concepts", []) + od.get("tools", []))
+            set(_nsl(od.get("concepts")) + _nsl(od.get("tools")))
         )
         if shared:
             brain["relationships"][skill_name][other] = shared[:6]
@@ -2227,7 +2243,7 @@ def api_packages():
     """All Python packages discovered across all skills."""
     index = load_index()
     pkgs: set = set()
-    for m in index.values(): pkgs.update(m.get("python_packages", []))
+    for m in index.values(): pkgs.update(_nsl(m.get("python_packages")))
     return jsonify({"packages": sorted(pkgs), "count": len(pkgs)})
 
 
@@ -2250,11 +2266,11 @@ def api_snapshot():
             "name":         skill_name,
             "title":        meta.get("title", skill_name),
             "description":  meta.get("description", ""),
-            "tags":         meta.get("tags", []),
-            "tools":        meta.get("tools", []),
-            "concepts":     meta.get("concepts", []),
-            "steps":        meta.get("steps", []),
-            "packages":     meta.get("python_packages", []),
+            "tags":         _nsl(meta.get("tags")),
+            "tools":        _nsl(meta.get("tools")),
+            "concepts":     _nsl(meta.get("concepts")),
+            "steps":        _nsl(meta.get("steps")),
+            "packages":     _nsl(meta.get("python_packages")),
             "source_count": len(meta.get("history", [])) + 1,
             "updated_at":   meta.get("updated_at", ""),
             "content":      content,
@@ -2263,8 +2279,8 @@ def api_snapshot():
 
     all_tools: set = set(); all_concepts: set = set(); all_pkgs: set = set()
     for m in index.values():
-        all_tools.update(m.get("tools",[])); all_concepts.update(m.get("concepts",[]))
-        all_pkgs.update(m.get("python_packages",[]))
+        all_tools.update(_nsl(m.get("tools"))); all_concepts.update(_nsl(m.get("concepts")))
+        all_pkgs.update(_nsl(m.get("python_packages")))
 
     brain_path = os.path.join(SKILLS_DIR, "_brain.json")
     brain_summary = {}
@@ -2464,9 +2480,9 @@ def api_chat():
         for sn, meta in index.items():
             hay = " ".join([
                 meta.get("title", ""), meta.get("description", ""),
-                " ".join(meta.get("tools", [])),
-                " ".join(meta.get("concepts", [])),
-                " ".join(meta.get("tags", [])),
+                " ".join(_nsl(meta.get("tools"))),
+                " ".join(_nsl(meta.get("concepts"))),
+                " ".join(_nsl(meta.get("tags"))),
             ]).lower()
             score = sum(hay.count(w) for w in msg_lower.split() if len(w) > 2)
             if score:
@@ -2549,7 +2565,7 @@ def api_briefing():
     else:
         lines = []
         for sn, meta in list(index.items())[:10]:
-            tools_str = ", ".join(meta.get("tools", [])[:3])
+            tools_str = ", ".join(_nsl(meta.get("tools"))[:3])
             lines.append(
                 "- **" + meta.get("title", sn) + "**: "
                 + meta.get("description", "")[:80]
@@ -2891,11 +2907,11 @@ def api_skill_content(name: str):
         "name":         name,
         "title":        meta.get("title", name),
         "description":  meta.get("description",""),
-        "tags":         meta.get("tags",[]),
-        "tools":        meta.get("tools",[]),
-        "concepts":     meta.get("concepts",[]),
-        "steps":        meta.get("steps",[]),
-        "python_packages": meta.get("python_packages",[]),
+        "tags":         _nsl(meta.get("tags")),
+        "tools":        _nsl(meta.get("tools")),
+        "concepts":     _nsl(meta.get("concepts")),
+        "steps":        _nsl(meta.get("steps")),
+        "python_packages": _nsl(meta.get("python_packages")),
         "source_count": len(meta.get("history",[])) + 1,
         "updated_at":   meta.get("updated_at",""),
         "content":      content,
