@@ -1128,27 +1128,53 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
 
     <!-- ChatGPT pane -->
     <div class="ai-pane" id="ai-pane-chatgpt">
-      <p class="ai-step"><strong>Step 1 — Open ChatGPT → Explore GPTs → Create a GPT</strong></p>
-      <p class="ai-step"><strong>Step 2 — Go to Configure → Actions → Create new action</strong></p>
-      <p class="ai-step"><strong>Step 3 — Paste the OpenAPI spec URL:</strong></p>
+
+      <!-- Step 1 -->
+      <p class="ai-step"><strong>Step 1 — Create a Custom GPT</strong><br>
+        ChatGPT → top-right avatar → <em>My GPTs</em> → <em>Create a GPT</em> → <em>Configure</em> tab</p>
+
+      <!-- Step 2: one URL -->
+      <p class="ai-step" style="margin-top:10px"><strong>Step 2 — Add Action (one URL)</strong><br>
+        Scroll to <em>Actions</em> → <em>Create new action</em> → <em>Import from URL</em> → paste:</p>
       <div class="ai-url-row">
         <span class="ai-url" id="openapi-url">{{ base_url }}/openapi.json</span>
-        <button class="ai-url-copy" onclick="copyText('openapi-url', this)">Copy</button>
+        <button class="ai-url-copy" onclick="copyText('openapi-url', this)">Copy URL</button>
       </div>
-      <p class="ai-step" style="margin-top:4px">ChatGPT will auto-import all endpoints. Hit "Import from URL" in the Actions editor.</p>
-      <p class="ai-step" style="margin-top:10px"><strong>What ChatGPT gets access to:</strong></p>
-      <div class="ai-url-row" style="gap:6px;flex-wrap:wrap">
-        <span class="chip chip-tool">list_skills</span>
-        <span class="chip chip-tool">get_skill_content</span>
-        <span class="chip chip-tool">health_check</span>
+      <p class="ai-step" style="margin-top:2px;font-size:.75rem;color:var(--muted)">
+        ChatGPT imports all 11 endpoints automatically. Done — save the GPT.</p>
+
+      <!-- Step 3: system prompt -->
+      <p class="ai-step" style="margin-top:12px"><strong>Step 3 — Paste this system prompt</strong></p>
+      <div class="ai-snippet" id="chatgpt-system-prompt" style="white-space:pre-wrap;font-size:.72rem;max-height:140px;overflow-y:auto">You are a personal AI learning assistant with complete access to my Fieldnote knowledge library — a curated database of AI, development, and productivity skills I've extracted from YouTube videos.
+
+ALWAYS start by calling getFullSnapshot to load my full library context, or use listSkills + getSkillContent for targeted lookups. When I ask how to do something technical, search my library FIRST and anchor your answer in my actual notes, not generic info.
+
+You also have full access to my GitHub repo via listGithubFiles and readGithubFile — use these to read skill files, code, or configs directly from source. Check getProviderStatus if I ask about AI provider issues. Use getRecentActivity to see what I've been learning lately.
+
+Cross-reference related skills proactively. When you find a relevant skill, always fetch its FULL content — summaries aren't enough.<button class="ai-copy" onclick="copyText('chatgpt-system-prompt', this)">Copy</button></div>
+
+      <!-- Full access list -->
+      <p class="ai-step" style="margin-top:12px"><strong>Full access ChatGPT gets:</strong></p>
+      <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:4px">
+        <span class="chip chip-tool">getFullSnapshot</span>
+        <span class="chip chip-tool">listSkills</span>
+        <span class="chip chip-tool">getSkillContent</span>
+        <span class="chip chip-tool">getBrainMap</span>
+        <span class="chip chip-tool">getRecentActivity</span>
+        <span class="chip chip-tool">getAllPackages</span>
+        <span class="chip chip-tool">getMcpConnections</span>
+        <span class="chip chip-tool">getProviderStatus</span>
+        <span class="chip chip-tool">listGithubFiles</span>
+        <span class="chip chip-tool">readGithubFile</span>
+        <span class="chip chip-tool">getHealth</span>
       </div>
+
       <p class="ai-note" style="margin-top:10px">
-        Tip: Give your GPT a system prompt like <em>"You have access to a Fieldnote skill library via actions. When asked how to do something technical, search the library first."</em>
-      </p>
-      <p class="ai-note">
-        <a class="ai-link" href="{{ base_url }}/openapi.json" target="_blank">View OpenAPI spec ↗</a>
+        <a class="ai-link" href="{{ base_url }}/openapi.json" target="_blank">View spec ↗</a>
         &nbsp;·&nbsp;
-        <a class="ai-link" href="{{ base_url }}/api/skills" target="_blank">Browse skills API ↗</a>
+        <a class="ai-link" href="{{ base_url }}/api/snapshot" target="_blank">Live snapshot ↗</a>
+        &nbsp;·&nbsp;
+        <a class="ai-link" href="{{ base_url }}/api/github/repo" target="_blank">GitHub repo ↗</a>
       </p>
     </div>
   </div>
