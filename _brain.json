@@ -67,9 +67,10 @@
       ]
     },
     "Workflows": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "building_ai_agents"
+        "building_ai_agents",
+        "openai_agents_sdk"
       ]
     },
     "Annotation tools": {
@@ -386,9 +387,10 @@
       ]
     },
     "LLMs": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "astrbot_deployment"
+        "astrbot_deployment",
+        "openai_agents_sdk"
       ]
     },
     "plugins": {
@@ -419,6 +421,48 @@
       "freq": 1,
       "skills": [
         "astrbot_deployment"
+      ]
+    },
+    "Multi-agent workflows": {
+      "freq": 1,
+      "skills": [
+        "openai_agents_sdk"
+      ]
+    },
+    "LLMs (Large Language Models)": {
+      "freq": 1,
+      "skills": [
+        "openai_agents_sdk"
+      ]
+    },
+    "OpenAI Responses and Chat Completions APIs": {
+      "freq": 1,
+      "skills": [
+        "openai_agents_sdk"
+      ]
+    },
+    "Provider-agnostic framework": {
+      "freq": 1,
+      "skills": [
+        "openai_agents_sdk"
+      ]
+    },
+    "Human-in-the-loop collaboration": {
+      "freq": 1,
+      "skills": [
+        "openai_agents_sdk"
+      ]
+    },
+    "Agents": {
+      "freq": 1,
+      "skills": [
+        "openai_agents_sdk"
+      ]
+    },
+    "Multi-agent systems": {
+      "freq": 1,
+      "skills": [
+        "openai_agents_sdk"
       ]
     }
   },
@@ -652,31 +696,35 @@
       ]
     },
     "LangChain": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "building_ai_agents_with_langchain",
-        "building_resilient_ai_agents_with_langgraph"
+        "building_resilient_ai_agents_with_langgraph",
+        "openai_agents_sdk"
       ]
     },
     "Deep Agents": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "building_ai_agents_with_langchain",
-        "building_resilient_ai_agents_with_langgraph"
+        "building_resilient_ai_agents_with_langgraph",
+        "openai_agents_sdk"
       ]
     },
     "LangGraph": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "building_ai_agents_with_langchain",
-        "building_resilient_ai_agents_with_langgraph"
+        "building_resilient_ai_agents_with_langgraph",
+        "openai_agents_sdk"
       ]
     },
     "LangSmith": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "building_ai_agents_with_langchain",
-        "building_resilient_ai_agents_with_langgraph"
+        "building_resilient_ai_agents_with_langgraph",
+        "openai_agents_sdk"
       ]
     },
     "ClaudeCode": {
@@ -773,6 +821,30 @@
       "freq": 1,
       "skills": [
         "astrbot_deployment"
+      ]
+    },
+    "OpenAI Agents SDK": {
+      "freq": 1,
+      "skills": [
+        "openai_agents_sdk"
+      ]
+    },
+    "OpenAI API": {
+      "freq": 1,
+      "skills": [
+        "openai_agents_sdk"
+      ]
+    },
+    "Git": {
+      "freq": 1,
+      "skills": [
+        "openai_agents_sdk"
+      ]
+    },
+    "Python": {
+      "freq": 1,
+      "skills": [
+        "openai_agents_sdk"
       ]
     }
   },
@@ -911,6 +983,37 @@
         "chatbot"
       ],
       "step_count": 12
+    },
+    "openai_agents_sdk": {
+      "concepts": [
+        "Multi-agent workflows",
+        "LLMs (Large Language Models)",
+        "OpenAI Responses and Chat Completions APIs",
+        "Provider-agnostic framework",
+        "Human-in-the-loop collaboration",
+        "LLMs",
+        "Agents",
+        "Workflows",
+        "Multi-agent systems"
+      ],
+      "tools": [
+        "OpenAI Agents SDK",
+        "LangGraph",
+        "LangSmith",
+        "Deep Agents",
+        "LangChain",
+        "OpenAI API",
+        "Git",
+        "Python"
+      ],
+      "tags": [
+        "ai",
+        "automation",
+        "langchain",
+        "productivity",
+        "multi-agent"
+      ],
+      "step_count": 9
     }
   },
   "relationships": {
@@ -930,6 +1033,12 @@
         "Deep Agents",
         "LangChain",
         "LangGraph"
+      ],
+      "openai_agents_sdk": [
+        "LangSmith",
+        "Deep Agents",
+        "LangChain",
+        "LangGraph"
       ]
     },
     "building_resilient_ai_agents_with_langgraph": {
@@ -938,10 +1047,37 @@
         "Deep Agents",
         "LangChain",
         "LangGraph"
+      ],
+      "openai_agents_sdk": [
+        "LangSmith",
+        "Deep Agents",
+        "LangChain",
+        "LangGraph"
       ]
     },
-    "astrbot_deployment": {}
+    "astrbot_deployment": {
+      "openai_agents_sdk": [
+        "LLMs"
+      ]
+    },
+    "openai_agents_sdk": {
+      "building_ai_agents_with_langchain": [
+        "LangSmith",
+        "Deep Agents",
+        "LangChain",
+        "LangGraph"
+      ],
+      "building_resilient_ai_agents_with_langgraph": [
+        "LangSmith",
+        "Deep Agents",
+        "LangChain",
+        "LangGraph"
+      ],
+      "astrbot_deployment": [
+        "LLMs"
+      ]
+    }
   },
-  "updated_at": "2026-07-16T18:38:53.445145+00:00",
-  "total_skills": 5
+  "updated_at": "2026-07-16T18:40:15.842736+00:00",
+  "total_skills": 6
 }
