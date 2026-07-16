@@ -2203,6 +2203,60 @@ def api_github_repo_file():
         return jsonify({"error": str(exc)}), 500
 
 
+
+@app.route("/api/knowledge")
+def api_knowledge():
+    """Return the assistant knowledge base index and all entry content."""
+    from pathlib import Path
+    ak_dir = Path("assistant_knowledge")
+    idx_path = ak_dir / "index.json"
+    entries = []
+    if idx_path.exists():
+        try:
+            import json as _json
+            data = _json.loads(idx_path.read_text())
+            # Enrich with full content
+            for e in data.get("entries", []):
+                fpath = ak_dir / e["path"]
+                e["content"] = fpath.read_text() if fpath.exists() else ""
+                entries.append(e)
+        except Exception:
+            pass
+    return jsonify({
+        "entries": entries,
+        "count": len(entries),
+        "categories": list(github_sync.KNOWLEDGE_CATS),
+    })
+
+
+@app.route("/api/knowledge/upsert", methods=["POST"])
+def api_knowledge_upsert():
+    """Write a knowledge entry to assistant_knowledge/ and push to GitHub.
+
+    Body JSON: { category, slug, title, content, sources?, confidence? }
+    category must be one of: decisions, discoveries, session_learnings,
+                              preferences, architecture
+    """
+    data = request.get_json(silent=True) or {}
+
+    # Basic validation
+    required = {"category", "slug", "title", "content"}
+    missing  = required - set(data.keys())
+    if missing:
+        return jsonify({"ok": False, "error": f"Missing fields: {sorted(missing)}"}), 400
+
+    if data.get("category") not in github_sync.KNOWLEDGE_CATS:
+        return jsonify({
+            "ok": False,
+            "error": f"category must be one of: {sorted(github_sync.KNOWLEDGE_CATS)}"
+        }), 400
+
+    result = github_sync.sync_knowledge_entry(data)
+    if not result.get("ok"):
+        return jsonify(result), 500
+    return jsonify(result)
+
+
 @app.route("/api/brain")
 def api_brain():
     brain_path = os.path.join(SKILLS_DIR, "_brain.json")
@@ -2434,6 +2488,54 @@ def openapi_spec():
         },
         "servers": [{"url": base}],
         "paths": {
+
+            "/api/knowledge": {
+                "get": {
+                    "operationId": "getKnowledgeBase",
+                    "summary": "Read the full assistant knowledge base",
+                    "description": "Returns every entry the assistant has written to assistant_knowledge/ — decisions, discoveries, session learnings, preferences, and architecture notes — with full content.",
+                    "parameters": [],
+                    "responses": {"200": {"description": "Knowledge base entries", "content": {"application/json": {"schema": {"type": "object"}}}}},
+                }
+            },
+            "/api/knowledge/upsert": {
+                "post": {
+                    "operationId": "upsertKnowledgeEntry",
+                    "summary": "Write or update a knowledge entry in the Fieldnote repo",
+                    "description": (
+                        "Creates or overwrites a structured knowledge entry in assistant_knowledge/ "
+                        "and immediately commits + pushes it to GitHub. "
+                        "Use this to record verified facts, architectural decisions, session learnings, "
+                        "preferences, or discoveries during a conversation. "
+                        "category must be one of: decisions, discoveries, session_learnings, preferences, architecture. "
+                        "confidence should be: verified, inferred, or speculative."
+                    ),
+                    "requestBody": {
+                        "required": True,
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "required": ["category", "slug", "title", "content"],
+                                    "properties": {
+                                        "category":   {"type": "string", "enum": ["decisions", "discoveries", "session_learnings", "preferences", "architecture"]},
+                                        "slug":       {"type": "string", "description": "URL-safe identifier, e.g. gpt-actions-openapi-compatibility"},
+                                        "title":      {"type": "string", "description": "Human-readable title"},
+                                        "content":    {"type": "string", "description": "Full markdown content of the entry"},
+                                        "sources":    {"type": "array",  "items": {"type": "string"}, "description": "URLs or references supporting this entry"},
+                                        "confidence": {"type": "string", "enum": ["verified", "inferred", "speculative"], "description": "How certain this entry is"},
+                                    },
+                                }
+                            }
+                        },
+                    },
+                    "responses": {
+                        "200": {"description": "Entry written and pushed", "content": {"application/json": {"schema": {"type": "object"}}}},
+                        "400": {"description": "Validation error"},
+                        "500": {"description": "Push failed"},
+                    },
+                }
+            },
             "/api/snapshot": {
                 "get": {
                     "operationId": "getFullSnapshot",
