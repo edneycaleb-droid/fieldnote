@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "integration-agent-2026-07-16",
+      "title": "Integration Agent Health Event",
+      "category": "session_learnings",
+      "confidence": "verified",
+      "updated_at": "2026-07-16T13:31:49.489949+00:00",
+      "path": "session_learnings/integration-agent-2026-07-16.md"
+    },
+    {
       "slug": "full-audit-report-2026-07-16",
       "title": "Full System Audit Report \u2014 2026-07-16",
       "category": "session_learnings",
@@ -39,14 +47,6 @@
       "confidence": "verified",
       "updated_at": "2026-07-16T13:25:04.843592+00:00",
       "path": "scheduler-jobs-and-sync.md"
-    },
-    {
-      "slug": "integration-agent-2026-07-16",
-      "title": "Integration Agent Health Event",
-      "category": "session_learnings",
-      "confidence": "verified",
-      "updated_at": "2026-07-16T13:16:26.571288+00:00",
-      "path": "session_learnings/integration-agent-2026-07-16.md"
     },
     {
       "slug": "audit-phase1-health",
@@ -89,5 +89,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-16T13:29:38.035493+00:00"
+  "updated_at": "2026-07-16T13:31:49.491263+00:00"
 }
