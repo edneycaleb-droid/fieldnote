@@ -34,8 +34,9 @@ log = logging.getLogger("fieldnote.provider_router")
 # of the codebase expects.  Only fills the standard name when it is NOT already
 # set; never overwrites a real primary key.  Values are never logged.
 _KEY_ALIASES: dict[str, str] = {
-    "GROQFREE":  "GROQ",              # backup Groq key stored under alternate name
-    "Langchain": "LANGCHAIN_API_KEY", # LangSmith tracing key stored under alternate name
+    "GROQFREE":    "GROQ",              # backup Groq key stored under alternate name
+    "Langchain":   "LANGCHAIN_API_KEY", # LangSmith tracing key stored under alternate name
+    "Huggingface": "HF_TOKEN",          # HuggingFace secret stored under alternate name
 }
 for _ka_src, _ka_dst in _KEY_ALIASES.items():
     if os.getenv(_ka_src) and not os.getenv(_ka_dst):
