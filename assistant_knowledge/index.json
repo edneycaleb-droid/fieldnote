@@ -1,20 +1,20 @@
 {
   "entries": [
     {
+      "slug": "integration-agent-2026-07-16",
+      "title": "Integration Agent Health Event",
+      "category": "session_learnings",
+      "confidence": "verified",
+      "updated_at": "2026-07-16T13:16:26.571288+00:00",
+      "path": "session_learnings/integration-agent-2026-07-16.md"
+    },
+    {
       "slug": "audit-phase1-health",
       "title": "Audit Phase 1 Health",
       "category": "session_learnings",
       "confidence": "verified",
       "updated_at": "2026-07-16T13:16:04.873170+00:00",
       "path": "session_learnings/audit-phase1-health.md"
-    },
-    {
-      "slug": "integration-agent-2026-07-16",
-      "title": "Integration Agent Health Event",
-      "category": "session_learnings",
-      "confidence": "verified",
-      "updated_at": "2026-07-16T13:09:02.230590+00:00",
-      "path": "session_learnings/integration-agent-2026-07-16.md"
     },
     {
       "slug": "langchain-ai--langchain",
@@ -49,5 +49,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-16T13:16:04.874423+00:00"
+  "updated_at": "2026-07-16T13:16:26.572146+00:00"
 }
