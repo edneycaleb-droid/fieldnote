@@ -102,7 +102,7 @@ def _get_key(provider: str) -> str:
     if provider == "openai":
         return os.getenv("CHATGPT") or os.getenv("OPENAI_API_KEY") or ""
     if provider == "huggingface":
-        return os.getenv("HF_TOKEN") or ""
+        return os.getenv("HF_TOKEN") or os.getenv("Huggingface") or ""
     if provider == "openrouter":
         return os.getenv("OPENROUTER_API_KEY") or ""
     return ""
