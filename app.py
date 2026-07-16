@@ -2489,6 +2489,34 @@ def openapi_spec():
         "servers": [{"url": base}],
         "paths": {
 
+
+            "/api/discovery/stats": {
+                "get": {
+                    "operationId": "getDiscoveryStats",
+                    "summary": "GitHub discovery agent stats — repos seen, skills created/enhanced, errors",
+                    "description": "Returns aggregate counts and the 10 most recent successful discoveries from the autonomous GitHub learning agent.",
+                    "parameters": [],
+                    "responses": {"200": {"description": "Discovery stats", "content": {"application/json": {"schema": {"type": "object", "additionalProperties": True}}}}},
+                }
+            },
+            "/api/discovery/log": {
+                "get": {
+                    "operationId": "getDiscoveryLog",
+                    "summary": "Full GitHub discovery log — every repo the agent has ever evaluated",
+                    "description": "Complete log of every repository the agent has processed: action taken (create/enhance/quality_denied/error), skill name, quality score, and timestamp.",
+                    "parameters": [],
+                    "responses": {"200": {"description": "Discovery log", "content": {"application/json": {"schema": {"type": "object", "additionalProperties": True}}}}},
+                }
+            },
+            "/api/scheduler/run/{job_name}": {
+                "post": {
+                    "operationId": "triggerAgentJob",
+                    "summary": "Trigger a background agent job immediately",
+                    "description": "Run a named scheduler job right now. Use job_name=discover to trigger a GitHub discovery cycle. Other jobs: enhance, sync, watchlist, code_sync.",
+                    "parameters": [{"name":"job_name","in":"path","required":True,"schema":{"type":"string"},"description":"Job name: discover | enhance | sync | watchlist | code_sync"}],
+                    "responses": {"200": {"description": "Job triggered", "content": {"application/json": {"schema": {"type": "object", "additionalProperties": True}}}}},
+                }
+            },
             "/api/knowledge": {
                 "get": {
                     "operationId": "getKnowledgeBase",
