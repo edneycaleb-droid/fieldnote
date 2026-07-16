@@ -1066,15 +1066,63 @@ def _supplemental_github_search(
     return github_agent.search_tools(new_tools, emit)
 
 
+# ── Stage-aware error classifier ─────────────────────────────────────────────
+
+_SECRET_RE = re.compile(
+    r'(sk-[A-Za-z0-9]{10,}|gsk_[A-Za-z0-9]{10,}|Bearer\s+[A-Za-z0-9._-]{10,}'
+    r'|key-[A-Za-z0-9]{10,}|AIza[A-Za-z0-9_-]{30,})',
+    re.I,
+)
+
+def _classify_stage_error(exc: Exception, stage: str) -> str:
+    """Convert a raw exception into a stage-specific, user-readable string.
+    Redacts any token or key that might appear in provider error messages."""
+    raw = str(exc)
+    raw = _SECRET_RE.sub("[redacted]", raw)
+    low = raw.lower()
+
+    if "quota" in low or "insufficient_quota" in low:
+        return (f"All AI providers are quota-limited ({stage}). "
+                "Wait a few minutes and tap Retry.")
+    if "429" in raw or "rate_limit" in low or "rate limit" in low:
+        return (f"AI providers are rate-limited ({stage}). "
+                "Wait 30 s and tap Retry.")
+    if "timeout" in low or "timed out" in low:
+        return (f"Timed out during {stage}. "
+                "The video may be very long or providers are slow. Retry to resume.")
+    if "transcript unavailable" in low:
+        return raw   # already user-friendly from get_transcript_robust
+    if "nonetype" in low and "has no len" in low:
+        return (f"An AI provider returned an incomplete response during {stage} "
+                "(null list field). Retry usually fixes this.")
+    if "json" in low or "jsondecode" in type(exc).__name__.lower():
+        return (f"AI provider returned malformed JSON during {stage}. "
+                "Retry usually fixes this.")
+    if "connection" in low or "network" in low or "timeout" in low:
+        return (f"Network error during {stage}. Check your connection and retry.")
+    if len(raw) > 220:
+        return f"Unexpected error during {stage}: {raw[:200]}…"
+    return f"Error during {stage}: {raw}"
+
+
 # ── Core parallel job runner ──────────────────────────────────────────────────
 
 def run_job(job_id: str, url: str, video_id: str):
-    q = _jobs[job_id]["queue"]
+    q      = _jobs[job_id]["queue"]
+    run_id = str(uuid.uuid4())[:8]
+    _jobs[job_id]["run_id"] = run_id
+    _jobs[job_id]["stage"]  = "init"
 
     def emit(msg: str, kind: str = "info"):
         q.put({"type": "log", "msg": msg, "kind": kind})
 
+    def set_stage(name: str):
+        """Update current stage in job state and broadcast a stage SSE event."""
+        _jobs[job_id]["stage"] = name
+        q.put({"type": "stage", "stage": name, "run_id": run_id})
+
     try:
+        set_stage("init")
         emit("🚀  Parallel agents launching …", "info")
 
         with ThreadPoolExecutor(max_workers=8, thread_name_prefix="fn") as pool:
