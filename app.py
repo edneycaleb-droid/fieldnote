@@ -603,20 +603,23 @@ def get_transcript(url: str, video_id: str, emit):
 
 # ── Groq LLM ─────────────────────────────────────────────────────────────────
 
-def call_groq(prompt: str, max_tokens: int = 4000) -> str:
-    """Delegate to provider_router (Groq firstâfree, then Gemini, then OpenAI as last resort)."""
-    return provider_router.call_llm_smart(prompt, max_tokens=max_tokens, json_mode=True)
+def call_groq(prompt: str, max_tokens: int = 4000, emit_fn=None) -> str:
+    """Delegate to provider_router (Groq first/free, then Gemini, then OpenAI as last resort).
+    emit_fn(msg, kind) is optional; when supplied, provider fallback events reach the job stream."""
+    return provider_router.call_llm_smart(prompt, max_tokens=max_tokens, json_mode=True, emit_fn=emit_fn)
 
 
 
-def call_openai(prompt: str, max_tokens: int = 4000, json_mode: bool = True) -> str:
-    """Delegate to provider_router (Groq firstâfree, then Gemini, then OpenAI as last resort)."""
-    return provider_router.call_llm_smart(prompt, max_tokens=max_tokens, json_mode=json_mode)
+def call_openai(prompt: str, max_tokens: int = 4000, json_mode: bool = True, emit_fn=None) -> str:
+    """Delegate to provider_router (Groq first/free, then Gemini, then OpenAI as last resort).
+    emit_fn(msg, kind) is optional; when supplied, provider fallback events reach the job stream."""
+    return provider_router.call_llm_smart(prompt, max_tokens=max_tokens, json_mode=json_mode, emit_fn=emit_fn)
 
 
-def call_llm(prompt: str, max_tokens: int = 4000, json_mode: bool = True) -> str:
-    """Route to best available free provider (Groq -> Gemini -> OpenAI as last resort)."""
-    return provider_router.call_llm_smart(prompt, max_tokens=max_tokens, json_mode=json_mode)
+def call_llm(prompt: str, max_tokens: int = 4000, json_mode: bool = True, emit_fn=None) -> str:
+    """Route to best available free provider (Groq -> Gemini -> OpenAI as last resort).
+    emit_fn(msg, kind) is optional; when supplied, provider fallback events reach the job stream."""
+    return provider_router.call_llm_smart(prompt, max_tokens=max_tokens, json_mode=json_mode, emit_fn=emit_fn)
 
 
 # ── Package auto-installer ────────────────────────────────────────────────────
@@ -719,8 +722,9 @@ def _extract_skill_ai(
     transcript:    str,
     knowledge_ctx: str,
     existing_content: str = "",
+    emit_fn=None,
 ) -> dict:
-    raw = call_llm(_build_prompt(transcript, knowledge_ctx, existing_content))
+    raw = call_llm(_build_prompt(transcript, knowledge_ctx, existing_content), emit_fn=emit_fn)
     return json.loads(raw)
 
 
