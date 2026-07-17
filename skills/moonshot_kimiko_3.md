@@ -1,32 +1,34 @@
-# Moonshot Kimiko 3
+# Moonshot Kimiko 3: A 2.8 Trillion Parameter Open-Weight Model for AI Self-Improvement and Automation
 
 ## Description
-Moonshot Kimiko 3 is a 2.8 trillion parameter open-weight model for AI self-improvement and automation. It is a significant advancement in the field of AI and has been shown to outperform other models in various benchmarks.
+This skill teaches how to use Moonshot's Kimiko 3, a 2.8 trillion parameter open-weight model, for AI self-improvement and automation. It covers the model's performance, benchmarks, and how to use it for various tasks.
 
 ## Steps
-### Download the Kimiko 3 model weights
-Download the Kimiko 3 model weights from the Moonshot website.
-### Run the model using the Open Claw framework
-Run the model using the Open Claw framework.
+1. Download the Kimiko 3 model weights from the Moonshot website
+2. Run the model using the Open Claw framework
 
 ## Tools
-* Open Claw: a framework for running large language models
-* Moonshot: a platform for developing and deploying AI models
-* Kimiko 3: a 2.8 trillion parameter open-weight model
-* Open Weights: a framework for open-weight models
+* Open Claw
+* Moonshot
+* Kimiko 3
+* Open Weights
 
 ## Concepts
-* Open-Weight Models: a type of model that uses open weights
-* Moonshot Kimiko 3: a specific open-weight model
-* Open Weights Models: a category of models that use open weights
-* Moonshot: a platform for developing and deploying AI models
+* Open-Weight Models
+* Moonshot Kimiko 3
+* Open Weights Models
+* Moonshot
 
 ## Related Skills
-* Building AI Agents: a skill for building effective AI agents
-* Running Large Models Locally: a skill for running large language models on local machines
+
+## Tags
+* ai
+* self-improvement
+* moonshot
+* automation
 
 ## Sources
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-17 | [Kimi K3 Just Beat Frontier AI | Open Models Have Caught Up](https://youtu.be/NNa3iLxOAeE?is=e4Dk2mFYwRWUaCw4) | yt_dlp_subs |
+| 2026-07-17 | [New #1 open source AI model is here! FABLE LEVEL](https://youtu.be/bEnE5pbpe_Q?is=DI-QcPR1PrC7uYln) | yt_dlp_subs |
