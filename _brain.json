@@ -277,10 +277,11 @@
       ]
     },
     "Large Language Models (LLMs)": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "building_ai_agents_with_langchain",
-        "deploying_retrieval_augmented_generation_with_ragflow"
+        "deploying_retrieval_augmented_generation_with_ragflow",
+        "testing_and_comparing_llms"
       ]
     },
     "Model Interoperability": {
@@ -441,9 +442,10 @@
       ]
     },
     "LLMs (Large Language Models)": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "openai_agents_sdk"
+        "openai_agents_sdk",
+        "testing_and_comparing_llms"
       ]
     },
     "OpenAI Responses and Chat Completions APIs": {
@@ -1063,14 +1065,33 @@
       "skills": [
         "building_ai_agents_with_loop"
       ]
+    },
+    "Vector Databases": {
+      "freq": 1,
+      "skills": [
+        "testing_and_comparing_llms"
+      ]
+    },
+    "Prompt Engineering": {
+      "freq": 1,
+      "skills": [
+        "testing_and_comparing_llms"
+      ]
+    },
+    "Model Evaluation": {
+      "freq": 1,
+      "skills": [
+        "testing_and_comparing_llms"
+      ]
     }
   },
   "tools": {
     "Anthropic": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "building_ai_agents",
-        "build_production_ready_llm_applications_with_haystack"
+        "build_production_ready_llm_applications_with_haystack",
+        "testing_and_comparing_llms"
       ]
     },
     "Haiku": {
@@ -1476,9 +1497,10 @@
       ]
     },
     "OpenAI": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "build_production_ready_llm_applications_with_haystack"
+        "build_production_ready_llm_applications_with_haystack",
+        "testing_and_comparing_llms"
       ]
     },
     "Mistral": {
@@ -1958,9 +1980,10 @@
       ]
     },
     "GitHub": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "microsoft_mcp_curriculum"
+        "microsoft_mcp_curriculum",
+        "testing_and_comparing_llms"
       ]
     },
     "VS Code": {
@@ -2039,6 +2062,30 @@
       "freq": 1,
       "skills": [
         "building_ai_agents_with_loop"
+      ]
+    },
+    "PromptTools": {
+      "freq": 2,
+      "skills": [
+        "testing_and_comparing_llms"
+      ]
+    },
+    "LLaMA": {
+      "freq": 1,
+      "skills": [
+        "testing_and_comparing_llms"
+      ]
+    },
+    "Streamlit": {
+      "freq": 1,
+      "skills": [
+        "testing_and_comparing_llms"
+      ]
+    },
+    "Jupyter Notebook": {
+      "freq": 1,
+      "skills": [
+        "testing_and_comparing_llms"
       ]
     }
   },
@@ -2720,6 +2767,34 @@
         "autonomous-work"
       ],
       "step_count": 9
+    },
+    "testing_and_comparing_llms": {
+      "concepts": [
+        "Large Language Models (LLMs)",
+        "Vector Databases",
+        "Prompt Engineering",
+        "Model Evaluation",
+        "LLMs (Large Language Models)"
+      ],
+      "tools": [
+        "PromptTools",
+        "OpenAI",
+        "Anthropic",
+        "LLaMA",
+        "Streamlit",
+        "Jupyter Notebook",
+        "GitHub",
+        "PromptTools"
+      ],
+      "tags": [
+        "llms",
+        "prompttools",
+        "testing",
+        "model_evaluation",
+        "vector_databases",
+        "prompt_engineering"
+      ],
+      "step_count": 8
     }
   },
   "relationships": {
@@ -2793,6 +2868,9 @@
         "LangChain"
       ],
       "deploying_retrieval_augmented_generation_with_ragflow": [
+        "Large Language Models (LLMs)"
+      ],
+      "testing_and_comparing_llms": [
         "Large Language Models (LLMs)"
       ]
     },
@@ -2877,6 +2955,9 @@
       ],
       "microsoft_mcp_curriculum": [
         "Git"
+      ],
+      "testing_and_comparing_llms": [
+        "LLMs (Large Language Models)"
       ]
     },
     "build_production_ready_llm_applications_with_haystack": {
@@ -2911,6 +2992,10 @@
       ],
       "superagi_building_autonomous_agents": [
         "Docker"
+      ],
+      "testing_and_comparing_llms": [
+        "OpenAI",
+        "Anthropic"
       ]
     },
     "swanlab_ai_training_analysis_platform": {
@@ -3198,6 +3283,9 @@
       ],
       "superagi_building_autonomous_agents": [
         "Docker"
+      ],
+      "testing_and_comparing_llms": [
+        "Large Language Models (LLMs)"
       ]
     },
     "graphrag_deployment": {
@@ -3263,6 +3351,9 @@
       ],
       "building_ai_agents_with_loop": [
         "Discord"
+      ],
+      "testing_and_comparing_llms": [
+        "GitHub"
       ]
     },
     "chrome_mcp_server": {},
@@ -3306,8 +3397,26 @@
       "microsoft_mcp_curriculum": [
         "Discord"
       ]
+    },
+    "testing_and_comparing_llms": {
+      "building_ai_agents_with_langchain": [
+        "Large Language Models (LLMs)"
+      ],
+      "openai_agents_sdk": [
+        "LLMs (Large Language Models)"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "OpenAI",
+        "Anthropic"
+      ],
+      "deploying_retrieval_augmented_generation_with_ragflow": [
+        "Large Language Models (LLMs)"
+      ],
+      "microsoft_mcp_curriculum": [
+        "GitHub"
+      ]
     }
   },
-  "updated_at": "2026-07-17T15:14:41.543711+00:00",
-  "total_skills": 25
+  "updated_at": "2026-07-17T15:15:53.184915+00:00",
+  "total_skills": 26
 }
