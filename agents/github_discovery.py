@@ -1222,19 +1222,95 @@ def discovery_stats() -> dict:
     disc_log = load_discovery_log()
     total    = len(disc_log)
     by_action: Counter = Counter(v.get("action", "unknown") for v in disc_log.values())
-    recent   = sorted(
-        [{"repo": k, **v} for k, v in disc_log.items() if v.get("skill_name")],
+
+    # New state tracking
+    baseline_count         = by_action.get("baseline", 0)
+    enrichment_queued_count = sum(
+        1 for v in disc_log.values() if v.get("enrichment_queued", False)
+    )
+    enriched_count         = by_action.get("enriched", 0) + by_action.get("enhanced_from_baseline", 0)
+    skipped_dup_count      = by_action.get("skipped_duplicate", 0)
+
+    # Timestamps
+    last_baseline_at  = None
+    last_enrichment_at = None
+    for v in disc_log.values():
+        if v.get("action") == "baseline" and v.get("processed_at"):
+            if not last_baseline_at or v["processed_at"] > last_baseline_at:
+                last_baseline_at = v["processed_at"]
+        if v.get("enriched_at"):
+            if not last_enrichment_at or v["enriched_at"] > last_enrichment_at:
+                last_enrichment_at = v["enriched_at"]
+
+    # Backlog depth
+    try:
+        import agents.discovery_enrichment as de
+        backlog_depth = de.queue_depth()
+        enrichment_paused = de.is_paused()
+    except Exception:
+        backlog_depth = 0
+        enrichment_paused = False
+
+    # Recent discoveries — include all non-skipped entries with or without skill_name
+    recent = sorted(
+        [{"repo": k, **v} for k, v in disc_log.items()
+         if v.get("action") not in ("skipped_no_readme", "skipped_duplicate")],
         key=lambda x: x.get("processed_at", ""),
         reverse=True,
-    )[:10]
+    )[:15]
+
     return {
-        "total_repos_seen":  total,
-        "skills_created":    by_action.get("create", 0),
-        "skills_enhanced":   by_action.get("enhance", 0),
-        "quality_denied":    by_action.get("quality_denied", 0),
-        "errors":            by_action.get("error", 0),
-        "recent_discoveries": recent,
+        "total_repos_seen":      total,
+        "skills_created":        by_action.get("create", 0),
+        "skills_enhanced":       by_action.get("enhance", 0),
+        "quality_denied":        by_action.get("quality_denied", 0),
+        "errors":                by_action.get("error", 0),   # legacy — should be 0 after migration
+        "baseline_count":        baseline_count,
+        "enrichment_queued_count": enrichment_queued_count,
+        "enriched_count":        enriched_count,
+        "skipped_duplicate_count": skipped_dup_count,
+        "backlog_depth":         backlog_depth,
+        "enrichment_paused":     enrichment_paused,
+        "last_baseline_at":      last_baseline_at,
+        "last_enrichment_at":    last_enrichment_at,
+        "recent_discoveries":    recent,
     }
+
+
+def discovery_reliability() -> dict:
+    """Return provider availability + queue stats for the reliability panel."""
+    try:
+        import agents.provider_router as pr
+        import agents.discovery_enrichment as de
+        providers = {}
+        for name in ("groq", "gemini", "openai", "huggingface"):
+            with pr._lock:
+                s = pr._status.get(name, {})
+                state = s.get("state", "no_key")
+                until = s.get("until", 0.0)
+            cooldown_secs = max(0, int(until - pr._now())) if until > 0 else 0
+            providers[name] = {
+                "state":        state,
+                "available":    pr._is_available(name),
+                "cooldown_secs": cooldown_secs,
+            }
+        items = de.load_queue()
+        return {
+            "providers":        providers,
+            "backlog_depth":    len(items),
+            "enrichment_paused": de.is_paused(),
+            "queue_items":      [
+                {
+                    "full_name":     q["full_name"],
+                    "stars":         q.get("stars", 0),
+                    "retry_count":   q.get("retry_count", 0),
+                    "next_attempt_at": q.get("next_attempt_at", ""),
+                }
+                for q in sorted(items, key=lambda x: x.get("stars", 0), reverse=True)[:20]
+            ],
+        }
+    except Exception as exc:
+        return {"error": str(exc)}
 
 
 # ── Helpers ───────────────────────────────────────────────────────────────────
