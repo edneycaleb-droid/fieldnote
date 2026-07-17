@@ -738,6 +738,30 @@
       "skills": [
         "pydantic_ai_framework"
       ]
+    },
+    "Agent AI Observability": {
+      "freq": 1,
+      "skills": [
+        "ragaai_catalyst"
+      ]
+    },
+    "Monitoring": {
+      "freq": 1,
+      "skills": [
+        "ragaai_catalyst"
+      ]
+    },
+    "Evaluation": {
+      "freq": 1,
+      "skills": [
+        "ragaai_catalyst"
+      ]
+    },
+    "LLM Projects": {
+      "freq": 1,
+      "skills": [
+        "ragaai_catalyst"
+      ]
     }
   },
   "tools": {
@@ -1773,6 +1797,21 @@
         "productivity"
       ],
       "step_count": 4
+    },
+    "ragaai_catalyst": {
+      "concepts": [
+        "Agent AI Observability",
+        "Monitoring",
+        "Evaluation",
+        "LLM Projects"
+      ],
+      "tools": [],
+      "tags": [
+        "ai",
+        "automation",
+        "llm"
+      ],
+      "step_count": 5
     }
   },
   "relationships": {
@@ -1947,8 +1986,9 @@
       "swanlab_ai_training_analysis_platform": [
         "Transformers"
       ]
-    }
+    },
+    "ragaai_catalyst": {}
   },
-  "updated_at": "2026-07-17T02:01:20.376235+00:00",
-  "total_skills": 14
+  "updated_at": "2026-07-17T02:01:57.452584+00:00",
+  "total_skills": 15
 }
