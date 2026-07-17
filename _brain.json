@@ -628,27 +628,31 @@
       ]
     },
     "Open-Weight Models": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "moonshot_kimiko_automation"
+        "moonshot_kimiko_automation",
+        "moonshot_kimiko_3"
       ]
     },
     "Moonshot Kimiko 3": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "moonshot_kimiko_automation"
+        "moonshot_kimiko_automation",
+        "moonshot_kimiko_3"
       ]
     },
     "Open Weights Models": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "moonshot_kimiko_automation"
+        "moonshot_kimiko_automation",
+        "moonshot_kimiko_3"
       ]
     },
     "Moonshot": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "moonshot_kimiko_automation"
+        "moonshot_kimiko_automation",
+        "moonshot_kimiko_3"
       ]
     },
     "Kimiko 3": {
@@ -1208,27 +1212,31 @@
       ]
     },
     "Open Claw": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "moonshot_kimiko_automation"
+        "moonshot_kimiko_automation",
+        "moonshot_kimiko_3"
       ]
     },
     "Moonshot": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "moonshot_kimiko_automation"
+        "moonshot_kimiko_automation",
+        "moonshot_kimiko_3"
       ]
     },
     "Kimiko 3": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "moonshot_kimiko_automation"
+        "moonshot_kimiko_automation",
+        "moonshot_kimiko_3"
       ]
     },
     "Open Weights": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "moonshot_kimiko_automation"
+        "moonshot_kimiko_automation",
+        "moonshot_kimiko_3"
       ]
     }
   },
@@ -1540,6 +1548,27 @@
         "automation"
       ],
       "step_count": 4
+    },
+    "moonshot_kimiko_3": {
+      "concepts": [
+        "Open-Weight Models",
+        "Moonshot Kimiko 3",
+        "Open Weights Models",
+        "Moonshot"
+      ],
+      "tools": [
+        "Open Claw",
+        "Moonshot",
+        "Kimiko 3",
+        "Open Weights"
+      ],
+      "tags": [
+        "ai",
+        "self-improvement",
+        "moonshot",
+        "automation"
+      ],
+      "step_count": 2
     }
   },
   "relationships": {
@@ -1630,8 +1659,27 @@
         "Claude"
       ]
     },
-    "moonshot_kimiko_automation": {}
+    "moonshot_kimiko_automation": {
+      "moonshot_kimiko_3": [
+        "Open Claw",
+        "Moonshot",
+        "Moonshot Kimiko 3",
+        "Open-Weight Models",
+        "Open Weights Models",
+        "Open Weights"
+      ]
+    },
+    "moonshot_kimiko_3": {
+      "moonshot_kimiko_automation": [
+        "Open Claw",
+        "Moonshot",
+        "Moonshot Kimiko 3",
+        "Open-Weight Models",
+        "Open Weights Models",
+        "Open Weights"
+      ]
+    }
   },
-  "updated_at": "2026-07-17T00:38:25.305904+00:00",
-  "total_skills": 11
+  "updated_at": "2026-07-17T00:39:14.291154+00:00",
+  "total_skills": 12
 }
