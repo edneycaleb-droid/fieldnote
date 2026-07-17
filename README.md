@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **9 skills** · Last synced: 2026-07-16 18:42 UTC
+> **10 skills** · Last synced: 2026-07-17 00:33 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Mastering Loop Engineering for AI Self-Improvement with Autonomous Work and Strategic Thinking](skills/mastering_loop_engineering.md) | This skill teaches how to properly use AI models by creating loops that enable a | `Claude` `ChatGPT` `Fable 5` `ChatGPT 5.6` | `ai` `self-improvement` `loop-engineering` |
 | [Efficient Code Review with AI: Building a Persistent Graph Map and Reducing Tokens](skills/incremental_code_review.md) | Efficient code review with AI requires intelligent tools to minimize token waste | `Tree-sitter` `code-review-graph` `MCP` `Claude Code` | `ai` `automation` `code-review` |
 | [SwanLab: An Open-Source AI Training Analysis and Visualization Platform](skills/swanlab_ai_training_analysis_platform.md) | SwanLab is an open-source AI training analysis and visualization platform that s | `SwanLab` `PyTorch` `Transformers` `LLaMA Factory` | `ai` `training` `analysis` |
 | [Building Production-Ready LLM Applications with Haystack: An Open-Source AI Orchestration Framework](skills/build_production_ready_llm_applications_with_haystack.md) | Haystack is an open-source AI orchestration framework for building production-re | `Haystack` `Docker` `OpenAI` `Mistral` | `ai` `automation` `orchestration` |
