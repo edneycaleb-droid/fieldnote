@@ -1483,6 +1483,42 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
     </div>
   </div>
 
+  <!-- Provider health dashboard (collapsible) -->
+  <div class="provider-dash" id="provider-dash-section" style="margin-bottom:12px">
+    <div class="provider-dash-header" onclick="toggleProviderDash()" id="provider-dash-hdr">
+      <span class="provider-dash-title">⚡ AI Provider Health</span>
+      <span class="provider-dash-toggle" id="provider-dash-toggle-icon">▼</span>
+    </div>
+    <div id="provider-dash-body" class="provider-dash-body" style="display:none">
+      <div style="font-size:.72rem;color:var(--muted)">Loading…</div>
+    </div>
+  </div>
+
+  <!-- Free provider readiness row -->
+  <div style="background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:10px 12px;margin-bottom:12px;font-size:.76rem;color:var(--muted)">
+    <div style="font-weight:700;color:var(--text);margin-bottom:6px">🔓 Free Provider Resilience</div>
+    <div style="line-height:1.7">
+      Adding a <strong style="color:#c084fc">HuggingFace token</strong> or
+      <strong style="color:#60a5fa">OpenRouter key</strong> gives the pipeline
+      extra free inference capacity — reducing quota exhaustion events.
+      Find both in the <strong>Connected</strong> / <strong>Awaiting Setup</strong>
+      sections below, or paste them directly in a key field.
+    </div>
+  </div>
+
+  <!-- Paid-fallback toggle -->
+  <div class="paid-fallback-row" id="paid-fallback-row">
+    <div class="paid-fallback-label">
+      <strong>OpenAI paid fallback</strong><br>
+      Allow OpenAI (billed) as a last-resort provider when all free providers fail.
+      Off by default.
+    </div>
+    <label class="pf-toggle" title="Toggle paid fallback">
+      <input type="checkbox" id="paid-fallback-toggle" onchange="setPaidFallback(this.checked)">
+      <span class="pf-slider"></span>
+    </label>
+  </div>
+
   <!-- Integration Agent status strip -->
   <div class="integ-agent-strip" id="integ-agent-strip">
     <div class="ias-dot" id="ias-dot"></div>
