@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **15 skills** · Last synced: 2026-07-17 02:02 UTC
+> **15 skills** · Last synced: 2026-07-17 03:44 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Building a Hermes Agent Setup for AI Self-Improvement](skills/building_ai_agents.md) | This skill teaches how to set up a Hermes agent for AI self-improvement, includi | `Hermes Agent` `Claude` `Open Claw` `Contabo` | `ai` `automation` `productivity` |
 | [RagaAI Catalyst: Python SDK for Agent AI Observability, Monitoring, and Evaluation](skills/ragaai_catalyst.md) | This skill teaches how to use RagaAI Catalyst, a comprehensive platform designed |  | `ai` `automation` `llm` |
 | [Building AI Agents with the Pydantic AI Framework](skills/pydantic_ai_framework.md) | Pydantic AI teaches how to build type-safe, model-agnostic, and production-ready | `Pydantic AI Framework` `LangChain` `LlamaIndex` `AutoGPT` | `ai` `automation` `langchain` |
 | [Efficiently Running Large AI Models on Local Machines](skills/running_large_models_locally.md) | This skill teaches how to run large AI models on local machines with limited RAM | `Hugging Face` `ollama` `llama.cpp` `Colibri` | `ai` `optimization` `modeling` |
@@ -22,7 +23,6 @@
 | [Building Lightweight Multi-Agent Workflows with the OpenAI Agents SDK](skills/openai_agents_sdk.md) | Learn how to harness the power of the OpenAI Agents SDK to build efficient, scal | `OpenAI Agents SDK` `LangGraph` `LangSmith` `Deep Agents` | `ai` `automation` `langchain` |
 | [Deploying AstrBot: A Comprehensive Guide to Open-Source All-in-One Agent Chatbot Platform](skills/astrbot_deployment.md) | AstrBot is an open-source, all-in-one agent chatbot platform that integrates wit | `uv tool` `Docker` `Docker Compose` `AstrBot App` | `ai` `chatbots` `conversational-ai` |
 | [Building Resilient AI Agents with LangGraph](skills/building_resilient_ai_agents_with_langgraph.md) | This skill teaches how to build, manage, and deploy long-running, stateful AI ag | `LangGraph` `LangSmith` `Deep Agents` `LangChain` | `ai` `automation` `langchain` |
-| [Building Effective AI Agents for Automation and Productivity](skills/building_ai_agents.md) | Building AI agents can help automate tasks, make decisions, and improve over tim | `Claude` `Claude Code` `Codex` `Hermes Agent` | `ai` `automation` `productivity` |
 | [Building AI Agents with LangChain](skills/building_ai_agents_with_langchain.md) | This skill teaches how to build applications powered by Large Language Models (L | `LangChain` `LangChain-Groq` `LangChain-OpenAI` `LangGraph` | `ai` `automation` `productivity` |
 
 ---
