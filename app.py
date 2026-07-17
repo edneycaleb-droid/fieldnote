@@ -1106,9 +1106,10 @@ def _classify_stage_error(exc: Exception, stage: str) -> str:
 
 def run_job(job_id: str, url: str, video_id: str):
     q      = _jobs[job_id]["queue"]
-    run_id = str(uuid.uuid4())[:8]
+    run_id = _jobs[job_id].get("run_id") or str(uuid.uuid4())[:8]
     _jobs[job_id]["run_id"] = run_id
     _jobs[job_id]["stage"]  = "init"
+    provider_attempts: list[dict] = []
 
     def emit(msg: str, kind: str = "info"):
         q.put({"type": "log", "msg": msg, "kind": kind})
@@ -1118,9 +1119,25 @@ def run_job(job_id: str, url: str, video_id: str):
         _jobs[job_id]["stage"] = name
         q.put({"type": "stage", "stage": name, "run_id": run_id})
 
+    # Read X-Allow-Paid from job context (set by /process route)
+    allow_paid = bool(_jobs[job_id].get("allow_paid", False))
+    if allow_paid:
+        provider_router.set_paid_fallback(True)
+
     try:
         set_stage("init")
         emit("🚀  Parallel agents launching …", "info")
+
+        # ── Checkpoint recovery: check if we already have a transcript ────────
+        existing_cp = run_checkpoint.checkpoint_for_video(video_id)
+        cached_transcript: str = ""
+        cached_method: str = ""
+        cached_meta: dict = {}
+        if existing_cp and existing_cp.get("transcript") and len(existing_cp["transcript"]) > 50:
+            cached_transcript = existing_cp["transcript"]
+            cached_method     = existing_cp.get("transcript_method", "cached")
+            cached_meta       = existing_cp.get("metadata", {})
+            emit(f"♻️  Reusing cached transcript from checkpoint (run={existing_cp['run_id']}) …", "info")
 
         with ThreadPoolExecutor(max_workers=8, thread_name_prefix="fn") as pool:
 
@@ -1128,17 +1145,29 @@ def run_job(job_id: str, url: str, video_id: str):
             set_stage("transcript")
             emit("⚡  Phase 1: metadata ∥ transcript …", "info")
             meta_f  = pool.submit(get_video_metadata, video_id)
-            trans_f = pool.submit(get_transcript, url, video_id, emit)
 
-            meta = meta_f.result(timeout=30)
+            if cached_transcript:
+                # Skip re-download — use checkpoint transcript
+                meta = meta_f.result(timeout=30)
+                if cached_meta:
+                    meta = {**cached_meta, **{k: v for k, v in meta.items() if v}}
+                transcript    = cached_transcript
+                method        = cached_method
+                trans_result  = None
+            else:
+                trans_f = pool.submit(get_transcript, url, video_id, emit)
+                meta    = meta_f.result(timeout=30)
+                transcript, method, trans_result = trans_f.result(timeout=300)
+
             q.put({"type": "meta", "data": meta})
-            emit(f"📺  {meta['title'] or 'Video identified'}", "info")
-
-            transcript, method, trans_result = trans_f.result(timeout=300)
+            emit(f"📺  {meta.get('title') or 'Video identified'}", "info")
 
             # Hard guard — transcript is always str but may be empty when all stages fail
             if not transcript or len(transcript.strip()) < 10:
-                stage_summary = ", ".join(getattr(trans_result, "stage_log", [])) or "none recorded"
+                stage_summary = (
+                    ", ".join(getattr(trans_result, "stage_log", [])) or "none recorded"
+                    if trans_result else "none"
+                )
                 raise RuntimeError(
                     "Transcript unavailable — all acquisition methods failed. "
                     f"Stages tried: {stage_summary}. "
@@ -1147,7 +1176,7 @@ def run_job(job_id: str, url: str, video_id: str):
                 )
 
             word_count = len(transcript.split())
-            if getattr(trans_result, "is_degraded", False):
+            if trans_result and getattr(trans_result, "is_degraded", False):
                 emit(
                     f"📝  {word_count:,} words via {method} "
                     f"⚡ degraded ({trans_result.degraded_reason or 'lower quality fallback'})",
@@ -1155,6 +1184,17 @@ def run_job(job_id: str, url: str, video_id: str):
                 )
             else:
                 emit(f"📝  {word_count:,} words via {method}", "success")
+
+            # Save checkpoint after transcript acquisition
+            run_checkpoint.save_checkpoint(run_id, {
+                "video_id":          video_id,
+                "url":               url,
+                "stage":             "transcript",
+                "transcript":        transcript,
+                "transcript_method": method,
+                "metadata":          meta,
+                "provider_attempts": provider_attempts,
+            })
 
             # Quick regex scan — used for early GitHub search AND relevance scoring
             quick_tools = github_agent.quick_tool_scan(transcript)
@@ -1172,9 +1212,15 @@ def run_job(job_id: str, url: str, video_id: str):
             knowledge_ctx  = get_skills_context(quick_tools)
             existing_index = load_index()
 
+            # Use cached extractions from checkpoint if available
+            cached_skill_a = existing_cp.get("skill_a") if existing_cp else None
+            cached_skill_b = existing_cp.get("skill_b") if existing_cp else None
+
             # All three work simultaneously — nobody idles
-            gpt_f    = pool.submit(_extract_skill_chatgpt, transcript, knowledge_ctx, "")
-            groq_f   = pool.submit(_extract_skill_groq,   transcript, knowledge_ctx, "")
+            gpt_f    = pool.submit(_extract_skill_chatgpt, transcript, knowledge_ctx, "") \
+                       if not cached_skill_a else None
+            groq_f   = pool.submit(_extract_skill_groq,   transcript, knowledge_ctx, "") \
+                       if not cached_skill_b else None
             github_f = pool.submit(github_agent.search_tools, quick_tools, emit)
 
             # Collect GitHub first (fastest), then fetch READMEs while LLMs finish
@@ -1183,18 +1229,106 @@ def run_job(job_id: str, url: str, video_id: str):
             github_ctx = _github_readme_context(github_results)
 
             # Collect both LLM results (already running in parallel)
-            skill_a = None
-            skill_b = None
-            try:
-                skill_a = gpt_f.result(timeout=120)
-                emit("✅  ChatGPT extraction done", "info")
-            except Exception as exc_a:
-                emit(f"⚠  ChatGPT failed ({exc_a})", "warning")
-            try:
-                skill_b = groq_f.result(timeout=120)
-                emit("✅  Groq extraction done", "info")
-            except Exception as exc_b:
-                emit(f"⚠  Groq failed ({exc_b})", "warning")
+            skill_a = cached_skill_a
+            skill_b = cached_skill_b
+            exc_a_msg: str = ""
+            exc_b_msg: str = ""
+
+            if gpt_f is not None:
+                try:
+                    skill_a = gpt_f.result(timeout=120)
+                    emit("✅  Educator extraction done", "info")
+                    run_checkpoint.save_checkpoint(run_id, {"skill_a": skill_a})
+                except Exception as exc_a:
+                    exc_a_msg = str(exc_a)
+                    emit(f"⚠  Educator failed ({exc_a_msg[:80]})", "warning")
+                    provider_attempts.append({
+                        "lens": "educator", "error": exc_a_msg[:200],
+                        "error_class": provider_router._classify_error(exc_a_msg),
+                    })
+            else:
+                emit("♻️  Reusing cached educator extraction from checkpoint", "info")
+
+            if groq_f is not None:
+                try:
+                    skill_b = groq_f.result(timeout=120)
+                    emit("✅  Practitioner extraction done", "info")
+                    run_checkpoint.save_checkpoint(run_id, {"skill_b": skill_b})
+                except Exception as exc_b:
+                    exc_b_msg = str(exc_b)
+                    emit(f"⚠  Practitioner failed ({exc_b_msg[:80]})", "warning")
+                    provider_attempts.append({
+                        "lens": "practitioner", "error": exc_b_msg[:200],
+                        "error_class": provider_router._classify_error(exc_b_msg),
+                    })
+            else:
+                emit("♻️  Reusing cached practitioner extraction from checkpoint", "info")
+
+            # ── Both lenses failed → degraded mode ────────────────────────────
+            if skill_a is None and skill_b is None:
+                emit("⚠  Both AI extractions failed — creating degraded skill draft …", "warning")
+                set_stage("degraded")
+
+                deg_skill = degraded_mode.build_degraded_skill(transcript, meta, url, video_id)
+                deg_skill = pipeline_guard.sanitize(deg_skill, emit)
+                deg_name  = deg_skill.get("skill_name", f"skill_{uuid.uuid4().hex[:6]}")
+
+                # Save the degraded skill to disk immediately
+                deg_path = _save_skill(
+                    deg_skill, deg_name, url, meta, method, word_count,
+                    video_id, "create", github_results, [],
+                )
+                emit(f"💾  Degraded draft saved: {deg_name}.md", "warning")
+
+                # Queue checkpoint for auto-recovery
+                run_checkpoint.save_checkpoint(run_id, {
+                    "stage":             "queued",
+                    "degraded":          True,
+                    "skill_name":        deg_name,
+                    "provider_attempts": provider_attempts,
+                    "queued_at":         datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                    "recovery_attempts": 0,
+                })
+
+                # Emit structured recovery card (not a raw error)
+                q.put({
+                    "type":         "done",
+                    "ok":           True,
+                    "degraded":     True,
+                    "queued":       True,
+                    "run_id":       run_id,
+                    "title":        deg_skill.get("title", deg_name),
+                    "description":  deg_skill.get("description", ""),
+                    "steps":        _nsl(deg_skill.get("steps")),
+                    "tools":        _nsl(deg_skill.get("tools")),
+                    "concepts":     _nsl(deg_skill.get("concepts")),
+                    "tags":         _nsl(deg_skill.get("tags")),
+                    "skill_name":   deg_name,
+                    "skill_file":   deg_path,
+                    "action":       "create",
+                    "transcript_words":  word_count,
+                    "transcript_method": method,
+                    "video_id":     video_id,
+                    "thumbnail":    meta.get("thumbnail", ""),
+                    "source_title": meta.get("title", ""),
+                    "recovery": {
+                        "providers_failed":   [a["lens"] for a in provider_attempts],
+                        "error_classes":      [a["error_class"] for a in provider_attempts],
+                        "skill_preserved":    True,
+                        "pending_enhancement": True,
+                        "estimated_retry_mins": 5,
+                        "auto_resume":        True,
+                    },
+                    "receipt": {
+                        "transcript_words":  word_count,
+                        "transcript_method": method,
+                        "is_degraded":       True,
+                        "degraded_reason":   "all_providers_exhausted",
+                        "stage_log":         getattr(trans_result, "stage_log", []) if trans_result else [],
+                        "outcome":           "degraded",
+                    },
+                })
+                return  # do not proceed — recovery will handle enhancement
 
             # Judge synthesizes the winner
             set_stage("judge")
