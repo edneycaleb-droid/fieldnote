@@ -4132,6 +4132,67 @@ def api_discovery_log():
     return jsonify(github_discovery.load_discovery_log())
 
 
+@app.route("/api/discovery/reliability")
+def api_discovery_reliability():
+    """Provider availability + cooldown timers + enrichment queue stats."""
+    return jsonify(github_discovery.discovery_reliability())
+
+
+@app.route("/api/discovery/recover-all", methods=["POST"])
+def api_discovery_recover_all():
+    """Re-enqueue all discovery log entries that have no skill or are baseline."""
+    try:
+        import agents.discovery_enrichment as de
+        disc_log = github_discovery.load_discovery_log()
+        enqueued = 0
+        for fn, v in disc_log.items():
+            if v.get("action") in ("error", "baseline") or v.get("enrichment_queued"):
+                de.enqueue(fn, v.get("stars", 0))
+                enqueued += 1
+        return jsonify({"ok": True, "enqueued": enqueued})
+    except Exception as exc:
+        return jsonify({"ok": False, "error": str(exc)}), 500
+
+
+@app.route("/api/discovery/enqueue", methods=["POST"])
+def api_discovery_enqueue():
+    """Enqueue a specific repo for AI enrichment."""
+    try:
+        import agents.discovery_enrichment as de
+        data = request.get_json(force=True, silent=True) or {}
+        full_name = data.get("full_name", "")
+        if not full_name:
+            return jsonify({"ok": False, "error": "full_name required"}), 400
+        disc_log = github_discovery.load_discovery_log()
+        stars = disc_log.get(full_name, {}).get("stars", 0)
+        de.enqueue(full_name, stars)
+        return jsonify({"ok": True, "full_name": full_name})
+    except Exception as exc:
+        return jsonify({"ok": False, "error": str(exc)}), 500
+
+
+@app.route("/api/discovery/enrichment/pause", methods=["POST"])
+def api_discovery_enrichment_pause():
+    """Pause the enrichment scheduler."""
+    try:
+        import agents.discovery_enrichment as de
+        de.set_paused(True)
+        return jsonify({"ok": True, "paused": True})
+    except Exception as exc:
+        return jsonify({"ok": False, "error": str(exc)}), 500
+
+
+@app.route("/api/discovery/enrichment/resume", methods=["POST"])
+def api_discovery_enrichment_resume():
+    """Resume the enrichment scheduler."""
+    try:
+        import agents.discovery_enrichment as de
+        de.set_paused(False)
+        return jsonify({"ok": True, "paused": False})
+    except Exception as exc:
+        return jsonify({"ok": False, "error": str(exc)}), 500
+
+
 @app.route("/api/watchlist/run-now", methods=["POST"])
 def api_watchlist_run_now():
     """Immediately process the next pending watchlist entry."""
@@ -4174,6 +4235,14 @@ def _boot_scheduler():
         description="Fallback: push any source-code changes not yet caught by the file watcher",
         interval_hours=0.167,   # every 10 minutes
         fn=lambda: github_sync.sync_code(label="scheduler"),
+    )
+
+    import agents.discovery_enrichment as _disc_enrich
+    s.register(
+        name="enrich_backlog",
+        description="AI-enrich baseline skills queued during provider outages (up to 3 per run)",
+        interval_hours=0.167,   # every 10 minutes
+        fn=_disc_enrich.enrich_backlog,
     )
 
     import agents.integration_agent as _integ_agent
