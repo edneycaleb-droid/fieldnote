@@ -596,6 +596,36 @@
       "skills": [
         "incremental_code_review"
       ]
+    },
+    "Loop Engineering": {
+      "freq": 1,
+      "skills": [
+        "mastering_loop_engineering"
+      ]
+    },
+    "Autonomous Work": {
+      "freq": 1,
+      "skills": [
+        "mastering_loop_engineering"
+      ]
+    },
+    "Self-Correction": {
+      "freq": 1,
+      "skills": [
+        "mastering_loop_engineering"
+      ]
+    },
+    "Strategic Thinking": {
+      "freq": 1,
+      "skills": [
+        "mastering_loop_engineering"
+      ]
+    },
+    "Autonomous AI": {
+      "freq": 1,
+      "skills": [
+        "mastering_loop_engineering"
+      ]
     }
   },
   "tools": {
@@ -668,9 +698,10 @@
       ]
     },
     "Claude": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
-        "building_ai_agents"
+        "building_ai_agents",
+        "mastering_loop_engineering"
       ]
     },
     "Google Drive": {
@@ -1109,6 +1140,42 @@
       "skills": [
         "incremental_code_review"
       ]
+    },
+    "ChatGPT": {
+      "freq": 1,
+      "skills": [
+        "mastering_loop_engineering"
+      ]
+    },
+    "Fable 5": {
+      "freq": 1,
+      "skills": [
+        "mastering_loop_engineering"
+      ]
+    },
+    "ChatGPT 5.6": {
+      "freq": 1,
+      "skills": [
+        "mastering_loop_engineering"
+      ]
+    },
+    "Orchestrator Model": {
+      "freq": 1,
+      "skills": [
+        "mastering_loop_engineering"
+      ]
+    },
+    "MCP SSH Manager": {
+      "freq": 1,
+      "skills": [
+        "mastering_loop_engineering"
+      ]
+    },
+    "WinRemote MCP": {
+      "freq": 1,
+      "skills": [
+        "mastering_loop_engineering"
+      ]
     }
   },
   "skill_map": {
@@ -1371,12 +1438,41 @@
         "efficiency"
       ],
       "step_count": 7
+    },
+    "mastering_loop_engineering": {
+      "concepts": [
+        "Loop Engineering",
+        "Autonomous Work",
+        "Self-Correction",
+        "Strategic Thinking",
+        "Autonomous AI"
+      ],
+      "tools": [
+        "Claude",
+        "ChatGPT",
+        "Fable 5",
+        "ChatGPT 5.6",
+        "Orchestrator Model",
+        "MCP SSH Manager",
+        "WinRemote MCP"
+      ],
+      "tags": [
+        "ai",
+        "self-improvement",
+        "loop-engineering",
+        "autonomous-work",
+        "strategic-thinking"
+      ],
+      "step_count": 12
     }
   },
   "relationships": {
     "building_ai_agents": {
       "running_large_models_locally": [
         "Mixture of experts models"
+      ],
+      "mastering_loop_engineering": [
+        "Claude"
       ]
     },
     "running_large_models_locally": {
@@ -1452,8 +1548,13 @@
         "Transformers"
       ]
     },
-    "incremental_code_review": {}
+    "incremental_code_review": {},
+    "mastering_loop_engineering": {
+      "building_ai_agents": [
+        "Claude"
+      ]
+    }
   },
-  "updated_at": "2026-07-16T18:42:22.566697+00:00",
-  "total_skills": 9
+  "updated_at": "2026-07-17T00:33:24.362236+00:00",
+  "total_skills": 10
 }
