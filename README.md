@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **12 skills** · Last synced: 2026-07-17 00:39 UTC
+> **13 skills** · Last synced: 2026-07-17 00:40 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Integrating Higsfield with Claude for AI Content Generation](skills/higsfield_integration.md) | This skill teaches how to integrate Higsfield with Claude for generating high-qu | `Higsfield` `Claude` `Gemini` `GBT` | `ai` `content-generation` `higsfield` |
 | [Moonshot Kimiko 3: A 2.8 Trillion Parameter Open-Weight Model for AI Self-Improvement and Automation](skills/moonshot_kimiko_3.md) | This skill teaches how to use Moonshot's Kimiko 3, a 2.8 trillion parameter open | `Open Claw` `Moonshot` `Kimiko 3` `Open Weights` | `ai` `self-improvement` `moonshot` |
 | [Moonshot Kimiko 3: A 2.8 Trillion Parameter Open-Weight Model for AI Self-Improvement and Automation](skills/moonshot_kimiko_automation.md) | This skill teaches how to use Moonshot's Kimiko 3, a 2.8 trillion parameter open | `Open Claw` `Moonshot` `Kimiko 3` `Open Weights` | `ai` `self-improvement` `moonshot` |
 | [Mastering Loop Engineering for AI Self-Improvement with Autonomous Work and Strategic Thinking](skills/mastering_loop_engineering.md) | This skill teaches how to properly use AI models by creating loops that enable a | `Claude` `ChatGPT` `Fable 5` `ChatGPT 5.6` | `ai` `self-improvement` `loop-engineering` |
