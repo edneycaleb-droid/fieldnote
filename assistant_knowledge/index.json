@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "pydantic--pydantic-ai",
+      "title": "Discovered: pydantic/pydantic-ai",
+      "category": "discoveries",
+      "confidence": "verified",
+      "updated_at": "2026-07-17T02:02:23.690017+00:00",
+      "path": "discoveries/pydantic--pydantic-ai.md"
+    },
+    {
       "slug": "integration-agent-2026-07-16",
       "title": "Integration Agent Health Event",
       "category": "session_learnings",
@@ -145,5 +153,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-16T23:08:12.689381+00:00"
+  "updated_at": "2026-07-17T02:02:23.697475+00:00"
 }
