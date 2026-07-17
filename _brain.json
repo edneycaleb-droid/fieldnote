@@ -786,6 +786,30 @@
       "skills": [
         "hermes_agent_setup"
       ]
+    },
+    "Retrieval-Augmented Generation": {
+      "freq": 1,
+      "skills": [
+        "ragflow_deployment"
+      ]
+    },
+    "Large Language Models": {
+      "freq": 1,
+      "skills": [
+        "ragflow_deployment"
+      ]
+    },
+    "Context Layer": {
+      "freq": 1,
+      "skills": [
+        "ragflow_deployment"
+      ]
+    },
+    "Agent Capabilities": {
+      "freq": 1,
+      "skills": [
+        "ragflow_deployment"
+      ]
     }
   },
   "tools": {
@@ -1111,16 +1135,18 @@
       ]
     },
     "Docker": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "astrbot_deployment",
-        "build_production_ready_llm_applications_with_haystack"
+        "build_production_ready_llm_applications_with_haystack",
+        "ragflow_deployment"
       ]
     },
     "Docker Compose": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "astrbot_deployment"
+        "astrbot_deployment",
+        "ragflow_deployment"
       ]
     },
     "AstrBot App": {
@@ -1148,9 +1174,10 @@
       ]
     },
     "uv": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "astrbot_deployment"
+        "astrbot_deployment",
+        "ragflow_deployment"
       ]
     },
     "OpenAI Agents SDK": {
@@ -1483,6 +1510,30 @@
       "freq": 1,
       "skills": [
         "hermes_agent_setup"
+      ]
+    },
+    "RAGFlow": {
+      "freq": 1,
+      "skills": [
+        "ragflow_deployment"
+      ]
+    },
+    "Elasticsearch": {
+      "freq": 1,
+      "skills": [
+        "ragflow_deployment"
+      ]
+    },
+    "Infinity": {
+      "freq": 1,
+      "skills": [
+        "ragflow_deployment"
+      ]
+    },
+    "jemalloc": {
+      "freq": 1,
+      "skills": [
+        "ragflow_deployment"
       ]
     }
   },
@@ -1897,6 +1948,32 @@
         "mcp"
       ],
       "step_count": 8
+    },
+    "ragflow_deployment": {
+      "concepts": [
+        "Retrieval-Augmented Generation",
+        "Large Language Models",
+        "Context Layer",
+        "Agent Capabilities"
+      ],
+      "tools": [
+        "Docker",
+        "Docker Compose",
+        "RAGFlow",
+        "Elasticsearch",
+        "Infinity",
+        "uv",
+        "jemalloc"
+      ],
+      "tags": [
+        "ai",
+        "deployment",
+        "ragflow",
+        "retrieval",
+        "generation",
+        "llms"
+      ],
+      "step_count": 11
     }
   },
   "relationships": {
@@ -1985,6 +2062,11 @@
       ],
       "building_ai_agents": [
         "LLMs"
+      ],
+      "ragflow_deployment": [
+        "Docker",
+        "Docker Compose",
+        "uv"
       ]
     },
     "openai_agents_sdk": {
@@ -2026,6 +2108,9 @@
       ],
       "pydantic_ai_framework": [
         "Transformers"
+      ],
+      "ragflow_deployment": [
+        "Docker"
       ]
     },
     "swanlab_ai_training_analysis_platform": {
@@ -2144,8 +2229,18 @@
       "higsfield_integration": [
         "Claude"
       ]
+    },
+    "ragflow_deployment": {
+      "astrbot_deployment": [
+        "Docker",
+        "Docker Compose",
+        "uv"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "Docker"
+      ]
     }
   },
-  "updated_at": "2026-07-17T03:47:07.923407+00:00",
-  "total_skills": 16
+  "updated_at": "2026-07-17T04:13:30.458287+00:00",
+  "total_skills": 17
 }
