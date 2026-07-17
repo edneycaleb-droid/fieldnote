@@ -717,8 +717,12 @@ def _extract_skill_ai(
 
 # ── AI Arena: three providers, one judge ─────────────────────────────────────
 
-def _extract_skill_chatgpt(transcript: str, knowledge_ctx: str, existing_content: str = "") -> dict:
-    """Educator-lens extraction — uses lens-aware routing (Groq first for educator lens)."""
+def _extract_skill_chatgpt(
+    transcript: str, knowledge_ctx: str, existing_content: str = "",
+    allow_paid: bool = False,
+) -> dict:
+    """Educator-lens extraction — uses lens-aware routing (Groq first for educator lens).
+    allow_paid is passed per-job and never mutates global state."""
     base     = _build_prompt(transcript, knowledge_ctx, existing_content)
     preamble = (
         "You are Fieldnote's EDUCATOR AI. Your lens is conceptual clarity, "
@@ -727,16 +731,20 @@ def _extract_skill_chatgpt(transcript: str, knowledge_ctx: str, existing_content
     )
     raw = provider_router.call_llm_for_lens(
         "educator", preamble + base, max_tokens=4000, json_mode=True,
+        allow_paid=allow_paid,
     )
     d   = json.loads(raw)
     # Validate immediately — LLM may write "steps": null, "tools": null etc.
-    # dict.get("steps", []) returns None when key exists with null value.
     return skill_validator.validate_extraction(d, context="chatgpt")
 
 
-def _extract_skill_groq(transcript: str, knowledge_ctx: str, existing_content: str = "") -> dict:
+def _extract_skill_groq(
+    transcript: str, knowledge_ctx: str, existing_content: str = "",
+    allow_paid: bool = False,
+) -> dict:
     """Practitioner-lens extraction — uses lens-aware routing (Gemini first to avoid
-    concurrent Groq drain with the educator extractor; replaces fragile time.sleep(4))."""
+    concurrent Groq drain with the educator extractor; replaces fragile time.sleep(4)).
+    allow_paid is passed per-job and never mutates global state."""
     base     = _build_prompt(transcript, knowledge_ctx, existing_content)
     preamble = (
         "You are Fieldnote's PRACTITIONER AI. Your lens is specific actionable steps "
@@ -746,6 +754,7 @@ def _extract_skill_groq(transcript: str, knowledge_ctx: str, existing_content: s
     )
     raw = provider_router.call_llm_for_lens(
         "practitioner", preamble + base, max_tokens=4000, json_mode=True,
+        allow_paid=allow_paid,
     )
     d   = json.loads(raw)
     # Validate immediately — same null-field protection as chatgpt extractor
@@ -783,7 +792,7 @@ def _github_readme_context(repos: list) -> str:
     return chr(10).join(lines) if lines else "No README context available."
 
 
-def _judge_arena(skill_a: dict, skill_b: dict, github_ctx: str, emit) -> dict:
+def _judge_arena(skill_a: dict, skill_b: dict, github_ctx: str, emit, allow_paid: bool = False) -> dict:
     """Judge synthesizes ChatGPT + Groq outputs into one superior merged skill."""
     if not skill_a and not skill_b:
         raise ValueError("Both AI extractions failed — nothing to judge")
@@ -842,7 +851,7 @@ def _judge_arena(skill_a: dict, skill_b: dict, github_ctx: str, emit) -> dict:
     )
 
     try:
-        raw    = provider_router.call_llm_for_lens("judge", prompt, max_tokens=4500, json_mode=True)
+        raw    = provider_router.call_llm_for_lens("judge", prompt, max_tokens=4500, json_mode=True, allow_paid=allow_paid)
         result = json.loads(raw)
     except Exception as exc:
         emit("⚠  Judge LLM failed (" + str(exc)[:80] + "), using deterministic merge", "warning")
@@ -1119,10 +1128,8 @@ def run_job(job_id: str, url: str, video_id: str):
         _jobs[job_id]["stage"] = name
         q.put({"type": "stage", "stage": name, "run_id": run_id})
 
-    # Read X-Allow-Paid from job context (set by /process route)
+    # Read X-Allow-Paid from job context (set by /process route) — never mutates global
     allow_paid = bool(_jobs[job_id].get("allow_paid", False))
-    if allow_paid:
-        provider_router.set_paid_fallback(True)
 
     try:
         set_stage("init")
