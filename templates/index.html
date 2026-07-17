@@ -2259,6 +2259,7 @@ document.getElementById("url-input").addEventListener("input", e => {
 });
 
 // ── System health check ───────────────────────────────────────────────────────
+let _cachedToolItems = ""; // preserved across provider_status SSE updates
 // State label → CSS class for AI provider dots
 function _providerDotCls(state) {
   if (state === "healthy")          return "hc-ok";
@@ -2330,12 +2331,48 @@ async function checkHealth() {
       return `<span class="hc-item ${clickable}" title="${tip}"${onclick}><span class="hc-dot ${cls}"></span><span class="hc-name ${nameCls}">${c.label}</span></span>`;
     }).join("");
 
+    _cachedToolItems = toolItems; // cache for instant health-bar updates from SSE
     const sep = `<span style="color:var(--muted);opacity:.35;margin:0 2px">│</span>`;
     document.getElementById("hc-items").innerHTML = aiItems + sep + toolItems;
 
     // Always show the bar so AI quota status is always visible
     document.getElementById("health-bar").style.display = "flex";
   } catch (e) { /* health check is non-critical */ }
+}
+
+// Update just the AI provider dots from a status dict pushed via SSE (no network round-trip).
+// Falls back to checkHealth() if the cached tool items haven't been rendered yet.
+function updateProviderDotsFromStatus(prov) {
+  if (!prov || typeof prov !== "object") return;
+  const hcItems = document.getElementById("hc-items");
+  if (!hcItems) return;
+  const AI_PROVIDERS = [
+    { key: "groq",        label: "Groq"        },
+    { key: "gemini",      label: "Gemini"      },
+    { key: "openai",      label: "ChatGPT"     },
+    { key: "huggingface", label: "HuggingFace" },
+    { key: "openrouter",  label: "OpenRouter"  },
+  ];
+  const aiItems = AI_PROVIDERS.map(c => {
+    const info      = prov[c.key] || { state: "no_key" };
+    const cls       = _providerDotCls(info.state);
+    const tip       = esc(_providerTitle(c.key, info));
+    const warn      = (info.state !== "healthy" && info.state !== "no_key");
+    const nameCls   = warn ? (info.state === "quota_exhausted" || info.state === "auth_error" ? "bad" : "warn") : "";
+    const clickable = (info.state === "no_key" || info.state === "auth_error") ? "clickable" : "";
+    const onclick   = clickable ? ` onclick="openKeyModal('${c.key}')"` : "";
+    return `<span class="hc-item ${clickable}" title="${tip}"${onclick}><span class="hc-dot ${cls}"></span><span class="hc-name ${nameCls}">${c.label}</span></span>`;
+  }).join("");
+  const sep = `<span style="color:var(--muted);opacity:.35;margin:0 2px">│</span>`;
+  if (_cachedToolItems) {
+    hcItems.innerHTML = aiItems + sep + _cachedToolItems;
+    document.getElementById("health-bar").style.display = "flex";
+  } else {
+    // Tool items not yet cached — do a full health check
+    checkHealth();
+  }
+  // Also update the provider-dash panel if it's open
+  if (_providerDashOpen) refreshProviderDash();
 }
 
 // Poll provider status every 60 s independently (fast path for quota recovery feedback)
@@ -2870,8 +2907,9 @@ async function runSingleVideo(url, videoId) {
         if (msg.type === "meta" && msg.data?.title) {
           _playlistMeta[videoId] = msg.data.title;
         }
-        if (msg.type === "verify_check") { renderVerifyCheck(msg.check); return; }
-        if (msg.type === "verify_done")  { renderVerifyDone(msg);        return; }
+        if (msg.type === "verify_check")    { renderVerifyCheck(msg.check); return; }
+        if (msg.type === "verify_done")     { renderVerifyDone(msg);        return; }
+        if (msg.type === "provider_status") { updateProviderDotsFromStatus(msg.providers); return; }
         if (msg.type === "done") {
           _currentES.close(); _currentES = null;
           reset(btn); _releaseVideo();
@@ -3006,9 +3044,10 @@ async function resumeQueuedJob(runId) {
 
       _currentES.onmessage = e => {
         const msg2 = JSON.parse(e.data);
-        if (msg2.type === "ping")   return;
-        if (msg2.type === "log")    { appendLog(msg2.msg, msg2.kind); return; }
-        if (msg2.type === "stage")  { updateStageProgress(msg2.stage); return; }
+        if (msg2.type === "ping")            return;
+        if (msg2.type === "log")             { appendLog(msg2.msg, msg2.kind); return; }
+        if (msg2.type === "stage")           { updateStageProgress(msg2.stage); return; }
+        if (msg2.type === "provider_status") { updateProviderDotsFromStatus(msg2.providers); return; }
         if (msg2.type === "done") {
           _currentES.close(); _currentES = null;
           // Re-enable button in case the job queues again
