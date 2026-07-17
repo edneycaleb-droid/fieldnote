@@ -647,6 +647,110 @@ def call_chat_free_only(
     )
 
 
+# ── Paid-fallback toggle ──────────────────────────────────────────────────────
+
+ALLOW_PAID_FALLBACK: bool = False  # off by default — no billing risk
+
+
+def set_paid_fallback(enabled: bool) -> None:
+    """Toggle whether OpenAI (billed) is included in the provider list.
+    When False, OpenAI is excluded even if CHATGPT key is configured."""
+    global ALLOW_PAID_FALLBACK
+    ALLOW_PAID_FALLBACK = bool(enabled)
+    log.info("Paid fallback set to: %s", ALLOW_PAID_FALLBACK)
+
+
+def _available_providers(allow_paid: bool = False) -> list[str]:
+    """Return the ordered provider list, optionally including OpenAI."""
+    global ALLOW_PAID_FALLBACK
+    use_paid = allow_paid or ALLOW_PAID_FALLBACK
+    return [p for p in _PROVIDERS if use_paid or p != "openai"]
+
+
+def call_llm_for_lens(
+    lens: str,
+    prompt: str,
+    max_tokens: int = 4000,
+    json_mode: bool = True,
+    allow_paid: bool = False,
+) -> str:
+    """
+    Lens-aware provider routing that spreads concurrent lenses across different
+    providers to avoid concurrent 429s:
+
+    • "educator"     → Groq first (primary), then Gemini, HuggingFace, OpenRouter
+    • "practitioner" → Gemini first (avoids concurrent Groq drain), then Groq,
+                       HuggingFace, OpenRouter
+    • "judge"        → Gemini first, then Groq, HuggingFace, OpenRouter
+    • anything else  → standard call_llm_smart order
+
+    This replaces the fragile time.sleep(4) in the practitioner extractor.
+    Raises RuntimeError when all available providers are exhausted.
+    """
+    _init_status()
+
+    # Lens-specific provider preference order
+    if lens == "educator":
+        preferred = ["groq", "gemini", "huggingface", "openrouter"]
+    elif lens in ("practitioner", "judge"):
+        preferred = ["gemini", "groq", "huggingface", "openrouter"]
+    else:
+        preferred = list(FREE_PROVIDERS)
+
+    if allow_paid or ALLOW_PAID_FALLBACK:
+        # Append openai at the end as last resort when paid fallback enabled
+        if "openai" not in preferred:
+            preferred.append("openai")
+
+    tried: list[str] = []
+    for provider in preferred:
+        if not _is_available(provider):
+            continue
+        try:
+            result = _IMPL[provider](prompt, max_tokens, json_mode)
+            log.debug("call_llm_for_lens[%s]: used %s", lens, provider)
+            return result
+        except Exception as e:
+            tried.append(f"{provider}: {str(e)[:80]}")
+            log.warning(
+                "call_llm_for_lens[%s]: %s failed, trying next: %s",
+                lens, provider, str(e)[:100],
+            )
+            continue
+
+    raise RuntimeError(
+        f"All providers exhausted for lens '{lens}'. Errors: {' | '.join(tried)}"
+    )
+
+
+def add_preflight_check() -> dict[str, str]:
+    """
+    Ping each available provider with a minimal prompt to assess readiness.
+    Returns a dict mapping provider → "ok" | "rate_limited" | "quota_exhausted" |
+    "auth_error" | "no_key" | "error:<msg>".
+    Does NOT block the caller; results are informational only.
+    """
+    _init_status()
+    results: dict[str, str] = {}
+    mini_prompt = "Say 'ok' in one word."
+    for provider in _PROVIDERS:
+        if not _get_key(provider) and provider not in _ANONYMOUS_OK:
+            results[provider] = "no_key"
+            continue
+        with _lock:
+            state = _status.get(provider, {}).get("state", _STATE_HEALTHY)
+        if state != _STATE_HEALTHY:
+            results[provider] = state
+            continue
+        try:
+            _IMPL[provider](mini_prompt, 10, False)
+            results[provider] = "ok"
+        except Exception as e:
+            kind = _classify_error(str(e))
+            results[provider] = kind if kind else f"error:{str(e)[:60]}"
+    return results
+
+
 def provider_status() -> dict:
     """
     Return live status dict for each provider.
