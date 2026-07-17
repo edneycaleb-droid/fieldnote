@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **18 skills** · Last synced: 2026-07-17 13:17 UTC
+> **19 skills** · Last synced: 2026-07-17 13:22 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Moonshot Kimiko 3: A 2.8 Trillion Parameter Open-Weight Model for AI Self-Improvement and Automation](skills/moonshot_kimiko_3_skill.md) | This skill teaches how to use Moonshot's Kimiko 3, a 2.8 trillion parameter open | `Open Claw` `Moonshot` `Kimiko 3` `Open Weights` | `ai` `automation` `moonshot` |
 | [Moonshot Kimiko 3: A 2.8 Trillion Parameter Open-Weight Model for AI Self-Improvement and Automation](skills/moonshot_kimiko_3.md) | This skill teaches how to use Moonshot's Kimiko 3, a 2.8 trillion parameter open | `Open Claw` `Moonshot` `Kimiko 3` `Open Weights` | `ai` `self-improvement` `moonshot` |
 | [Deploying LightRAG: A Lightweight, Graph-Based RAG Framework](skills/lightrag_deployment.md) | LightRAG is a lightweight knowledge-graph RAG framework that efficiently indexes | `uv` `pip` `Docker` `OpenSearch` | `ai` `automation` `orchestration` |
 | [Deploying RAGFlow for Retrieval-Augmented Generation with Enhanced Efficiency and Precision](skills/ragflow_deployment.md) | This skill teaches how to deploy RAGFlow, a leading open-source Retrieval-Augmen | `Docker` `Docker Compose` `RAGFlow` `Elasticsearch` | `ai` `deployment` `ragflow` |
