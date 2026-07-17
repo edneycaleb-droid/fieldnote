@@ -626,6 +626,36 @@
       "skills": [
         "mastering_loop_engineering"
       ]
+    },
+    "Open-Weight Models": {
+      "freq": 1,
+      "skills": [
+        "moonshot_kimiko_automation"
+      ]
+    },
+    "Moonshot Kimiko 3": {
+      "freq": 1,
+      "skills": [
+        "moonshot_kimiko_automation"
+      ]
+    },
+    "Open Weights Models": {
+      "freq": 1,
+      "skills": [
+        "moonshot_kimiko_automation"
+      ]
+    },
+    "Moonshot": {
+      "freq": 1,
+      "skills": [
+        "moonshot_kimiko_automation"
+      ]
+    },
+    "Kimiko 3": {
+      "freq": 1,
+      "skills": [
+        "moonshot_kimiko_automation"
+      ]
     }
   },
   "tools": {
@@ -1176,6 +1206,30 @@
       "skills": [
         "mastering_loop_engineering"
       ]
+    },
+    "Open Claw": {
+      "freq": 1,
+      "skills": [
+        "moonshot_kimiko_automation"
+      ]
+    },
+    "Moonshot": {
+      "freq": 1,
+      "skills": [
+        "moonshot_kimiko_automation"
+      ]
+    },
+    "Kimiko 3": {
+      "freq": 1,
+      "skills": [
+        "moonshot_kimiko_automation"
+      ]
+    },
+    "Open Weights": {
+      "freq": 1,
+      "skills": [
+        "moonshot_kimiko_automation"
+      ]
     }
   },
   "skill_map": {
@@ -1464,6 +1518,28 @@
         "strategic-thinking"
       ],
       "step_count": 12
+    },
+    "moonshot_kimiko_automation": {
+      "concepts": [
+        "Open-Weight Models",
+        "Moonshot Kimiko 3",
+        "Open Weights Models",
+        "Moonshot",
+        "Kimiko 3"
+      ],
+      "tools": [
+        "Open Claw",
+        "Moonshot",
+        "Kimiko 3",
+        "Open Weights"
+      ],
+      "tags": [
+        "ai",
+        "self-improvement",
+        "moonshot",
+        "automation"
+      ],
+      "step_count": 4
     }
   },
   "relationships": {
@@ -1553,8 +1629,9 @@
       "building_ai_agents": [
         "Claude"
       ]
-    }
+    },
+    "moonshot_kimiko_automation": {}
   },
-  "updated_at": "2026-07-17T00:33:24.362236+00:00",
-  "total_skills": 10
+  "updated_at": "2026-07-17T00:38:25.305904+00:00",
+  "total_skills": 11
 }
