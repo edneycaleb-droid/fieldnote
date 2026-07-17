@@ -2485,21 +2485,21 @@ async function loadIntelFeed() {
         feedEl.innerHTML = '<div class="if-empty">No repos processed yet — hit Run to start.</div>';
       } else {
         feedEl.innerHTML = entries.map(e => {
-          const actionCls = {create:'da-create',enhance:'da-enhance',
-            quality_denied:'da-denied',error:'da-error',skipped_no_readme:'da-denied'}[e.action] || 'da-denied';
-          const actionLbl = {create:'＋ created',enhance:'↑ enhanced',
-            quality_denied:'✗ denied',error:'⚠ error',skipped_no_readme:'⊘ no README'}[e.action] || e.action;
+          const actBadge = _discActionBadge(e.enrichment_queued && e.action === 'baseline' ? 'enrichment_queued' : e.action);
           const stars  = e.stars  ? `⭐ ${(e.stars||0).toLocaleString()} · ` : '';
           const qual   = e.quality_score !== undefined ? `${Math.round(e.quality_score*100)}% quality · ` : '';
           const when   = e.processed_at ? relTime(e.processed_at) : '';
           const skill  = e.skill_name
             ? `<a href="/skills/${esc(e.skill_name)}.md" style="color:var(--green);text-decoration:none">${esc(e.skill_name)}</a> · `
             : (e.error ? `<span style="color:#f87171;font-size:.68rem">${esc((e.error||'').slice(0,80))}</span> · ` : '');
+          const retryBtn = (e.action === 'baseline' || e.action === 'error' || e.enrichment_queued)
+            ? `<button class="disc-retry-btn" onclick="fetch('/api/discovery/enqueue',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({full_name:'${esc(e.repo)}'})})">↺</button>`
+            : '';
           return `<div class="if-entry">
             <div class="if-entry-top">
               <span class="if-entry-source ifs-github">GitHub</span>
               <span class="if-entry-title">${esc(e.repo)}</span>
-              <span class="disc-action ${actionCls}">${actionLbl}</span>
+              ${actBadge}${retryBtn}
             </div>
             <div class="if-entry-meta">${skill}${stars}${qual}${when}</div>
           </div>`;
