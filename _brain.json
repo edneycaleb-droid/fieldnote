@@ -1007,6 +1007,42 @@
       "skills": [
         "microsoft_mcp_curriculum"
       ]
+    },
+    "Browser automation": {
+      "freq": 1,
+      "skills": [
+        "chrome_mcp_server"
+      ]
+    },
+    "Content analysis": {
+      "freq": 1,
+      "skills": [
+        "chrome_mcp_server"
+      ]
+    },
+    "Semantic search": {
+      "freq": 1,
+      "skills": [
+        "chrome_mcp_server"
+      ]
+    },
+    "Model Context Protocol (MCP)": {
+      "freq": 1,
+      "skills": [
+        "chrome_mcp_server"
+      ]
+    },
+    "Chrome extension": {
+      "freq": 1,
+      "skills": [
+        "chrome_mcp_server"
+      ]
+    },
+    "AI-assisted browsing": {
+      "freq": 1,
+      "skills": [
+        "chrome_mcp_server"
+      ]
     }
   },
   "tools": {
@@ -1907,6 +1943,48 @@
       "skills": [
         "microsoft_mcp_curriculum"
       ]
+    },
+    "Chrome MCP Server": {
+      "freq": 1,
+      "skills": [
+        "chrome_mcp_server"
+      ]
+    },
+    "Model Context Protocol (MCP)": {
+      "freq": 1,
+      "skills": [
+        "chrome_mcp_server"
+      ]
+    },
+    "Streamable HTTP connection method": {
+      "freq": 1,
+      "skills": [
+        "chrome_mcp_server"
+      ]
+    },
+    "pnpm": {
+      "freq": 1,
+      "skills": [
+        "chrome_mcp_server"
+      ]
+    },
+    "Node.js": {
+      "freq": 1,
+      "skills": [
+        "chrome_mcp_server"
+      ]
+    },
+    "Chrome/Chromium browser": {
+      "freq": 1,
+      "skills": [
+        "chrome_mcp_server"
+      ]
+    },
+    "mcp-chrome-bridge": {
+      "freq": 1,
+      "skills": [
+        "chrome_mcp_server"
+      ]
     }
   },
   "skill_map": {
@@ -2518,6 +2596,36 @@
         "deployment"
       ],
       "step_count": 10
+    },
+    "chrome_mcp_server": {
+      "concepts": [
+        "Browser automation",
+        "Content analysis",
+        "Semantic search",
+        "Model Context Protocol (MCP)",
+        "Chrome extension",
+        "AI-assisted browsing"
+      ],
+      "tools": [
+        "Chrome MCP Server",
+        "Model Context Protocol (MCP)",
+        "Streamable HTTP connection method",
+        "pnpm",
+        "Node.js",
+        "Chrome/Chromium browser",
+        "mcp-chrome-bridge"
+      ],
+      "tags": [
+        "browser",
+        "ai",
+        "automation",
+        "browser automation",
+        "content analysis",
+        "semantic search",
+        "ai-assisted browsing",
+        "model context protocol"
+      ],
+      "step_count": 9
     }
   },
   "relationships": {
@@ -3023,8 +3131,9 @@
       "hermes_agent_setup": [
         "Discord"
       ]
-    }
+    },
+    "chrome_mcp_server": {}
   },
-  "updated_at": "2026-07-17T14:32:07.799418+00:00",
-  "total_skills": 23
+  "updated_at": "2026-07-17T14:34:40.341903+00:00",
+  "total_skills": 24
 }
