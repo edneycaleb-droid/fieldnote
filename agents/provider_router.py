@@ -377,7 +377,11 @@ def _call_huggingface(prompt: str, max_tokens: int, json_mode: bool) -> str:
         from huggingface_hub import InferenceClient
     except ImportError:
         raise RuntimeError("huggingface_hub not installed; run: pip install huggingface_hub")
-    token = _get_key("huggingface") or None  # None = anonymous
+    # Preserve the raw token so we can distinguish "token present but bad" from
+    # "anonymous access".  Do NOT use `or None` on a truthy-but-invalid token —
+    # that would silently strip it and hide the auth error from the user.
+    raw_token: str = _get_key("huggingface")
+    token = raw_token if raw_token else None   # None → anonymous, "" → anonymous
     client = InferenceClient(token=token)
     if json_mode:
         prompt = prompt + chr(10) + chr(10) + "Respond with valid JSON only. No markdown fences."
@@ -395,9 +399,18 @@ def _call_huggingface(prompt: str, max_tokens: int, json_mode: bool) -> str:
         except Exception as e:
             err = str(e)
             last_err = e
-            if "404" in err or "model" in err.lower() and "not found" in err.lower():
+            if "404" in err or ("model" in err.lower() and "not found" in err.lower()):
                 continue
             kind = _mark_error("huggingface", err)
+            # When the user has explicitly configured a token and it is rejected,
+            # do NOT silently degrade to anonymous access — surface the auth error
+            # immediately so the Integrations card can show ⚠ Auth Error.
+            if kind == _STATE_AUTH and raw_token:
+                raise RuntimeError(
+                    "HuggingFace token rejected (401 auth_error). "
+                    "Check your HF_TOKEN in the Integrations tab. "
+                    "Original error: " + err[:200]
+                ) from e
             if kind in (_STATE_QUOTA, _STATE_AUTH):
                 raise
             if kind == _STATE_RATE:
@@ -412,7 +425,8 @@ def _call_huggingface_chat(messages: list, max_tokens: int, temperature: float) 
         from huggingface_hub import InferenceClient
     except ImportError:
         raise RuntimeError("huggingface_hub not installed")
-    token = _get_key("huggingface") or None
+    raw_token: str = _get_key("huggingface")
+    token = raw_token if raw_token else None
     client = InferenceClient(token=token)
     try:
         resp = client.chat.completions.create(
@@ -424,7 +438,15 @@ def _call_huggingface_chat(messages: list, max_tokens: int, temperature: float) 
         _mark_healthy("huggingface")
         return resp.choices[0].message.content
     except Exception as e:
-        _mark_error("huggingface", str(e))
+        err = str(e)
+        kind = _mark_error("huggingface", err)
+        # Same as _call_huggingface: don't silently degrade a bad token to anonymous.
+        if kind == _STATE_AUTH and raw_token:
+            raise RuntimeError(
+                "HuggingFace token rejected (auth_error). "
+                "Check your HF_TOKEN in the Integrations tab. "
+                "Original error: " + err[:200]
+            ) from e
         raise
 
 
@@ -538,6 +560,30 @@ def refresh_provider_key(provider: str) -> None:
                 _status[provider]["until"] = 0.0
                 _status[provider]["last_error"] = ""
                 log.info("Provider %s key refreshed → healthy", provider)
+
+
+def mark_provider_auth_error(provider: str, detail: str = "") -> None:
+    """
+    Permanently mark a provider as auth_error from outside the router
+    (e.g. from integrations_registry.verify_integration after a 401).
+
+    This ensures the Integrations card reflects bad-token state immediately,
+    without waiting for a failed LLM call to set it implicitly.
+    HuggingFace special case: only mark auth_error when a token is actually
+    configured — anonymous-only access is never an auth error.
+    """
+    _init_status()
+    # For HuggingFace, anonymous access is valid.  Only mark auth_error when
+    # a token was explicitly provided and got rejected.
+    if provider == "huggingface" and not _get_key("huggingface"):
+        log.debug("mark_provider_auth_error: skipped HF (no token configured — anonymous OK)")
+        return
+    with _lock:
+        if provider in _status:
+            _status[provider]["state"]      = _STATE_AUTH
+            _status[provider]["until"]      = float("inf")
+            _status[provider]["last_error"] = detail or "auth_error set by external verification"
+    log.warning("Provider %s → auth_error (set by external verification): %s", provider, detail[:120])
 
 
 def call_llm_smart(prompt: str, max_tokens: int = 4000, json_mode: bool = True) -> str:
