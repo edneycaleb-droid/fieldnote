@@ -2660,6 +2660,15 @@ async function runSingleVideo(url, videoId) {
           _currentES.close(); _currentES = null;
           reset(btn); _releaseVideo();
           if (msg.ok) {
+            // ── Degraded / queued path (all providers exhausted) ──────────
+            if (msg.degraded && msg.queued) {
+              renderRecoveryCard(msg);
+              setStatus("⚠️ Degraded draft saved — queued for auto-recovery", "warning");
+              const inp = document.getElementById("url-input");
+              inp.value = ""; inp.focus();
+              resolve(msg);
+              return;
+            }
             renderResult(msg);
             updateStats(msg.stats);
             prependSkill(msg);
