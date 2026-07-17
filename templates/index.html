@@ -504,6 +504,55 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
 .gpt-advanced-summary:hover { color: var(--text); }
 .gpt-advanced-body { padding: 0 14px 14px; border-top: 1px solid var(--border2); }
 
+/* ── iOS / mobile transition card ── */
+.gpt-ios-card {
+  background: #06060f; border: 1px solid var(--accent);
+  border-radius: 14px; padding: 15px 17px; margin: 10px 0;
+}
+.gpt-ios-head {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;
+}
+.gpt-ios-title { font-size: .88rem; font-weight: 700; color: var(--text); }
+.gpt-ios-warn {
+  background: #0c0800; border: 1px solid #7c4d00; border-radius: 8px;
+  padding: 9px 12px; font-size: .78rem; color: #f59e0b; line-height: 1.55;
+  margin-bottom: 10px; font-weight: 600;
+}
+.gpt-ios-pkg { margin-bottom: 8px; }
+.gpt-ios-pkg-label {
+  font-size: .67rem; color: var(--muted); margin-bottom: 4px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .05em;
+}
+/* Primary open-in-browser link — styled as button, but a real <a> so iOS never blocks it */
+.gpt-ios-open-link {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  width: 100%; padding: 14px 20px; margin: 12px 0 0; box-sizing: border-box;
+  background: linear-gradient(135deg, #7c5bf6 0%, #5a3fd4 100%);
+  border-radius: 13px; color: #fff; font-size: .96rem; font-weight: 700;
+  text-decoration: none; box-shadow: 0 4px 18px rgba(124,91,246,.35);
+  transition: opacity .15s; -webkit-tap-highlight-color: transparent;
+  letter-spacing: -.01em;
+}
+.gpt-ios-open-link:hover  { opacity: .92; color: #fff; }
+.gpt-ios-open-link:active { opacity: .75; }
+/* Save GPT edit URL */
+.gpt-save-url-section {
+  background: #040e08; border: 1px solid #0a3018;
+  border-radius: 10px; padding: 12px 14px; margin: 8px 0;
+}
+.gpt-save-url-label { font-size: .8rem; font-weight: 700; color: var(--text); margin-bottom: 2px; }
+.gpt-save-url-hint  { font-size: .72rem; color: var(--muted); margin-bottom: 8px; line-height: 1.55; }
+.gpt-save-url-row-inner { display: flex; gap: 6px; align-items: center; }
+.gpt-save-url-input {
+  flex: 1; background: var(--bg); border: 1px solid var(--border2); border-radius: 8px;
+  padding: 7px 10px; font-size: .75rem; color: var(--text); outline: none;
+  transition: border-color .15s; font-family: inherit; min-width: 0; -webkit-appearance: none;
+}
+.gpt-save-url-input:focus         { border-color: var(--accent); }
+.gpt-save-url-input.surl-valid    { border-color: var(--green); }
+.gpt-save-url-input.surl-invalid  { border-color: var(--red); }
+.gpt-save-url-status { font-size: .71rem; min-height: 1.1em; margin-top: 4px; }
+
 /* ── Health bar ── */
 #health-bar { background: #0c0800; border-bottom: 1px solid #2a1a00;
   padding: 5px 20px; display: flex; align-items: center; gap: 12px;
