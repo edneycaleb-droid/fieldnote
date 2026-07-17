@@ -1,13 +1,13 @@
 {
   "concepts": {
     "AI agents": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "building_ai_agents"
       ]
     },
     "Automation": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "building_ai_agents"
       ]
@@ -303,13 +303,13 @@
       ]
     },
     "Personalization": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "building_ai_agents"
       ]
     },
     "Integration": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "building_ai_agents"
       ]
@@ -387,10 +387,11 @@
       ]
     },
     "LLMs": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "astrbot_deployment",
-        "openai_agents_sdk"
+        "openai_agents_sdk",
+        "building_ai_agents"
       ]
     },
     "plugins": {
@@ -762,6 +763,18 @@
       "skills": [
         "ragaai_catalyst"
       ]
+    },
+    "Hermes Agent": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Goal-directed systems": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
     }
   },
   "tools": {
@@ -834,7 +847,7 @@
       ]
     },
     "Claude": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -950,7 +963,7 @@
       ]
     },
     "Hermes": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "building_ai_agents"
       ]
@@ -968,7 +981,7 @@
       ]
     },
     "Hermes Agent": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "building_ai_agents"
       ]
@@ -1320,10 +1333,11 @@
       ]
     },
     "Open Claw": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "moonshot_kimiko_automation",
-        "moonshot_kimiko_3"
+        "moonshot_kimiko_3",
+        "building_ai_agents"
       ]
     },
     "Moonshot": {
@@ -1418,6 +1432,18 @@
       "skills": [
         "pydantic_ai_framework"
       ]
+    },
+    "Contabo": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "RackNerd": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
     }
   },
   "skill_map": {
@@ -1427,36 +1453,25 @@
         "Personalization",
         "Automation",
         "Integration",
-        "Repeatability",
-        "Mixture of agents",
-        "Model interoperability",
-        "Real-time data augmentation",
-        "Rapid prototyping",
-        "Agent orchestration"
+        "Hermes Agent",
+        "LLMs",
+        "Goal-directed systems"
       ],
       "tools": [
-        "Claude",
-        "ClaudeCode",
-        "Claude Co-work",
-        "Connectors",
-        "Superpowers plugin",
-        "Cloud Code",
         "Hermes Agent",
-        "Hermes Agent Plus Grok 4.5",
-        "Firecrawl",
-        "SiaXNG",
-        "DuckD",
-        "AIVectorMemory",
-        "JDTLS",
-        "LSP4J-MCP"
+        "Claude",
+        "Open Claw",
+        "Contabo",
+        "RackNerd",
+        "Hermes"
       ],
       "tags": [
         "ai",
         "automation",
         "productivity",
-        "cloudcode"
+        "hermes"
       ],
-      "step_count": 12
+      "step_count": 10
     },
     "running_large_models_locally": {
       "concepts": [
@@ -1824,6 +1839,18 @@
       ],
       "higsfield_integration": [
         "Claude"
+      ],
+      "astrbot_deployment": [
+        "LLMs"
+      ],
+      "openai_agents_sdk": [
+        "LLMs"
+      ],
+      "moonshot_kimiko_automation": [
+        "Open Claw"
+      ],
+      "moonshot_kimiko_3": [
+        "Open Claw"
       ]
     },
     "running_large_models_locally": {
@@ -1874,6 +1901,9 @@
       ],
       "build_production_ready_llm_applications_with_haystack": [
         "Docker"
+      ],
+      "building_ai_agents": [
+        "LLMs"
       ]
     },
     "openai_agents_sdk": {
@@ -1894,6 +1924,9 @@
       ],
       "pydantic_ai_framework": [
         "LangChain"
+      ],
+      "building_ai_agents": [
+        "LLMs"
       ]
     },
     "build_production_ready_llm_applications_with_haystack": {
@@ -1944,6 +1977,9 @@
         "Open-Weight Models",
         "Open Weights Models",
         "Open Weights"
+      ],
+      "building_ai_agents": [
+        "Open Claw"
       ]
     },
     "moonshot_kimiko_3": {
@@ -1954,6 +1990,9 @@
         "Open-Weight Models",
         "Open Weights Models",
         "Open Weights"
+      ],
+      "building_ai_agents": [
+        "Open Claw"
       ]
     },
     "higsfield_integration": {
@@ -1989,6 +2028,6 @@
     },
     "ragaai_catalyst": {}
   },
-  "updated_at": "2026-07-17T02:01:57.452584+00:00",
+  "updated_at": "2026-07-17T03:44:17.369734+00:00",
   "total_skills": 15
 }
