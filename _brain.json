@@ -473,9 +473,10 @@
       ]
     },
     "LLM": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "build_production_ready_llm_applications_with_haystack"
+        "build_production_ready_llm_applications_with_haystack",
+        "graphrag_deployment"
       ]
     },
     "AI Orchestration": {
@@ -793,10 +794,11 @@
       ]
     },
     "Retrieval-Augmented Generation": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "ragflow_deployment",
-        "lightrag_deployment"
+        "lightrag_deployment",
+        "graphrag_deployment"
       ]
     },
     "Large Language Models": {
@@ -913,6 +915,18 @@
       "freq": 1,
       "skills": [
         "lightrag_deployment"
+      ]
+    },
+    "Graph-Based Systems": {
+      "freq": 1,
+      "skills": [
+        "graphrag_deployment"
+      ]
+    },
+    "Knowledge Graph Memory Structures": {
+      "freq": 1,
+      "skills": [
+        "graphrag_deployment"
       ]
     }
   },
@@ -1239,22 +1253,24 @@
       ]
     },
     "Docker": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "astrbot_deployment",
         "build_production_ready_llm_applications_with_haystack",
         "ragflow_deployment",
         "lightrag_deployment",
-        "deploying_retrieval_augmented_generation_with_ragflow"
+        "deploying_retrieval_augmented_generation_with_ragflow",
+        "graphrag_deployment"
       ]
     },
     "Docker Compose": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "astrbot_deployment",
         "ragflow_deployment",
         "deploying_retrieval_augmented_generation_with_ragflow",
-        "lightrag_deployment"
+        "lightrag_deployment",
+        "graphrag_deployment"
       ]
     },
     "AstrBot App": {
@@ -1718,6 +1734,24 @@
       "freq": 1,
       "skills": [
         "lightrag_deployment"
+      ]
+    },
+    "GraphRAG": {
+      "freq": 1,
+      "skills": [
+        "graphrag_deployment"
+      ]
+    },
+    "LLMs": {
+      "freq": 1,
+      "skills": [
+        "graphrag_deployment"
+      ]
+    },
+    "Microsoft Research Blog Post": {
+      "freq": 1,
+      "skills": [
+        "graphrag_deployment"
       ]
     }
   },
@@ -2247,6 +2281,31 @@
         "retrieval"
       ],
       "step_count": 12
+    },
+    "graphrag_deployment": {
+      "concepts": [
+        "Retrieval-Augmented Generation",
+        "Graph-Based Systems",
+        "LLM",
+        "Knowledge Graph Memory Structures"
+      ],
+      "tools": [
+        "GraphRAG",
+        "LLMs",
+        "Microsoft Research Blog Post",
+        "Docker",
+        "Docker Compose"
+      ],
+      "tags": [
+        "ai",
+        "rag",
+        "graph-based",
+        "llm",
+        "graphrag",
+        "deployment",
+        "docker"
+      ],
+      "step_count": 8
     }
   },
   "relationships": {
@@ -2282,6 +2341,9 @@
       ],
       "moonshot_kimiko_3_skill": [
         "Open Claw"
+      ],
+      "graphrag_deployment": [
+        "LLMs"
       ]
     },
     "running_large_models_locally": {
@@ -2356,6 +2418,11 @@
         "uv",
         "Docker Compose",
         "Docker"
+      ],
+      "graphrag_deployment": [
+        "LLMs",
+        "Docker Compose",
+        "Docker"
       ]
     },
     "openai_agents_sdk": {
@@ -2378,6 +2445,9 @@
         "LangChain"
       ],
       "building_ai_agents": [
+        "LLMs"
+      ],
+      "graphrag_deployment": [
         "LLMs"
       ]
     },
@@ -2406,6 +2476,10 @@
       ],
       "deploying_retrieval_augmented_generation_with_ragflow": [
         "Docker"
+      ],
+      "graphrag_deployment": [
+        "Docker",
+        "LLM"
       ]
     },
     "swanlab_ai_training_analysis_platform": {
@@ -2565,6 +2639,11 @@
         "uv",
         "Infinity",
         "Docker"
+      ],
+      "graphrag_deployment": [
+        "Retrieval-Augmented Generation",
+        "Docker Compose",
+        "Docker"
       ]
     },
     "lightrag_deployment": {
@@ -2586,6 +2665,10 @@
         "Docker Compose",
         "pip",
         "uv",
+        "Docker"
+      ],
+      "graphrag_deployment": [
+        "Docker Compose",
         "Docker"
       ]
     },
@@ -2639,9 +2722,43 @@
         "pip",
         "uv",
         "Docker"
+      ],
+      "graphrag_deployment": [
+        "Docker Compose",
+        "Docker"
+      ]
+    },
+    "graphrag_deployment": {
+      "building_ai_agents": [
+        "LLMs"
+      ],
+      "astrbot_deployment": [
+        "LLMs",
+        "Docker Compose",
+        "Docker"
+      ],
+      "openai_agents_sdk": [
+        "LLMs"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "Docker",
+        "LLM"
+      ],
+      "ragflow_deployment": [
+        "Retrieval-Augmented Generation",
+        "Docker Compose",
+        "Docker"
+      ],
+      "lightrag_deployment": [
+        "Docker Compose",
+        "Docker"
+      ],
+      "deploying_retrieval_augmented_generation_with_ragflow": [
+        "Docker Compose",
+        "Docker"
       ]
     }
   },
-  "updated_at": "2026-07-17T13:44:24.837464+00:00",
-  "total_skills": 20
+  "updated_at": "2026-07-17T13:46:28.128969+00:00",
+  "total_skills": 21
 }
