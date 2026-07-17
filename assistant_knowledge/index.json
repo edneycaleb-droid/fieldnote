@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "raga-ai-hub--ragaai-catalyst",
+      "title": "Discovered: raga-ai-hub/RagaAI-Catalyst",
+      "category": "discoveries",
+      "confidence": "verified",
+      "updated_at": "2026-07-17T02:02:25.164525+00:00",
+      "path": "discoveries/raga-ai-hub--ragaai-catalyst.md"
+    },
+    {
       "slug": "pydantic--pydantic-ai",
       "title": "Discovered: pydantic/pydantic-ai",
       "category": "discoveries",
@@ -153,5 +161,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-17T02:02:23.697475+00:00"
+  "updated_at": "2026-07-17T02:02:25.167123+00:00"
 }
