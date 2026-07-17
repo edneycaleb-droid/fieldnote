@@ -3941,6 +3941,25 @@ async function loadAgents() {
   }
 }
 
+function _discActionBadge(action) {
+  const MAP = {
+    'create':           ['da-create',    '＋ Created'],
+    'enhance':          ['da-enhance',   '↑ Enhanced'],
+    'enhanced':         ['da-enhance',   '↑ Enhanced'],
+    'enriched':         ['da-enriched',  '✨ Enriched'],
+    'enhanced_from_baseline': ['da-enriched', '✨ Enriched'],
+    'baseline':         ['da-baseline',  '📄 Baseline'],
+    'enrichment_queued':['da-queued',    '⏳ Queued'],
+    'recovering':       ['da-recovering','🔄 Recovering'],
+    'quality_denied':   ['da-denied',    '✗ Denied'],
+    'skipped_duplicate':['da-duplicate', '≡ Duplicate'],
+    'skipped_no_readme':['da-denied',    '⊘ No README'],
+    'error':            ['da-error',     '! Error'],
+  };
+  const [cls, lbl] = MAP[action] || ['da-denied', action || '?'];
+  return `<span class="disc-action ${cls}">${lbl}</span>`;
+}
+
 function renderDiscovery(d) {
   const statsEl  = document.getElementById('discovery-stats');
   const recentEl = document.getElementById('discovery-recent');
@@ -3952,9 +3971,19 @@ function renderDiscovery(d) {
     return;
   }
 
-  const total = (d.skills_created||0) + (d.skills_enhanced||0);
-  if (total > 0 && badge) { badge.textContent = total + ' learned'; badge.style.display = ''; }
-  else if (badge) badge.style.display = 'none';
+  const total = (d.skills_created||0) + (d.skills_enhanced||0) + (d.enriched_count||0);
+  const baselineN = d.baseline_count || 0;
+  const backlog   = d.backlog_depth  || 0;
+
+  if ((total + baselineN) > 0 && badge) {
+    badge.textContent = total + ' learned' + (baselineN ? ` · ${baselineN} baseline` : '');
+    badge.style.display = '';
+  } else if (badge) badge.style.display = 'none';
+
+  const pausedLbl  = d.enrichment_paused ? '⏸ Resume' : '⏸ Pause';
+  const pauseCall  = d.enrichment_paused
+    ? "fetch('/api/discovery/enrichment/resume',{method:'POST'}).then(()=>loadAgents())"
+    : "fetch('/api/discovery/enrichment/pause',{method:'POST'}).then(()=>loadAgents())";
 
   statsEl.innerHTML = `
     <div class="disc-counters">
@@ -3967,16 +3996,55 @@ function renderDiscovery(d) {
         <div class="disc-counter-lbl">Created</div>
       </div>
       <div class="disc-counter">
-        <div class="disc-counter-num" style="color:#60a5fa">${d.skills_enhanced||0}</div>
+        <div class="disc-counter-num" style="color:#60a5fa">${(d.skills_enhanced||0)+(d.enriched_count||0)}</div>
         <div class="disc-counter-lbl">Enhanced</div>
       </div>
       <div class="disc-counter">
-        <div class="disc-counter-num" style="color:#f87171">${d.errors||0}</div>
-        <div class="disc-counter-lbl">Errors</div>
+        <div class="disc-counter-num" style="color:#94a3b8">${baselineN}</div>
+        <div class="disc-counter-lbl">Baseline</div>
+      </div>
+      <div class="disc-counter">
+        <div class="disc-counter-num" style="color:#f59e0b">${backlog}</div>
+        <div class="disc-counter-lbl">Queued</div>
       </div>
     </div>
-    <button class="disc-btn" onclick="runAgentNow('discover')">🔭 Discover now</button>
+    <div style="display:flex;gap:5px;flex-wrap:wrap;margin-top:6px;">
+      <button class="disc-btn" onclick="runAgentNow('discover')">🔭 Discover now</button>
+      <button class="disc-btn" style="border-color:#5c3d00;color:#f59e0b;background:#1a1200"
+        onclick="fetch('/api/discovery/recover-all',{method:'POST'}).then(r=>r.json()).then(d=>{ alert('Enqueued '+d.enqueued+' repos for AI enrichment'); loadAgents(); })">
+        🔄 Recover All
+      </button>
+      <button class="disc-btn" style="border-color:#2a3a5a;color:#60a5fa;background:#081828"
+        onclick="${pauseCall.replace(/"/g,'&quot;')}">${pausedLbl} Enrichment</button>
+    </div>
+    <div class="disc-reliability">
+      <div class="disc-reliability-header" onclick="this.nextElementSibling.classList.toggle('open');this.querySelector('.disc-rel-toggle').textContent=this.nextElementSibling.classList.contains('open')?'▲':'▼'">
+        <span>▼ Reliability</span>
+        <span class="disc-rel-toggle" style="font-size:.6rem">▼</span>
+      </div>
+      <div class="disc-reliability-body" id="disc-reliability-body"></div>
+    </div>
   `;
+
+  // Async-load reliability data
+  fetch('/api/discovery/reliability').then(r=>r.json()).then(rel => {
+    const body = document.getElementById('disc-reliability-body');
+    if (!body || !rel || rel.error) return;
+    const prov = rel.providers || {};
+    const dotCls = s => s==='healthy'?'disc-rel-ok':s==='no_key'?'disc-rel-off':s==='rate_limited'?'disc-rel-warn':'disc-rel-err';
+    const provHtml = Object.entries(prov).map(([name, p]) =>
+      `<div class="disc-rel-row">
+        <span class="disc-rel-dot ${dotCls(p.state)}"></span>
+        <span style="width:80px;font-weight:600">${name}</span>
+        <span>${p.state}${p.cooldown_secs>0?' ('+p.cooldown_secs+'s)':''}</span>
+      </div>`
+    ).join('');
+    body.innerHTML = provHtml +
+      `<div class="disc-rel-row" style="margin-top:6px">
+        <span style="color:#f59e0b;font-weight:600">Backlog depth:</span>&nbsp;${rel.backlog_depth}
+        ${rel.enrichment_paused ? ' <span style="color:#f87171;font-size:.62rem">(paused)</span>' : ''}
+      </div>`;
+  }).catch(()=>{});
 
   const recent = d.recent_discoveries || [];
   if (!recent.length) {
@@ -3986,22 +4054,26 @@ function renderDiscovery(d) {
   }
   recentEl.style.display = '';
   recentEl.innerHTML = recent.map(e => {
-    const act = e.action === 'create'  ? '<span class="disc-action da-create">＋ created</span>'
-              : e.action === 'enhance' ? '<span class="disc-action da-enhance">↑ enhanced</span>'
-              : e.action === 'quality_denied' ? '<span class="disc-action da-denied">✗ denied</span>'
-              : '<span class="disc-action da-error">! error</span>';
+    const actBadge = _discActionBadge(e.enrichment_queued && e.action === 'baseline' ? 'enrichment_queued' : e.action);
     const skill = e.skill_name
       ? `<a class="disc-entry-skill" href="/skills/${esc(e.skill_name)}.md">${esc(e.skill_name)}</a>`
       : '';
     const stars = e.stars ? ` · ⭐ ${e.stars.toLocaleString()}` : '';
     const q     = e.quality_score !== undefined ? ` · ${Math.round(e.quality_score*100)}%` : '';
     const when  = e.processed_at ? ` · ${relTime(e.processed_at)}` : '';
+    const retryBtn = (e.action === 'baseline' || e.action === 'error' || e.enrichment_queued)
+      ? `<button class="disc-retry-btn" onclick="fetch('/api/discovery/enqueue',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({full_name:'${esc(e.repo)}'})}).then(()=>loadAgents())">↺</button>`
+      : '';
+    const errDetail = e.error
+      ? `<details style="font-size:.6rem;color:#666;margin-top:2px"><summary style="cursor:pointer">details</summary>${esc(e.error)}</details>`
+      : '';
     return `<div class="disc-entry">
       <div class="disc-entry-top">
         <span class="disc-entry-repo" title="${esc(e.repo)}">${esc(e.repo)}</span>
-        ${act}
+        ${actBadge}${retryBtn}
       </div>
       ${skill ? `<div>${skill}<span class="disc-entry-meta">${stars}${q}${when}</span></div>` : `<div class="disc-entry-meta">${stars}${q}${when}</div>`}
+      ${errDetail}
     </div>`;
   }).join('');
 }
