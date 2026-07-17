@@ -2769,9 +2769,13 @@ async function runSingleVideo(url, videoId) {
   const _releaseVideo = () => _videoRunning.delete(videoId);
 
   try {
+    // Clear any previous recovery card
+    const recWrap = document.getElementById("recovery-card-wrap");
+    if (recWrap) { recWrap.style.display = "none"; recWrap.innerHTML = ""; }
+
     const r = await fetch("/process", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json", ..._getPaidFallbackHeader() },
       body: JSON.stringify({ url }),
     });
     const d = await r.json();
@@ -2858,6 +2862,185 @@ async function runSingleVideo(url, videoId) {
 
 function reset(btn) {
   btn.disabled = false; btn.textContent = "Run";
+}
+
+// ── Recovery card ─────────────────────────────────────────────────────────────
+function renderRecoveryCard(msg) {
+  const wrap = document.getElementById("recovery-card-wrap");
+  if (!wrap) return;
+  const rc   = msg.recovery || {};
+  const failed = (rc.providers_failed || []).join(", ") || "all providers";
+  const skillUrl = msg.skill_name ? `/skills/${msg.skill_name}.md` : null;
+
+  wrap.style.display = "block";
+  wrap.innerHTML = `
+<div class="recovery-card">
+  <div class="recovery-card-header">
+    <span class="recovery-card-icon">⚠️</span>
+    <span class="recovery-card-title">${esc(msg.title || "Degraded draft saved")}</span>
+    <span class="recovery-card-badge">Queued for recovery</span>
+  </div>
+  <div class="recovery-card-body">
+    A degraded draft skill was created from your video using regex extraction only
+    — the AI enhancement step is pending. The run is queued and will auto-resume
+    when a free provider becomes available (checked every 5 min).
+    <div class="recovery-provider-list">
+      ${(rc.providers_failed || []).map(p =>
+        `<span class="recovery-provider-pill">⛔ ${esc(p)} exhausted</span>`
+      ).join("")}
+    </div>
+    ${skillUrl
+      ? `<div style="margin-top:8px"><a class="recovery-skill-link" href="${esc(skillUrl)}" target="_blank" rel="noopener">
+           📄 View degraded draft: ${esc(msg.skill_name)} ↗
+         </a></div>`
+      : ""}
+  </div>
+  <div class="recovery-card-actions">
+    <button class="recovery-resume-btn" id="recovery-resume-btn"
+            onclick="resumeQueuedJob('${esc(msg.run_id || "")}')"
+            ${msg.run_id ? "" : "disabled"}>
+      ▶ Resume now with free providers
+    </button>
+    <span class="recovery-auto-note">🔄 Auto-resume is on · checking every 5 min</span>
+  </div>
+</div>`;
+
+  // Show the workspace so the card is visible
+  const ws = document.getElementById("nb-workspace");
+  if (ws) ws.style.display = "";
+}
+
+async function resumeQueuedJob(runId) {
+  if (!runId) return;
+  const btn = document.getElementById("recovery-resume-btn");
+  if (btn) { btn.disabled = true; btn.textContent = "Resuming…"; }
+  try {
+    const r = await fetch(`/api/jobs/${encodeURIComponent(runId)}/resume`, { method: "POST" });
+    const d = await r.json();
+    if (d.ok && d.job_id) {
+      // Reconnect to the resumed job's stream
+      setStatus("⏳ Resuming job …", "");
+      const inp = document.getElementById("url-input");
+      const urlVal = inp ? inp.value : "";
+      if (urlVal) {
+        // Job is already started — just stream it
+        const logWrap = document.getElementById("log-wrap");
+        const logLines = document.getElementById("log-lines");
+        if (logWrap) logWrap.style.display = "block";
+        if (logLines) logLines.innerHTML = "";
+        if (_currentES) { _currentES.close(); _currentES = null; }
+        _currentES = new EventSource(`/stream/${d.job_id}`);
+        _currentES.onmessage = e => {
+          const msg2 = JSON.parse(e.data);
+          if (msg2.type === "log")   { appendLog(msg2.msg, msg2.kind); return; }
+          if (msg2.type === "stage") { updateStageProgress(msg2.stage); return; }
+          if (msg2.type === "done") {
+            _currentES.close(); _currentES = null;
+            document.getElementById("recovery-card-wrap").style.display = "none";
+            if (msg2.ok && !msg2.degraded) {
+              renderResult(msg2);
+              setStatus("✅ Recovery complete — skill enhanced!", "ok");
+            } else if (msg2.ok && msg2.degraded) {
+              setStatus("⚠️ Still degraded — will retry again", "warning");
+            } else {
+              setStatus("❌ Resume failed: " + (msg2.error || "unknown error"), "error");
+            }
+          }
+        };
+      }
+    } else {
+      if (btn) { btn.disabled = false; btn.textContent = "▶ Resume now with free providers"; }
+      setStatus("Resume failed: " + (d.error || "unknown"), "error");
+    }
+  } catch (err) {
+    if (btn) { btn.disabled = false; btn.textContent = "▶ Resume now with free providers"; }
+    setStatus("Resume error: " + err.message, "error");
+  }
+}
+
+// ── Provider health dashboard ─────────────────────────────────────────────────
+let _providerDashOpen = false;
+
+function toggleProviderDash() {
+  const body = document.getElementById("provider-dash-body");
+  const icon = document.getElementById("provider-dash-toggle-icon");
+  _providerDashOpen = !_providerDashOpen;
+  if (body) body.style.display = _providerDashOpen ? "flex" : "none";
+  if (icon) icon.textContent = _providerDashOpen ? "▲" : "▼";
+  if (_providerDashOpen) refreshProviderDash();
+}
+
+async function refreshProviderDash() {
+  const body = document.getElementById("provider-dash-body");
+  if (!body) return;
+  try {
+    const r = await fetch("/api/provider-status");
+    const statuses = await r.json();
+    const STATE_CLASS = {
+      healthy:         "pp-healthy",
+      rate_limited:    "pp-rate_limited",
+      cooling_down:    "pp-cooling_down",
+      quota_exhausted: "pp-quota_exhausted",
+      auth_error:      "pp-auth_error",
+      unavailable:     "pp-unavailable",
+      no_key:          "pp-no_key",
+      local_ready:     "pp-local_ready",
+    };
+    const STATE_LABEL = {
+      healthy:         "healthy",
+      rate_limited:    "rate-limited",
+      cooling_down:    "cooling down",
+      quota_exhausted: "quota exhausted",
+      auth_error:      "auth error",
+      unavailable:     "unavailable",
+      no_key:          "no key",
+      local_ready:     "local ready",
+    };
+    const ICONS = {
+      groq: "⚡", gemini: "✦", openai: "🔮",
+      huggingface: "🤗", openrouter: "🔀",
+    };
+
+    body.innerHTML = Object.entries(statuses).map(([name, info]) => {
+      const state = info.state || "no_key";
+      const cls   = STATE_CLASS[state] || "pp-no_key";
+      const label = STATE_LABEL[state] || state;
+      const icon  = ICONS[name] || "•";
+      const until = info.until_iso
+        ? ` · resets ${new Date(info.until_iso).toLocaleTimeString([], {hour:"2-digit",minute:"2-digit"})}`
+        : "";
+      return `<span class="provider-pill ${cls}" title="${esc(info.last_error||"")}">
+        <span class="pp-dot"></span>${icon} ${esc(name)} · ${esc(label)}${esc(until)}
+      </span>`;
+    }).join("") || `<span style="font-size:.72rem;color:var(--muted)">No providers configured</span>`;
+  } catch {
+    if (body) body.innerHTML = `<span style="font-size:.72rem;color:var(--muted)">Could not load provider status</span>`;
+  }
+}
+
+// ── Paid-fallback toggle ──────────────────────────────────────────────────────
+function _initPaidFallback() {
+  // Restore from localStorage
+  const saved = localStorage.getItem("fieldnote_paid_fallback") === "1";
+  const toggle = document.getElementById("paid-fallback-toggle");
+  if (toggle) toggle.checked = saved;
+}
+
+async function setPaidFallback(enabled) {
+  localStorage.setItem("fieldnote_paid_fallback", enabled ? "1" : "0");
+  try {
+    await fetch("/api/settings/paid-fallback", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ enabled }),
+    });
+  } catch {}
+}
+
+function _getPaidFallbackHeader() {
+  return localStorage.getItem("fieldnote_paid_fallback") === "1"
+    ? { "X-Allow-Paid": "1" }
+    : {};
 }
 // ── Stage progress ────────────────────────────────────────────────────────────
 const _STAGE_LABELS = {
