@@ -598,25 +598,25 @@
       ]
     },
     "Loop Engineering": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "mastering_loop_engineering"
       ]
     },
     "Autonomous Work": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "mastering_loop_engineering"
       ]
     },
     "Self-Correction": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "mastering_loop_engineering"
       ]
     },
     "Strategic Thinking": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "mastering_loop_engineering"
       ]
@@ -756,7 +756,7 @@
       ]
     },
     "Claude": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -1203,37 +1203,37 @@
       ]
     },
     "ChatGPT": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "mastering_loop_engineering"
       ]
     },
     "Fable 5": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "mastering_loop_engineering"
       ]
     },
     "ChatGPT 5.6": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "mastering_loop_engineering"
       ]
     },
     "Orchestrator Model": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "mastering_loop_engineering"
       ]
     },
     "MCP SSH Manager": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "mastering_loop_engineering"
       ]
     },
     "WinRemote MCP": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "mastering_loop_engineering"
       ]
@@ -1276,6 +1276,12 @@
       "freq": 1,
       "skills": [
         "higsfield_integration"
+      ]
+    },
+    "SSH Remote Server Management via Model Context Protocol": {
+      "freq": 1,
+      "skills": [
+        "mastering_loop_engineering"
       ]
     }
   },
@@ -1545,8 +1551,7 @@
         "Loop Engineering",
         "Autonomous Work",
         "Self-Correction",
-        "Strategic Thinking",
-        "Autonomous AI"
+        "Strategic Thinking"
       ],
       "tools": [
         "Claude",
@@ -1555,14 +1560,14 @@
         "ChatGPT 5.6",
         "Orchestrator Model",
         "MCP SSH Manager",
-        "WinRemote MCP"
+        "WinRemote MCP",
+        "SSH Remote Server Management via Model Context Protocol"
       ],
       "tags": [
         "ai",
         "self-improvement",
         "loop-engineering",
-        "autonomous-work",
-        "strategic-thinking"
+        "autonomous-work"
       ],
       "step_count": 12
     },
@@ -1768,6 +1773,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-17T00:40:15.928733+00:00",
+  "updated_at": "2026-07-17T01:31:55.100918+00:00",
   "total_skills": 13
 }
