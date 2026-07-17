@@ -4132,6 +4132,94 @@ def _boot_scheduler():
         fn=_integ_agent.run_agent,
     )
 
+    def _recover_queued_jobs() -> dict:
+        """
+        Auto-recovery: find queued checkpoints and resume any that can run now.
+        Called every 5 minutes by the scheduler.
+        """
+        pending = run_checkpoint.list_pending_checkpoints()
+        if not pending:
+            return {"recovered": 0, "skipped": 0}
+
+        # Check if any free provider is healthy
+        statuses = provider_router.provider_status()
+        free_ok  = any(
+            v.get("state") == "healthy"
+            for p, v in statuses.items()
+            if p != "openai"
+        )
+        if not free_ok:
+            log.info("recover_queued_jobs: no free provider healthy — deferring")
+            return {"recovered": 0, "skipped": len(pending)}
+
+        recovered = 0
+        skipped   = 0
+        for cp in pending:
+            run_id   = cp.get("run_id")
+            video_id = cp.get("video_id")
+            url      = cp.get("url")
+
+            if not run_id or not video_id or not url:
+                skipped += 1
+                continue
+
+            # Don't launch if already in-flight
+            if video_id in _video_active and not _jobs.get(_video_active[video_id], {}).get("done", True):
+                skipped += 1
+                continue
+
+            # Max 3 auto-recovery attempts to avoid infinite loops
+            if cp.get("recovery_attempts", 0) >= 3:
+                log.info("recover_queued_jobs: %s exceeded max attempts — skipping", run_id)
+                skipped += 1
+                continue
+
+            try:
+                # Use the resume endpoint logic inline
+                existing_skill = cp.get("skill_name")
+                existing_path  = None
+                if existing_skill:
+                    ep = os.path.join(SKILLS_DIR, f"{existing_skill}.md")
+                    if os.path.exists(ep):
+                        existing_path = ep
+
+                job_id        = str(uuid.uuid4())[:8]
+                _jobs[job_id] = {
+                    "queue":        queue.Queue(),
+                    "done":         False,
+                    "run_id":       run_id,
+                    "allow_paid":   False,
+                    "force_enhance": existing_skill if existing_path else None,
+                }
+                _video_active[video_id] = job_id
+
+                recovery_attempts = cp.get("recovery_attempts", 0) + 1
+                run_checkpoint.save_checkpoint(run_id, {
+                    "stage":             "resuming",
+                    "recovery_attempts": recovery_attempts,
+                    "recovered_at":      datetime.now(timezone.utc).isoformat(timespec="seconds"),
+                })
+
+                threading.Thread(
+                    target=run_job, args=(job_id, url, video_id), daemon=True,
+                    name=f"fn-auto-resume-{run_id[:6]}",
+                ).start()
+                recovered += 1
+                log.info("recover_queued_jobs: resumed %s (video=%s)", run_id, video_id)
+
+            except Exception as exc:
+                log.error("recover_queued_jobs: error resuming %s: %s", run_id, exc)
+                skipped += 1
+
+        return {"recovered": recovered, "skipped": skipped, "pending": len(pending)}
+
+    s.register(
+        name="recover_queued",
+        description="Auto-resume queued degraded-skill checkpoints when a free provider recovers",
+        interval_hours=1 / 12,  # every 5 minutes
+        fn=_recover_queued_jobs,
+    )
+
     s.start()
 
     # File watcher: push within seconds of any file change
