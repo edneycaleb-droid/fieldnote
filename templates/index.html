@@ -3837,13 +3837,14 @@ function aiTab(name) {
 }
 
 // ── GPT One-Touch Connect ─────────────────────────────────────────────────────
-// Architecture note: window.open() MUST be called synchronously inside the
-// click handler to avoid popup-blocker rejection. Schema health is pre-fetched
-// on pane init (window._gptSchemaHealth) so the button handler stays sync.
+// Platform-aware:
+//   iOS/embedded → _gptIosFlow(): in-page transition card, real <a> link, no popup
+//   Desktop      → window.open() BEFORE any await (popup-blocker requirement)
+// Schema health pre-fetched on pane load into window._gptSchemaHealth.
 
-const _GPT_KEY      = "fieldnote-gpt-setup";
-const _GPT_BUILDER  = "https://chatgpt.com/gpts/editor";
-const _GPT_PROMPT   = `You are a personal AI learning assistant with complete access to my Fieldnote knowledge library — a curated database of AI, development, and productivity skills I've extracted from YouTube videos.
+const _GPT_KEY     = "fieldnote-gpt-setup";
+const _GPT_BUILDER = "https://chatgpt.com/gpts/editor";
+const _GPT_PROMPT  = `You are a personal AI learning assistant with complete access to my Fieldnote knowledge library — a curated database of AI, development, and productivity skills I've extracted from YouTube videos.
 
 ALWAYS start by calling getFullSnapshot to load my full library context, or use listSkills + getSkillContent for targeted lookups. When I ask how to do something technical, search my library FIRST and anchor your answer in my actual notes, not generic info.
 
@@ -3851,6 +3852,64 @@ You also have full access to my GitHub repo via listGithubFiles and readGithubFi
 
 Cross-reference related skills proactively. When you find a relevant skill, always fetch its FULL content — summaries aren't enough.`;
 
+// ── Platform detection ────────────────────────────────────────────────────────
+function _gptPlatform() {
+  const ua  = navigator.userAgent || "";
+  // iPad Pro reports MacIntel + maxTouchPoints > 1
+  const ios = /iPad|iPhone|iPod/.test(ua) ||
+              (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  // WKWebView (embedded app): no window.safari property, no Chrome
+  const embedded = ios && typeof window.safari === "undefined" && !window.chrome;
+  return { ios, embedded };
+}
+
+// ── Saved GPT edit URL helpers ────────────────────────────────────────────────
+// Valid: https://chatgpt.com/gpts/editor/g-XXXXXXXX
+//        https://chatgpt.com/g/g-XXXXXXXX/edit
+function _gptValidEditUrl(url) {
+  try {
+    const u = new URL((url || "").trim());
+    if (u.hostname !== "chatgpt.com") return false;
+    return /^\/gpts\/editor\/g-[A-Za-z0-9]+/.test(u.pathname) ||
+           /^\/g\/g-[A-Za-z0-9]+\/edit/.test(u.pathname);
+  } catch { return false; }
+}
+
+function gptValidateEditUrl(input) {
+  const val = (input.value || "").trim();
+  if (!val) { input.className = "gpt-save-url-input"; return; }
+  input.className = "gpt-save-url-input " +
+    (_gptValidEditUrl(val) ? "surl-valid" : "surl-invalid");
+}
+
+function gptSaveEditUrl() {
+  const input  = document.getElementById("gpt-edit-url-input");
+  const status = document.getElementById("gpt-save-url-status");
+  if (!input) return;
+  const url = (input.value || "").trim();
+  if (!_gptValidEditUrl(url)) {
+    if (status) {
+      status.textContent = "⚠ Not a valid ChatGPT GPT editor URL (must be chatgpt.com/gpts/editor/g-…)";
+      status.style.color = "var(--amber)";
+    }
+    return;
+  }
+  const prev = _gptLoad() || {};
+  _gptSave({...prev, edit_url: url});
+  _gptSetBuilderUrl(url);
+  if (status) { status.textContent = "✅ Saved — future launches open this GPT directly"; status.style.color = "var(--green)"; }
+  input.className = "gpt-save-url-input surl-valid";
+}
+
+// Update all builder link elements to the given URL
+function _gptSetBuilderUrl(url) {
+  ["gpt-builder-link", "gpt-ios-open-link", "gpt-overlay-open-link"].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.href = url;
+  });
+}
+
+// ── localStorage ──────────────────────────────────────────────────────────────
 function _gptLoad() {
   try { return JSON.parse(localStorage.getItem(_GPT_KEY) || "null"); } catch { return null; }
 }
@@ -3858,9 +3917,11 @@ function _gptSave(data) {
   try { localStorage.setItem(_GPT_KEY, JSON.stringify({...data, ts: new Date().toISOString()})); } catch {}
 }
 
+// ── UI init — called on pane open; restores persisted state ──────────────────
 function gptInitUI() {
   const s = _gptLoad();
   if (!s) return;
+  if (s.edit_url) _gptSetBuilderUrl(s.edit_url);
   if (s.status === "connected")    _gptShowStatus("connected");
   else if (s.status === "partial") _gptShowStatus("partial");
 }
@@ -3870,12 +3931,16 @@ function _gptShowStatus(status) {
   const btn = document.getElementById("gpt-connect-btn");
   if (!el) return;
   el.style.display = "";
+  const s = _gptLoad() || {};
+  const savedNote = s.edit_url
+    ? `<span style="font-size:.7rem;color:var(--muted);margin-left:4px">· using saved GPT URL</span>`
+    : "";
   if (status === "connected") {
     el.innerHTML =
       `<div class="gpt-status-pill gpt-pill-connected">
-        <span class="gpt-pill-label">✅ Connected to ChatGPT</span>
+        <span class="gpt-pill-label">✅ Connected to ChatGPT</span>${savedNote}
         <span class="gpt-pill-spacer"></span>
-        <button class="gpt-status-action" onclick="gptTestConnection()">Test Connection</button>
+        <button class="gpt-status-action" onclick="gptTestConnection()">Test</button>
         <button class="gpt-status-action" onclick="gptReset()">Reset</button>
        </div>`;
     if (btn) btn.textContent = "↺ Reconnect";
@@ -3884,14 +3949,13 @@ function _gptShowStatus(status) {
       `<div class="gpt-status-pill gpt-pill-inprogress">
         <span class="gpt-pill-label">⏸ Setup in progress</span>
         <span class="gpt-pill-spacer"></span>
-        <button class="gpt-status-action action-primary" onclick="gptConnect()">Resume Setup</button>
+        <button class="gpt-status-action action-primary" onclick="gptConnect()">Resume</button>
         <button class="gpt-status-action" onclick="gptReset()">Reset</button>
        </div>`;
   }
 }
 
-// ── Progress stepper helpers ──────────────────────────────────────────────────
-// steps: 1=validate 2=copy 3=open 4=await 5=done
+// ── Progress stepper ──────────────────────────────────────────────────────────
 const _GPS_IDS = ["validate","copy","open","await","done"];
 
 function _gptStep(n, state, note) {
@@ -3900,29 +3964,32 @@ function _gptStep(n, state, note) {
   _GPS_IDS.forEach((id, i) => {
     const dot = document.getElementById("gps-" + id);
     const lbl = document.getElementById("gps-label-" + id);
-    const con = document.getElementById("gps-conn-" + (i + 1)); // connector after this step
+    const con = document.getElementById("gps-conn-" + (i + 1));
     if (!dot) return;
     const stepNum = i + 1;
-    if (stepNum < n)        { dot.className = "gps-dot done";  if (lbl) lbl.className = "gps-label done"; }
-    else if (stepNum === n) {
+    if (stepNum < n) {
+      dot.className = "gps-dot done"; if (lbl) lbl.className = "gps-label done";
+    } else if (stepNum === n) {
       dot.className = "gps-dot " + (state === "error" ? "error" : "active");
       if (lbl) lbl.className = "gps-label " + (state === "error" ? "" : "active");
-    } else                  { dot.className = "gps-dot";        if (lbl) lbl.className = "gps-label"; }
+    } else {
+      dot.className = "gps-dot"; if (lbl) lbl.className = "gps-label";
+    }
     if (con) con.className = stepNum < n ? "gps-connector done" : "gps-connector";
   });
   const noteEl = document.getElementById("gpt-progress-note");
   if (noteEl) noteEl.textContent = note || "";
 }
 
-// ── Write text to clipboard (sync execCommand fallback, async API preferred) ──
+// ── Clipboard (async API + execCommand fallback for older WebKit) ─────────────
 async function _gptClip(text) {
   if (navigator.clipboard) {
     try { await navigator.clipboard.writeText(text); return true; } catch {}
   }
-  // execCommand fallback (works in older Safari / WebView)
   try {
     const ta = document.createElement("textarea");
-    ta.value = text; ta.style.cssText = "position:fixed;top:-9999px;left:-9999px;opacity:0";
+    ta.value = text;
+    ta.style.cssText = "position:fixed;top:-9999px;left:-9999px;opacity:0";
     document.body.appendChild(ta); ta.focus(); ta.select();
     const ok = document.execCommand("copy");
     document.body.removeChild(ta);
@@ -3932,42 +3999,60 @@ async function _gptClip(text) {
 
 // ── Main connect function ─────────────────────────────────────────────────────
 async function gptConnect() {
-  const btn = document.getElementById("gpt-connect-btn");
-  if (btn) { btn.disabled = true; btn.textContent = "⏳ Connecting…"; }
-
+  const { ios } = _gptPlatform();
+  const btn       = document.getElementById("gpt-connect-btn");
   const schemaUrl = (window.BASE || window.location.origin) + "/openapi-gpt.json";
 
-  // ── Step 1: Validate (use cached result; avoid async inside click handler) ──
-  _gptStep(1, "active", "Checking schema…");
+  // Resolve target URL — saved edit URL opens the existing GPT directly
+  const saved     = _gptLoad();
+  const targetUrl = (saved && saved.edit_url && _gptValidEditUrl(saved.edit_url))
+    ? saved.edit_url : _GPT_BUILDER;
+
+  // ── iOS / embedded WebView path ───────────────────────────────────────────
+  // Never call window.open() on iOS:
+  //   1. WKWebView blocks popups even when called synchronously
+  //   2. Even if it opens, the embedded browser shows the App Store banner
+  //      and can't load the authenticated GPT editor
+  // Instead: show the in-page transition card with a real <a> link.
+  if (ios) {
+    _gptIosFlow(schemaUrl, targetUrl, btn);
+    return;
+  }
+
+  // ── Desktop / Android path ────────────────────────────────────────────────
+  if (btn) { btn.disabled = true; btn.textContent = "⏳ Connecting…"; }
+
   const health = window._gptSchemaHealth;
 
   if (!health) {
-    // Health not cached yet — fetch it now (we'll be async from here)
-    _gptStep(1, "active", "Fetching schema health…");
+    // Health hasn't cached yet — must fetch async, which means window.open()
+    // after this point will be blocked by popup blockers. Show overlay with
+    // manual open link instead of trying a popup.
+    _gptStep(1, "active", "Fetching schema…");
     let h;
-    try { h = await fetch("/api/schema/health").then(r => r.json()); window._gptSchemaHealth = h; }
-    catch {
+    try {
+      h = await fetch("/api/schema/health").then(r => r.json());
+      window._gptSchemaHealth = h;
+    } catch {
       _gptStep(1, "error", "Cannot reach Fieldnote server — is the app running?");
       if (btn) { btn.disabled = false; btn.textContent = "⚡ Connect Fieldnote to ChatGPT"; }
       return;
     }
     if (!h.chatgpt_compatible) {
-      _gptStep(1, "error", "Schema has " + h.error_count + " error(s) — use Revalidate below");
+      _gptStep(1, "error", h.error_count + " schema error(s) — click ↺ Revalidate");
       if (btn) { btn.disabled = false; btn.textContent = "⚡ Connect Fieldnote to ChatGPT"; }
       return;
     }
-    // Health loaded async — window.open will likely be blocked by popup blocker.
-    // Show overlay with manual Open GPT Builder button instead.
-    _gptStep(2, "active", "Schema valid — open GPT Builder manually");
-    _gptSave({status: "partial", schema_url: schemaUrl});
+    _gptStep(2, "active", "Schema valid — use Open GPT Editor link below");
+    _gptSave({...(saved||{}), status: "partial", schema_url: schemaUrl});
     _gptShowStatus("partial");
-    _gptShowOverlay({clipOk: false, winOpened: false, schemaUrl, popupBlocked: true});
+    _gptShowOverlay({clipOk: false, winOpened: false, schemaUrl, popupBlocked: true, targetUrl});
     if (btn) { btn.disabled = false; btn.textContent = "↺ Restart Setup"; }
     return;
   }
 
   if (!health.chatgpt_compatible) {
-    _gptStep(1, "error", "Schema has " + health.error_count + " error(s) — click Revalidate below");
+    _gptStep(1, "error", health.error_count + " schema error(s) — click ↺ Revalidate");
     if (btn) { btn.disabled = false; btn.textContent = "⚡ Connect Fieldnote to ChatGPT"; }
     return;
   }
@@ -3975,26 +4060,61 @@ async function gptConnect() {
   _gptStep(1, "done");
   _gptStep(2, "active", "Copying schema URL…");
 
-  // ── Step 2 & 3: Copy URL + open builder (both sync — health was cached) ──
-  // window.open MUST come before any await to survive popup blockers.
-  const builderWin = window.open(_GPT_BUILDER, "_blank", "noopener,noreferrer");
+  // window.open MUST precede any await — popup blockers only allow it here
+  const builderWin = window.open(targetUrl, "_blank", "noopener,noreferrer");
   _gptStep(2, "done");
-  _gptStep(3, "active", "Opening GPT Builder…");
+  _gptStep(3, "active", "Opening GPT Editor…");
 
   const clipOk = await _gptClip(schemaUrl);
-
   _gptStep(3, "done");
   _gptStep(4, "active", "Complete setup in the new tab →");
 
-  _gptSave({status: "partial", schema_url: schemaUrl});
+  _gptSave({...(saved||{}), status: "partial", schema_url: schemaUrl});
   _gptShowStatus("partial");
-  _gptShowOverlay({clipOk, winOpened: !!builderWin, schemaUrl, popupBlocked: !builderWin});
+  _gptShowOverlay({clipOk, winOpened: !!builderWin, schemaUrl, popupBlocked: !builderWin, targetUrl});
 
   if (btn) { btn.disabled = false; btn.textContent = "↺ Restart Setup"; }
 }
 
-// ── Guided overlay ────────────────────────────────────────────────────────────
-function _gptShowOverlay({clipOk, winOpened, schemaUrl, popupBlocked}) {
+// ── iOS transition card ───────────────────────────────────────────────────────
+function _gptIosFlow(schemaUrl, targetUrl, btn) {
+  if (btn) { btn.textContent = "✅ Setup ready — tap Open below"; btn.disabled = false; }
+
+  // Show iOS card; hide desktop overlay and stepper (not useful on mobile)
+  const card = document.getElementById("gpt-ios-card");
+  const ov   = document.getElementById("gpt-overlay");
+  const pw   = document.getElementById("gpt-progress-wrap");
+  if (card) card.style.display = "";
+  if (ov)   ov.style.display   = "none";
+  if (pw)   pw.style.display   = "none";
+
+  // Populate URLs inside the card
+  const urlEl = document.getElementById("gpt-ios-url-text");
+  const link  = document.getElementById("gpt-ios-open-link");
+  if (urlEl) urlEl.textContent = schemaUrl;
+  if (link)  link.href = targetUrl;
+
+  // Attempt clipboard — still inside user gesture context, may succeed on Safari
+  const clipStatus = document.getElementById("gpt-ios-clip-status");
+  if (clipStatus) {
+    clipStatus.className   = "gpt-copy-status-warn";
+    clipStatus.textContent = "⏳ Copying schema URL…";
+  }
+  _gptClip(schemaUrl).then(ok => {
+    if (!clipStatus) return;
+    clipStatus.className   = ok ? "gpt-copy-status-ok" : "gpt-copy-status-warn";
+    clipStatus.textContent = ok
+      ? "✅ Schema URL copied — paste it in Actions → Import from URL"
+      : "⚠ Tap Copy next to the URL below to copy it manually";
+  });
+
+  const saved = _gptLoad();
+  _gptSave({...(saved||{}), status: "partial", schema_url: schemaUrl});
+  _gptShowStatus("partial");
+}
+
+// ── Desktop guided overlay ────────────────────────────────────────────────────
+function _gptShowOverlay({clipOk, winOpened, schemaUrl, popupBlocked, targetUrl}) {
   const ov = document.getElementById("gpt-overlay");
   if (!ov) return;
   ov.style.display = "";
@@ -4002,44 +4122,62 @@ function _gptShowOverlay({clipOk, winOpened, schemaUrl, popupBlocked}) {
   const csClip = document.getElementById("gpt-cs-clip");
   const csWin  = document.getElementById("gpt-cs-win");
   if (csClip) {
-    csClip.className = clipOk ? "gpt-copy-status-ok" : "gpt-copy-status-warn";
+    csClip.className   = clipOk ? "gpt-copy-status-ok" : "gpt-copy-status-warn";
     csClip.textContent = clipOk
-      ? "✅ Schema URL copied to clipboard — paste with ⌘V / Ctrl+V"
-      : "⚠ Clipboard unavailable — use the Copy button in step 2 below";
+      ? "✅ Schema URL copied — paste with ⌘V / Ctrl+V"
+      : "⚠ Clipboard unavailable — tap Copy next to the URL in step 2";
   }
   if (csWin) {
-    csWin.className = winOpened ? "gpt-copy-status-ok" : "gpt-copy-status-warn";
+    csWin.className   = winOpened ? "gpt-copy-status-ok" : "gpt-copy-status-warn";
     csWin.textContent = winOpened
-      ? "✅ GPT Builder opened in new tab"
-      : (popupBlocked
-          ? "⚠ Pop-up blocked — click \"Open GPT Builder ↗\" below to open manually"
-          : "⚠ Builder tab may not have opened — use the button below");
+      ? "✅ GPT Editor opened in new tab"
+      : popupBlocked
+        ? "⚠ Pop-up blocked — use Open GPT Editor below"
+        : "⚠ New tab may not have opened — use the button below";
+  }
+
+  // Show the manual open link when popup didn't open
+  const openLink = document.getElementById("gpt-overlay-open-link");
+  if (openLink) {
+    openLink.href         = targetUrl || _GPT_BUILDER;
+    openLink.style.display = (popupBlocked || !winOpened) ? "" : "none";
   }
 
   const urlEl = document.getElementById("gpt-overlay-url");
   if (urlEl) urlEl.textContent = schemaUrl;
 }
 
+// ── Mark as Connected ─────────────────────────────────────────────────────────
 function gptMarkConnected() {
-  _gptSave({status: "connected"});
+  const prev = _gptLoad() || {};
+  _gptSave({...prev, status: "connected"});
   _gptStep(5, "done", "Connected ✓");
   _gptShowStatus("connected");
-  const ov = document.getElementById("gpt-overlay");
-  if (ov) ov.style.display = "none";
+  // Hide whichever card is showing
+  ["gpt-overlay","gpt-ios-card"].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.style.display = "none";
+  });
+  // Reveal save-URL section if no edit URL stored yet
+  if (!prev.edit_url) {
+    const sec = document.getElementById("gpt-save-url-section");
+    if (sec) sec.style.display = "";
+  }
 }
 
+// ── Reset ─────────────────────────────────────────────────────────────────────
 function gptReset() {
   try { localStorage.removeItem(_GPT_KEY); } catch {}
-  const st = document.getElementById("gpt-connection-status");
-  if (st) st.style.display = "none";
-  const pw = document.getElementById("gpt-progress-wrap");
-  if (pw) pw.style.display = "none";
-  const ov = document.getElementById("gpt-overlay");
-  if (ov) ov.style.display = "none";
-  const tp = document.getElementById("gpt-test-panel");
-  if (tp) tp.style.display = "none";
+  ["gpt-connection-status","gpt-progress-wrap","gpt-overlay","gpt-ios-card",
+   "gpt-test-panel","gpt-save-url-section"].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.style.display = "none";
+  });
+  _gptSetBuilderUrl(_GPT_BUILDER); // back to default
   const btn = document.getElementById("gpt-connect-btn");
   if (btn) { btn.textContent = "⚡ Connect Fieldnote to ChatGPT"; btn.disabled = false; }
+  const inp = document.getElementById("gpt-edit-url-input");
+  if (inp) { inp.value = ""; inp.className = "gpt-save-url-input"; }
 }
 
 // ── Revalidate ────────────────────────────────────────────────────────────────
@@ -4082,7 +4220,7 @@ async function gptCopySchemaUrl(btn) {
   const ok  = await _gptClip(url);
   if (btn) {
     const orig = btn.textContent;
-    btn.textContent = ok ? "✓ Copied" : "✓";
+    btn.textContent = ok ? "✓ Copied" : "✓ (try paste)";
     btn.style.color = "var(--green)";
     setTimeout(() => { btn.textContent = orig; btn.style.color = ""; }, 1800);
   }
@@ -4092,9 +4230,9 @@ async function gptCopyPrompt(btn) {
   const ok = await _gptClip(_GPT_PROMPT);
   if (btn) {
     const orig = btn.textContent;
-    btn.textContent = ok ? "✓ Copied" : "Open Advanced to copy manually";
+    btn.textContent = ok ? "✓ Prompt Copied" : "⚠ Use Advanced section to copy";
     btn.style.color = ok ? "var(--green)" : "var(--amber)";
-    setTimeout(() => { btn.textContent = orig; btn.style.color = ""; }, 2200);
+    setTimeout(() => { btn.textContent = orig; btn.style.color = ""; }, 2400);
   }
 }
 
@@ -4106,40 +4244,38 @@ async function gptTestConnection() {
   panel.innerHTML = '<div class="gpt-test-header" style="color:var(--muted)">🔄 Testing Fieldnote endpoints…</div>';
 
   const TESTS = [
-    {label: "Schema health",   url: "/api/schema/health",   ok: d => d.chatgpt_compatible, detail: d => d.operation_count + " operations"},
-    {label: "Skills list",     url: "/api/skills",          ok: d => Array.isArray(d),     detail: d => d.length + " skills"},
-    {label: "Brain map",       url: "/api/brain",           ok: d => "total_skills" in d,  detail: d => d.total_skills + " skills indexed"},
-    {label: "Activity log",    url: "/api/activity",        ok: d => "activity" in d,      detail: d => d.total + " events"},
-    {label: "Knowledge base",  url: "/api/knowledge",       ok: d => "entries" in d,       detail: d => d.count + " entries"},
-    {label: "Provider status", url: "/api/provider-status", ok: d => typeof d === "object" && d !== null, detail: d => Object.keys(d).join(", ")},
+    {label:"Schema health",   url:"/api/schema/health",   ok:d=>d.chatgpt_compatible,          detail:d=>d.operation_count+" ops, "+d.error_count+" errors"},
+    {label:"Skills list",     url:"/api/skills",           ok:d=>Array.isArray(d),              detail:d=>d.length+" skills"},
+    {label:"Brain map",       url:"/api/brain",            ok:d=>"total_skills" in d,           detail:d=>d.total_skills+" skills indexed"},
+    {label:"Activity log",    url:"/api/activity",         ok:d=>"activity" in d,               detail:d=>d.total+" events"},
+    {label:"Knowledge base",  url:"/api/knowledge",        ok:d=>"entries" in d,                detail:d=>d.count+" entries"},
+    {label:"Provider status", url:"/api/provider-status",  ok:d=>typeof d==="object"&&d!==null, detail:d=>Object.keys(d).join(", ")},
   ];
 
   const results = await Promise.all(TESTS.map(async t => {
     try {
       const d = await fetch(t.url).then(r => r.json());
-      return {label: t.label, ok: t.ok(d), detail: t.detail(d)};
-    } catch(e) {
-      return {label: t.label, ok: false, detail: e.message};
-    }
+      return {label:t.label, ok:t.ok(d), detail:t.detail(d)};
+    } catch(e) { return {label:t.label, ok:false, detail:e.message}; }
   }));
 
-  const health = window._gptSchemaHealth || {};
+  const health  = window._gptSchemaHealth || {};
   const opCount = health.operation_count || 16;
   const passing = results.filter(r => r.ok).length;
   const allPass = passing === results.length;
 
-  let h = `<div class="gpt-test-header" style="color:${allPass ? "var(--green)" : "var(--amber)"}">
-    ${allPass ? "✅" : "⚠"} Fieldnote server: ${passing}/${results.length} checks passed
+  let h = `<div class="gpt-test-header" style="color:${allPass?"var(--green)":"var(--amber)"}">
+    ${allPass?"✅":"⚠"} Fieldnote server: ${passing}/${results.length} checks passed
   </div>
   <div class="gpt-test-note">
-    ${opCount} operations available in the ChatGPT-compatible schema.<br>
-    To verify ChatGPT imported them all: open your Custom GPT → <em>Configure</em> → <em>Actions</em> → count the functions (should be ${opCount}).
-    Missing ops mean ChatGPT hasn't imported the latest schema — re-import from URL to refresh.
+    ${opCount} operations in the ChatGPT-compatible schema.
+    To verify: open your Custom GPT → <em>Configure</em> → <em>Actions</em> — you should see ${opCount} functions.
+    If fewer show, re-import from URL.
   </div>`;
 
   results.forEach(r => {
     h += `<div class="gpt-test-row">
-      <span class="${r.ok ? "gpt-t-ok" : "gpt-t-fail"}">${r.ok ? "✓" : "✗"}</span>
+      <span class="${r.ok?"gpt-t-ok":"gpt-t-fail"}">${r.ok?"✓":"✗"}</span>
       <span style="color:var(--text)">${r.label}</span>
       <span style="color:var(--muted);font-size:.72rem;margin-left:auto">${r.detail}</span>
     </div>`;
