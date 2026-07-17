@@ -275,9 +275,10 @@
       ]
     },
     "Large Language Models (LLMs)": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "building_ai_agents_with_langchain"
+        "building_ai_agents_with_langchain",
+        "deploying_retrieval_augmented_generation_with_ragflow"
       ]
     },
     "Model Interoperability": {
@@ -852,6 +853,54 @@
       "skills": [
         "lightrag_deployment"
       ]
+    },
+    "Agent capabilities": {
+      "freq": 1,
+      "skills": [
+        "deploying_retrieval_augmented_generation_with_ragflow"
+      ]
+    },
+    "Cloud deployment": {
+      "freq": 1,
+      "skills": [
+        "deploying_retrieval_augmented_generation_with_ragflow"
+      ]
+    },
+    "Context layer for LLMs": {
+      "freq": 1,
+      "skills": [
+        "deploying_retrieval_augmented_generation_with_ragflow"
+      ]
+    },
+    "Docker containerization": {
+      "freq": 1,
+      "skills": [
+        "deploying_retrieval_augmented_generation_with_ragflow"
+      ]
+    },
+    "Grounded citations": {
+      "freq": 1,
+      "skills": [
+        "deploying_retrieval_augmented_generation_with_ragflow"
+      ]
+    },
+    "Knowledge extraction": {
+      "freq": 1,
+      "skills": [
+        "deploying_retrieval_augmented_generation_with_ragflow"
+      ]
+    },
+    "Retrieval-Augmented Generation (RAG)": {
+      "freq": 1,
+      "skills": [
+        "deploying_retrieval_augmented_generation_with_ragflow"
+      ]
+    },
+    "Template-based chunking": {
+      "freq": 1,
+      "skills": [
+        "deploying_retrieval_augmented_generation_with_ragflow"
+      ]
     }
   },
   "tools": {
@@ -1177,19 +1226,21 @@
       ]
     },
     "Docker": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "astrbot_deployment",
         "build_production_ready_llm_applications_with_haystack",
         "ragflow_deployment",
-        "lightrag_deployment"
+        "lightrag_deployment",
+        "deploying_retrieval_augmented_generation_with_ragflow"
       ]
     },
     "Docker Compose": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "astrbot_deployment",
-        "ragflow_deployment"
+        "ragflow_deployment",
+        "deploying_retrieval_augmented_generation_with_ragflow"
       ]
     },
     "AstrBot App": {
@@ -1217,11 +1268,12 @@
       ]
     },
     "uv": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "astrbot_deployment",
         "ragflow_deployment",
-        "lightrag_deployment"
+        "lightrag_deployment",
+        "deploying_retrieval_augmented_generation_with_ragflow"
       ]
     },
     "OpenAI Agents SDK": {
@@ -1561,21 +1613,24 @@
       ]
     },
     "RAGFlow": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "ragflow_deployment"
+        "ragflow_deployment",
+        "deploying_retrieval_augmented_generation_with_ragflow"
       ]
     },
     "Elasticsearch": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "ragflow_deployment"
+        "ragflow_deployment",
+        "deploying_retrieval_augmented_generation_with_ragflow"
       ]
     },
     "Infinity": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "ragflow_deployment"
+        "ragflow_deployment",
+        "deploying_retrieval_augmented_generation_with_ragflow"
       ]
     },
     "jemalloc": {
@@ -1585,9 +1640,10 @@
       ]
     },
     "pip": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "lightrag_deployment"
+        "lightrag_deployment",
+        "deploying_retrieval_augmented_generation_with_ragflow"
       ]
     },
     "OpenSearch": {
@@ -1612,6 +1668,36 @@
       "freq": 1,
       "skills": [
         "lightrag_deployment"
+      ]
+    },
+    "gVisor": {
+      "freq": 1,
+      "skills": [
+        "deploying_retrieval_augmented_generation_with_ragflow"
+      ]
+    },
+    "MinIO": {
+      "freq": 1,
+      "skills": [
+        "deploying_retrieval_augmented_generation_with_ragflow"
+      ]
+    },
+    "Redis": {
+      "freq": 1,
+      "skills": [
+        "deploying_retrieval_augmented_generation_with_ragflow"
+      ]
+    },
+    "MySQL": {
+      "freq": 1,
+      "skills": [
+        "deploying_retrieval_augmented_generation_with_ragflow"
+      ]
+    },
+    "git": {
+      "freq": 1,
+      "skills": [
+        "deploying_retrieval_augmented_generation_with_ragflow"
       ]
     }
   },
@@ -2103,6 +2189,41 @@
         "self-improvement"
       ],
       "step_count": 2
+    },
+    "deploying_retrieval_augmented_generation_with_ragflow": {
+      "concepts": [
+        "Agent capabilities",
+        "Cloud deployment",
+        "Context layer for LLMs",
+        "Docker containerization",
+        "Grounded citations",
+        "Knowledge extraction",
+        "Large Language Models (LLMs)",
+        "Retrieval-Augmented Generation (RAG)",
+        "Template-based chunking"
+      ],
+      "tools": [
+        "Docker",
+        "Docker Compose",
+        "RAGFlow",
+        "Elasticsearch",
+        "Infinity",
+        "uv",
+        "pip",
+        "gVisor",
+        "MinIO",
+        "Redis",
+        "MySQL",
+        "git"
+      ],
+      "tags": [
+        "ai",
+        "deployment",
+        "rag",
+        "ragflow",
+        "retrieval"
+      ],
+      "step_count": 12
     }
   },
   "relationships": {
@@ -2163,6 +2284,9 @@
       ],
       "pydantic_ai_framework": [
         "LangChain"
+      ],
+      "deploying_retrieval_augmented_generation_with_ragflow": [
+        "Large Language Models (LLMs)"
       ]
     },
     "building_resilient_ai_agents_with_langgraph": {
@@ -2203,6 +2327,11 @@
       "lightrag_deployment": [
         "Docker",
         "uv"
+      ],
+      "deploying_retrieval_augmented_generation_with_ragflow": [
+        "uv",
+        "Docker Compose",
+        "Docker"
       ]
     },
     "openai_agents_sdk": {
@@ -2249,6 +2378,9 @@
         "Docker"
       ],
       "lightrag_deployment": [
+        "Docker"
+      ],
+      "deploying_retrieval_augmented_generation_with_ragflow": [
         "Docker"
       ]
     },
@@ -2402,6 +2534,14 @@
         "Docker",
         "Large Language Models",
         "uv"
+      ],
+      "deploying_retrieval_augmented_generation_with_ragflow": [
+        "Elasticsearch",
+        "Docker Compose",
+        "RAGFlow",
+        "uv",
+        "Infinity",
+        "Docker"
       ]
     },
     "lightrag_deployment": {
@@ -2417,6 +2557,11 @@
         "Docker",
         "Large Language Models",
         "uv"
+      ],
+      "deploying_retrieval_augmented_generation_with_ragflow": [
+        "uv",
+        "pip",
+        "Docker"
       ]
     },
     "moonshot_kimiko_3_skill": {
@@ -2442,8 +2587,34 @@
       "hermes_agent_setup": [
         "Open Claw"
       ]
+    },
+    "deploying_retrieval_augmented_generation_with_ragflow": {
+      "building_ai_agents_with_langchain": [
+        "Large Language Models (LLMs)"
+      ],
+      "astrbot_deployment": [
+        "uv",
+        "Docker Compose",
+        "Docker"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "Docker"
+      ],
+      "ragflow_deployment": [
+        "Elasticsearch",
+        "Docker Compose",
+        "RAGFlow",
+        "uv",
+        "Infinity",
+        "Docker"
+      ],
+      "lightrag_deployment": [
+        "uv",
+        "pip",
+        "Docker"
+      ]
     }
   },
-  "updated_at": "2026-07-17T13:22:18.715351+00:00",
-  "total_skills": 19
+  "updated_at": "2026-07-17T13:43:10.430575+00:00",
+  "total_skills": 20
 }
