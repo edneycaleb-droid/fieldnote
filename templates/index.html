@@ -702,6 +702,107 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
 .chat-send-btn:disabled { background: var(--border2); cursor: default; }
 .chat-empty { font-size: 0.82rem; color: var(--muted); text-align: center; padding: 24px 0; }
 
+/* ── Recovery card ────────────────────────────────────────────────────────── */
+.recovery-card {
+  background: #110d00; border: 1px solid #5c3d00; border-radius: 14px;
+  padding: 16px; margin: 12px 0; display: flex; flex-direction: column; gap: 10px;
+}
+.recovery-card-header {
+  display: flex; align-items: center; gap: 8px;
+}
+.recovery-card-icon { font-size: 1.3rem; }
+.recovery-card-title { font-size: 0.9rem; font-weight: 700; color: #fbbf24; flex: 1; }
+.recovery-card-badge {
+  font-size: 0.62rem; padding: 2px 8px; border-radius: 20px; font-weight: 700;
+  border: 1px solid #5c3d00; background: #1a1200; color: #fbbf24;
+}
+.recovery-card-body { font-size: 0.8rem; color: #c4a45a; line-height: 1.6; }
+.recovery-provider-list {
+  display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px;
+}
+.recovery-provider-pill {
+  font-size: 0.64rem; padding: 2px 8px; border-radius: 20px;
+  border: 1px solid #5c1a1a; background: #1a0808; color: #f87171;
+}
+.recovery-card-actions {
+  display: flex; gap: 8px; flex-wrap: wrap; align-items: center;
+}
+.recovery-resume-btn {
+  background: #1a1200; border: 1px solid #fbbf24; border-radius: 8px;
+  padding: 7px 16px; color: #fbbf24; font-size: 0.78rem; font-weight: 700;
+  cursor: pointer; transition: all .15s; -webkit-appearance: none;
+}
+.recovery-resume-btn:hover { background: #2a1f00; }
+.recovery-resume-btn:disabled { opacity: .5; cursor: default; }
+.recovery-auto-note {
+  font-size: 0.68rem; color: #8b7340;
+}
+.recovery-skill-link {
+  font-size: 0.74rem; color: #60a5fa; text-decoration: none;
+}
+.recovery-skill-link:hover { color: #93c5fd; text-decoration: underline; }
+
+/* ── Provider health dashboard ────────────────────────────────────────────── */
+.provider-dash {
+  border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 14px;
+}
+.provider-dash-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 8px 12px; background: var(--bg); border-bottom: 1px solid var(--border);
+  cursor: pointer; user-select: none;
+}
+.provider-dash-title {
+  font-size: 0.72rem; font-weight: 700; color: var(--muted);
+  text-transform: uppercase; letter-spacing: 0.07em;
+}
+.provider-dash-toggle { font-size: 0.65rem; color: var(--muted); }
+.provider-dash-body { padding: 10px 12px; display: flex; flex-wrap: wrap; gap: 7px; }
+.provider-pill {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 4px 11px; border-radius: 20px; font-size: 0.7rem; font-weight: 600;
+  border: 1px solid; cursor: default;
+}
+.pp-healthy        { background: #060f08; border-color: #1a5c30; color: #4ade80; }
+.pp-rate_limited   { background: #1a1200; border-color: #5c3d00; color: #fbbf24; }
+.pp-cooling_down   { background: #1a1200; border-color: #5c3d00; color: #fbbf24; }
+.pp-quota_exhausted{ background: #1a0808; border-color: #5c1a1a; color: #f87171; }
+.pp-auth_error     { background: #1a0808; border-color: #5c1a1a; color: #f87171; }
+.pp-unavailable    { background: #1a0808; border-color: #5c1a1a; color: #f87171; }
+.pp-no_key         { background: var(--bg); border-color: var(--border2); color: var(--muted); }
+.pp-local_ready    { background: #050e12; border-color: #0d5a6a; color: #22d3ee; }
+.pp-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.pp-healthy         .pp-dot { background: #4ade80; }
+.pp-rate_limited    .pp-dot, .pp-cooling_down   .pp-dot { background: #fbbf24; animation: pulse .8s infinite alternate; }
+.pp-quota_exhausted .pp-dot, .pp-auth_error     .pp-dot,
+.pp-unavailable     .pp-dot { background: #f87171; }
+.pp-no_key          .pp-dot { background: #555; }
+.pp-local_ready     .pp-dot { background: #22d3ee; }
+
+/* ── Paid-fallback toggle ─────────────────────────────────────────────────── */
+.paid-fallback-row {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 12px; background: var(--bg2);
+  border: 1px solid var(--border); border-radius: 10px; margin-bottom: 10px;
+}
+.paid-fallback-label {
+  font-size: 0.74rem; color: var(--muted); flex: 1; line-height: 1.4;
+}
+.paid-fallback-label strong { color: var(--text); }
+.pf-toggle {
+  position: relative; width: 36px; height: 20px; cursor: pointer; flex-shrink: 0;
+}
+.pf-toggle input { opacity: 0; width: 0; height: 0; }
+.pf-slider {
+  position: absolute; inset: 0; background: #333; border-radius: 20px;
+  transition: .2s;
+}
+.pf-slider::before {
+  content: ""; position: absolute; height: 14px; width: 14px; left: 3px; bottom: 3px;
+  background: white; border-radius: 50%; transition: .2s;
+}
+.pf-toggle input:checked + .pf-slider { background: #7c3aed; }
+.pf-toggle input:checked + .pf-slider::before { transform: translateX(16px); }
+
 /* ── Quality gate row ── */
 .quality-row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 6px 0 2px; }
 .quality-score {
@@ -1455,6 +1556,9 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
 
   <!-- Auth prompts (shown when credentials are needed) -->
   <div id="auth-prompts"></div>
+
+  <!-- Recovery card (shown instead of error when all providers exhausted) -->
+  <div id="recovery-card-wrap" style="display:none"></div>
 
   <!-- Notebook Workspace: Source Guide (left) + Studio (right) -->
   <div id="nb-workspace" class="nb-workspace" style="display:none">
