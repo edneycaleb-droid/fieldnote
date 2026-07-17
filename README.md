@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **13 skills** · Last synced: 2026-07-17 00:40 UTC
+> **13 skills** · Last synced: 2026-07-17 01:31 UTC
 
 ---
 
@@ -9,10 +9,10 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Mastering Loop Engineering for AI Self-Improvement with Autonomous Work and Strategic Thinking](skills/mastering_loop_engineering.md) | This skill teaches how to properly use AI models by creating loops that enable a | `Claude` `ChatGPT` `Fable 5` `ChatGPT 5.6` | `ai` `self-improvement` `loop-engineering` |
 | [Integrating Higsfield with Claude for AI Content Generation](skills/higsfield_integration.md) | This skill teaches how to integrate Higsfield with Claude for generating high-qu | `Higsfield` `Claude` `Gemini` `GBT` | `ai` `content-generation` `higsfield` |
 | [Moonshot Kimiko 3: A 2.8 Trillion Parameter Open-Weight Model for AI Self-Improvement and Automation](skills/moonshot_kimiko_3.md) | This skill teaches how to use Moonshot's Kimiko 3, a 2.8 trillion parameter open | `Open Claw` `Moonshot` `Kimiko 3` `Open Weights` | `ai` `self-improvement` `moonshot` |
 | [Moonshot Kimiko 3: A 2.8 Trillion Parameter Open-Weight Model for AI Self-Improvement and Automation](skills/moonshot_kimiko_automation.md) | This skill teaches how to use Moonshot's Kimiko 3, a 2.8 trillion parameter open | `Open Claw` `Moonshot` `Kimiko 3` `Open Weights` | `ai` `self-improvement` `moonshot` |
-| [Mastering Loop Engineering for AI Self-Improvement with Autonomous Work and Strategic Thinking](skills/mastering_loop_engineering.md) | This skill teaches how to properly use AI models by creating loops that enable a | `Claude` `ChatGPT` `Fable 5` `ChatGPT 5.6` | `ai` `self-improvement` `loop-engineering` |
 | [Efficient Code Review with AI: Building a Persistent Graph Map and Reducing Tokens](skills/incremental_code_review.md) | Efficient code review with AI requires intelligent tools to minimize token waste | `Tree-sitter` `code-review-graph` `MCP` `Claude Code` | `ai` `automation` `code-review` |
 | [SwanLab: An Open-Source AI Training Analysis and Visualization Platform](skills/swanlab_ai_training_analysis_platform.md) | SwanLab is an open-source AI training analysis and visualization platform that s | `SwanLab` `PyTorch` `Transformers` `LLaMA Factory` | `ai` `training` `analysis` |
 | [Building Production-Ready LLM Applications with Haystack: An Open-Source AI Orchestration Framework](skills/build_production_ready_llm_applications_with_haystack.md) | Haystack is an open-source AI orchestration framework for building production-re | `Haystack` `Docker` `OpenAI` `Mistral` | `ai` `automation` `orchestration` |
