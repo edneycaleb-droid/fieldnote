@@ -586,51 +586,125 @@ def mark_provider_auth_error(provider: str, detail: str = "") -> None:
     log.warning("Provider %s → auth_error (set by external verification): %s", provider, detail[:120])
 
 
-def call_llm_smart(prompt: str, max_tokens: int = 4000, json_mode: bool = True) -> str:
+def call_llm_smart(
+    prompt: str,
+    max_tokens: int = 4000,
+    json_mode: bool = True,
+    emit_fn=None,    # optional (msg: str, kind: str) → None; emits fallback log lines
+    status_fn=None,  # optional (status_dict: dict) → None; called on provider state change
+) -> str:
     """
     Route to the best available provider; fall back down the list.
     Priority: Groq → Gemini → OpenAI → HuggingFace → OpenRouter.
     OpenAI is only reached when all free providers are exhausted.
     Raises RuntimeError only when ALL five providers are exhausted.
+
+    Optional callbacks (thread-safe — safe to call from worker threads):
+      emit_fn(msg, kind)   — surfaces provider fallback log lines to any stream (SSE / log)
+      status_fn(status)    — called with provider_status() dict on any state change
     """
     _init_status()  # pick up keys added without restart
     tried: list[str] = []
-    for provider in _PROVIDERS:
+    providers = list(_PROVIDERS)
+    for idx, provider in enumerate(providers):
         if not _is_available(provider):
             continue
         try:
             result = _IMPL[provider](prompt, max_tokens, json_mode)
+            if emit_fn and tried:
+                emit_fn(
+                    f"✓ {_PROVIDER_LABELS.get(provider, provider)} fallback working",
+                    "success",
+                )
+            if status_fn:
+                try:
+                    status_fn(provider_status())
+                except Exception:
+                    pass
             log.debug("call_llm_smart: used %s", provider)
             return result
         except Exception as e:
             tried.append(provider + ": " + str(e)[:80])
             log.warning("Provider %s failed in call_llm_smart, trying next: %s",
                         provider, str(e)[:100])
+            if emit_fn:
+                from_label = _PROVIDER_LABELS.get(provider, provider)
+                next_avail = next(
+                    (p for p in providers[idx + 1:] if _is_available(p)), None
+                )
+                err_short = str(e)[:60].split("\n")[0]
+                if next_avail:
+                    to_label = _PROVIDER_LABELS.get(next_avail, next_avail)
+                    emit_fn(f"⚡ {from_label} → {to_label} fallback ({err_short})", "warning")
+                else:
+                    emit_fn(f"⚠ {from_label} failed — no further fallbacks ({err_short})", "warning")
+            if status_fn:
+                try:
+                    status_fn(provider_status())
+                except Exception:
+                    pass
             continue
     raise RuntimeError("All providers exhausted. Errors: " + " | ".join(tried))
 
 
-def call_llm_free_only(prompt: str, max_tokens: int = 4000, json_mode: bool = True) -> str:
+def call_llm_free_only(
+    prompt: str,
+    max_tokens: int = 4000,
+    json_mode: bool = True,
+    emit_fn=None,    # optional (msg: str, kind: str) → None; emits fallback log lines
+    status_fn=None,  # optional (status_dict: dict) → None; called on provider state change
+) -> str:
     """
     Like call_llm_smart but **never touches OpenAI** — zero billing risk.
     Priority: Groq → Gemini → HuggingFace → OpenRouter.
     Use this for background agents, discovery, enhancement, and any
     task where incurring cost is unacceptable.
     Raises RuntimeError if all free providers are exhausted.
+
+    Optional callbacks (thread-safe — safe to call from worker threads):
+      emit_fn(msg, kind)   — surfaces provider fallback log lines to any stream (SSE / log)
+      status_fn(status)    — called with provider_status() dict on any state change
     """
     _init_status()
     tried: list[str] = []
-    for provider in FREE_PROVIDERS:
+    providers = list(FREE_PROVIDERS)
+    for idx, provider in enumerate(providers):
         if not _is_available(provider):
             continue
         try:
             result = _IMPL[provider](prompt, max_tokens, json_mode)
+            if emit_fn and tried:
+                emit_fn(
+                    f"✓ {_PROVIDER_LABELS.get(provider, provider)} fallback working",
+                    "success",
+                )
+            if status_fn:
+                try:
+                    status_fn(provider_status())
+                except Exception:
+                    pass
             log.debug("call_llm_free_only: used %s", provider)
             return result
         except Exception as e:
             tried.append(provider + ": " + str(e)[:80])
             log.warning("Provider %s failed in call_llm_free_only, trying next: %s",
                         provider, str(e)[:100])
+            if emit_fn:
+                from_label = _PROVIDER_LABELS.get(provider, provider)
+                next_avail = next(
+                    (p for p in providers[idx + 1:] if _is_available(p)), None
+                )
+                err_short = str(e)[:60].split("\n")[0]
+                if next_avail:
+                    to_label = _PROVIDER_LABELS.get(next_avail, next_avail)
+                    emit_fn(f"⚡ {from_label} → {to_label} fallback ({err_short})", "warning")
+                else:
+                    emit_fn(f"⚠ {from_label} failed — no further fallbacks ({err_short})", "warning")
+            if status_fn:
+                try:
+                    status_fn(provider_status())
+                except Exception:
+                    pass
             continue
     raise RuntimeError(
         "All free providers exhausted (Groq, Gemini, HuggingFace, OpenRouter). "
@@ -642,24 +716,57 @@ def call_chat_smart(
     messages: list,
     max_tokens: int = 900,
     temperature: float = 0.7,
+    emit_fn=None,    # optional (msg: str, kind: str) → None; emits fallback log lines
+    status_fn=None,  # optional (status_dict: dict) → None; called on provider state change
 ) -> tuple[str, str]:
     """
     Route multi-turn chat to the best available provider.
     Returns (response_text, provider_name_used).
     Priority: Groq → Gemini → OpenAI → HuggingFace → OpenRouter.
+
+    Optional callbacks (thread-safe — safe to call from worker threads):
+      emit_fn(msg, kind)   — surfaces provider fallback log lines to any stream (SSE / log)
+      status_fn(status)    — called with provider_status() dict on any state change
     """
     _init_status()
     tried: list[str] = []
-    for provider in _PROVIDERS:
+    providers = list(_PROVIDERS)
+    for idx, provider in enumerate(providers):
         if not _is_available(provider):
             continue
         try:
             result = _CHAT_IMPL[provider](messages, max_tokens, temperature)
+            if emit_fn and tried:
+                emit_fn(
+                    f"✓ {_PROVIDER_LABELS.get(provider, provider)} fallback working",
+                    "success",
+                )
+            if status_fn:
+                try:
+                    status_fn(provider_status())
+                except Exception:
+                    pass
             return result, provider
         except Exception as e:
             tried.append(provider + ": " + str(e)[:80])
             log.warning("Provider %s failed in call_chat_smart, trying next: %s",
                         provider, str(e)[:100])
+            if emit_fn:
+                from_label = _PROVIDER_LABELS.get(provider, provider)
+                next_avail = next(
+                    (p for p in providers[idx + 1:] if _is_available(p)), None
+                )
+                err_short = str(e)[:60].split("\n")[0]
+                if next_avail:
+                    to_label = _PROVIDER_LABELS.get(next_avail, next_avail)
+                    emit_fn(f"⚡ {from_label} → {to_label} fallback ({err_short})", "warning")
+                else:
+                    emit_fn(f"⚠ {from_label} failed — no further fallbacks ({err_short})", "warning")
+            if status_fn:
+                try:
+                    status_fn(provider_status())
+                except Exception:
+                    pass
             continue
     raise RuntimeError("All providers exhausted for chat. Errors: " + " | ".join(tried))
 
@@ -668,24 +775,57 @@ def call_chat_free_only(
     messages: list,
     max_tokens: int = 900,
     temperature: float = 0.7,
+    emit_fn=None,    # optional (msg: str, kind: str) → None; emits fallback log lines
+    status_fn=None,  # optional (status_dict: dict) → None; called on provider state change
 ) -> tuple[str, str]:
     """
     Multi-turn chat that **never touches OpenAI** — zero billing risk.
     Returns (response_text, provider_name_used).
     Priority: Groq → Gemini → HuggingFace → OpenRouter.
+
+    Optional callbacks (thread-safe — safe to call from worker threads):
+      emit_fn(msg, kind)   — surfaces provider fallback log lines to any stream (SSE / log)
+      status_fn(status)    — called with provider_status() dict on any state change
     """
     _init_status()
     tried: list[str] = []
-    for provider in FREE_PROVIDERS:
+    providers = list(FREE_PROVIDERS)
+    for idx, provider in enumerate(providers):
         if not _is_available(provider):
             continue
         try:
             result = _CHAT_IMPL[provider](messages, max_tokens, temperature)
+            if emit_fn and tried:
+                emit_fn(
+                    f"✓ {_PROVIDER_LABELS.get(provider, provider)} fallback working",
+                    "success",
+                )
+            if status_fn:
+                try:
+                    status_fn(provider_status())
+                except Exception:
+                    pass
             return result, provider
         except Exception as e:
             tried.append(provider + ": " + str(e)[:80])
             log.warning("Provider %s failed in call_chat_free_only, trying next: %s",
                         provider, str(e)[:100])
+            if emit_fn:
+                from_label = _PROVIDER_LABELS.get(provider, provider)
+                next_avail = next(
+                    (p for p in providers[idx + 1:] if _is_available(p)), None
+                )
+                err_short = str(e)[:60].split("\n")[0]
+                if next_avail:
+                    to_label = _PROVIDER_LABELS.get(next_avail, next_avail)
+                    emit_fn(f"⚡ {from_label} → {to_label} fallback ({err_short})", "warning")
+                else:
+                    emit_fn(f"⚠ {from_label} failed — no further fallbacks ({err_short})", "warning")
+            if status_fn:
+                try:
+                    status_fn(provider_status())
+                except Exception:
+                    pass
             continue
     raise RuntimeError(
         "All free providers exhausted for chat (Groq, Gemini, HuggingFace, OpenRouter). "
@@ -713,12 +853,25 @@ def _available_providers(allow_paid: bool = False) -> list[str]:
     return [p for p in _PROVIDERS if use_paid or p != "openai"]
 
 
+# ── Provider display labels (used in SSE log lines) ───────────────────────────
+
+_PROVIDER_LABELS: dict[str, str] = {
+    "groq":        "⚡ Groq",
+    "gemini":      "✦ Gemini",
+    "openai":      "🔮 ChatGPT",
+    "huggingface": "🤗 HuggingFace",
+    "openrouter":  "🔀 OpenRouter",
+}
+
+
 def call_llm_for_lens(
     lens: str,
     prompt: str,
     max_tokens: int = 4000,
     json_mode: bool = True,
     allow_paid: bool = False,
+    emit_fn=None,    # optional (msg: str, kind: str) → None; emits log lines into SSE stream
+    status_fn=None,  # optional (status_dict: dict) → None; called on provider state change
 ) -> str:
     """
     Lens-aware provider routing that spreads concurrent lenses across different
@@ -732,6 +885,11 @@ def call_llm_for_lens(
 
     This replaces the fragile time.sleep(4) in the practitioner extractor.
     Raises RuntimeError when all available providers are exhausted.
+
+    Optional callbacks (both are thread-safe — called from thread-pool workers):
+      emit_fn(msg, kind)   — surfaces provider fallback log lines to the SSE stream
+      status_fn(status)    — called with provider_status() dict on any state change,
+                             so the frontend health bar updates instantly
     """
     _init_status()
 
@@ -749,11 +907,22 @@ def call_llm_for_lens(
             preferred.append("openai")
 
     tried: list[str] = []
-    for provider in preferred:
+    for idx, provider in enumerate(preferred):
         if not _is_available(provider):
             continue
         try:
             result = _IMPL[provider](prompt, max_tokens, json_mode)
+            # If previous providers failed (this is a fallback success), tell the user
+            if emit_fn and tried:
+                emit_fn(
+                    f"✓ {_PROVIDER_LABELS.get(provider, provider)} fallback working",
+                    "success",
+                )
+            if status_fn:
+                try:
+                    status_fn(provider_status())
+                except Exception:
+                    pass
             log.debug("call_llm_for_lens[%s]: used %s", lens, provider)
             return result
         except Exception as e:
@@ -762,6 +931,29 @@ def call_llm_for_lens(
                 "call_llm_for_lens[%s]: %s failed, trying next: %s",
                 lens, provider, str(e)[:100],
             )
+            if emit_fn:
+                from_label = _PROVIDER_LABELS.get(provider, provider)
+                # Find next provider that is currently available for an informative label
+                next_avail = next(
+                    (p for p in preferred[idx + 1:] if _is_available(p)), None
+                )
+                err_short = str(e)[:60].split("\n")[0]
+                if next_avail:
+                    to_label = _PROVIDER_LABELS.get(next_avail, next_avail)
+                    emit_fn(
+                        f"⚡ {from_label} → {to_label} fallback ({err_short})",
+                        "warning",
+                    )
+                else:
+                    emit_fn(
+                        f"⚠ {from_label} failed — no further fallbacks ({err_short})",
+                        "warning",
+                    )
+            if status_fn:
+                try:
+                    status_fn(provider_status())
+                except Exception:
+                    pass
             continue
 
     raise RuntimeError(

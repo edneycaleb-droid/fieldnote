@@ -606,7 +606,8 @@ def _extract_from_repo(repo: dict, readme: str, index: dict) -> dict:
     )
     try:
         raw_a = provider_router.call_llm_smart(
-            preamble_educator + base_educator, max_tokens=4000, json_mode=True)
+            preamble_educator + base_educator, max_tokens=4000, json_mode=True,
+            emit_fn=_emit_log)
         skill_a = _json.loads(raw_a)
     except Exception as e:
         log.warning("Educator-lens extraction failed (all providers tried): %s", e)
@@ -621,7 +622,8 @@ def _extract_from_repo(repo: dict, readme: str, index: dict) -> dict:
     )
     try:
         raw_b = provider_router.call_llm_smart(
-            preamble_practitioner + base_practitioner, max_tokens=4000, json_mode=True)
+            preamble_practitioner + base_practitioner, max_tokens=4000, json_mode=True,
+            emit_fn=_emit_log)
         skill_b = _json.loads(raw_b)
     except Exception as e:
         log.warning("Practitioner-lens extraction failed (all providers tried): %s", e)
@@ -660,7 +662,8 @@ def _save_discovered_skill(skill: dict, repo: dict, index: dict) -> tuple[str, s
                 "thorough descriptions, and how this skill connects to others in the library.\n\n"
             )
             import json as _json2
-            raw2 = _pr.call_llm_smart(preamble2 + base2, max_tokens=4000, json_mode=True)
+            raw2 = _pr.call_llm_smart(preamble2 + base2, max_tokens=4000, json_mode=True,
+                                       emit_fn=_emit_log)
             skill_a2 = _json2.loads(raw2)
             skill_b2 = skill  # use the original merged as the "B" candidate
             skill    = _a2._judge_arena(skill_a2, skill_b2, github_ctx, _emit_log)

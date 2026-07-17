@@ -103,6 +103,7 @@ def _headless_run(url: str, video_id: str,
 
     result: dict = {}
     finished = threading.Event()
+    fallback_events: list[str] = []   # collect provider fallback log lines for job result
 
     def drain():
         q = a._jobs[job_id]["queue"]
@@ -111,7 +112,14 @@ def _headless_run(url: str, video_id: str,
             try:
                 msg = q.get(timeout=5)
                 if msg.get("type") == "log":
-                    log.debug("[headless %s] %s", job_id, msg.get("msg", ""))
+                    text = msg.get("msg", "")
+                    kind = msg.get("kind", "info")
+                    log.debug("[headless %s] %s", job_id, text)
+                    # Capture provider fallback log lines so they surface in job result
+                    if kind in ("warning", "success") and (
+                        "fallback" in text.lower() or "⚡" in text or "⚠" in text or "✓" in text
+                    ):
+                        fallback_events.append(text)
                 elif msg.get("type") == "done":
                     result.update(msg)
                     break
@@ -128,6 +136,9 @@ def _headless_run(url: str, video_id: str,
                      daemon=True, name=f"fn-headless-{job_id}").start()
 
     finished.wait(timeout=timeout + 10)
+    # Include any captured provider fallback events in the result dict
+    if fallback_events:
+        result["provider_fallbacks"] = fallback_events
     return result
 
 
