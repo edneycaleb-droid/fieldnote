@@ -170,6 +170,17 @@ try:
 except Exception:
     pass  # non-fatal; best-effort
 
+# Migrate any action:"error" discovery log entries → enrichment backlog.
+# Must run AFTER SKILLS_DIR is guaranteed to exist (i.e. here, not at module import).
+try:
+    import agents.github_discovery as _gd_boot
+    _migrated = _gd_boot._migrate_errors_to_backlog()
+    if _migrated:
+        print(f"[fieldnote] Discovery migration: {_migrated} error entries → enrichment backlog",
+              flush=True)
+except Exception as _me:
+    print(f"[fieldnote] Discovery migration skipped: {_me}", flush=True)
+
 
 def list_skills() -> list[dict]:
     index = load_index()

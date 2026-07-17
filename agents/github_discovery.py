@@ -447,15 +447,36 @@ def _process_free_alternative(
         }
 
     except Exception as exc:
-        log.error("Alt extraction failed for %s: %s", fn, exc)
-        disc_log[fn] = {
-            "processed_at": _now_iso(),
-            "skill_name":   None,
-            "action":       "error",
-            "error":        str(exc)[:200],
-            "stars":        alt_repo.get("stars", 0),
-            "alt_for":      paid_repo["full_name"],
-        }
+        log.warning("Alt AI extraction failed for %s (%s) — saving baseline + queueing enrichment", fn, exc)
+        # Never write action:"error" — fall back to deterministic baseline and enqueue
+        try:
+            import agents.discovery_enrichment as _de
+            baseline = _deterministic_baseline(alt_repo, readme)
+            baseline_name, _ = _save_discovered_skill(baseline, alt_repo, _a.load_index())
+            _de.enqueue(fn, alt_repo.get("stars", 0))
+            disc_log[fn] = {
+                "processed_at":     _now_iso(),
+                "skill_name":       baseline_name,
+                "action":           "baseline",
+                "enrichment_queued": True,
+                "_baseline":        True,
+                "_baseline_reason": "alt_ai_failed",
+                "error":            str(exc)[:200],
+                "stars":            alt_repo.get("stars", 0),
+                "alt_for":          paid_repo["full_name"],
+            }
+        except Exception as inner:
+            log.error("Could not save alt baseline for %s: %s", fn, inner)
+            disc_log[fn] = {
+                "processed_at":     _now_iso(),
+                "skill_name":       None,
+                "action":           "baseline",
+                "enrichment_queued": True,
+                "_baseline":        True,
+                "_baseline_reason": "alt_ai_failed_no_baseline",
+                "stars":            alt_repo.get("stars", 0),
+                "alt_for":          paid_repo["full_name"],
+            }
         return None
 
 
@@ -908,11 +929,8 @@ def _migrate_errors_to_backlog() -> int:
         return 0
 
 
-# Trigger migration at module import time (non-blocking, guarded)
-try:
-    _migrate_errors_to_backlog()
-except Exception:
-    pass
+# Migration is triggered by app.py after full bootstrap (SKILLS_DIR guaranteed).
+# Do NOT call _migrate_errors_to_backlog() here — app may not be initialised yet.
 
 
 # ── Main job ───────────────────────────────────────────────────────────────────
