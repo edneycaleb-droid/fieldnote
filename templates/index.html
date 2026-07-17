@@ -2918,36 +2918,54 @@ async function resumeQueuedJob(runId) {
     const r = await fetch(`/api/jobs/${encodeURIComponent(runId)}/resume`, { method: "POST" });
     const d = await r.json();
     if (d.ok && d.job_id) {
-      // Reconnect to the resumed job's stream
-      setStatus("⏳ Resuming job …", "");
-      const inp = document.getElementById("url-input");
-      const urlVal = inp ? inp.value : "";
-      if (urlVal) {
-        // Job is already started — just stream it
-        const logWrap = document.getElementById("log-wrap");
-        const logLines = document.getElementById("log-lines");
-        if (logWrap) logWrap.style.display = "block";
-        if (logLines) logLines.innerHTML = "";
-        if (_currentES) { _currentES.close(); _currentES = null; }
-        _currentES = new EventSource(`/stream/${d.job_id}`);
-        _currentES.onmessage = e => {
-          const msg2 = JSON.parse(e.data);
-          if (msg2.type === "log")   { appendLog(msg2.msg, msg2.kind); return; }
-          if (msg2.type === "stage") { updateStageProgress(msg2.stage); return; }
-          if (msg2.type === "done") {
-            _currentES.close(); _currentES = null;
-            document.getElementById("recovery-card-wrap").style.display = "none";
-            if (msg2.ok && !msg2.degraded) {
-              renderResult(msg2);
-              setStatus("✅ Recovery complete — skill enhanced!", "ok");
-            } else if (msg2.ok && msg2.degraded) {
-              setStatus("⚠️ Still degraded — will retry again", "warning");
-            } else {
-              setStatus("❌ Resume failed: " + (msg2.error || "unknown error"), "error");
-            }
+      // Always attach to the SSE stream — do NOT gate on URL input value
+      setStatus("⏳ Resuming job — reconnecting to stream …", "");
+
+      // Show the log pane so progress is visible
+      const logWrap  = document.getElementById("log-wrap");
+      const logLines = document.getElementById("log-lines");
+      if (logWrap)  logWrap.style.display = "block";
+      if (logLines) logLines.innerHTML = "";
+
+      // Close any existing stream before opening a new one
+      if (_currentES) { _currentES.close(); _currentES = null; }
+
+      _currentES = new EventSource(`/stream/${d.job_id}`);
+
+      _currentES.onmessage = e => {
+        const msg2 = JSON.parse(e.data);
+        if (msg2.type === "ping")   return;
+        if (msg2.type === "log")    { appendLog(msg2.msg, msg2.kind); return; }
+        if (msg2.type === "stage")  { updateStageProgress(msg2.stage); return; }
+        if (msg2.type === "done") {
+          _currentES.close(); _currentES = null;
+          // Re-enable button in case the job queues again
+          if (btn) { btn.disabled = false; btn.textContent = "▶ Resume now with free providers"; }
+
+          if (msg2.ok && !msg2.degraded) {
+            // Full recovery — hide the recovery card and show the normal result panel
+            const rw = document.getElementById("recovery-card-wrap");
+            if (rw) { rw.style.display = "none"; rw.innerHTML = ""; }
+            renderResult(msg2);
+            if (msg2.stats)   updateStats(msg2.stats);
+            if (msg2.verify)  renderVerifyDone(msg2.verify);
+            prependSkill(msg2);
+            setStatus("✅ Recovery complete — skill fully enhanced!", "ok");
+          } else if (msg2.ok && msg2.degraded) {
+            // Re-rendered with updated recovery card for next retry
+            renderRecoveryCard(msg2);
+            setStatus("⚠️ Still degraded — re-queued for next retry", "warning");
+          } else {
+            setStatus("❌ Resume failed: " + (msg2.error || "unknown error"), "error");
           }
-        };
-      }
+        }
+      };
+
+      _currentES.onerror = () => {
+        if (_currentES) { _currentES.close(); _currentES = null; }
+        if (btn) { btn.disabled = false; btn.textContent = "▶ Resume now with free providers"; }
+        setStatus("Stream lost during resume — auto-recovery will retry", "warning");
+      };
     } else {
       if (btn) { btn.disabled = false; btn.textContent = "▶ Resume now with free providers"; }
       setStatus("Resume failed: " + (d.error || "unknown"), "error");
