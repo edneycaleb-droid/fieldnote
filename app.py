@@ -718,14 +718,16 @@ def _extract_skill_ai(
 # ── AI Arena: three providers, one judge ─────────────────────────────────────
 
 def _extract_skill_chatgpt(transcript: str, knowledge_ctx: str, existing_content: str = "") -> dict:
-    """Educator-lens extraction — routed via provider_router for automatic fallback."""
+    """Educator-lens extraction — uses lens-aware routing (Groq first for educator lens)."""
     base     = _build_prompt(transcript, knowledge_ctx, existing_content)
     preamble = (
         "You are Fieldnote's EDUCATOR AI. Your lens is conceptual clarity, "
         "thorough descriptions, and how this skill connects to others in the library."
         + chr(10) + chr(10)
     )
-    raw = provider_router.call_llm_smart(preamble + base, max_tokens=4000, json_mode=True)
+    raw = provider_router.call_llm_for_lens(
+        "educator", preamble + base, max_tokens=4000, json_mode=True,
+    )
     d   = json.loads(raw)
     # Validate immediately — LLM may write "steps": null, "tools": null etc.
     # dict.get("steps", []) returns None when key exists with null value.
@@ -733,11 +735,8 @@ def _extract_skill_chatgpt(transcript: str, knowledge_ctx: str, existing_content
 
 
 def _extract_skill_groq(transcript: str, knowledge_ctx: str, existing_content: str = "") -> dict:
-    """Practitioner-lens extraction — routed via provider_router for automatic fallback.
-    Sleeps 4 s before calling so it never fires Groq simultaneously with the ChatGPT
-    extractor (both default to Groq first), avoiding a concurrent 429 that blacks out
-    Groq for both calls."""
-    time.sleep(4)
+    """Practitioner-lens extraction — uses lens-aware routing (Gemini first to avoid
+    concurrent Groq drain with the educator extractor; replaces fragile time.sleep(4))."""
     base     = _build_prompt(transcript, knowledge_ctx, existing_content)
     preamble = (
         "You are Fieldnote's PRACTITIONER AI. Your lens is specific actionable steps "
@@ -745,7 +744,9 @@ def _extract_skill_groq(transcript: str, knowledge_ctx: str, existing_content: s
         "and library mentioned in the transcript."
         + chr(10) + chr(10)
     )
-    raw = provider_router.call_llm_smart(preamble + base, max_tokens=4000, json_mode=True)
+    raw = provider_router.call_llm_for_lens(
+        "practitioner", preamble + base, max_tokens=4000, json_mode=True,
+    )
     d   = json.loads(raw)
     # Validate immediately — same null-field protection as chatgpt extractor
     return skill_validator.validate_extraction(d, context="groq")
@@ -841,18 +842,12 @@ def _judge_arena(skill_a: dict, skill_b: dict, github_ctx: str, emit) -> dict:
     )
 
     try:
-        raw    = call_llm(prompt, max_tokens=4500, json_mode=True)
+        raw    = provider_router.call_llm_for_lens("judge", prompt, max_tokens=4500, json_mode=True)
         result = json.loads(raw)
     except Exception as exc:
-        emit("⚠  Judge LLM failed (" + str(exc)[:80] + "), falling back to ChatGPT result", "warning")
-        result = dict(skill_a)
-        result["tools"]    = list(dict.fromkeys(((skill_a.get("tools") or []) + (skill_b.get("tools") or []))))
-        result["concepts"] = list(dict.fromkeys(((skill_a.get("concepts") or []) + (skill_b.get("concepts") or []))))
-        result["steps"]    = list(dict.fromkeys(((skill_a.get("steps") or []) + (skill_b.get("steps") or []))))[:12]
-        result["_arena"]   = {"title_winner": "chatgpt", "desc_winner": "chatgpt",
-                              "steps_a": a_steps, "steps_b": b_steps,
-                              "steps_merged": len(result["steps"]),
-                              "github_tools_added": 0, "note": "manual_merge"}
+        emit("⚠  Judge LLM failed (" + str(exc)[:80] + "), using deterministic merge", "warning")
+        # Use the deterministic merge from degraded_mode instead of aborting
+        result = degraded_mode.deterministic_judge_merge(skill_a, skill_b)
 
     arena = result.get("_arena", {})
     sm    = len(result.get("steps") or [])
