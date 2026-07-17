@@ -581,8 +581,133 @@ def _emit_log(msg: str, kind: str = "info") -> None:
     log.log(level, "[discovery] %s", msg)
 
 
-def _extract_from_repo(repo: dict, readme: str, index: dict) -> dict:
-    """Run the full Arena extraction on a README and return the merged skill dict."""
+# ── Content fingerprint ────────────────────────────────────────────────────────
+
+def _fingerprint(repo: dict) -> str:
+    """Stable 16-char SHA256 fingerprint for deduplication."""
+    import hashlib
+    key = f"{repo['full_name']}:{repo.get('pushed_at','')}:{repo.get('description','')}"
+    return hashlib.sha256(key.encode()).hexdigest()[:16]
+
+
+# ── Deterministic baseline generator ──────────────────────────────────────────
+
+def _deterministic_baseline(repo: dict, readme: str) -> dict:
+    """
+    Build a skill dict purely from repo metadata and README heuristics — no LLM.
+    Always succeeds; never raises.  Marked with _baseline: True.
+    """
+    import re as _re
+
+    full_name = repo["full_name"]
+    name      = repo.get("name", full_name.split("/")[-1])
+    desc      = repo.get("description", "") or ""
+    stars     = repo.get("stars", 0)
+    language  = repo.get("language", "") or ""
+    topics    = repo.get("topics", []) or []
+
+    # ── Extract tool names from code blocks and inline code ──────────────────
+    code_words: list[str] = []
+    # Fenced code blocks
+    for block in _re.findall(r'```[\w]*\n(.*?)```', readme, _re.DOTALL):
+        code_words.extend(block.split())
+    # Inline code
+    code_words.extend(_re.findall(r'`([^`]{2,40})`', readme))
+
+    # Known tool keywords to detect
+    KNOWN_TOOLS = {
+        "langchain", "openai", "groq", "gemini", "anthropic", "huggingface",
+        "transformers", "pytorch", "tensorflow", "sklearn", "numpy", "pandas",
+        "fastapi", "flask", "django", "uvicorn", "pydantic", "docker",
+        "kubernetes", "kubectl", "helm", "terraform", "ansible", "redis",
+        "postgresql", "sqlite", "mongodb", "elasticsearch", "qdrant", "chroma",
+        "faiss", "milvus", "weaviate", "pinecone", "ollama", "vllm",
+        "llamaindex", "llama-index", "llama_index", "autogen", "crewai",
+        "langgraph", "streamlit", "gradio", "ray", "celery", "kafka",
+        "rabbitmq", "prometheus", "grafana", "duckdb", "polars",
+    }
+    detected_tools: list[str] = []
+    seen_tools: set[str] = set()
+    readme_lower = readme.lower()
+    for tool in KNOWN_TOOLS:
+        if tool in readme_lower and tool not in seen_tools:
+            detected_tools.append(tool)
+            seen_tools.add(tool)
+    # Also add topics as tools if they look like tool names
+    for t in topics:
+        tl = t.lower()
+        if tl not in seen_tools and len(tl) > 2:
+            detected_tools.append(t)
+            seen_tools.add(tl)
+    if language and language.lower() not in seen_tools:
+        detected_tools.append(language)
+
+    # ── Extract steps from numbered/bulleted lists ────────────────────────────
+    steps: list[str] = []
+    for m in _re.finditer(r'(?:^|\n)(?:\d+\.\s+|\*\s+|-\s+)(.{10,120})', readme):
+        step = m.group(1).strip()
+        if step and len(steps) < 8:
+            steps.append(step)
+
+    # ── Description from first paragraph ─────────────────────────────────────
+    paragraphs = [p.strip() for p in _re.split(r'\n{2,}', readme) if p.strip()]
+    first_para = ""
+    for p in paragraphs[:5]:
+        if not p.startswith("#") and len(p) > 30:
+            first_para = p[:300]
+            break
+    description = desc or first_para or f"Skills and patterns from {full_name} ({stars:,} ⭐)"
+
+    # ── Tags from topics + keywords ───────────────────────────────────────────
+    tags = list(dict.fromkeys(
+        [t.lower()[:30] for t in topics[:5]]
+        + ([language.lower()] if language else [])
+        + (["ai", "llm"] if any(w in readme_lower for w in ["llm", "language model", "ai"]) else [])
+    ))[:8]
+
+    # ── Skill name ────────────────────────────────────────────────────────────
+    skill_name = _re.sub(r'[^a-z0-9]+', '_', name.lower())[:50].strip('_')
+    if not skill_name:
+        skill_name = "github_skill_" + full_name.replace("/", "_").lower()[:30]
+
+    # ── Markdown body ─────────────────────────────────────────────────────────
+    steps_md = "\n".join(f"- {s}" for s in steps) if steps else "- See README for detailed steps."
+    tools_md = ", ".join(detected_tools[:12]) or "See README"
+    readme_excerpt = readme[:2000].strip()
+    skill_markdown = (
+        f"# {name}\n\n"
+        f"## Description\n\n{description}\n\n"
+        f"## Steps\n\n{steps_md}\n\n"
+        f"## Tools\n\n{tools_md}\n\n"
+        f"## Source\n\n"
+        f"GitHub: [{full_name}](https://github.com/{full_name}) ⭐ {stars:,}\n\n"
+        f"## README Excerpt\n\n{readme_excerpt}\n"
+    )
+
+    return {
+        "action":          "create",
+        "enhance_target":  None,
+        "skill_name":      skill_name,
+        "title":           name.replace("-", " ").replace("_", " ").title(),
+        "description":     description[:400],
+        "steps":           steps or [f"Explore the {name} repository", "Follow setup instructions in the README", "Run the examples"],
+        "tools":           detected_tools[:15],
+        "python_packages": [],
+        "concepts":        tags[:5],
+        "tags":            tags,
+        "related_skills":  [],
+        "skill_markdown":  skill_markdown,
+        "_baseline":       True,
+        "_baseline_reason": "ai_unavailable",
+    }
+
+
+def _extract_from_repo(repo: dict, readme: str, index: dict) -> dict | None:
+    """
+    Run the full Arena extraction on a README.
+    Returns the merged skill dict, or None if both lenses fail.
+    Never raises from provider failures — callers check for None.
+    """
     import app as _a
     transcript    = _readme_as_transcript(repo, readme)
     knowledge_ctx = _knowledge_ctx_for_repo(repo, index)
@@ -629,11 +754,38 @@ def _extract_from_repo(repo: dict, readme: str, index: dict) -> dict:
         log.warning("Practitioner-lens extraction failed (all providers tried): %s", e)
 
     if not skill_a and not skill_b:
-        raise ValueError("Both lens extractions failed for " + repo["full_name"]
-                         + " — all AI providers may be quota-exhausted")
+        log.warning("Both lens extractions returned None for %s — will use baseline fallback",
+                    repo["full_name"])
+        return None   # callers check for None and fall through to baseline
 
     merged = _a._judge_arena(skill_a, skill_b, github_ctx, _emit_log)
     return merged
+
+
+def _upgrade_baseline_to_ai(skill_dict: dict, repo: dict, index: dict,
+                             skill_name: str) -> None:
+    """
+    Overlay AI-enriched fields on top of an existing baseline skill file.
+    Updates the file and the discovery log entry.
+    """
+    import app as _a
+    try:
+        # Re-save with the AI-enriched content
+        _a._save_skill(
+            skill          = skill_dict,
+            skill_name     = skill_name,
+            url            = repo["html_url"],
+            meta           = {"title": repo["full_name"], "channel": "GitHub", "duration": 0},
+            method         = "github_readme_ai_enriched",
+            word_count     = len(repo.get("_readme_words", [])),
+            video_id       = repo["full_name"],
+            action         = skill_dict.get("action", "enhance"),
+            github_results = [],
+            mcp_connections = [],
+        )
+        log.info("Baseline upgraded to AI for %s → skill '%s'", repo["full_name"], skill_name)
+    except Exception as exc:
+        log.warning("_upgrade_baseline_to_ai failed for %s: %s", repo["full_name"], exc)
 
 
 # ── Save wrapper ───────────────────────────────────────────────────────────────
