@@ -788,15 +788,17 @@
       ]
     },
     "Retrieval-Augmented Generation": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "ragflow_deployment"
+        "ragflow_deployment",
+        "lightrag_deployment"
       ]
     },
     "Large Language Models": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "ragflow_deployment"
+        "ragflow_deployment",
+        "lightrag_deployment"
       ]
     },
     "Context Layer": {
@@ -809,6 +811,42 @@
       "freq": 1,
       "skills": [
         "ragflow_deployment"
+      ]
+    },
+    "LightRAG": {
+      "freq": 1,
+      "skills": [
+        "lightrag_deployment"
+      ]
+    },
+    "RAG": {
+      "freq": 1,
+      "skills": [
+        "lightrag_deployment"
+      ]
+    },
+    "Knowledge Graph": {
+      "freq": 2,
+      "skills": [
+        "lightrag_deployment"
+      ]
+    },
+    "Vector Embeddings": {
+      "freq": 1,
+      "skills": [
+        "lightrag_deployment"
+      ]
+    },
+    "Graph-Based RAG": {
+      "freq": 1,
+      "skills": [
+        "lightrag_deployment"
+      ]
+    },
+    "Dual-Layer Architecture": {
+      "freq": 1,
+      "skills": [
+        "lightrag_deployment"
       ]
     }
   },
@@ -1135,11 +1173,12 @@
       ]
     },
     "Docker": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "astrbot_deployment",
         "build_production_ready_llm_applications_with_haystack",
-        "ragflow_deployment"
+        "ragflow_deployment",
+        "lightrag_deployment"
       ]
     },
     "Docker Compose": {
@@ -1174,10 +1213,11 @@
       ]
     },
     "uv": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "astrbot_deployment",
-        "ragflow_deployment"
+        "ragflow_deployment",
+        "lightrag_deployment"
       ]
     },
     "OpenAI Agents SDK": {
@@ -1534,6 +1574,36 @@
       "freq": 1,
       "skills": [
         "ragflow_deployment"
+      ]
+    },
+    "pip": {
+      "freq": 1,
+      "skills": [
+        "lightrag_deployment"
+      ]
+    },
+    "OpenSearch": {
+      "freq": 1,
+      "skills": [
+        "lightrag_deployment"
+      ]
+    },
+    "RAGAS": {
+      "freq": 1,
+      "skills": [
+        "lightrag_deployment"
+      ]
+    },
+    "Langfuse": {
+      "freq": 1,
+      "skills": [
+        "lightrag_deployment"
+      ]
+    },
+    "bun": {
+      "freq": 1,
+      "skills": [
+        "lightrag_deployment"
       ]
     }
   },
@@ -1974,6 +2044,36 @@
         "llms"
       ],
       "step_count": 11
+    },
+    "lightrag_deployment": {
+      "concepts": [
+        "LightRAG",
+        "RAG",
+        "Knowledge Graph",
+        "Vector Embeddings",
+        "Knowledge Graph",
+        "Retrieval-Augmented Generation",
+        "Large Language Models",
+        "Graph-Based RAG",
+        "Dual-Layer Architecture"
+      ],
+      "tools": [
+        "uv",
+        "pip",
+        "Docker",
+        "OpenSearch",
+        "RAGAS",
+        "Langfuse",
+        "bun"
+      ],
+      "tags": [
+        "ai",
+        "automation",
+        "orchestration",
+        "llm",
+        "rag"
+      ],
+      "step_count": 8
     }
   },
   "relationships": {
@@ -2067,6 +2167,10 @@
         "Docker",
         "Docker Compose",
         "uv"
+      ],
+      "lightrag_deployment": [
+        "Docker",
+        "uv"
       ]
     },
     "openai_agents_sdk": {
@@ -2110,6 +2214,9 @@
         "Transformers"
       ],
       "ragflow_deployment": [
+        "Docker"
+      ],
+      "lightrag_deployment": [
         "Docker"
       ]
     },
@@ -2238,9 +2345,30 @@
       ],
       "build_production_ready_llm_applications_with_haystack": [
         "Docker"
+      ],
+      "lightrag_deployment": [
+        "Retrieval-Augmented Generation",
+        "Docker",
+        "Large Language Models",
+        "uv"
+      ]
+    },
+    "lightrag_deployment": {
+      "astrbot_deployment": [
+        "Docker",
+        "uv"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "Docker"
+      ],
+      "ragflow_deployment": [
+        "Retrieval-Augmented Generation",
+        "Docker",
+        "Large Language Models",
+        "uv"
       ]
     }
   },
-  "updated_at": "2026-07-17T04:13:30.458287+00:00",
-  "total_skills": 17
+  "updated_at": "2026-07-17T04:14:01.702416+00:00",
+  "total_skills": 18
 }
