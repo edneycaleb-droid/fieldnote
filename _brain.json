@@ -634,31 +634,35 @@
       ]
     },
     "Open-Weight Models": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "moonshot_kimiko_automation",
-        "moonshot_kimiko_3"
+        "moonshot_kimiko_3",
+        "moonshot_kimiko_3_skill"
       ]
     },
     "Moonshot Kimiko 3": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "moonshot_kimiko_automation",
-        "moonshot_kimiko_3"
+        "moonshot_kimiko_3",
+        "moonshot_kimiko_3_skill"
       ]
     },
     "Open Weights Models": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "moonshot_kimiko_automation",
-        "moonshot_kimiko_3"
+        "moonshot_kimiko_3",
+        "moonshot_kimiko_3_skill"
       ]
     },
     "Moonshot": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "moonshot_kimiko_automation",
-        "moonshot_kimiko_3"
+        "moonshot_kimiko_3",
+        "moonshot_kimiko_3_skill"
       ]
     },
     "Kimiko 3": {
@@ -1413,33 +1417,37 @@
       ]
     },
     "Open Claw": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "moonshot_kimiko_automation",
         "moonshot_kimiko_3",
         "building_ai_agents",
-        "hermes_agent_setup"
+        "hermes_agent_setup",
+        "moonshot_kimiko_3_skill"
       ]
     },
     "Moonshot": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "moonshot_kimiko_automation",
-        "moonshot_kimiko_3"
+        "moonshot_kimiko_3",
+        "moonshot_kimiko_3_skill"
       ]
     },
     "Kimiko 3": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "moonshot_kimiko_automation",
-        "moonshot_kimiko_3"
+        "moonshot_kimiko_3",
+        "moonshot_kimiko_3_skill"
       ]
     },
     "Open Weights": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "moonshot_kimiko_automation",
-        "moonshot_kimiko_3"
+        "moonshot_kimiko_3",
+        "moonshot_kimiko_3_skill"
       ]
     },
     "Higsfield": {
@@ -2074,6 +2082,27 @@
         "rag"
       ],
       "step_count": 8
+    },
+    "moonshot_kimiko_3_skill": {
+      "concepts": [
+        "Moonshot",
+        "Moonshot Kimiko 3",
+        "Open Weights Models",
+        "Open-Weight Models"
+      ],
+      "tools": [
+        "Open Claw",
+        "Moonshot",
+        "Kimiko 3",
+        "Open Weights"
+      ],
+      "tags": [
+        "ai",
+        "automation",
+        "moonshot",
+        "self-improvement"
+      ],
+      "step_count": 2
     }
   },
   "relationships": {
@@ -2105,6 +2134,9 @@
         "Personalization",
         "Automation",
         "Hermes Agent",
+        "Open Claw"
+      ],
+      "moonshot_kimiko_3_skill": [
         "Open Claw"
       ]
     },
@@ -2259,6 +2291,14 @@
       ],
       "hermes_agent_setup": [
         "Open Claw"
+      ],
+      "moonshot_kimiko_3_skill": [
+        "Open Weights Models",
+        "Open-Weight Models",
+        "Moonshot",
+        "Open Weights",
+        "Moonshot Kimiko 3",
+        "Kimiko 3"
       ]
     },
     "moonshot_kimiko_3": {
@@ -2275,6 +2315,14 @@
       ],
       "hermes_agent_setup": [
         "Open Claw"
+      ],
+      "moonshot_kimiko_3_skill": [
+        "Open Weights Models",
+        "Open-Weight Models",
+        "Moonshot",
+        "Open Weights",
+        "Moonshot Kimiko 3",
+        "Kimiko 3"
       ]
     },
     "higsfield_integration": {
@@ -2335,6 +2383,9 @@
       ],
       "higsfield_integration": [
         "Claude"
+      ],
+      "moonshot_kimiko_3_skill": [
+        "Open Claw"
       ]
     },
     "ragflow_deployment": {
@@ -2367,8 +2418,32 @@
         "Large Language Models",
         "uv"
       ]
+    },
+    "moonshot_kimiko_3_skill": {
+      "building_ai_agents": [
+        "Open Claw"
+      ],
+      "moonshot_kimiko_automation": [
+        "Open Weights Models",
+        "Open-Weight Models",
+        "Moonshot",
+        "Open Weights",
+        "Moonshot Kimiko 3",
+        "Kimiko 3"
+      ],
+      "moonshot_kimiko_3": [
+        "Open Weights Models",
+        "Open-Weight Models",
+        "Moonshot",
+        "Open Weights",
+        "Moonshot Kimiko 3",
+        "Kimiko 3"
+      ],
+      "hermes_agent_setup": [
+        "Open Claw"
+      ]
     }
   },
-  "updated_at": "2026-07-17T13:16:59.988727+00:00",
-  "total_skills": 18
+  "updated_at": "2026-07-17T13:22:18.715351+00:00",
+  "total_skills": 19
 }
