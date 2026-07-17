@@ -965,6 +965,48 @@
       "skills": [
         "superagi_building_autonomous_agents"
       ]
+    },
+    "Model Context Protocol": {
+      "freq": 1,
+      "skills": [
+        "microsoft_mcp_curriculum"
+      ]
+    },
+    "AI Pipelines": {
+      "freq": 1,
+      "skills": [
+        "microsoft_mcp_curriculum"
+      ]
+    },
+    "Universal Translator": {
+      "freq": 1,
+      "skills": [
+        "microsoft_mcp_curriculum"
+      ]
+    },
+    "Client-Server Relationships": {
+      "freq": 1,
+      "skills": [
+        "microsoft_mcp_curriculum"
+      ]
+    },
+    "Standardization": {
+      "freq": 1,
+      "skills": [
+        "microsoft_mcp_curriculum"
+      ]
+    },
+    "MCP Specification": {
+      "freq": 1,
+      "skills": [
+        "microsoft_mcp_curriculum"
+      ]
+    },
+    "Security Best Practices": {
+      "freq": 1,
+      "skills": [
+        "microsoft_mcp_curriculum"
+      ]
     }
   },
   "tools": {
@@ -1357,9 +1399,10 @@
       ]
     },
     "Git": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "openai_agents_sdk"
+        "openai_agents_sdk",
+        "microsoft_mcp_curriculum"
       ]
     },
     "Python": {
@@ -1657,9 +1700,10 @@
       ]
     },
     "Discord": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "hermes_agent_setup"
+        "hermes_agent_setup",
+        "microsoft_mcp_curriculum"
       ]
     },
     "MCP (Model Context Protocol)": {
@@ -1844,6 +1888,24 @@
       "freq": 1,
       "skills": [
         "superagi_building_autonomous_agents"
+      ]
+    },
+    "GitHub": {
+      "freq": 1,
+      "skills": [
+        "microsoft_mcp_curriculum"
+      ]
+    },
+    "VS Code": {
+      "freq": 1,
+      "skills": [
+        "microsoft_mcp_curriculum"
+      ]
+    },
+    "Azure": {
+      "freq": 1,
+      "skills": [
+        "microsoft_mcp_curriculum"
       ]
     }
   },
@@ -2430,6 +2492,32 @@
         "ai_toolkit"
       ],
       "step_count": 11
+    },
+    "microsoft_mcp_curriculum": {
+      "concepts": [
+        "Model Context Protocol",
+        "AI Pipelines",
+        "Universal Translator",
+        "Client-Server Relationships",
+        "Standardization",
+        "MCP Specification",
+        "Security Best Practices"
+      ],
+      "tools": [
+        "GitHub",
+        "VS Code",
+        "Azure",
+        "Git",
+        "Discord"
+      ],
+      "tags": [
+        "ai",
+        "microsoft",
+        "protocol",
+        "security",
+        "deployment"
+      ],
+      "step_count": 10
     }
   },
   "relationships": {
@@ -2576,6 +2664,9 @@
       ],
       "graphrag_deployment": [
         "LLMs"
+      ],
+      "microsoft_mcp_curriculum": [
+        "Git"
       ]
     },
     "build_production_ready_llm_applications_with_haystack": {
@@ -2746,6 +2837,9 @@
       ],
       "moonshot_kimiko_3_skill": [
         "Open Claw"
+      ],
+      "microsoft_mcp_curriculum": [
+        "Discord"
       ]
     },
     "ragflow_deployment": {
@@ -2921,8 +3015,16 @@
       "graphrag_deployment": [
         "Docker"
       ]
+    },
+    "microsoft_mcp_curriculum": {
+      "openai_agents_sdk": [
+        "Git"
+      ],
+      "hermes_agent_setup": [
+        "Discord"
+      ]
     }
   },
-  "updated_at": "2026-07-17T14:30:42.634618+00:00",
-  "total_skills": 22
+  "updated_at": "2026-07-17T14:32:07.799418+00:00",
+  "total_skills": 23
 }
