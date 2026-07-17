@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **13 skills** · Last synced: 2026-07-17 01:34 UTC
+> **14 skills** · Last synced: 2026-07-17 02:01 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Building AI Agents with the Pydantic AI Framework](skills/pydantic_ai_framework.md) | Pydantic AI teaches how to build type-safe, model-agnostic, and production-ready | `Pydantic AI Framework` `LangChain` `LlamaIndex` `AutoGPT` | `ai` `automation` `langchain` |
 | [Efficiently Running Large AI Models on Local Machines](skills/running_large_models_locally.md) | This skill teaches how to run large AI models on local machines with limited RAM | `Hugging Face` `ollama` `llama.cpp` `Colibri` | `ai` `optimization` `modeling` |
 | [Mastering Loop Engineering for AI Self-Improvement with Autonomous Work and Strategic Thinking](skills/mastering_loop_engineering.md) | This skill teaches how to properly use AI models by creating loops that enable a | `Claude` `ChatGPT` `Fable 5` `ChatGPT 5.6` | `ai` `self-improvement` `loop-engineering` |
 | [Integrating Higsfield with Claude for AI Content Generation](skills/higsfield_integration.md) | This skill teaches how to integrate Higsfield with Claude for generating high-qu | `Higsfield` `Claude` `Gemini` `GBT` | `ai` `content-generation` `higsfield` |
