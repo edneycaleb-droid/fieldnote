@@ -714,6 +714,30 @@
       "skills": [
         "running_large_models_locally"
       ]
+    },
+    "Agent Framework": {
+      "freq": 1,
+      "skills": [
+        "pydantic_ai_framework"
+      ]
+    },
+    "Generative AI": {
+      "freq": 1,
+      "skills": [
+        "pydantic_ai_framework"
+      ]
+    },
+    "Model-Agnostic": {
+      "freq": 1,
+      "skills": [
+        "pydantic_ai_framework"
+      ]
+    },
+    "Type-Safe": {
+      "freq": 1,
+      "skills": [
+        "pydantic_ai_framework"
+      ]
     }
   },
   "tools": {
@@ -950,11 +974,12 @@
       ]
     },
     "LangChain": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "building_ai_agents_with_langchain",
         "building_resilient_ai_agents_with_langgraph",
-        "openai_agents_sdk"
+        "openai_agents_sdk",
+        "pydantic_ai_framework"
       ]
     },
     "Deep Agents": {
@@ -1153,10 +1178,11 @@
       ]
     },
     "Transformers": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
-        "swanlab_ai_training_analysis_platform"
+        "swanlab_ai_training_analysis_platform",
+        "pydantic_ai_framework"
       ]
     },
     "Gemini": {
@@ -1337,6 +1363,36 @@
       "freq": 1,
       "skills": [
         "running_large_models_locally"
+      ]
+    },
+    "Pydantic AI Framework": {
+      "freq": 1,
+      "skills": [
+        "pydantic_ai_framework"
+      ]
+    },
+    "LlamaIndex": {
+      "freq": 1,
+      "skills": [
+        "pydantic_ai_framework"
+      ]
+    },
+    "AutoGPT": {
+      "freq": 1,
+      "skills": [
+        "pydantic_ai_framework"
+      ]
+    },
+    "CrewAI": {
+      "freq": 1,
+      "skills": [
+        "pydantic_ai_framework"
+      ]
+    },
+    "Instructor": {
+      "freq": 1,
+      "skills": [
+        "pydantic_ai_framework"
       ]
     }
   },
@@ -1693,6 +1749,30 @@
         "claude"
       ],
       "step_count": 7
+    },
+    "pydantic_ai_framework": {
+      "concepts": [
+        "Agent Framework",
+        "Generative AI",
+        "Model-Agnostic",
+        "Type-Safe"
+      ],
+      "tools": [
+        "Pydantic AI Framework",
+        "LangChain",
+        "LlamaIndex",
+        "AutoGPT",
+        "Transformers",
+        "CrewAI",
+        "Instructor"
+      ],
+      "tags": [
+        "ai",
+        "automation",
+        "langchain",
+        "productivity"
+      ],
+      "step_count": 4
     }
   },
   "relationships": {
@@ -1727,6 +1807,9 @@
         "Deep Agents",
         "LangChain",
         "LangGraph"
+      ],
+      "pydantic_ai_framework": [
+        "LangChain"
       ]
     },
     "building_resilient_ai_agents_with_langgraph": {
@@ -1741,6 +1824,9 @@
         "Deep Agents",
         "LangChain",
         "LangGraph"
+      ],
+      "pydantic_ai_framework": [
+        "LangChain"
       ]
     },
     "astrbot_deployment": {
@@ -1766,6 +1852,9 @@
       ],
       "astrbot_deployment": [
         "LLMs"
+      ],
+      "pydantic_ai_framework": [
+        "LangChain"
       ]
     },
     "build_production_ready_llm_applications_with_haystack": {
@@ -1781,11 +1870,17 @@
       ],
       "running_large_models_locally": [
         "Hugging Face"
+      ],
+      "pydantic_ai_framework": [
+        "Transformers"
       ]
     },
     "swanlab_ai_training_analysis_platform": {
       "build_production_ready_llm_applications_with_haystack": [
         "PyTorch",
+        "Transformers"
+      ],
+      "pydantic_ai_framework": [
         "Transformers"
       ]
     },
@@ -1835,8 +1930,25 @@
       "mastering_loop_engineering": [
         "Claude"
       ]
+    },
+    "pydantic_ai_framework": {
+      "building_ai_agents_with_langchain": [
+        "LangChain"
+      ],
+      "building_resilient_ai_agents_with_langgraph": [
+        "LangChain"
+      ],
+      "openai_agents_sdk": [
+        "LangChain"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "Transformers"
+      ],
+      "swanlab_ai_training_analysis_platform": [
+        "Transformers"
+      ]
     }
   },
-  "updated_at": "2026-07-17T01:34:41.933950+00:00",
-  "total_skills": 13
+  "updated_at": "2026-07-17T02:01:20.376235+00:00",
+  "total_skills": 14
 }
