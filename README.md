@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **13 skills** · Last synced: 2026-07-17 01:31 UTC
+> **13 skills** · Last synced: 2026-07-17 01:34 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Efficiently Running Large AI Models on Local Machines](skills/running_large_models_locally.md) | This skill teaches how to run large AI models on local machines with limited RAM | `Hugging Face` `ollama` `llama.cpp` `Colibri` | `ai` `optimization` `modeling` |
 | [Mastering Loop Engineering for AI Self-Improvement with Autonomous Work and Strategic Thinking](skills/mastering_loop_engineering.md) | This skill teaches how to properly use AI models by creating loops that enable a | `Claude` `ChatGPT` `Fable 5` `ChatGPT 5.6` | `ai` `self-improvement` `loop-engineering` |
 | [Integrating Higsfield with Claude for AI Content Generation](skills/higsfield_integration.md) | This skill teaches how to integrate Higsfield with Claude for generating high-qu | `Higsfield` `Claude` `Gemini` `GBT` | `ai` `content-generation` `higsfield` |
 | [Moonshot Kimiko 3: A 2.8 Trillion Parameter Open-Weight Model for AI Self-Improvement and Automation](skills/moonshot_kimiko_3.md) | This skill teaches how to use Moonshot's Kimiko 3, a 2.8 trillion parameter open | `Open Claw` `Moonshot` `Kimiko 3` `Open Weights` | `ai` `self-improvement` `moonshot` |
@@ -20,7 +21,6 @@
 | [Deploying AstrBot: A Comprehensive Guide to Open-Source All-in-One Agent Chatbot Platform](skills/astrbot_deployment.md) | AstrBot is an open-source, all-in-one agent chatbot platform that integrates wit | `uv tool` `Docker` `Docker Compose` `AstrBot App` | `ai` `chatbots` `conversational-ai` |
 | [Building Resilient AI Agents with LangGraph](skills/building_resilient_ai_agents_with_langgraph.md) | This skill teaches how to build, manage, and deploy long-running, stateful AI ag | `LangGraph` `LangSmith` `Deep Agents` `LangChain` | `ai` `automation` `langchain` |
 | [Building Effective AI Agents for Automation and Productivity](skills/building_ai_agents.md) | Building AI agents can help automate tasks, make decisions, and improve over tim | `Claude` `Claude Code` `Codex` `Hermes Agent` | `ai` `automation` `productivity` |
-| [Efficiently Running Large AI Models on Local Machines](skills/running_large_models_locally.md) | This skill teaches how to run large AI models on local machines with limited RAM | `ollama` `llama.cpp` `Colibri` `vLLM` | `ai` `optimization` `modeling` |
 | [Building AI Agents with LangChain](skills/building_ai_agents_with_langchain.md) | This skill teaches how to build applications powered by Large Language Models (L | `LangChain` `LangChain-Groq` `LangChain-OpenAI` `LangGraph` | `ai` `automation` `productivity` |
 
 ---
