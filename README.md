@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **21 skills** · Last synced: 2026-07-17 13:46 UTC
+> **22 skills** · Last synced: 2026-07-17 14:30 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Building, Managing, and Running Autonomous AI Agents with SuperAGI](skills/superagi_building_autonomous_agents.md) | This skill teaches how to use SuperAGI, an open-source framework for building, m | `SuperAGI` `SuperAGI Cloud` `Local LLMs` `Digital Ocean` | `autonomous_ai` `agi` `ai_framework` |
 | [Deploying Microsoft's GraphRAG for Retrieval-Augmented Generation with Enhanced Efficiency and Precision](skills/graphrag_deployment.md) | GraphRAG is a modular graph-based Retrieval-Augmented Generation system develope | `GraphRAG` `LLMs` `Microsoft Research Blog Post` `Docker` | `ai` `rag` `graph-based` |
 | [Deploying LightRAG for Efficient Retrieval-Augmented Generation](skills/lightrag_deployment.md) | LightRAG is a lightweight, graph-based RAG framework designed for high scalabili | `uv` `pip` `Docker` `Docker Compose` | `ai` `automation` `orchestration` |
 | [Deploying Retrieval-Augmented Generation with RAGFlow](skills/deploying_retrieval_augmented_generation_with_ragflow.md) | RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine tha | `Docker` `Docker Compose` `RAGFlow` `Elasticsearch` | `ai` `deployment` `rag` |
