@@ -1789,7 +1789,7 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
         <div id="gpt-progress-note" class="gpt-progress-note"></div>
       </div>
 
-      <!-- ── Guided overlay (shown when schema valid and builder opened) ── -->
+      <!-- ── Desktop guided overlay ── -->
       <div id="gpt-overlay" style="display:none">
         <div class="gpt-overlay-card">
           <div class="gpt-overlay-head">
@@ -1797,21 +1797,19 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
             <button class="gpt-overlay-close" onclick="document.getElementById('gpt-overlay').style.display='none'" aria-label="Close">✕</button>
           </div>
 
-          <!-- clipboard / window status -->
           <div class="gpt-copy-statuses">
             <div id="gpt-cs-clip"></div>
             <div id="gpt-cs-win"></div>
           </div>
 
-          <!-- step-by-step instructions -->
           <ol class="gpt-step-list">
             <li>
-              <strong>Create a Custom GPT</strong>
+              <strong>Create or open your Custom GPT</strong>
               ChatGPT → top-right avatar → <em>My GPTs</em> → <em>Create a GPT</em> → <em>Configure</em> tab
             </li>
             <li>
-              <strong>Add the Action (paste schema URL)</strong>
-              Scroll to <em>Actions</em> → <em>Create new action</em> → <em>Import from URL</em> → paste:
+              <strong>Add the Action — paste schema URL</strong>
+              <em>Actions</em> → <em>Create new action</em> → <em>Import from URL</em> → paste:
               <div class="gpt-url-inline">
                 <span class="gpt-url-inline-text" id="gpt-overlay-url"></span>
                 <button class="gpt-url-inline-copy" onclick="gptCopySchemaUrl(this)">Copy</button>
@@ -1819,39 +1817,123 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
             </li>
             <li>
               <strong>Paste the system prompt</strong>
-              In the <em>Instructions</em> field, paste:
+              In the <em>Instructions</em> field:
               <button class="gpt-copy-prompt-btn" id="gpt-copy-prompt-btn" onclick="gptCopyPrompt(this)">📋 Copy System Prompt</button>
             </li>
             <li>
               <strong>Allow the action when prompted</strong>
-              ChatGPT will display a security confirmation — tap <em>Allow</em>. This is mandatory; Fieldnote cannot skip it.
+              ChatGPT shows a security confirmation — click <em>Allow</em>. This is mandatory; no site can bypass it.
             </li>
-            <li>
-              <strong>Save the GPT</strong>
-              Click <em>Confirm</em> or <em>Save</em> in the top-right corner.
-            </li>
+            <li><strong>Save</strong> — click <em>Confirm</em> or <em>Save</em> top-right.</li>
           </ol>
 
           <div class="gpt-security-note">
-            ⚠ ChatGPT requires 1–2 confirmation taps for external API actions. This is a ChatGPT platform security requirement — no external site can bypass it.
+            ⚠ ChatGPT requires 1–2 confirmation clicks for external API actions — a ChatGPT platform security requirement, not a Fieldnote limitation.
           </div>
 
           <div class="gpt-overlay-actions">
             <button class="gpt-mark-connected" onclick="gptMarkConnected()">✓ Mark as Connected</button>
-            <button class="gpt-dismiss-btn"    onclick="document.getElementById('gpt-overlay').style.display='none'">Dismiss</button>
+            <a id="gpt-overlay-open-link" class="gpt-sec-btn" style="display:none;text-decoration:none;padding:9px 13px;line-height:1" href="https://chatgpt.com/gpts/editor" target="_blank" rel="noopener noreferrer">Open GPT Editor ↗</a>
+            <button class="gpt-dismiss-btn" onclick="document.getElementById('gpt-overlay').style.display='none'">Dismiss</button>
           </div>
         </div>
-      </div>
+      </div><!-- /#gpt-overlay -->
 
-      <!-- ── Test connection result panel (shown after "Test Connection") ── -->
+      <!-- ── iOS / mobile transition card (no popup — real link user taps) ── -->
+      <div id="gpt-ios-card" class="gpt-ios-card" style="display:none">
+        <div class="gpt-ios-head">
+          <span class="gpt-ios-title">📋 Setup Package Ready</span>
+          <button class="gpt-overlay-close" onclick="document.getElementById('gpt-ios-card').style.display='none'" aria-label="Close">✕</button>
+        </div>
+
+        <!-- Clipboard status — updated async by JS -->
+        <div id="gpt-ios-clip-status" class="gpt-copy-status-warn" style="font-size:.78rem;margin-bottom:9px">⏳ Copying schema URL…</div>
+
+        <!-- Stay-in-browser warning -->
+        <div class="gpt-ios-warn">
+          ⚠ Stay in your web browser &mdash; if a blue &ldquo;Open&rdquo; banner appears for the ChatGPT app, ignore it and scroll past it. GPT creation and editing is web-only and does not work inside the app.
+        </div>
+
+        <!-- Schema URL to paste -->
+        <div class="gpt-ios-pkg">
+          <div class="gpt-ios-pkg-label">Schema URL &mdash; paste in Actions → Import from URL</div>
+          <div class="gpt-url-inline">
+            <span class="gpt-url-inline-text" id="gpt-ios-url-text"></span>
+            <button class="gpt-url-inline-copy" onclick="gptCopySchemaUrl(this)">Copy</button>
+          </div>
+        </div>
+
+        <!-- System prompt to paste -->
+        <div class="gpt-ios-pkg">
+          <div class="gpt-ios-pkg-label">System Prompt &mdash; paste in Instructions</div>
+          <button class="gpt-copy-prompt-btn" onclick="gptCopyPrompt(this)">📋 Copy System Prompt</button>
+        </div>
+
+        <!-- Steps -->
+        <ol class="gpt-step-list">
+          <li>
+            <strong>Tap Open GPT Editor below</strong>
+            It opens in Safari. If you see a blue &ldquo;Open&rdquo; banner at the top — ignore it and scroll down to the editor.
+          </li>
+          <li>
+            <strong>Create or open your Custom GPT</strong>
+            <em>Configure</em> tab → <em>Actions</em> → <em>Create new action</em> → <em>Import from URL</em> → paste the schema URL above.
+          </li>
+          <li>
+            <strong>Paste the system prompt</strong>
+            Tap the <em>Instructions</em> field and paste what you copied above.
+          </li>
+          <li>
+            <strong>Confirm the action</strong>
+            ChatGPT will ask you to allow external API calls — tap <em>Allow</em>.
+          </li>
+          <li>
+            <strong>Save, then come back here</strong>
+            Tap <em>Save</em> in the GPT editor, return to this page, and tap &ldquo;Mark as Connected&rdquo;.
+          </li>
+        </ol>
+
+        <!-- Primary open link — real <a> tag, user-activated, not blocked by iOS -->
+        <a id="gpt-ios-open-link" class="gpt-ios-open-link" href="https://chatgpt.com/gpts/editor" target="_blank" rel="noopener noreferrer">
+          Open GPT Editor in Safari ↗
+        </a>
+
+        <div class="gpt-security-note" style="margin-top:10px">
+          ⚠ ChatGPT requires 1–2 confirmation taps for external API actions — a ChatGPT platform security requirement. No third-party site can bypass it.
+        </div>
+
+        <div class="gpt-overlay-actions" style="margin-top:10px">
+          <button class="gpt-mark-connected" onclick="gptMarkConnected()">✓ Mark as Connected</button>
+          <button class="gpt-dismiss-btn" onclick="document.getElementById('gpt-ios-card').style.display='none'">Dismiss</button>
+        </div>
+      </div><!-- /#gpt-ios-card -->
+
+      <!-- ── Test connection result panel ── -->
       <div id="gpt-test-panel" class="gpt-test-panel" style="display:none"></div>
+
+      <!-- ── Save Custom GPT edit URL (shown after first connect) ── -->
+      <div id="gpt-save-url-section" class="gpt-save-url-section" style="display:none">
+        <div class="gpt-save-url-label">💾 Save your Custom GPT edit URL <span style="font-weight:400;font-size:.72rem;color:var(--muted)">(optional)</span></div>
+        <div class="gpt-save-url-hint">
+          Copy the URL from your browser address bar while editing your GPT
+          (<code style="font-size:.7rem">chatgpt.com/gpts/editor/g-…</code>).
+          Future launches will open that exact GPT instead of creating a new one.
+        </div>
+        <div class="gpt-save-url-row-inner">
+          <input type="url" id="gpt-edit-url-input" class="gpt-save-url-input"
+                 placeholder="https://chatgpt.com/gpts/editor/g-…"
+                 oninput="gptValidateEditUrl(this)">
+          <button class="gpt-sec-btn" onclick="gptSaveEditUrl()">Save</button>
+        </div>
+        <div id="gpt-save-url-status" class="gpt-save-url-status"></div>
+      </div>
 
       <!-- ── Secondary fallback buttons ── -->
       <div class="gpt-secondary-row" style="margin-top:10px">
-        <button class="gpt-sec-btn" id="gpt-fallback-url"    onclick="gptCopySchemaUrl(this)">Copy Schema URL</button>
-        <button class="gpt-sec-btn" id="gpt-fallback-prompt" onclick="gptCopyPrompt(this)">Copy System Prompt</button>
-        <button class="gpt-sec-btn"                          onclick="gptRevalidate()">↺ Revalidate</button>
-        <button class="gpt-sec-btn"                          onclick="window.open('https://chatgpt.com/gpts/editor','_blank','noopener,noreferrer')">Open GPT Builder ↗</button>
+        <button class="gpt-sec-btn" onclick="gptCopySchemaUrl(this)">Copy Schema URL</button>
+        <button class="gpt-sec-btn" onclick="gptCopyPrompt(this)">Copy System Prompt</button>
+        <button class="gpt-sec-btn" onclick="gptRevalidate()">↺ Revalidate</button>
+        <a id="gpt-builder-link" class="gpt-sec-btn" href="https://chatgpt.com/gpts/editor" target="_blank" rel="noopener noreferrer" style="text-decoration:none">Open GPT Editor ↗</a>
       </div>
 
       <!-- ── Advanced / manual setup (collapsed by default) ── -->
