@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **23 skills** · Last synced: 2026-07-17 14:32 UTC
+> **24 skills** · Last synced: 2026-07-17 14:34 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Transforming Chrome into an Intelligent Assistant](skills/chrome_mcp_server.md) | This skill teaches how to turn Chrome into an intelligent assistant by leveragin | `Chrome MCP Server` `Model Context Protocol (MCP)` `Streamable HTTP connection method` `pnpm` | `browser` `ai` `automation` |
 | [Microsoft MCP Curriculum for Beginners and Advanced Developers](skills/microsoft_mcp_curriculum.md) | This skill teaches the Microsoft Model Context Protocol (MCP) fundamentals with  | `GitHub` `VS Code` `Azure` `Git` | `ai` `microsoft` `protocol` |
 | [Building, Managing, and Running Autonomous AI Agents with SuperAGI](skills/superagi_building_autonomous_agents.md) | This skill teaches how to use SuperAGI, an open-source framework for building, m | `SuperAGI` `SuperAGI Cloud` `Local LLMs` `Digital Ocean` | `autonomous_ai` `agi` `ai_framework` |
 | [Deploying Microsoft's GraphRAG for Retrieval-Augmented Generation with Enhanced Efficiency and Precision](skills/graphrag_deployment.md) | GraphRAG is a modular graph-based Retrieval-Augmented Generation system develope | `GraphRAG` `LLMs` `Microsoft Research Blog Post` `Docker` | `ai` `rag` `graph-based` |
