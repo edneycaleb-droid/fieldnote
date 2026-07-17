@@ -1809,6 +1809,88 @@ def api_provider_status():
     return jsonify(provider_router.provider_status())
 
 
+# ── Failover / recovery API ───────────────────────────────────────────────────
+
+@app.route("/api/jobs/queued")
+def api_jobs_queued():
+    """List all checkpoints in 'queued' or 'degraded' stage awaiting recovery."""
+    pending = run_checkpoint.list_pending_checkpoints()
+    return jsonify({
+        "queued": pending,
+        "count":  len(pending),
+    })
+
+
+@app.route("/api/jobs/<run_id>/resume", methods=["POST"])
+def api_job_resume(run_id: str):
+    """Resume a queued checkpoint — re-run only the failed stages."""
+    cp = run_checkpoint.load_checkpoint(run_id)
+    if not cp:
+        return jsonify({"ok": False, "error": f"Checkpoint not found: {run_id}"}), 404
+
+    video_id = cp.get("video_id")
+    url      = cp.get("url")
+    if not video_id or not url:
+        return jsonify({"ok": False, "error": "Checkpoint missing video_id or url"}), 400
+
+    # Deduplicate: don't start if already running for this video
+    existing = _video_active.get(video_id)
+    if existing and not _jobs.get(existing, {}).get("done", True):
+        return jsonify({"ok": True, "job_id": existing, "already_running": True})
+
+    # Duplicate-resume protection: if skill file already exists, use enhance
+    existing_skill_name = cp.get("skill_name")
+    existing_skill_path = None
+    if existing_skill_name:
+        candidate = os.path.join(SKILLS_DIR, f"{existing_skill_name}.md")
+        if os.path.exists(candidate):
+            existing_skill_path = candidate
+
+    # Mark that this is a resume (recovery) run with the existing checkpoint run_id
+    job_id        = str(uuid.uuid4())[:8]
+    _jobs[job_id] = {
+        "queue":     queue.Queue(),
+        "done":      False,
+        "run_id":    run_id,   # reuse existing run_id to continue same checkpoint
+        "allow_paid": False,
+        "force_enhance": existing_skill_name if existing_skill_path else None,
+    }
+    _video_active[video_id] = job_id
+
+    # Track recovery attempts
+    recovery_attempts = cp.get("recovery_attempts", 0) + 1
+    run_checkpoint.save_checkpoint(run_id, {
+        "stage":             "resuming",
+        "recovery_attempts": recovery_attempts,
+        "recovered_at":      datetime.now(timezone.utc).isoformat(timespec="seconds"),
+    })
+
+    threading.Thread(
+        target=run_job, args=(job_id, url, video_id), daemon=True,
+        name=f"fn-resume-{run_id}",
+    ).start()
+
+    return jsonify({
+        "ok":     True,
+        "job_id": job_id,
+        "run_id": run_id,
+        "video_id": video_id,
+        "action":   "enhance" if existing_skill_path else "create",
+        "recovery_attempts": recovery_attempts,
+    })
+
+
+@app.route("/api/settings/paid-fallback", methods=["POST"])
+def api_settings_paid_fallback():
+    """Toggle whether OpenAI (billed) is allowed as a fallback provider.
+    Body: {"enabled": true|false}
+    """
+    body    = request.get_json(silent=True) or {}
+    enabled = bool(body.get("enabled", False))
+    provider_router.set_paid_fallback(enabled)
+    return jsonify({"ok": True, "paid_fallback": enabled})
+
+
 # ── Integrations hub ──────────────────────────────────────────────────────────
 
 @app.route("/api/integrations")
