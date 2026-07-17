@@ -141,7 +141,7 @@
       ]
     },
     "Expert caching": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "running_large_models_locally"
       ]
@@ -153,7 +153,7 @@
       ]
     },
     "Predictive routing": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "running_large_models_locally"
       ]
@@ -684,6 +684,36 @@
       "skills": [
         "higsfield_integration"
       ]
+    },
+    "Mixture of experts (MoE)": {
+      "freq": 1,
+      "skills": [
+        "running_large_models_locally"
+      ]
+    },
+    "Quantisation": {
+      "freq": 1,
+      "skills": [
+        "running_large_models_locally"
+      ]
+    },
+    "Expert streaming": {
+      "freq": 1,
+      "skills": [
+        "running_large_models_locally"
+      ]
+    },
+    "SSD vs RAM tradeoff": {
+      "freq": 1,
+      "skills": [
+        "running_large_models_locally"
+      ]
+    },
+    "Quantisation (GGUF Q4_K_M, Q8_0)": {
+      "freq": 1,
+      "skills": [
+        "running_large_models_locally"
+      ]
     }
   },
   "tools": {
@@ -806,7 +836,7 @@
       ]
     },
     "Colibri": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "running_large_models_locally"
       ]
@@ -1097,9 +1127,10 @@
       ]
     },
     "Hugging Face": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "build_production_ready_llm_applications_with_haystack"
+        "build_production_ready_llm_applications_with_haystack",
+        "running_large_models_locally"
       ]
     },
     "Azure OpenAI": {
@@ -1283,6 +1314,30 @@
       "skills": [
         "mastering_loop_engineering"
       ]
+    },
+    "ollama": {
+      "freq": 1,
+      "skills": [
+        "running_large_models_locally"
+      ]
+    },
+    "llama.cpp": {
+      "freq": 1,
+      "skills": [
+        "running_large_models_locally"
+      ]
+    },
+    "huggingface-cli": {
+      "freq": 1,
+      "skills": [
+        "running_large_models_locally"
+      ]
+    },
+    "NVMe SSD": {
+      "freq": 1,
+      "skills": [
+        "running_large_models_locally"
+      ]
     }
   },
   "skill_map": {
@@ -1325,25 +1380,28 @@
     },
     "running_large_models_locally": {
       "concepts": [
-        "Mixture of experts models",
-        "Model pruning",
+        "Mixture of experts (MoE)",
+        "Quantisation",
         "Expert caching",
-        "SSD optimization",
-        "Predictive routing"
+        "Expert streaming",
+        "Predictive routing",
+        "SSD vs RAM tradeoff",
+        "Quantisation (GGUF Q4_K_M, Q8_0)"
       ],
       "tools": [
+        "Hugging Face",
+        "ollama",
+        "llama.cpp",
         "Colibri",
-        "AntiRaz",
-        "DS4",
-        "Lama CPP",
-        "VLLM"
+        "huggingface-cli",
+        "NVMe SSD"
       ],
       "tags": [
         "ai",
         "optimization",
         "modeling"
       ],
-      "step_count": 5
+      "step_count": 10
     },
     "building_ai_agents_with_langchain": {
       "concepts": [
@@ -1652,6 +1710,9 @@
     "running_large_models_locally": {
       "building_ai_agents": [
         "Mixture of experts models"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "Hugging Face"
       ]
     },
     "building_ai_agents_with_langchain": {
@@ -1717,6 +1778,9 @@
       ],
       "higsfield_integration": [
         "Gemini"
+      ],
+      "running_large_models_locally": [
+        "Hugging Face"
       ]
     },
     "swanlab_ai_training_analysis_platform": {
@@ -1773,6 +1837,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-17T01:31:55.100918+00:00",
+  "updated_at": "2026-07-17T01:34:41.933950+00:00",
   "total_skills": 13
 }
