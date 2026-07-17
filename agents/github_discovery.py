@@ -854,16 +854,79 @@ def _save_discovered_skill(skill: dict, repo: dict, index: dict) -> tuple[str, s
     return skill_name, action
 
 
+# ── Error→backlog migration (runs once per app restart) ───────────────────────
+
+_migration_ran = False
+
+def _migrate_errors_to_backlog() -> int:
+    """
+    Convert all action:"error" discovery log entries into enrichment backlog entries.
+    Runs once per app restart (guarded by migration_done flag in enrichment state).
+    Returns the number of entries migrated.
+    """
+    global _migration_ran
+    if _migration_ran:
+        return 0
+    _migration_ran = True
+
+    try:
+        import agents.discovery_enrichment as de
+        if de.migration_done():
+            return 0
+
+        disc_log = load_discovery_log()
+        errors = [
+            (fn, v) for fn, v in disc_log.items()
+            if v.get("action") == "error"
+        ]
+        if not errors:
+            de.set_migration_done()
+            return 0
+
+        # Sort by stars descending (highest-value repos get priority)
+        errors.sort(key=lambda x: x[1].get("stars", 0), reverse=True)
+        migrated = 0
+        for fn, v in errors:
+            de.enqueue(fn, v.get("stars", 0))
+            # Update log entry to show it's in the recovery backlog
+            disc_log[fn] = {
+                **v,
+                "action":           "baseline",
+                "enrichment_queued": True,
+                "_baseline":         True,
+                "_baseline_reason":  "migrated_from_error",
+                "skill_name":        v.get("skill_name"),  # may be None
+            }
+            migrated += 1
+
+        save_discovery_log(disc_log)
+        de.set_migration_done()
+        log.info("Discovery: migrated %d error entries → enrichment backlog", migrated)
+        return migrated
+    except Exception as exc:
+        log.warning("Error-to-backlog migration failed: %s", exc)
+        return 0
+
+
+# Trigger migration at module import time (non-blocking, guarded)
+try:
+    _migrate_errors_to_backlog()
+except Exception:
+    pass
+
+
 # ── Main job ───────────────────────────────────────────────────────────────────
 
 def discover_and_learn() -> dict:
     """
     Search GitHub, extract skills from READMEs, and save them to Fieldnote.
+    Persist-first: every repo gets a baseline skill immediately, even if AI fails.
     Called by the scheduler every 2 hours.
     Returns a result summary dict.
     """
     import app as _a
     import agents.skill_quality as sq
+    import agents.discovery_enrichment as de
 
     log.info("GitHub discovery starting …")
     index     = _a.load_index()
@@ -898,21 +961,26 @@ def discover_and_learn() -> dict:
 
     if not candidates:
         return {"repos_found": 0, "skills_created": 0, "skills_enhanced": 0,
-                "errors": 0, "message": "No new repos to process"}
+                "baseline": 0, "errors": 0, "message": "No new repos to process"}
 
     # 3. Sort by stars descending, take top BATCH_SIZE
     candidates.sort(key=lambda r: r["stars"], reverse=True)
     batch = candidates[:BATCH_SIZE]
 
-    created = enhanced = errors = 0
+    created = enhanced = baseline_count = errors = 0
     results_detail = []
+
+    # Check if any free provider is available before trying AI
+    ai_available = de.any_free_provider_available()
+    if not ai_available:
+        log.warning("Discovery: no free providers available — all repos will get baseline skills")
 
     for repo in batch:
         fn = repo["full_name"]
         log.info("Discovery: processing %s (%d ⭐)", fn, repo["stars"])
 
         try:
-            # Fetch README
+            # ── Fetch README ─────────────────────────────────────────────────
             readme = _fetch_readme(repo["owner"], repo["name"])
             if not readme or len(readme) < 100:
                 log.info("Discovery: %s has no/tiny README — skipping", fn)
@@ -926,105 +994,169 @@ def discover_and_learn() -> dict:
 
             repo["_readme_words"] = readme.split()
 
-            # Extract skill
-            skill = _extract_from_repo(repo, readme, index)
-
-            # Quality gate
-            qr = sq.quality_gate(skill)
-            log.info("Discovery: %s → quality %s %.0f%%", fn,
-                     qr.decision.value, qr.score * 100)
-
-            if qr.decision == sq.QualityDecision.DENY:
-                disc_log[fn] = {
-                    "processed_at":   _now_iso(),
-                    "skill_name":     None,
-                    "action":         "quality_denied",
-                    "stars":          repo["stars"],
-                    "quality_score":  round(qr.score, 2),
-                }
-                results_detail.append({"repo": fn, "result": "quality_denied",
-                                       "score": round(qr.score, 2)})
+            # ── Fingerprint deduplication ────────────────────────────────────
+            fp = _fingerprint(repo)
+            existing_entry = disc_log.get(fn, {})
+            if existing_entry.get("fingerprint") == fp and existing_entry.get("skill_name"):
+                log.info("Discovery: %s fingerprint unchanged — skipped duplicate", fn)
+                disc_log[fn] = {**existing_entry, "action": "skipped_duplicate",
+                                 "processed_at": _now_iso()}
+                results_detail.append({"repo": fn, "result": "skipped_duplicate"})
                 continue
 
-            # Save
-            skill_name, action = _save_discovered_skill(skill, repo, index)
-            index = _a.load_index()  # refresh after save
+            # ── Step 1: Save baseline skill IMMEDIATELY (persist-first) ──────
+            baseline = _deterministic_baseline(repo, readme)
+            baseline_skill_name, baseline_action = _save_discovered_skill(
+                baseline, repo, _a.load_index()
+            )
+            index = _a.load_index()
 
-            # Sync to GitHub
-            try:
-                import agents.github_sync as gs
-                gs.sync_skill(skill_name, _a.SKILLS_DIR, index)
-            except Exception as e:
-                log.warning("GitHub sync failed after discovery save: %s", e)
-
-            # ── Paid-service detection → free alternative ────────────────────
-            readme_text = " ".join(repo.get("_readme_words", []))
-            paid_keys   = _detect_paid_services(repo, skill, readme_text)
-            alt_results : list[dict] = []
-
-            if paid_keys:
-                log.info("Discovery: %s uses paid services: %s — finding free alts",
-                         fn, paid_keys)
-                for paid_key in paid_keys[:2]:   # max 2 paid services per repo
-                    alt_repo = _find_best_free_alternative(paid_key, disc_log)
-                    if alt_repo:
-                        seen.add(alt_repo["full_name"])  # don't re-process in main loop
-                        alt_result = _process_free_alternative(
-                            alt_repo, repo, paid_key, disc_log, index
-                        )
-                        if alt_result:
-                            alt_results.append(alt_result)
-                            index = _a.load_index()       # keep index fresh
-                            if alt_result.get("action") == "enhance":
-                                enhanced += 1
-                            else:
-                                created += 1
-                        time.sleep(2)
-
-            # Update log
+            # Write baseline entry to discovery log
             disc_log[fn] = {
-                "processed_at":      _now_iso(),
-                "skill_name":        skill_name,
-                "action":            action,
-                "stars":             repo["stars"],
-                "quality_score":     round(qr.score, 2),
-                "quality_decision":  qr.decision.value,
-                "paid_services":     paid_keys,
-                "free_alts_added":   [r["skill"] for r in alt_results],
+                "processed_at":     _now_iso(),
+                "skill_name":       baseline_skill_name,
+                "action":           "baseline",
+                "stars":            repo["stars"],
+                "fingerprint":      fp,
+                "enrichment_queued": True,
+                "_baseline":        True,
+                "_baseline_reason": "ai_unavailable" if not ai_available else "persist_first",
             }
+            save_discovery_log(disc_log)   # persist immediately — guaranteed
 
-            if action == "enhance":
-                enhanced += 1
-                log.info("Discovery: enhanced '%s' from %s", skill_name, fn)
+            # Enqueue for AI enrichment
+            de.enqueue(fn, repo["stars"], fingerprint=fp)
+            log.info("Discovery: baseline saved for %s → '%s', queued for enrichment",
+                     fn, baseline_skill_name)
+
+            # ── Step 2: Attempt AI enrichment now (if providers available) ───
+            ai_skill = None
+            if ai_available:
+                ai_skill = _extract_from_repo(repo, readme, index)
+
+            if ai_skill is not None:
+                # AI succeeded — quality gate on AI result
+                qr = sq.quality_gate(ai_skill)
+                log.info("Discovery: %s → quality %s %.0f%%", fn,
+                         qr.decision.value, qr.score * 100)
+
+                if qr.decision == sq.QualityDecision.DENY:
+                    disc_log[fn] = {
+                        **disc_log.get(fn, {}),
+                        "processed_at":      _now_iso(),
+                        "action":            "quality_denied",
+                        "quality_score":     round(qr.score, 2),
+                        "enrichment_queued": False,
+                    }
+                    de.mark_succeeded({"full_name": fn})
+                    results_detail.append({"repo": fn, "result": "quality_denied",
+                                           "score": round(qr.score, 2)})
+                    continue
+
+                # Overlay AI result (may change skill_name)
+                skill_name, action = _save_discovered_skill(ai_skill, repo, index)
+                index = _a.load_index()
+
+                # Sync to GitHub
+                try:
+                    import agents.github_sync as gs
+                    gs.sync_skill(skill_name, _a.SKILLS_DIR, index)
+                except Exception as e:
+                    log.warning("GitHub sync failed after AI save: %s", e)
+
+                # ── Paid-service detection → free alternative ────────────────
+                readme_text = " ".join(repo.get("_readme_words", []))
+                paid_keys   = _detect_paid_services(repo, ai_skill, readme_text)
+                alt_results: list[dict] = []
+
+                if paid_keys:
+                    log.info("Discovery: %s uses paid services: %s", fn, paid_keys)
+                    for paid_key in paid_keys[:2]:
+                        alt_repo = _find_best_free_alternative(paid_key, disc_log)
+                        if alt_repo:
+                            seen.add(alt_repo["full_name"])
+                            alt_result = _process_free_alternative(
+                                alt_repo, repo, paid_key, disc_log, index
+                            )
+                            if alt_result:
+                                alt_results.append(alt_result)
+                                index = _a.load_index()
+                                if alt_result.get("action") == "enhance":
+                                    enhanced += 1
+                                else:
+                                    created += 1
+                            time.sleep(2)
+
+                # Update log with AI-enriched state
+                disc_log[fn] = {
+                    "processed_at":      _now_iso(),
+                    "skill_name":        skill_name,
+                    "action":            action,
+                    "stars":             repo["stars"],
+                    "fingerprint":       fp,
+                    "quality_score":     round(qr.score, 2),
+                    "quality_decision":  qr.decision.value,
+                    "paid_services":     paid_keys,
+                    "free_alts_added":   [r["skill"] for r in alt_results],
+                    "enrichment_queued": False,
+                    "_baseline":         False,
+                }
+                de.mark_succeeded({"full_name": fn})
+
+                if action == "enhance":
+                    enhanced += 1
+                    log.info("Discovery: enhanced '%s' from %s", skill_name, fn)
+                else:
+                    created += 1
+                    log.info("Discovery: created  '%s' from %s", skill_name, fn)
+
+                result_entry = {
+                    "repo":    fn,
+                    "skill":   skill_name,
+                    "action":  action,
+                    "stars":   repo["stars"],
+                    "quality": round(qr.score, 2),
+                }
+                if paid_keys:
+                    result_entry["paid_services"]   = paid_keys
+                    result_entry["free_alts_added"] = [r["skill"] for r in alt_results]
+                results_detail.append(result_entry)
+                results_detail.extend(alt_results)
+
             else:
-                created += 1
-                log.info("Discovery: created  '%s' from %s", skill_name, fn)
-
-            result_entry = {
-                "repo":      fn,
-                "skill":     skill_name,
-                "action":    action,
-                "stars":     repo["stars"],
-                "quality":   round(qr.score, 2),
-            }
-            if paid_keys:
-                result_entry["paid_services"]  = paid_keys
-                result_entry["free_alts_added"] = [r["skill"] for r in alt_results]
-            results_detail.append(result_entry)
-            results_detail.extend(alt_results)
+                # AI failed — baseline already saved; leave enrichment_queued: True
+                baseline_count += 1
+                results_detail.append({
+                    "repo":   fn,
+                    "skill":  baseline_skill_name,
+                    "action": "baseline",
+                    "stars":  repo["stars"],
+                })
+                log.info("Discovery: baseline-only for %s (AI unavailable)", fn)
 
         except Exception as exc:
+            # This should rarely happen now — even AI failure doesn't raise
             errors += 1
-            log.error("Discovery: failed on %s → %s", fn, exc)
-            disc_log[fn] = {
-                "processed_at": _now_iso(),
-                "skill_name":   None,
-                "action":       "error",
-                "error":        str(exc)[:200],
-                "stars":        repo.get("stars", 0),
-            }
+            log.error("Discovery: unexpected failure on %s → %s", fn, exc)
+            # If we somehow got here without a baseline, try to write one
+            if not disc_log.get(fn, {}).get("skill_name"):
+                disc_log[fn] = {
+                    "processed_at":     _now_iso(),
+                    "skill_name":       None,
+                    "action":           "baseline",
+                    "enrichment_queued": True,
+                    "error":            str(exc)[:200],
+                    "stars":            repo.get("stars", 0),
+                    "_baseline":        True,
+                    "_baseline_reason": "exception_fallback",
+                }
+                try:
+                    de.enqueue(fn, repo.get("stars", 0))
+                except Exception:
+                    pass
             results_detail.append({"repo": fn, "result": "error", "error": str(exc)[:120]})
 
+        save_discovery_log(disc_log)   # save after each repo
         time.sleep(3)   # pause between repos to be a polite API citizen
 
     save_discovery_log(disc_log)
@@ -1034,6 +1166,7 @@ def discover_and_learn() -> dict:
         "repos_processed": len(batch),
         "skills_created":  created,
         "skills_enhanced": enhanced,
+        "baseline":        baseline_count,
         "errors":          errors,
         "detail":          results_detail,
     }
