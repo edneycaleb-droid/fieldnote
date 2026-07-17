@@ -1821,9 +1821,11 @@ def api_provider_status():
 def api_jobs_queued():
     """List all checkpoints in 'queued' or 'degraded' stage awaiting recovery."""
     pending = run_checkpoint.list_pending_checkpoints()
+    stale_count = sum(1 for cp in pending if cp.get("recovery_attempts", 0) >= 3)
     return jsonify({
-        "queued": pending,
-        "count":  len(pending),
+        "queued":      pending,
+        "count":       len(pending),
+        "stale_count": stale_count,
     })
 
 
@@ -1884,6 +1886,29 @@ def api_job_resume(run_id: str):
         "action":   "enhance" if existing_skill_path else "create",
         "recovery_attempts": recovery_attempts,
     })
+
+
+@app.route("/api/jobs/<run_id>/delete", methods=["POST"])
+def api_job_delete(run_id: str):
+    """Manually delete a queued/degraded checkpoint by run_id."""
+    cp = run_checkpoint.load_checkpoint(run_id)
+    if not cp:
+        return jsonify({"ok": False, "error": f"Checkpoint not found: {run_id}"}), 404
+    stage = cp.get("stage", "")
+    if stage not in ("queued", "degraded", "resuming"):
+        return jsonify({"ok": False, "error": f"Checkpoint stage '{stage}' cannot be deleted via this endpoint"}), 400
+    run_checkpoint.delete_checkpoint(run_id)
+    # Record in purge log as a manual deletion
+    run_checkpoint._append_purge_log([{
+        "run_id":            run_id,
+        "skill_name":        cp.get("skill_name"),
+        "video_id":          cp.get("video_id"),
+        "queued_at":         cp.get("queued_at"),
+        "recovery_attempts": cp.get("recovery_attempts", 0),
+        "reason":            "manually_deleted",
+        "purged_at":         datetime.now(timezone.utc).isoformat(timespec="seconds"),
+    }])
+    return jsonify({"ok": True, "run_id": run_id, "skill_name": cp.get("skill_name")})
 
 
 @app.route("/api/settings/paid-fallback", methods=["POST"])
@@ -2507,7 +2532,7 @@ def _update_brain(skill: dict, skill_name: str) -> None:
 
 @app.route("/api/activity")
 def api_activity():
-    """Recent skill creation/enhancement history, newest first."""
+    """Recent skill creation/enhancement history + purge events, newest first."""
     limit = min(int(request.args.get("limit") or 30), 200)
     index = load_index()
     events = []
@@ -2524,6 +2549,17 @@ def api_activity():
                 "action": "create", "source_title": meta.get("source_title",""),
                 "source_url": meta.get("source_url",""), "timestamp": meta.get("updated_at",""),
             })
+    # Include purge events from the checkpoint purge log
+    for p in run_checkpoint.load_purge_log():
+        reason_label = "manually deleted" if p.get("reason") == "manually_deleted" else "auto-purged (stale)"
+        events.append({
+            "skill":        p.get("skill_name") or p.get("run_id", ""),
+            "title":        p.get("skill_name") or "Degraded draft",
+            "action":       "purge",
+            "source_title": reason_label,
+            "source_url":   "",
+            "timestamp":    p.get("purged_at", ""),
+        })
     events.sort(key=lambda x: x["timestamp"], reverse=True)
     return jsonify({"activity": events[:limit], "total": len(events)})
 
@@ -4142,10 +4178,25 @@ def _boot_scheduler():
         """
         Auto-recovery: find queued checkpoints and resume any that can run now.
         Called every 5 minutes by the scheduler.
+        Also purges checkpoints older than 7 days that exceeded the retry limit.
         """
+        # ── Step 1: purge stale checkpoints (max retries + older than 7 days) ──
+        try:
+            purged = run_checkpoint.purge_stale_checkpoints()
+            for p in purged:
+                log.info(
+                    "recover_queued_jobs: auto-purged stale checkpoint %s "
+                    "(skill=%s, attempts=%d, reason=%s)",
+                    p.get("run_id"), p.get("skill_name"),
+                    p.get("recovery_attempts", 0), p.get("reason"),
+                )
+        except Exception as exc:
+            log.error("recover_queued_jobs: purge step failed: %s", exc)
+            purged = []
+
         pending = run_checkpoint.list_pending_checkpoints()
         if not pending:
-            return {"recovered": 0, "skipped": 0}
+            return {"recovered": 0, "skipped": 0, "purged": len(purged)}
 
         # Check if any free provider is healthy
         statuses = provider_router.provider_status()

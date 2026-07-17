@@ -138,6 +138,117 @@ def list_pending_checkpoints() -> list[dict]:
     return results
 
 
+_STALE_DAYS             = 7
+_MAX_RECOVERY_ATTEMPTS  = 3
+_PURGE_LOG_FILE         = os.path.join(_CHECKPOINT_DIR, "_purge_log.json")
+
+
+def list_stale_checkpoints() -> list[dict]:
+    """
+    Return queued/degraded checkpoints that have exhausted auto-recovery
+    (recovery_attempts >= 3) AND are older than 7 days.
+    These will never self-recover and should be purged.
+    """
+    _ensure_dir()
+    cutoff = datetime.now(timezone.utc).timestamp() - _STALE_DAYS * 86400
+    results: list[dict] = []
+    try:
+        for fname in os.listdir(_CHECKPOINT_DIR):
+            if not fname.endswith(".json") or fname.endswith(".tmp"):
+                continue
+            if fname.startswith("_"):   # skip meta files like _purge_log.json
+                continue
+            fpath = os.path.join(_CHECKPOINT_DIR, fname)
+            try:
+                with open(fpath, encoding="utf-8") as fh:
+                    cp = json.load(fh)
+                if cp.get("stage", "") not in ("queued", "degraded"):
+                    continue
+                if cp.get("recovery_attempts", 0) < _MAX_RECOVERY_ATTEMPTS:
+                    continue
+                # Must also be older than STALE_DAYS
+                age_ts = cp.get("queued_at") or cp.get("timestamp", "")
+                if age_ts:
+                    try:
+                        if datetime.fromisoformat(age_ts).timestamp() > cutoff:
+                            continue   # not old enough yet
+                    except Exception:
+                        pass
+                results.append(cp)
+            except Exception:
+                continue
+    except Exception as exc:
+        log.error("list_stale_checkpoints failed: %s", exc)
+    return results
+
+
+def purge_stale_checkpoints() -> list[dict]:
+    """
+    Delete all stale checkpoints (exhausted retries + older than 7 days).
+    Appends each purged entry to the persistent purge log.
+    Returns the list of purged checkpoint dicts.
+    """
+    stale  = list_stale_checkpoints()
+    purged: list[dict] = []
+    now    = _now_iso()
+    for cp in stale:
+        run_id = cp.get("run_id")
+        if not run_id:
+            continue
+        delete_checkpoint(run_id)
+        entry = {
+            "run_id":            run_id,
+            "skill_name":        cp.get("skill_name"),
+            "video_id":          cp.get("video_id"),
+            "queued_at":         cp.get("queued_at"),
+            "recovery_attempts": cp.get("recovery_attempts", 0),
+            "reason":            "max_retries_exceeded_and_stale",
+            "purged_at":         now,
+        }
+        purged.append(entry)
+        log.info(
+            "Purged stale checkpoint: %s (skill=%s, attempts=%d)",
+            run_id, cp.get("skill_name"), cp.get("recovery_attempts", 0),
+        )
+    if purged:
+        _append_purge_log(purged)
+    return purged
+
+
+def _append_purge_log(entries: list[dict]) -> None:
+    """Append purge events to the persistent purge log file."""
+    _ensure_dir()
+    existing: list = []
+    try:
+        if os.path.exists(_PURGE_LOG_FILE):
+            with open(_PURGE_LOG_FILE, encoding="utf-8") as fh:
+                existing = json.load(fh)
+    except Exception:
+        existing = []
+    combined = existing + entries
+    # Keep the most recent 500 entries
+    combined = combined[-500:]
+    try:
+        tmp = _PURGE_LOG_FILE + ".tmp"
+        with open(tmp, "w", encoding="utf-8") as fh:
+            json.dump(combined, fh, ensure_ascii=False, indent=2)
+        os.replace(tmp, _PURGE_LOG_FILE)
+    except Exception as exc:
+        log.error("_append_purge_log failed: %s", exc)
+
+
+def load_purge_log() -> list[dict]:
+    """Return all recorded purge events, newest first."""
+    try:
+        if os.path.exists(_PURGE_LOG_FILE):
+            with open(_PURGE_LOG_FILE, encoding="utf-8") as fh:
+                entries = json.load(fh)
+            return list(reversed(entries))
+    except Exception:
+        pass
+    return []
+
+
 def checkpoint_for_video(video_id: str) -> Optional[dict]:
     """
     Find the most recent checkpoint for a given video_id.
