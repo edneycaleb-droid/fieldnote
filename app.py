@@ -1463,6 +1463,9 @@ def run_job(job_id: str, url: str, video_id: str):
                 "success",
             )
 
+            # Clean up checkpoint on successful completion
+            run_checkpoint.delete_checkpoint(run_id)
+
             q.put({
                 "type":              "done",
                 "ok":                True,
@@ -1484,11 +1487,11 @@ def run_job(job_id: str, url: str, video_id: str):
                 "receipt": {
                     "transcript_words":  word_count,
                     "transcript_method": method,
-                    "is_degraded":      getattr(trans_result, "is_degraded",     False),
-                    "degraded_reason":  getattr(trans_result, "degraded_reason", None),
-                    "stage_log":        getattr(trans_result, "stage_log",        []),
-                    "content_hash":     getattr(trans_result, "content_hash",     ""),
-                    "fallback_reason":  getattr(trans_result, "fallback_reason",  None),
+                    "is_degraded":      getattr(trans_result, "is_degraded",     False) if trans_result else False,
+                    "degraded_reason":  getattr(trans_result, "degraded_reason", None) if trans_result else None,
+                    "stage_log":        getattr(trans_result, "stage_log",        []) if trans_result else [],
+                    "content_hash":     getattr(trans_result, "content_hash",     "") if trans_result else "",
+                    "fallback_reason":  getattr(trans_result, "fallback_reason",  None) if trans_result else None,
                     "outcome":          "success",
                 },
                 "action":            action,
@@ -1691,8 +1694,13 @@ def process():
     if existing and not _jobs.get(existing, {}).get("done", True):
         return jsonify({"job_id": existing, "already_running": True})
 
+    # Read paid-fallback toggle from request header
+    allow_paid = request.headers.get("X-Allow-Paid", "0") == "1"
+    if allow_paid:
+        provider_router.set_paid_fallback(True)
+
     job_id        = str(uuid.uuid4())[:8]
-    _jobs[job_id] = {"queue": queue.Queue(), "done": False}
+    _jobs[job_id] = {"queue": queue.Queue(), "done": False, "allow_paid": allow_paid}
     _video_active[video_id] = job_id
     threading.Thread(
         target=run_job, args=(job_id, url, video_id), daemon=True
