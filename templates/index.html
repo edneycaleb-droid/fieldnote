@@ -4652,6 +4652,11 @@ function esc(s) {
 }
 
 // ── Startup ───────────────────────────────────────────────────────────────────
+_initPaidFallback();
+
+// Poll provider dashboard every 60s when it's open
+setInterval(() => { if (_providerDashOpen) refreshProviderDash(); }, 60000);
+
 // ── Integrations tab ──────────────────────────────────────────────────────────
 
 let _integLoaded  = false;
