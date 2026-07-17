@@ -815,9 +815,10 @@
       ]
     },
     "Agent Capabilities": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "ragflow_deployment"
+        "ragflow_deployment",
+        "superagi_building_autonomous_agents"
       ]
     },
     "LightRAG": {
@@ -927,6 +928,42 @@
       "freq": 1,
       "skills": [
         "graphrag_deployment"
+      ]
+    },
+    "Autonomous AI Agents": {
+      "freq": 1,
+      "skills": [
+        "superagi_building_autonomous_agents"
+      ]
+    },
+    "Agent Memory Storage": {
+      "freq": 1,
+      "skills": [
+        "superagi_building_autonomous_agents"
+      ]
+    },
+    "Token Usage": {
+      "freq": 1,
+      "skills": [
+        "superagi_building_autonomous_agents"
+      ]
+    },
+    "Agent Performance Telemetry": {
+      "freq": 1,
+      "skills": [
+        "superagi_building_autonomous_agents"
+      ]
+    },
+    "Vector DBs": {
+      "freq": 1,
+      "skills": [
+        "superagi_building_autonomous_agents"
+      ]
+    },
+    "Performance Telemetry": {
+      "freq": 1,
+      "skills": [
+        "superagi_building_autonomous_agents"
       ]
     }
   },
@@ -1253,14 +1290,15 @@
       ]
     },
     "Docker": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "astrbot_deployment",
         "build_production_ready_llm_applications_with_haystack",
         "ragflow_deployment",
         "lightrag_deployment",
         "deploying_retrieval_augmented_generation_with_ragflow",
-        "graphrag_deployment"
+        "graphrag_deployment",
+        "superagi_building_autonomous_agents"
       ]
     },
     "Docker Compose": {
@@ -1752,6 +1790,60 @@
       "freq": 1,
       "skills": [
         "graphrag_deployment"
+      ]
+    },
+    "SuperAGI": {
+      "freq": 1,
+      "skills": [
+        "superagi_building_autonomous_agents"
+      ]
+    },
+    "SuperAGI Cloud": {
+      "freq": 1,
+      "skills": [
+        "superagi_building_autonomous_agents"
+      ]
+    },
+    "Local LLMs": {
+      "freq": 1,
+      "skills": [
+        "superagi_building_autonomous_agents"
+      ]
+    },
+    "Digital Ocean": {
+      "freq": 1,
+      "skills": [
+        "superagi_building_autonomous_agents"
+      ]
+    },
+    "docker-compose": {
+      "freq": 1,
+      "skills": [
+        "superagi_building_autonomous_agents"
+      ]
+    },
+    "docker-compose-gpu.yml": {
+      "freq": 1,
+      "skills": [
+        "superagi_building_autonomous_agents"
+      ]
+    },
+    "Vector DBs": {
+      "freq": 1,
+      "skills": [
+        "superagi_building_autonomous_agents"
+      ]
+    },
+    "ReAct LLMs": {
+      "freq": 1,
+      "skills": [
+        "superagi_building_autonomous_agents"
+      ]
+    },
+    "Action Console": {
+      "freq": 1,
+      "skills": [
+        "superagi_building_autonomous_agents"
       ]
     }
   },
@@ -2306,6 +2398,38 @@
         "docker"
       ],
       "step_count": 8
+    },
+    "superagi_building_autonomous_agents": {
+      "concepts": [
+        "Autonomous AI Agents",
+        "Agent Capabilities",
+        "Agent Memory Storage",
+        "Token Usage",
+        "Agent Performance Telemetry",
+        "Vector DBs",
+        "Performance Telemetry"
+      ],
+      "tools": [
+        "SuperAGI",
+        "SuperAGI Cloud",
+        "Local LLMs",
+        "Digital Ocean",
+        "Docker",
+        "docker-compose",
+        "docker-compose-gpu.yml",
+        "Vector DBs",
+        "ReAct LLMs",
+        "Action Console"
+      ],
+      "tags": [
+        "autonomous_ai",
+        "agi",
+        "ai_framework",
+        "machine_learning",
+        "deep_learning",
+        "ai_toolkit"
+      ],
+      "step_count": 11
     }
   },
   "relationships": {
@@ -2423,6 +2547,9 @@
         "LLMs",
         "Docker Compose",
         "Docker"
+      ],
+      "superagi_building_autonomous_agents": [
+        "Docker"
       ]
     },
     "openai_agents_sdk": {
@@ -2480,6 +2607,9 @@
       "graphrag_deployment": [
         "Docker",
         "LLM"
+      ],
+      "superagi_building_autonomous_agents": [
+        "Docker"
       ]
     },
     "swanlab_ai_training_analysis_platform": {
@@ -2644,6 +2774,10 @@
         "Retrieval-Augmented Generation",
         "Docker Compose",
         "Docker"
+      ],
+      "superagi_building_autonomous_agents": [
+        "Docker",
+        "Agent Capabilities"
       ]
     },
     "lightrag_deployment": {
@@ -2669,6 +2803,9 @@
       ],
       "graphrag_deployment": [
         "Docker Compose",
+        "Docker"
+      ],
+      "superagi_building_autonomous_agents": [
         "Docker"
       ]
     },
@@ -2726,6 +2863,9 @@
       "graphrag_deployment": [
         "Docker Compose",
         "Docker"
+      ],
+      "superagi_building_autonomous_agents": [
+        "Docker"
       ]
     },
     "graphrag_deployment": {
@@ -2756,9 +2896,33 @@
       "deploying_retrieval_augmented_generation_with_ragflow": [
         "Docker Compose",
         "Docker"
+      ],
+      "superagi_building_autonomous_agents": [
+        "Docker"
+      ]
+    },
+    "superagi_building_autonomous_agents": {
+      "astrbot_deployment": [
+        "Docker"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "Docker"
+      ],
+      "ragflow_deployment": [
+        "Docker",
+        "Agent Capabilities"
+      ],
+      "lightrag_deployment": [
+        "Docker"
+      ],
+      "deploying_retrieval_augmented_generation_with_ragflow": [
+        "Docker"
+      ],
+      "graphrag_deployment": [
+        "Docker"
       ]
     }
   },
-  "updated_at": "2026-07-17T13:46:28.128969+00:00",
-  "total_skills": 21
+  "updated_at": "2026-07-17T14:30:42.634618+00:00",
+  "total_skills": 22
 }
