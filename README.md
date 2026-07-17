@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **17 skills** · Last synced: 2026-07-17 04:13 UTC
+> **18 skills** · Last synced: 2026-07-17 04:14 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Deploying LightRAG: A Lightweight, Graph-Based RAG Framework](skills/lightrag_deployment.md) | LightRAG is a lightweight knowledge-graph RAG framework that efficiently indexes | `uv` `pip` `Docker` `OpenSearch` | `ai` `automation` `orchestration` |
 | [Deploying RAGFlow for Retrieval-Augmented Generation with Enhanced Efficiency and Precision](skills/ragflow_deployment.md) | This skill teaches how to deploy RAGFlow, a leading open-source Retrieval-Augmen | `Docker` `Docker Compose` `RAGFlow` `Elasticsearch` | `ai` `deployment` `ragflow` |
 | [Building a Hermes Agent Setup for AI Self-Improvement with Human-in-the-Loop Integration](skills/hermes_agent_setup.md) | This skill teaches how to set up a Hermes agent for AI self-improvement, includi | `Hermes Agent` `Claude` `Open Claw` `Contabo` | `ai` `automation` `productivity` |
 | [Building a Hermes Agent Setup for AI Self-Improvement](skills/building_ai_agents.md) | This skill teaches how to set up a Hermes agent for AI self-improvement, includi | `Hermes Agent` `Claude` `Open Claw` `Contabo` | `ai` `automation` `productivity` |
