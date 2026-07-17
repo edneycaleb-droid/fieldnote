@@ -1130,6 +1130,14 @@ def run_job(job_id: str, url: str, video_id: str):
         _jobs[job_id]["stage"] = name
         q.put({"type": "stage", "stage": name, "run_id": run_id})
 
+    def _notify_status(_status_dict=None):
+        """Push a provider_status SSE event so the health bar updates instantly."""
+        try:
+            q.put({"type": "provider_status",
+                   "providers": provider_router.provider_status()})
+        except Exception:
+            pass
+
     # Read X-Allow-Paid from job context (set by /process route) — never mutates global
     allow_paid = bool(_jobs[job_id].get("allow_paid", False))
 
@@ -1227,9 +1235,9 @@ def run_job(job_id: str, url: str, video_id: str):
 
             # All three work simultaneously — nobody idles
             # allow_paid is passed explicitly per-job; never mutates global state
-            gpt_f    = pool.submit(_extract_skill_chatgpt, transcript, knowledge_ctx, "", allow_paid) \
+            gpt_f    = pool.submit(_extract_skill_chatgpt, transcript, knowledge_ctx, "", allow_paid, emit, _notify_status) \
                        if not cached_skill_a else None
-            groq_f   = pool.submit(_extract_skill_groq,   transcript, knowledge_ctx, "", allow_paid) \
+            groq_f   = pool.submit(_extract_skill_groq,   transcript, knowledge_ctx, "", allow_paid, emit, _notify_status) \
                        if not cached_skill_b else None
             github_f = pool.submit(github_agent.search_tools, quick_tools, emit)
 
@@ -1342,7 +1350,7 @@ def run_job(job_id: str, url: str, video_id: str):
 
             # Judge synthesizes the winner — allow_paid passed explicitly per-job
             set_stage("judge")
-            skill = _judge_arena(skill_a, skill_b, github_ctx, emit, allow_paid=allow_paid)
+            skill = _judge_arena(skill_a, skill_b, github_ctx, emit, allow_paid=allow_paid, notify_fn=_notify_status)
             skill = pipeline_guard.sanitize(skill, emit)
 
             action         = skill.get("action", "create")
@@ -1362,8 +1370,8 @@ def run_job(job_id: str, url: str, video_id: str):
             if action == "enhance" and existing_md:
                 emit(f"🔄  Re-running ChatGPT with existing '{skill_name}' content …", "info")
                 try:
-                    skill_a2 = _extract_skill_chatgpt(transcript, knowledge_ctx, existing_md, allow_paid)
-                    skill    = _judge_arena(skill_a2, skill_b, github_ctx, emit, allow_paid=allow_paid)
+                    skill_a2 = _extract_skill_chatgpt(transcript, knowledge_ctx, existing_md, allow_paid, emit, _notify_status)
+                    skill    = _judge_arena(skill_a2, skill_b, github_ctx, emit, allow_paid=allow_paid, notify_fn=_notify_status)
                     skill    = pipeline_guard.sanitize(skill, emit)
                     action         = skill.get("action", "enhance")
                     enhance_target = skill.get("enhance_target")
