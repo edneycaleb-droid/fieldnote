@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **20 skills** · Last synced: 2026-07-17 13:43 UTC
+> **20 skills** · Last synced: 2026-07-17 13:44 UTC
 
 ---
 
@@ -9,10 +9,10 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Deploying LightRAG for Efficient Retrieval-Augmented Generation](skills/lightrag_deployment.md) | LightRAG is a lightweight, graph-based RAG framework designed for high scalabili | `uv` `pip` `Docker` `Docker Compose` | `ai` `automation` `orchestration` |
 | [Deploying Retrieval-Augmented Generation with RAGFlow](skills/deploying_retrieval_augmented_generation_with_ragflow.md) | RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine tha | `Docker` `Docker Compose` `RAGFlow` `Elasticsearch` | `ai` `deployment` `rag` |
 | [Moonshot Kimiko 3: A 2.8 Trillion Parameter Open-Weight Model for AI Self-Improvement and Automation](skills/moonshot_kimiko_3_skill.md) | This skill teaches how to use Moonshot's Kimiko 3, a 2.8 trillion parameter open | `Open Claw` `Moonshot` `Kimiko 3` `Open Weights` | `ai` `automation` `moonshot` |
 | [Moonshot Kimiko 3: A 2.8 Trillion Parameter Open-Weight Model for AI Self-Improvement and Automation](skills/moonshot_kimiko_3.md) | This skill teaches how to use Moonshot's Kimiko 3, a 2.8 trillion parameter open | `Open Claw` `Moonshot` `Kimiko 3` `Open Weights` | `ai` `self-improvement` `moonshot` |
-| [Deploying LightRAG: A Lightweight, Graph-Based RAG Framework](skills/lightrag_deployment.md) | LightRAG is a lightweight knowledge-graph RAG framework that efficiently indexes | `uv` `pip` `Docker` `OpenSearch` | `ai` `automation` `orchestration` |
 | [Deploying RAGFlow for Retrieval-Augmented Generation with Enhanced Efficiency and Precision](skills/ragflow_deployment.md) | This skill teaches how to deploy RAGFlow, a leading open-source Retrieval-Augmen | `Docker` `Docker Compose` `RAGFlow` `Elasticsearch` | `ai` `deployment` `ragflow` |
 | [Building a Hermes Agent Setup for AI Self-Improvement with Human-in-the-Loop Integration](skills/hermes_agent_setup.md) | This skill teaches how to set up a Hermes agent for AI self-improvement, includi | `Hermes Agent` `Claude` `Open Claw` `Contabo` | `ai` `automation` `productivity` |
 | [Building a Hermes Agent Setup for AI Self-Improvement](skills/building_ai_agents.md) | This skill teaches how to set up a Hermes agent for AI self-improvement, includi | `Hermes Agent` `Claude` `Open Claw` `Contabo` | `ai` `automation` `productivity` |
