@@ -4765,11 +4765,154 @@ function switchMainTab(name) {
     if (!_integLoaded) loadIntegrations();
     else refreshIntegBadge();
     startAgentPoll();
+    loadQueuedJobs();
   } else {
     if (lib)   lib.style.display   = '';
     if (integ) integ.style.display = 'none';
     stopAgentPoll();
   }
+}
+
+/* ── Queued Jobs panel ─────────────────────────────────────────────────── */
+let _qjobsOpen = false;
+
+function toggleQjobs() {
+  _qjobsOpen = !_qjobsOpen;
+  document.getElementById('qjobs-body').style.display = _qjobsOpen ? '' : 'none';
+  document.getElementById('qjobs-toggle-icon').textContent = _qjobsOpen ? '▲' : '▼';
+}
+
+async function loadQueuedJobs() {
+  try {
+    const data = await fetch('/api/jobs/queued').then(r => r.json());
+    renderQueuedJobs(data);
+  } catch(e) { /* silent */ }
+}
+
+function renderQueuedJobs(data) {
+  const panel  = document.getElementById('qjobs-panel');
+  const list   = document.getElementById('qjobs-list');
+  const badge  = document.getElementById('qjobs-badge');
+  const staleBar = document.getElementById('qjobs-stale-bar');
+  const staleCnt = document.getElementById('qjobs-stale-count');
+  if (!panel || !list) return;
+
+  const jobs  = data.queued || [];
+  const count = data.count  || 0;
+  const stale = data.stale_count || 0;
+
+  panel.style.display = '';   // always show the panel heading
+
+  // Badge
+  if (count > 0) {
+    badge.textContent = count;
+    badge.classList.remove('hidden');
+    if (stale > 0) badge.classList.add('stale');
+    else            badge.classList.remove('stale');
+  } else {
+    badge.classList.add('hidden');
+  }
+
+  // Stale warning bar
+  if (stale > 0) {
+    staleCnt.textContent = stale;
+    staleBar.style.display = '';
+  } else {
+    staleBar.style.display = 'none';
+  }
+
+  if (!jobs.length) {
+    list.innerHTML = '<div class="qjobs-empty">No queued or degraded jobs — all clear ✓</div>';
+    return;
+  }
+
+  list.innerHTML = jobs.map(cp => {
+    const runId     = cp.run_id    || '';
+    const skillName = cp.skill_name|| cp.video_id || runId.slice(0,8);
+    const stage     = cp.stage     || 'queued';
+    const attempts  = cp.recovery_attempts || 0;
+    const maxed     = attempts >= 3;
+    const queuedAt  = cp.queued_at || cp.timestamp || '';
+    const stageCls  = stage === 'degraded' ? 'qjob-stage-degraded' : 'qjob-stage-queued';
+    const rowCls    = maxed ? 'qjob-row stale' : 'qjob-row';
+    const attCls    = maxed ? 'qjob-attempts maxed' : 'qjob-attempts';
+    const resumeDisabled = maxed ? 'disabled title="Max retries reached — delete and re-submit instead"' : '';
+    return `<div class="${rowCls}" id="qjob-${esc(runId)}">
+      <div class="qjob-info">
+        <div class="qjob-name">${esc(skillName)}</div>
+        <div class="qjob-meta">
+          <span class="qjob-stage-pill ${stageCls}">${esc(stage)}</span>
+          <span class="${attCls}">⟳ ${attempts}/3 attempts</span>
+          ${queuedAt ? `<span>🕒 ${relTime(queuedAt)}</span>` : ''}
+          ${cp.url ? `<a href="${esc(cp.url)}" target="_blank" style="color:var(--accent);font-size:.7rem;text-decoration:none" title="${esc(cp.url)}">▶ video</a>` : ''}
+        </div>
+      </div>
+      <div class="qjob-actions">
+        <button class="qjob-resume-btn" ${resumeDisabled}
+          onclick="resumeQueuedJob('${esc(runId)}', this)">▶ Resume</button>
+        <button class="qjob-delete-btn"
+          onclick="deleteQueuedJob('${esc(runId)}', this)">✕ Delete</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+async function resumeQueuedJob(runId, btn) {
+  btn.disabled = true;
+  btn.textContent = '…';
+  try {
+    const r = await fetch(`/api/jobs/${encodeURIComponent(runId)}/resume`, {method:'POST'});
+    const d = await r.json();
+    if (d.ok) {
+      btn.textContent = '✓ Queued';
+      btn.style.color = 'var(--green)';
+      setTimeout(() => loadQueuedJobs(), 1500);
+    } else {
+      btn.textContent = '▶ Resume';
+      btn.disabled = false;
+      alert(d.error || 'Resume failed');
+    }
+  } catch(e) {
+    btn.textContent = '▶ Resume';
+    btn.disabled = false;
+  }
+}
+
+async function deleteQueuedJob(runId, btn) {
+  if (!confirm('Delete this queued job? The degraded draft file (if any) will remain in your library.')) return;
+  btn.disabled = true;
+  btn.textContent = '…';
+  try {
+    const r = await fetch(`/api/jobs/${encodeURIComponent(runId)}/delete`, {method:'POST'});
+    const d = await r.json();
+    if (d.ok) {
+      const row = document.getElementById('qjob-' + runId);
+      if (row) row.remove();
+      await loadQueuedJobs();
+    } else {
+      btn.textContent = '✕ Delete';
+      btn.disabled = false;
+      alert(d.error || 'Delete failed');
+    }
+  } catch(e) {
+    btn.textContent = '✕ Delete';
+    btn.disabled = false;
+  }
+}
+
+async function purgeAllStaleJobs() {
+  const btn = document.getElementById('qjobs-purge-all-btn');
+  if (!btn) return;
+  if (!confirm('Auto-purge all stale jobs (>7 days old, max retries reached)? This cannot be undone.')) return;
+  btn.disabled = true;
+  btn.textContent = 'Purging…';
+  try {
+    // Trigger the scheduler's recover_queued job which runs the purge step first
+    await fetch('/api/scheduler/run/recover_queued', {method:'POST'});
+    await new Promise(r => setTimeout(r, 1200));
+    await loadQueuedJobs();
+  } catch(e) { /* silent */ }
+  if (btn) { btn.disabled = false; btn.textContent = '🗑 Purge stale'; }
 }
 
 /* ── Load & render ──────────────────────────────────────────────────────── */
