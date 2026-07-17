@@ -1,15 +1,17 @@
 {
   "concepts": {
     "AI agents": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
-        "building_ai_agents"
+        "building_ai_agents",
+        "hermes_agent_setup"
       ]
     },
     "Automation": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
-        "building_ai_agents"
+        "building_ai_agents",
+        "hermes_agent_setup"
       ]
     },
     "Reverse prompting": {
@@ -303,15 +305,17 @@
       ]
     },
     "Personalization": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
-        "building_ai_agents"
+        "building_ai_agents",
+        "hermes_agent_setup"
       ]
     },
     "Integration": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
-        "building_ai_agents"
+        "building_ai_agents",
+        "hermes_agent_setup"
       ]
     },
     "Repeatability": {
@@ -357,9 +361,10 @@
       ]
     },
     "Human-in-the-loop": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "building_resilient_ai_agents_with_langgraph"
+        "building_resilient_ai_agents_with_langgraph",
+        "hermes_agent_setup"
       ]
     },
     "Stateful agents": {
@@ -775,6 +780,12 @@
       "skills": [
         "building_ai_agents"
       ]
+    },
+    "MCP (Model Context Protocol)": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_setup"
+      ]
     }
   },
   "tools": {
@@ -847,11 +858,12 @@
       ]
     },
     "Claude": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
-        "higsfield_integration"
+        "higsfield_integration",
+        "hermes_agent_setup"
       ]
     },
     "Google Drive": {
@@ -981,9 +993,10 @@
       ]
     },
     "Hermes Agent": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
-        "building_ai_agents"
+        "building_ai_agents",
+        "hermes_agent_setup"
       ]
     },
     "Firecrawl": {
@@ -1333,11 +1346,12 @@
       ]
     },
     "Open Claw": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "moonshot_kimiko_automation",
         "moonshot_kimiko_3",
-        "building_ai_agents"
+        "building_ai_agents",
+        "hermes_agent_setup"
       ]
     },
     "Moonshot": {
@@ -1434,15 +1448,41 @@
       ]
     },
     "Contabo": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "building_ai_agents"
+        "building_ai_agents",
+        "hermes_agent_setup"
       ]
     },
     "RackNerd": {
+      "freq": 2,
+      "skills": [
+        "building_ai_agents",
+        "hermes_agent_setup"
+      ]
+    },
+    "Discord": {
       "freq": 1,
       "skills": [
-        "building_ai_agents"
+        "hermes_agent_setup"
+      ]
+    },
+    "MCP (Model Context Protocol)": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_setup"
+      ]
+    },
+    "KOBA789/human-in-the-loop": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_setup"
+      ]
+    },
+    "nirholas/mcp-notify": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_setup"
       ]
     }
   },
@@ -1827,6 +1867,36 @@
         "llm"
       ],
       "step_count": 5
+    },
+    "hermes_agent_setup": {
+      "concepts": [
+        "AI agents",
+        "Personalization",
+        "Automation",
+        "Integration",
+        "Human-in-the-loop",
+        "MCP (Model Context Protocol)"
+      ],
+      "tools": [
+        "Hermes Agent",
+        "Claude",
+        "Open Claw",
+        "Contabo",
+        "RackNerd",
+        "Discord",
+        "MCP (Model Context Protocol)",
+        "KOBA789/human-in-the-loop",
+        "nirholas/mcp-notify"
+      ],
+      "tags": [
+        "ai",
+        "automation",
+        "productivity",
+        "hermes",
+        "human-in-the-loop",
+        "mcp"
+      ],
+      "step_count": 8
     }
   },
   "relationships": {
@@ -1850,6 +1920,14 @@
         "Open Claw"
       ],
       "moonshot_kimiko_3": [
+        "Open Claw"
+      ],
+      "hermes_agent_setup": [
+        "Integration",
+        "Claude",
+        "Personalization",
+        "Automation",
+        "Hermes Agent",
         "Open Claw"
       ]
     },
@@ -1893,6 +1971,9 @@
       ],
       "pydantic_ai_framework": [
         "LangChain"
+      ],
+      "hermes_agent_setup": [
+        "Human-in-the-loop"
       ]
     },
     "astrbot_deployment": {
@@ -1967,6 +2048,9 @@
       ],
       "higsfield_integration": [
         "Claude"
+      ],
+      "hermes_agent_setup": [
+        "Claude"
       ]
     },
     "moonshot_kimiko_automation": {
@@ -1979,6 +2063,9 @@
         "Open Weights"
       ],
       "building_ai_agents": [
+        "Open Claw"
+      ],
+      "hermes_agent_setup": [
         "Open Claw"
       ]
     },
@@ -1993,6 +2080,9 @@
       ],
       "building_ai_agents": [
         "Open Claw"
+      ],
+      "hermes_agent_setup": [
+        "Open Claw"
       ]
     },
     "higsfield_integration": {
@@ -2006,6 +2096,9 @@
         "MCP"
       ],
       "mastering_loop_engineering": [
+        "Claude"
+      ],
+      "hermes_agent_setup": [
         "Claude"
       ]
     },
@@ -2026,8 +2119,33 @@
         "Transformers"
       ]
     },
-    "ragaai_catalyst": {}
+    "ragaai_catalyst": {},
+    "hermes_agent_setup": {
+      "building_ai_agents": [
+        "Integration",
+        "Claude",
+        "Personalization",
+        "Automation",
+        "Hermes Agent",
+        "Open Claw"
+      ],
+      "building_resilient_ai_agents_with_langgraph": [
+        "Human-in-the-loop"
+      ],
+      "mastering_loop_engineering": [
+        "Claude"
+      ],
+      "moonshot_kimiko_automation": [
+        "Open Claw"
+      ],
+      "moonshot_kimiko_3": [
+        "Open Claw"
+      ],
+      "higsfield_integration": [
+        "Claude"
+      ]
+    }
   },
-  "updated_at": "2026-07-17T03:44:17.369734+00:00",
-  "total_skills": 15
+  "updated_at": "2026-07-17T03:47:07.923407+00:00",
+  "total_skills": 16
 }
