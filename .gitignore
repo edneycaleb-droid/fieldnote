@@ -32,3 +32,6 @@ replit.nix
 # faster-whisper model cache (downloaded automatically, not committed)
 .cache/
 fieldnote_mcp/integration_agent_status.json
+fieldnote_skills/_brain.json
+fieldnote_skills/_discovery_log.json
+fieldnote_skills/_index.json
