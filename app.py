@@ -799,7 +799,15 @@ def _resolve_tools_in_skill(skill: dict, context: str = "") -> dict:
                 new_tools.append(tool)
                 continue
             match = resolve_tool_name(raw)
+<<<<<<< Updated upstream
             if match and match.get("confidence", 0) >= 0.90:
+=======
+<<<<<<< HEAD
+            if match and match.get("confidence", 0) >= 0.90 and match.get("is_taught", False):
+=======
+            if match and match.get("confidence", 0) >= 0.90:
+>>>>>>> 48a9224 (sync(scheduler): 1 source file(s) updated)
+>>>>>>> Stashed changes
                 canonical = match["canonical_name"]
                 if canonical != raw:
                     log.info("mcp_resolve[%s]: %r → %r (conf=%.2f)",

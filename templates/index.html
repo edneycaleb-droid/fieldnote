@@ -37,8 +37,9 @@ header { background: var(--surface); border-bottom: 1px solid var(--border);
 .stat-n { font-size: 0.95rem; font-weight: 700; color: var(--accent); line-height: 1; }
 .stat-l { font-size: 0.6rem; color: var(--muted); text-transform: uppercase;
           letter-spacing: 0.06em; }
-.stat-mcp  .stat-n { color: var(--purple); }
-.stat-repo .stat-n { color: var(--blue); }
+.stat-mcp      .stat-n { color: var(--purple); }
+.stat-repo     .stat-n { color: var(--blue); }
+.stat-baseline .stat-n { color: var(--amber); }
 
 .container { max-width: 700px; margin: 0 auto; padding: 24px 16px 80px; }
 .container.nb-active { max-width: 1040px; }
@@ -257,6 +258,26 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
 .dot-pend  { background: var(--muted); }
 .config-path { font-size: 0.72rem; color: var(--muted); font-family: monospace; margin-top: 10px; }
 .config-path a { color: var(--accent); text-decoration: none; }
+
+/* ── Baseline badge ── */
+.badge-baseline {
+  display: inline-flex; align-items: center; gap: 3px;
+  font-size: 0.62rem; font-weight: 700; border-radius: 4px;
+  padding: 1px 6px; white-space: nowrap; flex-shrink: 0;
+  background: #1a1200; color: var(--amber); border: 1px solid #3a2a00;
+  cursor: default;
+}
+.baseline-banner {
+  background: #0f0a00; border: 1px solid #4a3000; border-radius: 12px;
+  padding: 10px 14px; margin-bottom: 10px; display: flex; align-items: center;
+  gap: 10px; font-size: 0.82rem; color: #e0a030;
+}
+.baseline-banner-icon { font-size: 1rem; flex-shrink: 0; }
+.baseline-banner-text { flex: 1; line-height: 1.5; }
+.baseline-banner-text strong { color: var(--amber); }
+.baseline-banner-dismiss { background: none; border: none; color: var(--muted);
+  cursor: pointer; font-size: 0.85rem; padding: 0; }
+.baseline-banner-dismiss:hover { color: var(--text); }
 
 /* ── Skill library ── */
 .lib-header { display: flex; align-items: center; justify-content: space-between;
@@ -1651,6 +1672,17 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
       <div class="stat-n" id="stat-mcp">{{ stats.mcp }}</div>
       <div class="stat-l">MCP</div>
     </div>
+    {% if stats.enrichment_queue > 0 %}
+    <div class="stat stat-baseline" title="{{ stats.enrichment_queue }} skill(s) awaiting AI enrichment">
+      <div class="stat-n" id="stat-pending">{{ stats.enrichment_queue }}</div>
+      <div class="stat-l">Pending</div>
+    </div>
+    {% else %}
+    <div class="stat stat-baseline" id="stat-pending-wrap" style="display:none">
+      <div class="stat-n" id="stat-pending">0</div>
+      <div class="stat-l">Pending</div>
+    </div>
+    {% endif %}
   </div>
 </header>
 
@@ -2084,7 +2116,8 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
         {% for s in skills %}
         <a class="skill-row" href="/skills/{{ s.file }}"
            data-title="{{ s.title|lower }}"
-           data-tags="{{ s.tags | join(' ') | lower }}">
+           data-tags="{{ s.tags | join(' ') | lower }}"
+           data-baseline="{{ '1' if s._baseline else '' }}">
           <div class="skill-row-info">
             <div class="skill-row-title">{{ s.title }}</div>
             <div class="skill-row-meta">
@@ -2093,7 +2126,11 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
             </div>
           </div>
           <div class="skill-row-tags">
+            {% if s._baseline %}
+            <span class="badge-baseline" title="AI enrichment pending — will auto-upgrade when providers recover">📄 Baseline</span>
+            {% else %}
             {% for t in s.tags[:2] %}<span class="sr-tag">{{ t }}</span>{% endfor %}
+            {% endif %}
           </div>
           <span class="skill-row-arrow">›</span>
         </a>
@@ -3994,6 +4031,39 @@ function updateStats(s) {
   document.getElementById("stat-pkgs").textContent   = s.packages || 0;
   document.getElementById("stat-repos").textContent  = s.repos    || 0;
   document.getElementById("stat-mcp").textContent    = s.mcp      || 0;
+  // Update enrichment-pending counter
+  const pendingEl   = document.getElementById("stat-pending");
+  const pendingWrap = document.getElementById("stat-pending-wrap");
+  const qDepth      = s.enrichment_queue || 0;
+  if (pendingEl) pendingEl.textContent = qDepth;
+  if (pendingWrap) pendingWrap.style.display = qDepth > 0 ? "" : "none";
+  // Show/hide baseline banner
+  _updateBaselineBanner(s.baseline_count || 0, qDepth);
+}
+
+function _updateBaselineBanner(baselineCount, queueDepth) {
+  let banner = document.getElementById("baseline-enrichment-banner");
+  if (queueDepth > 3 || baselineCount > 3) {
+    if (!banner) {
+      const skillCard = document.getElementById("skill-list");
+      if (!skillCard) return;
+      banner = document.createElement("div");
+      banner.id        = "baseline-enrichment-banner";
+      banner.className = "baseline-banner";
+      banner.innerHTML = `
+        <span class="baseline-banner-icon">📄</span>
+        <span class="baseline-banner-text" id="baseline-banner-text"></span>
+        <button class="baseline-banner-dismiss" onclick="document.getElementById('baseline-enrichment-banner').remove()" title="Dismiss">✕</button>
+      `;
+      skillCard.parentElement.insertBefore(banner, skillCard);
+    }
+    const textEl = document.getElementById("baseline-banner-text");
+    if (textEl) {
+      textEl.innerHTML = `<strong>${queueDepth} baseline skill${queueDepth !== 1 ? "s" : ""}</strong> are waiting for AI enrichment — enrichment runs automatically when providers recover.`;
+    }
+  } else if (banner) {
+    banner.remove();
+  }
 }
 
 // ── Prepend to library ────────────────────────────────────────────────────────
@@ -4002,14 +4072,17 @@ function prependSkill(d) {
   const empty = document.getElementById("lib-empty");
   if (empty) empty.remove();
   const fname    = d.skill_name + ".md";
-  const tags     = (d.tags || []).slice(0, 2);
-  const tagsHtml = tags.map(t => `<span class="sr-tag">${esc(t)}</span>`).join("");
+  const isBaseline = !!d._baseline;
+  const tagsHtml = isBaseline
+    ? `<span class="badge-baseline" title="AI enrichment pending — will auto-upgrade when providers recover">📄 Baseline</span>`
+    : (d.tags || []).slice(0, 2).map(t => `<span class="sr-tag">${esc(t)}</span>`).join("");
   const existing = list.querySelector(`[href="/skills/${fname}"]`);
   if (existing) existing.remove();
   list.insertAdjacentHTML("afterbegin", `
     <a class="skill-row" href="/skills/${fname}"
        data-title="${(d.title||'').toLowerCase()}"
-       data-tags="${(d.tags||[]).join(' ').toLowerCase()}">
+       data-tags="${(d.tags||[]).join(' ').toLowerCase()}"
+       data-baseline="${isBaseline ? '1' : ''}">
       <div class="skill-row-info">
         <div class="skill-row-title">${esc(d.title || fname)}</div>
         <div class="skill-row-meta">${esc(d.source_title||'')} · ${

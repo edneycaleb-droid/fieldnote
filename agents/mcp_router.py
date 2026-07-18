@@ -173,14 +173,42 @@ def route(capability: str) -> Optional[str]:
     return eligible[0].id
 
 
+<<<<<<< Updated upstream
 _CALL_TIMEOUT_S = 30   # per-call end-to-end timeout for tool invocations
 
 
+=======
+<<<<<<< HEAD
+=======
+_CALL_TIMEOUT_S = 30   # per-call end-to-end timeout for tool invocations
+
+
+>>>>>>> 48a9224 (sync(scheduler): 1 source file(s) updated)
+>>>>>>> Stashed changes
 def _call_server(entry_id: str, tool_name: str, args: dict) -> Any:
     """
     Invoke a tool on a running MCP server.
     In Fieldnote's sandbox we use subprocess stdio — start, call, terminate.
     Returns the tool result or raises on failure.
+<<<<<<< Updated upstream
+
+    All subprocess reads use select() with a hard deadline; no call can block
+    indefinitely regardless of server behaviour.
+=======
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+    """
+    import os
+    import select as _select
+    import subprocess
+    import json as _json
+
+    from agents.mcp_registry import get_by_id
+    from agents.mcp_verifier import _build_command, _kill, _notify, _parse_rpc, _OUTPUT_CAP
+<<<<<<< Updated upstream
+=======
+    import subprocess, os, json as _json
+=======
 
     All subprocess reads use select() with a hard deadline; no call can block
     indefinitely regardless of server behaviour.
@@ -192,6 +220,8 @@ def _call_server(entry_id: str, tool_name: str, args: dict) -> Any:
 
     from agents.mcp_registry import get_by_id
     from agents.mcp_verifier import _build_command, _kill, _notify, _parse_rpc, _OUTPUT_CAP
+>>>>>>> 48a9224 (sync(scheduler): 1 source file(s) updated)
+>>>>>>> Stashed changes
 
     entry = get_by_id(entry_id)
     if entry is None:
@@ -201,6 +231,12 @@ def _call_server(entry_id: str, tool_name: str, args: dict) -> Any:
     if not cmd:
         raise RuntimeError(f"no command for {entry_id}")
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+    t0 = time.monotonic()
+=======
+>>>>>>> Stashed changes
     t0       = time.monotonic()
     deadline = t0 + _CALL_TIMEOUT_S
 
@@ -223,12 +259,24 @@ def _call_server(entry_id: str, tool_name: str, args: dict) -> Any:
             raise RuntimeError("call timeout (server closed stdout)")
         return data
 
+<<<<<<< Updated upstream
+=======
+>>>>>>> 48a9224 (sync(scheduler): 1 source file(s) updated)
+>>>>>>> Stashed changes
     proc = subprocess.Popen(
         cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
         stderr=subprocess.PIPE, env={**os.environ}, text=False,
     )
     try:
+<<<<<<< Updated upstream
         # ── initialize ────────────────────────────────────────────────────────
+=======
+<<<<<<< HEAD
+        # initialize
+=======
+        # ── initialize ────────────────────────────────────────────────────────
+>>>>>>> 48a9224 (sync(scheduler): 1 source file(s) updated)
+>>>>>>> Stashed changes
         proc.stdin.write(_json.dumps({  # type: ignore[union-attr]
             "jsonrpc": "2.0", "id": 1, "method": "initialize",
             "params": {
@@ -238,27 +286,56 @@ def _call_server(entry_id: str, tool_name: str, args: dict) -> Any:
             },
         }).encode() + b"\n")
         proc.stdin.flush()  # type: ignore[union-attr]
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+        raw = proc.stdout.read(_OUTPUT_CAP)  # type: ignore[union-attr]
+=======
+>>>>>>> Stashed changes
 
         if _timed_out():
             raise RuntimeError("call timeout (before initialize response)")
         raw = _read_bounded()
+<<<<<<< Updated upstream
+=======
+>>>>>>> 48a9224 (sync(scheduler): 1 source file(s) updated)
+>>>>>>> Stashed changes
         init_resp = _parse_rpc(raw)
         if not init_resp or "error" in init_resp:
             raise RuntimeError("initialize failed")
 
         _notify(proc, "notifications/initialized", {})
 
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+        # call tool
+=======
+>>>>>>> Stashed changes
         if _timed_out():
             raise RuntimeError("call timeout (after initialize, before tool call)")
 
         # ── tools/call ────────────────────────────────────────────────────────
+<<<<<<< Updated upstream
+=======
+>>>>>>> 48a9224 (sync(scheduler): 1 source file(s) updated)
+>>>>>>> Stashed changes
         proc.stdin.write(_json.dumps({  # type: ignore[union-attr]
             "jsonrpc": "2.0", "id": 2, "method": "tools/call",
             "params": {"name": tool_name, "arguments": args},
         }).encode() + b"\n")
         proc.stdin.flush()  # type: ignore[union-attr]
+<<<<<<< Updated upstream
 
         raw2 = _read_bounded()
+=======
+<<<<<<< HEAD
+        raw2 = proc.stdout.read(_OUTPUT_CAP)  # type: ignore[union-attr]
+=======
+
+        raw2 = _read_bounded()
+>>>>>>> 48a9224 (sync(scheduler): 1 source file(s) updated)
+>>>>>>> Stashed changes
         tool_resp = _parse_rpc(raw2)
         if not tool_resp:
             raise RuntimeError("no response from tool call")
