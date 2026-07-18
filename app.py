@@ -204,6 +204,7 @@ def list_skills() -> list[dict]:
             "action":       meta.get("action", "create"),
             "created_at":   meta.get("created_at", ""),
             "updated_at":   meta.get("updated_at", ""),
+            "_baseline":    meta.get("_baseline", False),
         })
     return sorted(
         skills,
@@ -216,9 +217,12 @@ def get_global_stats() -> dict:
     index     = load_index()
     all_tools: set = set()
     all_pkgs:  set = set()
+    baseline_count = 0
     for m in index.values():
         all_tools.update(_nsl(m.get("tools")))
         all_pkgs.update(_nsl(m.get("python_packages")))
+        if m.get("_baseline"):
+            baseline_count += 1
 
     repos_dir  = "fieldnote_repos"
     repo_count = sum(
@@ -226,12 +230,20 @@ def get_global_stats() -> dict:
         if os.path.isdir(os.path.join(repos_dir, d))
     ) if os.path.exists(repos_dir) else 0
 
+    try:
+        import agents.discovery_enrichment as _de
+        enrichment_queue = _de.queue_depth()
+    except Exception:
+        enrichment_queue = 0
+
     return {
-        "skills":   len(index),
-        "tools":    len(all_tools),
-        "packages": len(all_pkgs),
-        "repos":    repo_count,
-        "mcp":      len(mcp_agent.get_connections()),
+        "skills":           len(index),
+        "tools":            len(all_tools),
+        "packages":         len(all_pkgs),
+        "repos":            repo_count,
+        "mcp":              len(mcp_agent.get_connections()),
+        "baseline_count":   baseline_count,
+        "enrichment_queue": enrichment_queue,
     }
 
 
@@ -799,15 +811,7 @@ def _resolve_tools_in_skill(skill: dict, context: str = "") -> dict:
                 new_tools.append(tool)
                 continue
             match = resolve_tool_name(raw)
-<<<<<<< Updated upstream
             if match and match.get("confidence", 0) >= 0.90:
-=======
-<<<<<<< HEAD
-            if match and match.get("confidence", 0) >= 0.90 and match.get("is_taught", False):
-=======
-            if match and match.get("confidence", 0) >= 0.90:
->>>>>>> 48a9224 (sync(scheduler): 1 source file(s) updated)
->>>>>>> Stashed changes
                 canonical = match["canonical_name"]
                 if canonical != raw:
                     log.info("mcp_resolve[%s]: %r → %r (conf=%.2f)",
@@ -1079,6 +1083,9 @@ def _save_skill(
         "_dca":            skill_quality.advance_dca(prev.get("_dca", {}))
                            if action == "enhance"
                            else skill_quality.dca_schedule(1, now),
+        # Baseline flag — set by _deterministic_baseline; cleared on AI enrichment
+        "_baseline":       skill.get("_baseline", False),
+        "_baseline_reason": skill.get("_baseline_reason", ""),
     }
     save_index(index)
     try:

@@ -151,13 +151,6 @@ def _build_command(entry: Any) -> list[str]:
     return []
 
 
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-def _rpc(proc: subprocess.Popen, method: str, params: dict, req_id: int) -> bytes:
-    """Send one JSON-RPC request and return the raw response bytes."""
-=======
->>>>>>> Stashed changes
 def _read_response(proc: subprocess.Popen, deadline: float) -> Optional[bytes]:
     """
     Read up to _OUTPUT_CAP bytes from proc.stdout with a hard deadline.
@@ -180,10 +173,6 @@ def _read_response(proc: subprocess.Popen, deadline: float) -> Optional[bytes]:
 
 def _send_rpc(proc: subprocess.Popen, method: str, params: dict, req_id: int) -> None:
     """Write one JSON-RPC request to proc.stdin."""
-<<<<<<< Updated upstream
-=======
->>>>>>> 48a9224 (sync(scheduler): 1 source file(s) updated)
->>>>>>> Stashed changes
     msg = json.dumps({
         "jsonrpc": "2.0",
         "id": req_id,
@@ -193,13 +182,6 @@ def _send_rpc(proc: subprocess.Popen, method: str, params: dict, req_id: int) ->
     assert proc.stdin is not None
     proc.stdin.write(msg.encode())
     proc.stdin.flush()
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-    return proc.stdout.read(_OUTPUT_CAP)  # type: ignore[union-attr]
-=======
->>>>>>> 48a9224 (sync(scheduler): 1 source file(s) updated)
->>>>>>> Stashed changes
 
 
 def _notify(proc: subprocess.Popen, method: str, params: dict) -> None:
@@ -230,32 +212,6 @@ def _parse_rpc(raw: bytes) -> Optional[dict]:
 def _run_handshake(proc: subprocess.Popen, entry: Any,
                    t0: float, timeout_s: int) -> VerifyResult:
 
-<<<<<<< Updated upstream
-    deadline = t0 + timeout_s
-=======
-<<<<<<< HEAD
-    def _elapsed() -> float:
-        return time.monotonic() - t0
->>>>>>> Stashed changes
-
-    def _timed_out() -> bool:
-        return time.monotonic() >= deadline
-
-    # ── initialize ─────────────────────────────────────────────────────────────
-    try:
-<<<<<<< Updated upstream
-=======
-        proc.stdin.write(json.dumps({  # type: ignore[union-attr]
-            "jsonrpc": "2.0", "id": 1,
-            "method": "initialize",
-            "params": {
-                "protocolVersion": _PROTO_VERSION,
-                "capabilities": {},
-                "clientInfo": {"name": "fieldnote-verifier", "version": "1.0"},
-            },
-        }).encode() + b"\n")
-        proc.stdin.flush()  # type: ignore[union-attr]
-=======
     deadline = t0 + timeout_s
 
     def _timed_out() -> bool:
@@ -263,43 +219,15 @@ def _run_handshake(proc: subprocess.Popen, entry: Any,
 
     # ── initialize ─────────────────────────────────────────────────────────────
     try:
->>>>>>> Stashed changes
         _send_rpc(proc, "initialize", {
             "protocolVersion": _PROTO_VERSION,
             "capabilities": {},
             "clientInfo": {"name": "fieldnote-verifier", "version": "1.0"},
         }, req_id=1)
-<<<<<<< Updated upstream
-=======
->>>>>>> 48a9224 (sync(scheduler): 1 source file(s) updated)
->>>>>>> Stashed changes
     except Exception as exc:
         return VerifyResult(ok=False, error_code="rpc_error",
                             diagnostics={"error": str(exc)[:200]})
 
-<<<<<<< Updated upstream
-    if _timed_out():
-        return VerifyResult(ok=False, error_code="timeout",
-                            diagnostics={"error": "timeout before initialize response"})
-=======
-<<<<<<< HEAD
-    # Wait for initialize response
-    rem = _remaining()
-    if rem <= 0:
-        return VerifyResult(ok=False, error_code="timeout", diagnostics={"error": "timeout before response"})
->>>>>>> Stashed changes
-
-    raw = _read_response(proc, deadline)
-    if raw is None:
-        return VerifyResult(ok=False, error_code="timeout",
-                            diagnostics={"error": "no response to initialize"})
-
-    init_resp = _parse_rpc(raw)
-    if init_resp is None:
-<<<<<<< Updated upstream
-=======
-        # Check if process crashed
-=======
     if _timed_out():
         return VerifyResult(ok=False, error_code="timeout",
                             diagnostics={"error": "timeout before initialize response"})
@@ -311,8 +239,6 @@ def _run_handshake(proc: subprocess.Popen, entry: Any,
 
     init_resp = _parse_rpc(raw)
     if init_resp is None:
->>>>>>> 48a9224 (sync(scheduler): 1 source file(s) updated)
->>>>>>> Stashed changes
         rc = proc.poll()
         if rc is not None and rc != 0:
             return VerifyResult(ok=False, error_code="crash",
@@ -333,45 +259,6 @@ def _run_handshake(proc: subprocess.Popen, entry: Any,
 
     # ── tools/list ────────────────────────────────────────────────────────────
     tools_count = 0
-<<<<<<< Updated upstream
-    if "tools" in server_caps and not _timed_out():
-=======
-<<<<<<< HEAD
-    if "tools" in server_caps:
->>>>>>> Stashed changes
-        try:
-            _send_rpc(proc, "tools/list", {}, req_id=2)
-            raw2 = _read_response(proc, deadline)
-            if raw2 is not None:
-                tr = _parse_rpc(raw2)
-                if tr and "result" in tr:
-                    tools_count = len(tr["result"].get("tools", []))
-            # If raw2 is None here it's a post-initialize timeout — log but continue
-            elif _timed_out():
-                log.debug("mcp_verifier: %s tools/list timed out (post-initialize)", entry.id)
-        except Exception as exc:
-            log.debug("mcp_verifier: %s tools/list error: %s", entry.id, exc)
-
-    # ── resources/list ────────────────────────────────────────────────────────
-    resources_count = 0
-    if "resources" in server_caps and not _timed_out():
-        try:
-            _send_rpc(proc, "resources/list", {}, req_id=3)
-            raw3 = _read_response(proc, deadline)
-            if raw3 is not None:
-                rr = _parse_rpc(raw3)
-                if rr and "result" in rr:
-                    resources_count = len(rr["result"].get("resources", []))
-            elif _timed_out():
-                log.debug("mcp_verifier: %s resources/list timed out (post-initialize)", entry.id)
-        except Exception as exc:
-            log.debug("mcp_verifier: %s resources/list error: %s", entry.id, exc)
-
-<<<<<<< Updated upstream
-    latency_ms = int((time.monotonic() - t0) * 1000)
-=======
-    latency_ms = int(_elapsed() * 1000)
-=======
     if "tools" in server_caps and not _timed_out():
         try:
             _send_rpc(proc, "tools/list", {}, req_id=2)
@@ -402,8 +289,6 @@ def _run_handshake(proc: subprocess.Popen, entry: Any,
             log.debug("mcp_verifier: %s resources/list error: %s", entry.id, exc)
 
     latency_ms = int((time.monotonic() - t0) * 1000)
->>>>>>> 48a9224 (sync(scheduler): 1 source file(s) updated)
->>>>>>> Stashed changes
 
     return VerifyResult(
         ok=True,

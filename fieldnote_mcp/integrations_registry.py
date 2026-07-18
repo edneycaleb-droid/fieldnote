@@ -380,15 +380,45 @@ def verify_integration(integration_id: str, key: str) -> dict:
     """
     Call the provider API to verify `key`.
     Returns {"ok": bool, "detail"?: str, "error"?: str}.
+
+    Side-effects:
+      • On auth failure (401/invalid key): calls mark_provider_auth_error() so the
+        provider-router blacklists the bad token immediately — the Integrations card
+        will show ⚠ Auth Error without needing a failed LLM call first.
+      • On success: calls refresh_provider_key() so a newly-saved valid key is used
+        right away without requiring an app restart.
     """
     fn = _VERIFIERS.get(integration_id)
     if not fn:
         return {"ok": True, "detail": "Saved — no live verification available for this provider"}
     try:
-        return fn(key)  # type: ignore[call-arg]
+        result = fn(key)  # type: ignore[call-arg]
     except Exception as exc:
         log.warning("Verify error for %s: %s", integration_id, exc)
         return {"ok": False, "error": str(exc)[:120]}
+
+    # Feed result back into provider-router so UI state is accurate immediately.
+    try:
+        import agents.provider_router as _pr
+        if result.get("ok"):
+            # Valid key confirmed — ensure provider is not stuck in a stale error state.
+            _pr.refresh_provider_key(integration_id)
+        else:
+            # Determine whether the failure is specifically an auth/key error.
+            err_lower = (result.get("error") or "").lower()
+            is_auth = any(kw in err_lower for kw in (
+                "invalid", "401", "unauthorized", "authentication",
+                "rejected", "bad token", "incorrect",
+            ))
+            if is_auth:
+                _pr.mark_provider_auth_error(
+                    integration_id,
+                    detail=result.get("error", "key rejected by provider"),
+                )
+    except Exception as feed_exc:
+        log.debug("Router state feed-back skipped for %s: %s", integration_id, feed_exc)
+
+    return result
 
 
 def get_all_statuses(local_keys_file: str | None = None) -> list[dict]:
@@ -469,8 +499,17 @@ def get_all_statuses(local_keys_file: str | None = None) -> list[dict]:
         # Live provider-router state (for LLM providers)
         router_state = _get_provider_router_state(entry["id"])
         if router_state == "auth_error":
-            e["status"]        = "error"
-            e["status_detail"] = "Authentication failed — key rejected by provider"
+            e["status"] = "error"
+            # HuggingFace is special: anonymous access still works, so we must
+            # make it unmistakably clear that the *saved token* is the problem,
+            # not the provider itself, and guide the user to fix it.
+            if entry["id"] == "huggingface":
+                e["status_detail"] = (
+                    "⚠ Auth Error — token rejected by HuggingFace. "
+                    "Re-enter a valid read token or clear it to use anonymous access."
+                )
+            else:
+                e["status_detail"] = "Authentication failed — key rejected by provider"
         elif router_state in ("healthy", "rate_limited", "quota_exhausted"):
             e["status"]        = "connected"
             e["status_detail"] = chk.get("detail") or "Connected"

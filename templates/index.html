@@ -1672,17 +1672,12 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
       <div class="stat-n" id="stat-mcp">{{ stats.mcp }}</div>
       <div class="stat-l">MCP</div>
     </div>
-    {% if stats.enrichment_queue > 0 %}
-    <div class="stat stat-baseline" title="{{ stats.enrichment_queue }} skill(s) awaiting AI enrichment">
-      <div class="stat-n" id="stat-pending">{{ stats.enrichment_queue }}</div>
+    <div class="stat stat-baseline" id="stat-pending-wrap"
+         style="{{ '' if stats.enrichment_queue > 0 else 'display:none' }}"
+         title="Skills awaiting AI enrichment">
+      <div class="stat-n" id="stat-pending">{{ stats.enrichment_queue or 0 }}</div>
       <div class="stat-l">Pending</div>
     </div>
-    {% else %}
-    <div class="stat stat-baseline" id="stat-pending-wrap" style="display:none">
-      <div class="stat-n" id="stat-pending">0</div>
-      <div class="stat-l">Pending</div>
-    </div>
-    {% endif %}
   </div>
 </header>
 
