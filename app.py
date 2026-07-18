@@ -799,7 +799,7 @@ def _resolve_tools_in_skill(skill: dict, context: str = "") -> dict:
                 new_tools.append(tool)
                 continue
             match = resolve_tool_name(raw)
-            if match and match.get("confidence", 0) >= 0.90 and match.get("is_taught", False):
+            if match and match.get("confidence", 0) >= 0.90:
                 canonical = match["canonical_name"]
                 if canonical != raw:
                     log.info("mcp_resolve[%s]: %r → %r (conf=%.2f)",

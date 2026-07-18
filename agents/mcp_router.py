@@ -173,15 +173,25 @@ def route(capability: str) -> Optional[str]:
     return eligible[0].id
 
 
+_CALL_TIMEOUT_S = 30   # per-call end-to-end timeout for tool invocations
+
+
 def _call_server(entry_id: str, tool_name: str, args: dict) -> Any:
     """
     Invoke a tool on a running MCP server.
     In Fieldnote's sandbox we use subprocess stdio — start, call, terminate.
     Returns the tool result or raises on failure.
+
+    All subprocess reads use select() with a hard deadline; no call can block
+    indefinitely regardless of server behaviour.
     """
+    import os
+    import select as _select
+    import subprocess
+    import json as _json
+
     from agents.mcp_registry import get_by_id
     from agents.mcp_verifier import _build_command, _kill, _notify, _parse_rpc, _OUTPUT_CAP
-    import subprocess, os, json as _json
 
     entry = get_by_id(entry_id)
     if entry is None:
@@ -191,13 +201,34 @@ def _call_server(entry_id: str, tool_name: str, args: dict) -> Any:
     if not cmd:
         raise RuntimeError(f"no command for {entry_id}")
 
-    t0 = time.monotonic()
+    t0       = time.monotonic()
+    deadline = t0 + _CALL_TIMEOUT_S
+
+    def _timed_out() -> bool:
+        return time.monotonic() >= deadline
+
+    def _read_bounded() -> bytes:
+        """Read with deadline; raises RuntimeError on timeout."""
+        remaining = deadline - time.monotonic()
+        if remaining <= 0:
+            raise RuntimeError("call timeout (deadline exceeded)")
+        try:
+            rlist, _, _ = _select.select([proc.stdout], [], [], remaining)
+        except Exception:
+            rlist = [proc.stdout]
+        if not rlist:
+            raise RuntimeError("call timeout (no data from server)")
+        data = proc.stdout.read(_OUTPUT_CAP)   # type: ignore[union-attr]
+        if data is None or data == b"":
+            raise RuntimeError("call timeout (server closed stdout)")
+        return data
+
     proc = subprocess.Popen(
         cmd, stdin=subprocess.PIPE, stdout=subprocess.PIPE,
         stderr=subprocess.PIPE, env={**os.environ}, text=False,
     )
     try:
-        # initialize
+        # ── initialize ────────────────────────────────────────────────────────
         proc.stdin.write(_json.dumps({  # type: ignore[union-attr]
             "jsonrpc": "2.0", "id": 1, "method": "initialize",
             "params": {
@@ -207,20 +238,27 @@ def _call_server(entry_id: str, tool_name: str, args: dict) -> Any:
             },
         }).encode() + b"\n")
         proc.stdin.flush()  # type: ignore[union-attr]
-        raw = proc.stdout.read(_OUTPUT_CAP)  # type: ignore[union-attr]
+
+        if _timed_out():
+            raise RuntimeError("call timeout (before initialize response)")
+        raw = _read_bounded()
         init_resp = _parse_rpc(raw)
         if not init_resp or "error" in init_resp:
             raise RuntimeError("initialize failed")
 
         _notify(proc, "notifications/initialized", {})
 
-        # call tool
+        if _timed_out():
+            raise RuntimeError("call timeout (after initialize, before tool call)")
+
+        # ── tools/call ────────────────────────────────────────────────────────
         proc.stdin.write(_json.dumps({  # type: ignore[union-attr]
             "jsonrpc": "2.0", "id": 2, "method": "tools/call",
             "params": {"name": tool_name, "arguments": args},
         }).encode() + b"\n")
         proc.stdin.flush()  # type: ignore[union-attr]
-        raw2 = proc.stdout.read(_OUTPUT_CAP)  # type: ignore[union-attr]
+
+        raw2 = _read_bounded()
         tool_resp = _parse_rpc(raw2)
         if not tool_resp:
             raise RuntimeError("no response from tool call")

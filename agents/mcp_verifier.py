@@ -151,8 +151,28 @@ def _build_command(entry: Any) -> list[str]:
     return []
 
 
-def _rpc(proc: subprocess.Popen, method: str, params: dict, req_id: int) -> bytes:
-    """Send one JSON-RPC request and return the raw response bytes."""
+def _read_response(proc: subprocess.Popen, deadline: float) -> Optional[bytes]:
+    """
+    Read up to _OUTPUT_CAP bytes from proc.stdout with a hard deadline.
+    Returns None on timeout or if the process has no data within the deadline.
+    """
+    remaining = deadline - time.monotonic()
+    if remaining <= 0:
+        return None
+    try:
+        rlist, _, _ = select.select([proc.stdout], [], [], remaining)
+    except Exception:
+        rlist = [proc.stdout]
+    if not rlist:
+        return None
+    try:
+        return proc.stdout.read(_OUTPUT_CAP)  # type: ignore[union-attr]
+    except Exception:
+        return None
+
+
+def _send_rpc(proc: subprocess.Popen, method: str, params: dict, req_id: int) -> None:
+    """Write one JSON-RPC request to proc.stdin."""
     msg = json.dumps({
         "jsonrpc": "2.0",
         "id": req_id,
@@ -162,7 +182,6 @@ def _rpc(proc: subprocess.Popen, method: str, params: dict, req_id: int) -> byte
     assert proc.stdin is not None
     proc.stdin.write(msg.encode())
     proc.stdin.flush()
-    return proc.stdout.read(_OUTPUT_CAP)  # type: ignore[union-attr]
 
 
 def _notify(proc: subprocess.Popen, method: str, params: dict) -> None:
@@ -193,46 +212,33 @@ def _parse_rpc(raw: bytes) -> Optional[dict]:
 def _run_handshake(proc: subprocess.Popen, entry: Any,
                    t0: float, timeout_s: int) -> VerifyResult:
 
-    def _elapsed() -> float:
-        return time.monotonic() - t0
+    deadline = t0 + timeout_s
 
-    def _remaining() -> float:
-        return max(0.0, timeout_s - _elapsed())
+    def _timed_out() -> bool:
+        return time.monotonic() >= deadline
 
     # ── initialize ─────────────────────────────────────────────────────────────
     try:
-        proc.stdin.write(json.dumps({  # type: ignore[union-attr]
-            "jsonrpc": "2.0", "id": 1,
-            "method": "initialize",
-            "params": {
-                "protocolVersion": _PROTO_VERSION,
-                "capabilities": {},
-                "clientInfo": {"name": "fieldnote-verifier", "version": "1.0"},
-            },
-        }).encode() + b"\n")
-        proc.stdin.flush()  # type: ignore[union-attr]
+        _send_rpc(proc, "initialize", {
+            "protocolVersion": _PROTO_VERSION,
+            "capabilities": {},
+            "clientInfo": {"name": "fieldnote-verifier", "version": "1.0"},
+        }, req_id=1)
     except Exception as exc:
         return VerifyResult(ok=False, error_code="rpc_error",
                             diagnostics={"error": str(exc)[:200]})
 
-    # Wait for initialize response
-    rem = _remaining()
-    if rem <= 0:
-        return VerifyResult(ok=False, error_code="timeout", diagnostics={"error": "timeout before response"})
+    if _timed_out():
+        return VerifyResult(ok=False, error_code="timeout",
+                            diagnostics={"error": "timeout before initialize response"})
 
-    try:
-        rlist, _, _ = select.select([proc.stdout], [], [], min(rem, 15))
-    except Exception:
-        rlist = [proc.stdout]
-
-    if not rlist:
+    raw = _read_response(proc, deadline)
+    if raw is None:
         return VerifyResult(ok=False, error_code="timeout",
                             diagnostics={"error": "no response to initialize"})
 
-    raw = proc.stdout.read(_OUTPUT_CAP)  # type: ignore[union-attr]
     init_resp = _parse_rpc(raw)
     if init_resp is None:
-        # Check if process crashed
         rc = proc.poll()
         if rc is not None and rc != 0:
             return VerifyResult(ok=False, error_code="crash",
@@ -253,35 +259,36 @@ def _run_handshake(proc: subprocess.Popen, entry: Any,
 
     # ── tools/list ────────────────────────────────────────────────────────────
     tools_count = 0
-    if "tools" in server_caps:
+    if "tools" in server_caps and not _timed_out():
         try:
-            proc.stdin.write(json.dumps({  # type: ignore[union-attr]
-                "jsonrpc": "2.0", "id": 2, "method": "tools/list", "params": {},
-            }).encode() + b"\n")
-            proc.stdin.flush()  # type: ignore[union-attr]
-            raw2 = proc.stdout.read(_OUTPUT_CAP)  # type: ignore[union-attr]
-            tr = _parse_rpc(raw2)
-            if tr and "result" in tr:
-                tools_count = len(tr["result"].get("tools", []))
-        except Exception:
-            pass
+            _send_rpc(proc, "tools/list", {}, req_id=2)
+            raw2 = _read_response(proc, deadline)
+            if raw2 is not None:
+                tr = _parse_rpc(raw2)
+                if tr and "result" in tr:
+                    tools_count = len(tr["result"].get("tools", []))
+            # If raw2 is None here it's a post-initialize timeout — log but continue
+            elif _timed_out():
+                log.debug("mcp_verifier: %s tools/list timed out (post-initialize)", entry.id)
+        except Exception as exc:
+            log.debug("mcp_verifier: %s tools/list error: %s", entry.id, exc)
 
     # ── resources/list ────────────────────────────────────────────────────────
     resources_count = 0
-    if "resources" in server_caps:
+    if "resources" in server_caps and not _timed_out():
         try:
-            proc.stdin.write(json.dumps({  # type: ignore[union-attr]
-                "jsonrpc": "2.0", "id": 3, "method": "resources/list", "params": {},
-            }).encode() + b"\n")
-            proc.stdin.flush()  # type: ignore[union-attr]
-            raw3 = proc.stdout.read(_OUTPUT_CAP)  # type: ignore[union-attr]
-            rr = _parse_rpc(raw3)
-            if rr and "result" in rr:
-                resources_count = len(rr["result"].get("resources", []))
-        except Exception:
-            pass
+            _send_rpc(proc, "resources/list", {}, req_id=3)
+            raw3 = _read_response(proc, deadline)
+            if raw3 is not None:
+                rr = _parse_rpc(raw3)
+                if rr and "result" in rr:
+                    resources_count = len(rr["result"].get("resources", []))
+            elif _timed_out():
+                log.debug("mcp_verifier: %s resources/list timed out (post-initialize)", entry.id)
+        except Exception as exc:
+            log.debug("mcp_verifier: %s resources/list error: %s", entry.id, exc)
 
-    latency_ms = int(_elapsed() * 1000)
+    latency_ms = int((time.monotonic() - t0) * 1000)
 
     return VerifyResult(
         ok=True,
