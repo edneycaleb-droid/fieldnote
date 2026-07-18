@@ -278,3 +278,187 @@ def get_connections() -> list[dict]:
 
 def get_config_path() -> str:
     return os.path.abspath(CONFIG_F)
+
+
+# ── Hub lifecycle helpers ─────────────────────────────────────────────────────
+
+def _run_hub_install(package_name: str, install_method: str, emit) -> bool:
+    """Run the actual install command for a hub registry entry. Returns True on success."""
+    if install_method in ("uvx", "pip"):
+        uvx = shutil.which("uvx") or shutil.which("uv")
+        if uvx:
+            emit(f"📦  Installing {package_name} via uvx…", "info")
+            try:
+                r = subprocess.run(
+                    [uvx, "run", package_name, "--help"],
+                    capture_output=True, timeout=90,
+                )
+                if r.returncode in (0, 1):
+                    return True
+            except Exception as ex:
+                _log(f"uvx install {package_name}: {ex}")
+        # Fallback: pip
+        emit(f"📦  Installing {package_name} via pip…", "info")
+        try:
+            r = subprocess.run(
+                [sys.executable, "-m", "pip", "install", package_name, "-q",
+                 "--no-warn-script-location"],
+                capture_output=True, text=True, timeout=120,
+            )
+            if r.returncode == 0:
+                return True
+            _log(f"pip install {package_name}: {r.stderr[:200]}")
+        except Exception as ex:
+            _log(f"pip install {package_name}: {ex}")
+        return False
+
+    if install_method == "npm":
+        npx = shutil.which("npx")
+        if not npx:
+            emit(f"⚠  npx not found — Node.js is required for {package_name}", "warning")
+            return False
+        emit(f"📦  Installing {package_name} via npx…", "info")
+        try:
+            r = subprocess.run(
+                ["npx", "-y", "--prefix", "/tmp/fieldnote_npm", package_name, "--help"],
+                capture_output=True, timeout=90,
+            )
+            return r.returncode in (0, 1)
+        except Exception as ex:
+            _log(f"npm install {package_name}: {ex}")
+            return False
+
+    return False
+
+
+def install_hub_server(
+    entry_id: str,
+    emit=None,
+    force: bool = False,
+    _registry_override=None,
+) -> dict:
+    """
+    Install and verify a hub registry server. Returns a dict with at least
+    {"health_state": ...}. Idempotent — second call with force=False is a no-op
+    if the server is already connected.
+
+    emit: callable(msg: str, level: str) for progress reporting.
+    """
+    from agents.mcp_registry import load_registry, save_registry, update_server, MCPServer
+    from agents import mcp_verifier
+
+    if emit is None:
+        emit = lambda msg, lvl="info": None
+
+    servers = _registry_override if _registry_override is not None else load_registry()
+    entry   = next((s for s in servers if s.id == entry_id), None)
+
+    if entry is None:
+        return {"ok": False, "health_state": "not_installed", "error": f"Unknown server: {entry_id}"}
+
+    # Idempotent check
+    if not force and entry.health_state in ("connected",):
+        return {"ok": True, "health_state": "connected"}
+
+    # Check runtime
+    import shutil as _shutil
+    if entry.runtime_required and entry.runtime_required not in ("none", ""):
+        runtime_bin = (
+            _shutil.which("node") if entry.runtime_required == "node"
+            else _shutil.which("python3") or _shutil.which("python")
+        )
+        if runtime_bin is None:
+            update_server(entry_id, health_state="runtime_missing")
+            emit(f"⚠  Runtime {entry.runtime_required!r} not found", "warning")
+            return {"ok": False, "health_state": "runtime_missing",
+                    "missing_runtime": entry.runtime_required}
+
+    # Check required credential
+    if entry.credential_env and not entry.credential_optional:
+        key_val = os.environ.get(entry.credential_env, "").strip()
+        if not key_val:
+            # Try local_keys.json
+            try:
+                import json as _json
+                with open(os.path.join("fieldnote_mcp", "local_keys.json")) as f:
+                    key_val = _json.load(f).get(entry.credential_env, "").strip()
+            except Exception:
+                pass
+        if not key_val:
+            update_server(entry_id, health_state="missing_credential")
+            emit(f"⚠  Required credential {entry.credential_env} not configured", "warning")
+            return {"ok": False, "health_state": "missing_credential",
+                    "credential_env": entry.credential_env}
+
+    # Install
+    update_server(entry_id, health_state="installing")
+    emit(f"⏳  Installing {entry.name}…", "info")
+    ok = _run_hub_install(entry.package_name, entry.install_method, emit)
+
+    if not ok:
+        update_server(entry_id, health_state="offline")
+        emit(f"❌  Install failed for {entry.name}", "error")
+        return {"ok": False, "health_state": "offline", "error": "install failed"}
+
+    # Verify protocol
+    update_server(entry_id, health_state="verifying")
+    emit(f"🔍  Verifying MCP protocol for {entry.name}…", "info")
+    result = mcp_verifier.verify_server(entry)
+
+    from datetime import datetime, timezone
+    now_iso = datetime.now(timezone.utc).isoformat()
+
+    if result.ok:
+        update_server(entry_id, health_state="connected", verified_at=now_iso)
+        emit(f"✅  {entry.name} connected — protocol verified", "success")
+        _log(f"hub install {entry_id}: connected, tools={result.diagnostics.get('tools_count', '?')}")
+        return {"ok": True, "health_state": "connected", "diagnostics": result.diagnostics}
+    else:
+        if result.error_code == "runtime_missing":
+            update_server(entry_id, health_state="runtime_missing")
+        else:
+            update_server(entry_id, health_state="offline")
+        emit(f"⚠  Verification failed: {result.error_code}", "warning")
+        _log(f"hub install {entry_id}: verify failed: {result.error_code}")
+        return {
+            "ok": False,
+            "health_state": "offline",
+            "error": result.error_code,
+            "diagnostics": result.diagnostics,
+        }
+
+
+def uninstall_server(entry_id: str) -> bool:
+    """Mark a hub server as not_installed in the registry. Returns True on success."""
+    from agents.mcp_registry import update_server
+    srv = update_server(
+        entry_id,
+        health_state="not_installed",
+        installed_version="",
+        verified_at="",
+        enabled=True,
+    )
+    if srv is None:
+        return False
+    _log(f"hub uninstall {entry_id}: reset to not_installed")
+    return True
+
+
+def enable_server(entry_id: str) -> bool:
+    """Enable a hub server. Returns True on success."""
+    from agents.mcp_registry import update_server
+    srv = update_server(entry_id, enabled=True)
+    if srv is None:
+        return False
+    _log(f"hub enable {entry_id}")
+    return True
+
+
+def disable_server(entry_id: str) -> bool:
+    """Disable a hub server (stops routing, does not uninstall). Returns True on success."""
+    from agents.mcp_registry import update_server
+    srv = update_server(entry_id, enabled=False)
+    if srv is None:
+        return False
+    _log(f"hub disable {entry_id}")
+    return True

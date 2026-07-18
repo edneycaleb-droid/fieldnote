@@ -1262,6 +1262,131 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
   content: ''; flex: 1; height: 1px; background: var(--border);
 }
 
+/* ── MCP Hub section ─────────────────────────────────────────────────────── */
+.hub-section { margin-top: 28px; }
+.hub-header {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 14px; flex-wrap: wrap;
+}
+.hub-title {
+  font-size: .92rem; font-weight: 700; color: var(--text); flex: 1;
+}
+.hub-summary-badge {
+  font-size: .64rem; padding: 3px 10px; border-radius: 10px;
+  border: 1px solid #1a4a2a; background: #060f08; color: #4ade80;
+}
+.hub-import-btn {
+  font-size: .68rem; padding: 5px 12px; border-radius: 8px; cursor: pointer;
+  border: 1px solid var(--border2); color: var(--muted); background: var(--bg2);
+  -webkit-appearance: none; transition: all .15s; white-space: nowrap;
+}
+.hub-import-btn:hover { border-color: var(--purple); color: var(--purple); }
+.hub-chips {
+  display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px;
+}
+.hub-chip {
+  font-size: .68rem; font-weight: 600; padding: 4px 12px;
+  border-radius: 20px; border: 1px solid var(--border2);
+  color: var(--muted); background: var(--bg); cursor: pointer;
+  transition: all .15s; -webkit-appearance: none;
+}
+.hub-chip:hover { border-color: var(--purple); color: var(--purple); }
+.hub-chip.active {
+  background: #100a20; border-color: var(--purple); color: var(--purple);
+}
+.hub-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+}
+@media (max-width: 700px) { .hub-grid { grid-template-columns: 1fr; } }
+
+/* Hub server card */
+.hub-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 14px; padding: 14px 15px; display: flex;
+  flex-direction: column; gap: 9px; transition: border-color .2s;
+}
+.hub-card.hc-connected  { border-color: #1a4a2a; }
+.hub-card.hc-offline    { border-color: #3a1a00; }
+.hub-card.hc-quarantined { border-color: #3a1a1a; }
+.hub-card.hc-verifying  { border-color: #2a2a00; }
+
+.hc-head { display: flex; align-items: flex-start; gap: 9px; }
+.hc-icon {
+  width: 34px; height: 34px; border-radius: 9px; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; background: var(--bg2); border: 1px solid var(--border2);
+}
+.hc-meta { flex: 1; min-width: 0; }
+.hc-name { font-size: .84rem; font-weight: 700; color: var(--text);
+  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hc-badges { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 3px; }
+.hc-badge {
+  font-size: .56rem; font-weight: 700; padding: 1px 6px; border-radius: 6px; border: 1px solid;
+}
+.hcb-license { color: #60a5fa; border-color: #1a3a5c; background: #060e18; }
+.hcb-runtime { color: #a78bfa; border-color: #2a1a5c; background: #06040f; }
+.hcb-cat {
+  color: #4ade80; border-color: #1a4a2a; background: #060f08;
+  text-transform: uppercase; letter-spacing: .04em;
+}
+
+.hc-desc { font-size: .71rem; color: var(--muted); line-height: 1.5;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
+  overflow: hidden; }
+
+.hc-caps { display: flex; gap: 4px; flex-wrap: wrap; }
+.hc-cap {
+  font-size: .58rem; font-weight: 600; padding: 1px 7px; border-radius: 8px;
+  background: #100a20; border: 1px solid var(--accent); color: #c084fc;
+}
+
+.hc-cred {
+  font-size: .65rem; color: var(--muted);
+  display: flex; align-items: center; gap: 5px;
+}
+
+.hc-state {
+  display: flex; align-items: center; gap: 6px;
+  font-size: .68rem; font-weight: 600;
+}
+.hc-dot {
+  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+}
+.hcd-connected   { background: #4ade80; box-shadow: 0 0 4px #4ade8088; }
+.hcd-degraded    { background: #fbbf24; box-shadow: 0 0 4px #fbbf2488; }
+.hcd-offline     { background: #f87171; }
+.hcd-quarantined { background: #f87171; }
+.hcd-verifying   { background: #fbbf24; animation: pulse 1s infinite; }
+.hcd-installing  { background: #fbbf24; animation: pulse 1s infinite; }
+.hcd-not_installed    { background: #444; }
+.hcd-runtime_missing  { background: #f97316; }
+.hcd-missing_credential { background: #fbbf24; }
+
+.hc-actions { display: flex; gap: 6px; flex-wrap: wrap; }
+.hc-btn {
+  flex: 1; min-width: 80px; padding: 7px 10px; border-radius: 9px;
+  font-size: .72rem; font-weight: 700; cursor: pointer; border: 1px solid;
+  transition: all .2s; -webkit-appearance: none;
+  display: flex; align-items: center; justify-content: center; gap: 5px;
+}
+.hcbtn-install {
+  background: #100a20; border-color: var(--purple); color: var(--purple);
+}
+.hcbtn-install:hover { background: #1a1050; }
+.hcbtn-test {
+  background: var(--bg2); border-color: var(--border2); color: var(--muted);
+}
+.hcbtn-test:hover { border-color: var(--purple); color: var(--purple); }
+.hcbtn-disable {
+  background: var(--bg2); border-color: var(--border2); color: var(--muted);
+}
+.hcbtn-disable:hover { border-color: #f97316; color: #f97316; }
+.hcbtn-uninstall {
+  background: #1a0808; border-color: #3a1010; color: #f87171;
+}
+.hcbtn-uninstall:hover { background: #2a0a0a; border-color: var(--red); }
+.hc-btn:disabled { opacity: .45; cursor: default; }
+
 .integ-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 @media (max-width: 700px) { .integ-grid { grid-template-columns: 1fr; } }
 
@@ -1644,6 +1769,38 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
     Loading integrations…
   </div>
 
+  <!-- ── MCP Hub / Tools Marketplace ────────────────────────────────────── -->
+  <div class="hub-section" id="hub-section">
+    <div class="hub-header">
+      <span class="hub-title">🔧 Tools &amp; MCP Hub</span>
+      <span class="hub-summary-badge" id="hub-summary-badge">Loading…</span>
+      <button class="hub-import-btn" onclick="hubImportExisting()" title="Import existing MCP connections from status.json">
+        ↩ Import existing
+      </button>
+    </div>
+
+    <!-- Category filter chips -->
+    <div class="hub-chips" id="hub-chips">
+      <button class="hub-chip active" onclick="hubFilter('')">All</button>
+      <button class="hub-chip" onclick="hubFilter('search')">🔍 Search</button>
+      <button class="hub-chip" onclick="hubFilter('browser')">🌐 Browser</button>
+      <button class="hub-chip" onclick="hubFilter('media')">🎬 Media</button>
+      <button class="hub-chip" onclick="hubFilter('git')">🐙 Git</button>
+      <button class="hub-chip" onclick="hubFilter('code')">💻 Code</button>
+      <button class="hub-chip" onclick="hubFilter('database')">🗄 Data</button>
+      <button class="hub-chip" onclick="hubFilter('knowledge')">🧠 Knowledge</button>
+      <button class="hub-chip" onclick="hubFilter('vector_db')">📌 Vector</button>
+      <button class="hub-chip" onclick="hubFilter('documents')">📄 Docs</button>
+      <button class="hub-chip" onclick="hubFilter('local_llm')">🦙 Local LLM</button>
+    </div>
+
+    <div class="hub-grid" id="hub-grid">
+      <div style="grid-column:1/-1;text-align:center;padding:20px;color:var(--muted);font-size:.8rem">
+        Loading hub…
+      </div>
+    </div>
+  </div>
+
   <!-- ── Queued / Degraded Jobs panel ────────────────────────────────────── -->
   <div class="qjobs-panel" id="qjobs-panel" style="display:none">
     <div class="qjobs-header" onclick="toggleQjobs()">
@@ -1848,6 +2005,20 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
         <!-- Agents -->
         <div class="studio-pane" id="studio-pane-agents">
           <div class="agents-panel">
+
+            <!-- MCP Operations dashboard -->
+            <div class="agents-section-label" style="cursor:pointer;user-select:none"
+                 onclick="toggleMcpOpsDash()">
+              🔧 MCP Hub Operations
+              <span id="mcp-ops-toggle-icon" style="margin-left:auto;font-size:.7rem">▼</span>
+            </div>
+            <div id="mcp-ops-dash" style="margin-bottom:10px">
+              <div id="mcp-ops-summary" style="display:flex;gap:10px;flex-wrap:wrap;
+                   margin-bottom:8px;font-size:.68rem;color:var(--muted)">
+                Loading…
+              </div>
+              <div id="mcp-ops-rows" style="display:flex;flex-direction:column;gap:5px"></div>
+            </div>
 
             <div class="agents-section-label">🔄 Scheduled Jobs</div>
             <div id="agents-jobs-list" class="agents-jobs-list">
@@ -2232,6 +2403,8 @@ Cross-reference related skills proactively. When you find a relevant skill, alwa
             <span class="chip chip-tool">getDiscoveryStats</span>
             <span class="chip chip-tool">getDiscoveryLog</span>
             <span class="chip chip-tool">triggerSchedulerJob</span>
+            <span class="chip chip-tool">getMcpHubHealth</span>
+            <span class="chip chip-tool">getMcpHubCapabilities</span>
           </div>
 
           <p class="ai-note" style="margin-top:10px">
@@ -4919,6 +5092,7 @@ function switchMainTab(name) {
     else refreshIntegBadge();
     startAgentPoll();
     loadQueuedJobs();
+    loadHub();
   } else {
     if (lib)   lib.style.display   = '';
     if (integ) integ.style.display = 'none';
@@ -5451,6 +5625,337 @@ async function reVerifyIntegration(iid) {
     if (btn) { btn.disabled = false; btn.textContent = '↺ Re-verify'; }
   }
 }
+
+// ── MCP Ops Dashboard (Agents pane) ──────────────────────────────────────────
+
+let _mcpOpsDashOpen = true;
+
+function toggleMcpOpsDash() {
+  _mcpOpsDashOpen = !_mcpOpsDashOpen;
+  const dash = document.getElementById('mcp-ops-dash');
+  const icon = document.getElementById('mcp-ops-toggle-icon');
+  if (dash) dash.style.display = _mcpOpsDashOpen ? '' : 'none';
+  if (icon) icon.textContent = _mcpOpsDashOpen ? '▲' : '▼';
+  if (_mcpOpsDashOpen) loadMcpOpsDash();
+}
+
+async function loadMcpOpsDash() {
+  const summEl = document.getElementById('mcp-ops-summary');
+  const rowsEl = document.getElementById('mcp-ops-rows');
+  if (!summEl || !rowsEl) return;
+  try {
+    const [health, reg, stats] = await Promise.all([
+      fetch('/api/mcp-hub/health').then(r => r.json()),
+      fetch('/api/mcp-hub/registry').then(r => r.json()),
+      fetch('/api/mcp-router/stats').then(r => r.json()).catch(() => ({})),
+    ]);
+
+    // Summary row
+    const counts = [
+      ['🟢 Connected',  'connected'],
+      ['🟡 Degraded',   'degraded'],
+      ['🔴 Offline',    'offline'],
+      ['🔒 Quarantined','quarantined'],
+      ['⚠ Await cred', 'missing_credential'],
+    ];
+    summEl.innerHTML = counts
+      .map(([label, key]) => {
+        const n = health[key] || 0;
+        return `<span style="white-space:nowrap"><strong style="color:var(--text)">${n}</strong> ${label}</span>`;
+      }).join(' &nbsp;·&nbsp; ');
+
+    // Per-server rows (only installed/enabled ones)
+    const servers = (reg.servers || []).filter(s =>
+      s.health_state !== 'not_installed' && s.health_state !== 'quarantined'
+    );
+    if (!servers.length) {
+      rowsEl.innerHTML = '<div style="font-size:.68rem;color:var(--muted);padding:4px 0">No servers installed yet.</div>';
+      return;
+    }
+    rowsEl.innerHTML = servers.map(s => {
+      const sr = stats[s.id] || {};
+      const successRate = sr.total > 0 ? Math.round(sr.success / sr.total * 100) + '%' : '—';
+      const latency     = sr.avg_latency_ms != null ? sr.avg_latency_ms + ' ms' : '—';
+      const cb          = sr.circuit_state || '—';
+      const cbColor     = cb === 'CLOSED' ? '#4ade80' : cb === 'OPEN' ? '#f87171' : '#fbbf24';
+      const dotClass    = s.health_state === 'connected' ? 'hcd-connected'
+                        : s.health_state === 'degraded'  ? 'hcd-degraded'
+                        : 'hcd-offline';
+      const vFlag = s.latest_version && s.installed_version && s.latest_version !== s.installed_version
+        ? ' <span title="Update available" style="color:#fbbf24">🆕</span>' : '';
+      const verified = s.verified_at
+        ? new Date(s.verified_at).toLocaleString(undefined, {month:'short',day:'numeric',hour:'2-digit',minute:'2-digit'})
+        : '—';
+      return `<div style="background:var(--bg2);border:1px solid var(--border);border-radius:9px;
+              padding:8px 11px;font-size:.68rem;color:var(--muted);">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:4px">
+          <span class="hc-dot ${dotClass}"></span>
+          <span style="font-weight:700;color:var(--text)">${esc(s.icon||'🔧')} ${esc(s.name)}${vFlag}</span>
+          <span style="margin-left:auto;font-size:.6rem">${esc(s.category)}</span>
+        </div>
+        <div style="display:flex;gap:14px;flex-wrap:wrap">
+          <span>✓ Rate: <strong style="color:var(--text)">${successRate}</strong></span>
+          <span>⏱ Latency: <strong style="color:var(--text)">${latency}</strong></span>
+          <span>⚡ Circuit: <strong style="color:${cbColor}">${cb}</strong></span>
+          <span>🕐 Verified: <strong style="color:var(--text)">${verified}</strong></span>
+          ${s.installed_version ? `<span>v${esc(s.installed_version)}</span>` : ''}
+        </div>
+      </div>`;
+    }).join('');
+  } catch (e) {
+    if (summEl) summEl.innerHTML = `<span style="color:#f87171">Error loading MCP ops: ${esc(String(e))}</span>`;
+  }
+}
+
+
+// ── MCP Hub ───────────────────────────────────────────────────────────────────
+
+let _hubData      = [];   // all servers from registry
+let _hubFilter    = '';   // active category filter
+let _hubLoaded    = false;
+
+async function loadHub() {
+  if (_hubLoaded) return;
+  try {
+    const [regData, healthData] = await Promise.all([
+      fetch('/api/mcp-hub/registry').then(r => r.json()),
+      fetch('/api/mcp-hub/health').then(r => r.json()),
+    ]);
+    _hubData = regData.servers || [];
+    _hubLoaded = true;
+    renderHubSummary(healthData);
+    renderHubGrid();
+  } catch (e) {
+    document.getElementById('hub-grid').innerHTML =
+      '<div style="grid-column:1/-1;color:#f87171;font-size:.78rem;text-align:center;padding:16px">Could not load hub — ' + esc(String(e)) + '</div>';
+  }
+}
+
+function renderHubSummary(h) {
+  const el = document.getElementById('hub-summary-badge');
+  if (!el) return;
+  const conn = h.connected || 0;
+  const deg  = h.degraded  || 0;
+  if (conn + deg > 0) {
+    el.textContent = conn + ' connected' + (deg ? ' / ' + deg + ' degraded' : '');
+  } else {
+    el.textContent = (h.total || 0) + ' servers';
+    el.style.borderColor = '#333';
+    el.style.color = 'var(--muted)';
+    el.style.background = 'var(--bg)';
+  }
+}
+
+function hubFilter(cat) {
+  _hubFilter = cat;
+  document.querySelectorAll('.hub-chip').forEach(c => {
+    c.classList.toggle('active', c.textContent.trim().toLowerCase().includes(cat) || (cat === '' && c.textContent.trim() === 'All'));
+  });
+  renderHubGrid();
+}
+
+function renderHubGrid() {
+  const grid = document.getElementById('hub-grid');
+  if (!grid) return;
+  const servers = _hubFilter
+    ? _hubData.filter(s => s.category === _hubFilter)
+    : _hubData;
+  if (!servers.length) {
+    grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:20px;color:var(--muted);font-size:.8rem">No servers in this category.</div>';
+    return;
+  }
+  grid.innerHTML = servers.map(s => renderHubCard(s)).join('');
+}
+
+function _hubStateDot(state) {
+  return `<span class="hc-dot hcd-${esc(state)}"></span>`;
+}
+
+function _hubStateLabel(state) {
+  const labels = {
+    connected: '🟢 Connected', degraded: '🟡 Degraded',
+    offline: '🔴 Offline', quarantined: '🔒 Quarantined',
+    verifying: '⏳ Verifying…', installing: '⏳ Installing…',
+    not_installed: '⬜ Not installed', runtime_missing: '⚠ Runtime missing',
+    missing_credential: '⚠ Missing credential',
+  };
+  return labels[state] || state;
+}
+
+function renderHubCard(s) {
+  const credBadge = !s.credential_env
+    ? '<span style="font-size:.62rem;color:var(--muted)">✓ No auth</span>'
+    : s.credential_optional
+    ? '<span style="font-size:.62rem;color:var(--muted)">🔓 Optional key</span>'
+    : `<span style="font-size:.62rem;color:#fbbf24">🔑 Requires <code style="font-size:.6rem">${esc(s.credential_env)}</code></span>`;
+
+  const caps = (s.capabilities || []).map(c =>
+    `<span class="hc-cap">${esc(c.replace('_', ' '))}</span>`
+  ).join('');
+
+  const stateColor = {
+    connected: 'hc-connected', offline: 'hc-offline',
+    quarantined: 'hc-quarantined', verifying: 'hc-verifying', installing: 'hc-verifying',
+  }[s.health_state] || '';
+
+  // Primary action
+  let primaryBtn = '';
+  const state = s.health_state;
+  if (state === 'not_installed' || state === 'runtime_missing' || state === 'missing_credential') {
+    primaryBtn = `<button class="hc-btn hcbtn-install" id="hub-btn-primary-${esc(s.id)}"
+      onclick="hubInstall('${esc(s.id)}')">⬇ Install</button>`;
+  } else if (state === 'offline' || state === 'degraded') {
+    primaryBtn = `<button class="hc-btn hcbtn-install" id="hub-btn-primary-${esc(s.id)}"
+      onclick="hubInstall('${esc(s.id)}', true)">↺ Re-install</button>`;
+  } else if (state === 'connected') {
+    const toggleLabel = s.enabled ? '⏸ Disable' : '▶ Enable';
+    const toggleFn    = s.enabled ? `hubDisable('${esc(s.id)}')` : `hubEnable('${esc(s.id)}')`;
+    primaryBtn = `<button class="hc-btn hcbtn-disable" id="hub-btn-primary-${esc(s.id)}"
+      onclick="${toggleFn}">${toggleLabel}</button>`;
+  } else if (state === 'quarantined') {
+    primaryBtn = `<button class="hc-btn hcbtn-disable" disabled>🔒 Quarantined</button>`;
+  } else if (state === 'verifying' || state === 'installing') {
+    primaryBtn = `<button class="hc-btn hcbtn-install" disabled>
+      <span class="ic-spinner"></span> ${state === 'verifying' ? 'Verifying…' : 'Installing…'}</button>`;
+  }
+
+  const testBtn = (state === 'connected' || state === 'degraded')
+    ? `<button class="hc-btn hcbtn-test" onclick="hubVerify('${esc(s.id)}')">🔍 Test</button>`
+    : '';
+  const uninstBtn = (state !== 'not_installed' && state !== 'quarantined')
+    ? `<button class="hc-btn hcbtn-uninstall" onclick="hubUninstall('${esc(s.id)}')" title="Uninstall">✕</button>`
+    : '';
+
+  const versionNote = s.latest_version && s.installed_version && s.latest_version !== s.installed_version
+    ? `<span style="font-size:.6rem;color:#fbbf24;margin-left:4px">🆕 ${esc(s.latest_version)}</span>` : '';
+
+  return `<div class="hub-card ${stateColor}" id="hub-card-${esc(s.id)}">
+    <div class="hc-head">
+      <div class="hc-icon">${esc(s.icon || '🔧')}</div>
+      <div class="hc-meta">
+        <div class="hc-name">${esc(s.name)}${versionNote}</div>
+        <div class="hc-badges">
+          <span class="hc-badge hcb-cat">${esc(s.category)}</span>
+          <span class="hc-badge hcb-license">${esc(s.license_spdx)}</span>
+          ${s.runtime_required && s.runtime_required !== 'none' ? `<span class="hc-badge hcb-runtime">${esc(s.runtime_required)}</span>` : ''}
+        </div>
+      </div>
+    </div>
+    <div class="hc-desc">${esc(s.description)}</div>
+    ${caps ? `<div class="hc-caps">${caps}</div>` : ''}
+    <div class="hc-cred">${credBadge}</div>
+    <div class="hc-state" id="hub-state-${esc(s.id)}">
+      ${_hubStateDot(state)} ${_hubStateLabel(state)}
+    </div>
+    <div class="hc-actions">
+      ${primaryBtn}${testBtn}${uninstBtn}
+    </div>
+  </div>`;
+}
+
+function _hubUpdateCardState(id, newState, enabled) {
+  // Update the server data in memory
+  const srv = _hubData.find(s => s.id === id);
+  if (srv) {
+    srv.health_state = newState;
+    if (enabled !== undefined) srv.enabled = enabled;
+  }
+  // Re-render just that card
+  const card = document.getElementById('hub-card-' + id);
+  if (card && srv) {
+    const tmp = document.createElement('div');
+    tmp.innerHTML = renderHubCard(srv);
+    card.parentNode.replaceChild(tmp.firstChild, card);
+  }
+}
+
+async function hubInstall(id, force) {
+  _hubUpdateCardState(id, 'installing');
+  const btn = document.getElementById('hub-btn-primary-' + id);
+  const stateEl = document.getElementById('hub-state-' + id);
+  if (btn) { btn.disabled = true; btn.innerHTML = '<span class="ic-spinner"></span> Installing…'; }
+
+  try {
+    const resp = await fetch(`/api/mcp-hub/install/${encodeURIComponent(id)}`, {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({force: !!force}),
+    });
+    if (!resp.body) throw new Error('No SSE stream');
+    const reader = resp.body.getReader();
+    const decoder = new TextDecoder();
+    let lastState = 'installing';
+    while (true) {
+      const {done, value} = await reader.read();
+      if (done) break;
+      const text = decoder.decode(value);
+      for (const line of text.split('\n')) {
+        if (!line.startsWith('data: ')) continue;
+        try {
+          const ev = JSON.parse(line.slice(6));
+          if (ev.done) {
+            lastState = ev.health_state || 'offline';
+          } else if (ev.msg && stateEl) {
+            stateEl.innerHTML = `<span class="hc-dot hcd-${lastState === 'installing' ? 'installing' : 'verifying'}"></span> ${esc(ev.msg)}`;
+          }
+        } catch(_) {}
+      }
+    }
+    _hubUpdateCardState(id, lastState);
+    // Refresh health badge
+    fetch('/api/mcp-hub/health').then(r=>r.json()).then(renderHubSummary).catch(()=>{});
+  } catch(e) {
+    _hubUpdateCardState(id, 'offline');
+  }
+}
+
+async function hubVerify(id) {
+  _hubUpdateCardState(id, 'verifying');
+  try {
+    const d = await fetch(`/api/mcp-hub/verify/${encodeURIComponent(id)}`, {method:'POST'}).then(r=>r.json());
+    _hubUpdateCardState(id, d.health_state || (d.ok ? 'connected' : 'offline'));
+  } catch(e) {
+    _hubUpdateCardState(id, 'offline');
+  }
+}
+
+async function hubEnable(id) {
+  try {
+    await fetch(`/api/mcp-hub/enable/${encodeURIComponent(id)}`, {method:'POST'});
+    _hubUpdateCardState(id, 'connected', true);
+  } catch(e) {}
+}
+
+async function hubDisable(id) {
+  try {
+    await fetch(`/api/mcp-hub/disable/${encodeURIComponent(id)}`, {method:'POST'});
+    _hubUpdateCardState(id, 'connected', false);
+  } catch(e) {}
+}
+
+async function hubUninstall(id) {
+  if (!confirm('Uninstall this MCP server? It will be reset to "Not installed" state.')) return;
+  try {
+    await fetch(`/api/mcp-hub/uninstall/${encodeURIComponent(id)}`, {method:'POST'});
+    _hubUpdateCardState(id, 'not_installed', true);
+  } catch(e) {}
+}
+
+async function hubImportExisting() {
+  const btn = document.querySelector('.hub-import-btn');
+  if (btn) { btn.disabled = true; btn.textContent = '⏳ Importing…'; }
+  try {
+    const d = await fetch('/api/mcp-hub/import', {method:'POST'}).then(r=>r.json());
+    alert(`Import complete: ${d.matched?.length||0} matched, ${d.unmatched?.length||0} unmatched.`);
+    _hubLoaded = false;
+    loadHub();
+  } catch(e) {
+    alert('Import failed: ' + e);
+  } finally {
+    if (btn) { btn.disabled = false; btn.textContent = '↩ Import existing'; }
+  }
+}
+
 
 window.addEventListener("load", () => {
   loadIntelFeed();

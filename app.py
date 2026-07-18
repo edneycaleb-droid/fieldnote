@@ -751,7 +751,8 @@ def _extract_skill_chatgpt(
     )
     d   = json.loads(raw)
     # Validate immediately — LLM may write "steps": null, "tools": null etc.
-    return skill_validator.validate_extraction(d, context="chatgpt")
+    validated = skill_validator.validate_extraction(d, context="chatgpt")
+    return _resolve_tools_in_skill(validated, context="chatgpt")
 
 
 def _extract_skill_groq(
@@ -775,7 +776,42 @@ def _extract_skill_groq(
     )
     d   = json.loads(raw)
     # Validate immediately — same null-field protection as chatgpt extractor
-    return skill_validator.validate_extraction(d, context="groq")
+    validated = skill_validator.validate_extraction(d, context="groq")
+    return _resolve_tools_in_skill(validated, context="groq")
+
+
+def _resolve_tools_in_skill(skill: dict, context: str = "") -> dict:
+    """
+    Run each tool name in skill["tools"] through the MCP registry fuzzy resolver.
+    Replaces a tool entry ONLY when confidence >= 0.90 AND the registry entry is
+    marked is_taught=True (i.e. it was explicitly confirmed, not just mentioned).
+    Logs before/after for any substitution made.
+    """
+    try:
+        from agents.mcp_registry import resolve_tool_name
+        tools = skill.get("tools")
+        if not isinstance(tools, list) or not tools:
+            return skill
+        new_tools = []
+        for tool in tools:
+            raw = tool.strip() if isinstance(tool, str) else str(tool).strip()
+            if not raw:
+                new_tools.append(tool)
+                continue
+            match = resolve_tool_name(raw)
+            if match and match.get("confidence", 0) >= 0.90 and match.get("is_taught", False):
+                canonical = match["canonical_name"]
+                if canonical != raw:
+                    log.info("mcp_resolve[%s]: %r → %r (conf=%.2f)",
+                             context, raw, canonical, match["confidence"])
+                new_tools.append(canonical)
+            else:
+                new_tools.append(tool)
+        skill = dict(skill)
+        skill["tools"] = new_tools
+    except Exception as exc:
+        log.debug("_resolve_tools_in_skill: %s", exc)
+    return skill
 
 
 def _github_readme_context(repos: list) -> str:
@@ -2058,6 +2094,223 @@ def api_integration_verify(iid):
         "error":  result.get("error", ""),
     })
 
+
+
+# ── MCP Hub API endpoints ─────────────────────────────────────────────────────
+
+@app.route("/api/mcp-hub/registry")
+def api_mcp_hub_registry():
+    """Full hub registry with live health states."""
+    from agents.mcp_registry import load_registry
+    servers = load_registry()
+    return jsonify({
+        "servers": [s.to_dict() for s in servers],
+        "count":   len(servers),
+    })
+
+
+@app.route("/api/mcp-hub/health")
+def api_mcp_hub_health():
+    """Sanitized health summary — safe for Custom GPT."""
+    from agents.mcp_registry import health_summary
+    return jsonify(health_summary())
+
+
+@app.route("/api/mcp-hub/capabilities")
+def api_mcp_hub_capabilities():
+    """Capability → connected server map — safe for Custom GPT."""
+    from agents.mcp_registry import capability_map
+    return jsonify({"capabilities": capability_map()})
+
+
+@app.route("/api/mcp-hub/migration-report")
+def api_mcp_hub_migration_report():
+    """Migration report from existing status.json connections."""
+    import json as _json
+    rp = os.path.join("fieldnote_mcp", "migration_report.json")
+    if not os.path.exists(rp):
+        return jsonify({"matched": [], "unmatched": [], "duplicates": [], "note": "not run yet"}), 200
+    try:
+        with open(rp) as f:
+            return jsonify(_json.load(f))
+    except Exception as exc:
+        return jsonify({"error": str(exc)}), 500
+
+
+@app.route("/api/mcp-hub/install/<entry_id>", methods=["POST"])
+def api_mcp_hub_install(entry_id: str):
+    """Install + verify a hub server. Returns SSE stream of progress lines."""
+    from agents.mcp_registry import get_by_id
+
+    entry = get_by_id(entry_id)
+    if entry is None:
+        return jsonify({"ok": False, "error": f"Unknown server: {entry_id}"}), 404
+
+    force = (request.get_json(silent=True) or {}).get("force", False)
+
+    def _stream():
+        import queue as _queue
+        q: _queue.Queue = _queue.Queue()
+
+        def emit(msg: str, level: str = "info"):
+            q.put(json.dumps({"msg": msg, "level": level}) + "\n")
+
+        def _run():
+            from agents.mcp_agent import install_hub_server
+            result = install_hub_server(entry_id, emit=emit, force=force)
+            q.put(json.dumps({"done": True, **result}) + "\n")
+            q.put(None)
+
+        threading.Thread(target=_run, daemon=True, name=f"fn-hub-install-{entry_id}").start()
+
+        while True:
+            item = q.get()
+            if item is None:
+                break
+            yield f"data: {item}\n\n"
+
+    return Response(
+        stream_with_context(_stream()),
+        mimetype="text/event-stream",
+        headers={"Cache-Control": "no-cache", "X-Accel-Buffering": "no"},
+    )
+
+
+@app.route("/api/mcp-hub/uninstall/<entry_id>", methods=["POST"])
+def api_mcp_hub_uninstall(entry_id: str):
+    from agents.mcp_registry import get_by_id
+    from agents.mcp_agent import uninstall_server
+    if get_by_id(entry_id) is None:
+        return jsonify({"ok": False, "error": f"Unknown server: {entry_id}"}), 404
+    ok = uninstall_server(entry_id)
+    return jsonify({"ok": ok, "entry_id": entry_id, "health_state": "not_installed"})
+
+
+@app.route("/api/mcp-hub/verify/<entry_id>", methods=["POST"])
+def api_mcp_hub_verify(entry_id: str):
+    """Re-run the MCP protocol handshake for an installed server."""
+    from agents.mcp_registry import get_by_id, update_server
+    from agents.mcp_verifier import verify_server
+    from datetime import datetime, timezone
+
+    entry = get_by_id(entry_id)
+    if entry is None:
+        return jsonify({"ok": False, "error": f"Unknown server: {entry_id}"}), 404
+
+    result = verify_server(entry)
+    now_iso = datetime.now(timezone.utc).isoformat()
+    if result.ok:
+        update_server(entry_id, health_state="connected", verified_at=now_iso)
+        # Reset circuit breaker on successful verify
+        try:
+            from agents.mcp_router import _cb_record_success
+            _cb_record_success(entry_id)
+        except Exception:
+            pass
+    else:
+        update_server(entry_id, health_state="offline" if result.error_code != "runtime_missing" else "runtime_missing")
+
+    return jsonify({
+        "ok":          result.ok,
+        "error_code":  result.error_code,
+        "diagnostics": result.diagnostics,
+        "health_state": "connected" if result.ok else "offline",
+    })
+
+
+@app.route("/api/mcp-hub/enable/<entry_id>", methods=["POST"])
+def api_mcp_hub_enable(entry_id: str):
+    from agents.mcp_registry import get_by_id
+    from agents.mcp_agent import enable_server
+    if get_by_id(entry_id) is None:
+        return jsonify({"ok": False, "error": f"Unknown server: {entry_id}"}), 404
+    ok = enable_server(entry_id)
+    return jsonify({"ok": ok, "entry_id": entry_id, "enabled": True})
+
+
+@app.route("/api/mcp-hub/disable/<entry_id>", methods=["POST"])
+def api_mcp_hub_disable(entry_id: str):
+    from agents.mcp_registry import get_by_id
+    from agents.mcp_agent import disable_server
+    if get_by_id(entry_id) is None:
+        return jsonify({"ok": False, "error": f"Unknown server: {entry_id}"}), 404
+    ok = disable_server(entry_id)
+    return jsonify({"ok": ok, "entry_id": entry_id, "enabled": False})
+
+
+@app.route("/api/mcp-router/stats")
+def api_mcp_router_stats():
+    """Per-server circuit breaker and success/failure stats."""
+    try:
+        from agents.mcp_router import get_all_stats
+        return jsonify(get_all_stats())
+    except Exception as exc:
+        return jsonify({"error": str(exc)}), 500
+
+
+@app.route("/api/mcp-hub/import", methods=["POST"])
+def api_mcp_hub_import():
+    """Import existing MCP connections from status.json into the hub registry."""
+    from agents.mcp_registry import import_existing_connections
+    report = import_existing_connections()
+    return jsonify({"ok": True, **report})
+
+
+# ── MCP Hub scheduled job helpers ─────────────────────────────────────────────
+
+def _mcp_health_check() -> dict:
+    """Verify all enabled hub servers and update their health states."""
+    try:
+        from agents.mcp_registry import load_registry, update_server
+        from agents.mcp_verifier import verify_server
+        from datetime import datetime, timezone
+        servers  = load_registry()
+        checked  = 0
+        changed  = 0
+        for srv in servers:
+            if not srv.enabled or srv.health_state in ("not_installed", "quarantined"):
+                continue
+            prev_state = srv.health_state
+            result = verify_server(srv)
+            now_iso = datetime.now(timezone.utc).isoformat()
+            new_state = "connected" if result.ok else (
+                "runtime_missing" if result.error_code == "runtime_missing" else "offline"
+            )
+            update_server(srv.id, health_state=new_state, verified_at=now_iso)
+            checked += 1
+            if new_state != prev_state:
+                changed += 1
+                log.info("mcp_health: %s %s → %s", srv.id, prev_state, new_state)
+        return {"checked": checked, "changed": changed}
+    except Exception as exc:
+        log.warning("mcp_health: error: %s", exc)
+        return {"error": str(exc)}
+
+
+def _mcp_version_refresh() -> dict:
+    """Check PyPI/npm for newer package versions."""
+    try:
+        from agents.mcp_registry import load_registry, update_server
+        import urllib.request as _ur
+        updated = 0
+        for srv in load_registry():
+            if not srv.package_name or srv.install_method not in ("uvx", "pip"):
+                continue
+            try:
+                url = f"https://pypi.org/pypi/{srv.package_name}/json"
+                req = _ur.Request(url, headers={"User-Agent": "Fieldnote/1.0"})
+                with _ur.urlopen(req, timeout=8) as resp:
+                    data = json.loads(resp.read(32768))
+                latest = data.get("info", {}).get("version", "")
+                if latest and latest != srv.latest_version:
+                    update_server(srv.id, latest_version=latest)
+                    updated += 1
+            except Exception:
+                pass
+        return {"updated": updated}
+    except Exception as exc:
+        log.warning("mcp_refresh: error: %s", exc)
+        return {"error": str(exc)}
 
 
 @app.route("/run-playlist", methods=["POST"])
@@ -3772,7 +4025,7 @@ def _build_gpt_spec(base: str) -> dict:
             "description": "Run a named scheduler job right now without waiting for its schedule. Use job_name=discover to run a GitHub discovery cycle, enhance for DCA enhancement, sync for GitHub push, watchlist to process queued URLs.",
             "parameters": [
                 {"name": "job_name", "in": "path", "required": True,
-                 "schema": {"type": "string", "enum": ["discover", "enhance", "sync", "watchlist", "code_sync", "integrations"]},
+                 "schema": {"type": "string", "enum": ["discover", "enhance", "sync", "watchlist", "code_sync", "integrations", "mcp_health", "mcp_refresh"]},
                  "description": "Job to trigger immediately"}
             ],
             "responses": {
@@ -3788,6 +4041,42 @@ def _build_gpt_spec(base: str) -> dict:
                     "required": ["ok"]
                 }}}},
                 "404": {"description": "Unknown job name", "content": {"application/json": {"schema": ref("Error")}}}
+            }
+        }},
+
+        "/api/mcp-hub/health": {"get": {
+            "operationId": "getMcpHubHealth",
+            "summary": "MCP Hub health summary — counts by state",
+            "description": "Returns sanitized health counts for all hub servers: connected, degraded, offline, quarantined, not_installed, runtime_missing, missing_credential.",
+            "parameters": [],
+            "responses": {
+                "200": {"description": "Health summary", "content": {"application/json": {"schema": {
+                    "type": "object",
+                    "properties": {
+                        "total":          {"type": "integer"},
+                        "connected":      {"type": "integer"},
+                        "degraded":       {"type": "integer"},
+                        "offline":        {"type": "integer"},
+                        "quarantined":    {"type": "integer"},
+                        "not_installed":  {"type": "integer"},
+                    },
+                }}}}
+            }
+        }},
+
+        "/api/mcp-hub/capabilities": {"get": {
+            "operationId": "getMcpHubCapabilities",
+            "summary": "MCP capability map — which servers handle which tasks",
+            "description": "Returns a map of capability name (e.g. web_search, transcription) to list of connected server names that handle it.",
+            "parameters": [],
+            "responses": {
+                "200": {"description": "Capability map", "content": {"application/json": {"schema": {
+                    "type": "object",
+                    "properties": {
+                        "capabilities": {"type": "object", "description": "capability → list of server names",
+                                         "additionalProperties": {"type": "array", "items": {"type": "string"}}},
+                    },
+                }}}}
             }
         }},
 
@@ -4266,6 +4555,20 @@ def _boot_scheduler():
         description="Health-check all integrations, auto-detect new Replit Secrets, suggest missing ones",
         interval_hours=0.5,     # every 30 minutes
         fn=_integ_agent.run_agent,
+    )
+
+    s.register(
+        name="mcp_health",
+        description="Re-verify all enabled MCP hub servers; update health states",
+        interval_hours=0.25,    # every 15 minutes
+        fn=_mcp_health_check,
+    )
+
+    s.register(
+        name="mcp_refresh",
+        description="Check PyPI/npm for newer MCP package versions",
+        interval_hours=24,
+        fn=_mcp_version_refresh,
     )
 
     def _recover_queued_jobs() -> dict:
