@@ -1174,7 +1174,7 @@
       ]
     },
     "hermes": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "100_hours_of_hermes_agent_lessons_in_19_minutes"
@@ -1225,7 +1225,7 @@
       ]
     },
     "agent": {
-      "freq": 10,
+      "freq": 11,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "this_kimi_k3_agent_os_is_wild",
@@ -1344,7 +1344,7 @@
       ]
     },
     "every": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "new_claude_update_is_insane",
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq",
@@ -1381,7 +1381,7 @@
       ]
     },
     "opus": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "new_claude_opus_5_leaks",
         "kimi_k3_fully_tested_an_open_model_beats_fable",
@@ -1439,7 +1439,7 @@
       ]
     },
     "know": {
-      "freq": 17,
+      "freq": 18,
       "skills": [
         "making_with_loop_engineering",
         "master_ai_trading_in_70_minutes_full_claude_tradin",
@@ -1702,7 +1702,7 @@
       ]
     },
     "need": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "chatgpt_work_everything_you_need_to_know_to_get_st",
         "how_to_use_codex_to_build_insanely_beautiful_websi",
@@ -1830,7 +1830,7 @@
       ]
     },
     "want": {
-      "freq": 9,
+      "freq": 10,
       "skills": [
         "master_ai_trading_in_70_minutes_full_claude_tradin",
         "how_to_run_kimi_k3_for_free",
@@ -2030,7 +2030,7 @@
       ]
     },
     "over": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
         "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
@@ -2257,13 +2257,13 @@
       ]
     },
     "other": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes"
       ]
     },
     "using": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes"
       ]
@@ -2356,7 +2356,7 @@
       ]
     },
     "Claude": {
-      "freq": 72,
+      "freq": 73,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -2800,7 +2800,7 @@
       ]
     },
     "Gemini": {
-      "freq": 17,
+      "freq": 18,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
         "higsfield_integration",
@@ -3518,7 +3518,7 @@
       ]
     },
     "SSH": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes"
       ]
@@ -13766,6 +13766,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-19T02:43:09.386504+00:00",
+  "updated_at": "2026-07-19T02:43:09.501732+00:00",
   "total_skills": 67
 }
