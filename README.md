@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **19 skills** · Last synced: 2026-07-19 02:51 UTC
+> **20 skills** · Last synced: 2026-07-19 02:51 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Kimi K3 is just ridiculous](skills/kimi_k3_is_just_ridiculous.md) | By LanceyPoo. Key tools: Claude. (Auto-extracted — pending AI enhancement.) | `Claude` | `okay` `going` `wait` |
 | [Kimi K3 AI Full COURSE 1 HOUR (Build & Automate Anything)](skills/kimi_k3_ai_full_course_1_hour_build_automate_anyth.md) | By Julian Goldie SEO. Key tools: LLM, Claude. (Auto-extracted — pending AI enhan | `LLM` `Claude` | `kimmy` `here` `want` |
 | [you need to use Hermes RIGHT NOW!! (goodbye OpenClaw!!)](skills/you_need_to_use_hermes_right_now_goodbye_openclaw.md) | By NetworkChuck. Key tools: Python, Docker, LLM, OpenAI, anthropic. (Auto-extrac | `Python` `Docker` `LLM` `OpenAI` | `hermes` `gonna` `here` |
 | [China just beat Claude AI: Kimi K3](skills/china_just_beat_claude_ai_kimi_k3.md) | By TechLead. Key tools: Claude, Anthropic, OpenAI, GPT-4, Gemini. (Auto-extracte | `Claude` `Anthropic` `OpenAI` `GPT-4` | `model` `models` `open` |
