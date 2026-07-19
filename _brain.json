@@ -1,7 +1,7 @@
 {
   "concepts": {
     "AI agents": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "building_ai_agents",
         "hermes_agent_setup",
@@ -9,7 +9,7 @@
       ]
     },
     "Automation": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "building_ai_agents",
         "hermes_agent_setup",
@@ -309,7 +309,7 @@
       ]
     },
     "Personalization": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "building_ai_agents",
         "hermes_agent_setup",
@@ -317,7 +317,7 @@
       ]
     },
     "Integration": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "building_ai_agents",
         "hermes_agent_setup",
@@ -1132,6 +1132,42 @@
       "skills": [
         "prism_ml_bonzai_deployment"
       ]
+    },
+    "Compatibility": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Control": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Cost": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Local AI coding": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Quality of output": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Speed": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
     }
   },
   "tools": {
@@ -1205,7 +1241,7 @@
       ]
     },
     "Claude": {
-      "freq": 9,
+      "freq": 10,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -1341,7 +1377,7 @@
       ]
     },
     "Hermes Agent": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "building_ai_agents",
         "hermes_agent_setup",
@@ -1716,7 +1752,7 @@
       ]
     },
     "Open Claw": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "moonshot_kimiko_automation",
         "moonshot_kimiko_3",
@@ -1823,7 +1859,7 @@
       ]
     },
     "Contabo": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "building_ai_agents",
         "hermes_agent_setup",
@@ -1831,7 +1867,7 @@
       ]
     },
     "RackNerd": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "building_ai_agents",
         "hermes_agent_setup",
@@ -2164,34 +2200,63 @@
       "skills": [
         "prism_ml_bonzai_deployment"
       ]
+    },
+    "Mind Sub Co-worker": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "LM Studio": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
+    },
+    "Ollama": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents"
+      ]
     }
   },
   "skill_map": {
     "building_ai_agents": {
       "concepts": [
         "AI agents",
-        "Personalization",
         "Automation",
+        "Compatibility",
+        "Control",
+        "Cost",
         "Integration",
-        "Hermes Agent",
-        "LLMs",
-        "Goal-directed systems"
+        "Local AI coding",
+        "Personalization",
+        "Quality of output",
+        "Speed"
       ],
       "tools": [
+        "Mind Sub Co-worker",
+        "LM Studio",
+        "Ollama",
         "Hermes Agent",
         "Claude",
         "Open Claw",
         "Contabo",
-        "RackNerd",
-        "Hermes"
+        "RackNerd"
       ],
       "tags": [
         "ai",
-        "automation",
+        "ai_agents",
+        "coding",
+        "local",
+        "local_ai",
+        "local_ai_coding",
+        "models",
         "productivity",
-        "hermes"
+        "quality",
+        "speed"
       ],
-      "step_count": 10
+      "step_count": 9
     },
     "running_large_models_locally": {
       "concepts": [
@@ -2927,12 +2992,12 @@
         "Open Claw"
       ],
       "hermes_agent_setup": [
+        "RackNerd",
         "Integration",
-        "Claude",
+        "Contabo",
         "Personalization",
-        "Automation",
-        "Hermes Agent",
-        "Open Claw"
+        "AI agents",
+        "Claude"
       ],
       "moonshot_kimiko_3_skill": [
         "Open Claw"
@@ -2941,12 +3006,12 @@
         "LLMs"
       ],
       "building_ai_agents_with_loop": [
-        "Claude",
-        "Integration",
-        "Open Claw",
-        "Automation",
         "RackNerd",
-        "Hermes Agent"
+        "Integration",
+        "Contabo",
+        "Personalization",
+        "AI agents",
+        "Claude"
       ]
     },
     "running_large_models_locally": {
@@ -3241,12 +3306,12 @@
     "ragaai_catalyst": {},
     "hermes_agent_setup": {
       "building_ai_agents": [
+        "RackNerd",
         "Integration",
-        "Claude",
+        "Contabo",
         "Personalization",
-        "Automation",
-        "Hermes Agent",
-        "Open Claw"
+        "AI agents",
+        "Claude"
       ],
       "building_resilient_ai_agents_with_langgraph": [
         "Human-in-the-loop"
@@ -3475,12 +3540,12 @@
     "chrome_mcp_server": {},
     "building_ai_agents_with_loop": {
       "building_ai_agents": [
-        "Claude",
-        "Integration",
-        "Open Claw",
-        "Automation",
         "RackNerd",
-        "Hermes Agent"
+        "Integration",
+        "Contabo",
+        "Personalization",
+        "AI agents",
+        "Claude"
       ],
       "mastering_loop_engineering": [
         "Claude",
@@ -3557,6 +3622,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-19T02:39:59.635649+00:00",
+  "updated_at": "2026-07-19T02:40:00.498609+00:00",
   "total_skills": 27
 }
