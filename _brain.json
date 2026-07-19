@@ -13,7 +13,7 @@
       ]
     },
     "model": {
-      "freq": 11,
+      "freq": 12,
       "skills": [
         "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
@@ -25,7 +25,8 @@
         "use_this_to_make_the_hermes_agent_basically_free",
         "ornith_35b_9b_hermes_zed_the_fully_private_local_a",
         "new_claude_opus_5_leaks",
-        "kimi_k3_just_knocked_claude_to_third_place_chinese"
+        "kimi_k3_just_knocked_claude_to_third_place_chinese",
+        "2_8_trillion_parameters_kimi_k3_is_here"
       ]
     },
     "going": {
@@ -60,11 +61,12 @@
       ]
     },
     "think": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
         "making_with_loop_engineering",
-        "the_15_most_insane_things_created_by_kimi_k3_kimi_"
+        "the_15_most_insane_things_created_by_kimi_k3_kimi_",
+        "2_8_trillion_parameters_kimi_k3_is_here"
       ]
     },
     "know": {
@@ -180,10 +182,11 @@
       ]
     },
     "open": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "did_kimi_k3_really_beat_fable",
-        "this_100_self_improving_ai_agent_is_insane_just_wa"
+        "this_100_self_improving_ai_agent_is_insane_just_wa",
+        "2_8_trillion_parameters_kimi_k3_is_here"
       ]
     },
     "here": {
@@ -206,16 +209,18 @@
       ]
     },
     "source": {
-      "freq": 1,
-      "skills": [
-        "did_kimi_k3_really_beat_fable"
-      ]
-    },
-    "kimmy": {
       "freq": 2,
       "skills": [
         "did_kimi_k3_really_beat_fable",
-        "the_15_most_insane_things_created_by_kimi_k3_kimi_"
+        "2_8_trillion_parameters_kimi_k3_is_here"
+      ]
+    },
+    "kimmy": {
+      "freq": 3,
+      "skills": [
+        "did_kimi_k3_really_beat_fable",
+        "the_15_most_insane_things_created_by_kimi_k3_kimi_",
+        "2_8_trillion_parameters_kimi_k3_is_here"
       ]
     },
     "models": {
@@ -237,13 +242,14 @@
       ]
     },
     "about": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "did_kimi_k3_really_beat_fable",
         "every_hermes_concept_explained_for_normal_people",
         "hermes_agent_zero_to_personal_ai_assistant_1_hour_",
         "new_claude_update_is_insane",
-        "kimi_k3_just_knocked_claude_to_third_place_chinese"
+        "kimi_k3_just_knocked_claude_to_third_place_chinese",
+        "2_8_trillion_parameters_kimi_k3_is_here"
       ]
     },
     "memory": {
@@ -283,10 +289,11 @@
       ]
     },
     "because": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq",
-        "kimi_k3_just_knocked_claude_to_third_place_chinese"
+        "kimi_k3_just_knocked_claude_to_third_place_chinese",
+        "2_8_trillion_parameters_kimi_k3_is_here"
       ]
     },
     "same": {
@@ -314,10 +321,11 @@
       ]
     },
     "website": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "chatgpt_work_everything_you_need_to_know_to_get_st",
-        "gpt_5_6_on_hermes_agent_is_actually_insane_full_he"
+        "gpt_5_6_on_hermes_agent_is_actually_insane_full_he",
+        "2_8_trillion_parameters_kimi_k3_is_here"
       ]
     },
     "good": {
@@ -869,6 +877,18 @@
       "skills": [
         "the_15_most_insane_things_created_by_kimi_k3_kimi_"
       ]
+    },
+    "trillion": {
+      "freq": 1,
+      "skills": [
+        "2_8_trillion_parameters_kimi_k3_is_here"
+      ]
+    },
+    "thinking": {
+      "freq": 1,
+      "skills": [
+        "2_8_trillion_parameters_kimi_k3_is_here"
+      ]
     }
   },
   "tools": {
@@ -881,7 +901,7 @@
       ]
     },
     "Claude": {
-      "freq": 19,
+      "freq": 20,
       "skills": [
         "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
@@ -901,7 +921,8 @@
         "kimi_k3_just_knocked_claude_to_third_place_chinese",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
         "this_ai_business_model_is_creating_new_millionaire",
-        "the_15_most_insane_things_created_by_kimi_k3_kimi_"
+        "the_15_most_insane_things_created_by_kimi_k3_kimi_",
+        "2_8_trillion_parameters_kimi_k3_is_here"
       ]
     },
     "Gemini": {
@@ -914,7 +935,7 @@
       ]
     },
     "OpenAI": {
-      "freq": 11,
+      "freq": 12,
       "skills": [
         "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
         "did_kimi_k3_really_beat_fable",
@@ -926,7 +947,8 @@
         "gpt_5_6_on_hermes_agent_is_actually_insane_full_he",
         "hermes_agent_zero_to_personal_ai_assistant_1_hour_",
         "hermes_agent_full_course_setup_guide_for_complete_",
-        "this_100_self_improving_ai_agent_is_insane_just_wa"
+        "this_100_self_improving_ai_agent_is_insane_just_wa",
+        "2_8_trillion_parameters_kimi_k3_is_here"
       ]
     },
     "Anthropic": {
@@ -990,9 +1012,10 @@
       ]
     },
     "bash": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "every_hermes_concept_explained_for_normal_people"
+        "every_hermes_concept_explained_for_normal_people",
+        "2_8_trillion_parameters_kimi_k3_is_here"
       ]
     },
     "LLM": {
@@ -1803,6 +1826,34 @@
         "something"
       ],
       "step_count": 1
+    },
+    "2_8_trillion_parameters_kimi_k3_is_here": {
+      "concepts": [
+        "model",
+        "website",
+        "open",
+        "kimmy",
+        "trillion",
+        "about",
+        "source",
+        "because",
+        "think",
+        "thinking"
+      ],
+      "tools": [
+        "OpenAI",
+        "bash",
+        "Claude"
+      ],
+      "tags": [
+        "model",
+        "website",
+        "open",
+        "kimmy",
+        "trillion",
+        "about"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -1936,6 +1987,12 @@
         "going",
         "think",
         "know"
+      ],
+      "2_8_trillion_parameters_kimi_k3_is_here": [
+        "Claude",
+        "think",
+        "OpenAI",
+        "model"
       ]
     },
     "hermes_agent_just_got_10x_better_4_insane_new_feat": {
@@ -2064,6 +2121,10 @@
         "Claude",
         "going",
         "actually"
+      ],
+      "2_8_trillion_parameters_kimi_k3_is_here": [
+        "Claude",
+        "model"
       ]
     },
     "did_kimi_k3_really_beat_fable": {
@@ -2203,6 +2264,14 @@
         "here",
         "kimmy",
         "actually"
+      ],
+      "2_8_trillion_parameters_kimi_k3_is_here": [
+        "about",
+        "kimmy",
+        "Claude",
+        "OpenAI",
+        "model",
+        "source"
       ]
     },
     "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
@@ -2240,6 +2309,9 @@
       "this_100_self_improving_ai_agent_is_insane_just_wa": [
         "which",
         "Python"
+      ],
+      "2_8_trillion_parameters_kimi_k3_is_here": [
+        "because"
       ]
     },
     "chatgpt_work_everything_you_need_to_know_to_get_st": {
@@ -2322,6 +2394,9 @@
       "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
         "going",
         "here"
+      ],
+      "2_8_trillion_parameters_kimi_k3_is_here": [
+        "website"
       ]
     },
     "hermes_agent_build_your_own_personal_ai_assistant_": {
@@ -2422,6 +2497,9 @@
       "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
         "going",
         "here"
+      ],
+      "2_8_trillion_parameters_kimi_k3_is_here": [
+        "OpenAI"
       ]
     },
     "making_with_loop_engineering": {
@@ -2523,6 +2601,11 @@
         "know",
         "actually",
         "Claude",
+        "think"
+      ],
+      "2_8_trillion_parameters_kimi_k3_is_here": [
+        "Claude",
+        "OpenAI",
         "think"
       ]
     },
@@ -2667,6 +2750,12 @@
       "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
         "Claude",
         "here"
+      ],
+      "2_8_trillion_parameters_kimi_k3_is_here": [
+        "about",
+        "Claude",
+        "OpenAI",
+        "bash"
       ]
     },
     "kimi_k3_hermes_agent_changes_everything": {
@@ -2764,6 +2853,9 @@
       ],
       "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
         "here"
+      ],
+      "2_8_trillion_parameters_kimi_k3_is_here": [
+        "model"
       ]
     },
     "new_hermes_paperclip_ai_agent_update_is_insane": {
@@ -2864,6 +2956,9 @@
       ],
       "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
         "Claude"
+      ],
+      "2_8_trillion_parameters_kimi_k3_is_here": [
+        "Claude"
       ]
     },
     "kimi_k3_is_insane_best_open_model_ever_that_beats_": {
@@ -2961,6 +3056,10 @@
       "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
         "Claude",
         "actually"
+      ],
+      "2_8_trillion_parameters_kimi_k3_is_here": [
+        "Claude",
+        "model"
       ]
     },
     "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": {
@@ -3212,6 +3311,11 @@
         "Claude",
         "going",
         "here"
+      ],
+      "2_8_trillion_parameters_kimi_k3_is_here": [
+        "Claude",
+        "OpenAI",
+        "model"
       ]
     },
     "hermes_agent_ollama_how_to_install_hermes_locally_": {
@@ -3282,6 +3386,9 @@
       "this_100_self_improving_ai_agent_is_insane_just_wa": [
         "hermes",
         "want"
+      ],
+      "2_8_trillion_parameters_kimi_k3_is_here": [
+        "model"
       ]
     },
     "use_this_to_make_the_hermes_agent_basically_free": {
@@ -3413,6 +3520,11 @@
       ],
       "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
         "Claude"
+      ],
+      "2_8_trillion_parameters_kimi_k3_is_here": [
+        "Claude",
+        "OpenAI",
+        "model"
       ]
     },
     "gpt_5_6_on_hermes_agent_is_actually_insane_full_he": {
@@ -3544,6 +3656,11 @@
       "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
         "Claude",
         "here"
+      ],
+      "2_8_trillion_parameters_kimi_k3_is_here": [
+        "website",
+        "Claude",
+        "OpenAI"
       ]
     },
     "ornith_35b_9b_hermes_zed_the_fully_private_local_a": {
@@ -3642,6 +3759,10 @@
       ],
       "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
         "Claude"
+      ],
+      "2_8_trillion_parameters_kimi_k3_is_here": [
+        "Claude",
+        "model"
       ]
     },
     "hermes_agent_zero_to_personal_ai_assistant_1_hour_": {
@@ -3795,6 +3916,11 @@
         "going",
         "here",
         "know"
+      ],
+      "2_8_trillion_parameters_kimi_k3_is_here": [
+        "about",
+        "Claude",
+        "OpenAI"
       ]
     },
     "new_claude_opus_5_leaks": {
@@ -3906,6 +4032,10 @@
       "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
         "Claude",
         "here"
+      ],
+      "2_8_trillion_parameters_kimi_k3_is_here": [
+        "Claude",
+        "model"
       ]
     },
     "hermes_agent_full_course_setup_guide_for_complete_": {
@@ -4038,6 +4168,9 @@
       "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
         "going",
         "here"
+      ],
+      "2_8_trillion_parameters_kimi_k3_is_here": [
+        "OpenAI"
       ]
     },
     "kimi_k3_vs_claude_fable_5_raw_results": {
@@ -4159,6 +4292,9 @@
         "Claude",
         "going",
         "here"
+      ],
+      "2_8_trillion_parameters_kimi_k3_is_here": [
+        "Claude"
       ]
     },
     "new_claude_update_is_insane": {
@@ -4257,6 +4393,10 @@
         "Claude",
         "something",
         "actually"
+      ],
+      "2_8_trillion_parameters_kimi_k3_is_here": [
+        "about",
+        "Claude"
       ]
     },
     "kimi_k3_just_knocked_claude_to_third_place_chinese": {
@@ -4372,6 +4512,12 @@
       "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
         "Claude",
         "going"
+      ],
+      "2_8_trillion_parameters_kimi_k3_is_here": [
+        "about",
+        "Claude",
+        "because",
+        "model"
       ]
     },
     "this_100_self_improving_ai_agent_is_insane_just_wa": {
@@ -4523,6 +4669,11 @@
         "Claude",
         "going",
         "here"
+      ],
+      "2_8_trillion_parameters_kimi_k3_is_here": [
+        "Claude",
+        "OpenAI",
+        "open"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -4597,6 +4748,9 @@
         "Anthropic"
       ],
       "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "Claude"
+      ],
+      "2_8_trillion_parameters_kimi_k3_is_here": [
         "Claude"
       ]
     },
@@ -4702,9 +4856,124 @@
       ],
       "this_ai_business_model_is_creating_new_millionaire": [
         "Claude"
+      ],
+      "2_8_trillion_parameters_kimi_k3_is_here": [
+        "Claude",
+        "kimmy",
+        "think"
+      ]
+    },
+    "2_8_trillion_parameters_kimi_k3_is_here": {
+      "kimi_k3_testing_moonshot_s_2_8t_open_model_without": [
+        "Claude",
+        "think",
+        "OpenAI",
+        "model"
+      ],
+      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
+        "Claude",
+        "model"
+      ],
+      "did_kimi_k3_really_beat_fable": [
+        "about",
+        "kimmy",
+        "Claude",
+        "OpenAI",
+        "model",
+        "source"
+      ],
+      "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": [
+        "because"
+      ],
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "website"
+      ],
+      "hermes_agent_build_your_own_personal_ai_assistant_": [
+        "OpenAI"
+      ],
+      "making_with_loop_engineering": [
+        "Claude",
+        "OpenAI",
+        "think"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "about",
+        "Claude",
+        "OpenAI",
+        "bash"
+      ],
+      "kimi_k3_hermes_agent_changes_everything": [
+        "model"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude"
+      ],
+      "kimi_k3_is_insane_best_open_model_ever_that_beats_": [
+        "Claude",
+        "model"
+      ],
+      "full_hermes_agent_tutorial_desktop_a_useful_agenti": [
+        "Claude",
+        "OpenAI",
+        "model"
+      ],
+      "hermes_agent_ollama_how_to_install_hermes_locally_": [
+        "model"
+      ],
+      "use_this_to_make_the_hermes_agent_basically_free": [
+        "Claude",
+        "OpenAI",
+        "model"
+      ],
+      "gpt_5_6_on_hermes_agent_is_actually_insane_full_he": [
+        "website",
+        "Claude",
+        "OpenAI"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "Claude",
+        "model"
+      ],
+      "hermes_agent_zero_to_personal_ai_assistant_1_hour_": [
+        "about",
+        "Claude",
+        "OpenAI"
+      ],
+      "new_claude_opus_5_leaks": [
+        "Claude",
+        "model"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "OpenAI"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Claude"
+      ],
+      "new_claude_update_is_insane": [
+        "about",
+        "Claude"
+      ],
+      "kimi_k3_just_knocked_claude_to_third_place_chinese": [
+        "about",
+        "Claude",
+        "because",
+        "model"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "Claude",
+        "OpenAI",
+        "open"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Claude"
+      ],
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "Claude",
+        "kimmy",
+        "think"
       ]
     }
   },
-  "updated_at": "2026-07-19T02:50:57.263863+00:00",
-  "total_skills": 26
+  "updated_at": "2026-07-19T02:50:57.304878+00:00",
+  "total_skills": 27
 }
