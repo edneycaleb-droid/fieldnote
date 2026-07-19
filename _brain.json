@@ -1239,13 +1239,14 @@
       ]
     },
     "which": {
-      "freq": 11,
+      "freq": 12,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq",
         "kimi_k3_is_the_best_model_ever_made_sometimes",
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
-        "yes_the_kimi_k3_hype_is_real"
+        "yes_the_kimi_k3_hype_is_real",
+        "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_"
       ]
     },
     "video": {
@@ -1285,10 +1286,11 @@
       ]
     },
     "something": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "new_claude_update_is_insane",
-        "the_15_most_insane_things_created_by_kimi_k3_kimi_"
+        "the_15_most_insane_things_created_by_kimi_k3_kimi_",
+        "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_"
       ]
     },
     "anthropic": {
@@ -1337,13 +1339,14 @@
       ]
     },
     "about": {
-      "freq": 11,
+      "freq": 12,
       "skills": [
         "new_claude_update_is_insane",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "did_kimi_k3_really_beat_fable",
         "kimi_k3_is_the_best_model_ever_made_sometimes",
-        "china_just_beat_claude_ai_kimi_k3"
+        "china_just_beat_claude_ai_kimi_k3",
+        "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_"
       ]
     },
     "opus": {
@@ -1354,7 +1357,7 @@
       ]
     },
     "model": {
-      "freq": 21,
+      "freq": 22,
       "skills": [
         "new_claude_opus_5_leaks",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
@@ -1365,7 +1368,8 @@
         "china_just_beat_claude_ai_kimi_k3",
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
         "this_kimi_k3_agent_os_is_wild",
-        "kimi_k3_fully_tested_an_open_model_beats_fable"
+        "kimi_k3_fully_tested_an_open_model_beats_fable",
+        "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_"
       ]
     },
     "profit": {
@@ -1429,7 +1433,7 @@
       ]
     },
     "going": {
-      "freq": 19,
+      "freq": 20,
       "skills": [
         "making_with_loop_engineering",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
@@ -1439,7 +1443,8 @@
         "i_tested_kimi_k3_so_you_don_t_have_to",
         "kimi_k3_is_just_ridiculous",
         "how_to_run_kimi_k3_for_free",
-        "kimi_k3_ai_full_course_1_hour_build_automate_anyth"
+        "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
+        "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_"
       ]
     },
     "think": {
@@ -1672,11 +1677,12 @@
       ]
     },
     "because": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq",
         "kimi_k3_is_the_best_model_ever_made_sometimes",
-        "this_kimi_k3_agent_os_is_wild"
+        "this_kimi_k3_agent_os_is_wild",
+        "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_"
       ]
     },
     "same": {
@@ -1787,11 +1793,12 @@
       ]
     },
     "open": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "did_kimi_k3_really_beat_fable",
         "kimi_k3_is_the_best_model_ever_made_sometimes",
-        "china_just_beat_claude_ai_kimi_k3"
+        "china_just_beat_claude_ai_kimi_k3",
+        "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_"
       ]
     },
     "source": {
@@ -1876,9 +1883,10 @@
       ]
     },
     "better": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
-        "people_are_creating_insane_things_with_kimi_k3"
+        "people_are_creating_insane_things_with_kimi_k3",
+        "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_"
       ]
     },
     "much": {
@@ -1996,6 +2004,18 @@
       "freq": 2,
       "skills": [
         "kimi_k3_fully_tested_an_open_model_beats_fable"
+      ]
+    },
+    "those": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_"
+      ]
+    },
+    "frontier": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_"
       ]
     }
   },
@@ -2444,7 +2464,7 @@
       ]
     },
     "OpenAI": {
-      "freq": 22,
+      "freq": 23,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
         "testing_and_comparing_llms",
@@ -2456,7 +2476,8 @@
         "i_tested_kimi_k3_so_you_don_t_have_to",
         "china_just_beat_claude_ai_kimi_k3",
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
-        "yes_the_kimi_k3_hype_is_real"
+        "yes_the_kimi_k3_hype_is_real",
+        "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_"
       ]
     },
     "Mistral": {
@@ -2509,7 +2530,7 @@
       ]
     },
     "Gemini": {
-      "freq": 12,
+      "freq": 13,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
         "higsfield_integration",
@@ -2517,7 +2538,8 @@
         "china_just_beat_claude_ai_kimi_k3",
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
         "this_kimi_k3_agent_os_is_wild",
-        "kimi_k3_fully_tested_an_open_model_beats_fable"
+        "kimi_k3_fully_tested_an_open_model_beats_fable",
+        "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_"
       ]
     },
     "GPT-4": {
@@ -4615,6 +4637,33 @@
         "send"
       ],
       "step_count": 1
+    },
+    "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_": {
+      "concepts": [
+        "model",
+        "those",
+        "going",
+        "because",
+        "something",
+        "open",
+        "frontier",
+        "which",
+        "better",
+        "about"
+      ],
+      "tools": [
+        "OpenAI",
+        "Gemini"
+      ],
+      "tags": [
+        "model",
+        "those",
+        "going",
+        "because",
+        "something",
+        "open"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -4975,6 +5024,10 @@
       ],
       "kimi_k3_fully_tested_an_open_model_beats_fable": [
         "Gemini"
+      ],
+      "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_": [
+        "Gemini",
+        "OpenAI"
       ]
     },
     "swanlab_ai_training_analysis_platform": {
@@ -5202,6 +5255,9 @@
         "Claude"
       ],
       "kimi_k3_fully_tested_an_open_model_beats_fable": [
+        "Gemini"
+      ],
+      "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_": [
         "Gemini"
       ]
     },
@@ -5717,6 +5773,9 @@
       "yes_the_kimi_k3_hype_is_real": [
         "Anthropic",
         "OpenAI"
+      ],
+      "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_": [
+        "OpenAI"
       ]
     },
     "prism_ml_bonzai_deployment": {
@@ -5854,6 +5913,9 @@
       "kimi_k3_fully_tested_an_open_model_beats_fable": [
         "video",
         "right"
+      ],
+      "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_": [
+        "which"
       ]
     },
     "new_claude_update_is_insane": {
@@ -5976,6 +6038,10 @@
       "kimi_k3_ai_full_course_1_hour_build_automate_anyth": [
         "Claude",
         "actually"
+      ],
+      "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_": [
+        "about",
+        "something"
       ]
     },
     "new_claude_opus_5_leaks": {
@@ -6104,6 +6170,9 @@
       "kimi_k3_fully_tested_an_open_model_beats_fable": [
         "opus",
         "model"
+      ],
+      "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_": [
+        "model"
       ]
     },
     "making_with_loop_engineering": {
@@ -6222,6 +6291,10 @@
         "Claude",
         "going",
         "actually"
+      ],
+      "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_": [
+        "going",
+        "OpenAI"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -6352,6 +6425,11 @@
       ],
       "kimi_k3_fully_tested_an_open_model_beats_fable": [
         "models",
+        "model"
+      ],
+      "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_": [
+        "about",
+        "OpenAI",
         "model"
       ]
     },
@@ -6533,6 +6611,9 @@
       ],
       "kimi_k3_fully_tested_an_open_model_beats_fable": [
         "right"
+      ],
+      "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_": [
+        "going"
       ]
     },
     "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
@@ -6567,6 +6648,10 @@
       ],
       "yes_the_kimi_k3_hype_is_real": [
         "which"
+      ],
+      "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_": [
+        "which",
+        "because"
       ]
     },
     "kimi_k3_vs_claude_fable_5_raw_results": {
@@ -6704,6 +6789,9 @@
       "kimi_k3_fully_tested_an_open_model_beats_fable": [
         "fable",
         "right"
+      ],
+      "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_": [
+        "going"
       ]
     },
     "master_ai_trading_in_70_minutes_full_claude_tradin": {
@@ -6955,6 +7043,9 @@
       "kimi_k3_ai_full_course_1_hour_build_automate_anyth": [
         "Claude",
         "here"
+      ],
+      "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_": [
+        "OpenAI"
       ]
     },
     "did_kimi_k3_really_beat_fable": {
@@ -7116,6 +7207,12 @@
         "right",
         "kimmy",
         "model"
+      ],
+      "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_": [
+        "about",
+        "open",
+        "OpenAI",
+        "model"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -7241,6 +7338,10 @@
       ],
       "kimi_k3_fully_tested_an_open_model_beats_fable": [
         "kimmy"
+      ],
+      "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_": [
+        "going",
+        "something"
       ]
     },
     "kimi_k3_is_the_best_model_ever_made_sometimes": {
@@ -7411,6 +7512,14 @@
         "models",
         "Gemini",
         "model"
+      ],
+      "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_": [
+        "about",
+        "going",
+        "Gemini",
+        "OpenAI",
+        "model",
+        "which"
       ]
     },
     "i_tested_kimi_k3_so_you_don_t_have_to": {
@@ -7546,6 +7655,11 @@
         "models",
         "kimmy",
         "model"
+      ],
+      "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_": [
+        "going",
+        "OpenAI",
+        "model"
       ]
     },
     "kimi_k3_is_just_ridiculous": {
@@ -7665,6 +7779,9 @@
       ],
       "kimi_k3_fully_tested_an_open_model_beats_fable": [
         "kimmy"
+      ],
+      "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_": [
+        "going"
       ]
     },
     "people_are_creating_insane_things_with_kimi_k3": {
@@ -7785,6 +7902,10 @@
         "fable",
         "kimmy",
         "model"
+      ],
+      "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_": [
+        "model",
+        "better"
       ]
     },
     "china_just_beat_claude_ai_kimi_k3": {
@@ -7922,6 +8043,13 @@
         "models",
         "Gemini",
         "model"
+      ],
+      "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_": [
+        "about",
+        "Gemini",
+        "OpenAI",
+        "model",
+        "open"
       ]
     },
     "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": {
@@ -8051,6 +8179,12 @@
         "models",
         "Gemini",
         "model"
+      ],
+      "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_": [
+        "which",
+        "Gemini",
+        "OpenAI",
+        "model"
       ]
     },
     "this_kimi_k3_agent_os_is_wild": {
@@ -8166,6 +8300,11 @@
         "models",
         "Gemini",
         "model"
+      ],
+      "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_": [
+        "Gemini",
+        "because",
+        "model"
       ]
     },
     "how_to_run_kimi_k3_for_free": {
@@ -8241,6 +8380,9 @@
         "want",
         "here",
         "actually"
+      ],
+      "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_": [
+        "going"
       ]
     },
     "yes_the_kimi_k3_hype_is_real": {
@@ -8397,6 +8539,10 @@
         "fable",
         "right",
         "kimmy"
+      ],
+      "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_": [
+        "which",
+        "OpenAI"
       ]
     },
     "kimi_k3_ai_full_course_1_hour_build_automate_anyth": {
@@ -8530,6 +8676,9 @@
       ],
       "kimi_k3_fully_tested_an_open_model_beats_fable": [
         "kimmy"
+      ],
+      "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_": [
+        "going"
       ]
     },
     "kimi_k3_fully_tested_an_open_model_beats_fable": {
@@ -8612,9 +8761,119 @@
       ],
       "kimi_k3_ai_full_course_1_hour_build_automate_anyth": [
         "kimmy"
+      ],
+      "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_": [
+        "Gemini",
+        "model"
+      ]
+    },
+    "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_": {
+      "build_production_ready_llm_applications_with_haystack": [
+        "Gemini",
+        "OpenAI"
+      ],
+      "higsfield_integration": [
+        "Gemini"
+      ],
+      "testing_and_comparing_llms": [
+        "OpenAI"
+      ],
+      "kimi_k3_hermes_ai_agent_is_insane": [
+        "which"
+      ],
+      "new_claude_update_is_insane": [
+        "about",
+        "something"
+      ],
+      "new_claude_opus_5_leaks": [
+        "model"
+      ],
+      "making_with_loop_engineering": [
+        "going",
+        "OpenAI"
+      ],
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "about",
+        "OpenAI",
+        "model"
+      ],
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "going"
+      ],
+      "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": [
+        "which",
+        "because"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "going"
+      ],
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "OpenAI"
+      ],
+      "did_kimi_k3_really_beat_fable": [
+        "about",
+        "open",
+        "OpenAI",
+        "model"
+      ],
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "going",
+        "something"
+      ],
+      "kimi_k3_is_the_best_model_ever_made_sometimes": [
+        "about",
+        "going",
+        "Gemini",
+        "OpenAI",
+        "model",
+        "which"
+      ],
+      "i_tested_kimi_k3_so_you_don_t_have_to": [
+        "going",
+        "OpenAI",
+        "model"
+      ],
+      "kimi_k3_is_just_ridiculous": [
+        "going"
+      ],
+      "people_are_creating_insane_things_with_kimi_k3": [
+        "model",
+        "better"
+      ],
+      "china_just_beat_claude_ai_kimi_k3": [
+        "about",
+        "Gemini",
+        "OpenAI",
+        "model",
+        "open"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "which",
+        "Gemini",
+        "OpenAI",
+        "model"
+      ],
+      "this_kimi_k3_agent_os_is_wild": [
+        "Gemini",
+        "because",
+        "model"
+      ],
+      "how_to_run_kimi_k3_for_free": [
+        "going"
+      ],
+      "yes_the_kimi_k3_hype_is_real": [
+        "which",
+        "OpenAI"
+      ],
+      "kimi_k3_ai_full_course_1_hour_build_automate_anyth": [
+        "going"
+      ],
+      "kimi_k3_fully_tested_an_open_model_beats_fable": [
+        "Gemini",
+        "model"
       ]
     }
   },
-  "updated_at": "2026-07-19T02:42:03.908316+00:00",
-  "total_skills": 52
+  "updated_at": "2026-07-19T02:42:09.306678+00:00",
+  "total_skills": 53
 }
