@@ -1,907 +1,112 @@
 {
   "concepts": {
-    "design": {
+    "very": {
       "freq": 1,
       "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
+        "kimi_k3_just_knocked_claude_to_third_place_chinese"
       ]
     },
-    "website": {
+    "about": {
       "freq": 1,
       "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
-      ]
-    },
-    "codeex": {
-      "freq": 1,
-      "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
-      ]
-    },
-    "skill": {
-      "freq": 1,
-      "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
-      ]
-    },
-    "here": {
-      "freq": 4,
-      "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi",
-        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner",
-        "kimi_k3_is_just_ridiculous",
-        "kimi_k3_is_fable_level_they_should_be_worried"
-      ]
-    },
-    "before": {
-      "freq": 1,
-      "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
-      ]
-    },
-    "really": {
-      "freq": 2,
-      "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi",
-        "kimi_k3_is_insane_best_open_model_ever_that_beats_"
-      ]
-    },
-    "need": {
-      "freq": 2,
-      "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi",
-        "100_hours_of_hermes_agent_lessons_in_19_minutes"
-      ]
-    },
-    "file": {
-      "freq": 1,
-      "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
-      ]
-    },
-    "site": {
-      "freq": 1,
-      "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
-      ]
-    },
-    "model": {
-      "freq": 4,
-      "skills": [
-        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner",
-        "kimi_k3_is_fable_level_they_should_be_worried",
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
-        "kimi_k3_is_insane_best_open_model_ever_that_beats_"
-      ]
-    },
-    "fable": {
-      "freq": 3,
-      "skills": [
-        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner",
-        "kimi_k3_is_fable_level_they_should_be_worried",
-        "kimi_k3_is_insane_best_open_model_ever_that_beats_"
+        "kimi_k3_just_knocked_claude_to_third_place_chinese"
       ]
     },
     "models": {
-      "freq": 2,
-      "skills": [
-        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner",
-        "kimi_k3_is_fable_level_they_should_be_worried"
-      ]
-    },
-    "these": {
-      "freq": 3,
-      "skills": [
-        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner",
-        "kimi_k3_is_fable_level_they_should_be_worried",
-        "kimi_k3_is_insane_best_open_model_ever_that_beats_"
-      ]
-    },
-    "which": {
-      "freq": 3,
-      "skills": [
-        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner",
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
-        "kimi_k3_is_insane_best_open_model_ever_that_beats_"
-      ]
-    },
-    "kimi": {
-      "freq": 2,
-      "skills": [
-        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner",
-        "kimi_k3_is_insane_best_open_model_ever_that_beats_"
-      ]
-    },
-    "actually": {
-      "freq": 4,
-      "skills": [
-        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner",
-        "kimi_k3_is_just_ridiculous",
-        "kimi_k3_is_fable_level_they_should_be_worried",
-        "kimi_k3_is_insane_best_open_model_ever_that_beats_"
-      ]
-    },
-    "much": {
       "freq": 1,
       "skills": [
-        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner"
+        "kimi_k3_just_knocked_claude_to_third_place_chinese"
       ]
     },
-    "better": {
+    "because": {
       "freq": 1,
       "skills": [
-        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner"
-      ]
-    },
-    "okay": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_is_just_ridiculous"
+        "kimi_k3_just_knocked_claude_to_third_place_chinese"
       ]
     },
     "going": {
-      "freq": 2,
-      "skills": [
-        "kimi_k3_is_just_ridiculous",
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
-      ]
-    },
-    "wait": {
       "freq": 1,
       "skills": [
-        "kimi_k3_is_just_ridiculous"
+        "kimi_k3_just_knocked_claude_to_third_place_chinese"
       ]
     },
     "good": {
       "freq": 1,
       "skills": [
-        "kimi_k3_is_just_ridiculous"
+        "kimi_k3_just_knocked_claude_to_third_place_chinese"
       ]
     },
-    "kimmy": {
+    "model": {
       "freq": 1,
       "skills": [
-        "kimi_k3_is_just_ridiculous"
+        "kimi_k3_just_knocked_claude_to_third_place_chinese"
       ]
     },
-    "pretty": {
-      "freq": 2,
-      "skills": [
-        "kimi_k3_is_just_ridiculous",
-        "kimi_k3_is_fable_level_they_should_be_worried"
-      ]
-    },
-    "game": {
+    "intelligence": {
       "freq": 1,
       "skills": [
-        "kimi_k3_is_just_ridiculous"
+        "kimi_k3_just_knocked_claude_to_third_place_chinese"
       ]
     },
-    "make": {
+    "chinese": {
       "freq": 1,
       "skills": [
-        "kimi_k3_is_just_ridiculous"
+        "kimi_k3_just_knocked_claude_to_third_place_chinese"
       ]
     },
-    "well": {
-      "freq": 2,
-      "skills": [
-        "kimi_k3_is_fable_level_they_should_be_worried",
-        "kimi_k3_is_insane_best_open_model_ever_that_beats_"
-      ]
-    },
-    "code": {
+    "artificial": {
       "freq": 1,
       "skills": [
-        "kimi_k3_is_fable_level_they_should_be_worried"
-      ]
-    },
-    "didn": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_is_fable_level_they_should_be_worried"
-      ]
-    },
-    "same": {
-      "freq": 1,
-      "skills": [
-        "new_hermes_agent_os_is_insane"
-      ]
-    },
-    "outreach": {
-      "freq": 1,
-      "skills": [
-        "new_hermes_agent_os_is_insane"
-      ]
-    },
-    "agent": {
-      "freq": 2,
-      "skills": [
-        "new_hermes_agent_os_is_insane",
-        "100_hours_of_hermes_agent_lessons_in_19_minutes"
-      ]
-    },
-    "squad": {
-      "freq": 1,
-      "skills": [
-        "new_hermes_agent_os_is_insane"
-      ]
-    },
-    "memory": {
-      "freq": 1,
-      "skills": [
-        "new_hermes_agent_os_is_insane"
-      ]
-    },
-    "each": {
-      "freq": 1,
-      "skills": [
-        "new_hermes_agent_os_is_insane"
-      ]
-    },
-    "already": {
-      "freq": 1,
-      "skills": [
-        "new_hermes_agent_os_is_insane"
-      ]
-    },
-    "profit": {
-      "freq": 1,
-      "skills": [
-        "new_hermes_agent_os_is_insane"
-      ]
-    },
-    "boardroom": {
-      "freq": 1,
-      "skills": [
-        "new_hermes_agent_os_is_insane"
-      ]
-    },
-    "every": {
-      "freq": 2,
-      "skills": [
-        "new_hermes_agent_os_is_insane",
-        "100_hours_of_hermes_agent_lessons_in_19_minutes"
-      ]
-    },
-    "hermes": {
-      "freq": 1,
-      "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes"
-      ]
-    },
-    "other": {
-      "freq": 1,
-      "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes"
-      ]
-    },
-    "over": {
-      "freq": 1,
-      "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes"
-      ]
-    },
-    "using": {
-      "freq": 1,
-      "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes"
-      ]
-    },
-    "know": {
-      "freq": 2,
-      "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes",
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
-      ]
-    },
-    "want": {
-      "freq": 1,
-      "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes"
-      ]
-    },
-    "opus": {
-      "freq": 1,
-      "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes"
-      ]
-    },
-    "very": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
-      ]
-    },
-    "back": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
-      ]
-    },
-    "think": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
-      ]
-    },
-    "still": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
-      ]
-    },
-    "test": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
-      ]
-    },
-    "look": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
-      ]
-    },
-    "different": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_is_insane_best_open_model_ever_that_beats_"
-      ]
-    },
-    "output": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_is_insane_best_open_model_ever_that_beats_"
+        "kimi_k3_just_knocked_claude_to_third_place_chinese"
       ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 7,
-      "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi",
-        "kimi_k3_is_just_ridiculous",
-        "kimi_k3_is_fable_level_they_should_be_worried",
-        "new_hermes_agent_os_is_insane",
-        "100_hours_of_hermes_agent_lessons_in_19_minutes",
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
-        "kimi_k3_is_insane_best_open_model_ever_that_beats_"
-      ]
-    },
-    "next.js": {
       "freq": 1,
       "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
+        "kimi_k3_just_knocked_claude_to_third_place_chinese"
       ]
     },
     "Anthropic": {
-      "freq": 2,
-      "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi",
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
-      ]
-    },
-    "OpenAI": {
-      "freq": 2,
-      "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi",
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
-      ]
-    },
-    "git": {
       "freq": 1,
       "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
-      ]
-    },
-    "React": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_is_fable_level_they_should_be_worried"
-      ]
-    },
-    "Next.js": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_is_fable_level_they_should_be_worried"
-      ]
-    },
-    "SQLite": {
-      "freq": 2,
-      "skills": [
-        "kimi_k3_is_fable_level_they_should_be_worried",
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
-      ]
-    },
-    "Node": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_is_fable_level_they_should_be_worried"
-      ]
-    },
-    "Gemini": {
-      "freq": 2,
-      "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes",
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
-      ]
-    },
-    "SSH": {
-      "freq": 1,
-      "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+        "kimi_k3_just_knocked_claude_to_third_place_chinese"
       ]
     }
   },
   "skill_map": {
-    "how_to_use_codex_to_build_insanely_beautiful_websi": {
+    "kimi_k3_just_knocked_claude_to_third_place_chinese": {
       "concepts": [
-        "design",
-        "website",
-        "codeex",
-        "skill",
-        "here",
-        "before",
-        "really",
-        "need",
-        "file",
-        "site"
-      ],
-      "tools": [
-        "Claude",
-        "next.js",
-        "Anthropic",
-        "OpenAI",
-        "git"
-      ],
-      "tags": [
-        "design",
-        "website",
-        "codeex",
-        "skill",
-        "here",
-        "before"
-      ],
-      "step_count": 1
-    },
-    "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner": {
-      "concepts": [
-        "model",
-        "fable",
-        "models",
-        "these",
-        "which",
-        "kimi",
-        "actually",
-        "much",
-        "better",
-        "here"
-      ],
-      "tools": [],
-      "tags": [
-        "model",
-        "fable",
-        "models",
-        "these",
-        "which",
-        "kimi"
-      ],
-      "step_count": 1
-    },
-    "kimi_k3_is_just_ridiculous": {
-      "concepts": [
-        "okay",
-        "going",
-        "wait",
-        "good",
-        "actually",
-        "here",
-        "kimmy",
-        "pretty",
-        "game",
-        "make"
-      ],
-      "tools": [
-        "Claude"
-      ],
-      "tags": [
-        "okay",
-        "going",
-        "wait",
-        "good",
-        "actually",
-        "here"
-      ],
-      "step_count": 1
-    },
-    "kimi_k3_is_fable_level_they_should_be_worried": {
-      "concepts": [
-        "actually",
-        "here",
-        "fable",
-        "pretty",
-        "model",
-        "well",
-        "models",
-        "these",
-        "code",
-        "didn"
-      ],
-      "tools": [
-        "Claude",
-        "React",
-        "Next.js",
-        "SQLite",
-        "Node"
-      ],
-      "tags": [
-        "actually",
-        "here",
-        "fable",
-        "pretty",
-        "model",
-        "well"
-      ],
-      "step_count": 1
-    },
-    "new_hermes_agent_os_is_insane": {
-      "concepts": [
-        "same",
-        "outreach",
-        "agent",
-        "squad",
-        "memory",
-        "each",
-        "already",
-        "profit",
-        "boardroom",
-        "every"
-      ],
-      "tools": [
-        "Claude"
-      ],
-      "tags": [
-        "same",
-        "outreach",
-        "agent",
-        "squad",
-        "memory",
-        "each"
-      ],
-      "step_count": 1
-    },
-    "100_hours_of_hermes_agent_lessons_in_19_minutes": {
-      "concepts": [
-        "hermes",
-        "agent",
-        "other",
-        "need",
-        "over",
-        "using",
-        "know",
-        "every",
-        "want",
-        "opus"
-      ],
-      "tools": [
-        "Gemini",
-        "SSH",
-        "Claude"
-      ],
-      "tags": [
-        "hermes",
-        "agent",
-        "other",
-        "need",
-        "over",
-        "using"
-      ],
-      "step_count": 1
-    },
-    "kimi_k3_testing_moonshot_s_2_8t_open_model_without": {
-      "concepts": [
-        "which",
-        "model",
-        "going",
         "very",
-        "back",
-        "think",
-        "know",
-        "still",
-        "test",
-        "look"
+        "about",
+        "models",
+        "because",
+        "going",
+        "good",
+        "model",
+        "intelligence",
+        "chinese",
+        "artificial"
       ],
       "tools": [
-        "SQLite",
         "Claude",
-        "Gemini",
-        "OpenAI",
         "Anthropic"
       ],
       "tags": [
-        "which",
-        "model",
-        "going",
         "very",
-        "back",
-        "think"
-      ],
-      "step_count": 1
-    },
-    "kimi_k3_is_insane_best_open_model_ever_that_beats_": {
-      "concepts": [
-        "model",
-        "different",
-        "which",
-        "actually",
-        "kimi",
-        "these",
-        "fable",
-        "well",
-        "really",
-        "output"
-      ],
-      "tools": [
-        "Claude"
-      ],
-      "tags": [
-        "model",
-        "different",
-        "which",
-        "actually",
-        "kimi",
-        "these"
+        "about",
+        "models",
+        "because",
+        "going",
+        "good"
       ],
       "step_count": 1
     }
   },
   "relationships": {
-    "how_to_use_codex_to_build_insanely_beautiful_websi": {
-      "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner": [
-        "here"
-      ],
-      "kimi_k3_is_just_ridiculous": [
-        "Claude",
-        "here"
-      ],
-      "kimi_k3_is_fable_level_they_should_be_worried": [
-        "Claude",
-        "here"
-      ],
-      "new_hermes_agent_os_is_insane": [
-        "Claude"
-      ],
-      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
-        "need",
-        "Claude"
-      ],
-      "kimi_k3_testing_moonshot_s_2_8t_open_model_without": [
-        "Claude",
-        "Anthropic",
-        "OpenAI"
-      ],
-      "kimi_k3_is_insane_best_open_model_ever_that_beats_": [
-        "Claude",
-        "really"
-      ]
-    },
-    "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner": {
-      "how_to_use_codex_to_build_insanely_beautiful_websi": [
-        "here"
-      ],
-      "kimi_k3_is_just_ridiculous": [
-        "here",
-        "actually"
-      ],
-      "kimi_k3_is_fable_level_they_should_be_worried": [
-        "these",
-        "actually",
-        "here",
-        "model",
-        "fable",
-        "models"
-      ],
-      "kimi_k3_testing_moonshot_s_2_8t_open_model_without": [
-        "which",
-        "model"
-      ],
-      "kimi_k3_is_insane_best_open_model_ever_that_beats_": [
-        "these",
-        "kimi",
-        "actually",
-        "model",
-        "which",
-        "fable"
-      ]
-    },
-    "kimi_k3_is_just_ridiculous": {
-      "how_to_use_codex_to_build_insanely_beautiful_websi": [
-        "Claude",
-        "here"
-      ],
-      "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner": [
-        "here",
-        "actually"
-      ],
-      "kimi_k3_is_fable_level_they_should_be_worried": [
-        "Claude",
-        "here",
-        "pretty",
-        "actually"
-      ],
-      "new_hermes_agent_os_is_insane": [
-        "Claude"
-      ],
-      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
-        "Claude"
-      ],
-      "kimi_k3_testing_moonshot_s_2_8t_open_model_without": [
-        "Claude",
-        "going"
-      ],
-      "kimi_k3_is_insane_best_open_model_ever_that_beats_": [
-        "Claude",
-        "actually"
-      ]
-    },
-    "kimi_k3_is_fable_level_they_should_be_worried": {
-      "how_to_use_codex_to_build_insanely_beautiful_websi": [
-        "Claude",
-        "here"
-      ],
-      "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner": [
-        "these",
-        "actually",
-        "here",
-        "model",
-        "fable",
-        "models"
-      ],
-      "kimi_k3_is_just_ridiculous": [
-        "Claude",
-        "here",
-        "pretty",
-        "actually"
-      ],
-      "new_hermes_agent_os_is_insane": [
-        "Claude"
-      ],
-      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
-        "Claude"
-      ],
-      "kimi_k3_testing_moonshot_s_2_8t_open_model_without": [
-        "Claude",
-        "SQLite",
-        "model"
-      ],
-      "kimi_k3_is_insane_best_open_model_ever_that_beats_": [
-        "well",
-        "these",
-        "actually",
-        "Claude",
-        "model",
-        "fable"
-      ]
-    },
-    "new_hermes_agent_os_is_insane": {
-      "how_to_use_codex_to_build_insanely_beautiful_websi": [
-        "Claude"
-      ],
-      "kimi_k3_is_just_ridiculous": [
-        "Claude"
-      ],
-      "kimi_k3_is_fable_level_they_should_be_worried": [
-        "Claude"
-      ],
-      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
-        "Claude",
-        "agent",
-        "every"
-      ],
-      "kimi_k3_testing_moonshot_s_2_8t_open_model_without": [
-        "Claude"
-      ],
-      "kimi_k3_is_insane_best_open_model_ever_that_beats_": [
-        "Claude"
-      ]
-    },
-    "100_hours_of_hermes_agent_lessons_in_19_minutes": {
-      "how_to_use_codex_to_build_insanely_beautiful_websi": [
-        "need",
-        "Claude"
-      ],
-      "kimi_k3_is_just_ridiculous": [
-        "Claude"
-      ],
-      "kimi_k3_is_fable_level_they_should_be_worried": [
-        "Claude"
-      ],
-      "new_hermes_agent_os_is_insane": [
-        "Claude",
-        "agent",
-        "every"
-      ],
-      "kimi_k3_testing_moonshot_s_2_8t_open_model_without": [
-        "Claude",
-        "Gemini",
-        "know"
-      ],
-      "kimi_k3_is_insane_best_open_model_ever_that_beats_": [
-        "Claude"
-      ]
-    },
-    "kimi_k3_testing_moonshot_s_2_8t_open_model_without": {
-      "how_to_use_codex_to_build_insanely_beautiful_websi": [
-        "Claude",
-        "Anthropic",
-        "OpenAI"
-      ],
-      "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner": [
-        "which",
-        "model"
-      ],
-      "kimi_k3_is_just_ridiculous": [
-        "Claude",
-        "going"
-      ],
-      "kimi_k3_is_fable_level_they_should_be_worried": [
-        "Claude",
-        "SQLite",
-        "model"
-      ],
-      "new_hermes_agent_os_is_insane": [
-        "Claude"
-      ],
-      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
-        "Claude",
-        "Gemini",
-        "know"
-      ],
-      "kimi_k3_is_insane_best_open_model_ever_that_beats_": [
-        "which",
-        "Claude",
-        "model"
-      ]
-    },
-    "kimi_k3_is_insane_best_open_model_ever_that_beats_": {
-      "how_to_use_codex_to_build_insanely_beautiful_websi": [
-        "Claude",
-        "really"
-      ],
-      "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner": [
-        "these",
-        "kimi",
-        "actually",
-        "model",
-        "which",
-        "fable"
-      ],
-      "kimi_k3_is_just_ridiculous": [
-        "Claude",
-        "actually"
-      ],
-      "kimi_k3_is_fable_level_they_should_be_worried": [
-        "well",
-        "these",
-        "actually",
-        "Claude",
-        "model",
-        "fable"
-      ],
-      "new_hermes_agent_os_is_insane": [
-        "Claude"
-      ],
-      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
-        "Claude"
-      ],
-      "kimi_k3_testing_moonshot_s_2_8t_open_model_without": [
-        "which",
-        "Claude",
-        "model"
-      ]
-    }
+    "kimi_k3_just_knocked_claude_to_third_place_chinese": {}
   },
-  "updated_at": "2026-07-19T02:45:24.759888+00:00",
-  "total_skills": 8
+  "updated_at": "2026-07-19T02:45:24.799373+00:00",
+  "total_skills": 1
 }
