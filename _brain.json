@@ -1180,23 +1180,25 @@
       ]
     },
     "here": {
-      "freq": 14,
+      "freq": 15,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_opus_5_leaks",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
         "kimi_k3_vs_claude_fable_5_raw_results",
         "master_ai_trading_in_70_minutes_full_claude_tradin",
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
+        "how_to_use_codex_to_build_insanely_beautiful_websi",
+        "did_kimi_k3_really_beat_fable"
       ]
     },
     "actually": {
-      "freq": 11,
+      "freq": 12,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_update_is_insane",
         "making_with_loop_engineering",
-        "master_ai_trading_in_70_minutes_full_claude_tradin"
+        "master_ai_trading_in_70_minutes_full_claude_tradin",
+        "did_kimi_k3_really_beat_fable"
       ]
     },
     "agent": {
@@ -1239,12 +1241,13 @@
       ]
     },
     "right": {
-      "freq": 9,
+      "freq": 10,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
         "kimi_k3_vs_claude_fable_5_raw_results",
-        "master_ai_trading_in_70_minutes_full_claude_tradin"
+        "master_ai_trading_in_70_minutes_full_claude_tradin",
+        "did_kimi_k3_really_beat_fable"
       ]
     },
     "claude": {
@@ -1302,10 +1305,11 @@
       ]
     },
     "about": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "new_claude_update_is_insane",
-        "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
+        "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
+        "did_kimi_k3_really_beat_fable"
       ]
     },
     "opus": {
@@ -1315,10 +1319,11 @@
       ]
     },
     "model": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "new_claude_opus_5_leaks",
-        "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
+        "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
+        "did_kimi_k3_really_beat_fable"
       ]
     },
     "profit": {
@@ -1392,10 +1397,11 @@
       ]
     },
     "really": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "making_with_loop_engineering",
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
+        "how_to_use_codex_to_build_insanely_beautiful_websi",
+        "did_kimi_k3_really_beat_fable"
       ]
     },
     "business": {
@@ -1436,9 +1442,10 @@
       ]
     },
     "models": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
-        "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
+        "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
+        "did_kimi_k3_really_beat_fable"
       ]
     },
     "luna": {
@@ -1702,11 +1709,29 @@
       "skills": [
         "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
+    },
+    "open": {
+      "freq": 1,
+      "skills": [
+        "did_kimi_k3_really_beat_fable"
+      ]
+    },
+    "source": {
+      "freq": 1,
+      "skills": [
+        "did_kimi_k3_really_beat_fable"
+      ]
+    },
+    "kimmy": {
+      "freq": 1,
+      "skills": [
+        "did_kimi_k3_really_beat_fable"
+      ]
     }
   },
   "tools": {
     "Anthropic": {
-      "freq": 21,
+      "freq": 22,
       "skills": [
         "building_ai_agents",
         "build_production_ready_llm_applications_with_haystack",
@@ -1716,7 +1741,8 @@
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "this_ai_business_model_is_creating_new_millionaire",
         "kimi_k3_vs_claude_fable_5_raw_results",
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
+        "how_to_use_codex_to_build_insanely_beautiful_websi",
+        "did_kimi_k3_really_beat_fable"
       ]
     },
     "Haiku": {
@@ -1781,7 +1807,7 @@
       ]
     },
     "Claude": {
-      "freq": 32,
+      "freq": 33,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -1796,7 +1822,8 @@
         "this_ai_business_model_is_creating_new_millionaire",
         "kimi_k3_vs_claude_fable_5_raw_results",
         "master_ai_trading_in_70_minutes_full_claude_tradin",
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
+        "how_to_use_codex_to_build_insanely_beautiful_websi",
+        "did_kimi_k3_really_beat_fable"
       ]
     },
     "Google Drive": {
@@ -2133,13 +2160,14 @@
       ]
     },
     "OpenAI": {
-      "freq": 10,
+      "freq": 11,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
         "testing_and_comparing_llms",
         "making_with_loop_engineering",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
+        "how_to_use_codex_to_build_insanely_beautiful_websi",
+        "did_kimi_k3_really_beat_fable"
       ]
     },
     "Mistral": {
@@ -3913,6 +3941,34 @@
         "before"
       ],
       "step_count": 1
+    },
+    "did_kimi_k3_really_beat_fable": {
+      "concepts": [
+        "open",
+        "here",
+        "source",
+        "kimmy",
+        "model",
+        "right",
+        "models",
+        "actually",
+        "really",
+        "about"
+      ],
+      "tools": [
+        "Claude",
+        "Anthropic",
+        "OpenAI"
+      ],
+      "tags": [
+        "open",
+        "here",
+        "source",
+        "kimmy",
+        "model",
+        "right"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -3994,6 +4050,9 @@
         "Claude"
       ],
       "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "Claude"
+      ],
+      "did_kimi_k3_really_beat_fable": [
         "Claude"
       ]
     },
@@ -4200,6 +4259,10 @@
       "how_to_use_codex_to_build_insanely_beautiful_websi": [
         "Anthropic",
         "OpenAI"
+      ],
+      "did_kimi_k3_really_beat_fable": [
+        "Anthropic",
+        "OpenAI"
       ]
     },
     "swanlab_ai_training_analysis_platform": {
@@ -4259,6 +4322,9 @@
         "Claude"
       ],
       "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "Claude"
+      ],
+      "did_kimi_k3_really_beat_fable": [
         "Claude"
       ]
     },
@@ -4361,6 +4427,9 @@
       ],
       "how_to_use_codex_to_build_insanely_beautiful_websi": [
         "Claude"
+      ],
+      "did_kimi_k3_really_beat_fable": [
+        "Claude"
       ]
     },
     "pydantic_ai_framework": {
@@ -4447,6 +4516,9 @@
         "Claude"
       ],
       "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "Claude"
+      ],
+      "did_kimi_k3_really_beat_fable": [
         "Claude"
       ]
     },
@@ -4720,6 +4792,9 @@
       ],
       "how_to_use_codex_to_build_insanely_beautiful_websi": [
         "Claude"
+      ],
+      "did_kimi_k3_really_beat_fable": [
+        "Claude"
       ]
     },
     "testing_and_comparing_llms": {
@@ -4769,6 +4844,10 @@
         "Anthropic"
       ],
       "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "Anthropic",
+        "OpenAI"
+      ],
+      "did_kimi_k3_really_beat_fable": [
         "Anthropic",
         "OpenAI"
       ]
@@ -4844,6 +4923,12 @@
       "how_to_use_codex_to_build_insanely_beautiful_websi": [
         "Claude",
         "here"
+      ],
+      "did_kimi_k3_really_beat_fable": [
+        "Claude",
+        "here",
+        "right",
+        "actually"
       ]
     },
     "new_claude_update_is_insane": {
@@ -4910,6 +4995,12 @@
       "how_to_use_codex_to_build_insanely_beautiful_websi": [
         "Claude",
         "Anthropic"
+      ],
+      "did_kimi_k3_really_beat_fable": [
+        "about",
+        "Claude",
+        "Anthropic",
+        "actually"
       ]
     },
     "new_claude_opus_5_leaks": {
@@ -4975,6 +5066,12 @@
         "Claude",
         "here",
         "Anthropic"
+      ],
+      "did_kimi_k3_really_beat_fable": [
+        "Claude",
+        "here",
+        "Anthropic",
+        "model"
       ]
     },
     "making_with_loop_engineering": {
@@ -5033,6 +5130,12 @@
         "Claude",
         "really",
         "OpenAI"
+      ],
+      "did_kimi_k3_really_beat_fable": [
+        "Claude",
+        "really",
+        "OpenAI",
+        "actually"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -5098,6 +5201,14 @@
         "Claude",
         "Anthropic",
         "OpenAI"
+      ],
+      "did_kimi_k3_really_beat_fable": [
+        "about",
+        "Claude",
+        "OpenAI",
+        "model",
+        "models",
+        "Anthropic"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -5153,6 +5264,10 @@
       "how_to_use_codex_to_build_insanely_beautiful_websi": [
         "Claude",
         "Anthropic"
+      ],
+      "did_kimi_k3_really_beat_fable": [
+        "Claude",
+        "Anthropic"
       ]
     },
     "local_ai_coding": {
@@ -5199,6 +5314,10 @@
         "site",
         "here",
         "website"
+      ],
+      "did_kimi_k3_really_beat_fable": [
+        "here",
+        "right"
       ]
     },
     "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
@@ -5289,6 +5408,12 @@
         "Claude",
         "here",
         "Anthropic"
+      ],
+      "did_kimi_k3_really_beat_fable": [
+        "Claude",
+        "here",
+        "right",
+        "Anthropic"
       ]
     },
     "master_ai_trading_in_70_minutes_full_claude_tradin": {
@@ -5354,6 +5479,12 @@
       "how_to_use_codex_to_build_insanely_beautiful_websi": [
         "Claude",
         "here"
+      ],
+      "did_kimi_k3_really_beat_fable": [
+        "Claude",
+        "here",
+        "right",
+        "actually"
       ]
     },
     "how_to_use_codex_to_build_insanely_beautiful_websi": {
@@ -5424,9 +5555,100 @@
       "master_ai_trading_in_70_minutes_full_claude_tradin": [
         "Claude",
         "here"
+      ],
+      "did_kimi_k3_really_beat_fable": [
+        "Claude",
+        "here",
+        "OpenAI",
+        "really",
+        "Anthropic"
+      ]
+    },
+    "did_kimi_k3_really_beat_fable": {
+      "building_ai_agents": [
+        "Claude"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "Anthropic",
+        "OpenAI"
+      ],
+      "mastering_loop_engineering": [
+        "Claude"
+      ],
+      "higsfield_integration": [
+        "Claude"
+      ],
+      "hermes_agent_setup": [
+        "Claude"
+      ],
+      "building_ai_agents_with_loop": [
+        "Claude"
+      ],
+      "testing_and_comparing_llms": [
+        "Anthropic",
+        "OpenAI"
+      ],
+      "kimi_k3_hermes_ai_agent_is_insane": [
+        "Claude",
+        "here",
+        "right",
+        "actually"
+      ],
+      "new_claude_update_is_insane": [
+        "about",
+        "Claude",
+        "Anthropic",
+        "actually"
+      ],
+      "new_claude_opus_5_leaks": [
+        "Claude",
+        "here",
+        "Anthropic",
+        "model"
+      ],
+      "making_with_loop_engineering": [
+        "Claude",
+        "really",
+        "OpenAI",
+        "actually"
+      ],
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "about",
+        "Claude",
+        "OpenAI",
+        "model",
+        "models",
+        "Anthropic"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Claude",
+        "Anthropic"
+      ],
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "here",
+        "right"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Claude",
+        "here",
+        "right",
+        "Anthropic"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude",
+        "here",
+        "right",
+        "actually"
+      ],
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "Claude",
+        "here",
+        "OpenAI",
+        "really",
+        "Anthropic"
       ]
     }
   },
-  "updated_at": "2026-07-19T02:41:01.374833+00:00",
-  "total_skills": 39
+  "updated_at": "2026-07-19T02:41:08.154308+00:00",
+  "total_skills": 40
 }
