@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **32 skills** · Last synced: 2026-07-19 02:40 UTC
+> **34 skills** · Last synced: 2026-07-19 02:40 UTC
 
 ---
 
@@ -9,10 +9,12 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [This AI Business Model Is Creating New Millionaires In 2026](skills/this_ai_business_model_is_creating_new_millionaire.md) | By Richard Yu. Key tools: Anthropic, Claude. (Auto-extracted — pending AI enhanc | `Anthropic` `Claude` | `people` `product` `most` |
+| [GPT 5.6 Mystery, New 2.7T AI, DeepSeek New AI Chip, Orca World Model, Grok 4.5 and More AI News...](skills/gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o.md) | By AI Revolution. Key tools: OpenAI, Claude, Anthropic, LLM, Llama. (Auto-extrac | `OpenAI` `Claude` `Anthropic` `LLM` | `music` `model` `openai` |
+| [New Claude Update Is INSANE!](skills/new_claude_update_is_insane.md) | By Julian Goldie SEO. Key tools: Claude, Anthropic. (Auto-extracted — pending AI | `Claude` `Anthropic` | `claude` `something` `anthropic` |
+| [New Claude Opus 5 LEAKS!](skills/new_claude_opus_5_leaks.md) | By Julian Goldie SEO. Key tools: Claude, Anthropic. (Auto-extracted — pending AI | `Claude` `Anthropic` | `opus` `model` `profit` |
 | [Kimi K3 + Hermes AI Agent is INSANE!](skills/kimi_k3_hermes_ai_agent_is_insane.md) | By Julian Goldie SEO. Key tools: Claude, Babel. (Auto-extracted — pending AI enh | `Claude` `Babel` | `hermes` `here` `actually` |
 | [Making $$$ with Loop Engineering](skills/making_with_loop_engineering.md) | By Greg Isenberg. Key tools: Claude, OpenAI. (Auto-extracted — pending AI enhanc | `Claude` `OpenAI` | `know` `loop` `sort` |
-| [New Claude Opus 5 LEAKS!](skills/new_claude_opus_5_leaks.md) | By Julian Goldie SEO. Key tools: Claude, Anthropic. (Auto-extracted — pending AI | `Claude` `Anthropic` | `opus` `model` `profit` |
-| [New Claude Update Is INSANE!](skills/new_claude_update_is_insane.md) | By Julian Goldie SEO. Key tools: Claude, Anthropic. (Auto-extracted — pending AI | `Claude` `Anthropic` | `claude` `something` `anthropic` |
 | [Local AI Coding: Speed, Quality, and Control](skills/building_ai_agents.md) | This skill teaches the practical aspects of local AI coding, including the impor | `Mind Sub Co-worker` `LM Studio` `Ollama` `Hermes Agent` | `ai` `ai_agents` `coding` |
 | [Deploying Bonzai 27B with Prism ML Compression: Efficient Local AI Processing](skills/prism_ml_bonzai_deployment.md) | This skill teaches how to deploy the Bonzai 27B model, a 27 billion parameter mo | `Llama.cpp` `Prism ML` `Hugging Face` `jCodeMunch MCP` | `ai` `compression` `local-ai` |
 | [Testing and Comparing Large Language Models with PromptTools](skills/testing_and_comparing_llms.md) | This skill teaches how to test, experiment, and compare Large Language Models (L | `PromptTools` `OpenAI` `Anthropic` `LLaMA` | `llms` `prompttools` `testing` |
