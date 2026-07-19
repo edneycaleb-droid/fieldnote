@@ -1174,7 +1174,7 @@
       ]
     },
     "hermes": {
-      "freq": 14,
+      "freq": 15,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
@@ -1235,7 +1235,7 @@
       ]
     },
     "agent": {
-      "freq": 22,
+      "freq": 23,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "this_kimi_k3_agent_os_is_wild",
@@ -1270,7 +1270,7 @@
       ]
     },
     "which": {
-      "freq": 22,
+      "freq": 23,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq",
@@ -1368,7 +1368,7 @@
       ]
     },
     "every": {
-      "freq": 12,
+      "freq": 13,
       "skills": [
         "new_claude_update_is_insane",
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq",
@@ -1418,7 +1418,7 @@
       ]
     },
     "model": {
-      "freq": 43,
+      "freq": 44,
       "skills": [
         "new_claude_opus_5_leaks",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
@@ -2123,7 +2123,7 @@
       ]
     },
     "tokens": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "how_to_run_kimi_k3_for_free",
         "yes_the_kimi_k3_hype_is_real",
@@ -2131,7 +2131,7 @@
       ]
     },
     "cost": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "yes_the_kimi_k3_hype_is_real",
         "use_this_to_make_the_hermes_agent_basically_free"
@@ -2381,19 +2381,19 @@
       ]
     },
     "context": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "use_this_to_make_the_hermes_agent_basically_free"
       ]
     },
     "tools": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "use_this_to_make_the_hermes_agent_basically_free"
       ]
     },
     "through": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "use_this_to_make_the_hermes_agent_basically_free"
       ]
@@ -2401,7 +2401,7 @@
   },
   "tools": {
     "Anthropic": {
-      "freq": 43,
+      "freq": 44,
       "skills": [
         "building_ai_agents",
         "build_production_ready_llm_applications_with_haystack",
@@ -2488,7 +2488,7 @@
       ]
     },
     "Claude": {
-      "freq": 82,
+      "freq": 83,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -2870,7 +2870,7 @@
       ]
     },
     "OpenAI": {
-      "freq": 38,
+      "freq": 39,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
         "testing_and_comparing_llms",
@@ -2944,7 +2944,7 @@
       ]
     },
     "Gemini": {
-      "freq": 19,
+      "freq": 20,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
         "higsfield_integration",
@@ -16557,6 +16557,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-19T02:43:36.116529+00:00",
+  "updated_at": "2026-07-19T02:43:36.154288+00:00",
   "total_skills": 73
 }
