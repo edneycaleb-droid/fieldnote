@@ -63,9 +63,10 @@
       ]
     },
     "going": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "hermes_agent_full_course_setup_guide_for_complete_"
+        "hermes_agent_full_course_setup_guide_for_complete_",
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "want": {
@@ -75,9 +76,10 @@
       ]
     },
     "here": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "hermes_agent_full_course_setup_guide_for_complete_"
+        "hermes_agent_full_course_setup_guide_for_complete_",
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "okay": {
@@ -99,15 +101,58 @@
       ]
     },
     "right": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "hermes_agent_full_course_setup_guide_for_complete_"
+        "hermes_agent_full_course_setup_guide_for_complete_",
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "give": {
       "freq": 1,
       "skills": [
         "hermes_agent_full_course_setup_guide_for_complete_"
+      ]
+    },
+    "fable": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "kimi": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "look": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "well": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "these": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "little": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "output": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     }
   },
@@ -120,16 +165,18 @@
       ]
     },
     "Claude": {
-      "freq": 1,
-      "skills": [
-        "use_this_to_make_the_hermes_agent_basically_free"
-      ]
-    },
-    "Anthropic": {
       "freq": 2,
       "skills": [
         "use_this_to_make_the_hermes_agent_basically_free",
-        "hermes_agent_full_course_setup_guide_for_complete_"
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "Anthropic": {
+      "freq": 3,
+      "skills": [
+        "use_this_to_make_the_hermes_agent_basically_free",
+        "hermes_agent_full_course_setup_guide_for_complete_",
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "Gemini": {
@@ -166,6 +213,12 @@
       "freq": 1,
       "skills": [
         "hermes_agent_full_course_setup_guide_for_complete_"
+      ]
+    },
+    "Ollama": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     }
   },
@@ -230,6 +283,34 @@
         "okay"
       ],
       "step_count": 1
+    },
+    "kimi_k3_vs_claude_fable_5_raw_results": {
+      "concepts": [
+        "fable",
+        "kimi",
+        "right",
+        "going",
+        "look",
+        "well",
+        "these",
+        "here",
+        "little",
+        "output"
+      ],
+      "tools": [
+        "Claude",
+        "Anthropic",
+        "Ollama"
+      ],
+      "tags": [
+        "fable",
+        "kimi",
+        "right",
+        "going",
+        "look",
+        "well"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -239,6 +320,10 @@
         "hermes",
         "OpenAI",
         "agent"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Claude",
+        "Anthropic"
       ]
     },
     "hermes_agent_full_course_setup_guide_for_complete_": {
@@ -247,9 +332,27 @@
         "hermes",
         "OpenAI",
         "agent"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Anthropic",
+        "going",
+        "right",
+        "here"
+      ]
+    },
+    "kimi_k3_vs_claude_fable_5_raw_results": {
+      "use_this_to_make_the_hermes_agent_basically_free": [
+        "Claude",
+        "Anthropic"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "Anthropic",
+        "going",
+        "right",
+        "here"
       ]
     }
   },
-  "updated_at": "2026-07-19T02:45:25.403034+00:00",
-  "total_skills": 2
+  "updated_at": "2026-07-19T02:45:25.534564+00:00",
+  "total_skills": 3
 }
