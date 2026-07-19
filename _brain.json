@@ -1249,7 +1249,7 @@
       ]
     },
     "video": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "kimi_k3_fully_tested_an_open_model_beats_fable"
@@ -1264,7 +1264,7 @@
       ]
     },
     "right": {
-      "freq": 14,
+      "freq": 15,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
@@ -1347,14 +1347,14 @@
       ]
     },
     "opus": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "new_claude_opus_5_leaks",
         "kimi_k3_fully_tested_an_open_model_beats_fable"
       ]
     },
     "model": {
-      "freq": 20,
+      "freq": 21,
       "skills": [
         "new_claude_opus_5_leaks",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
@@ -1498,7 +1498,7 @@
       ]
     },
     "models": {
-      "freq": 15,
+      "freq": 16,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "did_kimi_k3_really_beat_fable",
@@ -1686,7 +1686,7 @@
       ]
     },
     "fable": {
-      "freq": 11,
+      "freq": 12,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results",
         "i_tested_kimi_k3_so_you_don_t_have_to",
@@ -1801,7 +1801,7 @@
       ]
     },
     "kimmy": {
-      "freq": 15,
+      "freq": 16,
       "skills": [
         "did_kimi_k3_really_beat_fable",
         "the_15_most_insane_things_created_by_kimi_k3_kimi_",
@@ -1981,19 +1981,19 @@
       ]
     },
     "question": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_fully_tested_an_open_model_beats_fable"
       ]
     },
     "send": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_fully_tested_an_open_model_beats_fable"
       ]
     },
     "gets": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_fully_tested_an_open_model_beats_fable"
       ]
@@ -2509,7 +2509,7 @@
       ]
     },
     "Gemini": {
-      "freq": 11,
+      "freq": 12,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
         "higsfield_integration",
@@ -8615,6 +8615,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-19T02:42:01.303310+00:00",
+  "updated_at": "2026-07-19T02:42:03.908316+00:00",
   "total_skills": 52
 }
