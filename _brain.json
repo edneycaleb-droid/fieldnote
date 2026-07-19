@@ -1260,7 +1260,7 @@
       ]
     },
     "real": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "new_claude_update_is_insane",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
@@ -1285,7 +1285,7 @@
       ]
     },
     "about": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "new_claude_update_is_insane",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
@@ -1298,7 +1298,7 @@
       ]
     },
     "model": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "new_claude_opus_5_leaks",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
@@ -1384,44 +1384,44 @@
       ]
     },
     "music": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "this_ai_business_model_is_creating_new_millionaire"
       ]
     },
     "openai": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
       ]
     },
     "even": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
       ]
     },
     "soul": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
       ]
     },
     "meta": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
       ]
     },
     "models": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
       ]
     },
     "luna": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
       ]
@@ -1477,7 +1477,7 @@
   },
   "tools": {
     "Anthropic": {
-      "freq": 15,
+      "freq": 16,
       "skills": [
         "building_ai_agents",
         "build_production_ready_llm_applications_with_haystack",
@@ -1550,7 +1550,7 @@
       ]
     },
     "Claude": {
-      "freq": 24,
+      "freq": 25,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -1897,7 +1897,7 @@
       ]
     },
     "OpenAI": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
         "testing_and_comparing_llms",
@@ -2543,13 +2543,13 @@
       ]
     },
     "LLM": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
       ]
     },
     "Llama": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
       ]
@@ -4514,6 +4514,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-19T02:40:24.023021+00:00",
+  "updated_at": "2026-07-19T02:40:24.302821+00:00",
   "total_skills": 33
 }
