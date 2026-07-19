@@ -1134,21 +1134,24 @@
       ]
     },
     "Compatibility": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "building_ai_agents"
+        "building_ai_agents",
+        "local_ai_coding"
       ]
     },
     "Control": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "building_ai_agents"
+        "building_ai_agents",
+        "local_ai_coding"
       ]
     },
     "Cost": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "building_ai_agents"
+        "building_ai_agents",
+        "local_ai_coding"
       ]
     },
     "Local AI coding": {
@@ -1164,9 +1167,10 @@
       ]
     },
     "Speed": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "building_ai_agents"
+        "building_ai_agents",
+        "local_ai_coding"
       ]
     },
     "hermes": {
@@ -1472,6 +1476,36 @@
       "freq": 1,
       "skills": [
         "this_ai_business_model_is_creating_new_millionaire"
+      ]
+    },
+    "Local AI Coding": {
+      "freq": 1,
+      "skills": [
+        "local_ai_coding"
+      ]
+    },
+    "Model Selection": {
+      "freq": 1,
+      "skills": [
+        "local_ai_coding"
+      ]
+    },
+    "Setup": {
+      "freq": 1,
+      "skills": [
+        "local_ai_coding"
+      ]
+    },
+    "Comparison": {
+      "freq": 1,
+      "skills": [
+        "local_ai_coding"
+      ]
+    },
+    "Quality of Output": {
+      "freq": 1,
+      "skills": [
+        "local_ai_coding"
       ]
     }
   },
@@ -1906,9 +1940,10 @@
       ]
     },
     "Mistral": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "build_production_ready_llm_applications_with_haystack"
+        "build_production_ready_llm_applications_with_haystack",
+        "local_ai_coding"
       ]
     },
     "Cohere": {
@@ -2519,21 +2554,24 @@
       ]
     },
     "Mind Sub Co-worker": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "building_ai_agents"
+        "building_ai_agents",
+        "local_ai_coding"
       ]
     },
     "LM Studio": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "building_ai_agents"
+        "building_ai_agents",
+        "local_ai_coding"
       ]
     },
     "Ollama": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "building_ai_agents"
+        "building_ai_agents",
+        "local_ai_coding"
       ]
     },
     "Babel": {
@@ -2552,6 +2590,18 @@
       "freq": 2,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
+      ]
+    },
+    "Qwen": {
+      "freq": 1,
+      "skills": [
+        "local_ai_coding"
+      ]
+    },
+    "Devster": {
+      "freq": 1,
+      "skills": [
+        "local_ai_coding"
       ]
     }
   },
@@ -3466,6 +3516,34 @@
         "first"
       ],
       "step_count": 1
+    },
+    "local_ai_coding": {
+      "concepts": [
+        "Local AI Coding",
+        "Model Selection",
+        "Setup",
+        "Comparison",
+        "Speed",
+        "Quality of Output",
+        "Compatibility",
+        "Cost",
+        "Control"
+      ],
+      "tools": [
+        "Mistral",
+        "Qwen",
+        "Devster",
+        "LM Studio",
+        "Ollama",
+        "Mind Sub Co-worker"
+      ],
+      "tags": [
+        "ai",
+        "local",
+        "coding",
+        "models"
+      ],
+      "step_count": 9
     }
   },
   "relationships": {
@@ -3530,6 +3608,14 @@
       ],
       "this_ai_business_model_is_creating_new_millionaire": [
         "Claude"
+      ],
+      "local_ai_coding": [
+        "Mind Sub Co-worker",
+        "Control",
+        "Ollama",
+        "Cost",
+        "Compatibility",
+        "Speed"
       ]
     },
     "running_large_models_locally": {
@@ -3712,6 +3798,9 @@
       ],
       "this_ai_business_model_is_creating_new_millionaire": [
         "Anthropic"
+      ],
+      "local_ai_coding": [
+        "Mistral"
       ]
     },
     "swanlab_ai_training_analysis_platform": {
@@ -4512,8 +4601,21 @@
         "Anthropic",
         "music"
       ]
+    },
+    "local_ai_coding": {
+      "building_ai_agents": [
+        "Mind Sub Co-worker",
+        "Control",
+        "Ollama",
+        "Cost",
+        "Compatibility",
+        "Speed"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "Mistral"
+      ]
     }
   },
-  "updated_at": "2026-07-19T02:40:24.302821+00:00",
-  "total_skills": 33
+  "updated_at": "2026-07-19T02:40:24.997999+00:00",
+  "total_skills": 34
 }
