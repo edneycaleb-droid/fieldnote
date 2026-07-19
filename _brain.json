@@ -1331,7 +1331,7 @@
       ]
     },
     "already": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "new_claude_update_is_insane",
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
@@ -1365,7 +1365,7 @@
       ]
     },
     "model": {
-      "freq": 28,
+      "freq": 29,
       "skills": [
         "new_claude_opus_5_leaks",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
@@ -1518,7 +1518,7 @@
       ]
     },
     "models": {
-      "freq": 19,
+      "freq": 20,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "did_kimi_k3_really_beat_fable",
@@ -1545,7 +1545,7 @@
       ]
     },
     "most": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "this_ai_business_model_is_creating_new_millionaire",
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
@@ -1696,7 +1696,7 @@
       ]
     },
     "because": {
-      "freq": 11,
+      "freq": 12,
       "skills": [
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq",
         "kimi_k3_is_the_best_model_ever_made_sometimes",
@@ -1713,7 +1713,7 @@
       ]
     },
     "fable": {
-      "freq": 15,
+      "freq": 16,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results",
         "i_tested_kimi_k3_so_you_don_t_have_to",
@@ -2070,25 +2070,25 @@
       ]
     },
     "chemistry": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
       ]
     },
     "clot": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
       ]
     },
     "intelligence": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
       ]
     },
     "artificial": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
       ]
@@ -2096,7 +2096,7 @@
   },
   "tools": {
     "Anthropic": {
-      "freq": 32,
+      "freq": 33,
       "skills": [
         "building_ai_agents",
         "build_production_ready_llm_applications_with_haystack",
@@ -2542,7 +2542,7 @@
       ]
     },
     "OpenAI": {
-      "freq": 27,
+      "freq": 28,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
         "testing_and_comparing_llms",
@@ -10077,6 +10077,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-19T02:42:27.147359+00:00",
+  "updated_at": "2026-07-19T02:42:28.804451+00:00",
   "total_skills": 57
 }
