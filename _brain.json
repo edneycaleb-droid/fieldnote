@@ -63,23 +63,26 @@
       ]
     },
     "going": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "hermes_agent_full_course_setup_guide_for_complete_",
-        "kimi_k3_vs_claude_fable_5_raw_results"
+        "kimi_k3_vs_claude_fable_5_raw_results",
+        "run_kimi_k3_inside_claude_code_max_power"
       ]
     },
     "want": {
-      "freq": 1,
-      "skills": [
-        "hermes_agent_full_course_setup_guide_for_complete_"
-      ]
-    },
-    "here": {
       "freq": 2,
       "skills": [
         "hermes_agent_full_course_setup_guide_for_complete_",
-        "kimi_k3_vs_claude_fable_5_raw_results"
+        "run_kimi_k3_inside_claude_code_max_power"
+      ]
+    },
+    "here": {
+      "freq": 3,
+      "skills": [
+        "hermes_agent_full_course_setup_guide_for_complete_",
+        "kimi_k3_vs_claude_fable_5_raw_results",
+        "run_kimi_k3_inside_claude_code_max_power"
       ]
     },
     "okay": {
@@ -101,10 +104,11 @@
       ]
     },
     "right": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "hermes_agent_full_course_setup_guide_for_complete_",
-        "kimi_k3_vs_claude_fable_5_raw_results"
+        "kimi_k3_vs_claude_fable_5_raw_results",
+        "run_kimi_k3_inside_claude_code_max_power"
       ]
     },
     "give": {
@@ -132,9 +136,10 @@
       ]
     },
     "well": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_vs_claude_fable_5_raw_results"
+        "kimi_k3_vs_claude_fable_5_raw_results",
+        "run_kimi_k3_inside_claude_code_max_power"
       ]
     },
     "these": {
@@ -154,6 +159,36 @@
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results"
       ]
+    },
+    "code": {
+      "freq": 1,
+      "skills": [
+        "run_kimi_k3_inside_claude_code_max_power"
+      ]
+    },
+    "kimmy": {
+      "freq": 1,
+      "skills": [
+        "run_kimi_k3_inside_claude_code_max_power"
+      ]
+    },
+    "cloud": {
+      "freq": 1,
+      "skills": [
+        "run_kimi_k3_inside_claude_code_max_power"
+      ]
+    },
+    "really": {
+      "freq": 1,
+      "skills": [
+        "run_kimi_k3_inside_claude_code_max_power"
+      ]
+    },
+    "loop": {
+      "freq": 1,
+      "skills": [
+        "run_kimi_k3_inside_claude_code_max_power"
+      ]
     }
   },
   "tools": {
@@ -165,10 +200,11 @@
       ]
     },
     "Claude": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "use_this_to_make_the_hermes_agent_basically_free",
-        "kimi_k3_vs_claude_fable_5_raw_results"
+        "kimi_k3_vs_claude_fable_5_raw_results",
+        "run_kimi_k3_inside_claude_code_max_power"
       ]
     },
     "Anthropic": {
@@ -219,6 +255,12 @@
       "freq": 1,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "anthropic": {
+      "freq": 1,
+      "skills": [
+        "run_kimi_k3_inside_claude_code_max_power"
       ]
     }
   },
@@ -311,6 +353,33 @@
         "well"
       ],
       "step_count": 1
+    },
+    "run_kimi_k3_inside_claude_code_max_power": {
+      "concepts": [
+        "code",
+        "kimmy",
+        "cloud",
+        "here",
+        "going",
+        "really",
+        "well",
+        "right",
+        "want",
+        "loop"
+      ],
+      "tools": [
+        "Claude",
+        "anthropic"
+      ],
+      "tags": [
+        "code",
+        "kimmy",
+        "cloud",
+        "here",
+        "going",
+        "really"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -324,6 +393,9 @@
       "kimi_k3_vs_claude_fable_5_raw_results": [
         "Claude",
         "Anthropic"
+      ],
+      "run_kimi_k3_inside_claude_code_max_power": [
+        "Claude"
       ]
     },
     "hermes_agent_full_course_setup_guide_for_complete_": {
@@ -335,6 +407,12 @@
       ],
       "kimi_k3_vs_claude_fable_5_raw_results": [
         "Anthropic",
+        "going",
+        "right",
+        "here"
+      ],
+      "run_kimi_k3_inside_claude_code_max_power": [
+        "want",
         "going",
         "right",
         "here"
@@ -350,9 +428,34 @@
         "going",
         "right",
         "here"
+      ],
+      "run_kimi_k3_inside_claude_code_max_power": [
+        "right",
+        "well",
+        "going",
+        "Claude",
+        "here"
+      ]
+    },
+    "run_kimi_k3_inside_claude_code_max_power": {
+      "use_this_to_make_the_hermes_agent_basically_free": [
+        "Claude"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "want",
+        "going",
+        "right",
+        "here"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "right",
+        "well",
+        "going",
+        "Claude",
+        "here"
       ]
     }
   },
-  "updated_at": "2026-07-19T02:45:25.534564+00:00",
-  "total_skills": 3
+  "updated_at": "2026-07-19T02:45:25.540100+00:00",
+  "total_skills": 4
 }
