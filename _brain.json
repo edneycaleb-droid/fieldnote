@@ -1,63 +1,113 @@
 {
   "concepts": {
-    "kimmy": {
+    "work": {
       "freq": 1,
       "skills": [
-        "people_are_creating_insane_things_with_kimi_k3"
-      ]
-    },
-    "game": {
-      "freq": 1,
-      "skills": [
-        "people_are_creating_insane_things_with_kimi_k3"
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
       ]
     },
     "here": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "people_are_creating_insane_things_with_kimi_k3"
+        "chatgpt_work_everything_you_need_to_know_to_get_st",
+        "did_kimi_k3_really_beat_fable"
       ]
     },
-    "fable": {
+    "site": {
       "freq": 1,
       "skills": [
-        "people_are_creating_insane_things_with_kimi_k3"
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
       ]
     },
-    "better": {
-      "freq": 1,
+    "right": {
+      "freq": 2,
       "skills": [
-        "people_are_creating_insane_things_with_kimi_k3"
+        "chatgpt_work_everything_you_need_to_know_to_get_st",
+        "did_kimi_k3_really_beat_fable"
       ]
     },
-    "example": {
+    "chat": {
       "freq": 1,
       "skills": [
-        "people_are_creating_insane_things_with_kimi_k3"
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
       ]
     },
-    "much": {
+    "dave": {
       "freq": 1,
       "skills": [
-        "people_are_creating_insane_things_with_kimi_k3"
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "website": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "good": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "going": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "need": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "open": {
+      "freq": 1,
+      "skills": [
+        "did_kimi_k3_really_beat_fable"
+      ]
+    },
+    "source": {
+      "freq": 1,
+      "skills": [
+        "did_kimi_k3_really_beat_fable"
+      ]
+    },
+    "kimmy": {
+      "freq": 1,
+      "skills": [
+        "did_kimi_k3_really_beat_fable"
       ]
     },
     "model": {
       "freq": 1,
       "skills": [
-        "people_are_creating_insane_things_with_kimi_k3"
+        "did_kimi_k3_really_beat_fable"
       ]
     },
-    "think": {
+    "models": {
       "freq": 1,
       "skills": [
-        "people_are_creating_insane_things_with_kimi_k3"
+        "did_kimi_k3_really_beat_fable"
       ]
     },
-    "very": {
+    "actually": {
       "freq": 1,
       "skills": [
-        "people_are_creating_insane_things_with_kimi_k3"
+        "did_kimi_k3_really_beat_fable"
+      ]
+    },
+    "really": {
+      "freq": 1,
+      "skills": [
+        "did_kimi_k3_really_beat_fable"
+      ]
+    },
+    "about": {
+      "freq": 1,
+      "skills": [
+        "did_kimi_k3_really_beat_fable"
       ]
     }
   },
@@ -65,41 +115,90 @@
     "Claude": {
       "freq": 1,
       "skills": [
-        "people_are_creating_insane_things_with_kimi_k3"
+        "did_kimi_k3_really_beat_fable"
+      ]
+    },
+    "Anthropic": {
+      "freq": 1,
+      "skills": [
+        "did_kimi_k3_really_beat_fable"
+      ]
+    },
+    "OpenAI": {
+      "freq": 1,
+      "skills": [
+        "did_kimi_k3_really_beat_fable"
       ]
     }
   },
   "skill_map": {
-    "people_are_creating_insane_things_with_kimi_k3": {
+    "chatgpt_work_everything_you_need_to_know_to_get_st": {
       "concepts": [
-        "kimmy",
-        "game",
+        "work",
         "here",
-        "fable",
-        "better",
-        "example",
-        "much",
+        "site",
+        "right",
+        "chat",
+        "dave",
+        "website",
+        "good",
+        "going",
+        "need"
+      ],
+      "tools": [],
+      "tags": [
+        "work",
+        "here",
+        "site",
+        "right",
+        "chat",
+        "dave"
+      ],
+      "step_count": 1
+    },
+    "did_kimi_k3_really_beat_fable": {
+      "concepts": [
+        "open",
+        "here",
+        "source",
+        "kimmy",
         "model",
-        "think",
-        "very"
+        "right",
+        "models",
+        "actually",
+        "really",
+        "about"
       ],
       "tools": [
-        "Claude"
+        "Claude",
+        "Anthropic",
+        "OpenAI"
       ],
       "tags": [
-        "kimmy",
-        "game",
+        "open",
         "here",
-        "fable",
-        "better",
-        "example"
+        "source",
+        "kimmy",
+        "model",
+        "right"
       ],
       "step_count": 1
     }
   },
   "relationships": {
-    "people_are_creating_insane_things_with_kimi_k3": {}
+    "chatgpt_work_everything_you_need_to_know_to_get_st": {
+      "did_kimi_k3_really_beat_fable": [
+        "here",
+        "right"
+      ]
+    },
+    "did_kimi_k3_really_beat_fable": {
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "here",
+        "right"
+      ]
+    }
   },
-  "updated_at": "2026-07-19T02:45:23.510127+00:00",
-  "total_skills": 1
+  "updated_at": "2026-07-19T02:45:23.466357+00:00",
+  "total_skills": 2
 }
