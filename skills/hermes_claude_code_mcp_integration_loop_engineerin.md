@@ -2,7 +2,7 @@
 
 > ⚠️ **Auto-extracted draft** — pending AI enhancement for full quality.
 
-By NetworkCoder. Key tools: Flask, Python, Claude, git. (Auto-extracted — pending AI enhancement.)
+By NetworkCoder. Key tools: Anthropic, Flask, Python, pytest, Claude. (Auto-extracted — pending AI enhancement.)
 
 ## Steps
 
@@ -10,7 +10,7 @@ By NetworkCoder. Key tools: Flask, Python, Claude, git. (Auto-extracted — pend
 
 ## Tools & Technologies
 
-Flask, Python, Claude, git
+Anthropic, Flask, Python, pytest, Claude
 
 ## Source
 
@@ -21,4 +21,4 @@ Flask, Python, Claude, git
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-19 | [Hermes + Claude Code — MCP Integration & Loop Engineering](https://www.youtube.com/watch?v=HvmCeSRMVVY) | yt_dlp_subs |
+| 2026-07-19 | [Hermes + Claude Code — MCP Integration & Loop Engineering](https://www.youtube.com/watch?v=HvmCeSRMVVY) | whisper |
