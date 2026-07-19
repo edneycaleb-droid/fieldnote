@@ -1,532 +1,119 @@
 {
   "concepts": {
-    "which": {
-      "freq": 2,
-      "skills": [
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
-        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
-      ]
-    },
-    "model": {
-      "freq": 3,
-      "skills": [
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
-        "hermes_agent_just_got_10x_better_4_insane_new_feat",
-        "did_kimi_k3_really_beat_fable"
-      ]
-    },
-    "going": {
-      "freq": 3,
-      "skills": [
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
-        "hermes_agent_just_got_10x_better_4_insane_new_feat",
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
-      ]
-    },
     "very": {
       "freq": 1,
       "skills": [
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
+        "kimi_k3_is_insanely_strong_real_tests_and_review"
       ]
     },
-    "back": {
+    "right": {
       "freq": 1,
       "skills": [
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
+        "kimi_k3_is_insanely_strong_real_tests_and_review"
       ]
     },
-    "think": {
+    "okay": {
       "freq": 1,
       "skills": [
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
+        "kimi_k3_is_insanely_strong_real_tests_and_review"
       ]
     },
-    "know": {
+    "here": {
       "freq": 1,
       "skills": [
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
+        "kimi_k3_is_insanely_strong_real_tests_and_review"
       ]
     },
-    "still": {
+    "going": {
       "freq": 1,
       "skills": [
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
-      ]
-    },
-    "test": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
+        "kimi_k3_is_insanely_strong_real_tests_and_review"
       ]
     },
     "look": {
       "freq": 1,
       "skills": [
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
+        "kimi_k3_is_insanely_strong_real_tests_and_review"
       ]
     },
-    "agent": {
+    "know": {
       "freq": 1,
       "skills": [
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "kimi_k3_is_insanely_strong_real_tests_and_review"
       ]
     },
-    "every": {
-      "freq": 2,
-      "skills": [
-        "hermes_agent_just_got_10x_better_4_insane_new_feat",
-        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
-      ]
-    },
-    "actually": {
-      "freq": 2,
-      "skills": [
-        "hermes_agent_just_got_10x_better_4_insane_new_feat",
-        "did_kimi_k3_really_beat_fable"
-      ]
-    },
-    "work": {
-      "freq": 2,
-      "skills": [
-        "hermes_agent_just_got_10x_better_4_insane_new_feat",
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
-      ]
-    },
-    "right": {
-      "freq": 3,
-      "skills": [
-        "hermes_agent_just_got_10x_better_4_insane_new_feat",
-        "did_kimi_k3_really_beat_fable",
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
-      ]
-    },
-    "basically": {
+    "kimi": {
       "freq": 1,
       "skills": [
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "kimi_k3_is_insanely_strong_real_tests_and_review"
       ]
     },
-    "agents": {
+    "soul": {
       "freq": 1,
       "skills": [
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "kimi_k3_is_insanely_strong_real_tests_and_review"
       ]
     },
-    "skill": {
+    "these": {
       "freq": 1,
       "skills": [
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
-      ]
-    },
-    "open": {
-      "freq": 1,
-      "skills": [
-        "did_kimi_k3_really_beat_fable"
-      ]
-    },
-    "here": {
-      "freq": 2,
-      "skills": [
-        "did_kimi_k3_really_beat_fable",
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
-      ]
-    },
-    "source": {
-      "freq": 1,
-      "skills": [
-        "did_kimi_k3_really_beat_fable"
-      ]
-    },
-    "kimmy": {
-      "freq": 1,
-      "skills": [
-        "did_kimi_k3_really_beat_fable"
-      ]
-    },
-    "models": {
-      "freq": 1,
-      "skills": [
-        "did_kimi_k3_really_beat_fable"
-      ]
-    },
-    "really": {
-      "freq": 1,
-      "skills": [
-        "did_kimi_k3_really_beat_fable"
-      ]
-    },
-    "about": {
-      "freq": 1,
-      "skills": [
-        "did_kimi_k3_really_beat_fable"
-      ]
-    },
-    "memory": {
-      "freq": 1,
-      "skills": [
-        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
-      ]
-    },
-    "data": {
-      "freq": 1,
-      "skills": [
-        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
-      ]
-    },
-    "vector": {
-      "freq": 1,
-      "skills": [
-        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
-      ]
-    },
-    "google": {
-      "freq": 1,
-      "skills": [
-        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
-      ]
-    },
-    "search": {
-      "freq": 1,
-      "skills": [
-        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
-      ]
-    },
-    "whole": {
-      "freq": 1,
-      "skills": [
-        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
-      ]
-    },
-    "because": {
-      "freq": 1,
-      "skills": [
-        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
-      ]
-    },
-    "same": {
-      "freq": 1,
-      "skills": [
-        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
-      ]
-    },
-    "site": {
-      "freq": 1,
-      "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
-      ]
-    },
-    "chat": {
-      "freq": 1,
-      "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
-      ]
-    },
-    "dave": {
-      "freq": 1,
-      "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
-      ]
-    },
-    "website": {
-      "freq": 1,
-      "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
-      ]
-    },
-    "good": {
-      "freq": 1,
-      "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
-      ]
-    },
-    "need": {
-      "freq": 1,
-      "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
+        "kimi_k3_is_insanely_strong_real_tests_and_review"
       ]
     }
   },
   "tools": {
-    "SQLite": {
+    "Anthropic": {
       "freq": 1,
       "skills": [
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
+        "kimi_k3_is_insanely_strong_real_tests_and_review"
+      ]
+    },
+    "GPT-4": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_is_insanely_strong_real_tests_and_review"
       ]
     },
     "Claude": {
-      "freq": 3,
-      "skills": [
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
-        "hermes_agent_just_got_10x_better_4_insane_new_feat",
-        "did_kimi_k3_really_beat_fable"
-      ]
-    },
-    "Gemini": {
       "freq": 1,
       "skills": [
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
-      ]
-    },
-    "OpenAI": {
-      "freq": 2,
-      "skills": [
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
-        "did_kimi_k3_really_beat_fable"
-      ]
-    },
-    "Anthropic": {
-      "freq": 2,
-      "skills": [
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
-        "did_kimi_k3_really_beat_fable"
-      ]
-    },
-    "rag": {
-      "freq": 1,
-      "skills": [
-        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
-      ]
-    },
-    "embedding": {
-      "freq": 1,
-      "skills": [
-        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
-      ]
-    },
-    "Python": {
-      "freq": 1,
-      "skills": [
-        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
-      ]
-    },
-    "LangChain": {
-      "freq": 1,
-      "skills": [
-        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
+        "kimi_k3_is_insanely_strong_real_tests_and_review"
       ]
     }
   },
   "skill_map": {
-    "kimi_k3_testing_moonshot_s_2_8t_open_model_without": {
+    "kimi_k3_is_insanely_strong_real_tests_and_review": {
       "concepts": [
-        "which",
-        "model",
-        "going",
         "very",
-        "back",
-        "think",
-        "know",
-        "still",
-        "test",
-        "look"
-      ],
-      "tools": [
-        "SQLite",
-        "Claude",
-        "Gemini",
-        "OpenAI",
-        "Anthropic"
-      ],
-      "tags": [
-        "which",
-        "model",
-        "going",
-        "very",
-        "back",
-        "think"
-      ],
-      "step_count": 1
-    },
-    "hermes_agent_just_got_10x_better_4_insane_new_feat": {
-      "concepts": [
-        "agent",
-        "going",
-        "every",
-        "actually",
-        "work",
-        "model",
         "right",
-        "basically",
-        "agents",
-        "skill"
+        "okay",
+        "here",
+        "going",
+        "look",
+        "know",
+        "kimi",
+        "soul",
+        "these"
       ],
       "tools": [
+        "Anthropic",
+        "GPT-4",
         "Claude"
       ],
       "tags": [
-        "agent",
+        "very",
+        "right",
+        "okay",
+        "here",
         "going",
-        "every",
-        "actually",
-        "work",
-        "model"
-      ],
-      "step_count": 1
-    },
-    "did_kimi_k3_really_beat_fable": {
-      "concepts": [
-        "open",
-        "here",
-        "source",
-        "kimmy",
-        "model",
-        "right",
-        "models",
-        "actually",
-        "really",
-        "about"
-      ],
-      "tools": [
-        "Claude",
-        "Anthropic",
-        "OpenAI"
-      ],
-      "tags": [
-        "open",
-        "here",
-        "source",
-        "kimmy",
-        "model",
-        "right"
-      ],
-      "step_count": 1
-    },
-    "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
-      "concepts": [
-        "memory",
-        "every",
-        "data",
-        "vector",
-        "google",
-        "search",
-        "whole",
-        "because",
-        "which",
-        "same"
-      ],
-      "tools": [
-        "rag",
-        "embedding",
-        "Python",
-        "LangChain"
-      ],
-      "tags": [
-        "memory",
-        "every",
-        "data",
-        "vector",
-        "google",
-        "search"
-      ],
-      "step_count": 1
-    },
-    "chatgpt_work_everything_you_need_to_know_to_get_st": {
-      "concepts": [
-        "work",
-        "here",
-        "site",
-        "right",
-        "chat",
-        "dave",
-        "website",
-        "good",
-        "going",
-        "need"
-      ],
-      "tools": [],
-      "tags": [
-        "work",
-        "here",
-        "site",
-        "right",
-        "chat",
-        "dave"
+        "look"
       ],
       "step_count": 1
     }
   },
   "relationships": {
-    "kimi_k3_testing_moonshot_s_2_8t_open_model_without": {
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "Claude",
-        "going",
-        "model"
-      ],
-      "did_kimi_k3_really_beat_fable": [
-        "Claude",
-        "Anthropic",
-        "OpenAI",
-        "model"
-      ],
-      "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": [
-        "which"
-      ],
-      "chatgpt_work_everything_you_need_to_know_to_get_st": [
-        "going"
-      ]
-    },
-    "hermes_agent_just_got_10x_better_4_insane_new_feat": {
-      "kimi_k3_testing_moonshot_s_2_8t_open_model_without": [
-        "Claude",
-        "going",
-        "model"
-      ],
-      "did_kimi_k3_really_beat_fable": [
-        "Claude",
-        "right",
-        "model",
-        "actually"
-      ],
-      "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": [
-        "every"
-      ],
-      "chatgpt_work_everything_you_need_to_know_to_get_st": [
-        "going",
-        "right",
-        "work"
-      ]
-    },
-    "did_kimi_k3_really_beat_fable": {
-      "kimi_k3_testing_moonshot_s_2_8t_open_model_without": [
-        "Claude",
-        "Anthropic",
-        "OpenAI",
-        "model"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "Claude",
-        "right",
-        "model",
-        "actually"
-      ],
-      "chatgpt_work_everything_you_need_to_know_to_get_st": [
-        "here",
-        "right"
-      ]
-    },
-    "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
-      "kimi_k3_testing_moonshot_s_2_8t_open_model_without": [
-        "which"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "every"
-      ]
-    },
-    "chatgpt_work_everything_you_need_to_know_to_get_st": {
-      "kimi_k3_testing_moonshot_s_2_8t_open_model_without": [
-        "going"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "going",
-        "right",
-        "work"
-      ],
-      "did_kimi_k3_really_beat_fable": [
-        "here",
-        "right"
-      ]
-    }
+    "kimi_k3_is_insanely_strong_real_tests_and_review": {}
   },
-  "updated_at": "2026-07-19T02:50:55.305410+00:00",
-  "total_skills": 5
+  "updated_at": "2026-07-19T02:50:55.290798+00:00",
+  "total_skills": 1
 }
