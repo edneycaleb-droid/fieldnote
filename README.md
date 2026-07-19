@@ -9,8 +9,8 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [This AI Business Model Is Creating New Millionaires In 2026](skills/this_ai_business_model_is_creating_new_millionaire.md) | By Richard Yu. Key tools: Anthropic, Claude. (Auto-extracted — pending AI enhanc | `Anthropic` `Claude` | `people` `product` `most` |
 | [GPT 5.6 Mystery, New 2.7T AI, DeepSeek New AI Chip, Orca World Model, Grok 4.5 and More AI News...](skills/gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o.md) | By AI Revolution. Key tools: OpenAI, Claude, Anthropic, LLM, Llama. (Auto-extrac | `OpenAI` `Claude` `Anthropic` `LLM` | `music` `model` `openai` |
+| [This AI Business Model Is Creating New Millionaires In 2026](skills/this_ai_business_model_is_creating_new_millionaire.md) | By Richard Yu. Key tools: Anthropic, Claude. (Auto-extracted — pending AI enhanc | `Anthropic` `Claude` | `people` `product` `most` |
 | [New Claude Update Is INSANE!](skills/new_claude_update_is_insane.md) | By Julian Goldie SEO. Key tools: Claude, Anthropic. (Auto-extracted — pending AI | `Claude` `Anthropic` | `claude` `something` `anthropic` |
 | [New Claude Opus 5 LEAKS!](skills/new_claude_opus_5_leaks.md) | By Julian Goldie SEO. Key tools: Claude, Anthropic. (Auto-extracted — pending AI | `Claude` `Anthropic` | `opus` `model` `profit` |
 | [Kimi K3 + Hermes AI Agent is INSANE!](skills/kimi_k3_hermes_ai_agent_is_insane.md) | By Julian Goldie SEO. Key tools: Claude, Babel. (Auto-extracted — pending AI enh | `Claude` `Babel` | `hermes` `here` `actually` |
