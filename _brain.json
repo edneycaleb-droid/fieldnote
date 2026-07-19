@@ -1,96 +1,112 @@
 {
   "concepts": {
-    "work": {
+    "model": {
       "freq": 1,
       "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
+        "this_kimi_k3_agent_os_is_wild"
       ]
     },
-    "here": {
+    "agent": {
       "freq": 1,
       "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
+        "this_kimi_k3_agent_os_is_wild"
       ]
     },
-    "site": {
+    "kimi": {
       "freq": 1,
       "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
+        "this_kimi_k3_agent_os_is_wild"
       ]
     },
-    "right": {
+    "models": {
       "freq": 1,
       "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
+        "this_kimi_k3_agent_os_is_wild"
       ]
     },
-    "chat": {
+    "because": {
       "freq": 1,
       "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
+        "this_kimi_k3_agent_os_is_wild"
       ]
     },
-    "dave": {
+    "real": {
       "freq": 1,
       "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
+        "this_kimi_k3_agent_os_is_wild"
       ]
     },
-    "website": {
+    "already": {
       "freq": 1,
       "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
+        "this_kimi_k3_agent_os_is_wild"
       ]
     },
-    "good": {
+    "inside": {
       "freq": 1,
       "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
+        "this_kimi_k3_agent_os_is_wild"
       ]
     },
-    "going": {
+    "building": {
       "freq": 1,
       "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
+        "this_kimi_k3_agent_os_is_wild"
       ]
     },
-    "need": {
+    "tasks": {
       "freq": 1,
       "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
+        "this_kimi_k3_agent_os_is_wild"
       ]
     }
   },
-  "tools": {},
+  "tools": {
+    "Claude": {
+      "freq": 1,
+      "skills": [
+        "this_kimi_k3_agent_os_is_wild"
+      ]
+    },
+    "Gemini": {
+      "freq": 1,
+      "skills": [
+        "this_kimi_k3_agent_os_is_wild"
+      ]
+    }
+  },
   "skill_map": {
-    "chatgpt_work_everything_you_need_to_know_to_get_st": {
+    "this_kimi_k3_agent_os_is_wild": {
       "concepts": [
-        "work",
-        "here",
-        "site",
-        "right",
-        "chat",
-        "dave",
-        "website",
-        "good",
-        "going",
-        "need"
+        "model",
+        "agent",
+        "kimi",
+        "models",
+        "because",
+        "real",
+        "already",
+        "inside",
+        "building",
+        "tasks"
       ],
-      "tools": [],
+      "tools": [
+        "Claude",
+        "Gemini"
+      ],
       "tags": [
-        "work",
-        "here",
-        "site",
-        "right",
-        "chat",
-        "dave"
+        "model",
+        "agent",
+        "kimi",
+        "models",
+        "because",
+        "real"
       ],
       "step_count": 1
     }
   },
   "relationships": {
-    "chatgpt_work_everything_you_need_to_know_to_get_st": {}
+    "this_kimi_k3_agent_os_is_wild": {}
   },
-  "updated_at": "2026-07-19T02:45:23.403412+00:00",
+  "updated_at": "2026-07-19T02:45:23.405467+00:00",
   "total_skills": 1
 }
