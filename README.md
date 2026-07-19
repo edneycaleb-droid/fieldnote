@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **3 skills** · Last synced: 2026-07-19 02:52 UTC
+> **1 skill** · Last synced: 2026-07-19 02:52 UTC
 
 ---
 
@@ -9,9 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [Every Hermes Concept explained for Normal People](skills/every_hermes_concept_explained_for_normal_people.md) | By Jack Roberts. Key tools: Claude, Anthropic, OpenAI, Ollama, SQLite. (Auto-ext | `Claude` `Anthropic` `OpenAI` `Ollama` | `hermes` `here` `about` |
-| [Kimi K3 Is Fable Level... (they should be worried)](skills/kimi_k3_is_fable_level_they_should_be_worried.md) | By Better Stack. Key tools: Claude, React, Next.js, SQLite, Node. (Auto-extracte | `Claude` `React` `Next.js` `SQLite` | `actually` `here` `fable` |
-| [ChatGPT Work: Everything You Need to Know to Get Started!](skills/chatgpt_work_everything_you_need_to_know_to_get_st.md) | By The AI Advantage. (Auto-extracted — pending AI enhancement.) |  | `work` `here` `site` |
+| [Kimi K3 + Hermes Agent Changes Everything!](skills/kimi_k3_hermes_agent_changes_everything.md) | By Julian Goldie SEO. (Auto-extracted — pending AI enhancement.) |  | `agent` `inside` `model` |
 
 ---
 
