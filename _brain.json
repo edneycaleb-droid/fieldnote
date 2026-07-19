@@ -25,11 +25,12 @@
       ]
     },
     "here": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "how_to_use_codex_to_build_insanely_beautiful_websi",
         "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner",
-        "kimi_k3_is_just_ridiculous"
+        "kimi_k3_is_just_ridiculous",
+        "kimi_k3_is_fable_level_they_should_be_worried"
       ]
     },
     "before": {
@@ -63,27 +64,31 @@
       ]
     },
     "model": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner"
+        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner",
+        "kimi_k3_is_fable_level_they_should_be_worried"
       ]
     },
     "fable": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner"
+        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner",
+        "kimi_k3_is_fable_level_they_should_be_worried"
       ]
     },
     "models": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner"
+        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner",
+        "kimi_k3_is_fable_level_they_should_be_worried"
       ]
     },
     "these": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner"
+        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner",
+        "kimi_k3_is_fable_level_they_should_be_worried"
       ]
     },
     "which": {
@@ -99,10 +104,11 @@
       ]
     },
     "actually": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner",
-        "kimi_k3_is_just_ridiculous"
+        "kimi_k3_is_just_ridiculous",
+        "kimi_k3_is_fable_level_they_should_be_worried"
       ]
     },
     "much": {
@@ -148,9 +154,10 @@
       ]
     },
     "pretty": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_is_just_ridiculous"
+        "kimi_k3_is_just_ridiculous",
+        "kimi_k3_is_fable_level_they_should_be_worried"
       ]
     },
     "game": {
@@ -164,14 +171,33 @@
       "skills": [
         "kimi_k3_is_just_ridiculous"
       ]
+    },
+    "well": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_is_fable_level_they_should_be_worried"
+      ]
+    },
+    "code": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_is_fable_level_they_should_be_worried"
+      ]
+    },
+    "didn": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_is_fable_level_they_should_be_worried"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "how_to_use_codex_to_build_insanely_beautiful_websi",
-        "kimi_k3_is_just_ridiculous"
+        "kimi_k3_is_just_ridiculous",
+        "kimi_k3_is_fable_level_they_should_be_worried"
       ]
     },
     "next.js": {
@@ -196,6 +222,30 @@
       "freq": 1,
       "skills": [
         "how_to_use_codex_to_build_insanely_beautiful_websi"
+      ]
+    },
+    "React": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_is_fable_level_they_should_be_worried"
+      ]
+    },
+    "Next.js": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_is_fable_level_they_should_be_worried"
+      ]
+    },
+    "SQLite": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_is_fable_level_they_should_be_worried"
+      ]
+    },
+    "Node": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_is_fable_level_they_should_be_worried"
       ]
     }
   },
@@ -279,6 +329,36 @@
         "here"
       ],
       "step_count": 1
+    },
+    "kimi_k3_is_fable_level_they_should_be_worried": {
+      "concepts": [
+        "actually",
+        "here",
+        "fable",
+        "pretty",
+        "model",
+        "well",
+        "models",
+        "these",
+        "code",
+        "didn"
+      ],
+      "tools": [
+        "Claude",
+        "React",
+        "Next.js",
+        "SQLite",
+        "Node"
+      ],
+      "tags": [
+        "actually",
+        "here",
+        "fable",
+        "pretty",
+        "model",
+        "well"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -287,6 +367,10 @@
         "here"
       ],
       "kimi_k3_is_just_ridiculous": [
+        "Claude",
+        "here"
+      ],
+      "kimi_k3_is_fable_level_they_should_be_worried": [
         "Claude",
         "here"
       ]
@@ -298,6 +382,14 @@
       "kimi_k3_is_just_ridiculous": [
         "here",
         "actually"
+      ],
+      "kimi_k3_is_fable_level_they_should_be_worried": [
+        "these",
+        "actually",
+        "here",
+        "model",
+        "fable",
+        "models"
       ]
     },
     "kimi_k3_is_just_ridiculous": {
@@ -308,9 +400,35 @@
       "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner": [
         "here",
         "actually"
+      ],
+      "kimi_k3_is_fable_level_they_should_be_worried": [
+        "Claude",
+        "here",
+        "pretty",
+        "actually"
+      ]
+    },
+    "kimi_k3_is_fable_level_they_should_be_worried": {
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "Claude",
+        "here"
+      ],
+      "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner": [
+        "these",
+        "actually",
+        "here",
+        "model",
+        "fable",
+        "models"
+      ],
+      "kimi_k3_is_just_ridiculous": [
+        "Claude",
+        "here",
+        "pretty",
+        "actually"
       ]
     }
   },
-  "updated_at": "2026-07-19T02:45:23.656994+00:00",
-  "total_skills": 3
+  "updated_at": "2026-07-19T02:45:24.212467+00:00",
+  "total_skills": 4
 }
