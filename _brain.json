@@ -1,9 +1,10 @@
 {
   "concepts": {
     "hermes": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "use_this_to_make_the_hermes_agent_basically_free"
+        "use_this_to_make_the_hermes_agent_basically_free",
+        "hermes_agent_full_course_setup_guide_for_complete_"
       ]
     },
     "tokens": {
@@ -49,9 +50,10 @@
       ]
     },
     "agent": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "use_this_to_make_the_hermes_agent_basically_free"
+        "use_this_to_make_the_hermes_agent_basically_free",
+        "hermes_agent_full_course_setup_guide_for_complete_"
       ]
     },
     "cost": {
@@ -59,13 +61,62 @@
       "skills": [
         "use_this_to_make_the_hermes_agent_basically_free"
       ]
+    },
+    "going": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_full_course_setup_guide_for_complete_"
+      ]
+    },
+    "want": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_full_course_setup_guide_for_complete_"
+      ]
+    },
+    "here": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_full_course_setup_guide_for_complete_"
+      ]
+    },
+    "okay": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_full_course_setup_guide_for_complete_"
+      ]
+    },
+    "kind": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_full_course_setup_guide_for_complete_"
+      ]
+    },
+    "need": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_full_course_setup_guide_for_complete_"
+      ]
+    },
+    "right": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_full_course_setup_guide_for_complete_"
+      ]
+    },
+    "give": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_full_course_setup_guide_for_complete_"
+      ]
     }
   },
   "tools": {
     "OpenAI": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "use_this_to_make_the_hermes_agent_basically_free"
+        "use_this_to_make_the_hermes_agent_basically_free",
+        "hermes_agent_full_course_setup_guide_for_complete_"
       ]
     },
     "Claude": {
@@ -75,15 +126,46 @@
       ]
     },
     "Anthropic": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "use_this_to_make_the_hermes_agent_basically_free"
+        "use_this_to_make_the_hermes_agent_basically_free",
+        "hermes_agent_full_course_setup_guide_for_complete_"
       ]
     },
     "Gemini": {
       "freq": 1,
       "skills": [
         "use_this_to_make_the_hermes_agent_basically_free"
+      ]
+    },
+    "LLM": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_full_course_setup_guide_for_complete_"
+      ]
+    },
+    "Docker": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_full_course_setup_guide_for_complete_"
+      ]
+    },
+    "curl": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_full_course_setup_guide_for_complete_"
+      ]
+    },
+    "SSH": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_full_course_setup_guide_for_complete_"
+      ]
+    },
+    "Python": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_full_course_setup_guide_for_complete_"
       ]
     }
   },
@@ -116,11 +198,58 @@
         "tools"
       ],
       "step_count": 1
+    },
+    "hermes_agent_full_course_setup_guide_for_complete_": {
+      "concepts": [
+        "going",
+        "want",
+        "agent",
+        "here",
+        "hermes",
+        "okay",
+        "kind",
+        "need",
+        "right",
+        "give"
+      ],
+      "tools": [
+        "LLM",
+        "OpenAI",
+        "Anthropic",
+        "Docker",
+        "curl",
+        "SSH",
+        "Python"
+      ],
+      "tags": [
+        "going",
+        "want",
+        "agent",
+        "here",
+        "hermes",
+        "okay"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
-    "use_this_to_make_the_hermes_agent_basically_free": {}
+    "use_this_to_make_the_hermes_agent_basically_free": {
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "Anthropic",
+        "hermes",
+        "OpenAI",
+        "agent"
+      ]
+    },
+    "hermes_agent_full_course_setup_guide_for_complete_": {
+      "use_this_to_make_the_hermes_agent_basically_free": [
+        "Anthropic",
+        "hermes",
+        "OpenAI",
+        "agent"
+      ]
+    }
   },
-  "updated_at": "2026-07-19T02:45:25.241509+00:00",
-  "total_skills": 1
+  "updated_at": "2026-07-19T02:45:25.403034+00:00",
+  "total_skills": 2
 }
