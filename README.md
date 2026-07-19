@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **6 skills** · Last synced: 2026-07-19 02:46 UTC
+> **7 skills** · Last synced: 2026-07-19 02:46 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [New Claude Update Is INSANE!](skills/new_claude_update_is_insane.md) | By Julian Goldie SEO. Key tools: Claude, Anthropic. (Auto-extracted — pending AI | `Claude` `Anthropic` | `claude` `something` `anthropic` |
 | [New Claude Opus 5 LEAKS!](skills/new_claude_opus_5_leaks.md) | By Julian Goldie SEO. Key tools: Claude, Anthropic. (Auto-extracted — pending AI | `Claude` `Anthropic` | `opus` `model` `profit` |
 | [Run Kimi K3 Inside Claude Code (MAX POWER)](skills/run_kimi_k3_inside_claude_code_max_power.md) | By Superbash (BoxminingAI). Key tools: Claude, anthropic. (Auto-extracted — pend | `Claude` `anthropic` | `code` `kimmy` `cloud` |
 | [Kimi K3 VS Claude Fable 5 (Raw Results)](skills/kimi_k3_vs_claude_fable_5_raw_results.md) | By Dubibubi. Key tools: Claude, Anthropic, Ollama. (Auto-extracted — pending AI  | `Claude` `Anthropic` `Ollama` | `fable` `kimi` `right` |
