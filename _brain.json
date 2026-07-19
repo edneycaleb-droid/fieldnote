@@ -1,17 +1,19 @@
 {
   "concepts": {
     "AI agents": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "building_ai_agents",
-        "hermes_agent_setup"
+        "hermes_agent_setup",
+        "building_ai_agents_with_loop"
       ]
     },
     "Automation": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "building_ai_agents",
-        "hermes_agent_setup"
+        "hermes_agent_setup",
+        "building_ai_agents_with_loop"
       ]
     },
     "Reverse prompting": {
@@ -275,10 +277,11 @@
       ]
     },
     "Large Language Models (LLMs)": {
-      "freq": 2,
+      "freq": 4,
       "skills": [
         "building_ai_agents_with_langchain",
-        "deploying_retrieval_augmented_generation_with_ragflow"
+        "deploying_retrieval_augmented_generation_with_ragflow",
+        "testing_and_comparing_llms"
       ]
     },
     "Model Interoperability": {
@@ -306,17 +309,19 @@
       ]
     },
     "Personalization": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "building_ai_agents",
-        "hermes_agent_setup"
+        "hermes_agent_setup",
+        "building_ai_agents_with_loop"
       ]
     },
     "Integration": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "building_ai_agents",
-        "hermes_agent_setup"
+        "hermes_agent_setup",
+        "building_ai_agents_with_loop"
       ]
     },
     "Repeatability": {
@@ -393,12 +398,11 @@
       ]
     },
     "LLMs": {
-      "freq": 4,
+      "freq": 3,
       "skills": [
         "astrbot_deployment",
         "openai_agents_sdk",
-        "building_ai_agents",
-        "experimenting_with_longs"
+        "building_ai_agents"
       ]
     },
     "plugins": {
@@ -438,9 +442,10 @@
       ]
     },
     "LLMs (Large Language Models)": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "openai_agents_sdk"
+        "openai_agents_sdk",
+        "testing_and_comparing_llms"
       ]
     },
     "OpenAI Responses and Chat Completions APIs": {
@@ -607,27 +612,31 @@
       ]
     },
     "Loop Engineering": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
-        "mastering_loop_engineering"
+        "mastering_loop_engineering",
+        "building_ai_agents_with_loop"
       ]
     },
     "Autonomous Work": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
-        "mastering_loop_engineering"
+        "mastering_loop_engineering",
+        "building_ai_agents_with_loop"
       ]
     },
     "Self-Correction": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
-        "mastering_loop_engineering"
+        "mastering_loop_engineering",
+        "building_ai_agents_with_loop"
       ]
     },
     "Strategic Thinking": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
-        "mastering_loop_engineering"
+        "mastering_loop_engineering",
+        "building_ai_agents_with_loop"
       ]
     },
     "Autonomous AI": {
@@ -803,11 +812,10 @@
       ]
     },
     "Large Language Models": {
-      "freq": 3,
+      "freq": 2,
       "skills": [
         "ragflow_deployment",
-        "lightrag_deployment",
-        "experimenting_with_longs"
+        "lightrag_deployment"
       ]
     },
     "Context Layer": {
@@ -1046,37 +1054,62 @@
         "chrome_mcp_server"
       ]
     },
-    "Vector databases": {
+    "Loop": {
       "freq": 1,
       "skills": [
-        "experimenting_with_longs"
+        "building_ai_agents_with_loop"
+      ]
+    },
+    "Autonomous improvement": {
+      "freq": 1,
+      "skills": [
+        "building_ai_agents_with_loop"
+      ]
+    },
+    "Vector Databases": {
+      "freq": 2,
+      "skills": [
+        "testing_and_comparing_llms"
       ]
     },
     "Prompt Engineering": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "experimenting_with_longs"
+        "testing_and_comparing_llms"
       ]
     },
-    "Experimentation and Evaluation": {
-      "freq": 1,
+    "Model Evaluation": {
+      "freq": 2,
       "skills": [
-        "experimenting_with_longs"
+        "testing_and_comparing_llms"
       ]
     },
-    "PromptTools": {
+    "Large AI Models": {
       "freq": 1,
       "skills": [
-        "experimenting_with_longs"
+        "testing_and_comparing_llms"
+      ]
+    },
+    "Compression": {
+      "freq": 1,
+      "skills": [
+        "testing_and_comparing_llms"
+      ]
+    },
+    "Intelligence Preservation": {
+      "freq": 1,
+      "skills": [
+        "testing_and_comparing_llms"
       ]
     }
   },
   "tools": {
     "Anthropic": {
-      "freq": 5,
+      "freq": 7,
       "skills": [
         "building_ai_agents",
-        "build_production_ready_llm_applications_with_haystack"
+        "build_production_ready_llm_applications_with_haystack",
+        "testing_and_comparing_llms"
       ]
     },
     "Haiku": {
@@ -1141,12 +1174,13 @@
       ]
     },
     "Claude": {
-      "freq": 7,
+      "freq": 9,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
         "higsfield_integration",
-        "hermes_agent_setup"
+        "hermes_agent_setup",
+        "building_ai_agents_with_loop"
       ]
     },
     "Google Drive": {
@@ -1276,10 +1310,11 @@
       ]
     },
     "Hermes Agent": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "building_ai_agents",
-        "hermes_agent_setup"
+        "hermes_agent_setup",
+        "building_ai_agents_with_loop"
       ]
     },
     "Firecrawl": {
@@ -1480,10 +1515,10 @@
       ]
     },
     "OpenAI": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
-        "experimenting_with_longs"
+        "testing_and_comparing_llms"
       ]
     },
     "Mistral": {
@@ -1499,10 +1534,11 @@
       ]
     },
     "Hugging Face": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
-        "running_large_models_locally"
+        "running_large_models_locally",
+        "testing_and_comparing_llms"
       ]
     },
     "Azure OpenAI": {
@@ -1607,33 +1643,38 @@
       ]
     },
     "ChatGPT": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
-        "mastering_loop_engineering"
+        "mastering_loop_engineering",
+        "building_ai_agents_with_loop"
       ]
     },
     "Fable 5": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
-        "mastering_loop_engineering"
+        "mastering_loop_engineering",
+        "building_ai_agents_with_loop"
       ]
     },
     "ChatGPT 5.6": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
-        "mastering_loop_engineering"
+        "mastering_loop_engineering",
+        "building_ai_agents_with_loop"
       ]
     },
     "Orchestrator Model": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
-        "mastering_loop_engineering"
+        "mastering_loop_engineering",
+        "building_ai_agents_with_loop"
       ]
     },
     "MCP SSH Manager": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
-        "mastering_loop_engineering"
+        "mastering_loop_engineering",
+        "building_ai_agents_with_loop"
       ]
     },
     "WinRemote MCP": {
@@ -1643,13 +1684,14 @@
       ]
     },
     "Open Claw": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "moonshot_kimiko_automation",
         "moonshot_kimiko_3",
         "building_ai_agents",
         "hermes_agent_setup",
-        "moonshot_kimiko_3_skill"
+        "moonshot_kimiko_3_skill",
+        "building_ai_agents_with_loop"
       ]
     },
     "Moonshot": {
@@ -1749,24 +1791,27 @@
       ]
     },
     "Contabo": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "building_ai_agents",
-        "hermes_agent_setup"
+        "hermes_agent_setup",
+        "building_ai_agents_with_loop"
       ]
     },
     "RackNerd": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "building_ai_agents",
-        "hermes_agent_setup"
+        "hermes_agent_setup",
+        "building_ai_agents_with_loop"
       ]
     },
     "Discord": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "hermes_agent_setup",
-        "microsoft_mcp_curriculum"
+        "microsoft_mcp_curriculum",
+        "building_ai_agents_with_loop"
       ]
     },
     "MCP (Model Context Protocol)": {
@@ -1954,9 +1999,10 @@
       ]
     },
     "GitHub": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "microsoft_mcp_curriculum"
+        "microsoft_mcp_curriculum",
+        "testing_and_comparing_llms"
       ]
     },
     "VS Code": {
@@ -2013,58 +2059,64 @@
         "chrome_mcp_server"
       ]
     },
-    "prompttools": {
+    "langchain": {
       "freq": 1,
       "skills": [
-        "experimenting_with_longs"
+        "building_ai_agents_with_loop"
       ]
     },
-    "Jupyter notebook": {
+    "langchain-groq": {
       "freq": 1,
       "skills": [
-        "experimenting_with_longs"
+        "building_ai_agents_with_loop"
       ]
     },
-    "Google Colab": {
+    "langchain-openai": {
       "freq": 1,
       "skills": [
-        "experimenting_with_longs"
+        "building_ai_agents_with_loop"
       ]
     },
-    "Streamlit": {
+    "langchain-community": {
       "freq": 1,
       "skills": [
-        "experimenting_with_longs"
+        "building_ai_agents_with_loop"
       ]
     },
-    "notebook": {
-      "freq": 1,
+    "PromptTools": {
+      "freq": 3,
       "skills": [
-        "experimenting_with_longs"
-      ]
-    },
-    "streamlit": {
-      "freq": 1,
-      "skills": [
-        "experimenting_with_longs"
+        "testing_and_comparing_llms"
       ]
     },
     "LLaMA": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "experimenting_with_longs"
+        "testing_and_comparing_llms"
       ]
     },
-    "HuggingFace": {
-      "freq": 1,
+    "Streamlit": {
+      "freq": 2,
       "skills": [
-        "experimenting_with_longs"
+        "testing_and_comparing_llms"
       ]
     },
-    "prompttools-playground": {
+    "Jupyter Notebook": {
+      "freq": 2,
+      "skills": [
+        "testing_and_comparing_llms"
+      ]
+    },
+    "Llama.cpp": {
       "freq": 1,
       "skills": [
-        "experimenting_with_longs"
+        "testing_and_comparing_llms"
+      ]
+    },
+    "Prism ML": {
+      "freq": 1,
+      "skills": [
+        "testing_and_comparing_llms"
       ]
     }
   },
@@ -2708,39 +2760,76 @@
       ],
       "step_count": 9
     },
-    "experimenting_with_longs": {
+    "building_ai_agents_with_loop": {
       "concepts": [
-        "LLMs",
-        "Vector databases",
-        "Prompt Engineering",
-        "Experimentation and Evaluation",
-        "PromptTools",
-        "Large Language Models"
+        "AI agents",
+        "Personalization",
+        "Automation",
+        "Integration",
+        "Loop",
+        "Autonomous improvement",
+        "Loop Engineering",
+        "Autonomous Work",
+        "Self-Correction",
+        "Strategic Thinking"
       ],
       "tools": [
-        "prompttools",
-        "Jupyter notebook",
-        "Google Colab",
-        "Streamlit",
-        "notebook",
-        "streamlit",
+        "Hermes Agent",
+        "Claude",
+        "Open Claw",
+        "Contabo",
+        "RackNerd",
+        "Discord",
+        "Claude",
+        "ChatGPT",
+        "Fable 5",
+        "ChatGPT 5.6",
+        "Orchestrator Model",
+        "MCP SSH Manager",
+        "langchain",
+        "langchain-groq",
+        "langchain-openai",
+        "langchain-community"
+      ],
+      "tags": [
+        "ai",
+        "self-improvement",
+        "loop-engineering",
+        "autonomous-work"
+      ],
+      "step_count": 9
+    },
+    "testing_and_comparing_llms": {
+      "concepts": [
+        "Large Language Models (LLMs)",
+        "Vector Databases",
+        "Prompt Engineering",
+        "Model Evaluation",
+        "Large AI Models",
+        "Compression",
+        "Intelligence Preservation"
+      ],
+      "tools": [
+        "PromptTools",
         "OpenAI",
+        "Anthropic",
         "LLaMA",
-        "HuggingFace",
-        "prompttools-playground"
+        "Streamlit",
+        "Jupyter Notebook",
+        "Llama.cpp",
+        "Prism ML",
+        "Hugging Face"
       ],
       "tags": [
         "llms",
-        "vector_databases",
-        "prompt_engineering",
-        "experimentation",
+        "prompttools",
         "testing",
-        "evaluation",
+        "model_evaluation",
         "ai",
-        "nlp",
-        "ml"
+        "models",
+        "compression"
       ],
-      "step_count": 7
+      "step_count": 11
     }
   },
   "relationships": {
@@ -2780,8 +2869,13 @@
       "graphrag_deployment": [
         "LLMs"
       ],
-      "experimenting_with_longs": [
-        "LLMs"
+      "building_ai_agents_with_loop": [
+        "Claude",
+        "Integration",
+        "Open Claw",
+        "Automation",
+        "RackNerd",
+        "Hermes Agent"
       ]
     },
     "running_large_models_locally": {
@@ -2789,6 +2883,9 @@
         "Mixture of experts models"
       ],
       "build_production_ready_llm_applications_with_haystack": [
+        "Hugging Face"
+      ],
+      "testing_and_comparing_llms": [
         "Hugging Face"
       ]
     },
@@ -2809,6 +2906,9 @@
         "LangChain"
       ],
       "deploying_retrieval_augmented_generation_with_ragflow": [
+        "Large Language Models (LLMs)"
+      ],
+      "testing_and_comparing_llms": [
         "Large Language Models (LLMs)"
       ]
     },
@@ -2864,9 +2964,6 @@
       ],
       "superagi_building_autonomous_agents": [
         "Docker"
-      ],
-      "experimenting_with_longs": [
-        "LLMs"
       ]
     },
     "openai_agents_sdk": {
@@ -2897,8 +2994,8 @@
       "microsoft_mcp_curriculum": [
         "Git"
       ],
-      "experimenting_with_longs": [
-        "LLMs"
+      "testing_and_comparing_llms": [
+        "LLMs (Large Language Models)"
       ]
     },
     "build_production_ready_llm_applications_with_haystack": {
@@ -2934,8 +3031,10 @@
       "superagi_building_autonomous_agents": [
         "Docker"
       ],
-      "experimenting_with_longs": [
-        "OpenAI"
+      "testing_and_comparing_llms": [
+        "OpenAI",
+        "Anthropic",
+        "Hugging Face"
       ]
     },
     "swanlab_ai_training_analysis_platform": {
@@ -2961,6 +3060,14 @@
       ],
       "hermes_agent_setup": [
         "Claude"
+      ],
+      "building_ai_agents_with_loop": [
+        "Claude",
+        "Strategic Thinking",
+        "Fable 5",
+        "Loop Engineering",
+        "ChatGPT 5.6",
+        "Self-Correction"
       ]
     },
     "moonshot_kimiko_automation": {
@@ -2985,6 +3092,9 @@
         "Open Weights",
         "Moonshot Kimiko 3",
         "Kimiko 3"
+      ],
+      "building_ai_agents_with_loop": [
+        "Open Claw"
       ]
     },
     "moonshot_kimiko_3": {
@@ -3009,6 +3119,9 @@
         "Open Weights",
         "Moonshot Kimiko 3",
         "Kimiko 3"
+      ],
+      "building_ai_agents_with_loop": [
+        "Open Claw"
       ]
     },
     "higsfield_integration": {
@@ -3025,6 +3138,9 @@
         "Claude"
       ],
       "hermes_agent_setup": [
+        "Claude"
+      ],
+      "building_ai_agents_with_loop": [
         "Claude"
       ]
     },
@@ -3075,6 +3191,14 @@
       ],
       "microsoft_mcp_curriculum": [
         "Discord"
+      ],
+      "building_ai_agents_with_loop": [
+        "Claude",
+        "Integration",
+        "Open Claw",
+        "Automation",
+        "RackNerd",
+        "Hermes Agent"
       ]
     },
     "ragflow_deployment": {
@@ -3107,9 +3231,6 @@
       "superagi_building_autonomous_agents": [
         "Docker",
         "Agent Capabilities"
-      ],
-      "experimenting_with_longs": [
-        "Large Language Models"
       ]
     },
     "lightrag_deployment": {
@@ -3163,6 +3284,9 @@
       ],
       "hermes_agent_setup": [
         "Open Claw"
+      ],
+      "building_ai_agents_with_loop": [
+        "Open Claw"
       ]
     },
     "deploying_retrieval_augmented_generation_with_ragflow": {
@@ -3198,6 +3322,9 @@
       ],
       "superagi_building_autonomous_agents": [
         "Docker"
+      ],
+      "testing_and_comparing_llms": [
+        "Large Language Models (LLMs)"
       ]
     },
     "graphrag_deployment": {
@@ -3231,9 +3358,6 @@
       ],
       "superagi_building_autonomous_agents": [
         "Docker"
-      ],
-      "experimenting_with_longs": [
-        "LLMs"
       ]
     },
     "superagi_building_autonomous_agents": {
@@ -3263,30 +3387,79 @@
       ],
       "hermes_agent_setup": [
         "Discord"
+      ],
+      "building_ai_agents_with_loop": [
+        "Discord"
+      ],
+      "testing_and_comparing_llms": [
+        "GitHub"
       ]
     },
     "chrome_mcp_server": {},
-    "experimenting_with_longs": {
+    "building_ai_agents_with_loop": {
       "building_ai_agents": [
-        "LLMs"
+        "Claude",
+        "Integration",
+        "Open Claw",
+        "Automation",
+        "RackNerd",
+        "Hermes Agent"
       ],
-      "astrbot_deployment": [
-        "LLMs"
+      "mastering_loop_engineering": [
+        "Claude",
+        "Strategic Thinking",
+        "Fable 5",
+        "Loop Engineering",
+        "ChatGPT 5.6",
+        "Self-Correction"
+      ],
+      "moonshot_kimiko_automation": [
+        "Open Claw"
+      ],
+      "moonshot_kimiko_3": [
+        "Open Claw"
+      ],
+      "higsfield_integration": [
+        "Claude"
+      ],
+      "hermes_agent_setup": [
+        "Claude",
+        "Integration",
+        "Open Claw",
+        "Automation",
+        "RackNerd",
+        "Hermes Agent"
+      ],
+      "moonshot_kimiko_3_skill": [
+        "Open Claw"
+      ],
+      "microsoft_mcp_curriculum": [
+        "Discord"
+      ]
+    },
+    "testing_and_comparing_llms": {
+      "building_ai_agents_with_langchain": [
+        "Large Language Models (LLMs)"
       ],
       "openai_agents_sdk": [
-        "LLMs"
+        "LLMs (Large Language Models)"
       ],
       "build_production_ready_llm_applications_with_haystack": [
-        "OpenAI"
+        "OpenAI",
+        "Anthropic",
+        "Hugging Face"
       ],
-      "ragflow_deployment": [
-        "Large Language Models"
+      "deploying_retrieval_augmented_generation_with_ragflow": [
+        "Large Language Models (LLMs)"
       ],
-      "graphrag_deployment": [
-        "LLMs"
+      "microsoft_mcp_curriculum": [
+        "GitHub"
+      ],
+      "running_large_models_locally": [
+        "Hugging Face"
       ]
     }
   },
-  "updated_at": "2026-07-17T15:17:56.162091+00:00",
-  "total_skills": 25
+  "updated_at": "2026-07-19T02:39:56.506526+00:00",
+  "total_skills": 26
 }
