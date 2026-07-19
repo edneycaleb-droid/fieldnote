@@ -1170,20 +1170,20 @@
       ]
     },
     "hermes": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane"
       ]
     },
     "here": {
-      "freq": 4,
+      "freq": 6,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_opus_5_leaks"
       ]
     },
     "actually": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_update_is_insane",
@@ -1191,50 +1191,50 @@
       ]
     },
     "agent": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane"
       ]
     },
     "inside": {
-      "freq": 4,
+      "freq": 6,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_opus_5_leaks"
       ]
     },
     "example": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane"
       ]
     },
     "which": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane"
       ]
     },
     "video": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane"
       ]
     },
     "well": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane"
       ]
     },
     "right": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane"
       ]
     },
     "claude": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "new_claude_update_is_insane",
         "new_claude_opus_5_leaks"
@@ -1247,7 +1247,7 @@
       ]
     },
     "anthropic": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "new_claude_update_is_insane",
         "new_claude_opus_5_leaks"
@@ -1290,37 +1290,37 @@
       ]
     },
     "opus": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "new_claude_opus_5_leaks"
       ]
     },
     "model": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "new_claude_opus_5_leaks"
       ]
     },
     "profit": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "new_claude_opus_5_leaks"
       ]
     },
     "boardroom": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "new_claude_opus_5_leaks"
       ]
     },
     "people": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "new_claude_opus_5_leaks"
       ]
     },
     "honeycomb": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "new_claude_opus_5_leaks"
       ]
@@ -1382,7 +1382,7 @@
   },
   "tools": {
     "Anthropic": {
-      "freq": 11,
+      "freq": 12,
       "skills": [
         "building_ai_agents",
         "build_production_ready_llm_applications_with_haystack",
@@ -1453,7 +1453,7 @@
       ]
     },
     "Claude": {
-      "freq": 19,
+      "freq": 21,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -2437,7 +2437,7 @@
       ]
     },
     "Babel": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane"
       ]
@@ -4169,6 +4169,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-19T02:40:22.214179+00:00",
+  "updated_at": "2026-07-19T02:40:22.376497+00:00",
   "total_skills": 31
 }
