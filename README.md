@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **2 skills** · Last synced: 2026-07-19 02:46 UTC
+> **6 skills** · Last synced: 2026-07-19 02:46 UTC
 
 ---
 
@@ -9,6 +9,10 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Kimi K3 vs Fable 5 vs GPT-5.6: One Game, One Winner](skills/kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner.md) | By MG. (Auto-extracted — pending AI enhancement.) |  | `model` `fable` `models` |
+| [Kimi K3 is just ridiculous](skills/kimi_k3_is_just_ridiculous.md) | By LanceyPoo. Key tools: Claude. (Auto-extracted — pending AI enhancement.) | `Claude` | `okay` `going` `wait` |
+| [Kimi K3 Is Out — and the Real Opportunity Isn't the Model](skills/kimi_k3_is_out_and_the_real_opportunity_isn_t_the_.md) | By Manolo Remiddi. Key tools: OpenAI, Gemini. (Auto-extracted — pending AI enhan | `OpenAI` `Gemini` | `model` `those` `going` |
+| [Kimi K3 AI Full COURSE 1 HOUR (Build & Automate Anything)](skills/kimi_k3_ai_full_course_1_hour_build_automate_anyth.md) | By Julian Goldie SEO. Key tools: LLM, Claude. (Auto-extracted — pending AI enhan | `LLM` `Claude` | `kimmy` `here` `want` |
 | [How To Use Codex To Build Insanely Beautiful Websites Using GPT 5.6 Sol](skills/how_to_use_codex_to_build_insanely_beautiful_websi.md) | By AI LABS. Key tools: Claude, next.js, Anthropic, OpenAI, git. (Auto-extracted  | `Claude` `next.js` `Anthropic` `OpenAI` | `design` `website` `codeex` |
 | [Did Kimi K3 really beat Fable?](skills/did_kimi_k3_really_beat_fable.md) | By Matthew Berman. Key tools: Claude, Anthropic, OpenAI. (Auto-extracted — pendi | `Claude` `Anthropic` `OpenAI` | `open` `here` `source` |
 
