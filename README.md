@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **70 skills** · Last synced: 2026-07-19 02:43 UTC
+> **71 skills** · Last synced: 2026-07-19 02:43 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Kimi K3 + Hermes Agent Changes Everything!](skills/kimi_k3_hermes_agent_changes_everything.md) | By Julian Goldie SEO. (Auto-extracted — pending AI enhancement.) |  | `agent` `inside` `model` |
 | [New Hermes Agent OS is INSANE!](skills/new_hermes_agent_os_is_insane.md) | By Julian Goldie SEO. Key tools: Claude. (Auto-extracted — pending AI enhancemen | `Claude` | `same` `outreach` `agent` |
 | [Every Hermes Concept explained for Normal People](skills/every_hermes_concept_explained_for_normal_people.md) | By Jack Roberts. Key tools: Claude, Anthropic, OpenAI, Ollama, SQLite. (Auto-ext | `Claude` `Anthropic` `OpenAI` `Ollama` | `hermes` `here` `about` |
 | [100 hours of Hermes Agent lessons in 19 minutes](skills/100_hours_of_hermes_agent_lessons_in_19_minutes.md) | By Alex Finn. Key tools: Gemini, SSH, Claude. (Auto-extracted — pending AI enhan | `Gemini` `SSH` `Claude` | `hermes` `agent` `other` |
