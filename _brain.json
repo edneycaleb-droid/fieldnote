@@ -59,19 +59,92 @@
       "skills": [
         "kimi_k3_just_knocked_claude_to_third_place_chinese"
       ]
+    },
+    "here": {
+      "freq": 1,
+      "skills": [
+        "gpt_5_6_on_hermes_agent_is_actually_insane_full_he"
+      ]
+    },
+    "agent": {
+      "freq": 1,
+      "skills": [
+        "gpt_5_6_on_hermes_agent_is_actually_insane_full_he"
+      ]
+    },
+    "hermes": {
+      "freq": 1,
+      "skills": [
+        "gpt_5_6_on_hermes_agent_is_actually_insane_full_he"
+      ]
+    },
+    "right": {
+      "freq": 1,
+      "skills": [
+        "gpt_5_6_on_hermes_agent_is_actually_insane_full_he"
+      ]
+    },
+    "want": {
+      "freq": 1,
+      "skills": [
+        "gpt_5_6_on_hermes_agent_is_actually_insane_full_he"
+      ]
+    },
+    "click": {
+      "freq": 1,
+      "skills": [
+        "gpt_5_6_on_hermes_agent_is_actually_insane_full_he"
+      ]
+    },
+    "terminal": {
+      "freq": 1,
+      "skills": [
+        "gpt_5_6_on_hermes_agent_is_actually_insane_full_he"
+      ]
+    },
+    "really": {
+      "freq": 1,
+      "skills": [
+        "gpt_5_6_on_hermes_agent_is_actually_insane_full_he"
+      ]
+    },
+    "website": {
+      "freq": 1,
+      "skills": [
+        "gpt_5_6_on_hermes_agent_is_actually_insane_full_he"
+      ]
+    },
+    "build": {
+      "freq": 1,
+      "skills": [
+        "gpt_5_6_on_hermes_agent_is_actually_insane_full_he"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_just_knocked_claude_to_third_place_chinese"
+        "kimi_k3_just_knocked_claude_to_third_place_chinese",
+        "gpt_5_6_on_hermes_agent_is_actually_insane_full_he"
       ]
     },
     "Anthropic": {
       "freq": 1,
       "skills": [
         "kimi_k3_just_knocked_claude_to_third_place_chinese"
+      ]
+    },
+    "OpenAI": {
+      "freq": 1,
+      "skills": [
+        "gpt_5_6_on_hermes_agent_is_actually_insane_full_he"
+      ]
+    },
+    "Docker": {
+      "freq": 1,
+      "skills": [
+        "gpt_5_6_on_hermes_agent_is_actually_insane_full_he"
       ]
     }
   },
@@ -102,11 +175,48 @@
         "good"
       ],
       "step_count": 1
+    },
+    "gpt_5_6_on_hermes_agent_is_actually_insane_full_he": {
+      "concepts": [
+        "here",
+        "agent",
+        "hermes",
+        "right",
+        "want",
+        "click",
+        "terminal",
+        "really",
+        "website",
+        "build"
+      ],
+      "tools": [
+        "OpenAI",
+        "Claude",
+        "Docker"
+      ],
+      "tags": [
+        "here",
+        "agent",
+        "hermes",
+        "right",
+        "want",
+        "click"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
-    "kimi_k3_just_knocked_claude_to_third_place_chinese": {}
+    "kimi_k3_just_knocked_claude_to_third_place_chinese": {
+      "gpt_5_6_on_hermes_agent_is_actually_insane_full_he": [
+        "Claude"
+      ]
+    },
+    "gpt_5_6_on_hermes_agent_is_actually_insane_full_he": {
+      "kimi_k3_just_knocked_claude_to_third_place_chinese": [
+        "Claude"
+      ]
+    }
   },
-  "updated_at": "2026-07-19T02:45:24.799373+00:00",
-  "total_skills": 1
+  "updated_at": "2026-07-19T02:45:24.848376+00:00",
+  "total_skills": 2
 }
