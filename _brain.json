@@ -1,63 +1,63 @@
 {
   "concepts": {
+    "kimmy": {
+      "freq": 1,
+      "skills": [
+        "people_are_creating_insane_things_with_kimi_k3"
+      ]
+    },
+    "game": {
+      "freq": 1,
+      "skills": [
+        "people_are_creating_insane_things_with_kimi_k3"
+      ]
+    },
+    "here": {
+      "freq": 1,
+      "skills": [
+        "people_are_creating_insane_things_with_kimi_k3"
+      ]
+    },
+    "fable": {
+      "freq": 1,
+      "skills": [
+        "people_are_creating_insane_things_with_kimi_k3"
+      ]
+    },
+    "better": {
+      "freq": 1,
+      "skills": [
+        "people_are_creating_insane_things_with_kimi_k3"
+      ]
+    },
+    "example": {
+      "freq": 1,
+      "skills": [
+        "people_are_creating_insane_things_with_kimi_k3"
+      ]
+    },
+    "much": {
+      "freq": 1,
+      "skills": [
+        "people_are_creating_insane_things_with_kimi_k3"
+      ]
+    },
     "model": {
       "freq": 1,
       "skills": [
-        "this_kimi_k3_agent_os_is_wild"
+        "people_are_creating_insane_things_with_kimi_k3"
       ]
     },
-    "agent": {
+    "think": {
       "freq": 1,
       "skills": [
-        "this_kimi_k3_agent_os_is_wild"
+        "people_are_creating_insane_things_with_kimi_k3"
       ]
     },
-    "kimi": {
+    "very": {
       "freq": 1,
       "skills": [
-        "this_kimi_k3_agent_os_is_wild"
-      ]
-    },
-    "models": {
-      "freq": 1,
-      "skills": [
-        "this_kimi_k3_agent_os_is_wild"
-      ]
-    },
-    "because": {
-      "freq": 1,
-      "skills": [
-        "this_kimi_k3_agent_os_is_wild"
-      ]
-    },
-    "real": {
-      "freq": 1,
-      "skills": [
-        "this_kimi_k3_agent_os_is_wild"
-      ]
-    },
-    "already": {
-      "freq": 1,
-      "skills": [
-        "this_kimi_k3_agent_os_is_wild"
-      ]
-    },
-    "inside": {
-      "freq": 1,
-      "skills": [
-        "this_kimi_k3_agent_os_is_wild"
-      ]
-    },
-    "building": {
-      "freq": 1,
-      "skills": [
-        "this_kimi_k3_agent_os_is_wild"
-      ]
-    },
-    "tasks": {
-      "freq": 1,
-      "skills": [
-        "this_kimi_k3_agent_os_is_wild"
+        "people_are_creating_insane_things_with_kimi_k3"
       ]
     }
   },
@@ -65,48 +65,41 @@
     "Claude": {
       "freq": 1,
       "skills": [
-        "this_kimi_k3_agent_os_is_wild"
-      ]
-    },
-    "Gemini": {
-      "freq": 1,
-      "skills": [
-        "this_kimi_k3_agent_os_is_wild"
+        "people_are_creating_insane_things_with_kimi_k3"
       ]
     }
   },
   "skill_map": {
-    "this_kimi_k3_agent_os_is_wild": {
+    "people_are_creating_insane_things_with_kimi_k3": {
       "concepts": [
+        "kimmy",
+        "game",
+        "here",
+        "fable",
+        "better",
+        "example",
+        "much",
         "model",
-        "agent",
-        "kimi",
-        "models",
-        "because",
-        "real",
-        "already",
-        "inside",
-        "building",
-        "tasks"
+        "think",
+        "very"
       ],
       "tools": [
-        "Claude",
-        "Gemini"
+        "Claude"
       ],
       "tags": [
-        "model",
-        "agent",
-        "kimi",
-        "models",
-        "because",
-        "real"
+        "kimmy",
+        "game",
+        "here",
+        "fable",
+        "better",
+        "example"
       ],
       "step_count": 1
     }
   },
   "relationships": {
-    "this_kimi_k3_agent_os_is_wild": {}
+    "people_are_creating_insane_things_with_kimi_k3": {}
   },
-  "updated_at": "2026-07-19T02:45:23.405467+00:00",
+  "updated_at": "2026-07-19T02:45:23.510127+00:00",
   "total_skills": 1
 }
