@@ -1180,20 +1180,22 @@
       ]
     },
     "here": {
-      "freq": 10,
+      "freq": 11,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_opus_5_leaks",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
-        "kimi_k3_vs_claude_fable_5_raw_results"
+        "kimi_k3_vs_claude_fable_5_raw_results",
+        "master_ai_trading_in_70_minutes_full_claude_tradin"
       ]
     },
     "actually": {
-      "freq": 9,
+      "freq": 10,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_update_is_insane",
-        "making_with_loop_engineering"
+        "making_with_loop_engineering",
+        "master_ai_trading_in_70_minutes_full_claude_tradin"
       ]
     },
     "agent": {
@@ -1236,18 +1238,20 @@
       ]
     },
     "right": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
-        "kimi_k3_vs_claude_fable_5_raw_results"
+        "kimi_k3_vs_claude_fable_5_raw_results",
+        "master_ai_trading_in_70_minutes_full_claude_tradin"
       ]
     },
     "claude": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "new_claude_update_is_insane",
-        "new_claude_opus_5_leaks"
+        "new_claude_opus_5_leaks",
+        "master_ai_trading_in_70_minutes_full_claude_tradin"
       ]
     },
     "something": {
@@ -1342,9 +1346,10 @@
       ]
     },
     "know": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
-        "making_with_loop_engineering"
+        "making_with_loop_engineering",
+        "master_ai_trading_in_70_minutes_full_claude_tradin"
       ]
     },
     "loop": {
@@ -1471,9 +1476,10 @@
       ]
     },
     "time": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
-        "this_ai_business_model_is_creating_new_millionaire"
+        "this_ai_business_model_is_creating_new_millionaire",
+        "master_ai_trading_in_70_minutes_full_claude_tradin"
       ]
     },
     "niche": {
@@ -1637,6 +1643,30 @@
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results"
       ]
+    },
+    "trading": {
+      "freq": 1,
+      "skills": [
+        "master_ai_trading_in_70_minutes_full_claude_tradin"
+      ]
+    },
+    "want": {
+      "freq": 1,
+      "skills": [
+        "master_ai_trading_in_70_minutes_full_claude_tradin"
+      ]
+    },
+    "very": {
+      "freq": 1,
+      "skills": [
+        "master_ai_trading_in_70_minutes_full_claude_tradin"
+      ]
+    },
+    "view": {
+      "freq": 1,
+      "skills": [
+        "master_ai_trading_in_70_minutes_full_claude_tradin"
+      ]
     }
   },
   "tools": {
@@ -1715,7 +1745,7 @@
       ]
     },
     "Claude": {
-      "freq": 28,
+      "freq": 29,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -1728,7 +1758,8 @@
         "making_with_loop_engineering",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "this_ai_business_model_is_creating_new_millionaire",
-        "kimi_k3_vs_claude_fable_5_raw_results"
+        "kimi_k3_vs_claude_fable_5_raw_results",
+        "master_ai_trading_in_70_minutes_full_claude_tradin"
       ]
     },
     "Google Drive": {
@@ -2716,9 +2747,10 @@
       ]
     },
     "LLM": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
-        "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
+        "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
+        "master_ai_trading_in_70_minutes_full_claude_tradin"
       ]
     },
     "Llama": {
@@ -2749,6 +2781,12 @@
       "freq": 2,
       "skills": [
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
+      ]
+    },
+    "node": {
+      "freq": 1,
+      "skills": [
+        "master_ai_trading_in_70_minutes_full_claude_tradin"
       ]
     }
   },
@@ -3772,6 +3810,34 @@
         "well"
       ],
       "step_count": 1
+    },
+    "master_ai_trading_in_70_minutes_full_claude_tradin": {
+      "concepts": [
+        "know",
+        "here",
+        "trading",
+        "claude",
+        "right",
+        "actually",
+        "want",
+        "time",
+        "very",
+        "view"
+      ],
+      "tools": [
+        "Claude",
+        "LLM",
+        "node"
+      ],
+      "tags": [
+        "know",
+        "here",
+        "trading",
+        "claude",
+        "right",
+        "actually"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -3848,6 +3914,9 @@
       "kimi_k3_vs_claude_fable_5_raw_results": [
         "Claude",
         "Ollama"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude"
       ]
     },
     "running_large_models_locally": {
@@ -4046,6 +4115,9 @@
       ],
       "kimi_k3_vs_claude_fable_5_raw_results": [
         "Anthropic"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "LLM"
       ]
     },
     "swanlab_ai_training_analysis_platform": {
@@ -4099,6 +4171,9 @@
         "Claude"
       ],
       "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Claude"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
         "Claude"
       ]
     },
@@ -4195,6 +4270,9 @@
       ],
       "kimi_k3_vs_claude_fable_5_raw_results": [
         "Claude"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude"
       ]
     },
     "pydantic_ai_framework": {
@@ -4275,6 +4353,9 @@
         "Claude"
       ],
       "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Claude"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
         "Claude"
       ]
     },
@@ -4438,6 +4519,9 @@
       ],
       "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
         "LLM"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "LLM"
       ]
     },
     "superagi_building_autonomous_agents": {
@@ -4535,6 +4619,9 @@
         "Claude"
       ],
       "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Claude"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
         "Claude"
       ]
     },
@@ -4646,6 +4733,12 @@
         "right",
         "well",
         "here"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude",
+        "here",
+        "right",
+        "actually"
       ]
     },
     "new_claude_update_is_insane": {
@@ -4703,6 +4796,11 @@
       "kimi_k3_vs_claude_fable_5_raw_results": [
         "Claude",
         "Anthropic"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "claude",
+        "Claude",
+        "actually"
       ]
     },
     "new_claude_opus_5_leaks": {
@@ -4758,6 +4856,11 @@
         "Claude",
         "here",
         "Anthropic"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "claude",
+        "Claude",
+        "here"
       ]
     },
     "making_with_loop_engineering": {
@@ -4806,6 +4909,11 @@
       "kimi_k3_vs_claude_fable_5_raw_results": [
         "Claude",
         "going"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude",
+        "actually",
+        "know"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -4862,6 +4970,10 @@
       "kimi_k3_vs_claude_fable_5_raw_results": [
         "Claude",
         "Anthropic"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude",
+        "LLM"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -4909,6 +5021,10 @@
       "kimi_k3_vs_claude_fable_5_raw_results": [
         "Claude",
         "Anthropic"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude",
+        "time"
       ]
     },
     "local_ai_coding": {
@@ -4945,6 +5061,10 @@
         "going",
         "right",
         "here"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "here",
+        "right"
       ]
     },
     "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
@@ -5025,9 +5145,75 @@
         "going",
         "right",
         "here"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude",
+        "here",
+        "right"
+      ]
+    },
+    "master_ai_trading_in_70_minutes_full_claude_tradin": {
+      "building_ai_agents": [
+        "Claude"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "LLM"
+      ],
+      "mastering_loop_engineering": [
+        "Claude"
+      ],
+      "higsfield_integration": [
+        "Claude"
+      ],
+      "hermes_agent_setup": [
+        "Claude"
+      ],
+      "graphrag_deployment": [
+        "LLM"
+      ],
+      "building_ai_agents_with_loop": [
+        "Claude"
+      ],
+      "kimi_k3_hermes_ai_agent_is_insane": [
+        "Claude",
+        "here",
+        "right",
+        "actually"
+      ],
+      "new_claude_update_is_insane": [
+        "claude",
+        "Claude",
+        "actually"
+      ],
+      "new_claude_opus_5_leaks": [
+        "claude",
+        "Claude",
+        "here"
+      ],
+      "making_with_loop_engineering": [
+        "Claude",
+        "actually",
+        "know"
+      ],
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "Claude",
+        "LLM"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Claude",
+        "time"
+      ],
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "here",
+        "right"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Claude",
+        "here",
+        "right"
       ]
     }
   },
-  "updated_at": "2026-07-19T02:40:52.696162+00:00",
-  "total_skills": 37
+  "updated_at": "2026-07-19T02:40:53.390108+00:00",
+  "total_skills": 38
 }
