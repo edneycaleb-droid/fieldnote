@@ -16,12 +16,13 @@
       ]
     },
     "going": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
-        "hermes_agent_build_your_own_personal_ai_assistant_"
+        "hermes_agent_build_your_own_personal_ai_assistant_",
+        "making_with_loop_engineering"
       ]
     },
     "very": {
@@ -37,15 +38,17 @@
       ]
     },
     "think": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
+        "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
+        "making_with_loop_engineering"
       ]
     },
     "know": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
+        "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
+        "making_with_loop_engineering"
       ]
     },
     "still": {
@@ -81,10 +84,11 @@
       ]
     },
     "actually": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
-        "did_kimi_k3_really_beat_fable"
+        "did_kimi_k3_really_beat_fable",
+        "making_with_loop_engineering"
       ]
     },
     "work": {
@@ -103,9 +107,10 @@
       ]
     },
     "basically": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "hermes_agent_just_got_10x_better_4_insane_new_feat",
+        "making_with_loop_engineering"
       ]
     },
     "agents": {
@@ -154,9 +159,10 @@
       ]
     },
     "really": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "did_kimi_k3_really_beat_fable"
+        "did_kimi_k3_really_beat_fable",
+        "making_with_loop_engineering"
       ]
     },
     "about": {
@@ -284,6 +290,30 @@
       "skills": [
         "hermes_agent_build_your_own_personal_ai_assistant_"
       ]
+    },
+    "loop": {
+      "freq": 1,
+      "skills": [
+        "making_with_loop_engineering"
+      ]
+    },
+    "sort": {
+      "freq": 1,
+      "skills": [
+        "making_with_loop_engineering"
+      ]
+    },
+    "yeah": {
+      "freq": 1,
+      "skills": [
+        "making_with_loop_engineering"
+      ]
+    },
+    "business": {
+      "freq": 1,
+      "skills": [
+        "making_with_loop_engineering"
+      ]
     }
   },
   "tools": {
@@ -294,11 +324,12 @@
       ]
     },
     "Claude": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
-        "did_kimi_k3_really_beat_fable"
+        "did_kimi_k3_really_beat_fable",
+        "making_with_loop_engineering"
       ]
     },
     "Gemini": {
@@ -308,11 +339,12 @@
       ]
     },
     "OpenAI": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
         "did_kimi_k3_really_beat_fable",
-        "hermes_agent_build_your_own_personal_ai_assistant_"
+        "hermes_agent_build_your_own_personal_ai_assistant_",
+        "making_with_loop_engineering"
       ]
     },
     "Anthropic": {
@@ -517,6 +549,33 @@
         "click"
       ],
       "step_count": 1
+    },
+    "making_with_loop_engineering": {
+      "concepts": [
+        "know",
+        "loop",
+        "sort",
+        "yeah",
+        "basically",
+        "actually",
+        "going",
+        "think",
+        "really",
+        "business"
+      ],
+      "tools": [
+        "Claude",
+        "OpenAI"
+      ],
+      "tags": [
+        "know",
+        "loop",
+        "sort",
+        "yeah",
+        "basically",
+        "actually"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -541,6 +600,13 @@
       "hermes_agent_build_your_own_personal_ai_assistant_": [
         "going",
         "OpenAI"
+      ],
+      "making_with_loop_engineering": [
+        "going",
+        "know",
+        "Claude",
+        "OpenAI",
+        "think"
       ]
     },
     "hermes_agent_just_got_10x_better_4_insane_new_feat": {
@@ -567,6 +633,12 @@
         "going",
         "agent",
         "agents"
+      ],
+      "making_with_loop_engineering": [
+        "Claude",
+        "basically",
+        "going",
+        "actually"
       ]
     },
     "did_kimi_k3_really_beat_fable": {
@@ -589,6 +661,12 @@
       "hermes_agent_build_your_own_personal_ai_assistant_": [
         "here",
         "OpenAI"
+      ],
+      "making_with_loop_engineering": [
+        "Claude",
+        "really",
+        "OpenAI",
+        "actually"
       ]
     },
     "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
@@ -615,6 +693,9 @@
       "hermes_agent_build_your_own_personal_ai_assistant_": [
         "going",
         "here"
+      ],
+      "making_with_loop_engineering": [
+        "going"
       ]
     },
     "hermes_agent_build_your_own_personal_ai_assistant_": {
@@ -634,9 +715,41 @@
       "chatgpt_work_everything_you_need_to_know_to_get_st": [
         "going",
         "here"
+      ],
+      "making_with_loop_engineering": [
+        "going",
+        "OpenAI"
+      ]
+    },
+    "making_with_loop_engineering": {
+      "kimi_k3_testing_moonshot_s_2_8t_open_model_without": [
+        "going",
+        "know",
+        "Claude",
+        "OpenAI",
+        "think"
+      ],
+      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
+        "Claude",
+        "basically",
+        "going",
+        "actually"
+      ],
+      "did_kimi_k3_really_beat_fable": [
+        "Claude",
+        "really",
+        "OpenAI",
+        "actually"
+      ],
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "going"
+      ],
+      "hermes_agent_build_your_own_personal_ai_assistant_": [
+        "going",
+        "OpenAI"
       ]
     }
   },
-  "updated_at": "2026-07-19T02:50:55.309347+00:00",
-  "total_skills": 6
+  "updated_at": "2026-07-19T02:50:55.599078+00:00",
+  "total_skills": 7
 }
