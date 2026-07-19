@@ -1186,7 +1186,7 @@
       ]
     },
     "here": {
-      "freq": 50,
+      "freq": 51,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_opus_5_leaks",
@@ -1236,7 +1236,7 @@
       ]
     },
     "agent": {
-      "freq": 24,
+      "freq": 25,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "this_kimi_k3_agent_os_is_wild",
@@ -1517,7 +1517,7 @@
       ]
     },
     "going": {
-      "freq": 33,
+      "freq": 34,
       "skills": [
         "making_with_loop_engineering",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
@@ -1873,7 +1873,7 @@
       ]
     },
     "want": {
-      "freq": 15,
+      "freq": 16,
       "skills": [
         "master_ai_trading_in_70_minutes_full_claude_tradin",
         "how_to_run_kimi_k3_for_free",
@@ -2154,7 +2154,7 @@
       ]
     },
     "send": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "kimi_k3_fully_tested_an_open_model_beats_fable",
         "hermes_agent_build_your_own_personal_ai_assistant_"
@@ -2302,7 +2302,7 @@
       ]
     },
     "agents": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
         "hermes_agent_build_your_own_personal_ai_assistant_"
@@ -2375,7 +2375,7 @@
       ]
     },
     "click": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "gpt_5_6_on_hermes_agent_is_actually_insane_full_he",
         "hermes_agent_build_your_own_personal_ai_assistant_"
@@ -2406,19 +2406,19 @@
       ]
     },
     "calendar": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "hermes_agent_build_your_own_personal_ai_assistant_"
       ]
     },
     "coms": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "hermes_agent_build_your_own_personal_ai_assistant_"
       ]
     },
     "give": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "hermes_agent_build_your_own_personal_ai_assistant_"
       ]
@@ -2895,7 +2895,7 @@
       ]
     },
     "OpenAI": {
-      "freq": 40,
+      "freq": 41,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
         "testing_and_comparing_llms",
@@ -3700,7 +3700,7 @@
       ]
     },
     "PowerShell": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "hermes_agent_build_your_own_personal_ai_assistant_"
       ]
@@ -16948,6 +16948,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-19T02:43:40.393653+00:00",
+  "updated_at": "2026-07-19T02:43:41.434231+00:00",
   "total_skills": 74
 }
