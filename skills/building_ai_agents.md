@@ -1,30 +1,4 @@
-# Hermes Agent Setup
-
-## Description
-Building a Hermes agent setup is crucial for AI self-improvement. This skill covers the fundamentals of setting up a Hermes agent, including defining outcomes, creating identity files, and connecting to tools.
-
-## Steps
-1. Write the Definition of Done (DOD) before starting
-2. Create an identity file (CLAUDE.md or AGENTS.md) with role, constraints, and tools
-3. Apply reverse prompting: ask the agent to restate the goal in its own words before acting
-4. Configure memory: enable 'Reference chats' and 'Generate memory from chat history' in Claude settings
-5. Wire tools: connect web search, web extraction, file access, and other tools to the agent
-
-## Tools
-* Hermes Agent: a framework for building AI agents
-* Claude: a tool for building and managing AI agents
-* Open Claw: a tool for building and deploying AI agents
-* Contabo: a VPS provider for hosting AI agents
-* RackNerd: a VPS provider for hosting AI agents
-
-## Concepts
-* AI agents: goal-directed systems that autonomously plan, act, and adapt
-* Personalization: tailoring the agent's behavior to the user's preferences
-* Automation: automating tasks and workflows using AI agents
-* Integration: connecting AI agents to other tools and systems
-
-## Related Skills
-* Building AI Agents: a skill that covers the basics of building AI agents
+Local AI Coding: Speed, Quality, and Control. This skill teaches the practical aspects of local AI coding, including the importance of speed, quality of output, compatibility, and control. It covers the pros and cons of local AI coding and provides a comparison of local models with cloud models. The skill also discusses the benefits of running models locally, including control, cost, and the ability to use a real model router. Steps include evaluating speed, assessing quality, considering compatibility, writing the Definition of Done, creating an identity file, applying reverse prompting, configuring memory, and wiring tools. Tools include Mind Sub Co-worker, LM Studio, Ollama, Hermes Agent, Claude, Open Claw, Contabo, and RackNerd.
 
 ## Sources
 
@@ -41,3 +15,4 @@ Building a Hermes agent setup is crucial for AI self-improvement. This skill cov
 | 2026-07-15 | [Hermes Agent V0.18 Is GAME OVER](https://youtube.com/watch?v=ZrAVfs6wgVg) | whisper |
 | 2026-07-16 | [Claude Just Changed Completely: Here's How It Works (In 2026)](https://youtu.be/bj04doEDOY4?is=k3_xn4Oa5rS7c0_D) | whisper |
 | 2026-07-17 | [How to Build a PREMIUM Hermes Agent Mission Control Dashboard (Step-by-Step Guide)](https://youtu.be/t6W_Zpohb7g?is=Vd2EQGpmDnmoCY_5) | yt_dlp_subs |
+| 2026-07-19 | [Is Local AI Coding Actually Good?](https://www.youtube.com/watch?v=8JRJq4EEdik) | yt_dlp_subs |

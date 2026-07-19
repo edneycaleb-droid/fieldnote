@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Local AI Coding: Speed, Quality, and Control](skills/building_ai_agents.md) | This skill teaches the practical aspects of local AI coding, including the impor | `Mind Sub Co-worker` `LM Studio` `Ollama` `Hermes Agent` | `ai` `ai_agents` `coding` |
 | [Deploying Bonzai 27B with Prism ML Compression: Efficient Local AI Processing](skills/prism_ml_bonzai_deployment.md) | This skill teaches how to deploy the Bonzai 27B model, a 27 billion parameter mo | `Llama.cpp` `Prism ML` `Hugging Face` `jCodeMunch MCP` | `ai` `compression` `local-ai` |
 | [Testing and Comparing Large Language Models with PromptTools](skills/testing_and_comparing_llms.md) | This skill teaches how to test, experiment, and compare Large Language Models (L | `PromptTools` `OpenAI` `Anthropic` `LLaMA` | `llms` `prompttools` `testing` |
 | [Building AI Agents with Loop: A Comprehensive Guide to Autonomously Improving AI Self-Improvement](skills/building_ai_agents_with_loop.md) | This skill teaches how to build AI agents with loop, a feature that enables auto | `Hermes Agent` `Claude` `Open Claw` `Contabo` | `ai` `self-improvement` `loop-engineering` |
@@ -22,7 +23,6 @@
 | [Moonshot Kimiko 3: A 2.8 Trillion Parameter Open-Weight Model for AI Self-Improvement and Automation](skills/moonshot_kimiko_3.md) | This skill teaches how to use Moonshot's Kimiko 3, a 2.8 trillion parameter open | `Open Claw` `Moonshot` `Kimiko 3` `Open Weights` | `ai` `self-improvement` `moonshot` |
 | [Deploying RAGFlow for Retrieval-Augmented Generation with Enhanced Efficiency and Precision](skills/ragflow_deployment.md) | This skill teaches how to deploy RAGFlow, a leading open-source Retrieval-Augmen | `Docker` `Docker Compose` `RAGFlow` `Elasticsearch` | `ai` `deployment` `ragflow` |
 | [Building a Hermes Agent Setup for AI Self-Improvement with Human-in-the-Loop Integration](skills/hermes_agent_setup.md) | This skill teaches how to set up a Hermes agent for AI self-improvement, includi | `Hermes Agent` `Claude` `Open Claw` `Contabo` | `ai` `automation` `productivity` |
-| [Building a Hermes Agent Setup for AI Self-Improvement](skills/building_ai_agents.md) | This skill teaches how to set up a Hermes agent for AI self-improvement, includi | `Hermes Agent` `Claude` `Open Claw` `Contabo` | `ai` `automation` `productivity` |
 | [RagaAI Catalyst: Python SDK for Agent AI Observability, Monitoring, and Evaluation](skills/ragaai_catalyst.md) | This skill teaches how to use RagaAI Catalyst, a comprehensive platform designed |  | `ai` `automation` `llm` |
 | [Building AI Agents with the Pydantic AI Framework](skills/pydantic_ai_framework.md) | Pydantic AI teaches how to build type-safe, model-agnostic, and production-ready | `Pydantic AI Framework` `LangChain` `LlamaIndex` `AutoGPT` | `ai` `automation` `langchain` |
 | [Efficiently Running Large AI Models on Local Machines](skills/running_large_models_locally.md) | This skill teaches how to run large AI models on local machines with limited RAM | `Hugging Face` `ollama` `llama.cpp` `Colibri` | `ai` `optimization` `modeling` |
