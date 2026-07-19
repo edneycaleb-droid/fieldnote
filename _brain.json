@@ -1170,61 +1170,61 @@
       ]
     },
     "hermes": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane"
       ]
     },
     "here": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane"
       ]
     },
     "actually": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane"
       ]
     },
     "agent": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane"
       ]
     },
     "inside": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane"
       ]
     },
     "example": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane"
       ]
     },
     "which": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane"
       ]
     },
     "video": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane"
       ]
     },
     "well": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane"
       ]
     },
     "right": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane"
       ]
@@ -1301,7 +1301,7 @@
       ]
     },
     "Claude": {
-      "freq": 11,
+      "freq": 12,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -2281,7 +2281,7 @@
       ]
     },
     "Babel": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane"
       ]
@@ -3748,6 +3748,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-19T02:40:00.780654+00:00",
+  "updated_at": "2026-07-19T02:40:05.013262+00:00",
   "total_skills": 28
 }
