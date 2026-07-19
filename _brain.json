@@ -1174,7 +1174,7 @@
       ]
     },
     "hermes": {
-      "freq": 24,
+      "freq": 25,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
@@ -1246,7 +1246,7 @@
       ]
     },
     "agent": {
-      "freq": 34,
+      "freq": 35,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "this_kimi_k3_agent_os_is_wild",
@@ -1269,7 +1269,7 @@
       ]
     },
     "inside": {
-      "freq": 13,
+      "freq": 14,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_opus_5_leaks",
@@ -1374,7 +1374,7 @@
       ]
     },
     "work": {
-      "freq": 11,
+      "freq": 12,
       "skills": [
         "new_claude_update_is_insane",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
@@ -1471,7 +1471,7 @@
       ]
     },
     "profit": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "new_claude_opus_5_leaks",
         "new_hermes_agent_os_is_insane",
@@ -1479,7 +1479,7 @@
       ]
     },
     "boardroom": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "new_claude_opus_5_leaks",
         "new_hermes_agent_os_is_insane",
@@ -2347,7 +2347,7 @@
       ]
     },
     "agents": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
         "hermes_agent_build_your_own_personal_ai_assistant_",
@@ -2516,19 +2516,19 @@
       ]
     },
     "paperclip": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "new_hermes_paperclip_ai_agent_update_is_insane"
       ]
     },
     "team": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "new_hermes_paperclip_ai_agent_update_is_insane"
       ]
     },
     "goal": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "new_hermes_paperclip_ai_agent_update_is_insane"
       ]
@@ -2625,7 +2625,7 @@
       ]
     },
     "Claude": {
-      "freq": 91,
+      "freq": 92,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -3097,7 +3097,7 @@
       ]
     },
     "Gemini": {
-      "freq": 23,
+      "freq": 24,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
         "higsfield_integration",
@@ -20232,6 +20232,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-19T02:44:05.577223+00:00",
+  "updated_at": "2026-07-19T02:44:06.908869+00:00",
   "total_skills": 80
 }
