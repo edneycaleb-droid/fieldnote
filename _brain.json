@@ -1182,9 +1182,10 @@
       ]
     },
     "actually": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
-        "kimi_k3_hermes_ai_agent_is_insane"
+        "kimi_k3_hermes_ai_agent_is_insane",
+        "new_claude_update_is_insane"
       ]
     },
     "agent": {
@@ -1228,15 +1229,70 @@
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane"
       ]
+    },
+    "claude": {
+      "freq": 1,
+      "skills": [
+        "new_claude_update_is_insane"
+      ]
+    },
+    "something": {
+      "freq": 1,
+      "skills": [
+        "new_claude_update_is_insane"
+      ]
+    },
+    "anthropic": {
+      "freq": 1,
+      "skills": [
+        "new_claude_update_is_insane"
+      ]
+    },
+    "work": {
+      "freq": 1,
+      "skills": [
+        "new_claude_update_is_insane"
+      ]
+    },
+    "real": {
+      "freq": 1,
+      "skills": [
+        "new_claude_update_is_insane"
+      ]
+    },
+    "every": {
+      "freq": 1,
+      "skills": [
+        "new_claude_update_is_insane"
+      ]
+    },
+    "already": {
+      "freq": 1,
+      "skills": [
+        "new_claude_update_is_insane"
+      ]
+    },
+    "built": {
+      "freq": 1,
+      "skills": [
+        "new_claude_update_is_insane"
+      ]
+    },
+    "about": {
+      "freq": 1,
+      "skills": [
+        "new_claude_update_is_insane"
+      ]
     }
   },
   "tools": {
     "Anthropic": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "building_ai_agents",
         "build_production_ready_llm_applications_with_haystack",
-        "testing_and_comparing_llms"
+        "testing_and_comparing_llms",
+        "new_claude_update_is_insane"
       ]
     },
     "Haiku": {
@@ -1301,14 +1357,15 @@
       ]
     },
     "Claude": {
-      "freq": 12,
+      "freq": 13,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
         "higsfield_integration",
         "hermes_agent_setup",
         "building_ai_agents_with_loop",
-        "kimi_k3_hermes_ai_agent_is_insane"
+        "kimi_k3_hermes_ai_agent_is_insane",
+        "new_claude_update_is_insane"
       ]
     },
     "Google Drive": {
@@ -3060,6 +3117,33 @@
         "example"
       ],
       "step_count": 1
+    },
+    "new_claude_update_is_insane": {
+      "concepts": [
+        "claude",
+        "something",
+        "anthropic",
+        "work",
+        "real",
+        "every",
+        "already",
+        "built",
+        "about",
+        "actually"
+      ],
+      "tools": [
+        "Claude",
+        "Anthropic"
+      ],
+      "tags": [
+        "claude",
+        "something",
+        "anthropic",
+        "work",
+        "real",
+        "every"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -3108,6 +3192,9 @@
         "Claude"
       ],
       "kimi_k3_hermes_ai_agent_is_insane": [
+        "Claude"
+      ],
+      "new_claude_update_is_insane": [
         "Claude"
       ]
     },
@@ -3274,6 +3361,9 @@
       ],
       "prism_ml_bonzai_deployment": [
         "Hugging Face"
+      ],
+      "new_claude_update_is_insane": [
+        "Anthropic"
       ]
     },
     "swanlab_ai_training_analysis_platform": {
@@ -3309,6 +3399,9 @@
         "Self-Correction"
       ],
       "kimi_k3_hermes_ai_agent_is_insane": [
+        "Claude"
+      ],
+      "new_claude_update_is_insane": [
         "Claude"
       ]
     },
@@ -3387,6 +3480,9 @@
       ],
       "kimi_k3_hermes_ai_agent_is_insane": [
         "Claude"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude"
       ]
     },
     "pydantic_ai_framework": {
@@ -3446,6 +3542,9 @@
         "Hermes Agent"
       ],
       "kimi_k3_hermes_ai_agent_is_insane": [
+        "Claude"
+      ],
+      "new_claude_update_is_insane": [
         "Claude"
       ]
     },
@@ -3686,6 +3785,9 @@
       ],
       "kimi_k3_hermes_ai_agent_is_insane": [
         "Claude"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude"
       ]
     },
     "testing_and_comparing_llms": {
@@ -3714,6 +3816,9 @@
         "Prism ML",
         "Llama.cpp",
         "Hugging Face"
+      ],
+      "new_claude_update_is_insane": [
+        "Anthropic"
       ]
     },
     "prism_ml_bonzai_deployment": {
@@ -3745,9 +3850,40 @@
       ],
       "building_ai_agents_with_loop": [
         "Claude"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude",
+        "actually"
+      ]
+    },
+    "new_claude_update_is_insane": {
+      "building_ai_agents": [
+        "Claude"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "Anthropic"
+      ],
+      "mastering_loop_engineering": [
+        "Claude"
+      ],
+      "higsfield_integration": [
+        "Claude"
+      ],
+      "hermes_agent_setup": [
+        "Claude"
+      ],
+      "building_ai_agents_with_loop": [
+        "Claude"
+      ],
+      "testing_and_comparing_llms": [
+        "Anthropic"
+      ],
+      "kimi_k3_hermes_ai_agent_is_insane": [
+        "Claude",
+        "actually"
       ]
     }
   },
-  "updated_at": "2026-07-19T02:40:05.013262+00:00",
-  "total_skills": 28
+  "updated_at": "2026-07-19T02:40:08.195435+00:00",
+  "total_skills": 29
 }
