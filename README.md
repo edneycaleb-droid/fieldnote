@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **1 skill** · Last synced: 2026-07-19 02:46 UTC
+> **2 skills** · Last synced: 2026-07-19 02:46 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Kimi K3 Just Knocked Claude to Third Place — Chinese AI Is Here Now](skills/kimi_k3_just_knocked_claude_to_third_place_chinese.md) | By Kyle Balmer \| AI with Kyle. Key tools: Claude, Anthropic. (Auto-extracted — p | `Claude` `Anthropic` | `very` `about` `models` |
 | [Kimi K3 IS INSANE! Best Open Model EVER That BEATS FABLE 5 & GPT-5.6! (Fully Tested)](skills/kimi_k3_is_insane_best_open_model_ever_that_beats_.md) | By WorldofAI. Key tools: Claude. (Auto-extracted — pending AI enhancement.) | `Claude` | `model` `different` `which` |
 
 ---
