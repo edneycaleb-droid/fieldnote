@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **1 skill** · Last synced: 2026-07-19 02:46 UTC
+> **2 skills** · Last synced: 2026-07-19 02:46 UTC
 
 ---
 
@@ -9,7 +9,8 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [This Kimi K3 Agent OS Is WILD](skills/this_kimi_k3_agent_os_is_wild.md) | By Julian Goldie SEO. Key tools: Claude, Gemini. (Auto-extracted — pending AI en | `Claude` `Gemini` | `model` `agent` `kimi` |
+| [People are Creating INSANE Things with Kimi K3](skills/people_are_creating_insane_things_with_kimi_k3.md) | By RandomAI. Key tools: Claude. (Auto-extracted — pending AI enhancement.) | `Claude` | `kimmy` `game` `here` |
+| [Did Kimi K3 really beat Fable?](skills/did_kimi_k3_really_beat_fable.md) | By Matthew Berman. Key tools: Claude, Anthropic, OpenAI. (Auto-extracted — pendi | `Claude` `Anthropic` `OpenAI` | `open` `here` `source` |
 
 ---
 
