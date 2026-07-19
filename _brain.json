@@ -1180,7 +1180,7 @@
       ]
     },
     "here": {
-      "freq": 37,
+      "freq": 38,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_opus_5_leaks",
@@ -1257,7 +1257,7 @@
       ]
     },
     "video": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "kimi_k3_fully_tested_an_open_model_beats_fable",
@@ -1265,7 +1265,7 @@
       ]
     },
     "well": {
-      "freq": 12,
+      "freq": 13,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "kimi_k3_vs_claude_fable_5_raw_results",
@@ -1289,7 +1289,7 @@
       ]
     },
     "claude": {
-      "freq": 11,
+      "freq": 12,
       "skills": [
         "new_claude_update_is_insane",
         "new_claude_opus_5_leaks",
@@ -1742,7 +1742,7 @@
       ]
     },
     "kimi": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results",
         "this_kimi_k3_agent_os_is_wild",
@@ -1751,7 +1751,7 @@
       ]
     },
     "look": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results",
         "china_just_beat_claude_ai_kimi_k3",
@@ -1809,7 +1809,7 @@
       ]
     },
     "design": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "how_to_use_codex_to_build_insanely_beautiful_websi",
         "use_kimi_k3_completely_free_best_ai_coding_setup_2"
@@ -1886,7 +1886,7 @@
       ]
     },
     "guys": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "the_15_most_insane_things_created_by_kimi_k3_kimi_",
         "use_kimi_k3_completely_free_best_ai_coding_setup_2"
@@ -1913,7 +1913,7 @@
       ]
     },
     "okay": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "kimi_k3_is_just_ridiculous",
         "use_kimi_k3_completely_free_best_ai_coding_setup_2"
@@ -2133,7 +2133,7 @@
       ]
     },
     "channel": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "use_kimi_k3_completely_free_best_ai_coding_setup_2"
       ]
@@ -2223,7 +2223,7 @@
       ]
     },
     "Claude": {
-      "freq": 61,
+      "freq": 62,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -11161,6 +11161,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-19T02:42:41.337300+00:00",
+  "updated_at": "2026-07-19T02:42:41.459953+00:00",
   "total_skills": 60
 }
