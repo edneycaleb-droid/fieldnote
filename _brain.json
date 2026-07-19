@@ -1,105 +1,133 @@
 {
   "concepts": {
-    "same": {
+    "which": {
       "freq": 1,
       "skills": [
-        "new_hermes_agent_os_is_insane"
+        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
       ]
     },
-    "outreach": {
+    "model": {
       "freq": 1,
       "skills": [
-        "new_hermes_agent_os_is_insane"
+        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
       ]
     },
-    "agent": {
+    "going": {
       "freq": 1,
       "skills": [
-        "new_hermes_agent_os_is_insane"
+        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
       ]
     },
-    "squad": {
+    "very": {
       "freq": 1,
       "skills": [
-        "new_hermes_agent_os_is_insane"
+        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
       ]
     },
-    "memory": {
+    "back": {
       "freq": 1,
       "skills": [
-        "new_hermes_agent_os_is_insane"
+        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
       ]
     },
-    "each": {
+    "think": {
       "freq": 1,
       "skills": [
-        "new_hermes_agent_os_is_insane"
+        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
       ]
     },
-    "already": {
+    "know": {
       "freq": 1,
       "skills": [
-        "new_hermes_agent_os_is_insane"
+        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
       ]
     },
-    "profit": {
+    "still": {
       "freq": 1,
       "skills": [
-        "new_hermes_agent_os_is_insane"
+        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
       ]
     },
-    "boardroom": {
+    "test": {
       "freq": 1,
       "skills": [
-        "new_hermes_agent_os_is_insane"
+        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
       ]
     },
-    "every": {
+    "look": {
       "freq": 1,
       "skills": [
-        "new_hermes_agent_os_is_insane"
+        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
       ]
     }
   },
   "tools": {
+    "SQLite": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
+      ]
+    },
     "Claude": {
       "freq": 1,
       "skills": [
-        "new_hermes_agent_os_is_insane"
+        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
+      ]
+    },
+    "Gemini": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
+      ]
+    },
+    "OpenAI": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
+      ]
+    },
+    "Anthropic": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
       ]
     }
   },
   "skill_map": {
-    "new_hermes_agent_os_is_insane": {
+    "kimi_k3_testing_moonshot_s_2_8t_open_model_without": {
       "concepts": [
-        "same",
-        "outreach",
-        "agent",
-        "squad",
-        "memory",
-        "each",
-        "already",
-        "profit",
-        "boardroom",
-        "every"
+        "which",
+        "model",
+        "going",
+        "very",
+        "back",
+        "think",
+        "know",
+        "still",
+        "test",
+        "look"
       ],
       "tools": [
-        "Claude"
+        "SQLite",
+        "Claude",
+        "Gemini",
+        "OpenAI",
+        "Anthropic"
       ],
       "tags": [
-        "same",
-        "outreach",
-        "agent",
-        "squad",
-        "memory",
-        "each"
+        "which",
+        "model",
+        "going",
+        "very",
+        "back",
+        "think"
       ],
       "step_count": 1
     }
   },
   "relationships": {
-    "new_hermes_agent_os_is_insane": {}
+    "kimi_k3_testing_moonshot_s_2_8t_open_model_without": {}
   },
-  "updated_at": "2026-07-19T02:50:54.952864+00:00",
+  "updated_at": "2026-07-19T02:50:55.028371+00:00",
   "total_skills": 1
 }
