@@ -1183,10 +1183,11 @@
       ]
     },
     "actually": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
-        "new_claude_update_is_insane"
+        "new_claude_update_is_insane",
+        "making_with_loop_engineering"
       ]
     },
     "agent": {
@@ -1323,6 +1324,60 @@
       "skills": [
         "new_claude_opus_5_leaks"
       ]
+    },
+    "know": {
+      "freq": 1,
+      "skills": [
+        "making_with_loop_engineering"
+      ]
+    },
+    "loop": {
+      "freq": 1,
+      "skills": [
+        "making_with_loop_engineering"
+      ]
+    },
+    "sort": {
+      "freq": 1,
+      "skills": [
+        "making_with_loop_engineering"
+      ]
+    },
+    "yeah": {
+      "freq": 1,
+      "skills": [
+        "making_with_loop_engineering"
+      ]
+    },
+    "basically": {
+      "freq": 1,
+      "skills": [
+        "making_with_loop_engineering"
+      ]
+    },
+    "going": {
+      "freq": 1,
+      "skills": [
+        "making_with_loop_engineering"
+      ]
+    },
+    "think": {
+      "freq": 1,
+      "skills": [
+        "making_with_loop_engineering"
+      ]
+    },
+    "really": {
+      "freq": 1,
+      "skills": [
+        "making_with_loop_engineering"
+      ]
+    },
+    "business": {
+      "freq": 1,
+      "skills": [
+        "making_with_loop_engineering"
+      ]
     }
   },
   "tools": {
@@ -1398,7 +1453,7 @@
       ]
     },
     "Claude": {
-      "freq": 16,
+      "freq": 17,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -1407,7 +1462,8 @@
         "building_ai_agents_with_loop",
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_update_is_insane",
-        "new_claude_opus_5_leaks"
+        "new_claude_opus_5_leaks",
+        "making_with_loop_engineering"
       ]
     },
     "Google Drive": {
@@ -1742,10 +1798,11 @@
       ]
     },
     "OpenAI": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
-        "testing_and_comparing_llms"
+        "testing_and_comparing_llms",
+        "making_with_loop_engineering"
       ]
     },
     "Mistral": {
@@ -3213,6 +3270,33 @@
         "claude"
       ],
       "step_count": 1
+    },
+    "making_with_loop_engineering": {
+      "concepts": [
+        "know",
+        "loop",
+        "sort",
+        "yeah",
+        "basically",
+        "actually",
+        "going",
+        "think",
+        "really",
+        "business"
+      ],
+      "tools": [
+        "Claude",
+        "OpenAI"
+      ],
+      "tags": [
+        "know",
+        "loop",
+        "sort",
+        "yeah",
+        "basically",
+        "actually"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -3267,6 +3351,9 @@
         "Claude"
       ],
       "new_claude_opus_5_leaks": [
+        "Claude"
+      ],
+      "making_with_loop_engineering": [
         "Claude"
       ]
     },
@@ -3439,6 +3526,9 @@
       ],
       "new_claude_opus_5_leaks": [
         "Anthropic"
+      ],
+      "making_with_loop_engineering": [
+        "OpenAI"
       ]
     },
     "swanlab_ai_training_analysis_platform": {
@@ -3480,6 +3570,9 @@
         "Claude"
       ],
       "new_claude_opus_5_leaks": [
+        "Claude"
+      ],
+      "making_with_loop_engineering": [
         "Claude"
       ]
     },
@@ -3564,6 +3657,9 @@
       ],
       "new_claude_opus_5_leaks": [
         "Claude"
+      ],
+      "making_with_loop_engineering": [
+        "Claude"
       ]
     },
     "pydantic_ai_framework": {
@@ -3629,6 +3725,9 @@
         "Claude"
       ],
       "new_claude_opus_5_leaks": [
+        "Claude"
+      ],
+      "making_with_loop_engineering": [
         "Claude"
       ]
     },
@@ -3875,6 +3974,9 @@
       ],
       "new_claude_opus_5_leaks": [
         "Claude"
+      ],
+      "making_with_loop_engineering": [
+        "Claude"
       ]
     },
     "testing_and_comparing_llms": {
@@ -3909,6 +4011,9 @@
       ],
       "new_claude_opus_5_leaks": [
         "Anthropic"
+      ],
+      "making_with_loop_engineering": [
+        "OpenAI"
       ]
     },
     "prism_ml_bonzai_deployment": {
@@ -3949,6 +4054,10 @@
         "Claude",
         "here",
         "inside"
+      ],
+      "making_with_loop_engineering": [
+        "Claude",
+        "actually"
       ]
     },
     "new_claude_update_is_insane": {
@@ -3982,6 +4091,10 @@
         "Claude",
         "anthropic",
         "Anthropic"
+      ],
+      "making_with_loop_engineering": [
+        "Claude",
+        "actually"
       ]
     },
     "new_claude_opus_5_leaks": {
@@ -4016,9 +4129,46 @@
         "Claude",
         "anthropic",
         "Anthropic"
+      ],
+      "making_with_loop_engineering": [
+        "Claude"
+      ]
+    },
+    "making_with_loop_engineering": {
+      "building_ai_agents": [
+        "Claude"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "OpenAI"
+      ],
+      "mastering_loop_engineering": [
+        "Claude"
+      ],
+      "higsfield_integration": [
+        "Claude"
+      ],
+      "hermes_agent_setup": [
+        "Claude"
+      ],
+      "building_ai_agents_with_loop": [
+        "Claude"
+      ],
+      "testing_and_comparing_llms": [
+        "OpenAI"
+      ],
+      "kimi_k3_hermes_ai_agent_is_insane": [
+        "Claude",
+        "actually"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude",
+        "actually"
+      ],
+      "new_claude_opus_5_leaks": [
+        "Claude"
       ]
     }
   },
-  "updated_at": "2026-07-19T02:40:13.856893+00:00",
-  "total_skills": 30
+  "updated_at": "2026-07-19T02:40:14.727173+00:00",
+  "total_skills": 31
 }
