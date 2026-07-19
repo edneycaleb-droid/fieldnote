@@ -1,21 +1,24 @@
-# MASTER AI Trading in 70 Minutes (Full Claude + TradingView Course)
+# AI Trading for Beginners: A Step-by-Step Guide
 
-> ⚠️ **Auto-extracted draft** — pending AI enhancement for full quality.
-
-By Mind Math Money. Key tools: Claude, LLM, node. (Auto-extracted — pending AI enhancement.)
+## Description
+This skill teaches the fundamentals of AI trading, including how to connect AI models to trading platforms, and how to use AI for analysis, risk management, and strategy development.
 
 ## Steps
+1. Install Claude and Trading View
+2. Connect Claude to Trading View
+3. Use AI for analysis, risk management, and strategy development
 
-- Watch the full video for step-by-step instructions.
+## Tools
+* Claude
+* Trading View
 
-## Tools & Technologies
+## Concepts
+* AI trading
+* AI analysis
+* risk management
 
-Claude, LLM, node
-
-## Source
-
-- **Video**: [MASTER AI Trading in 70 Minutes (Full Claude + TradingView Course)](https://www.youtube.com/watch?v=54i7wfbuCQA)
-- **Video ID**: `54i7wfbuCQA`
+## Related Skills
+* Hermes Agent + Ollama: How to Install Hermes Locally Fast
 
 ## Sources
 
