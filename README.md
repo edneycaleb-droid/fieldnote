@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **82 skills** · Last synced: 2026-07-19 02:44 UTC
+> **83 skills** · Last synced: 2026-07-19 02:44 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Ornith (35B,9B) + Hermes,Zed: THE FULLY PRIVATE LOCAL AGENT is ACTUALLY HERE!](skills/ornith_35b_9b_hermes_zed_the_fully_private_local_a.md) | By AICodeKing. Key tools: LLM, Claude, Ollama. (Auto-extracted — pending AI enha | `LLM` `Claude` `Ollama` | `model` `models` `coding` |
 | [Full Hermes Agent Tutorial (Desktop) 🧠 A Useful Agentic AI Workflow](skills/full_hermes_agent_tutorial_desktop_a_useful_agenti.md) | By Wanderloots. Key tools: LLM, OpenAI, Anthropic, llama, Ollama. (Auto-extracte | `LLM` `OpenAI` `Anthropic` `llama` | `here` `hermes` `going` |
 | [NEW Hermes + Paperclip AI Agent Update Is INSANE](skills/new_hermes_paperclip_ai_agent_update_is_insane.md) | By Julian Goldie SEO. Key tools: Claude, Gemini. (Auto-extracted — pending AI en | `Claude` `Gemini` | `agent` `hermes` `paperclip` |
 | [Hermes + Claude Code — MCP Integration & Loop Engineering](skills/hermes_claude_code_mcp_integration_loop_engineerin.md) | By NetworkCoder. Key tools: Flask, Python, Claude, git. (Auto-extracted — pendin | `Flask` `Python` `Claude` `git` | `step` `code` `loop` |
