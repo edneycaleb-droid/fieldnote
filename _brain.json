@@ -1215,9 +1215,10 @@
       ]
     },
     "which": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
-        "kimi_k3_hermes_ai_agent_is_insane"
+        "kimi_k3_hermes_ai_agent_is_insane",
+        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
       ]
     },
     "video": {
@@ -1274,9 +1275,10 @@
       ]
     },
     "every": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
-        "new_claude_update_is_insane"
+        "new_claude_update_is_insane",
+        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
       ]
     },
     "already": {
@@ -1547,6 +1549,54 @@
       "skills": [
         "chatgpt_work_everything_you_need_to_know_to_get_st"
       ]
+    },
+    "memory": {
+      "freq": 1,
+      "skills": [
+        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
+      ]
+    },
+    "data": {
+      "freq": 1,
+      "skills": [
+        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
+      ]
+    },
+    "vector": {
+      "freq": 1,
+      "skills": [
+        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
+      ]
+    },
+    "google": {
+      "freq": 1,
+      "skills": [
+        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
+      ]
+    },
+    "search": {
+      "freq": 1,
+      "skills": [
+        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
+      ]
+    },
+    "whole": {
+      "freq": 1,
+      "skills": [
+        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
+      ]
+    },
+    "because": {
+      "freq": 1,
+      "skills": [
+        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
+      ]
+    },
+    "same": {
+      "freq": 1,
+      "skills": [
+        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
+      ]
     }
   },
   "tools": {
@@ -1798,12 +1848,13 @@
       ]
     },
     "LangChain": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "building_ai_agents_with_langchain",
         "building_resilient_ai_agents_with_langgraph",
         "openai_agents_sdk",
-        "pydantic_ai_framework"
+        "pydantic_ai_framework",
+        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
       ]
     },
     "Deep Agents": {
@@ -1959,9 +2010,10 @@
       ]
     },
     "Python": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "openai_agents_sdk"
+        "openai_agents_sdk",
+        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
       ]
     },
     "Haystack": {
@@ -2642,6 +2694,18 @@
       "freq": 1,
       "skills": [
         "local_ai_coding"
+      ]
+    },
+    "rag": {
+      "freq": 1,
+      "skills": [
+        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
+      ]
+    },
+    "embedding": {
+      "freq": 1,
+      "skills": [
+        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
       ]
     }
   },
@@ -3608,6 +3672,35 @@
         "dave"
       ],
       "step_count": 1
+    },
+    "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
+      "concepts": [
+        "memory",
+        "every",
+        "data",
+        "vector",
+        "google",
+        "search",
+        "whole",
+        "because",
+        "which",
+        "same"
+      ],
+      "tools": [
+        "rag",
+        "embedding",
+        "Python",
+        "LangChain"
+      ],
+      "tags": [
+        "memory",
+        "every",
+        "data",
+        "vector",
+        "google",
+        "search"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -3717,6 +3810,9 @@
       ],
       "testing_and_comparing_llms": [
         "Large Language Models (LLMs)"
+      ],
+      "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": [
+        "LangChain"
       ]
     },
     "building_resilient_ai_agents_with_langgraph": {
@@ -3737,6 +3833,9 @@
       ],
       "hermes_agent_setup": [
         "Human-in-the-loop"
+      ],
+      "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": [
+        "LangChain"
       ]
     },
     "astrbot_deployment": {
@@ -3803,6 +3902,10 @@
       ],
       "testing_and_comparing_llms": [
         "LLMs (Large Language Models)"
+      ],
+      "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": [
+        "LangChain",
+        "Python"
       ]
     },
     "build_production_ready_llm_applications_with_haystack": {
@@ -4025,6 +4128,9 @@
       ],
       "swanlab_ai_training_analysis_platform": [
         "Transformers"
+      ],
+      "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": [
+        "LangChain"
       ]
     },
     "ragaai_catalyst": {},
@@ -4438,6 +4544,9 @@
       "chatgpt_work_everything_you_need_to_know_to_get_st": [
         "here",
         "right"
+      ],
+      "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": [
+        "which"
       ]
     },
     "new_claude_update_is_insane": {
@@ -4488,6 +4597,9 @@
       ],
       "chatgpt_work_everything_you_need_to_know_to_get_st": [
         "work"
+      ],
+      "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": [
+        "every"
       ]
     },
     "new_claude_opus_5_leaks": {
@@ -4706,8 +4818,29 @@
       "making_with_loop_engineering": [
         "going"
       ]
+    },
+    "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
+      "building_ai_agents_with_langchain": [
+        "LangChain"
+      ],
+      "building_resilient_ai_agents_with_langgraph": [
+        "LangChain"
+      ],
+      "openai_agents_sdk": [
+        "LangChain",
+        "Python"
+      ],
+      "pydantic_ai_framework": [
+        "LangChain"
+      ],
+      "kimi_k3_hermes_ai_agent_is_insane": [
+        "which"
+      ],
+      "new_claude_update_is_insane": [
+        "every"
+      ]
     }
   },
-  "updated_at": "2026-07-19T02:40:39.073897+00:00",
-  "total_skills": 35
+  "updated_at": "2026-07-19T02:40:40.411458+00:00",
+  "total_skills": 36
 }
