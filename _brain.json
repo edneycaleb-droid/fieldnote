@@ -1174,7 +1174,7 @@
       ]
     },
     "hermes": {
-      "freq": 23,
+      "freq": 24,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
@@ -1187,7 +1187,8 @@
         "hermes_agent_zero_to_personal_ai_assistant_1_hour_",
         "6_insane_hermes_agent_use_cases_that_you_need_righ",
         "hermes_agent_full_course_setup_guide_for_complete_",
-        "hermes_claude_code_mcp_integration_loop_engineerin"
+        "hermes_claude_code_mcp_integration_loop_engineerin",
+        "new_hermes_paperclip_ai_agent_update_is_insane"
       ]
     },
     "here": {
@@ -1245,7 +1246,7 @@
       ]
     },
     "agent": {
-      "freq": 33,
+      "freq": 34,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "this_kimi_k3_agent_os_is_wild",
@@ -1263,17 +1264,19 @@
         "hermes_agent_zero_to_personal_ai_assistant_1_hour_",
         "6_insane_hermes_agent_use_cases_that_you_need_righ",
         "hermes_agent_full_course_setup_guide_for_complete_",
-        "hermes_claude_code_mcp_integration_loop_engineerin"
+        "hermes_claude_code_mcp_integration_loop_engineerin",
+        "new_hermes_paperclip_ai_agent_update_is_insane"
       ]
     },
     "inside": {
-      "freq": 12,
+      "freq": 13,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_opus_5_leaks",
         "this_kimi_k3_agent_os_is_wild",
         "how_to_run_kimi_k3_for_free",
-        "kimi_k3_hermes_agent_changes_everything"
+        "kimi_k3_hermes_agent_changes_everything",
+        "new_hermes_paperclip_ai_agent_update_is_insane"
       ]
     },
     "example": {
@@ -1371,13 +1374,14 @@
       ]
     },
     "work": {
-      "freq": 10,
+      "freq": 11,
       "skills": [
         "new_claude_update_is_insane",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
         "kimi_k3_is_the_best_model_ever_made_sometimes",
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
-        "hermes_claude_code_mcp_integration_loop_engineerin"
+        "hermes_claude_code_mcp_integration_loop_engineerin",
+        "new_hermes_paperclip_ai_agent_update_is_insane"
       ]
     },
     "real": {
@@ -1467,17 +1471,19 @@
       ]
     },
     "profit": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "new_claude_opus_5_leaks",
-        "new_hermes_agent_os_is_insane"
+        "new_hermes_agent_os_is_insane",
+        "new_hermes_paperclip_ai_agent_update_is_insane"
       ]
     },
     "boardroom": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "new_claude_opus_5_leaks",
-        "new_hermes_agent_os_is_insane"
+        "new_hermes_agent_os_is_insane",
+        "new_hermes_paperclip_ai_agent_update_is_insane"
       ]
     },
     "people": {
@@ -2341,10 +2347,11 @@
       ]
     },
     "agents": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
-        "hermes_agent_build_your_own_personal_ai_assistant_"
+        "hermes_agent_build_your_own_personal_ai_assistant_",
+        "new_hermes_paperclip_ai_agent_update_is_insane"
       ]
     },
     "other": {
@@ -2507,6 +2514,24 @@
       "skills": [
         "hermes_claude_code_mcp_integration_loop_engineerin"
       ]
+    },
+    "paperclip": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_paperclip_ai_agent_update_is_insane"
+      ]
+    },
+    "team": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_paperclip_ai_agent_update_is_insane"
+      ]
+    },
+    "goal": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_paperclip_ai_agent_update_is_insane"
+      ]
     }
   },
   "tools": {
@@ -2600,7 +2625,7 @@
       ]
     },
     "Claude": {
-      "freq": 90,
+      "freq": 91,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -2645,7 +2670,8 @@
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "hermes_agent_zero_to_personal_ai_assistant_1_hour_",
         "6_insane_hermes_agent_use_cases_that_you_need_righ",
-        "hermes_claude_code_mcp_integration_loop_engineerin"
+        "hermes_claude_code_mcp_integration_loop_engineerin",
+        "new_hermes_paperclip_ai_agent_update_is_insane"
       ]
     },
     "Google Drive": {
@@ -3071,7 +3097,7 @@
       ]
     },
     "Gemini": {
-      "freq": 22,
+      "freq": 23,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
         "higsfield_integration",
@@ -3084,7 +3110,8 @@
         "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
         "use_this_to_make_the_hermes_agent_basically_free",
-        "6_insane_hermes_agent_use_cases_that_you_need_righ"
+        "6_insane_hermes_agent_use_cases_that_you_need_righ",
+        "new_hermes_paperclip_ai_agent_update_is_insane"
       ]
     },
     "GPT-4": {
@@ -6017,6 +6044,33 @@
         "agent"
       ],
       "step_count": 1
+    },
+    "new_hermes_paperclip_ai_agent_update_is_insane": {
+      "concepts": [
+        "agent",
+        "hermes",
+        "paperclip",
+        "agents",
+        "team",
+        "inside",
+        "goal",
+        "work",
+        "profit",
+        "boardroom"
+      ],
+      "tools": [
+        "Claude",
+        "Gemini"
+      ],
+      "tags": [
+        "agent",
+        "hermes",
+        "paperclip",
+        "agents",
+        "team",
+        "inside"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -6192,6 +6246,9 @@
         "Claude"
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
         "Claude"
       ]
     },
@@ -6540,6 +6597,9 @@
         "Docker",
         "OpenAI",
         "Anthropic"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Gemini"
       ]
     },
     "swanlab_ai_training_analysis_platform": {
@@ -6689,6 +6749,9 @@
         "Claude"
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
         "Claude"
       ]
     },
@@ -6895,6 +6958,10 @@
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
         "Claude"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude",
+        "Gemini"
       ]
     },
     "pydantic_ai_framework": {
@@ -7071,6 +7138,9 @@
         "Claude"
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
         "Claude"
       ]
     },
@@ -7543,6 +7613,9 @@
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
         "Claude"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude"
       ]
     },
     "testing_and_comparing_llms": {
@@ -7942,6 +8015,12 @@
         "Claude",
         "hermes",
         "agent"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude",
+        "hermes",
+        "inside",
+        "agent"
       ]
     },
     "new_claude_update_is_insane": {
@@ -8163,6 +8242,10 @@
         "Anthropic"
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude",
+        "work"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
         "Claude",
         "work"
       ]
@@ -8407,6 +8490,12 @@
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
         "Claude"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude",
+        "inside",
+        "boardroom",
+        "profit"
       ]
     },
     "making_with_loop_engineering": {
@@ -8639,6 +8728,9 @@
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
         "loop",
+        "Claude"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
         "Claude"
       ]
     },
@@ -8894,6 +8986,9 @@
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
         "Claude"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -9060,6 +9155,9 @@
         "Anthropic"
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
         "Claude"
       ]
     },
@@ -9236,6 +9334,9 @@
         "here"
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "work"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
         "work"
       ]
     },
@@ -9600,6 +9701,9 @@
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
         "Claude"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude"
       ]
     },
     "master_ai_trading_in_70_minutes_full_claude_tradin": {
@@ -9847,6 +9951,9 @@
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
         "Claude"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude"
       ]
     },
     "how_to_use_codex_to_build_insanely_beautiful_websi": {
@@ -10093,6 +10200,9 @@
         "Claude",
         "git",
         "skill"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude"
       ]
     },
     "did_kimi_k3_really_beat_fable": {
@@ -10406,6 +10516,9 @@
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
         "Claude"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -10645,6 +10758,9 @@
         "here"
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
         "Claude"
       ]
     },
@@ -10967,6 +11083,11 @@
       "hermes_claude_code_mcp_integration_loop_engineerin": [
         "code",
         "Claude",
+        "work"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude",
+        "Gemini",
         "work"
       ]
     },
@@ -11456,6 +11577,9 @@
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
         "Claude"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude"
       ]
     },
     "people_are_creating_insane_things_with_kimi_k3": {
@@ -11691,6 +11815,9 @@
         "here"
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
         "Claude"
       ]
     },
@@ -11959,6 +12086,10 @@
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
         "Claude"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude",
+        "Gemini"
       ]
     },
     "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": {
@@ -12209,6 +12340,10 @@
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
         "Claude"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude",
+        "Gemini"
       ]
     },
     "this_kimi_k3_agent_os_is_wild": {
@@ -12443,6 +12578,12 @@
       "hermes_claude_code_mcp_integration_loop_engineerin": [
         "Claude",
         "agent"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude",
+        "inside",
+        "agent",
+        "Gemini"
       ]
     },
     "how_to_run_kimi_k3_for_free": {
@@ -12603,6 +12744,9 @@
         "going",
         "want",
         "here"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "inside"
       ]
     },
     "yes_the_kimi_k3_hype_is_real": {
@@ -12906,6 +13050,9 @@
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
         "Claude"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude"
       ]
     },
     "kimi_k3_ai_full_course_1_hour_build_automate_anyth": {
@@ -13176,6 +13323,10 @@
       "hermes_claude_code_mcp_integration_loop_engineerin": [
         "Claude",
         "agent"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude",
+        "agent"
       ]
     },
     "kimi_k3_fully_tested_an_open_model_beats_fable": {
@@ -13347,6 +13498,9 @@
       ],
       "hermes_agent_full_course_setup_guide_for_complete_": [
         "right"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Gemini"
       ]
     },
     "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_": {
@@ -13549,6 +13703,9 @@
       "hermes_agent_full_course_setup_guide_for_complete_": [
         "going",
         "OpenAI"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Gemini"
       ]
     },
     "run_kimi_k3_inside_claude_code_max_power": {
@@ -13801,6 +13958,9 @@
         "loop",
         "Claude",
         "code"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude"
       ]
     },
     "2_8_trillion_parameters_kimi_k3_is_here": {
@@ -14038,6 +14198,9 @@
         "OpenAI"
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
         "Claude"
       ]
     },
@@ -14666,6 +14829,9 @@
       "hermes_claude_code_mcp_integration_loop_engineerin": [
         "Claude",
         "code"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude"
       ]
     },
     "kimi_k3_just_knocked_claude_to_third_place_chinese": {
@@ -14920,6 +15086,9 @@
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
         "Claude"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude"
       ]
     },
     "use_kimi_k3_completely_free_best_ai_coding_setup_2": {
@@ -15121,6 +15290,9 @@
         "here"
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
         "Claude"
       ]
     },
@@ -15391,6 +15563,9 @@
         "Anthropic"
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
         "Claude"
       ]
     },
@@ -15697,6 +15872,9 @@
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
         "Claude"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude"
       ]
     },
     "kimi_k3_ai_model": {},
@@ -15983,6 +16161,10 @@
       "hermes_claude_code_mcp_integration_loop_engineerin": [
         "Claude",
         "test"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude",
+        "Gemini"
       ]
     },
     "kimi_k3_is_insane_best_open_model_ever_that_beats_": {
@@ -16208,6 +16390,9 @@
         "actually"
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
         "Claude"
       ]
     },
@@ -16464,6 +16649,12 @@
         "skill",
         "agent",
         "work"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude",
+        "agent",
+        "work",
+        "agents"
       ]
     },
     "100_hours_of_hermes_agent_lessons_in_19_minutes": {
@@ -16687,6 +16878,12 @@
       "hermes_claude_code_mcp_integration_loop_engineerin": [
         "Claude",
         "hermes",
+        "agent"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude",
+        "hermes",
+        "Gemini",
         "agent"
       ]
     },
@@ -16984,6 +17181,11 @@
         "Claude",
         "hermes",
         "agent"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude",
+        "hermes",
+        "agent"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -17155,6 +17357,12 @@
       "hermes_claude_code_mcp_integration_loop_engineerin": [
         "Claude",
         "agent"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "boardroom",
+        "Claude",
+        "agent",
+        "profit"
       ]
     },
     "kimi_k3_hermes_agent_changes_everything": {
@@ -17344,6 +17552,11 @@
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
         "hermes",
+        "agent"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "hermes",
+        "inside",
         "agent"
       ]
     },
@@ -17665,6 +17878,11 @@
         "hermes",
         "Python",
         "agent"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude",
+        "hermes",
+        "agent"
       ]
     },
     "gpt_5_6_on_hermes_agent_is_actually_insane_full_he": {
@@ -17951,6 +18169,11 @@
         "Claude",
         "hermes",
         "agent"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude",
+        "hermes",
+        "agent"
       ]
     },
     "use_this_to_make_the_hermes_agent_basically_free": {
@@ -18227,6 +18450,12 @@
         "Claude",
         "hermes",
         "agent"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude",
+        "hermes",
+        "Gemini",
+        "agent"
       ]
     },
     "hermes_agent_build_your_own_personal_ai_assistant_": {
@@ -18422,6 +18651,10 @@
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
         "agent"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "agent",
+        "agents"
       ]
     },
     "hermes_agent_tutorial_for_beginners_full_step_by_s": {
@@ -18709,6 +18942,11 @@
         "Claude",
         "hermes",
         "Python",
+        "agent"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude",
+        "hermes",
         "agent"
       ]
     },
@@ -19061,6 +19299,11 @@
         "Claude",
         "agent",
         "Python"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude",
+        "hermes",
+        "agent"
       ]
     },
     "6_insane_hermes_agent_use_cases_that_you_need_righ": {
@@ -19286,6 +19529,12 @@
         "Claude",
         "hermes",
         "skill",
+        "agent"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude",
+        "hermes",
+        "Gemini",
         "agent"
       ]
     },
@@ -19569,6 +19818,10 @@
         "hermes",
         "Python",
         "agent"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "hermes",
+        "agent"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -19763,9 +20016,222 @@
         "hermes",
         "Python",
         "agent"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude",
+        "hermes",
+        "agent",
+        "work"
+      ]
+    },
+    "new_hermes_paperclip_ai_agent_update_is_insane": {
+      "building_ai_agents": [
+        "Claude"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "Gemini"
+      ],
+      "mastering_loop_engineering": [
+        "Claude"
+      ],
+      "higsfield_integration": [
+        "Claude",
+        "Gemini"
+      ],
+      "hermes_agent_setup": [
+        "Claude"
+      ],
+      "building_ai_agents_with_loop": [
+        "Claude"
+      ],
+      "kimi_k3_hermes_ai_agent_is_insane": [
+        "Claude",
+        "hermes",
+        "inside",
+        "agent"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude",
+        "work"
+      ],
+      "new_claude_opus_5_leaks": [
+        "Claude",
+        "inside",
+        "boardroom",
+        "profit"
+      ],
+      "making_with_loop_engineering": [
+        "Claude"
+      ],
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "Claude"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Claude"
+      ],
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "work"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Claude"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude"
+      ],
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "Claude"
+      ],
+      "did_kimi_k3_really_beat_fable": [
+        "Claude"
+      ],
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "Claude"
+      ],
+      "kimi_k3_is_the_best_model_ever_made_sometimes": [
+        "Claude",
+        "Gemini",
+        "work"
+      ],
+      "kimi_k3_is_just_ridiculous": [
+        "Claude"
+      ],
+      "people_are_creating_insane_things_with_kimi_k3": [
+        "Claude"
+      ],
+      "china_just_beat_claude_ai_kimi_k3": [
+        "Claude",
+        "Gemini"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude",
+        "Gemini"
+      ],
+      "this_kimi_k3_agent_os_is_wild": [
+        "Claude",
+        "inside",
+        "agent",
+        "Gemini"
+      ],
+      "how_to_run_kimi_k3_for_free": [
+        "inside"
+      ],
+      "yes_the_kimi_k3_hype_is_real": [
+        "Claude"
+      ],
+      "kimi_k3_ai_full_course_1_hour_build_automate_anyth": [
+        "Claude",
+        "agent"
+      ],
+      "kimi_k3_fully_tested_an_open_model_beats_fable": [
+        "Gemini"
+      ],
+      "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_": [
+        "Gemini"
+      ],
+      "run_kimi_k3_inside_claude_code_max_power": [
+        "Claude"
+      ],
+      "2_8_trillion_parameters_kimi_k3_is_here": [
+        "Claude"
+      ],
+      "kimi_k3_is_fable_level_they_should_be_worried": [
+        "Claude"
+      ],
+      "kimi_k3_just_knocked_claude_to_third_place_chinese": [
+        "Claude"
+      ],
+      "use_kimi_k3_completely_free_best_ai_coding_setup_2": [
+        "Claude"
+      ],
+      "kimi_k3_is_insanely_strong_real_tests_and_review": [
+        "Claude"
+      ],
+      "kimi_k3_crushed_fable": [
+        "Claude"
+      ],
+      "kimi_k3_testing_moonshot_s_2_8t_open_model_without": [
+        "Claude",
+        "Gemini"
+      ],
+      "kimi_k3_is_insane_best_open_model_ever_that_beats_": [
+        "Claude"
+      ],
+      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
+        "Claude",
+        "agent",
+        "work",
+        "agents"
+      ],
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "Claude",
+        "hermes",
+        "Gemini",
+        "agent"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "Claude",
+        "hermes",
+        "agent"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "boardroom",
+        "Claude",
+        "agent",
+        "profit"
+      ],
+      "kimi_k3_hermes_agent_changes_everything": [
+        "hermes",
+        "inside",
+        "agent"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "Claude",
+        "hermes",
+        "agent"
+      ],
+      "gpt_5_6_on_hermes_agent_is_actually_insane_full_he": [
+        "Claude",
+        "hermes",
+        "agent"
+      ],
+      "use_this_to_make_the_hermes_agent_basically_free": [
+        "Claude",
+        "hermes",
+        "Gemini",
+        "agent"
+      ],
+      "hermes_agent_build_your_own_personal_ai_assistant_": [
+        "agent",
+        "agents"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Claude",
+        "hermes",
+        "agent"
+      ],
+      "hermes_agent_zero_to_personal_ai_assistant_1_hour_": [
+        "Claude",
+        "hermes",
+        "agent"
+      ],
+      "6_insane_hermes_agent_use_cases_that_you_need_righ": [
+        "Claude",
+        "hermes",
+        "Gemini",
+        "agent"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "hermes",
+        "agent"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude",
+        "hermes",
+        "agent",
+        "work"
       ]
     }
   },
-  "updated_at": "2026-07-19T02:44:02.827372+00:00",
-  "total_skills": 79
+  "updated_at": "2026-07-19T02:44:05.577223+00:00",
+  "total_skills": 80
 }
