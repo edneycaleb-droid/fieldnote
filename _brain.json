@@ -7,15 +7,17 @@
       ]
     },
     "model": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
+        "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
+        "hermes_agent_just_got_10x_better_4_insane_new_feat"
       ]
     },
     "going": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
+        "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
+        "hermes_agent_just_got_10x_better_4_insane_new_feat"
       ]
     },
     "very": {
@@ -59,6 +61,54 @@
       "skills": [
         "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
       ]
+    },
+    "agent": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+      ]
+    },
+    "every": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+      ]
+    },
+    "actually": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+      ]
+    },
+    "work": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+      ]
+    },
+    "right": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+      ]
+    },
+    "basically": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+      ]
+    },
+    "agents": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+      ]
+    },
+    "skill": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+      ]
     }
   },
   "tools": {
@@ -69,9 +119,10 @@
       ]
     },
     "Claude": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
+        "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
+        "hermes_agent_just_got_10x_better_4_insane_new_feat"
       ]
     },
     "Gemini": {
@@ -123,11 +174,50 @@
         "think"
       ],
       "step_count": 1
+    },
+    "hermes_agent_just_got_10x_better_4_insane_new_feat": {
+      "concepts": [
+        "agent",
+        "going",
+        "every",
+        "actually",
+        "work",
+        "model",
+        "right",
+        "basically",
+        "agents",
+        "skill"
+      ],
+      "tools": [
+        "Claude"
+      ],
+      "tags": [
+        "agent",
+        "going",
+        "every",
+        "actually",
+        "work",
+        "model"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
-    "kimi_k3_testing_moonshot_s_2_8t_open_model_without": {}
+    "kimi_k3_testing_moonshot_s_2_8t_open_model_without": {
+      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
+        "Claude",
+        "going",
+        "model"
+      ]
+    },
+    "hermes_agent_just_got_10x_better_4_insane_new_feat": {
+      "kimi_k3_testing_moonshot_s_2_8t_open_model_without": [
+        "Claude",
+        "going",
+        "model"
+      ]
+    }
   },
-  "updated_at": "2026-07-19T02:50:55.028371+00:00",
-  "total_skills": 1
+  "updated_at": "2026-07-19T02:50:55.035542+00:00",
+  "total_skills": 2
 }
