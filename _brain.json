@@ -1208,14 +1208,14 @@
       ]
     },
     "agent": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "this_kimi_k3_agent_os_is_wild"
       ]
     },
     "inside": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_opus_5_leaks",
@@ -1294,7 +1294,7 @@
       ]
     },
     "real": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "new_claude_update_is_insane",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
@@ -1309,7 +1309,7 @@
       ]
     },
     "already": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "new_claude_update_is_insane",
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
@@ -1339,7 +1339,7 @@
       ]
     },
     "model": {
-      "freq": 18,
+      "freq": 19,
       "skills": [
         "new_claude_opus_5_leaks",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
@@ -1479,7 +1479,7 @@
       ]
     },
     "models": {
-      "freq": 13,
+      "freq": 14,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "did_kimi_k3_really_beat_fable",
@@ -1652,7 +1652,7 @@
       ]
     },
     "because": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq",
         "kimi_k3_is_the_best_model_ever_made_sometimes",
@@ -1675,7 +1675,7 @@
       ]
     },
     "kimi": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results",
         "this_kimi_k3_agent_os_is_wild"
@@ -1902,13 +1902,13 @@
       ]
     },
     "building": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "this_kimi_k3_agent_os_is_wild"
       ]
     },
     "tasks": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "this_kimi_k3_agent_os_is_wild"
       ]
@@ -1995,7 +1995,7 @@
       ]
     },
     "Claude": {
-      "freq": 47,
+      "freq": 48,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -2420,7 +2420,7 @@
       ]
     },
     "Gemini": {
-      "freq": 9,
+      "freq": 10,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
         "higsfield_integration",
@@ -7585,6 +7585,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-19T02:41:42.900107+00:00",
+  "updated_at": "2026-07-19T02:41:44.406063+00:00",
   "total_skills": 48
 }
