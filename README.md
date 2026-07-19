@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **27 skills** · Last synced: 2026-07-19 02:39 UTC
+> **28 skills** · Last synced: 2026-07-19 02:40 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Deploying Bonzai 27B with Prism ML Compression: Efficient Local AI Processing](skills/prism_ml_bonzai_deployment.md) | This skill teaches how to deploy the Bonzai 27B model, a 27 billion parameter mo | `Llama.cpp` `Prism ML` `Hugging Face` `jCodeMunch MCP` | `ai` `compression` `local-ai` |
 | [Testing and Comparing Large Language Models with PromptTools](skills/testing_and_comparing_llms.md) | This skill teaches how to test, experiment, and compare Large Language Models (L | `PromptTools` `OpenAI` `Anthropic` `LLaMA` | `llms` `prompttools` `testing` |
 | [Building AI Agents with Loop: A Comprehensive Guide to Autonomously Improving AI Self-Improvement](skills/building_ai_agents_with_loop.md) | This skill teaches how to build AI agents with loop, a feature that enables auto | `Hermes Agent` `Claude` `Open Claw` `Contabo` | `ai` `self-improvement` `loop-engineering` |
 | [Transforming Chrome into an Intelligent Assistant](skills/chrome_mcp_server.md) | This skill teaches how to turn Chrome into an intelligent assistant by leveragin | `Chrome MCP Server` `Model Context Protocol (MCP)` `Streamable HTTP connection method` `pnpm` | `browser` `ai` `automation` |
