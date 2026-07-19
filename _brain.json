@@ -1239,7 +1239,7 @@
       ]
     },
     "which": {
-      "freq": 12,
+      "freq": 13,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq",
@@ -1286,7 +1286,7 @@
       ]
     },
     "something": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "new_claude_update_is_insane",
         "the_15_most_insane_things_created_by_kimi_k3_kimi_",
@@ -1339,7 +1339,7 @@
       ]
     },
     "about": {
-      "freq": 12,
+      "freq": 13,
       "skills": [
         "new_claude_update_is_insane",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
@@ -1357,7 +1357,7 @@
       ]
     },
     "model": {
-      "freq": 22,
+      "freq": 23,
       "skills": [
         "new_claude_opus_5_leaks",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
@@ -1433,7 +1433,7 @@
       ]
     },
     "going": {
-      "freq": 20,
+      "freq": 21,
       "skills": [
         "making_with_loop_engineering",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
@@ -1677,7 +1677,7 @@
       ]
     },
     "because": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq",
         "kimi_k3_is_the_best_model_ever_made_sometimes",
@@ -1793,7 +1793,7 @@
       ]
     },
     "open": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "did_kimi_k3_really_beat_fable",
         "kimi_k3_is_the_best_model_ever_made_sometimes",
@@ -1883,7 +1883,7 @@
       ]
     },
     "better": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "people_are_creating_insane_things_with_kimi_k3",
         "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_"
@@ -2007,13 +2007,13 @@
       ]
     },
     "those": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_"
       ]
     },
     "frontier": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_"
       ]
@@ -2464,7 +2464,7 @@
       ]
     },
     "OpenAI": {
-      "freq": 23,
+      "freq": 24,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
         "testing_and_comparing_llms",
@@ -2530,7 +2530,7 @@
       ]
     },
     "Gemini": {
-      "freq": 13,
+      "freq": 14,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
         "higsfield_integration",
@@ -8874,6 +8874,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-19T02:42:09.306678+00:00",
+  "updated_at": "2026-07-19T02:42:11.662569+00:00",
   "total_skills": 53
 }
