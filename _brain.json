@@ -72,17 +72,19 @@
       ]
     },
     "agent": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "gpt_5_6_on_hermes_agent_is_actually_insane_full_he",
-        "6_insane_hermes_agent_use_cases_that_you_need_righ"
+        "6_insane_hermes_agent_use_cases_that_you_need_righ",
+        "new_hermes_paperclip_ai_agent_update_is_insane"
       ]
     },
     "hermes": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "gpt_5_6_on_hermes_agent_is_actually_insane_full_he",
-        "6_insane_hermes_agent_use_cases_that_you_need_righ"
+        "6_insane_hermes_agent_use_cases_that_you_need_righ",
+        "new_hermes_paperclip_ai_agent_update_is_insane"
       ]
     },
     "right": {
@@ -204,15 +206,64 @@
       "skills": [
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
       ]
+    },
+    "paperclip": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_paperclip_ai_agent_update_is_insane"
+      ]
+    },
+    "agents": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_paperclip_ai_agent_update_is_insane"
+      ]
+    },
+    "team": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_paperclip_ai_agent_update_is_insane"
+      ]
+    },
+    "inside": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_paperclip_ai_agent_update_is_insane"
+      ]
+    },
+    "goal": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_paperclip_ai_agent_update_is_insane"
+      ]
+    },
+    "work": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_paperclip_ai_agent_update_is_insane"
+      ]
+    },
+    "profit": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_paperclip_ai_agent_update_is_insane"
+      ]
+    },
+    "boardroom": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_paperclip_ai_agent_update_is_insane"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "kimi_k3_just_knocked_claude_to_third_place_chinese",
         "gpt_5_6_on_hermes_agent_is_actually_insane_full_he",
-        "6_insane_hermes_agent_use_cases_that_you_need_righ"
+        "6_insane_hermes_agent_use_cases_that_you_need_righ",
+        "new_hermes_paperclip_ai_agent_update_is_insane"
       ]
     },
     "Anthropic": {
@@ -248,9 +299,10 @@
       ]
     },
     "Gemini": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "6_insane_hermes_agent_use_cases_that_you_need_righ"
+        "6_insane_hermes_agent_use_cases_that_you_need_righ",
+        "new_hermes_paperclip_ai_agent_update_is_insane"
       ]
     }
   },
@@ -365,6 +417,33 @@
         "most"
       ],
       "step_count": 1
+    },
+    "new_hermes_paperclip_ai_agent_update_is_insane": {
+      "concepts": [
+        "agent",
+        "hermes",
+        "paperclip",
+        "agents",
+        "team",
+        "inside",
+        "goal",
+        "work",
+        "profit",
+        "boardroom"
+      ],
+      "tools": [
+        "Claude",
+        "Gemini"
+      ],
+      "tags": [
+        "agent",
+        "hermes",
+        "paperclip",
+        "agents",
+        "team",
+        "inside"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -382,6 +461,9 @@
         "artificial",
         "because",
         "Anthropic"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude"
       ]
     },
     "gpt_5_6_on_hermes_agent_is_actually_insane_full_he": {
@@ -395,6 +477,11 @@
       ],
       "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
         "OpenAI"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude",
+        "hermes",
+        "agent"
       ]
     },
     "6_insane_hermes_agent_use_cases_that_you_need_righ": {
@@ -404,6 +491,12 @@
       "gpt_5_6_on_hermes_agent_is_actually_insane_full_he": [
         "Claude",
         "hermes",
+        "agent"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude",
+        "hermes",
+        "Gemini",
         "agent"
       ]
     },
@@ -419,8 +512,24 @@
       "gpt_5_6_on_hermes_agent_is_actually_insane_full_he": [
         "OpenAI"
       ]
+    },
+    "new_hermes_paperclip_ai_agent_update_is_insane": {
+      "kimi_k3_just_knocked_claude_to_third_place_chinese": [
+        "Claude"
+      ],
+      "gpt_5_6_on_hermes_agent_is_actually_insane_full_he": [
+        "Claude",
+        "hermes",
+        "agent"
+      ],
+      "6_insane_hermes_agent_use_cases_that_you_need_righ": [
+        "Claude",
+        "hermes",
+        "Gemini",
+        "agent"
+      ]
     }
   },
-  "updated_at": "2026-07-19T02:45:24.954235+00:00",
-  "total_skills": 4
+  "updated_at": "2026-07-19T02:45:24.960715+00:00",
+  "total_skills": 5
 }
