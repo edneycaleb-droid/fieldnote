@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **9 skills** · Last synced: 2026-07-19 02:52 UTC
+> **2 skills** · Last synced: 2026-07-19 02:52 UTC
 
 ---
 
@@ -9,15 +9,8 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [Ornith (35B,9B) + Hermes,Zed: THE FULLY PRIVATE LOCAL AGENT is ACTUALLY HERE!](skills/ornith_35b_9b_hermes_zed_the_fully_private_local_a.md) | By AICodeKing. Key tools: LLM, Claude, Ollama. (Auto-extracted — pending AI enha | `LLM` `Claude` `Ollama` | `model` `models` `coding` |
-| [GPT-5.6 on Hermes Agent Is Actually Insane (Full Hermes Setup with $0 Codex)](skills/gpt_5_6_on_hermes_agent_is_actually_insane_full_he.md) | By Moe Lueker. Key tools: OpenAI, Claude, Docker. (Auto-extracted — pending AI e | `OpenAI` `Claude` `Docker` | `here` `agent` `hermes` |
-| [Use This To Make The Hermes Agent Basically Free](skills/use_this_to_make_the_hermes_agent_basically_free.md) | By AI LABS. Key tools: OpenAI, Claude, Anthropic, Gemini. (Auto-extracted — pend | `OpenAI` `Claude` `Anthropic` `Gemini` | `hermes` `tokens` `context` |
-| [Hermes Agent + Ollama: How to Install Hermes Locally Fast](skills/hermes_agent_ollama_how_to_install_hermes_locally_.md) | By proflead. Key tools: llama, anthropic. (Auto-extracted — pending AI enhanceme | `llama` `anthropic` | `hermes` `model` `models` |
-| [Full Hermes Agent Tutorial (Desktop) 🧠 A Useful Agentic AI Workflow](skills/full_hermes_agent_tutorial_desktop_a_useful_agenti.md) | By Wanderloots. Key tools: LLM, OpenAI, Anthropic, llama, Ollama. (Auto-extracte | `LLM` `OpenAI` `Anthropic` `llama` | `here` `hermes` `going` |
-| [Qwen 3.6 + Pi Agent: Build Your Own AI Assistant (Full Setup)](skills/qwen_3_6_pi_agent_build_your_own_ai_assistant_full.md) | By Bart Slodyczka. Key tools: LLM. (Auto-extracted — pending AI enhancement.) | `LLM` | `agent` `here` `ticket` |
-| [Kimi K3 IS INSANE! Best Open Model EVER That BEATS FABLE 5 & GPT-5.6! (Fully Tested)](skills/kimi_k3_is_insane_best_open_model_ever_that_beats_.md) | By WorldofAI. Key tools: Claude. (Auto-extracted — pending AI enhancement.) | `Claude` | `model` `different` `which` |
-| [NEW Hermes + Paperclip AI Agent Update Is INSANE](skills/new_hermes_paperclip_ai_agent_update_is_insane.md) | By Julian Goldie SEO. Key tools: Claude, Gemini. (Auto-extracted — pending AI en | `Claude` `Gemini` | `agent` `hermes` `paperclip` |
-| [6 Insane Hermes Agent Use Cases That You Need Right Now](skills/6_insane_hermes_agent_use_cases_that_you_need_righ.md) | By AI LABS. Key tools: Claude, LLM, AWS, Gemini. (Auto-extracted — pending AI en | `Claude` `LLM` `AWS` `Gemini` | `agent` `hermes` `video` |
+| [Kimi K3 CRUSHED Fable](skills/kimi_k3_crushed_fable.md) | By Wes Roth. Key tools: Claude, Anthropic, OpenAI. (Auto-extracted — pending AI  | `Claude` `Anthropic` `OpenAI` | `kind` `know` `here` |
+| [Hermes Agent: Zero to Personal AI Assistant (1 Hour Course)](skills/hermes_agent_zero_to_personal_ai_assistant_1_hour_.md) | By Nate Herk \| AI Automation. Key tools: Claude, Docker, Anthropic, OpenAI, Llam | `Claude` `Docker` `Anthropic` `OpenAI` | `going` `hermes` `here` |
 
 ---
 
