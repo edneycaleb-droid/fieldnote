@@ -1182,7 +1182,7 @@
       ]
     },
     "actually": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_update_is_insane"
@@ -1231,55 +1231,55 @@
       ]
     },
     "claude": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "new_claude_update_is_insane"
       ]
     },
     "something": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "new_claude_update_is_insane"
       ]
     },
     "anthropic": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "new_claude_update_is_insane"
       ]
     },
     "work": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "new_claude_update_is_insane"
       ]
     },
     "real": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "new_claude_update_is_insane"
       ]
     },
     "every": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "new_claude_update_is_insane"
       ]
     },
     "already": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "new_claude_update_is_insane"
       ]
     },
     "built": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "new_claude_update_is_insane"
       ]
     },
     "about": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "new_claude_update_is_insane"
       ]
@@ -1287,7 +1287,7 @@
   },
   "tools": {
     "Anthropic": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "building_ai_agents",
         "build_production_ready_llm_applications_with_haystack",
@@ -1357,7 +1357,7 @@
       ]
     },
     "Claude": {
-      "freq": 13,
+      "freq": 14,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -3884,6 +3884,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-19T02:40:08.195435+00:00",
+  "updated_at": "2026-07-19T02:40:09.456751+00:00",
   "total_skills": 29
 }
