@@ -13,15 +13,17 @@
       ]
     },
     "models": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_just_knocked_claude_to_third_place_chinese"
+        "kimi_k3_just_knocked_claude_to_third_place_chinese",
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
       ]
     },
     "because": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_just_knocked_claude_to_third_place_chinese"
+        "kimi_k3_just_knocked_claude_to_third_place_chinese",
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
       ]
     },
     "going": {
@@ -37,15 +39,17 @@
       ]
     },
     "model": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_just_knocked_claude_to_third_place_chinese"
+        "kimi_k3_just_knocked_claude_to_third_place_chinese",
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
       ]
     },
     "intelligence": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_just_knocked_claude_to_third_place_chinese"
+        "kimi_k3_just_knocked_claude_to_third_place_chinese",
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
       ]
     },
     "chinese": {
@@ -55,9 +59,10 @@
       ]
     },
     "artificial": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_just_knocked_claude_to_third_place_chinese"
+        "kimi_k3_just_knocked_claude_to_third_place_chinese",
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
       ]
     },
     "here": {
@@ -169,6 +174,36 @@
       "skills": [
         "6_insane_hermes_agent_use_cases_that_you_need_righ"
       ]
+    },
+    "chemistry": {
+      "freq": 1,
+      "skills": [
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
+      ]
+    },
+    "clot": {
+      "freq": 1,
+      "skills": [
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
+      ]
+    },
+    "fable": {
+      "freq": 1,
+      "skills": [
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
+      ]
+    },
+    "most": {
+      "freq": 1,
+      "skills": [
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
+      ]
+    },
+    "already": {
+      "freq": 1,
+      "skills": [
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
+      ]
     }
   },
   "tools": {
@@ -181,15 +216,17 @@
       ]
     },
     "Anthropic": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_just_knocked_claude_to_third_place_chinese"
+        "kimi_k3_just_knocked_claude_to_third_place_chinese",
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
       ]
     },
     "OpenAI": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "gpt_5_6_on_hermes_agent_is_actually_insane_full_he"
+        "gpt_5_6_on_hermes_agent_is_actually_insane_full_he",
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
       ]
     },
     "Docker": {
@@ -301,6 +338,33 @@
         "skill"
       ],
       "step_count": 1
+    },
+    "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
+      "concepts": [
+        "chemistry",
+        "model",
+        "models",
+        "clot",
+        "fable",
+        "most",
+        "intelligence",
+        "because",
+        "artificial",
+        "already"
+      ],
+      "tools": [
+        "Anthropic",
+        "OpenAI"
+      ],
+      "tags": [
+        "chemistry",
+        "model",
+        "models",
+        "clot",
+        "fable",
+        "most"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -310,6 +374,14 @@
       ],
       "6_insane_hermes_agent_use_cases_that_you_need_righ": [
         "Claude"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "intelligence",
+        "model",
+        "models",
+        "artificial",
+        "because",
+        "Anthropic"
       ]
     },
     "gpt_5_6_on_hermes_agent_is_actually_insane_full_he": {
@@ -320,6 +392,9 @@
         "Claude",
         "hermes",
         "agent"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "OpenAI"
       ]
     },
     "6_insane_hermes_agent_use_cases_that_you_need_righ": {
@@ -331,8 +406,21 @@
         "hermes",
         "agent"
       ]
+    },
+    "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
+      "kimi_k3_just_knocked_claude_to_third_place_chinese": [
+        "intelligence",
+        "model",
+        "models",
+        "artificial",
+        "because",
+        "Anthropic"
+      ],
+      "gpt_5_6_on_hermes_agent_is_actually_insane_full_he": [
+        "OpenAI"
+      ]
     }
   },
-  "updated_at": "2026-07-19T02:45:24.875539+00:00",
-  "total_skills": 3
+  "updated_at": "2026-07-19T02:45:24.954235+00:00",
+  "total_skills": 4
 }
