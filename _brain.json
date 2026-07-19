@@ -46,9 +46,10 @@
       ]
     },
     "need": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
+        "how_to_use_codex_to_build_insanely_beautiful_websi",
+        "100_hours_of_hermes_agent_lessons_in_19_minutes"
       ]
     },
     "file": {
@@ -203,9 +204,10 @@
       ]
     },
     "agent": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "new_hermes_agent_os_is_insane"
+        "new_hermes_agent_os_is_insane",
+        "100_hours_of_hermes_agent_lessons_in_19_minutes"
       ]
     },
     "squad": {
@@ -245,20 +247,64 @@
       ]
     },
     "every": {
+      "freq": 2,
+      "skills": [
+        "new_hermes_agent_os_is_insane",
+        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+      ]
+    },
+    "hermes": {
       "freq": 1,
       "skills": [
-        "new_hermes_agent_os_is_insane"
+        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+      ]
+    },
+    "other": {
+      "freq": 1,
+      "skills": [
+        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+      ]
+    },
+    "over": {
+      "freq": 1,
+      "skills": [
+        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+      ]
+    },
+    "using": {
+      "freq": 1,
+      "skills": [
+        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+      ]
+    },
+    "know": {
+      "freq": 1,
+      "skills": [
+        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+      ]
+    },
+    "want": {
+      "freq": 1,
+      "skills": [
+        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+      ]
+    },
+    "opus": {
+      "freq": 1,
+      "skills": [
+        "100_hours_of_hermes_agent_lessons_in_19_minutes"
       ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "how_to_use_codex_to_build_insanely_beautiful_websi",
         "kimi_k3_is_just_ridiculous",
         "kimi_k3_is_fable_level_they_should_be_worried",
-        "new_hermes_agent_os_is_insane"
+        "new_hermes_agent_os_is_insane",
+        "100_hours_of_hermes_agent_lessons_in_19_minutes"
       ]
     },
     "next.js": {
@@ -307,6 +353,18 @@
       "freq": 1,
       "skills": [
         "kimi_k3_is_fable_level_they_should_be_worried"
+      ]
+    },
+    "Gemini": {
+      "freq": 1,
+      "skills": [
+        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+      ]
+    },
+    "SSH": {
+      "freq": 1,
+      "skills": [
+        "100_hours_of_hermes_agent_lessons_in_19_minutes"
       ]
     }
   },
@@ -446,6 +504,34 @@
         "each"
       ],
       "step_count": 1
+    },
+    "100_hours_of_hermes_agent_lessons_in_19_minutes": {
+      "concepts": [
+        "hermes",
+        "agent",
+        "other",
+        "need",
+        "over",
+        "using",
+        "know",
+        "every",
+        "want",
+        "opus"
+      ],
+      "tools": [
+        "Gemini",
+        "SSH",
+        "Claude"
+      ],
+      "tags": [
+        "hermes",
+        "agent",
+        "other",
+        "need",
+        "over",
+        "using"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -462,6 +548,10 @@
         "here"
       ],
       "new_hermes_agent_os_is_insane": [
+        "Claude"
+      ],
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "need",
         "Claude"
       ]
     },
@@ -499,6 +589,9 @@
       ],
       "new_hermes_agent_os_is_insane": [
         "Claude"
+      ],
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "Claude"
       ]
     },
     "kimi_k3_is_fable_level_they_should_be_worried": {
@@ -522,6 +615,9 @@
       ],
       "new_hermes_agent_os_is_insane": [
         "Claude"
+      ],
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "Claude"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -533,9 +629,31 @@
       ],
       "kimi_k3_is_fable_level_they_should_be_worried": [
         "Claude"
+      ],
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "Claude",
+        "agent",
+        "every"
+      ]
+    },
+    "100_hours_of_hermes_agent_lessons_in_19_minutes": {
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "need",
+        "Claude"
+      ],
+      "kimi_k3_is_just_ridiculous": [
+        "Claude"
+      ],
+      "kimi_k3_is_fable_level_they_should_be_worried": [
+        "Claude"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Claude",
+        "agent",
+        "every"
       ]
     }
   },
-  "updated_at": "2026-07-19T02:45:24.318354+00:00",
-  "total_skills": 5
+  "updated_at": "2026-07-19T02:45:24.494886+00:00",
+  "total_skills": 6
 }
