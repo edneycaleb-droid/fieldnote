@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **67 skills** · Last synced: 2026-07-19 02:43 UTC
+> **68 skills** · Last synced: 2026-07-19 02:43 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [100 hours of Hermes Agent lessons in 19 minutes](skills/100_hours_of_hermes_agent_lessons_in_19_minutes.md) | By Alex Finn. Key tools: Gemini, SSH, Claude. (Auto-extracted — pending AI enhan | `Gemini` `SSH` `Claude` | `hermes` `agent` `other` |
 | [Hermes Agent Just Got 10X Better (4 Insane NEW Features)](skills/hermes_agent_just_got_10x_better_4_insane_new_feat.md) | By Zinho Automates. Key tools: Claude. (Auto-extracted — pending AI enhancement. | `Claude` | `agent` `going` `every` |
 | [Kimi K3 IS INSANE! Best Open Model EVER That BEATS FABLE 5 & GPT-5.6! (Fully Tested)](skills/kimi_k3_is_insane_best_open_model_ever_that_beats_.md) | By WorldofAI. Key tools: Claude. (Auto-extracted — pending AI enhancement.) | `Claude` | `model` `different` `which` |
 | [Kimi K3: Testing Moonshot's 2.8T Open Model without Hype](skills/kimi_k3_testing_moonshot_s_2_8t_open_model_without.md) | By Fahd Mirza. Key tools: SQLite, Claude, Gemini, OpenAI, Anthropic. (Auto-extra | `SQLite` `Claude` `Gemini` `OpenAI` | `which` `model` `going` |
