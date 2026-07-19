@@ -1259,7 +1259,7 @@
       ]
     },
     "claude": {
-      "freq": 9,
+      "freq": 10,
       "skills": [
         "new_claude_update_is_insane",
         "new_claude_opus_5_leaks",
@@ -1275,7 +1275,7 @@
       ]
     },
     "anthropic": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "new_claude_update_is_insane",
         "new_claude_opus_5_leaks",
@@ -1317,7 +1317,7 @@
       ]
     },
     "about": {
-      "freq": 10,
+      "freq": 11,
       "skills": [
         "new_claude_update_is_insane",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
@@ -1333,7 +1333,7 @@
       ]
     },
     "model": {
-      "freq": 14,
+      "freq": 15,
       "skills": [
         "new_claude_opus_5_leaks",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
@@ -1470,7 +1470,7 @@
       ]
     },
     "models": {
-      "freq": 9,
+      "freq": 10,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "did_kimi_k3_really_beat_fable",
@@ -1668,7 +1668,7 @@
       ]
     },
     "look": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results",
         "china_just_beat_claude_ai_kimi_k3"
@@ -1748,7 +1748,7 @@
       ]
     },
     "open": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "did_kimi_k3_really_beat_fable",
         "kimi_k3_is_the_best_model_ever_made_sometimes",
@@ -1846,19 +1846,19 @@
       ]
     },
     "free": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "china_just_beat_claude_ai_kimi_k3"
       ]
     },
     "week": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "china_just_beat_claude_ai_kimi_k3"
       ]
     },
     "china": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "china_just_beat_claude_ai_kimi_k3"
       ]
@@ -1866,7 +1866,7 @@
   },
   "tools": {
     "Anthropic": {
-      "freq": 28,
+      "freq": 29,
       "skills": [
         "building_ai_agents",
         "build_production_ready_llm_applications_with_haystack",
@@ -1945,7 +1945,7 @@
       ]
     },
     "Claude": {
-      "freq": 43,
+      "freq": 44,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -2304,7 +2304,7 @@
       ]
     },
     "OpenAI": {
-      "freq": 17,
+      "freq": 18,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
         "testing_and_comparing_llms",
@@ -2367,7 +2367,7 @@
       ]
     },
     "Gemini": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
         "higsfield_integration",
@@ -2376,7 +2376,7 @@
       ]
     },
     "GPT-4": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
         "china_just_beat_claude_ai_kimi_k3"
@@ -7060,6 +7060,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-19T02:41:35.445270+00:00",
+  "updated_at": "2026-07-19T02:41:38.484537+00:00",
   "total_skills": 46
 }
