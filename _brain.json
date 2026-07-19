@@ -16,10 +16,11 @@
       ]
     },
     "going": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "hermes_agent_just_got_10x_better_4_insane_new_feat",
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
       ]
     },
     "very": {
@@ -85,16 +86,18 @@
       ]
     },
     "work": {
-      "freq": 1,
-      "skills": [
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
-      ]
-    },
-    "right": {
       "freq": 2,
       "skills": [
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
-        "did_kimi_k3_really_beat_fable"
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "right": {
+      "freq": 3,
+      "skills": [
+        "hermes_agent_just_got_10x_better_4_insane_new_feat",
+        "did_kimi_k3_really_beat_fable",
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
       ]
     },
     "basically": {
@@ -122,9 +125,10 @@
       ]
     },
     "here": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "did_kimi_k3_really_beat_fable"
+        "did_kimi_k3_really_beat_fable",
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
       ]
     },
     "source": {
@@ -203,6 +207,42 @@
       "freq": 1,
       "skills": [
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
+      ]
+    },
+    "site": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "chat": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "dave": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "website": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "good": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "need": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
       ]
     }
   },
@@ -379,6 +419,30 @@
         "search"
       ],
       "step_count": 1
+    },
+    "chatgpt_work_everything_you_need_to_know_to_get_st": {
+      "concepts": [
+        "work",
+        "here",
+        "site",
+        "right",
+        "chat",
+        "dave",
+        "website",
+        "good",
+        "going",
+        "need"
+      ],
+      "tools": [],
+      "tags": [
+        "work",
+        "here",
+        "site",
+        "right",
+        "chat",
+        "dave"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -396,6 +460,9 @@
       ],
       "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": [
         "which"
+      ],
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "going"
       ]
     },
     "hermes_agent_just_got_10x_better_4_insane_new_feat": {
@@ -412,6 +479,11 @@
       ],
       "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": [
         "every"
+      ],
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "going",
+        "right",
+        "work"
       ]
     },
     "did_kimi_k3_really_beat_fable": {
@@ -426,6 +498,10 @@
         "right",
         "model",
         "actually"
+      ],
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "here",
+        "right"
       ]
     },
     "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
@@ -435,8 +511,22 @@
       "hermes_agent_just_got_10x_better_4_insane_new_feat": [
         "every"
       ]
+    },
+    "chatgpt_work_everything_you_need_to_know_to_get_st": {
+      "kimi_k3_testing_moonshot_s_2_8t_open_model_without": [
+        "going"
+      ],
+      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
+        "going",
+        "right",
+        "work"
+      ],
+      "did_kimi_k3_really_beat_fable": [
+        "here",
+        "right"
+      ]
     }
   },
-  "updated_at": "2026-07-19T02:50:55.212163+00:00",
-  "total_skills": 4
+  "updated_at": "2026-07-19T02:50:55.305410+00:00",
+  "total_skills": 5
 }
