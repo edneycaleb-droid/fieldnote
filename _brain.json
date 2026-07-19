@@ -1057,6 +1057,24 @@
       "skills": [
         "master_ai_trading_in_70_minutes_full_claude_tradin"
       ]
+    },
+    "screenshot-to-code benchmark": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner"
+      ]
+    },
+    "controlled benchmark": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner"
+      ]
+    },
+    "performance comparison": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner"
+      ]
     }
   },
   "tools": {
@@ -1305,6 +1323,24 @@
       "freq": 1,
       "skills": [
         "master_ai_trading_in_70_minutes_full_claude_tradin"
+      ]
+    },
+    "Kimi K3": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner"
+      ]
+    },
+    "Fable 5": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner"
+      ]
+    },
+    "OpenRouter": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner"
       ]
     }
   },
@@ -2263,6 +2299,24 @@
         "analysis"
       ],
       "step_count": 3
+    },
+    "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner": {
+      "concepts": [
+        "screenshot-to-code benchmark",
+        "controlled benchmark",
+        "performance comparison"
+      ],
+      "tools": [
+        "Kimi K3",
+        "Fable 5",
+        "OpenRouter"
+      ],
+      "tags": [
+        "ai-models",
+        "benchmarking",
+        "performance-comparison"
+      ],
+      "step_count": 4
     }
   },
   "relationships": {
@@ -7237,8 +7291,9 @@
       "you_need_to_use_hermes_right_now_goodbye_openclaw": [
         "Claude"
       ]
-    }
+    },
+    "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner": {}
   },
-  "updated_at": "2026-07-19T02:51:16.136078+00:00",
-  "total_skills": 34
+  "updated_at": "2026-07-19T02:51:24.345435+00:00",
+  "total_skills": 35
 }
