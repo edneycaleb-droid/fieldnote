@@ -25,9 +25,10 @@
       ]
     },
     "here": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
+        "how_to_use_codex_to_build_insanely_beautiful_websi",
+        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner"
       ]
     },
     "before": {
@@ -58,6 +59,60 @@
       "freq": 1,
       "skills": [
         "how_to_use_codex_to_build_insanely_beautiful_websi"
+      ]
+    },
+    "model": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner"
+      ]
+    },
+    "fable": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner"
+      ]
+    },
+    "models": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner"
+      ]
+    },
+    "these": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner"
+      ]
+    },
+    "which": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner"
+      ]
+    },
+    "kimi": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner"
+      ]
+    },
+    "actually": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner"
+      ]
+    },
+    "much": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner"
+      ]
+    },
+    "better": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner"
       ]
     }
   },
@@ -123,11 +178,44 @@
         "before"
       ],
       "step_count": 1
+    },
+    "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner": {
+      "concepts": [
+        "model",
+        "fable",
+        "models",
+        "these",
+        "which",
+        "kimi",
+        "actually",
+        "much",
+        "better",
+        "here"
+      ],
+      "tools": [],
+      "tags": [
+        "model",
+        "fable",
+        "models",
+        "these",
+        "which",
+        "kimi"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
-    "how_to_use_codex_to_build_insanely_beautiful_websi": {}
+    "how_to_use_codex_to_build_insanely_beautiful_websi": {
+      "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner": [
+        "here"
+      ]
+    },
+    "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner": {
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "here"
+      ]
+    }
   },
-  "updated_at": "2026-07-19T02:45:23.552667+00:00",
-  "total_skills": 1
+  "updated_at": "2026-07-19T02:45:23.609762+00:00",
+  "total_skills": 2
 }
