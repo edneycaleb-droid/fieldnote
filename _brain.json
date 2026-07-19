@@ -72,12 +72,13 @@
       ]
     },
     "agent": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
         "hermes_agent_build_your_own_personal_ai_assistant_",
         "every_hermes_concept_explained_for_normal_people",
-        "kimi_k3_hermes_agent_changes_everything"
+        "kimi_k3_hermes_agent_changes_everything",
+        "new_hermes_paperclip_ai_agent_update_is_insane"
       ]
     },
     "every": {
@@ -96,10 +97,11 @@
       ]
     },
     "work": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
+        "chatgpt_work_everything_you_need_to_know_to_get_st",
+        "new_hermes_paperclip_ai_agent_update_is_insane"
       ]
     },
     "right": {
@@ -120,10 +122,11 @@
       ]
     },
     "agents": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
-        "hermes_agent_build_your_own_personal_ai_assistant_"
+        "hermes_agent_build_your_own_personal_ai_assistant_",
+        "new_hermes_paperclip_ai_agent_update_is_insane"
       ]
     },
     "skill": {
@@ -326,10 +329,11 @@
       ]
     },
     "hermes": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "every_hermes_concept_explained_for_normal_people",
-        "kimi_k3_hermes_agent_changes_everything"
+        "kimi_k3_hermes_agent_changes_everything",
+        "new_hermes_paperclip_ai_agent_update_is_insane"
       ]
     },
     "come": {
@@ -351,9 +355,10 @@
       ]
     },
     "inside": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_hermes_agent_changes_everything"
+        "kimi_k3_hermes_agent_changes_everything",
+        "new_hermes_paperclip_ai_agent_update_is_insane"
       ]
     },
     "system": {
@@ -379,6 +384,36 @@
       "skills": [
         "kimi_k3_hermes_agent_changes_everything"
       ]
+    },
+    "paperclip": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_paperclip_ai_agent_update_is_insane"
+      ]
+    },
+    "team": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_paperclip_ai_agent_update_is_insane"
+      ]
+    },
+    "goal": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_paperclip_ai_agent_update_is_insane"
+      ]
+    },
+    "profit": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_paperclip_ai_agent_update_is_insane"
+      ]
+    },
+    "boardroom": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_paperclip_ai_agent_update_is_insane"
+      ]
     }
   },
   "tools": {
@@ -390,19 +425,21 @@
       ]
     },
     "Claude": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
         "did_kimi_k3_really_beat_fable",
         "making_with_loop_engineering",
-        "every_hermes_concept_explained_for_normal_people"
+        "every_hermes_concept_explained_for_normal_people",
+        "new_hermes_paperclip_ai_agent_update_is_insane"
       ]
     },
     "Gemini": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
+        "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
+        "new_hermes_paperclip_ai_agent_update_is_insane"
       ]
     },
     "OpenAI": {
@@ -712,6 +749,33 @@
         "system"
       ],
       "step_count": 1
+    },
+    "new_hermes_paperclip_ai_agent_update_is_insane": {
+      "concepts": [
+        "agent",
+        "hermes",
+        "paperclip",
+        "agents",
+        "team",
+        "inside",
+        "goal",
+        "work",
+        "profit",
+        "boardroom"
+      ],
+      "tools": [
+        "Claude",
+        "Gemini"
+      ],
+      "tags": [
+        "agent",
+        "hermes",
+        "paperclip",
+        "agents",
+        "team",
+        "inside"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -753,6 +817,10 @@
       ],
       "kimi_k3_hermes_agent_changes_everything": [
         "model"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude",
+        "Gemini"
       ]
     },
     "hermes_agent_just_got_10x_better_4_insane_new_feat": {
@@ -795,6 +863,12 @@
         "right",
         "agent",
         "model"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude",
+        "agent",
+        "work",
+        "agents"
       ]
     },
     "did_kimi_k3_really_beat_fable": {
@@ -835,6 +909,9 @@
         "here",
         "right",
         "model"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude"
       ]
     },
     "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
@@ -874,6 +951,9 @@
       "kimi_k3_hermes_agent_changes_everything": [
         "here",
         "right"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "work"
       ]
     },
     "hermes_agent_build_your_own_personal_ai_assistant_": {
@@ -907,6 +987,10 @@
       "kimi_k3_hermes_agent_changes_everything": [
         "here",
         "agent"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "agent",
+        "agents"
       ]
     },
     "making_with_loop_engineering": {
@@ -940,6 +1024,9 @@
         "Claude",
         "basically",
         "OpenAI"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude"
       ]
     },
     "every_hermes_concept_explained_for_normal_people": {
@@ -983,6 +1070,11 @@
         "hermes",
         "agent",
         "here"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude",
+        "hermes",
+        "agent"
       ]
     },
     "kimi_k3_hermes_agent_changes_everything": {
@@ -1011,9 +1103,49 @@
         "hermes",
         "agent",
         "here"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "hermes",
+        "inside",
+        "agent"
+      ]
+    },
+    "new_hermes_paperclip_ai_agent_update_is_insane": {
+      "kimi_k3_testing_moonshot_s_2_8t_open_model_without": [
+        "Claude",
+        "Gemini"
+      ],
+      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
+        "Claude",
+        "agent",
+        "work",
+        "agents"
+      ],
+      "did_kimi_k3_really_beat_fable": [
+        "Claude"
+      ],
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "work"
+      ],
+      "hermes_agent_build_your_own_personal_ai_assistant_": [
+        "agent",
+        "agents"
+      ],
+      "making_with_loop_engineering": [
+        "Claude"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "Claude",
+        "hermes",
+        "agent"
+      ],
+      "kimi_k3_hermes_agent_changes_everything": [
+        "hermes",
+        "inside",
+        "agent"
       ]
     }
   },
-  "updated_at": "2026-07-19T02:50:55.714397+00:00",
-  "total_skills": 9
+  "updated_at": "2026-07-19T02:50:55.749819+00:00",
+  "total_skills": 10
 }
