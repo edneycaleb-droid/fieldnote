@@ -1180,7 +1180,7 @@
       ]
     },
     "here": {
-      "freq": 31,
+      "freq": 32,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_opus_5_leaks",
@@ -1258,7 +1258,7 @@
       ]
     },
     "well": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "kimi_k3_vs_claude_fable_5_raw_results",
@@ -1267,7 +1267,7 @@
       ]
     },
     "right": {
-      "freq": 16,
+      "freq": 17,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
@@ -1411,7 +1411,7 @@
       ]
     },
     "loop": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "making_with_loop_engineering",
         "run_kimi_k3_inside_claude_code_max_power"
@@ -1437,7 +1437,7 @@
       ]
     },
     "going": {
-      "freq": 22,
+      "freq": 23,
       "skills": [
         "making_with_loop_engineering",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
@@ -1461,7 +1461,7 @@
       ]
     },
     "really": {
-      "freq": 10,
+      "freq": 11,
       "skills": [
         "making_with_loop_engineering",
         "how_to_use_codex_to_build_insanely_beautiful_websi",
@@ -1748,7 +1748,7 @@
       ]
     },
     "want": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "master_ai_trading_in_70_minutes_full_claude_tradin",
         "how_to_run_kimi_k3_for_free",
@@ -1815,7 +1815,7 @@
       ]
     },
     "kimmy": {
-      "freq": 17,
+      "freq": 18,
       "skills": [
         "did_kimi_k3_really_beat_fable",
         "the_15_most_insane_things_created_by_kimi_k3_kimi_",
@@ -1855,7 +1855,7 @@
       ]
     },
     "code": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "kimi_k3_is_the_best_model_ever_made_sometimes",
         "run_kimi_k3_inside_claude_code_max_power"
@@ -2028,7 +2028,7 @@
       ]
     },
     "cloud": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "run_kimi_k3_inside_claude_code_max_power"
       ]
@@ -2116,7 +2116,7 @@
       ]
     },
     "Claude": {
-      "freq": 53,
+      "freq": 54,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -3211,7 +3211,7 @@
       ]
     },
     "anthropic": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
         "run_kimi_k3_inside_claude_code_max_power"
@@ -9194,6 +9194,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-19T02:42:14.258164+00:00",
+  "updated_at": "2026-07-19T02:42:14.936906+00:00",
   "total_skills": 54
 }
