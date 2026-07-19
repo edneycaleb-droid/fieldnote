@@ -9,10 +9,10 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [New Claude Update Is INSANE!](skills/new_claude_update_is_insane.md) | By Julian Goldie SEO. Key tools: Claude, Anthropic. (Auto-extracted — pending AI | `Claude` `Anthropic` | `claude` `something` `anthropic` |
 | [New Claude Opus 5 LEAKS!](skills/new_claude_opus_5_leaks.md) | By Julian Goldie SEO. Key tools: Claude, Anthropic. (Auto-extracted — pending AI | `Claude` `Anthropic` | `opus` `model` `profit` |
 | [Kimi K3 + Hermes AI Agent is INSANE!](skills/kimi_k3_hermes_ai_agent_is_insane.md) | By Julian Goldie SEO. Key tools: Claude, Babel. (Auto-extracted — pending AI enh | `Claude` `Babel` | `hermes` `here` `actually` |
 | [Making $$$ with Loop Engineering](skills/making_with_loop_engineering.md) | By Greg Isenberg. Key tools: Claude, OpenAI. (Auto-extracted — pending AI enhanc | `Claude` `OpenAI` | `know` `loop` `sort` |
-| [New Claude Update Is INSANE!](skills/new_claude_update_is_insane.md) | By Julian Goldie SEO. Key tools: Claude, Anthropic. (Auto-extracted — pending AI | `Claude` `Anthropic` | `claude` `something` `anthropic` |
 | [Local AI Coding: Speed, Quality, and Control](skills/building_ai_agents.md) | This skill teaches the practical aspects of local AI coding, including the impor | `Mind Sub Co-worker` `LM Studio` `Ollama` `Hermes Agent` | `ai` `ai_agents` `coding` |
 | [Deploying Bonzai 27B with Prism ML Compression: Efficient Local AI Processing](skills/prism_ml_bonzai_deployment.md) | This skill teaches how to deploy the Bonzai 27B model, a 27 billion parameter mo | `Llama.cpp` `Prism ML` `Hugging Face` `jCodeMunch MCP` | `ai` `compression` `local-ai` |
 | [Testing and Comparing Large Language Models with PromptTools](skills/testing_and_comparing_llms.md) | This skill teaches how to test, experiment, and compare Large Language Models (L | `PromptTools` `OpenAI` `Anthropic` `LLaMA` | `llms` `prompttools` `testing` |
