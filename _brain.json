@@ -1091,15 +1091,46 @@
       ]
     },
     "Compression": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "testing_and_comparing_llms"
+        "testing_and_comparing_llms",
+        "prism_ml_bonzai_deployment"
       ]
     },
     "Intelligence Preservation": {
       "freq": 1,
       "skills": [
         "testing_and_comparing_llms"
+      ]
+    },
+    "Compression technique": {
+      "freq": 1,
+      "skills": [
+        "prism_ml_bonzai_deployment"
+      ]
+    },
+    "Local AI Processing": {
+      "freq": 1,
+      "skills": [
+        "prism_ml_bonzai_deployment"
+      ]
+    },
+    "Local hardware": {
+      "freq": 1,
+      "skills": [
+        "prism_ml_bonzai_deployment"
+      ]
+    },
+    "Model compression": {
+      "freq": 1,
+      "skills": [
+        "prism_ml_bonzai_deployment"
+      ]
+    },
+    "Ternary Weight Format": {
+      "freq": 1,
+      "skills": [
+        "prism_ml_bonzai_deployment"
       ]
     }
   },
@@ -1534,11 +1565,12 @@
       ]
     },
     "Hugging Face": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
         "running_large_models_locally",
-        "testing_and_comparing_llms"
+        "testing_and_comparing_llms",
+        "prism_ml_bonzai_deployment"
       ]
     },
     "Azure OpenAI": {
@@ -2108,15 +2140,29 @@
       ]
     },
     "Llama.cpp": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "testing_and_comparing_llms"
+        "testing_and_comparing_llms",
+        "prism_ml_bonzai_deployment"
       ]
     },
     "Prism ML": {
+      "freq": 2,
+      "skills": [
+        "testing_and_comparing_llms",
+        "prism_ml_bonzai_deployment"
+      ]
+    },
+    "jCodeMunch MCP": {
       "freq": 1,
       "skills": [
-        "testing_and_comparing_llms"
+        "prism_ml_bonzai_deployment"
+      ]
+    },
+    "mcp-omnisearch": {
+      "freq": 1,
+      "skills": [
+        "prism_ml_bonzai_deployment"
       ]
     }
   },
@@ -2830,6 +2876,31 @@
         "compression"
       ],
       "step_count": 11
+    },
+    "prism_ml_bonzai_deployment": {
+      "concepts": [
+        "Compression",
+        "Compression technique",
+        "Local AI Processing",
+        "Local hardware",
+        "Model compression",
+        "Ternary Weight Format"
+      ],
+      "tools": [
+        "Llama.cpp",
+        "Prism ML",
+        "Hugging Face",
+        "jCodeMunch MCP",
+        "mcp-omnisearch"
+      ],
+      "tags": [
+        "ai",
+        "compression",
+        "local-ai",
+        "local_ai",
+        "self-improvement"
+      ],
+      "step_count": 7
     }
   },
   "relationships": {
@@ -2886,6 +2957,9 @@
         "Hugging Face"
       ],
       "testing_and_comparing_llms": [
+        "Hugging Face"
+      ],
+      "prism_ml_bonzai_deployment": [
         "Hugging Face"
       ]
     },
@@ -3034,6 +3108,9 @@
       "testing_and_comparing_llms": [
         "OpenAI",
         "Anthropic",
+        "Hugging Face"
+      ],
+      "prism_ml_bonzai_deployment": [
         "Hugging Face"
       ]
     },
@@ -3457,9 +3534,29 @@
       ],
       "running_large_models_locally": [
         "Hugging Face"
+      ],
+      "prism_ml_bonzai_deployment": [
+        "Compression",
+        "Prism ML",
+        "Llama.cpp",
+        "Hugging Face"
+      ]
+    },
+    "prism_ml_bonzai_deployment": {
+      "running_large_models_locally": [
+        "Hugging Face"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "Hugging Face"
+      ],
+      "testing_and_comparing_llms": [
+        "Compression",
+        "Prism ML",
+        "Llama.cpp",
+        "Hugging Face"
       ]
     }
   },
-  "updated_at": "2026-07-19T02:39:56.506526+00:00",
-  "total_skills": 26
+  "updated_at": "2026-07-19T02:39:59.635649+00:00",
+  "total_skills": 27
 }
