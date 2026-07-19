@@ -9,8 +9,8 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [Kimi K3 Just Knocked Claude to Third Place — Chinese AI Is Here Now](skills/kimi_k3_just_knocked_claude_to_third_place_chinese.md) | By Kyle Balmer \| AI with Kyle. Key tools: Claude, Anthropic. (Auto-extracted — p | `Claude` `Anthropic` | `very` `about` `models` |
-| [Kimi K3 IS INSANE! Best Open Model EVER That BEATS FABLE 5 & GPT-5.6! (Fully Tested)](skills/kimi_k3_is_insane_best_open_model_ever_that_beats_.md) | By WorldofAI. Key tools: Claude. (Auto-extracted — pending AI enhancement.) | `Claude` | `model` `different` `which` |
+| [GPT-5.6 on Hermes Agent Is Actually Insane (Full Hermes Setup with $0 Codex)](skills/gpt_5_6_on_hermes_agent_is_actually_insane_full_he.md) | By Moe Lueker. Key tools: OpenAI, Claude, Docker. (Auto-extracted — pending AI e | `OpenAI` `Claude` `Docker` | `here` `agent` `hermes` |
+| [6 Insane Hermes Agent Use Cases That You Need Right Now](skills/6_insane_hermes_agent_use_cases_that_you_need_righ.md) | By AI LABS. Key tools: Claude, LLM, AWS, Gemini. (Auto-extracted — pending AI en | `Claude` `LLM` `AWS` `Gemini` | `agent` `hermes` `video` |
 
 ---
 
