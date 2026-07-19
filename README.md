@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **25 skills** · Last synced: 2026-07-17 15:17 UTC
+> **27 skills** · Last synced: 2026-07-19 02:39 UTC
 
 ---
 
@@ -9,7 +9,8 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [Experimenting with Large Language Models and Vector Databases using PromptTools](skills/experimenting_with_longs.md) | This skill teaches how to use the `prompttools` library to experiment with Large | `prompttools` `Jupyter notebook` `Google Colab` `Streamlit` | `llms` `vector_databases` `prompt_engineering` |
+| [Testing and Comparing Large Language Models with PromptTools](skills/testing_and_comparing_llms.md) | This skill teaches how to test, experiment, and compare Large Language Models (L | `PromptTools` `OpenAI` `Anthropic` `LLaMA` | `llms` `prompttools` `testing` |
+| [Building AI Agents with Loop: A Comprehensive Guide to Autonomously Improving AI Self-Improvement](skills/building_ai_agents_with_loop.md) | This skill teaches how to build AI agents with loop, a feature that enables auto | `Hermes Agent` `Claude` `Open Claw` `Contabo` | `ai` `self-improvement` `loop-engineering` |
 | [Transforming Chrome into an Intelligent Assistant](skills/chrome_mcp_server.md) | This skill teaches how to turn Chrome into an intelligent assistant by leveragin | `Chrome MCP Server` `Model Context Protocol (MCP)` `Streamable HTTP connection method` `pnpm` | `browser` `ai` `automation` |
 | [Microsoft MCP Curriculum for Beginners and Advanced Developers](skills/microsoft_mcp_curriculum.md) | This skill teaches the Microsoft Model Context Protocol (MCP) fundamentals with  | `GitHub` `VS Code` `Azure` `Git` | `ai` `microsoft` `protocol` |
 | [Building, Managing, and Running Autonomous AI Agents with SuperAGI](skills/superagi_building_autonomous_agents.md) | This skill teaches how to use SuperAGI, an open-source framework for building, m | `SuperAGI` `SuperAGI Cloud` `Local LLMs` `Digital Ocean` | `autonomous_ai` `agi` `ai_framework` |
@@ -34,6 +35,7 @@
 | [Deploying AstrBot: A Comprehensive Guide to Open-Source All-in-One Agent Chatbot Platform](skills/astrbot_deployment.md) | AstrBot is an open-source, all-in-one agent chatbot platform that integrates wit | `uv tool` `Docker` `Docker Compose` `AstrBot App` | `ai` `chatbots` `conversational-ai` |
 | [Building Resilient AI Agents with LangGraph](skills/building_resilient_ai_agents_with_langgraph.md) | This skill teaches how to build, manage, and deploy long-running, stateful AI ag | `LangGraph` `LangSmith` `Deep Agents` `LangChain` | `ai` `automation` `langchain` |
 | [Building AI Agents with LangChain](skills/building_ai_agents_with_langchain.md) | This skill teaches how to build applications powered by Large Language Models (L | `LangChain` `LangChain-Groq` `LangChain-OpenAI` `LangGraph` | `ai` `automation` `productivity` |
+| [experimenting_with_longs](skills/experimenting_with_longs.md) |  |  |  |
 
 ---
 
