@@ -1292,7 +1292,7 @@
       ]
     },
     "which": {
-      "freq": 24,
+      "freq": 25,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq",
@@ -1319,7 +1319,7 @@
       ]
     },
     "well": {
-      "freq": 16,
+      "freq": 17,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "kimi_k3_vs_claude_fable_5_raw_results",
@@ -1449,7 +1449,7 @@
       ]
     },
     "model": {
-      "freq": 47,
+      "freq": 48,
       "skills": [
         "new_claude_opus_5_leaks",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
@@ -1640,7 +1640,7 @@
       ]
     },
     "models": {
-      "freq": 26,
+      "freq": 27,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "did_kimi_k3_really_beat_fable",
@@ -1774,7 +1774,7 @@
       ]
     },
     "good": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "chatgpt_work_everything_you_need_to_know_to_get_st",
         "kimi_k3_is_just_ridiculous",
@@ -2554,31 +2554,31 @@
       ]
     },
     "coding": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "ornith_35b_9b_hermes_zed_the_fully_private_local_a"
       ]
     },
     "local": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "ornith_35b_9b_hermes_zed_the_fully_private_local_a"
       ]
     },
     "tool": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "ornith_35b_9b_hermes_zed_the_fully_private_local_a"
       ]
     },
     "around": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "ornith_35b_9b_hermes_zed_the_fully_private_local_a"
       ]
     },
     "ornith": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "ornith_35b_9b_hermes_zed_the_fully_private_local_a"
       ]
@@ -2676,7 +2676,7 @@
       ]
     },
     "Claude": {
-      "freq": 95,
+      "freq": 96,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -3748,7 +3748,7 @@
       ]
     },
     "Ollama": {
-      "freq": 11,
+      "freq": 12,
       "skills": [
         "building_ai_agents",
         "local_ai_coding",
@@ -3766,7 +3766,7 @@
       ]
     },
     "LLM": {
-      "freq": 18,
+      "freq": 19,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "master_ai_trading_in_70_minutes_full_claude_tradin",
@@ -21559,6 +21559,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-19T02:44:20.726677+00:00",
+  "updated_at": "2026-07-19T02:44:20.819823+00:00",
   "total_skills": 82
 }
