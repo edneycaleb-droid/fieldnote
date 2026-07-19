@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **2 skills** · Last synced: 2026-07-19 02:52 UTC
+> **3 skills** · Last synced: 2026-07-19 02:52 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Kimi K3 vs Fable 5: A Comparative Analysis](skills/kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner.md) | This skill teaches how to compare the performance of Kimi K3 and Fable 5 in a co | `Kimi K3` `Fable 5` `OpenRouter` | `ai-models` `benchmarking` `performance-comparison` |
 | [AI Trading for Beginners: A Step-by-Step Guide](skills/master_ai_trading_in_70_minutes_full_claude_tradin.md) | This skill teaches the fundamentals of AI trading, including how to connect AI m | `Claude` `Trading View` | `ai` `trading` `analysis` |
 | [you need to use Hermes RIGHT NOW!! (goodbye OpenClaw!!)](skills/you_need_to_use_hermes_right_now_goodbye_openclaw.md) | By NetworkChuck. Key tools: Python, Docker, LLM, OpenAI, anthropic. (Auto-extrac | `Python` `Docker` `LLM` `OpenAI` | `hermes` `gonna` `here` |
 
