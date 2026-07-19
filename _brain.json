@@ -1208,16 +1208,18 @@
       ]
     },
     "agent": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
-        "kimi_k3_hermes_ai_agent_is_insane"
+        "kimi_k3_hermes_ai_agent_is_insane",
+        "this_kimi_k3_agent_os_is_wild"
       ]
     },
     "inside": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
-        "new_claude_opus_5_leaks"
+        "new_claude_opus_5_leaks",
+        "this_kimi_k3_agent_os_is_wild"
       ]
     },
     "example": {
@@ -1292,10 +1294,11 @@
       ]
     },
     "real": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "new_claude_update_is_insane",
-        "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
+        "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
+        "this_kimi_k3_agent_os_is_wild"
       ]
     },
     "every": {
@@ -1306,10 +1309,11 @@
       ]
     },
     "already": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "new_claude_update_is_insane",
-        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
+        "this_kimi_k3_agent_os_is_wild"
       ]
     },
     "built": {
@@ -1335,7 +1339,7 @@
       ]
     },
     "model": {
-      "freq": 17,
+      "freq": 18,
       "skills": [
         "new_claude_opus_5_leaks",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
@@ -1344,7 +1348,8 @@
         "i_tested_kimi_k3_so_you_don_t_have_to",
         "people_are_creating_insane_things_with_kimi_k3",
         "china_just_beat_claude_ai_kimi_k3",
-        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
+        "this_kimi_k3_agent_os_is_wild"
       ]
     },
     "profit": {
@@ -1474,14 +1479,15 @@
       ]
     },
     "models": {
-      "freq": 12,
+      "freq": 13,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "did_kimi_k3_really_beat_fable",
         "kimi_k3_is_the_best_model_ever_made_sometimes",
         "i_tested_kimi_k3_so_you_don_t_have_to",
         "china_just_beat_claude_ai_kimi_k3",
-        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
+        "this_kimi_k3_agent_os_is_wild"
       ]
     },
     "luna": {
@@ -1646,10 +1652,11 @@
       ]
     },
     "because": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq",
-        "kimi_k3_is_the_best_model_ever_made_sometimes"
+        "kimi_k3_is_the_best_model_ever_made_sometimes",
+        "this_kimi_k3_agent_os_is_wild"
       ]
     },
     "same": {
@@ -1668,9 +1675,10 @@
       ]
     },
     "kimi": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
-        "kimi_k3_vs_claude_fable_5_raw_results"
+        "kimi_k3_vs_claude_fable_5_raw_results",
+        "this_kimi_k3_agent_os_is_wild"
       ]
     },
     "look": {
@@ -1892,6 +1900,18 @@
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
       ]
+    },
+    "building": {
+      "freq": 1,
+      "skills": [
+        "this_kimi_k3_agent_os_is_wild"
+      ]
+    },
+    "tasks": {
+      "freq": 1,
+      "skills": [
+        "this_kimi_k3_agent_os_is_wild"
+      ]
     }
   },
   "tools": {
@@ -1975,7 +1995,7 @@
       ]
     },
     "Claude": {
-      "freq": 46,
+      "freq": 47,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -1997,7 +2017,8 @@
         "kimi_k3_is_just_ridiculous",
         "people_are_creating_insane_things_with_kimi_k3",
         "china_just_beat_claude_ai_kimi_k3",
-        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
+        "this_kimi_k3_agent_os_is_wild"
       ]
     },
     "Google Drive": {
@@ -2399,13 +2420,14 @@
       ]
     },
     "Gemini": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
         "higsfield_integration",
         "kimi_k3_is_the_best_model_ever_made_sometimes",
         "china_just_beat_claude_ai_kimi_k3",
-        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
+        "this_kimi_k3_agent_os_is_wild"
       ]
     },
     "GPT-4": {
@@ -4370,6 +4392,33 @@
         "already"
       ],
       "step_count": 1
+    },
+    "this_kimi_k3_agent_os_is_wild": {
+      "concepts": [
+        "model",
+        "agent",
+        "kimi",
+        "models",
+        "because",
+        "real",
+        "already",
+        "inside",
+        "building",
+        "tasks"
+      ],
+      "tools": [
+        "Claude",
+        "Gemini"
+      ],
+      "tags": [
+        "model",
+        "agent",
+        "kimi",
+        "models",
+        "because",
+        "real"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -4475,6 +4524,9 @@
         "Claude"
       ],
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
+      ],
+      "this_kimi_k3_agent_os_is_wild": [
         "Claude"
       ]
     },
@@ -4708,6 +4760,9 @@
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
         "Gemini",
         "OpenAI"
+      ],
+      "this_kimi_k3_agent_os_is_wild": [
+        "Gemini"
       ]
     },
     "swanlab_ai_training_analysis_platform": {
@@ -4788,6 +4843,9 @@
         "Claude"
       ],
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
+      ],
+      "this_kimi_k3_agent_os_is_wild": [
         "Claude"
       ]
     },
@@ -4914,6 +4972,10 @@
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
         "Claude",
         "Gemini"
+      ],
+      "this_kimi_k3_agent_os_is_wild": [
+        "Claude",
+        "Gemini"
       ]
     },
     "pydantic_ai_framework": {
@@ -5021,6 +5083,9 @@
         "Claude"
       ],
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
+      ],
+      "this_kimi_k3_agent_os_is_wild": [
         "Claude"
       ]
     },
@@ -5333,6 +5398,9 @@
       ],
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
         "Claude"
+      ],
+      "this_kimi_k3_agent_os_is_wild": [
+        "Claude"
       ]
     },
     "testing_and_comparing_llms": {
@@ -5511,6 +5579,11 @@
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
         "which",
         "Claude"
+      ],
+      "this_kimi_k3_agent_os_is_wild": [
+        "Claude",
+        "inside",
+        "agent"
       ]
     },
     "new_claude_update_is_insane": {
@@ -5615,6 +5688,11 @@
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
         "Claude",
         "anthropic",
+        "already"
+      ],
+      "this_kimi_k3_agent_os_is_wild": [
+        "Claude",
+        "real",
         "already"
       ]
     },
@@ -5722,6 +5800,11 @@
         "Claude",
         "anthropic",
         "model"
+      ],
+      "this_kimi_k3_agent_os_is_wild": [
+        "Claude",
+        "inside",
+        "model"
       ]
     },
     "making_with_loop_engineering": {
@@ -5822,6 +5905,9 @@
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
         "Claude",
         "OpenAI"
+      ],
+      "this_kimi_k3_agent_os_is_wild": [
+        "Claude"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -5934,6 +6020,12 @@
         "model",
         "models",
         "even"
+      ],
+      "this_kimi_k3_agent_os_is_wild": [
+        "models",
+        "Claude",
+        "real",
+        "model"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -6015,6 +6107,9 @@
         "Anthropic"
       ],
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
+      ],
+      "this_kimi_k3_agent_os_is_wild": [
         "Claude"
       ]
     },
@@ -6117,6 +6212,9 @@
       ],
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
         "which"
+      ],
+      "this_kimi_k3_agent_os_is_wild": [
+        "because"
       ]
     },
     "kimi_k3_vs_claude_fable_5_raw_results": {
@@ -6228,6 +6326,10 @@
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
         "fable",
         "Claude"
+      ],
+      "this_kimi_k3_agent_os_is_wild": [
+        "Claude",
+        "kimi"
       ]
     },
     "master_ai_trading_in_70_minutes_full_claude_tradin": {
@@ -6328,6 +6430,9 @@
         "Claude"
       ],
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
+      ],
+      "this_kimi_k3_agent_os_is_wild": [
         "Claude"
       ]
     },
@@ -6438,6 +6543,9 @@
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
         "Claude",
         "OpenAI"
+      ],
+      "this_kimi_k3_agent_os_is_wild": [
+        "Claude"
       ]
     },
     "did_kimi_k3_really_beat_fable": {
@@ -6570,6 +6678,11 @@
         "models",
         "OpenAI",
         "model"
+      ],
+      "this_kimi_k3_agent_os_is_wild": [
+        "models",
+        "Claude",
+        "model"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -6669,6 +6782,9 @@
         "Claude"
       ],
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
+      ],
+      "this_kimi_k3_agent_os_is_wild": [
         "Claude"
       ]
     },
@@ -6815,6 +6931,13 @@
         "model",
         "which",
         "models"
+      ],
+      "this_kimi_k3_agent_os_is_wild": [
+        "Gemini",
+        "Claude",
+        "model",
+        "models",
+        "because"
       ]
     },
     "i_tested_kimi_k3_so_you_don_t_have_to": {
@@ -6923,6 +7046,10 @@
         "models",
         "OpenAI",
         "model"
+      ],
+      "this_kimi_k3_agent_os_is_wild": [
+        "models",
+        "model"
       ]
     },
     "kimi_k3_is_just_ridiculous": {
@@ -7018,6 +7145,9 @@
       ],
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
         "Claude"
+      ],
+      "this_kimi_k3_agent_os_is_wild": [
+        "Claude"
       ]
     },
     "people_are_creating_insane_things_with_kimi_k3": {
@@ -7112,6 +7242,10 @@
       ],
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
         "fable",
+        "Claude",
+        "model"
+      ],
+      "this_kimi_k3_agent_os_is_wild": [
         "Claude",
         "model"
       ]
@@ -7229,6 +7363,12 @@
         "OpenAI",
         "model",
         "models"
+      ],
+      "this_kimi_k3_agent_os_is_wild": [
+        "models",
+        "Claude",
+        "Gemini",
+        "model"
       ]
     },
     "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": {
@@ -7335,9 +7475,116 @@
         "OpenAI",
         "model",
         "models"
+      ],
+      "this_kimi_k3_agent_os_is_wild": [
+        "Gemini",
+        "Claude",
+        "model",
+        "models",
+        "already"
+      ]
+    },
+    "this_kimi_k3_agent_os_is_wild": {
+      "building_ai_agents": [
+        "Claude"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "Gemini"
+      ],
+      "mastering_loop_engineering": [
+        "Claude"
+      ],
+      "higsfield_integration": [
+        "Claude",
+        "Gemini"
+      ],
+      "hermes_agent_setup": [
+        "Claude"
+      ],
+      "building_ai_agents_with_loop": [
+        "Claude"
+      ],
+      "kimi_k3_hermes_ai_agent_is_insane": [
+        "Claude",
+        "inside",
+        "agent"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude",
+        "real",
+        "already"
+      ],
+      "new_claude_opus_5_leaks": [
+        "Claude",
+        "inside",
+        "model"
+      ],
+      "making_with_loop_engineering": [
+        "Claude"
+      ],
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "models",
+        "Claude",
+        "real",
+        "model"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Claude"
+      ],
+      "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": [
+        "because"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Claude",
+        "kimi"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude"
+      ],
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "Claude"
+      ],
+      "did_kimi_k3_really_beat_fable": [
+        "models",
+        "Claude",
+        "model"
+      ],
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "Claude"
+      ],
+      "kimi_k3_is_the_best_model_ever_made_sometimes": [
+        "Gemini",
+        "Claude",
+        "model",
+        "models",
+        "because"
+      ],
+      "i_tested_kimi_k3_so_you_don_t_have_to": [
+        "models",
+        "model"
+      ],
+      "kimi_k3_is_just_ridiculous": [
+        "Claude"
+      ],
+      "people_are_creating_insane_things_with_kimi_k3": [
+        "Claude",
+        "model"
+      ],
+      "china_just_beat_claude_ai_kimi_k3": [
+        "models",
+        "Claude",
+        "Gemini",
+        "model"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Gemini",
+        "Claude",
+        "model",
+        "models",
+        "already"
       ]
     }
   },
-  "updated_at": "2026-07-19T02:41:39.256895+00:00",
-  "total_skills": 47
+  "updated_at": "2026-07-19T02:41:42.900107+00:00",
+  "total_skills": 48
 }
