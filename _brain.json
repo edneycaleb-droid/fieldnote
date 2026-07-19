@@ -1039,6 +1039,24 @@
       "skills": [
         "you_need_to_use_hermes_right_now_goodbye_openclaw"
       ]
+    },
+    "AI trading": {
+      "freq": 1,
+      "skills": [
+        "master_ai_trading_in_70_minutes_full_claude_tradin"
+      ]
+    },
+    "AI analysis": {
+      "freq": 1,
+      "skills": [
+        "master_ai_trading_in_70_minutes_full_claude_tradin"
+      ]
+    },
+    "risk management": {
+      "freq": 1,
+      "skills": [
+        "master_ai_trading_in_70_minutes_full_claude_tradin"
+      ]
     }
   },
   "tools": {
@@ -1051,7 +1069,7 @@
       ]
     },
     "Claude": {
-      "freq": 25,
+      "freq": 26,
       "skills": [
         "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
@@ -1077,7 +1095,8 @@
         "china_just_beat_claude_ai_kimi_k3",
         "yes_the_kimi_k3_hype_is_real",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
-        "you_need_to_use_hermes_right_now_goodbye_openclaw"
+        "you_need_to_use_hermes_right_now_goodbye_openclaw",
+        "master_ai_trading_in_70_minutes_full_claude_tradin"
       ]
     },
     "Gemini": {
@@ -1280,6 +1299,12 @@
       "freq": 1,
       "skills": [
         "china_just_beat_claude_ai_kimi_k3"
+      ]
+    },
+    "Trading View": {
+      "freq": 1,
+      "skills": [
+        "master_ai_trading_in_70_minutes_full_claude_tradin"
       ]
     }
   },
@@ -2221,6 +2246,23 @@
         "agent"
       ],
       "step_count": 1
+    },
+    "master_ai_trading_in_70_minutes_full_claude_tradin": {
+      "concepts": [
+        "AI trading",
+        "AI analysis",
+        "risk management"
+      ],
+      "tools": [
+        "Claude",
+        "Trading View"
+      ],
+      "tags": [
+        "ai",
+        "trading",
+        "analysis"
+      ],
+      "step_count": 3
     }
   },
   "relationships": {
@@ -2395,6 +2437,9 @@
         "Claude",
         "OpenAI",
         "know"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude"
       ]
     },
     "hermes_agent_just_got_10x_better_4_insane_new_feat": {
@@ -2554,6 +2599,9 @@
         "right",
         "agent",
         "actually"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude"
       ]
     },
     "did_kimi_k3_really_beat_fable": {
@@ -2743,6 +2791,9 @@
         "Claude",
         "here",
         "OpenAI"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude"
       ]
     },
     "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
@@ -3147,6 +3198,9 @@
         "actually",
         "OpenAI",
         "know"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude"
       ]
     },
     "every_hermes_concept_explained_for_normal_people": {
@@ -3333,6 +3387,9 @@
         "here",
         "OpenAI",
         "agent"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude"
       ]
     },
     "kimi_k3_hermes_agent_changes_everything": {
@@ -3579,6 +3636,9 @@
         "Claude",
         "hermes",
         "agent"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude"
       ]
     },
     "kimi_k3_is_insane_best_open_model_ever_that_beats_": {
@@ -3706,6 +3766,9 @@
       "you_need_to_use_hermes_right_now_goodbye_openclaw": [
         "Claude",
         "actually"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude"
       ]
     },
     "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": {
@@ -4017,6 +4080,9 @@
         "Docker",
         "here",
         "OpenAI"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude"
       ]
     },
     "hermes_agent_ollama_how_to_install_hermes_locally_": {
@@ -4284,6 +4350,9 @@
         "hermes",
         "OpenAI",
         "agent"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude"
       ]
     },
     "gpt_5_6_on_hermes_agent_is_actually_insane_full_he": {
@@ -4450,6 +4519,9 @@
         "here",
         "Docker",
         "OpenAI"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude"
       ]
     },
     "ornith_35b_9b_hermes_zed_the_fully_private_local_a": {
@@ -4578,6 +4650,9 @@
       "you_need_to_use_hermes_right_now_goodbye_openclaw": [
         "Claude",
         "LLM"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude"
       ]
     },
     "hermes_agent_zero_to_personal_ai_assistant_1_hour_": {
@@ -4778,6 +4853,9 @@
         "hermes",
         "know",
         "Claude"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude"
       ]
     },
     "new_claude_opus_5_leaks": {
@@ -4923,6 +5001,9 @@
         "Claude",
         "anthropic",
         "here"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude"
       ]
     },
     "hermes_agent_full_course_setup_guide_for_complete_": {
@@ -5245,6 +5326,9 @@
         "Claude",
         "here",
         "right"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude"
       ]
     },
     "new_claude_update_is_insane": {
@@ -5379,6 +5463,9 @@
         "Claude",
         "anthropic",
         "actually"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude"
       ]
     },
     "kimi_k3_just_knocked_claude_to_third_place_chinese": {
@@ -5534,6 +5621,9 @@
       ],
       "you_need_to_use_hermes_right_now_goodbye_openclaw": [
         "about",
+        "Claude"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
         "Claude"
       ]
     },
@@ -5729,6 +5819,9 @@
         "Docker",
         "here",
         "OpenAI"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -5830,6 +5923,9 @@
         "music"
       ],
       "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "Claude"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
         "Claude"
       ]
     },
@@ -5962,6 +6058,9 @@
         "here",
         "know",
         "actually"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude"
       ]
     },
     "2_8_trillion_parameters_kimi_k3_is_here": {
@@ -6104,6 +6203,9 @@
         "about",
         "Claude",
         "OpenAI"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude"
       ]
     },
     "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
@@ -6367,6 +6469,9 @@
         "hermes",
         "Python",
         "agent"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude"
       ]
     },
     "china_just_beat_claude_ai_kimi_k3": {
@@ -6526,6 +6631,9 @@
         "Claude",
         "anthropic",
         "OpenAI"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude"
       ]
     },
     "yes_the_kimi_k3_hype_is_real": {
@@ -6701,6 +6809,9 @@
         "Claude",
         "here",
         "OpenAI"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -6856,6 +6967,9 @@
         "about",
         "LLM",
         "OpenAI",
+        "Claude"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
         "Claude"
       ]
     },
@@ -7042,9 +7156,89 @@
         "LLM",
         "OpenAI",
         "Claude"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude"
+      ]
+    },
+    "master_ai_trading_in_70_minutes_full_claude_tradin": {
+      "kimi_k3_testing_moonshot_s_2_8t_open_model_without": [
+        "Claude"
+      ],
+      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
+        "Claude"
+      ],
+      "did_kimi_k3_really_beat_fable": [
+        "Claude"
+      ],
+      "making_with_loop_engineering": [
+        "Claude"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "Claude"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude"
+      ],
+      "kimi_k3_is_insane_best_open_model_ever_that_beats_": [
+        "Claude"
+      ],
+      "full_hermes_agent_tutorial_desktop_a_useful_agenti": [
+        "Claude"
+      ],
+      "use_this_to_make_the_hermes_agent_basically_free": [
+        "Claude"
+      ],
+      "gpt_5_6_on_hermes_agent_is_actually_insane_full_he": [
+        "Claude"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "Claude"
+      ],
+      "hermes_agent_zero_to_personal_ai_assistant_1_hour_": [
+        "Claude"
+      ],
+      "new_claude_opus_5_leaks": [
+        "Claude"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Claude"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude"
+      ],
+      "kimi_k3_just_knocked_claude_to_third_place_chinese": [
+        "Claude"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "Claude"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Claude"
+      ],
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "Claude"
+      ],
+      "2_8_trillion_parameters_kimi_k3_is_here": [
+        "Claude"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude"
+      ],
+      "china_just_beat_claude_ai_kimi_k3": [
+        "Claude"
+      ],
+      "yes_the_kimi_k3_hype_is_real": [
+        "Claude"
+      ],
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "Claude"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "Claude"
       ]
     }
   },
-  "updated_at": "2026-07-19T02:51:03.055904+00:00",
-  "total_skills": 33
+  "updated_at": "2026-07-19T02:51:16.136078+00:00",
+  "total_skills": 34
 }
