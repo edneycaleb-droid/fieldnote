@@ -1131,6 +1131,36 @@
       "skills": [
         "kimi_k3_is_the_best_model_ever_made_sometimes"
       ]
+    },
+    "AI": {
+      "freq": 1,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+      ]
+    },
+    "Kimmy K3.1": {
+      "freq": 1,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+      ]
+    },
+    "Grok 4.6": {
+      "freq": 1,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+      ]
+    },
+    "DeepSeek v4 GA": {
+      "freq": 1,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+      ]
+    },
+    "U.S. Gov's Gold Eagle": {
+      "freq": 1,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+      ]
     }
   },
   "tools": {
@@ -1143,7 +1173,7 @@
       ]
     },
     "Claude": {
-      "freq": 28,
+      "freq": 29,
       "skills": [
         "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
@@ -1172,7 +1202,8 @@
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
         "master_ai_trading_in_70_minutes_full_claude_tradin",
         "people_are_creating_insane_things_with_kimi_k3",
-        "kimi_k3_is_the_best_model_ever_made_sometimes"
+        "kimi_k3_is_the_best_model_ever_made_sometimes",
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
       ]
     },
     "Gemini": {
@@ -1427,6 +1458,36 @@
       "freq": 1,
       "skills": [
         "kimi_k3_is_the_best_model_ever_made_sometimes"
+      ]
+    },
+    "Moonshot AI": {
+      "freq": 1,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+      ]
+    },
+    "Enthropic": {
+      "freq": 1,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+      ]
+    },
+    "Grok": {
+      "freq": 1,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+      ]
+    },
+    "DeepSeek": {
+      "freq": 1,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+      ]
+    },
+    "Gold Eagle": {
+      "freq": 1,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
       ]
     }
   },
@@ -2483,6 +2544,30 @@
         "large_language_models"
       ],
       "step_count": 5
+    },
+    "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": {
+      "concepts": [
+        "AI",
+        "Kimmy K3.1",
+        "Grok 4.6",
+        "DeepSeek v4 GA",
+        "U.S. Gov's Gold Eagle"
+      ],
+      "tools": [
+        "Moonshot AI",
+        "Enthropic",
+        "Claude",
+        "Grok",
+        "DeepSeek",
+        "Gold Eagle"
+      ],
+      "tags": [
+        "AI",
+        "Machine Learning",
+        "Deep Learning",
+        "Natural Language Processing"
+      ],
+      "step_count": 6
     }
   },
   "relationships": {
@@ -2677,6 +2762,9 @@
         "Anthropic",
         "Gemini",
         "OpenAI"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
       ]
     },
     "hermes_agent_just_got_10x_better_4_insane_new_feat": {
@@ -2849,6 +2937,9 @@
         "agent"
       ],
       "kimi_k3_is_the_best_model_ever_made_sometimes": [
+        "Claude"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
         "Claude"
       ]
     },
@@ -3059,6 +3150,9 @@
         "Claude",
         "Anthropic",
         "OpenAI"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
       ]
     },
     "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
@@ -3501,6 +3595,9 @@
       "kimi_k3_is_the_best_model_ever_made_sometimes": [
         "Claude",
         "OpenAI"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
       ]
     },
     "every_hermes_concept_explained_for_normal_people": {
@@ -3707,6 +3804,9 @@
         "Claude",
         "Anthropic",
         "OpenAI"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
       ]
     },
     "kimi_k3_hermes_agent_changes_everything": {
@@ -3973,6 +4073,9 @@
       "kimi_k3_is_the_best_model_ever_made_sometimes": [
         "Claude",
         "Gemini"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
       ]
     },
     "kimi_k3_is_insane_best_open_model_ever_that_beats_": {
@@ -4109,6 +4212,9 @@
         "model"
       ],
       "kimi_k3_is_the_best_model_ever_made_sometimes": [
+        "Claude"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
         "Claude"
       ]
     },
@@ -4451,6 +4557,9 @@
         "Docker",
         "OpenAI",
         "Anthropic"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
       ]
     },
     "hermes_agent_ollama_how_to_install_hermes_locally_": {
@@ -4745,6 +4854,9 @@
         "Anthropic",
         "Gemini",
         "OpenAI"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
       ]
     },
     "gpt_5_6_on_hermes_agent_is_actually_insane_full_he": {
@@ -4930,6 +5042,9 @@
         "Claude",
         "Docker",
         "OpenAI"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
       ]
     },
     "ornith_35b_9b_hermes_zed_the_fully_private_local_a": {
@@ -5073,6 +5188,9 @@
         "LLM"
       ],
       "kimi_k3_is_the_best_model_ever_made_sometimes": [
+        "Claude"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
         "Claude"
       ]
     },
@@ -5296,6 +5414,9 @@
         "Docker",
         "OpenAI",
         "Anthropic"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
       ]
     },
     "new_claude_opus_5_leaks": {
@@ -5457,6 +5578,9 @@
       "kimi_k3_is_the_best_model_ever_made_sometimes": [
         "Claude",
         "Anthropic"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
       ]
     },
     "hermes_agent_full_course_setup_guide_for_complete_": {
@@ -5812,6 +5936,9 @@
       "kimi_k3_is_the_best_model_ever_made_sometimes": [
         "Claude",
         "Anthropic"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
       ]
     },
     "new_claude_update_is_insane": {
@@ -5960,6 +6087,9 @@
       "kimi_k3_is_the_best_model_ever_made_sometimes": [
         "Claude",
         "Anthropic"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
       ]
     },
     "kimi_k3_just_knocked_claude_to_third_place_chinese": {
@@ -6134,6 +6264,9 @@
       "kimi_k3_is_the_best_model_ever_made_sometimes": [
         "Claude",
         "Anthropic"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
       ]
     },
     "this_100_self_improving_ai_agent_is_insane_just_wa": {
@@ -6350,6 +6483,9 @@
         "Docker",
         "OpenAI",
         "Anthropic"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -6466,6 +6602,9 @@
       "kimi_k3_is_the_best_model_ever_made_sometimes": [
         "Claude",
         "Anthropic"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -6609,6 +6748,9 @@
         "here"
       ],
       "kimi_k3_is_the_best_model_ever_made_sometimes": [
+        "Claude"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
         "Claude"
       ]
     },
@@ -6767,6 +6909,9 @@
       "kimi_k3_is_the_best_model_ever_made_sometimes": [
         "Claude",
         "OpenAI"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
       ]
     },
     "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
@@ -7060,6 +7205,9 @@
       "kimi_k3_is_the_best_model_ever_made_sometimes": [
         "Claude",
         "Anthropic"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
       ]
     },
     "china_just_beat_claude_ai_kimi_k3": {
@@ -7239,6 +7387,9 @@
         "Anthropic",
         "Gemini",
         "OpenAI"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
       ]
     },
     "yes_the_kimi_k3_hype_is_real": {
@@ -7432,6 +7583,9 @@
         "Claude",
         "Anthropic",
         "OpenAI"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -7608,6 +7762,9 @@
         "Claude",
         "Anthropic",
         "OpenAI"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
       ]
     },
     "you_need_to_use_hermes_right_now_goodbye_openclaw": {
@@ -7813,6 +7970,9 @@
         "Claude",
         "Docker",
         "OpenAI"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
       ]
     },
     "master_ai_trading_in_70_minutes_full_claude_tradin": {
@@ -7895,6 +8055,9 @@
         "Claude"
       ],
       "kimi_k3_is_the_best_model_ever_made_sometimes": [
+        "Claude"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
         "Claude"
       ]
     },
@@ -8072,6 +8235,9 @@
         "Anthropic",
         "Kimi K3",
         "OpenAI"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
       ]
     },
     "kimi_k3_fully_tested_an_open_model_beats_fable": {
@@ -8388,9 +8554,98 @@
         "Anthropic",
         "Docker",
         "OpenAI"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
+      ]
+    },
+    "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": {
+      "kimi_k3_testing_moonshot_s_2_8t_open_model_without": [
+        "Claude"
+      ],
+      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
+        "Claude"
+      ],
+      "did_kimi_k3_really_beat_fable": [
+        "Claude"
+      ],
+      "making_with_loop_engineering": [
+        "Claude"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "Claude"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude"
+      ],
+      "kimi_k3_is_insane_best_open_model_ever_that_beats_": [
+        "Claude"
+      ],
+      "full_hermes_agent_tutorial_desktop_a_useful_agenti": [
+        "Claude"
+      ],
+      "use_this_to_make_the_hermes_agent_basically_free": [
+        "Claude"
+      ],
+      "gpt_5_6_on_hermes_agent_is_actually_insane_full_he": [
+        "Claude"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "Claude"
+      ],
+      "hermes_agent_zero_to_personal_ai_assistant_1_hour_": [
+        "Claude"
+      ],
+      "new_claude_opus_5_leaks": [
+        "Claude"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Claude"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude"
+      ],
+      "kimi_k3_just_knocked_claude_to_third_place_chinese": [
+        "Claude"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "Claude"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Claude"
+      ],
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "Claude"
+      ],
+      "2_8_trillion_parameters_kimi_k3_is_here": [
+        "Claude"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude"
+      ],
+      "china_just_beat_claude_ai_kimi_k3": [
+        "Claude"
+      ],
+      "yes_the_kimi_k3_hype_is_real": [
+        "Claude"
+      ],
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "Claude"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "Claude"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude"
+      ],
+      "people_are_creating_insane_things_with_kimi_k3": [
+        "Claude"
+      ],
+      "kimi_k3_is_the_best_model_ever_made_sometimes": [
+        "Claude"
       ]
     }
   },
-  "updated_at": "2026-07-19T02:51:27.029373+00:00",
-  "total_skills": 38
+  "updated_at": "2026-07-19T02:51:40.306316+00:00",
+  "total_skills": 39
 }
