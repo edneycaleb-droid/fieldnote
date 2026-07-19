@@ -2162,6 +2162,36 @@
       "skills": [
         "kimi_k3_crushed_fable"
       ]
+    },
+    "Autonomous chip design": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_ai_model"
+      ]
+    },
+    "AI self-improvement": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_ai_model"
+      ]
+    },
+    "Recursive self-improvement": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_ai_model"
+      ]
+    },
+    "Automated AI research": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_ai_model"
+      ]
+    },
+    "Hardware specs generation": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_ai_model"
+      ]
     }
   },
   "tools": {
@@ -3389,6 +3419,18 @@
       "freq": 2,
       "skills": [
         "kimi_k3_is_fable_level_they_should_be_worried"
+      ]
+    },
+    "Kimi K3": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_ai_model"
+      ]
+    },
+    "Open-source EDA tools": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_ai_model"
       ]
     }
   },
@@ -5100,6 +5142,25 @@
         "models"
       ],
       "step_count": 1
+    },
+    "kimi_k3_ai_model": {
+      "concepts": [
+        "Autonomous chip design",
+        "AI self-improvement",
+        "Recursive self-improvement",
+        "Automated AI research",
+        "Hardware specs generation"
+      ],
+      "tools": [
+        "Kimi K3",
+        "Open-source EDA tools"
+      ],
+      "tags": [
+        "ai",
+        "chip_design",
+        "self_improvement"
+      ],
+      "step_count": 3
     }
   },
   "relationships": {
@@ -12052,8 +12113,9 @@
         "here",
         "Anthropic"
       ]
-    }
+    },
+    "kimi_k3_ai_model": {}
   },
-  "updated_at": "2026-07-19T02:42:51.775523+00:00",
-  "total_skills": 62
+  "updated_at": "2026-07-19T02:42:53.747877+00:00",
+  "total_skills": 63
 }
