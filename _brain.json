@@ -2674,11 +2674,41 @@
       "skills": [
         "hermes_agent_ollama_how_to_install_hermes_locally_"
       ]
+    },
+    "AI Self-Improvement": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_setup"
+      ]
+    },
+    "Personalized AI Assistant": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_setup"
+      ]
+    },
+    "Virtual Private Server": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_setup"
+      ]
+    },
+    "Memory and Context Management": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_setup"
+      ]
+    },
+    "Scheduled Tasks and Automation": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_setup"
+      ]
     }
   },
   "tools": {
     "Anthropic": {
-      "freq": 52,
+      "freq": 53,
       "skills": [
         "building_ai_agents",
         "build_production_ready_llm_applications_with_haystack",
@@ -2705,7 +2735,8 @@
         "hermes_agent_full_course_setup_guide_for_complete_",
         "full_hermes_agent_tutorial_desktop_a_useful_agenti",
         "hermes_claude_code_mcp_integration_loop_engineerin",
-        "this_100_self_improving_ai_agent_is_insane_just_wa"
+        "this_100_self_improving_ai_agent_is_insane_just_wa",
+        "hermes_agent_setup"
       ]
     },
     "Haiku": {
@@ -2770,7 +2801,7 @@
       ]
     },
     "Claude": {
-      "freq": 99,
+      "freq": 100,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -2949,7 +2980,7 @@
       ]
     },
     "Hermes Agent": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "building_ai_agents",
         "hermes_agent_setup",
@@ -3069,7 +3100,7 @@
       ]
     },
     "Docker": {
-      "freq": 23,
+      "freq": 24,
       "skills": [
         "astrbot_deployment",
         "build_production_ready_llm_applications_with_haystack",
@@ -3085,7 +3116,8 @@
         "hermes_agent_zero_to_personal_ai_assistant_1_hour_",
         "hermes_agent_full_course_setup_guide_for_complete_",
         "full_hermes_agent_tutorial_desktop_a_useful_agenti",
-        "this_100_self_improving_ai_agent_is_insane_just_wa"
+        "this_100_self_improving_ai_agent_is_insane_just_wa",
+        "hermes_agent_setup"
       ]
     },
     "Docker Compose": {
@@ -3172,7 +3204,7 @@
       ]
     },
     "OpenAI": {
-      "freq": 48,
+      "freq": 49,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
         "testing_and_comparing_llms",
@@ -3198,7 +3230,8 @@
         "hermes_agent_zero_to_personal_ai_assistant_1_hour_",
         "hermes_agent_full_course_setup_guide_for_complete_",
         "full_hermes_agent_tutorial_desktop_a_useful_agenti",
-        "this_100_self_improving_ai_agent_is_insane_just_wa"
+        "this_100_self_improving_ai_agent_is_insane_just_wa",
+        "hermes_agent_setup"
       ]
     },
     "Mistral": {
@@ -4431,33 +4464,26 @@
     },
     "hermes_agent_setup": {
       "concepts": [
-        "AI agents",
-        "Personalization",
-        "Automation",
-        "Integration",
-        "Human-in-the-loop",
-        "MCP (Model Context Protocol)"
+        "AI Self-Improvement",
+        "Personalized AI Assistant",
+        "Virtual Private Server",
+        "Memory and Context Management",
+        "Scheduled Tasks and Automation"
       ],
       "tools": [
         "Hermes Agent",
+        "OpenAI",
+        "Anthropic",
         "Claude",
-        "Open Claw",
-        "Contabo",
-        "RackNerd",
-        "Discord",
-        "MCP (Model Context Protocol)",
-        "KOBA789/human-in-the-loop",
-        "nirholas/mcp-notify"
+        "Docker"
       ],
       "tags": [
         "ai",
         "automation",
-        "productivity",
         "hermes",
-        "human-in-the-loop",
-        "mcp"
+        "self_improvement"
       ],
-      "step_count": 8
+      "step_count": 5
     },
     "ragflow_deployment": {
       "concepts": [
@@ -6427,12 +6453,8 @@
         "Open Claw"
       ],
       "hermes_agent_setup": [
-        "RackNerd",
-        "Integration",
-        "Contabo",
-        "Personalization",
-        "AI agents",
-        "Claude"
+        "Claude",
+        "Hermes Agent"
       ],
       "moonshot_kimiko_3_skill": [
         "Open Claw"
@@ -6712,6 +6734,9 @@
       ],
       "this_100_self_improving_ai_agent_is_insane_just_wa": [
         "Docker"
+      ],
+      "hermes_agent_setup": [
+        "Docker"
       ]
     },
     "openai_agents_sdk": {
@@ -6972,6 +6997,11 @@
         "Anthropic",
         "Docker",
         "OpenAI"
+      ],
+      "hermes_agent_setup": [
+        "OpenAI",
+        "Docker",
+        "Anthropic"
       ]
     },
     "swanlab_ai_training_analysis_platform": {
@@ -7378,12 +7408,8 @@
     "ragaai_catalyst": {},
     "hermes_agent_setup": {
       "building_ai_agents": [
-        "RackNerd",
-        "Integration",
-        "Contabo",
-        "Personalization",
-        "AI agents",
-        "Claude"
+        "Claude",
+        "Hermes Agent"
       ],
       "building_resilient_ai_agents_with_langgraph": [
         "Human-in-the-loop"
@@ -7408,47 +7434,57 @@
       ],
       "building_ai_agents_with_loop": [
         "Claude",
-        "Integration",
-        "Open Claw",
-        "Automation",
-        "RackNerd",
         "Hermes Agent"
       ],
       "kimi_k3_hermes_ai_agent_is_insane": [
         "Claude"
       ],
       "new_claude_update_is_insane": [
-        "Claude"
+        "Claude",
+        "Anthropic"
       ],
       "new_claude_opus_5_leaks": [
-        "Claude"
+        "Claude",
+        "Anthropic"
       ],
       "making_with_loop_engineering": [
-        "Claude"
+        "Claude",
+        "OpenAI"
       ],
       "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
-        "Claude"
+        "OpenAI",
+        "Claude",
+        "Anthropic"
       ],
       "this_ai_business_model_is_creating_new_millionaire": [
-        "Claude"
+        "Claude",
+        "Anthropic"
       ],
       "kimi_k3_vs_claude_fable_5_raw_results": [
-        "Claude"
+        "Claude",
+        "Anthropic"
       ],
       "master_ai_trading_in_70_minutes_full_claude_tradin": [
         "Claude"
       ],
       "how_to_use_codex_to_build_insanely_beautiful_websi": [
-        "Claude"
+        "OpenAI",
+        "Claude",
+        "Anthropic"
       ],
       "did_kimi_k3_really_beat_fable": [
-        "Claude"
+        "OpenAI",
+        "Claude",
+        "Anthropic"
       ],
       "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
         "Claude"
       ],
       "kimi_k3_is_the_best_model_ever_made_sometimes": [
-        "Claude"
+        "OpenAI",
+        "Claude",
+        "Docker",
+        "Anthropic"
       ],
       "kimi_k3_is_just_ridiculous": [
         "Claude"
@@ -7457,16 +7493,21 @@
         "Claude"
       ],
       "china_just_beat_claude_ai_kimi_k3": [
-        "Claude"
+        "OpenAI",
+        "Claude",
+        "Anthropic"
       ],
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
-        "Claude"
+        "Claude",
+        "OpenAI"
       ],
       "this_kimi_k3_agent_os_is_wild": [
         "Claude"
       ],
       "yes_the_kimi_k3_hype_is_real": [
-        "Claude"
+        "OpenAI",
+        "Claude",
+        "Anthropic"
       ],
       "kimi_k3_ai_full_course_1_hour_build_automate_anyth": [
         "Claude"
@@ -7475,25 +7516,32 @@
         "Claude"
       ],
       "2_8_trillion_parameters_kimi_k3_is_here": [
-        "Claude"
+        "Claude",
+        "OpenAI"
       ],
       "kimi_k3_is_fable_level_they_should_be_worried": [
         "Claude"
       ],
       "kimi_k3_just_knocked_claude_to_third_place_chinese": [
-        "Claude"
+        "Claude",
+        "Anthropic"
       ],
       "use_kimi_k3_completely_free_best_ai_coding_setup_2": [
         "Claude"
       ],
       "kimi_k3_is_insanely_strong_real_tests_and_review": [
-        "Claude"
+        "Claude",
+        "Anthropic"
       ],
       "kimi_k3_crushed_fable": [
-        "Claude"
+        "OpenAI",
+        "Claude",
+        "Anthropic"
       ],
       "kimi_k3_testing_moonshot_s_2_8t_open_model_without": [
-        "Claude"
+        "OpenAI",
+        "Claude",
+        "Anthropic"
       ],
       "kimi_k3_is_insane_best_open_model_ever_that_beats_": [
         "Claude"
@@ -7505,43 +7553,108 @@
         "Claude"
       ],
       "every_hermes_concept_explained_for_normal_people": [
-        "Claude"
+        "OpenAI",
+        "Claude",
+        "Anthropic"
       ],
       "new_hermes_agent_os_is_insane": [
         "Claude"
       ],
       "you_need_to_use_hermes_right_now_goodbye_openclaw": [
-        "Claude"
+        "Claude",
+        "Docker",
+        "OpenAI"
       ],
       "gpt_5_6_on_hermes_agent_is_actually_insane_full_he": [
-        "Claude"
+        "Claude",
+        "Docker",
+        "OpenAI"
       ],
       "use_this_to_make_the_hermes_agent_basically_free": [
-        "Claude"
+        "OpenAI",
+        "Claude",
+        "Anthropic"
       ],
       "hermes_agent_tutorial_for_beginners_full_step_by_s": [
-        "Claude"
+        "Claude",
+        "Docker"
       ],
       "hermes_agent_zero_to_personal_ai_assistant_1_hour_": [
-        "Claude"
+        "OpenAI",
+        "Claude",
+        "Docker",
+        "Anthropic"
       ],
       "6_insane_hermes_agent_use_cases_that_you_need_righ": [
         "Claude"
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
-        "Claude"
+        "Claude",
+        "Anthropic"
       ],
       "new_hermes_paperclip_ai_agent_update_is_insane": [
         "Claude"
       ],
       "full_hermes_agent_tutorial_desktop_a_useful_agenti": [
-        "Claude"
+        "OpenAI",
+        "Claude",
+        "Docker",
+        "Anthropic"
       ],
       "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "Claude"
       ],
       "this_100_self_improving_ai_agent_is_insane_just_wa": [
-        "Claude"
+        "OpenAI",
+        "Claude",
+        "Docker",
+        "Anthropic"
+      ],
+      "astrbot_deployment": [
+        "Docker"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "OpenAI",
+        "Docker",
+        "Anthropic"
+      ],
+      "ragflow_deployment": [
+        "Docker"
+      ],
+      "lightrag_deployment": [
+        "Docker"
+      ],
+      "deploying_retrieval_augmented_generation_with_ragflow": [
+        "Docker"
+      ],
+      "graphrag_deployment": [
+        "Docker"
+      ],
+      "superagi_building_autonomous_agents": [
+        "Docker"
+      ],
+      "testing_and_comparing_llms": [
+        "OpenAI",
+        "Anthropic"
+      ],
+      "i_tested_kimi_k3_so_you_don_t_have_to": [
+        "OpenAI",
+        "Anthropic"
+      ],
+      "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_": [
+        "OpenAI"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "OpenAI",
+        "Anthropic"
+      ],
+      "hermes_agent_build_your_own_personal_ai_assistant_": [
+        "OpenAI"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "OpenAI",
+        "Docker",
+        "Anthropic"
       ]
     },
     "ragflow_deployment": {
@@ -7598,6 +7711,9 @@
       ],
       "this_100_self_improving_ai_agent_is_insane_just_wa": [
         "Docker"
+      ],
+      "hermes_agent_setup": [
+        "Docker"
       ]
     },
     "lightrag_deployment": {
@@ -7651,6 +7767,9 @@
       ],
       "this_100_self_improving_ai_agent_is_insane_just_wa": [
         "pip",
+        "Docker"
+      ],
+      "hermes_agent_setup": [
         "Docker"
       ]
     },
@@ -7748,6 +7867,9 @@
       "this_100_self_improving_ai_agent_is_insane_just_wa": [
         "pip",
         "Docker"
+      ],
+      "hermes_agent_setup": [
+        "Docker"
       ]
     },
     "graphrag_deployment": {
@@ -7828,6 +7950,9 @@
       ],
       "this_100_self_improving_ai_agent_is_insane_just_wa": [
         "Docker"
+      ],
+      "hermes_agent_setup": [
+        "Docker"
       ]
     },
     "superagi_building_autonomous_agents": {
@@ -7872,6 +7997,9 @@
         "Docker"
       ],
       "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "Docker"
+      ],
+      "hermes_agent_setup": [
         "Docker"
       ]
     },
@@ -7927,10 +8055,6 @@
       ],
       "hermes_agent_setup": [
         "Claude",
-        "Integration",
-        "Open Claw",
-        "Automation",
-        "RackNerd",
         "Hermes Agent"
       ],
       "moonshot_kimiko_3_skill": [
@@ -8199,6 +8323,10 @@
         "Anthropic"
       ],
       "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "OpenAI",
+        "Anthropic"
+      ],
+      "hermes_agent_setup": [
         "OpenAI",
         "Anthropic"
       ]
@@ -8526,7 +8654,8 @@
         "Claude"
       ],
       "hermes_agent_setup": [
-        "Claude"
+        "Claude",
+        "Anthropic"
       ],
       "building_ai_agents_with_loop": [
         "Claude"
@@ -8770,7 +8899,8 @@
         "Claude"
       ],
       "hermes_agent_setup": [
-        "Claude"
+        "Claude",
+        "Anthropic"
       ],
       "building_ai_agents_with_loop": [
         "Claude"
@@ -9041,7 +9171,8 @@
         "Claude"
       ],
       "hermes_agent_setup": [
-        "Claude"
+        "Claude",
+        "OpenAI"
       ],
       "building_ai_agents_with_loop": [
         "Claude"
@@ -9296,7 +9427,9 @@
         "Claude"
       ],
       "hermes_agent_setup": [
-        "Claude"
+        "OpenAI",
+        "Claude",
+        "Anthropic"
       ],
       "graphrag_deployment": [
         "LLM"
@@ -9577,7 +9710,8 @@
         "Claude"
       ],
       "hermes_agent_setup": [
-        "Claude"
+        "Claude",
+        "Anthropic"
       ],
       "building_ai_agents_with_loop": [
         "Claude"
@@ -10064,7 +10198,8 @@
         "Claude"
       ],
       "hermes_agent_setup": [
-        "Claude"
+        "Claude",
+        "Anthropic"
       ],
       "building_ai_agents_with_loop": [
         "Claude"
@@ -10636,7 +10771,9 @@
         "Claude"
       ],
       "hermes_agent_setup": [
-        "Claude"
+        "OpenAI",
+        "Claude",
+        "Anthropic"
       ],
       "deploying_retrieval_augmented_generation_with_ragflow": [
         "git"
@@ -10903,7 +11040,9 @@
         "Claude"
       ],
       "hermes_agent_setup": [
-        "Claude"
+        "OpenAI",
+        "Claude",
+        "Anthropic"
       ],
       "building_ai_agents_with_loop": [
         "Claude"
@@ -11515,7 +11654,10 @@
         "Gemini"
       ],
       "hermes_agent_setup": [
-        "Claude"
+        "OpenAI",
+        "Claude",
+        "Docker",
+        "Anthropic"
       ],
       "ragflow_deployment": [
         "Docker"
@@ -12138,6 +12280,10 @@
       "hermes_agent_ollama_how_to_install_hermes_locally_": [
         "models",
         "model"
+      ],
+      "hermes_agent_setup": [
+        "OpenAI",
+        "Anthropic"
       ]
     },
     "kimi_k3_is_just_ridiculous": {
@@ -12667,7 +12813,9 @@
         "Gemini"
       ],
       "hermes_agent_setup": [
-        "Claude"
+        "OpenAI",
+        "Claude",
+        "Anthropic"
       ],
       "building_ai_agents_with_loop": [
         "Claude"
@@ -12960,7 +13108,8 @@
         "Gemini"
       ],
       "hermes_agent_setup": [
-        "Claude"
+        "Claude",
+        "OpenAI"
       ],
       "building_ai_agents_with_loop": [
         "Claude"
@@ -13680,7 +13829,9 @@
         "Claude"
       ],
       "hermes_agent_setup": [
-        "Claude"
+        "OpenAI",
+        "Claude",
+        "Anthropic"
       ],
       "building_ai_agents_with_loop": [
         "Claude"
@@ -14715,6 +14866,9 @@
       ],
       "hermes_agent_ollama_how_to_install_hermes_locally_": [
         "model"
+      ],
+      "hermes_agent_setup": [
+        "OpenAI"
       ]
     },
     "run_kimi_k3_inside_claude_code_max_power": {
@@ -15012,7 +15166,8 @@
         "Claude"
       ],
       "hermes_agent_setup": [
-        "Claude"
+        "Claude",
+        "OpenAI"
       ],
       "building_ai_agents_with_loop": [
         "Claude"
@@ -15452,6 +15607,10 @@
       "hermes_agent_ollama_how_to_install_hermes_locally_": [
         "models",
         "model"
+      ],
+      "hermes_agent_setup": [
+        "OpenAI",
+        "Anthropic"
       ]
     },
     "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner": {
@@ -15968,7 +16127,8 @@
         "Claude"
       ],
       "hermes_agent_setup": [
-        "Claude"
+        "Claude",
+        "Anthropic"
       ],
       "building_ai_agents_with_loop": [
         "Claude"
@@ -16472,7 +16632,8 @@
         "Claude"
       ],
       "hermes_agent_setup": [
-        "Claude"
+        "Claude",
+        "Anthropic"
       ],
       "building_ai_agents_with_loop": [
         "Claude"
@@ -16766,7 +16927,9 @@
         "Claude"
       ],
       "hermes_agent_setup": [
-        "Claude"
+        "OpenAI",
+        "Claude",
+        "Anthropic"
       ],
       "building_ai_agents_with_loop": [
         "Claude"
@@ -17107,7 +17270,9 @@
         "Gemini"
       ],
       "hermes_agent_setup": [
-        "Claude"
+        "OpenAI",
+        "Claude",
+        "Anthropic"
       ],
       "building_ai_agents_with_loop": [
         "Claude"
@@ -18211,7 +18376,9 @@
         "Claude"
       ],
       "hermes_agent_setup": [
-        "Claude"
+        "OpenAI",
+        "Claude",
+        "Anthropic"
       ],
       "building_ai_agents_with_loop": [
         "Claude"
@@ -18957,7 +19124,9 @@
         "Claude"
       ],
       "hermes_agent_setup": [
-        "Claude"
+        "Claude",
+        "Docker",
+        "OpenAI"
       ],
       "ragflow_deployment": [
         "Docker"
@@ -19308,7 +19477,9 @@
         "Claude"
       ],
       "hermes_agent_setup": [
-        "Claude"
+        "Claude",
+        "Docker",
+        "OpenAI"
       ],
       "ragflow_deployment": [
         "Docker"
@@ -19626,7 +19797,9 @@
         "Gemini"
       ],
       "hermes_agent_setup": [
-        "Claude"
+        "OpenAI",
+        "Claude",
+        "Anthropic"
       ],
       "building_ai_agents_with_loop": [
         "Claude"
@@ -20140,6 +20313,9 @@
       ],
       "hermes_agent_ollama_how_to_install_hermes_locally_": [
         "want"
+      ],
+      "hermes_agent_setup": [
+        "OpenAI"
       ]
     },
     "hermes_agent_tutorial_for_beginners_full_step_by_s": {
@@ -20163,7 +20339,8 @@
         "Claude"
       ],
       "hermes_agent_setup": [
-        "Claude"
+        "Claude",
+        "Docker"
       ],
       "ragflow_deployment": [
         "Docker"
@@ -20489,7 +20666,10 @@
         "Claude"
       ],
       "hermes_agent_setup": [
-        "Claude"
+        "OpenAI",
+        "Claude",
+        "Docker",
+        "Anthropic"
       ],
       "ragflow_deployment": [
         "Docker"
@@ -21423,6 +21603,11 @@
       "hermes_agent_ollama_how_to_install_hermes_locally_": [
         "hermes",
         "want"
+      ],
+      "hermes_agent_setup": [
+        "OpenAI",
+        "Docker",
+        "Anthropic"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -21439,7 +21624,8 @@
         "Claude"
       ],
       "hermes_agent_setup": [
-        "Claude"
+        "Claude",
+        "Anthropic"
       ],
       "deploying_retrieval_augmented_generation_with_ragflow": [
         "git"
@@ -21929,7 +22115,10 @@
         "Gemini"
       ],
       "hermes_agent_setup": [
-        "Claude"
+        "OpenAI",
+        "Claude",
+        "Docker",
+        "Anthropic"
       ],
       "ragflow_deployment": [
         "Docker"
@@ -22772,7 +22961,10 @@
         "Claude"
       ],
       "hermes_agent_setup": [
-        "Claude"
+        "OpenAI",
+        "Claude",
+        "Docker",
+        "Anthropic"
       ],
       "ragflow_deployment": [
         "Docker"
@@ -23288,6 +23480,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-19T02:44:52.178189+00:00",
+  "updated_at": "2026-07-19T02:45:02.983924+00:00",
   "total_skills": 85
 }
