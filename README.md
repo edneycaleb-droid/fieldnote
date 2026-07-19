@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **63 skills** · Last synced: 2026-07-19 02:42 UTC
+> **64 skills** · Last synced: 2026-07-19 02:42 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Kimi K3 AI Model: Autonomous Chip Design and AI Self-Improvement](skills/kimi_k3_ai_model.md) | This skill teaches how to utilize the Kimi K3 AI model for autonomous chip desig | `Kimi K3` `Open-source EDA tools` | `ai` `chip_design` `self_improvement` |
 | [Kimi K3 CRUSHED Fable](skills/kimi_k3_crushed_fable.md) | By Wes Roth. Key tools: Claude, Anthropic, OpenAI. (Auto-extracted — pending AI  | `Claude` `Anthropic` `OpenAI` | `kind` `know` `here` |
 | [Kimi K3 is INSANELY STRONG! (Real Tests and Review)](skills/kimi_k3_is_insanely_strong_real_tests_and_review.md) | By Superbash (BoxminingAI). Key tools: Anthropic, GPT-4, Claude. (Auto-extracted | `Anthropic` `GPT-4` `Claude` | `very` `right` `okay` |
 | [Use Kimi K3 Completely FREE  – Best AI Coding Setup 2026 \| Claude Code Alternative \| Kimi k3 test](skills/use_kimi_k3_completely_free_best_ai_coding_setup_2.md) | By Pro Coder. Key tools: Claude. (Auto-extracted — pending AI enhancement.) | `Claude` | `here` `guys` `design` |
