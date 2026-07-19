@@ -1174,7 +1174,7 @@
       ]
     },
     "hermes": {
-      "freq": 31,
+      "freq": 32,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
@@ -1458,7 +1458,7 @@
       ]
     },
     "model": {
-      "freq": 49,
+      "freq": 50,
       "skills": [
         "new_claude_opus_5_leaks",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
@@ -1652,7 +1652,7 @@
       ]
     },
     "models": {
-      "freq": 28,
+      "freq": 29,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "did_kimi_k3_really_beat_fable",
@@ -1932,7 +1932,7 @@
       ]
     },
     "want": {
-      "freq": 26,
+      "freq": 27,
       "skills": [
         "master_ai_trading_in_70_minutes_full_claude_tradin",
         "how_to_run_kimi_k3_for_free",
@@ -2252,7 +2252,7 @@
       ]
     },
     "cloud": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "run_kimi_k3_inside_claude_code_max_power",
         "hermes_agent_ollama_how_to_install_hermes_locally_"
@@ -2646,31 +2646,31 @@
       ]
     },
     "llama": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "hermes_agent_ollama_how_to_install_hermes_locally_"
       ]
     },
     "locally": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "hermes_agent_ollama_how_to_install_hermes_locally_"
       ]
     },
     "computer": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "hermes_agent_ollama_how_to_install_hermes_locally_"
       ]
     },
     "command": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "hermes_agent_ollama_how_to_install_hermes_locally_"
       ]
     },
     "launch": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "hermes_agent_ollama_how_to_install_hermes_locally_"
       ]
@@ -3938,7 +3938,7 @@
       ]
     },
     "anthropic": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
         "run_kimi_k3_inside_claude_code_max_power",
@@ -4023,7 +4023,7 @@
       ]
     },
     "llama": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "full_hermes_agent_tutorial_desktop_a_useful_agenti",
         "hermes_agent_ollama_how_to_install_hermes_locally_"
@@ -23288,6 +23288,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-19T02:44:46.603636+00:00",
+  "updated_at": "2026-07-19T02:44:52.178189+00:00",
   "total_skills": 85
 }
