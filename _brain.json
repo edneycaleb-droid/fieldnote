@@ -1180,13 +1180,14 @@
       ]
     },
     "here": {
-      "freq": 12,
+      "freq": 13,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_opus_5_leaks",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
         "kimi_k3_vs_claude_fable_5_raw_results",
-        "master_ai_trading_in_70_minutes_full_claude_tradin"
+        "master_ai_trading_in_70_minutes_full_claude_tradin",
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
     },
     "actually": {
@@ -1391,9 +1392,10 @@
       ]
     },
     "really": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
-        "making_with_loop_engineering"
+        "making_with_loop_engineering",
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
     },
     "business": {
@@ -1525,9 +1527,10 @@
       ]
     },
     "site": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
+        "chatgpt_work_everything_you_need_to_know_to_get_st",
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
     },
     "chat": {
@@ -1543,9 +1546,10 @@
       ]
     },
     "website": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
+        "chatgpt_work_everything_you_need_to_know_to_get_st",
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
     },
     "good": {
@@ -1555,9 +1559,10 @@
       ]
     },
     "need": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
+        "chatgpt_work_everything_you_need_to_know_to_get_st",
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
     },
     "memory": {
@@ -1667,11 +1672,41 @@
       "skills": [
         "master_ai_trading_in_70_minutes_full_claude_tradin"
       ]
+    },
+    "design": {
+      "freq": 1,
+      "skills": [
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
+      ]
+    },
+    "codeex": {
+      "freq": 1,
+      "skills": [
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
+      ]
+    },
+    "skill": {
+      "freq": 1,
+      "skills": [
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
+      ]
+    },
+    "before": {
+      "freq": 1,
+      "skills": [
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
+      ]
+    },
+    "file": {
+      "freq": 1,
+      "skills": [
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
+      ]
     }
   },
   "tools": {
     "Anthropic": {
-      "freq": 19,
+      "freq": 20,
       "skills": [
         "building_ai_agents",
         "build_production_ready_llm_applications_with_haystack",
@@ -1680,7 +1715,8 @@
         "new_claude_opus_5_leaks",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "this_ai_business_model_is_creating_new_millionaire",
-        "kimi_k3_vs_claude_fable_5_raw_results"
+        "kimi_k3_vs_claude_fable_5_raw_results",
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
     },
     "Haiku": {
@@ -1745,7 +1781,7 @@
       ]
     },
     "Claude": {
-      "freq": 30,
+      "freq": 31,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -1759,7 +1795,8 @@
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "this_ai_business_model_is_creating_new_millionaire",
         "kimi_k3_vs_claude_fable_5_raw_results",
-        "master_ai_trading_in_70_minutes_full_claude_tradin"
+        "master_ai_trading_in_70_minutes_full_claude_tradin",
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
     },
     "Google Drive": {
@@ -2096,12 +2133,13 @@
       ]
     },
     "OpenAI": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
         "testing_and_comparing_llms",
         "making_with_loop_engineering",
-        "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
+        "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
     },
     "Mistral": {
@@ -2500,9 +2538,10 @@
       ]
     },
     "git": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "deploying_retrieval_augmented_generation_with_ragflow"
+        "deploying_retrieval_augmented_generation_with_ragflow",
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
     },
     "spaCy": {
@@ -2787,6 +2826,12 @@
       "freq": 2,
       "skills": [
         "master_ai_trading_in_70_minutes_full_claude_tradin"
+      ]
+    },
+    "next.js": {
+      "freq": 1,
+      "skills": [
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
     }
   },
@@ -3838,6 +3883,36 @@
         "actually"
       ],
       "step_count": 1
+    },
+    "how_to_use_codex_to_build_insanely_beautiful_websi": {
+      "concepts": [
+        "design",
+        "website",
+        "codeex",
+        "skill",
+        "here",
+        "before",
+        "really",
+        "need",
+        "file",
+        "site"
+      ],
+      "tools": [
+        "Claude",
+        "next.js",
+        "Anthropic",
+        "OpenAI",
+        "git"
+      ],
+      "tags": [
+        "design",
+        "website",
+        "codeex",
+        "skill",
+        "here",
+        "before"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -3916,6 +3991,9 @@
         "Ollama"
       ],
       "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude"
+      ],
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
         "Claude"
       ]
     },
@@ -4118,6 +4196,10 @@
       ],
       "master_ai_trading_in_70_minutes_full_claude_tradin": [
         "LLM"
+      ],
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "Anthropic",
+        "OpenAI"
       ]
     },
     "swanlab_ai_training_analysis_platform": {
@@ -4174,6 +4256,9 @@
         "Claude"
       ],
       "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude"
+      ],
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
         "Claude"
       ]
     },
@@ -4273,6 +4358,9 @@
       ],
       "master_ai_trading_in_70_minutes_full_claude_tradin": [
         "Claude"
+      ],
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "Claude"
       ]
     },
     "pydantic_ai_framework": {
@@ -4356,6 +4444,9 @@
         "Claude"
       ],
       "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude"
+      ],
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
         "Claude"
       ]
     },
@@ -4483,6 +4574,9 @@
       ],
       "testing_and_comparing_llms": [
         "Large Language Models (LLMs)"
+      ],
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "git"
       ]
     },
     "graphrag_deployment": {
@@ -4623,6 +4717,9 @@
       ],
       "master_ai_trading_in_70_minutes_full_claude_tradin": [
         "Claude"
+      ],
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "Claude"
       ]
     },
     "testing_and_comparing_llms": {
@@ -4670,6 +4767,10 @@
       ],
       "kimi_k3_vs_claude_fable_5_raw_results": [
         "Anthropic"
+      ],
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "Anthropic",
+        "OpenAI"
       ]
     },
     "prism_ml_bonzai_deployment": {
@@ -4739,6 +4840,10 @@
         "here",
         "right",
         "actually"
+      ],
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "Claude",
+        "here"
       ]
     },
     "new_claude_update_is_insane": {
@@ -4801,6 +4906,10 @@
         "claude",
         "Claude",
         "actually"
+      ],
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "Claude",
+        "Anthropic"
       ]
     },
     "new_claude_opus_5_leaks": {
@@ -4861,6 +4970,11 @@
         "claude",
         "Claude",
         "here"
+      ],
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "Claude",
+        "here",
+        "Anthropic"
       ]
     },
     "making_with_loop_engineering": {
@@ -4914,6 +5028,11 @@
         "Claude",
         "actually",
         "know"
+      ],
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "Claude",
+        "really",
+        "OpenAI"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -4974,6 +5093,11 @@
       "master_ai_trading_in_70_minutes_full_claude_tradin": [
         "Claude",
         "LLM"
+      ],
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "Claude",
+        "Anthropic",
+        "OpenAI"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -5025,6 +5149,10 @@
       "master_ai_trading_in_70_minutes_full_claude_tradin": [
         "Claude",
         "time"
+      ],
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "Claude",
+        "Anthropic"
       ]
     },
     "local_ai_coding": {
@@ -5065,6 +5193,12 @@
       "master_ai_trading_in_70_minutes_full_claude_tradin": [
         "here",
         "right"
+      ],
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "need",
+        "site",
+        "here",
+        "website"
       ]
     },
     "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
@@ -5150,6 +5284,11 @@
         "Claude",
         "here",
         "right"
+      ],
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "Claude",
+        "here",
+        "Anthropic"
       ]
     },
     "master_ai_trading_in_70_minutes_full_claude_tradin": {
@@ -5211,9 +5350,83 @@
         "Claude",
         "here",
         "right"
+      ],
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "Claude",
+        "here"
+      ]
+    },
+    "how_to_use_codex_to_build_insanely_beautiful_websi": {
+      "building_ai_agents": [
+        "Claude"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "Anthropic",
+        "OpenAI"
+      ],
+      "mastering_loop_engineering": [
+        "Claude"
+      ],
+      "higsfield_integration": [
+        "Claude"
+      ],
+      "hermes_agent_setup": [
+        "Claude"
+      ],
+      "deploying_retrieval_augmented_generation_with_ragflow": [
+        "git"
+      ],
+      "building_ai_agents_with_loop": [
+        "Claude"
+      ],
+      "testing_and_comparing_llms": [
+        "Anthropic",
+        "OpenAI"
+      ],
+      "kimi_k3_hermes_ai_agent_is_insane": [
+        "Claude",
+        "here"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude",
+        "Anthropic"
+      ],
+      "new_claude_opus_5_leaks": [
+        "Claude",
+        "here",
+        "Anthropic"
+      ],
+      "making_with_loop_engineering": [
+        "Claude",
+        "really",
+        "OpenAI"
+      ],
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "Claude",
+        "Anthropic",
+        "OpenAI"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Claude",
+        "Anthropic"
+      ],
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "need",
+        "site",
+        "here",
+        "website"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Claude",
+        "here",
+        "Anthropic"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude",
+        "here"
       ]
     }
   },
-  "updated_at": "2026-07-19T02:40:57.062775+00:00",
-  "total_skills": 38
+  "updated_at": "2026-07-19T02:41:01.240897+00:00",
+  "total_skills": 39
 }
