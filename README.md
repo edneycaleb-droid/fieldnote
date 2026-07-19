@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **85 skills** · Last synced: 2026-07-19 02:44 UTC
+> **86 skills** · Last synced: 2026-07-19 02:44 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Hermes Agent + Ollama: How to Install Hermes Locally Fast](skills/hermes_agent_ollama_how_to_install_hermes_locally_.md) | By proflead. Key tools: llama, anthropic. (Auto-extracted — pending AI enhanceme | `llama` `anthropic` | `hermes` `model` `models` |
 | [This 100% self-improving AI Agent is insane… just watch](skills/this_100_self_improving_ai_agent_is_insane_just_wa.md) | By David Ondrej. Key tools: Claude, Docker, pip, Python, Git. (Auto-extracted —  | `Claude` `Docker` `pip` `Python` | `agent` `hermes` `going` |
 | [Hermes + Claude Code — MCP Integration & Loop Engineering](skills/hermes_claude_code_mcp_integration_loop_engineerin.md) | By NetworkCoder. Key tools: Anthropic, Flask, Python, pytest, Claude. (Auto-extr | `Anthropic` `Flask` `Python` `pytest` | `tests` `skill` `hermes` |
 | [Qwen 3.6 + Pi Agent: Build Your Own AI Assistant (Full Setup)](skills/qwen_3_6_pi_agent_build_your_own_ai_assistant_full.md) | By Bart Slodyczka. Key tools: LLM. (Auto-extracted — pending AI enhancement.) | `LLM` | `agent` `here` `ticket` |
