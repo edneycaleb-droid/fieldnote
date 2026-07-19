@@ -1215,7 +1215,7 @@
       ]
     },
     "which": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
@@ -1275,7 +1275,7 @@
       ]
     },
     "every": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "new_claude_update_is_insane",
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
@@ -1551,49 +1551,49 @@
       ]
     },
     "memory": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
       ]
     },
     "data": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
       ]
     },
     "vector": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
       ]
     },
     "google": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
       ]
     },
     "search": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
       ]
     },
     "whole": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
       ]
     },
     "because": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
       ]
     },
     "same": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
       ]
@@ -1848,7 +1848,7 @@
       ]
     },
     "LangChain": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "building_ai_agents_with_langchain",
         "building_resilient_ai_agents_with_langgraph",
@@ -2010,7 +2010,7 @@
       ]
     },
     "Python": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "openai_agents_sdk",
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
@@ -2697,13 +2697,13 @@
       ]
     },
     "rag": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
       ]
     },
     "embedding": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
       ]
@@ -4841,6 +4841,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-19T02:40:44.084118+00:00",
+  "updated_at": "2026-07-19T02:40:49.413911+00:00",
   "total_skills": 36
 }
