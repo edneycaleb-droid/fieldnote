@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **60 skills** · Last synced: 2026-07-19 02:42 UTC
+> **61 skills** · Last synced: 2026-07-19 02:42 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Use Kimi K3 Completely FREE  – Best AI Coding Setup 2026 \| Claude Code Alternative \| Kimi k3 test](skills/use_kimi_k3_completely_free_best_ai_coding_setup_2.md) | By Pro Coder. Key tools: Claude. (Auto-extracted — pending AI enhancement.) | `Claude` | `here` `guys` `design` |
 | [Kimi K3 Just Knocked Claude to Third Place — Chinese AI Is Here Now](skills/kimi_k3_just_knocked_claude_to_third_place_chinese.md) | By Kyle Balmer \| AI with Kyle. Key tools: Claude, Anthropic. (Auto-extracted — p | `Claude` `Anthropic` | `very` `about` `models` |
 | [Kimi K3 Is Fable Level... (they should be worried)](skills/kimi_k3_is_fable_level_they_should_be_worried.md) | By Better Stack. Key tools: Claude, React, Next.js, SQLite, Node. (Auto-extracte | `Claude` `React` `Next.js` `SQLite` | `actually` `here` `fable` |
 | [NUEVO Kimi K3 DESTRUYE a Claude Fable 5 (Debes Saber Esto)](skills/nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe.md) | By Juan Pe Navarro \| IA y Automatización. Key tools: Anthropic, OpenAI. (Auto-ex | `Anthropic` `OpenAI` | `chemistry` `model` `models` |
