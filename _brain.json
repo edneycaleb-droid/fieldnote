@@ -1180,10 +1180,11 @@
       ]
     },
     "here": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
-        "new_claude_opus_5_leaks"
+        "new_claude_opus_5_leaks",
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
       ]
     },
     "actually": {
@@ -1232,9 +1233,10 @@
       ]
     },
     "right": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
-        "kimi_k3_hermes_ai_agent_is_insane"
+        "kimi_k3_hermes_ai_agent_is_insane",
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
       ]
     },
     "claude": {
@@ -1258,9 +1260,10 @@
       ]
     },
     "work": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
-        "new_claude_update_is_insane"
+        "new_claude_update_is_insane",
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
       ]
     },
     "real": {
@@ -1364,9 +1367,10 @@
       ]
     },
     "going": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
-        "making_with_loop_engineering"
+        "making_with_loop_engineering",
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
       ]
     },
     "think": {
@@ -1506,6 +1510,42 @@
       "freq": 1,
       "skills": [
         "local_ai_coding"
+      ]
+    },
+    "site": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "chat": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "dave": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "website": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "good": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "need": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
       ]
     }
   },
@@ -3544,6 +3584,30 @@
         "models"
       ],
       "step_count": 9
+    },
+    "chatgpt_work_everything_you_need_to_know_to_get_st": {
+      "concepts": [
+        "work",
+        "here",
+        "site",
+        "right",
+        "chat",
+        "dave",
+        "website",
+        "good",
+        "going",
+        "need"
+      ],
+      "tools": [],
+      "tags": [
+        "work",
+        "here",
+        "site",
+        "right",
+        "chat",
+        "dave"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -4370,6 +4434,10 @@
       ],
       "this_ai_business_model_is_creating_new_millionaire": [
         "Claude"
+      ],
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "here",
+        "right"
       ]
     },
     "new_claude_update_is_insane": {
@@ -4417,6 +4485,9 @@
       "this_ai_business_model_is_creating_new_millionaire": [
         "Claude",
         "Anthropic"
+      ],
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "work"
       ]
     },
     "new_claude_opus_5_leaks": {
@@ -4464,6 +4535,9 @@
         "Claude",
         "people",
         "Anthropic"
+      ],
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "here"
       ]
     },
     "making_with_loop_engineering": {
@@ -4505,6 +4579,9 @@
       ],
       "this_ai_business_model_is_creating_new_millionaire": [
         "Claude"
+      ],
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "going"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -4614,8 +4691,23 @@
       "build_production_ready_llm_applications_with_haystack": [
         "Mistral"
       ]
+    },
+    "chatgpt_work_everything_you_need_to_know_to_get_st": {
+      "kimi_k3_hermes_ai_agent_is_insane": [
+        "here",
+        "right"
+      ],
+      "new_claude_update_is_insane": [
+        "work"
+      ],
+      "new_claude_opus_5_leaks": [
+        "here"
+      ],
+      "making_with_loop_engineering": [
+        "going"
+      ]
     }
   },
-  "updated_at": "2026-07-19T02:40:24.997999+00:00",
-  "total_skills": 34
+  "updated_at": "2026-07-19T02:40:39.073897+00:00",
+  "total_skills": 35
 }
