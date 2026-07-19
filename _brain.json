@@ -40,9 +40,10 @@
       ]
     },
     "really": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
+        "how_to_use_codex_to_build_insanely_beautiful_websi",
+        "kimi_k3_is_insane_best_open_model_ever_that_beats_"
       ]
     },
     "need": {
@@ -65,18 +66,20 @@
       ]
     },
     "model": {
+      "freq": 4,
+      "skills": [
+        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner",
+        "kimi_k3_is_fable_level_they_should_be_worried",
+        "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
+        "kimi_k3_is_insane_best_open_model_ever_that_beats_"
+      ]
+    },
+    "fable": {
       "freq": 3,
       "skills": [
         "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner",
         "kimi_k3_is_fable_level_they_should_be_worried",
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
-      ]
-    },
-    "fable": {
-      "freq": 2,
-      "skills": [
-        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner",
-        "kimi_k3_is_fable_level_they_should_be_worried"
+        "kimi_k3_is_insane_best_open_model_ever_that_beats_"
       ]
     },
     "models": {
@@ -87,31 +90,35 @@
       ]
     },
     "these": {
-      "freq": 2,
-      "skills": [
-        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner",
-        "kimi_k3_is_fable_level_they_should_be_worried"
-      ]
-    },
-    "which": {
-      "freq": 2,
-      "skills": [
-        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner",
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
-      ]
-    },
-    "kimi": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner"
-      ]
-    },
-    "actually": {
       "freq": 3,
       "skills": [
         "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner",
+        "kimi_k3_is_fable_level_they_should_be_worried",
+        "kimi_k3_is_insane_best_open_model_ever_that_beats_"
+      ]
+    },
+    "which": {
+      "freq": 3,
+      "skills": [
+        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner",
+        "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
+        "kimi_k3_is_insane_best_open_model_ever_that_beats_"
+      ]
+    },
+    "kimi": {
+      "freq": 2,
+      "skills": [
+        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner",
+        "kimi_k3_is_insane_best_open_model_ever_that_beats_"
+      ]
+    },
+    "actually": {
+      "freq": 4,
+      "skills": [
+        "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner",
         "kimi_k3_is_just_ridiculous",
-        "kimi_k3_is_fable_level_they_should_be_worried"
+        "kimi_k3_is_fable_level_they_should_be_worried",
+        "kimi_k3_is_insane_best_open_model_ever_that_beats_"
       ]
     },
     "much": {
@@ -177,9 +184,10 @@
       ]
     },
     "well": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_is_fable_level_they_should_be_worried"
+        "kimi_k3_is_fable_level_they_should_be_worried",
+        "kimi_k3_is_insane_best_open_model_ever_that_beats_"
       ]
     },
     "code": {
@@ -334,18 +342,31 @@
       "skills": [
         "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
       ]
+    },
+    "different": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_is_insane_best_open_model_ever_that_beats_"
+      ]
+    },
+    "output": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_is_insane_best_open_model_ever_that_beats_"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "how_to_use_codex_to_build_insanely_beautiful_websi",
         "kimi_k3_is_just_ridiculous",
         "kimi_k3_is_fable_level_they_should_be_worried",
         "new_hermes_agent_os_is_insane",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
+        "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
+        "kimi_k3_is_insane_best_open_model_ever_that_beats_"
       ]
     },
     "next.js": {
@@ -607,6 +628,32 @@
         "think"
       ],
       "step_count": 1
+    },
+    "kimi_k3_is_insane_best_open_model_ever_that_beats_": {
+      "concepts": [
+        "model",
+        "different",
+        "which",
+        "actually",
+        "kimi",
+        "these",
+        "fable",
+        "well",
+        "really",
+        "output"
+      ],
+      "tools": [
+        "Claude"
+      ],
+      "tags": [
+        "model",
+        "different",
+        "which",
+        "actually",
+        "kimi",
+        "these"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -633,6 +680,10 @@
         "Claude",
         "Anthropic",
         "OpenAI"
+      ],
+      "kimi_k3_is_insane_best_open_model_ever_that_beats_": [
+        "Claude",
+        "really"
       ]
     },
     "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner": {
@@ -654,6 +705,14 @@
       "kimi_k3_testing_moonshot_s_2_8t_open_model_without": [
         "which",
         "model"
+      ],
+      "kimi_k3_is_insane_best_open_model_ever_that_beats_": [
+        "these",
+        "kimi",
+        "actually",
+        "model",
+        "which",
+        "fable"
       ]
     },
     "kimi_k3_is_just_ridiculous": {
@@ -680,6 +739,10 @@
       "kimi_k3_testing_moonshot_s_2_8t_open_model_without": [
         "Claude",
         "going"
+      ],
+      "kimi_k3_is_insane_best_open_model_ever_that_beats_": [
+        "Claude",
+        "actually"
       ]
     },
     "kimi_k3_is_fable_level_they_should_be_worried": {
@@ -711,6 +774,14 @@
         "Claude",
         "SQLite",
         "model"
+      ],
+      "kimi_k3_is_insane_best_open_model_ever_that_beats_": [
+        "well",
+        "these",
+        "actually",
+        "Claude",
+        "model",
+        "fable"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -729,6 +800,9 @@
         "every"
       ],
       "kimi_k3_testing_moonshot_s_2_8t_open_model_without": [
+        "Claude"
+      ],
+      "kimi_k3_is_insane_best_open_model_ever_that_beats_": [
         "Claude"
       ]
     },
@@ -752,6 +826,9 @@
         "Claude",
         "Gemini",
         "know"
+      ],
+      "kimi_k3_is_insane_best_open_model_ever_that_beats_": [
+        "Claude"
       ]
     },
     "kimi_k3_testing_moonshot_s_2_8t_open_model_without": {
@@ -780,9 +857,51 @@
         "Claude",
         "Gemini",
         "know"
+      ],
+      "kimi_k3_is_insane_best_open_model_ever_that_beats_": [
+        "which",
+        "Claude",
+        "model"
+      ]
+    },
+    "kimi_k3_is_insane_best_open_model_ever_that_beats_": {
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "Claude",
+        "really"
+      ],
+      "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner": [
+        "these",
+        "kimi",
+        "actually",
+        "model",
+        "which",
+        "fable"
+      ],
+      "kimi_k3_is_just_ridiculous": [
+        "Claude",
+        "actually"
+      ],
+      "kimi_k3_is_fable_level_they_should_be_worried": [
+        "well",
+        "these",
+        "actually",
+        "Claude",
+        "model",
+        "fable"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Claude"
+      ],
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "Claude"
+      ],
+      "kimi_k3_testing_moonshot_s_2_8t_open_model_without": [
+        "which",
+        "Claude",
+        "model"
       ]
     }
   },
-  "updated_at": "2026-07-19T02:45:24.669222+00:00",
-  "total_skills": 7
+  "updated_at": "2026-07-19T02:45:24.759888+00:00",
+  "total_skills": 8
 }
