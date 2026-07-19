@@ -1174,7 +1174,7 @@
       ]
     },
     "hermes": {
-      "freq": 18,
+      "freq": 19,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
@@ -1188,7 +1188,7 @@
       ]
     },
     "here": {
-      "freq": 54,
+      "freq": 55,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_opus_5_leaks",
@@ -1240,7 +1240,7 @@
       ]
     },
     "agent": {
-      "freq": 28,
+      "freq": 29,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "this_kimi_k3_agent_os_is_wild",
@@ -1315,7 +1315,7 @@
       ]
     },
     "right": {
-      "freq": 30,
+      "freq": 31,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
@@ -1405,7 +1405,7 @@
       ]
     },
     "about": {
-      "freq": 22,
+      "freq": 23,
       "skills": [
         "new_claude_update_is_insane",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
@@ -1483,7 +1483,7 @@
       ]
     },
     "know": {
-      "freq": 21,
+      "freq": 22,
       "skills": [
         "making_with_loop_engineering",
         "master_ai_trading_in_70_minutes_full_claude_tradin",
@@ -1527,7 +1527,7 @@
       ]
     },
     "going": {
-      "freq": 37,
+      "freq": 38,
       "skills": [
         "making_with_loop_engineering",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
@@ -1886,7 +1886,7 @@
       ]
     },
     "want": {
-      "freq": 19,
+      "freq": 20,
       "skills": [
         "master_ai_trading_in_70_minutes_full_claude_tradin",
         "how_to_run_kimi_k3_for_free",
@@ -1931,7 +1931,7 @@
       ]
     },
     "skill": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "how_to_use_codex_to_build_insanely_beautiful_websi",
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
@@ -2441,7 +2441,7 @@
       ]
     },
     "ahead": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "hermes_agent_zero_to_personal_ai_assistant_1_hour_"
@@ -2456,7 +2456,7 @@
   },
   "tools": {
     "Anthropic": {
-      "freq": 45,
+      "freq": 46,
       "skills": [
         "building_ai_agents",
         "build_production_ready_llm_applications_with_haystack",
@@ -2544,7 +2544,7 @@
       ]
     },
     "Claude": {
-      "freq": 86,
+      "freq": 87,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -2837,7 +2837,7 @@
       ]
     },
     "Docker": {
-      "freq": 17,
+      "freq": 18,
       "skills": [
         "astrbot_deployment",
         "build_production_ready_llm_applications_with_haystack",
@@ -2909,7 +2909,7 @@
       ]
     },
     "Git": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "openai_agents_sdk",
         "microsoft_mcp_curriculum",
@@ -2917,7 +2917,7 @@
       ]
     },
     "Python": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "openai_agents_sdk",
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq",
@@ -2933,7 +2933,7 @@
       ]
     },
     "OpenAI": {
-      "freq": 42,
+      "freq": 43,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
         "testing_and_comparing_llms",
@@ -3617,7 +3617,7 @@
       ]
     },
     "LLM": {
-      "freq": 11,
+      "freq": 12,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "master_ai_trading_in_70_minutes_full_claude_tradin",
@@ -3628,7 +3628,7 @@
       ]
     },
     "Llama": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "hermes_agent_zero_to_personal_ai_assistant_1_hour_"
@@ -3737,7 +3737,7 @@
       ]
     },
     "SSH": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
         "hermes_agent_zero_to_personal_ai_assistant_1_hour_"
@@ -18230,6 +18230,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-19T02:43:48.933151+00:00",
+  "updated_at": "2026-07-19T02:43:49.109081+00:00",
   "total_skills": 76
 }
