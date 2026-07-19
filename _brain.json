@@ -1193,7 +1193,7 @@
       ]
     },
     "here": {
-      "freq": 58,
+      "freq": 59,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_opus_5_leaks",
@@ -1223,11 +1223,12 @@
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "hermes_agent_zero_to_personal_ai_assistant_1_hour_",
         "hermes_agent_full_course_setup_guide_for_complete_",
-        "full_hermes_agent_tutorial_desktop_a_useful_agenti"
+        "full_hermes_agent_tutorial_desktop_a_useful_agenti",
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
       ]
     },
     "actually": {
-      "freq": 35,
+      "freq": 36,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_update_is_insane",
@@ -1244,11 +1245,12 @@
         "kimi_k3_is_insane_best_open_model_ever_that_beats_",
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
-        "6_insane_hermes_agent_use_cases_that_you_need_righ"
+        "6_insane_hermes_agent_use_cases_that_you_need_righ",
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
       ]
     },
     "agent": {
-      "freq": 37,
+      "freq": 38,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "this_kimi_k3_agent_os_is_wild",
@@ -1268,7 +1270,8 @@
         "hermes_agent_full_course_setup_guide_for_complete_",
         "hermes_claude_code_mcp_integration_loop_engineerin",
         "new_hermes_paperclip_ai_agent_update_is_insane",
-        "full_hermes_agent_tutorial_desktop_a_useful_agenti"
+        "full_hermes_agent_tutorial_desktop_a_useful_agenti",
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
       ]
     },
     "inside": {
@@ -1552,7 +1555,7 @@
       ]
     },
     "going": {
-      "freq": 41,
+      "freq": 42,
       "skills": [
         "making_with_loop_engineering",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
@@ -1574,7 +1577,8 @@
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "hermes_agent_zero_to_personal_ai_assistant_1_hour_",
         "hermes_agent_full_course_setup_guide_for_complete_",
-        "full_hermes_agent_tutorial_desktop_a_useful_agenti"
+        "full_hermes_agent_tutorial_desktop_a_useful_agenti",
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
       ]
     },
     "think": {
@@ -1678,10 +1682,11 @@
       ]
     },
     "build": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "this_ai_business_model_is_creating_new_millionaire",
-        "gpt_5_6_on_hermes_agent_is_actually_insane_full_he"
+        "gpt_5_6_on_hermes_agent_is_actually_insane_full_he",
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
       ]
     },
     "completely": {
@@ -2581,6 +2586,36 @@
       "freq": 2,
       "skills": [
         "ornith_35b_9b_hermes_zed_the_fully_private_local_a"
+      ]
+    },
+    "ticket": {
+      "freq": 1,
+      "skills": [
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
+      ]
+    },
+    "zendesk": {
+      "freq": 1,
+      "skills": [
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
+      ]
+    },
+    "inbox": {
+      "freq": 1,
+      "skills": [
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
+      ]
+    },
+    "able": {
+      "freq": 1,
+      "skills": [
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
+      ]
+    },
+    "response": {
+      "freq": 1,
+      "skills": [
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
       ]
     }
   },
@@ -3766,7 +3801,7 @@
       ]
     },
     "LLM": {
-      "freq": 19,
+      "freq": 20,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "master_ai_trading_in_70_minutes_full_claude_tradin",
@@ -3777,7 +3812,8 @@
         "6_insane_hermes_agent_use_cases_that_you_need_righ",
         "hermes_agent_full_course_setup_guide_for_complete_",
         "full_hermes_agent_tutorial_desktop_a_useful_agenti",
-        "ornith_35b_9b_hermes_zed_the_fully_private_local_a"
+        "ornith_35b_9b_hermes_zed_the_fully_private_local_a",
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
       ]
     },
     "Llama": {
@@ -6200,6 +6236,32 @@
         "tool"
       ],
       "step_count": 1
+    },
+    "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": {
+      "concepts": [
+        "agent",
+        "here",
+        "ticket",
+        "zendesk",
+        "going",
+        "actually",
+        "build",
+        "inbox",
+        "able",
+        "response"
+      ],
+      "tools": [
+        "LLM"
+      ],
+      "tags": [
+        "agent",
+        "here",
+        "ticket",
+        "zendesk",
+        "going",
+        "actually"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -6749,6 +6811,9 @@
         "Anthropic"
       ],
       "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "LLM"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
         "LLM"
       ]
     },
@@ -7580,6 +7645,9 @@
       ],
       "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "LLM"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "LLM"
       ]
     },
     "superagi_building_autonomous_agents": {
@@ -8230,6 +8298,11 @@
         "which",
         "Claude",
         "well"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "here",
+        "agent",
+        "actually"
       ]
     },
     "new_claude_update_is_insane": {
@@ -8464,6 +8537,9 @@
       ],
       "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "Claude"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "actually"
       ]
     },
     "new_claude_opus_5_leaks": {
@@ -8722,6 +8798,9 @@
       "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "Claude",
         "model"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "here"
       ]
     },
     "making_with_loop_engineering": {
@@ -8966,6 +9045,10 @@
       ],
       "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "Claude"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "going",
+        "actually"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -9236,6 +9319,9 @@
         "LLM",
         "models",
         "model"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "LLM"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -9413,6 +9499,9 @@
       ],
       "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "Claude"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "build"
       ]
     },
     "local_ai_coding": {
@@ -9605,6 +9694,10 @@
       ],
       "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "good"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "going",
+        "here"
       ]
     },
     "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
@@ -9986,6 +10079,10 @@
         "Claude",
         "Ollama",
         "well"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "going",
+        "here"
       ]
     },
     "master_ai_trading_in_70_minutes_full_claude_tradin": {
@@ -10246,6 +10343,11 @@
       "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "Claude",
         "LLM"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "LLM",
+        "here",
+        "actually"
       ]
     },
     "how_to_use_codex_to_build_insanely_beautiful_websi": {
@@ -10504,6 +10606,9 @@
       ],
       "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "Claude"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "here"
       ]
     },
     "did_kimi_k3_really_beat_fable": {
@@ -10832,6 +10937,10 @@
         "Claude",
         "models",
         "model"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "here",
+        "actually"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -11083,6 +11192,11 @@
       ],
       "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "Claude"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "going",
+        "here",
+        "actually"
       ]
     },
     "kimi_k3_is_the_best_model_ever_made_sometimes": {
@@ -11424,6 +11538,9 @@
         "Claude",
         "models",
         "model"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "going"
       ]
     },
     "i_tested_kimi_k3_so_you_don_t_have_to": {
@@ -11696,6 +11813,10 @@
         "models",
         "Ollama",
         "model"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "going",
+        "here"
       ]
     },
     "kimi_k3_is_just_ridiculous": {
@@ -11937,6 +12058,11 @@
       "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "good",
         "Claude"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "going",
+        "here",
+        "actually"
       ]
     },
     "people_are_creating_insane_things_with_kimi_k3": {
@@ -12185,6 +12311,9 @@
       "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "Claude",
         "model"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "here"
       ]
     },
     "china_just_beat_claude_ai_kimi_k3": {
@@ -12986,6 +13115,9 @@
         "models",
         "Claude",
         "model"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "agent"
       ]
     },
     "how_to_run_kimi_k3_for_free": {
@@ -13154,6 +13286,11 @@
         "going",
         "want",
         "here"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "going",
+        "here",
+        "actually"
       ]
     },
     "yes_the_kimi_k3_hype_is_real": {
@@ -13470,6 +13607,10 @@
       "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "which",
         "Claude"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "here",
+        "actually"
       ]
     },
     "kimi_k3_ai_full_course_1_hour_build_automate_anyth": {
@@ -13757,6 +13898,13 @@
         "Claude",
         "LLM",
         "well"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "LLM",
+        "going",
+        "actually",
+        "here",
+        "agent"
       ]
     },
     "kimi_k3_fully_tested_an_open_model_beats_fable": {
@@ -14154,6 +14302,9 @@
       "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "which",
         "model"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "going"
       ]
     },
     "run_kimi_k3_inside_claude_code_max_power": {
@@ -14419,6 +14570,10 @@
       "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "Claude",
         "well"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "going",
+        "here"
       ]
     },
     "2_8_trillion_parameters_kimi_k3_is_here": {
@@ -15062,6 +15217,10 @@
         "which",
         "models",
         "model"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "here",
+        "actually"
       ]
     },
     "kimi_k3_is_fable_level_they_should_be_worried": {
@@ -15328,6 +15487,10 @@
         "Claude",
         "well",
         "model"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "here",
+        "actually"
       ]
     },
     "kimi_k3_just_knocked_claude_to_third_place_chinese": {
@@ -15597,6 +15760,9 @@
         "Claude",
         "models",
         "model"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "going"
       ]
     },
     "use_kimi_k3_completely_free_best_ai_coding_setup_2": {
@@ -15810,6 +15976,9 @@
       "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "Claude",
         "well"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "here"
       ]
     },
     "kimi_k3_is_insanely_strong_real_tests_and_review": {
@@ -16092,6 +16261,10 @@
       ],
       "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "Claude"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "going",
+        "here"
       ]
     },
     "kimi_k3_crushed_fable": {
@@ -16414,6 +16587,10 @@
         "Claude",
         "models",
         "model"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "going",
+        "here"
       ]
     },
     "kimi_k3_ai_model": {},
@@ -16717,6 +16894,9 @@
         "which",
         "Claude",
         "model"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "going"
       ]
     },
     "kimi_k3_is_insane_best_open_model_ever_that_beats_": {
@@ -16957,6 +17137,9 @@
         "Claude",
         "well",
         "model"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "actually"
       ]
     },
     "hermes_agent_just_got_10x_better_4_insane_new_feat": {
@@ -17228,6 +17411,11 @@
       "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "Claude",
         "model"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "going",
+        "agent",
+        "actually"
       ]
     },
     "100_hours_of_hermes_agent_lessons_in_19_minutes": {
@@ -17469,6 +17657,9 @@
       ],
       "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "Claude"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "agent"
       ]
     },
     "every_hermes_concept_explained_for_normal_people": {
@@ -17783,6 +17974,10 @@
         "which",
         "Claude",
         "Ollama"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "here",
+        "agent"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -17967,6 +18162,9 @@
       ],
       "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "Claude"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "agent"
       ]
     },
     "kimi_k3_hermes_agent_changes_everything": {
@@ -18171,6 +18369,10 @@
       ],
       "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "model"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "here",
+        "agent"
       ]
     },
     "you_need_to_use_hermes_right_now_goodbye_openclaw": {
@@ -18508,6 +18710,12 @@
       "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "Claude",
         "LLM"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "LLM",
+        "here",
+        "agent",
+        "actually"
       ]
     },
     "gpt_5_6_on_hermes_agent_is_actually_insane_full_he": {
@@ -18810,6 +19018,11 @@
       ],
       "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "Claude"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "here",
+        "agent",
+        "build"
       ]
     },
     "use_this_to_make_the_hermes_agent_basically_free": {
@@ -19105,6 +19318,9 @@
         "which",
         "Claude",
         "model"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "agent"
       ]
     },
     "hermes_agent_build_your_own_personal_ai_assistant_": {
@@ -19312,6 +19528,11 @@
         "here",
         "OpenAI",
         "agent"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "going",
+        "agent",
+        "here"
       ]
     },
     "hermes_agent_tutorial_for_beginners_full_step_by_s": {
@@ -19617,6 +19838,12 @@
       "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "Claude",
         "LLM"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "LLM",
+        "going",
+        "agent",
+        "here"
       ]
     },
     "hermes_agent_zero_to_personal_ai_assistant_1_hour_": {
@@ -19985,6 +20212,12 @@
       "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "Claude",
         "LLM"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "LLM",
+        "going",
+        "agent",
+        "here"
       ]
     },
     "6_insane_hermes_agent_use_cases_that_you_need_righ": {
@@ -20228,6 +20461,11 @@
       "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "Claude",
         "LLM"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "LLM",
+        "agent",
+        "actually"
       ]
     },
     "hermes_agent_full_course_setup_guide_for_complete_": {
@@ -20525,6 +20763,12 @@
       ],
       "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "LLM"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "LLM",
+        "going",
+        "agent",
+        "here"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -20733,6 +20977,9 @@
       ],
       "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "Claude"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "agent"
       ]
     },
     "new_hermes_paperclip_ai_agent_update_is_insane": {
@@ -20949,6 +21196,9 @@
       ],
       "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "Claude"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "agent"
       ]
     },
     "full_hermes_agent_tutorial_desktop_a_useful_agenti": {
@@ -21317,6 +21567,12 @@
         "LLM",
         "Ollama",
         "model"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "LLM",
+        "going",
+        "agent",
+        "here"
       ]
     },
     "ornith_35b_9b_hermes_zed_the_fully_private_local_a": {
@@ -21556,9 +21812,211 @@
         "LLM",
         "Ollama",
         "model"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "LLM"
+      ]
+    },
+    "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": {
+      "build_production_ready_llm_applications_with_haystack": [
+        "LLM"
+      ],
+      "graphrag_deployment": [
+        "LLM"
+      ],
+      "kimi_k3_hermes_ai_agent_is_insane": [
+        "here",
+        "agent",
+        "actually"
+      ],
+      "new_claude_update_is_insane": [
+        "actually"
+      ],
+      "new_claude_opus_5_leaks": [
+        "here"
+      ],
+      "making_with_loop_engineering": [
+        "going",
+        "actually"
+      ],
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "LLM"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "build"
+      ],
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "going",
+        "here"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "going",
+        "here"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "LLM",
+        "here",
+        "actually"
+      ],
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "here"
+      ],
+      "did_kimi_k3_really_beat_fable": [
+        "here",
+        "actually"
+      ],
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "going",
+        "here",
+        "actually"
+      ],
+      "kimi_k3_is_the_best_model_ever_made_sometimes": [
+        "going"
+      ],
+      "i_tested_kimi_k3_so_you_don_t_have_to": [
+        "going",
+        "here"
+      ],
+      "kimi_k3_is_just_ridiculous": [
+        "going",
+        "here",
+        "actually"
+      ],
+      "people_are_creating_insane_things_with_kimi_k3": [
+        "here"
+      ],
+      "this_kimi_k3_agent_os_is_wild": [
+        "agent"
+      ],
+      "how_to_run_kimi_k3_for_free": [
+        "going",
+        "here",
+        "actually"
+      ],
+      "yes_the_kimi_k3_hype_is_real": [
+        "here",
+        "actually"
+      ],
+      "kimi_k3_ai_full_course_1_hour_build_automate_anyth": [
+        "LLM",
+        "going",
+        "actually",
+        "here",
+        "agent"
+      ],
+      "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_": [
+        "going"
+      ],
+      "run_kimi_k3_inside_claude_code_max_power": [
+        "going",
+        "here"
+      ],
+      "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner": [
+        "here",
+        "actually"
+      ],
+      "kimi_k3_is_fable_level_they_should_be_worried": [
+        "here",
+        "actually"
+      ],
+      "kimi_k3_just_knocked_claude_to_third_place_chinese": [
+        "going"
+      ],
+      "use_kimi_k3_completely_free_best_ai_coding_setup_2": [
+        "here"
+      ],
+      "kimi_k3_is_insanely_strong_real_tests_and_review": [
+        "going",
+        "here"
+      ],
+      "kimi_k3_crushed_fable": [
+        "going",
+        "here"
+      ],
+      "kimi_k3_testing_moonshot_s_2_8t_open_model_without": [
+        "going"
+      ],
+      "kimi_k3_is_insane_best_open_model_ever_that_beats_": [
+        "actually"
+      ],
+      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
+        "going",
+        "agent",
+        "actually"
+      ],
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "agent"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "here",
+        "agent"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "agent"
+      ],
+      "kimi_k3_hermes_agent_changes_everything": [
+        "here",
+        "agent"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "LLM",
+        "here",
+        "agent",
+        "actually"
+      ],
+      "gpt_5_6_on_hermes_agent_is_actually_insane_full_he": [
+        "here",
+        "agent",
+        "build"
+      ],
+      "use_this_to_make_the_hermes_agent_basically_free": [
+        "agent"
+      ],
+      "hermes_agent_build_your_own_personal_ai_assistant_": [
+        "going",
+        "agent",
+        "here"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "LLM",
+        "going",
+        "agent",
+        "here"
+      ],
+      "hermes_agent_zero_to_personal_ai_assistant_1_hour_": [
+        "LLM",
+        "going",
+        "agent",
+        "here"
+      ],
+      "6_insane_hermes_agent_use_cases_that_you_need_righ": [
+        "LLM",
+        "agent",
+        "actually"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "LLM",
+        "going",
+        "agent",
+        "here"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "agent"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "agent"
+      ],
+      "full_hermes_agent_tutorial_desktop_a_useful_agenti": [
+        "LLM",
+        "going",
+        "agent",
+        "here"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "LLM"
       ]
     }
   },
-  "updated_at": "2026-07-19T02:44:20.819823+00:00",
-  "total_skills": 82
+  "updated_at": "2026-07-19T02:44:25.564675+00:00",
+  "total_skills": 83
 }
