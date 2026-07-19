@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **3 skills** · Last synced: 2026-07-19 02:52 UTC
+> **1 skill** · Last synced: 2026-07-19 02:52 UTC
 
 ---
 
@@ -9,9 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [Kimi K3 is INSANELY STRONG! (Real Tests and Review)](skills/kimi_k3_is_insanely_strong_real_tests_and_review.md) | By Superbash (BoxminingAI). Key tools: Anthropic, GPT-4, Claude. (Auto-extracted | `Anthropic` `GPT-4` `Claude` | `very` `right` `okay` |
-| [Hermes Agent Just Got 10X Better (4 Insane NEW Features)](skills/hermes_agent_just_got_10x_better_4_insane_new_feat.md) | By Zinho Automates. Key tools: Claude. (Auto-extracted — pending AI enhancement. | `Claude` | `agent` `going` `every` |
-| [How to Run Kimi K3 for FREE!](skills/how_to_run_kimi_k3_for_free.md) | By Julian Goldie SEO. (Auto-extracted — pending AI enhancement.) |  | `free` `going` `here` |
+| [Hermes Agent: Build Your Own Personal AI Assistant (Full Course)](skills/hermes_agent_build_your_own_personal_ai_assistant_.md) | By Komputer Mechanic. Key tools: PowerShell, OpenAI. (Auto-extracted — pending A | `PowerShell` `OpenAI` | `going` `here` `agent` |
 
 ---
 
