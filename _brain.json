@@ -1176,14 +1176,14 @@
       ]
     },
     "here": {
-      "freq": 6,
+      "freq": 5,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_opus_5_leaks"
       ]
     },
     "actually": {
-      "freq": 9,
+      "freq": 8,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_update_is_insane",
@@ -1197,7 +1197,7 @@
       ]
     },
     "inside": {
-      "freq": 6,
+      "freq": 5,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_opus_5_leaks"
@@ -1234,96 +1234,93 @@
       ]
     },
     "claude": {
-      "freq": 6,
+      "freq": 4,
       "skills": [
         "new_claude_update_is_insane",
         "new_claude_opus_5_leaks"
       ]
     },
     "something": {
-      "freq": 3,
+      "freq": 2,
       "skills": [
         "new_claude_update_is_insane"
       ]
     },
     "anthropic": {
-      "freq": 6,
+      "freq": 4,
       "skills": [
         "new_claude_update_is_insane",
         "new_claude_opus_5_leaks"
       ]
     },
     "work": {
-      "freq": 3,
+      "freq": 2,
       "skills": [
         "new_claude_update_is_insane"
       ]
     },
     "real": {
-      "freq": 4,
+      "freq": 2,
       "skills": [
-        "new_claude_update_is_insane",
-        "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
+        "new_claude_update_is_insane"
       ]
     },
     "every": {
-      "freq": 3,
+      "freq": 2,
       "skills": [
         "new_claude_update_is_insane"
       ]
     },
     "already": {
-      "freq": 3,
+      "freq": 2,
       "skills": [
         "new_claude_update_is_insane"
       ]
     },
     "built": {
-      "freq": 3,
+      "freq": 2,
       "skills": [
         "new_claude_update_is_insane"
       ]
     },
     "about": {
-      "freq": 4,
+      "freq": 2,
       "skills": [
-        "new_claude_update_is_insane",
-        "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
+        "new_claude_update_is_insane"
       ]
     },
     "opus": {
-      "freq": 3,
+      "freq": 2,
       "skills": [
         "new_claude_opus_5_leaks"
       ]
     },
     "model": {
-      "freq": 4,
+      "freq": 2,
       "skills": [
-        "new_claude_opus_5_leaks",
-        "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
+        "new_claude_opus_5_leaks"
       ]
     },
     "profit": {
-      "freq": 3,
+      "freq": 2,
       "skills": [
         "new_claude_opus_5_leaks"
       ]
     },
     "boardroom": {
-      "freq": 3,
+      "freq": 2,
       "skills": [
         "new_claude_opus_5_leaks"
       ]
     },
     "people": {
-      "freq": 3,
+      "freq": 2,
       "skills": [
         "new_claude_opus_5_leaks"
       ]
     },
     "honeycomb": {
-      "freq": 3,
+      "freq": 2,
       "skills": [
         "new_claude_opus_5_leaks"
       ]
@@ -1381,60 +1378,17 @@
       "skills": [
         "making_with_loop_engineering"
       ]
-    },
-    "music": {
-      "freq": 1,
-      "skills": [
-        "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
-      ]
-    },
-    "openai": {
-      "freq": 1,
-      "skills": [
-        "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
-      ]
-    },
-    "even": {
-      "freq": 1,
-      "skills": [
-        "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
-      ]
-    },
-    "soul": {
-      "freq": 1,
-      "skills": [
-        "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
-      ]
-    },
-    "meta": {
-      "freq": 1,
-      "skills": [
-        "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
-      ]
-    },
-    "models": {
-      "freq": 1,
-      "skills": [
-        "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
-      ]
-    },
-    "luna": {
-      "freq": 1,
-      "skills": [
-        "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
-      ]
     }
   },
   "tools": {
     "Anthropic": {
-      "freq": 14,
+      "freq": 11,
       "skills": [
         "building_ai_agents",
         "build_production_ready_llm_applications_with_haystack",
         "testing_and_comparing_llms",
         "new_claude_update_is_insane",
-        "new_claude_opus_5_leaks",
-        "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
+        "new_claude_opus_5_leaks"
       ]
     },
     "Haiku": {
@@ -1499,7 +1453,7 @@
       ]
     },
     "Claude": {
-      "freq": 23,
+      "freq": 20,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -1509,8 +1463,7 @@
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_update_is_insane",
         "new_claude_opus_5_leaks",
-        "making_with_loop_engineering",
-        "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
+        "making_with_loop_engineering"
       ]
     },
     "Google Drive": {
@@ -1845,12 +1798,11 @@
       ]
     },
     "OpenAI": {
-      "freq": 7,
+      "freq": 6,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
         "testing_and_comparing_llms",
-        "making_with_loop_engineering",
-        "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
+        "making_with_loop_engineering"
       ]
     },
     "Mistral": {
@@ -2488,18 +2440,6 @@
       "freq": 3,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane"
-      ]
-    },
-    "LLM": {
-      "freq": 1,
-      "skills": [
-        "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
-      ]
-    },
-    "Llama": {
-      "freq": 1,
-      "skills": [
-        "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
       ]
     }
   },
@@ -3357,36 +3297,6 @@
         "actually"
       ],
       "step_count": 1
-    },
-    "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
-      "concepts": [
-        "music",
-        "model",
-        "openai",
-        "even",
-        "soul",
-        "meta",
-        "models",
-        "about",
-        "real",
-        "luna"
-      ],
-      "tools": [
-        "OpenAI",
-        "Claude",
-        "Anthropic",
-        "LLM",
-        "Llama"
-      ],
-      "tags": [
-        "music",
-        "model",
-        "openai",
-        "even",
-        "soul",
-        "meta"
-      ],
-      "step_count": 1
     }
   },
   "relationships": {
@@ -3444,9 +3354,6 @@
         "Claude"
       ],
       "making_with_loop_engineering": [
-        "Claude"
-      ],
-      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
         "Claude"
       ]
     },
@@ -3622,11 +3529,6 @@
       ],
       "making_with_loop_engineering": [
         "OpenAI"
-      ],
-      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
-        "LLM",
-        "Anthropic",
-        "OpenAI"
       ]
     },
     "swanlab_ai_training_analysis_platform": {
@@ -3671,9 +3573,6 @@
         "Claude"
       ],
       "making_with_loop_engineering": [
-        "Claude"
-      ],
-      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
         "Claude"
       ]
     },
@@ -3761,9 +3660,6 @@
       ],
       "making_with_loop_engineering": [
         "Claude"
-      ],
-      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
-        "Claude"
       ]
     },
     "pydantic_ai_framework": {
@@ -3832,9 +3728,6 @@
         "Claude"
       ],
       "making_with_loop_engineering": [
-        "Claude"
-      ],
-      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
         "Claude"
       ]
     },
@@ -3995,9 +3888,6 @@
       ],
       "superagi_building_autonomous_agents": [
         "Docker"
-      ],
-      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
-        "LLM"
       ]
     },
     "superagi_building_autonomous_agents": {
@@ -4087,9 +3977,6 @@
       ],
       "making_with_loop_engineering": [
         "Claude"
-      ],
-      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
-        "Claude"
       ]
     },
     "testing_and_comparing_llms": {
@@ -4126,10 +4013,6 @@
         "Anthropic"
       ],
       "making_with_loop_engineering": [
-        "OpenAI"
-      ],
-      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
-        "Anthropic",
         "OpenAI"
       ]
     },
@@ -4175,9 +4058,6 @@
       "making_with_loop_engineering": [
         "Claude",
         "actually"
-      ],
-      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
-        "Claude"
       ]
     },
     "new_claude_update_is_insane": {
@@ -4215,12 +4095,6 @@
       "making_with_loop_engineering": [
         "Claude",
         "actually"
-      ],
-      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
-        "about",
-        "Claude",
-        "Anthropic",
-        "real"
       ]
     },
     "new_claude_opus_5_leaks": {
@@ -4258,11 +4132,6 @@
       ],
       "making_with_loop_engineering": [
         "Claude"
-      ],
-      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
-        "Claude",
-        "Anthropic",
-        "model"
       ]
     },
     "making_with_loop_engineering": {
@@ -4297,60 +4166,9 @@
       ],
       "new_claude_opus_5_leaks": [
         "Claude"
-      ],
-      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
-        "Claude",
-        "OpenAI"
-      ]
-    },
-    "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
-      "building_ai_agents": [
-        "Claude"
-      ],
-      "build_production_ready_llm_applications_with_haystack": [
-        "LLM",
-        "Anthropic",
-        "OpenAI"
-      ],
-      "mastering_loop_engineering": [
-        "Claude"
-      ],
-      "higsfield_integration": [
-        "Claude"
-      ],
-      "hermes_agent_setup": [
-        "Claude"
-      ],
-      "graphrag_deployment": [
-        "LLM"
-      ],
-      "building_ai_agents_with_loop": [
-        "Claude"
-      ],
-      "testing_and_comparing_llms": [
-        "Anthropic",
-        "OpenAI"
-      ],
-      "kimi_k3_hermes_ai_agent_is_insane": [
-        "Claude"
-      ],
-      "new_claude_update_is_insane": [
-        "about",
-        "Claude",
-        "Anthropic",
-        "real"
-      ],
-      "new_claude_opus_5_leaks": [
-        "Claude",
-        "Anthropic",
-        "model"
-      ],
-      "making_with_loop_engineering": [
-        "Claude",
-        "OpenAI"
       ]
     }
   },
-  "updated_at": "2026-07-19T02:40:22.705346+00:00",
-  "total_skills": 32
+  "updated_at": "2026-07-19T02:40:22.338397+00:00",
+  "total_skills": 31
 }
