@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **1 skill** · Last synced: 2026-07-19 02:52 UTC
+> **2 skills** · Last synced: 2026-07-19 02:52 UTC
 
 ---
 
@@ -9,7 +9,8 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [Kimi K3 + Hermes Agent Changes Everything!](skills/kimi_k3_hermes_agent_changes_everything.md) | By Julian Goldie SEO. (Auto-extracted — pending AI enhancement.) |  | `agent` `inside` `model` |
+| [NEW Hermes + Paperclip AI Agent Update Is INSANE](skills/new_hermes_paperclip_ai_agent_update_is_insane.md) | By Julian Goldie SEO. Key tools: Claude, Gemini. (Auto-extracted — pending AI en | `Claude` `Gemini` | `agent` `hermes` `paperclip` |
+| [6 Insane Hermes Agent Use Cases That You Need Right Now](skills/6_insane_hermes_agent_use_cases_that_you_need_righ.md) | By AI LABS. Key tools: Claude, LLM, AWS, Gemini. (Auto-extracted — pending AI en | `Claude` `LLM` `AWS` `Gemini` | `agent` `hermes` `video` |
 
 ---
 
