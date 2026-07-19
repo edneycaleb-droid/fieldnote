@@ -1223,7 +1223,7 @@
       ]
     },
     "which": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq",
@@ -1276,7 +1276,7 @@
       ]
     },
     "work": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "new_claude_update_is_insane",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
@@ -1310,7 +1310,7 @@
       ]
     },
     "about": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "new_claude_update_is_insane",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
@@ -1325,7 +1325,7 @@
       ]
     },
     "model": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "new_claude_opus_5_leaks",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
@@ -1391,7 +1391,7 @@
       ]
     },
     "going": {
-      "freq": 10,
+      "freq": 11,
       "skills": [
         "making_with_loop_engineering",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
@@ -1453,7 +1453,7 @@
       ]
     },
     "models": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "did_kimi_k3_really_beat_fable",
@@ -1621,7 +1621,7 @@
       ]
     },
     "because": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq",
         "kimi_k3_is_the_best_model_ever_made_sometimes"
@@ -1724,7 +1724,7 @@
       ]
     },
     "open": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "did_kimi_k3_really_beat_fable",
         "kimi_k3_is_the_best_model_ever_made_sometimes"
@@ -1762,13 +1762,13 @@
       ]
     },
     "things": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_is_the_best_model_ever_made_sometimes"
       ]
     },
     "code": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_is_the_best_model_ever_made_sometimes"
       ]
@@ -1776,7 +1776,7 @@
   },
   "tools": {
     "Anthropic": {
-      "freq": 24,
+      "freq": 25,
       "skills": [
         "building_ai_agents",
         "build_production_ready_llm_applications_with_haystack",
@@ -1853,7 +1853,7 @@
       ]
     },
     "Claude": {
-      "freq": 37,
+      "freq": 38,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -2121,7 +2121,7 @@
       ]
     },
     "Docker": {
-      "freq": 9,
+      "freq": 10,
       "skills": [
         "astrbot_deployment",
         "build_production_ready_llm_applications_with_haystack",
@@ -2209,7 +2209,7 @@
       ]
     },
     "OpenAI": {
-      "freq": 13,
+      "freq": 14,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
         "testing_and_comparing_llms",
@@ -2270,7 +2270,7 @@
       ]
     },
     "Gemini": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
         "higsfield_integration",
@@ -2715,7 +2715,7 @@
       ]
     },
     "Azure": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "microsoft_mcp_curriculum",
         "kimi_k3_is_the_best_model_ever_made_sometimes"
@@ -2915,13 +2915,13 @@
       ]
     },
     "AWS": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_is_the_best_model_ever_made_sometimes"
       ]
     },
     "GCP": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_is_the_best_model_ever_made_sometimes"
       ]
@@ -6134,6 +6134,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-19T02:41:20.229147+00:00",
+  "updated_at": "2026-07-19T02:41:21.604481+00:00",
   "total_skills": 42
 }
