@@ -7,10 +7,11 @@
       ]
     },
     "model": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "hermes_agent_just_got_10x_better_4_insane_new_feat",
+        "did_kimi_k3_really_beat_fable"
       ]
     },
     "going": {
@@ -75,9 +76,10 @@
       ]
     },
     "actually": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "hermes_agent_just_got_10x_better_4_insane_new_feat",
+        "did_kimi_k3_really_beat_fable"
       ]
     },
     "work": {
@@ -87,9 +89,10 @@
       ]
     },
     "right": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "hermes_agent_just_got_10x_better_4_insane_new_feat",
+        "did_kimi_k3_really_beat_fable"
       ]
     },
     "basically": {
@@ -109,6 +112,48 @@
       "skills": [
         "hermes_agent_just_got_10x_better_4_insane_new_feat"
       ]
+    },
+    "open": {
+      "freq": 1,
+      "skills": [
+        "did_kimi_k3_really_beat_fable"
+      ]
+    },
+    "here": {
+      "freq": 1,
+      "skills": [
+        "did_kimi_k3_really_beat_fable"
+      ]
+    },
+    "source": {
+      "freq": 1,
+      "skills": [
+        "did_kimi_k3_really_beat_fable"
+      ]
+    },
+    "kimmy": {
+      "freq": 1,
+      "skills": [
+        "did_kimi_k3_really_beat_fable"
+      ]
+    },
+    "models": {
+      "freq": 1,
+      "skills": [
+        "did_kimi_k3_really_beat_fable"
+      ]
+    },
+    "really": {
+      "freq": 1,
+      "skills": [
+        "did_kimi_k3_really_beat_fable"
+      ]
+    },
+    "about": {
+      "freq": 1,
+      "skills": [
+        "did_kimi_k3_really_beat_fable"
+      ]
     }
   },
   "tools": {
@@ -119,10 +164,11 @@
       ]
     },
     "Claude": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "hermes_agent_just_got_10x_better_4_insane_new_feat",
+        "did_kimi_k3_really_beat_fable"
       ]
     },
     "Gemini": {
@@ -132,15 +178,17 @@
       ]
     },
     "OpenAI": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
+        "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
+        "did_kimi_k3_really_beat_fable"
       ]
     },
     "Anthropic": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
+        "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
+        "did_kimi_k3_really_beat_fable"
       ]
     }
   },
@@ -200,6 +248,34 @@
         "model"
       ],
       "step_count": 1
+    },
+    "did_kimi_k3_really_beat_fable": {
+      "concepts": [
+        "open",
+        "here",
+        "source",
+        "kimmy",
+        "model",
+        "right",
+        "models",
+        "actually",
+        "really",
+        "about"
+      ],
+      "tools": [
+        "Claude",
+        "Anthropic",
+        "OpenAI"
+      ],
+      "tags": [
+        "open",
+        "here",
+        "source",
+        "kimmy",
+        "model",
+        "right"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -208,6 +284,12 @@
         "Claude",
         "going",
         "model"
+      ],
+      "did_kimi_k3_really_beat_fable": [
+        "Claude",
+        "Anthropic",
+        "OpenAI",
+        "model"
       ]
     },
     "hermes_agent_just_got_10x_better_4_insane_new_feat": {
@@ -215,9 +297,29 @@
         "Claude",
         "going",
         "model"
+      ],
+      "did_kimi_k3_really_beat_fable": [
+        "Claude",
+        "right",
+        "model",
+        "actually"
+      ]
+    },
+    "did_kimi_k3_really_beat_fable": {
+      "kimi_k3_testing_moonshot_s_2_8t_open_model_without": [
+        "Claude",
+        "Anthropic",
+        "OpenAI",
+        "model"
+      ],
+      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
+        "Claude",
+        "right",
+        "model",
+        "actually"
       ]
     }
   },
-  "updated_at": "2026-07-19T02:50:55.035542+00:00",
-  "total_skills": 2
+  "updated_at": "2026-07-19T02:50:55.210011+00:00",
+  "total_skills": 3
 }
