@@ -1228,7 +1228,7 @@
       ]
     },
     "which": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq",
@@ -1306,7 +1306,7 @@
       ]
     },
     "already": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "new_claude_update_is_insane",
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
@@ -1335,7 +1335,7 @@
       ]
     },
     "model": {
-      "freq": 16,
+      "freq": 17,
       "skills": [
         "new_claude_opus_5_leaks",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
@@ -1455,7 +1455,7 @@
       ]
     },
     "even": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
@@ -1474,7 +1474,7 @@
       ]
     },
     "models": {
-      "freq": 11,
+      "freq": 12,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "did_kimi_k3_really_beat_fable",
@@ -1659,7 +1659,7 @@
       ]
     },
     "fable": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results",
         "i_tested_kimi_k3_so_you_don_t_have_to",
@@ -1870,25 +1870,25 @@
       ]
     },
     "enthropic": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
       ]
     },
     "over": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
       ]
     },
     "today": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
       ]
     },
     "next": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
       ]
@@ -1975,7 +1975,7 @@
       ]
     },
     "Claude": {
-      "freq": 45,
+      "freq": 46,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -2335,7 +2335,7 @@
       ]
     },
     "OpenAI": {
-      "freq": 19,
+      "freq": 20,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
         "testing_and_comparing_llms",
@@ -2399,7 +2399,7 @@
       ]
     },
     "Gemini": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
         "higsfield_integration",
@@ -3060,7 +3060,7 @@
       ]
     },
     "anthropic": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
       ]
@@ -7338,6 +7338,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-19T02:41:39.156222+00:00",
+  "updated_at": "2026-07-19T02:41:39.256895+00:00",
   "total_skills": 47
 }
