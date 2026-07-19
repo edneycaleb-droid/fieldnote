@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **41 skills** · Last synced: 2026-07-19 02:41 UTC
+> **42 skills** · Last synced: 2026-07-19 02:41 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [The 15 Most INSANE Things Created by KIMI K3 ( KIMI K3 Use Cases)](skills/the_15_most_insane_things_created_by_kimi_k3_kimi_.md) | By TheAIGRID. Key tools: Claude. (Auto-extracted — pending AI enhancement.) | `Claude` | `know` `course` `game` |
 | [Did Kimi K3 really beat Fable?](skills/did_kimi_k3_really_beat_fable.md) | By Matthew Berman. Key tools: Claude, Anthropic, OpenAI. (Auto-extracted — pendi | `Claude` `Anthropic` `OpenAI` | `open` `here` `source` |
 | [How To Use Codex To Build Insanely Beautiful Websites Using GPT 5.6 Sol](skills/how_to_use_codex_to_build_insanely_beautiful_websi.md) | By AI LABS. Key tools: Claude, next.js, Anthropic, OpenAI, git. (Auto-extracted  | `Claude` `next.js` `Anthropic` `OpenAI` | `design` `website` `codeex` |
 | [MASTER AI Trading in 70 Minutes (Full Claude + TradingView Course)](skills/master_ai_trading_in_70_minutes_full_claude_tradin.md) | By Mind Math Money. Key tools: Claude, LLM, node. (Auto-extracted — pending AI e | `Claude` `LLM` `node` | `know` `here` `trading` |
