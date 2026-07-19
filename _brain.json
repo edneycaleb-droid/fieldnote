@@ -27,9 +27,10 @@
       ]
     },
     "going": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_just_knocked_claude_to_third_place_chinese"
+        "kimi_k3_just_knocked_claude_to_third_place_chinese",
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     },
     "good": {
@@ -66,43 +67,49 @@
       ]
     },
     "here": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "gpt_5_6_on_hermes_agent_is_actually_insane_full_he"
+        "gpt_5_6_on_hermes_agent_is_actually_insane_full_he",
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     },
     "agent": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "gpt_5_6_on_hermes_agent_is_actually_insane_full_he",
         "6_insane_hermes_agent_use_cases_that_you_need_righ",
-        "new_hermes_paperclip_ai_agent_update_is_insane"
+        "new_hermes_paperclip_ai_agent_update_is_insane",
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     },
     "hermes": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "gpt_5_6_on_hermes_agent_is_actually_insane_full_he",
         "6_insane_hermes_agent_use_cases_that_you_need_righ",
-        "new_hermes_paperclip_ai_agent_update_is_insane"
+        "new_hermes_paperclip_ai_agent_update_is_insane",
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     },
     "right": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "gpt_5_6_on_hermes_agent_is_actually_insane_full_he"
+        "gpt_5_6_on_hermes_agent_is_actually_insane_full_he",
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     },
     "want": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "gpt_5_6_on_hermes_agent_is_actually_insane_full_he"
+        "gpt_5_6_on_hermes_agent_is_actually_insane_full_he",
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     },
     "click": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "gpt_5_6_on_hermes_agent_is_actually_insane_full_he"
+        "gpt_5_6_on_hermes_agent_is_actually_insane_full_he",
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     },
     "terminal": {
@@ -254,16 +261,35 @@
       "skills": [
         "new_hermes_paperclip_ai_agent_update_is_insane"
       ]
+    },
+    "ahead": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+      ]
+    },
+    "telegram": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+      ]
+    },
+    "need": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "kimi_k3_just_knocked_claude_to_third_place_chinese",
         "gpt_5_6_on_hermes_agent_is_actually_insane_full_he",
         "6_insane_hermes_agent_use_cases_that_you_need_righ",
-        "new_hermes_paperclip_ai_agent_update_is_insane"
+        "new_hermes_paperclip_ai_agent_update_is_insane",
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     },
     "Anthropic": {
@@ -281,15 +307,17 @@
       ]
     },
     "Docker": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "gpt_5_6_on_hermes_agent_is_actually_insane_full_he"
+        "gpt_5_6_on_hermes_agent_is_actually_insane_full_he",
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     },
     "LLM": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "6_insane_hermes_agent_use_cases_that_you_need_righ"
+        "6_insane_hermes_agent_use_cases_that_you_need_righ",
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     },
     "AWS": {
@@ -303,6 +331,18 @@
       "skills": [
         "6_insane_hermes_agent_use_cases_that_you_need_righ",
         "new_hermes_paperclip_ai_agent_update_is_insane"
+      ]
+    },
+    "bash": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+      ]
+    },
+    "Python": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     }
   },
@@ -444,6 +484,36 @@
         "inside"
       ],
       "step_count": 1
+    },
+    "hermes_agent_tutorial_for_beginners_full_step_by_s": {
+      "concepts": [
+        "agent",
+        "hermes",
+        "want",
+        "here",
+        "ahead",
+        "telegram",
+        "click",
+        "right",
+        "going",
+        "need"
+      ],
+      "tools": [
+        "Claude",
+        "Docker",
+        "bash",
+        "Python",
+        "LLM"
+      ],
+      "tags": [
+        "agent",
+        "hermes",
+        "want",
+        "here",
+        "ahead",
+        "telegram"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -464,6 +534,10 @@
       ],
       "new_hermes_paperclip_ai_agent_update_is_insane": [
         "Claude"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Claude",
+        "going"
       ]
     },
     "gpt_5_6_on_hermes_agent_is_actually_insane_full_he": {
@@ -482,6 +556,14 @@
         "Claude",
         "hermes",
         "agent"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "right",
+        "click",
+        "hermes",
+        "Claude",
+        "want",
+        "here"
       ]
     },
     "6_insane_hermes_agent_use_cases_that_you_need_righ": {
@@ -497,6 +579,12 @@
         "Claude",
         "hermes",
         "Gemini",
+        "agent"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Claude",
+        "LLM",
+        "hermes",
         "agent"
       ]
     },
@@ -527,9 +615,39 @@
         "hermes",
         "Gemini",
         "agent"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Claude",
+        "hermes",
+        "agent"
+      ]
+    },
+    "hermes_agent_tutorial_for_beginners_full_step_by_s": {
+      "kimi_k3_just_knocked_claude_to_third_place_chinese": [
+        "Claude",
+        "going"
+      ],
+      "gpt_5_6_on_hermes_agent_is_actually_insane_full_he": [
+        "right",
+        "click",
+        "hermes",
+        "Claude",
+        "want",
+        "here"
+      ],
+      "6_insane_hermes_agent_use_cases_that_you_need_righ": [
+        "Claude",
+        "LLM",
+        "hermes",
+        "agent"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude",
+        "hermes",
+        "agent"
       ]
     }
   },
-  "updated_at": "2026-07-19T02:45:24.960715+00:00",
-  "total_skills": 5
+  "updated_at": "2026-07-19T02:45:25.025180+00:00",
+  "total_skills": 6
 }
