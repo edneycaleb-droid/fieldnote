@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **1 skill** · Last synced: 2026-07-19 02:46 UTC
+> **2 skills** · Last synced: 2026-07-19 02:46 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Kimi K3: Testing Moonshot's 2.8T Open Model without Hype](skills/kimi_k3_testing_moonshot_s_2_8t_open_model_without.md) | By Fahd Mirza. Key tools: SQLite, Claude, Gemini, OpenAI, Anthropic. (Auto-extra | `SQLite` `Claude` `Gemini` `OpenAI` | `which` `model` `going` |
 | [100 hours of Hermes Agent lessons in 19 minutes](skills/100_hours_of_hermes_agent_lessons_in_19_minutes.md) | By Alex Finn. Key tools: Gemini, SSH, Claude. (Auto-extracted — pending AI enhan | `Gemini` `SSH` `Claude` | `hermes` `agent` `other` |
 
 ---
