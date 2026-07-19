@@ -10,14 +10,15 @@
       ]
     },
     "model": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
         "did_kimi_k3_really_beat_fable",
         "kimi_k3_hermes_agent_changes_everything",
         "kimi_k3_is_insane_best_open_model_ever_that_beats_",
-        "full_hermes_agent_tutorial_desktop_a_useful_agenti"
+        "full_hermes_agent_tutorial_desktop_a_useful_agenti",
+        "hermes_agent_ollama_how_to_install_hermes_locally_"
       ]
     },
     "going": {
@@ -175,9 +176,10 @@
       ]
     },
     "models": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "did_kimi_k3_really_beat_fable"
+        "did_kimi_k3_really_beat_fable",
+        "hermes_agent_ollama_how_to_install_hermes_locally_"
       ]
     },
     "really": {
@@ -280,11 +282,12 @@
       ]
     },
     "want": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "hermes_agent_build_your_own_personal_ai_assistant_",
         "every_hermes_concept_explained_for_normal_people",
-        "full_hermes_agent_tutorial_desktop_a_useful_agenti"
+        "full_hermes_agent_tutorial_desktop_a_useful_agenti",
+        "hermes_agent_ollama_how_to_install_hermes_locally_"
       ]
     },
     "click": {
@@ -343,12 +346,13 @@
       ]
     },
     "hermes": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "every_hermes_concept_explained_for_normal_people",
         "kimi_k3_hermes_agent_changes_everything",
         "new_hermes_paperclip_ai_agent_update_is_insane",
-        "full_hermes_agent_tutorial_desktop_a_useful_agenti"
+        "full_hermes_agent_tutorial_desktop_a_useful_agenti",
+        "hermes_agent_ollama_how_to_install_hermes_locally_"
       ]
     },
     "come": {
@@ -509,6 +513,42 @@
       "skills": [
         "full_hermes_agent_tutorial_desktop_a_useful_agenti"
       ]
+    },
+    "llama": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_ollama_how_to_install_hermes_locally_"
+      ]
+    },
+    "locally": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_ollama_how_to_install_hermes_locally_"
+      ]
+    },
+    "computer": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_ollama_how_to_install_hermes_locally_"
+      ]
+    },
+    "command": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_ollama_how_to_install_hermes_locally_"
+      ]
+    },
+    "launch": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_ollama_how_to_install_hermes_locally_"
+      ]
+    },
+    "cloud": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_ollama_how_to_install_hermes_locally_"
+      ]
     }
   },
   "tools": {
@@ -611,9 +651,10 @@
       ]
     },
     "llama": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "full_hermes_agent_tutorial_desktop_a_useful_agenti"
+        "full_hermes_agent_tutorial_desktop_a_useful_agenti",
+        "hermes_agent_ollama_how_to_install_hermes_locally_"
       ]
     },
     "Docker": {
@@ -626,6 +667,12 @@
       "freq": 1,
       "skills": [
         "full_hermes_agent_tutorial_desktop_a_useful_agenti"
+      ]
+    },
+    "anthropic": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_ollama_how_to_install_hermes_locally_"
       ]
     }
   },
@@ -988,6 +1035,33 @@
         "model"
       ],
       "step_count": 1
+    },
+    "hermes_agent_ollama_how_to_install_hermes_locally_": {
+      "concepts": [
+        "hermes",
+        "model",
+        "models",
+        "want",
+        "llama",
+        "locally",
+        "computer",
+        "command",
+        "launch",
+        "cloud"
+      ],
+      "tools": [
+        "llama",
+        "anthropic"
+      ],
+      "tags": [
+        "hermes",
+        "model",
+        "models",
+        "want",
+        "llama",
+        "locally"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -1049,6 +1123,9 @@
         "OpenAI",
         "model",
         "Anthropic"
+      ],
+      "hermes_agent_ollama_how_to_install_hermes_locally_": [
+        "model"
       ]
     },
     "hermes_agent_just_got_10x_better_4_insane_new_feat": {
@@ -1113,6 +1190,9 @@
         "going",
         "agent",
         "model"
+      ],
+      "hermes_agent_ollama_how_to_install_hermes_locally_": [
+        "model"
       ]
     },
     "did_kimi_k3_really_beat_fable": {
@@ -1173,6 +1253,10 @@
         "OpenAI",
         "model",
         "Anthropic"
+      ],
+      "hermes_agent_ollama_how_to_install_hermes_locally_": [
+        "models",
+        "model"
       ]
     },
     "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
@@ -1276,6 +1360,9 @@
         "here",
         "OpenAI",
         "agent"
+      ],
+      "hermes_agent_ollama_how_to_install_hermes_locally_": [
+        "want"
       ]
     },
     "making_with_loop_engineering": {
@@ -1391,6 +1478,10 @@
         "Claude",
         "want",
         "here"
+      ],
+      "hermes_agent_ollama_how_to_install_hermes_locally_": [
+        "hermes",
+        "want"
       ]
     },
     "kimi_k3_hermes_agent_changes_everything": {
@@ -1436,6 +1527,10 @@
         "hermes",
         "agent",
         "here",
+        "model"
+      ],
+      "hermes_agent_ollama_how_to_install_hermes_locally_": [
+        "hermes",
         "model"
       ]
     },
@@ -1484,6 +1579,9 @@
         "hermes",
         "Gemini",
         "agent"
+      ],
+      "hermes_agent_ollama_how_to_install_hermes_locally_": [
+        "hermes"
       ]
     },
     "kimi_k3_is_insane_best_open_model_ever_that_beats_": {
@@ -1528,6 +1626,9 @@
       "full_hermes_agent_tutorial_desktop_a_useful_agenti": [
         "Claude",
         "different",
+        "model"
+      ],
+      "hermes_agent_ollama_how_to_install_hermes_locally_": [
         "model"
       ]
     },
@@ -1647,9 +1748,50 @@
         "going",
         "agent",
         "here"
+      ],
+      "hermes_agent_ollama_how_to_install_hermes_locally_": [
+        "hermes",
+        "want",
+        "llama",
+        "model"
+      ]
+    },
+    "hermes_agent_ollama_how_to_install_hermes_locally_": {
+      "kimi_k3_testing_moonshot_s_2_8t_open_model_without": [
+        "model"
+      ],
+      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
+        "model"
+      ],
+      "did_kimi_k3_really_beat_fable": [
+        "models",
+        "model"
+      ],
+      "hermes_agent_build_your_own_personal_ai_assistant_": [
+        "want"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "hermes",
+        "want"
+      ],
+      "kimi_k3_hermes_agent_changes_everything": [
+        "hermes",
+        "model"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "hermes"
+      ],
+      "kimi_k3_is_insane_best_open_model_ever_that_beats_": [
+        "model"
+      ],
+      "full_hermes_agent_tutorial_desktop_a_useful_agenti": [
+        "hermes",
+        "want",
+        "llama",
+        "model"
       ]
     }
   },
-  "updated_at": "2026-07-19T02:50:55.967569+00:00",
-  "total_skills": 13
+  "updated_at": "2026-07-19T02:50:55.987260+00:00",
+  "total_skills": 14
 }
