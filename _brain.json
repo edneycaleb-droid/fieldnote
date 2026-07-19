@@ -1180,7 +1180,7 @@
       ]
     },
     "here": {
-      "freq": 9,
+      "freq": 10,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_opus_5_leaks",
@@ -1229,14 +1229,14 @@
       ]
     },
     "well": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "right": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
@@ -1372,7 +1372,7 @@
       ]
     },
     "going": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "making_with_loop_engineering",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
@@ -1603,37 +1603,37 @@
       ]
     },
     "fable": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "kimi": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "look": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "these": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "little": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "output": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results"
       ]
@@ -1641,7 +1641,7 @@
   },
   "tools": {
     "Anthropic": {
-      "freq": 18,
+      "freq": 19,
       "skills": [
         "building_ai_agents",
         "build_production_ready_llm_applications_with_haystack",
@@ -1715,7 +1715,7 @@
       ]
     },
     "Claude": {
-      "freq": 27,
+      "freq": 28,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -2702,7 +2702,7 @@
       ]
     },
     "Ollama": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "building_ai_agents",
         "local_ai_coding",
@@ -5028,6 +5028,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-19T02:40:50.502376+00:00",
+  "updated_at": "2026-07-19T02:40:52.696162+00:00",
   "total_skills": 37
 }
