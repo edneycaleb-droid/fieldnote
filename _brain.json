@@ -20,13 +20,14 @@
       ]
     },
     "going": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
         "hermes_agent_build_your_own_personal_ai_assistant_",
-        "making_with_loop_engineering"
+        "making_with_loop_engineering",
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
       ]
     },
     "very": {
@@ -74,13 +75,14 @@
       ]
     },
     "agent": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
         "hermes_agent_build_your_own_personal_ai_assistant_",
         "every_hermes_concept_explained_for_normal_people",
         "kimi_k3_hermes_agent_changes_everything",
-        "new_hermes_paperclip_ai_agent_update_is_insane"
+        "new_hermes_paperclip_ai_agent_update_is_insane",
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
       ]
     },
     "every": {
@@ -91,12 +93,13 @@
       ]
     },
     "actually": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
         "did_kimi_k3_really_beat_fable",
         "making_with_loop_engineering",
-        "kimi_k3_is_insane_best_open_model_ever_that_beats_"
+        "kimi_k3_is_insane_best_open_model_ever_that_beats_",
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
       ]
     },
     "work": {
@@ -145,13 +148,14 @@
       ]
     },
     "here": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "did_kimi_k3_really_beat_fable",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
         "hermes_agent_build_your_own_personal_ai_assistant_",
         "every_hermes_concept_explained_for_normal_people",
-        "kimi_k3_hermes_agent_changes_everything"
+        "kimi_k3_hermes_agent_changes_everything",
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
       ]
     },
     "source": {
@@ -449,6 +453,42 @@
       "skills": [
         "kimi_k3_is_insane_best_open_model_ever_that_beats_"
       ]
+    },
+    "ticket": {
+      "freq": 1,
+      "skills": [
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
+      ]
+    },
+    "zendesk": {
+      "freq": 1,
+      "skills": [
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
+      ]
+    },
+    "build": {
+      "freq": 1,
+      "skills": [
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
+      ]
+    },
+    "inbox": {
+      "freq": 1,
+      "skills": [
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
+      ]
+    },
+    "able": {
+      "freq": 1,
+      "skills": [
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
+      ]
+    },
+    "response": {
+      "freq": 1,
+      "skills": [
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
+      ]
     }
   },
   "tools": {
@@ -536,6 +576,12 @@
       "freq": 1,
       "skills": [
         "every_hermes_concept_explained_for_normal_people"
+      ]
+    },
+    "LLM": {
+      "freq": 1,
+      "skills": [
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
       ]
     }
   },
@@ -838,6 +884,32 @@
         "these"
       ],
       "step_count": 1
+    },
+    "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": {
+      "concepts": [
+        "agent",
+        "here",
+        "ticket",
+        "zendesk",
+        "going",
+        "actually",
+        "build",
+        "inbox",
+        "able",
+        "response"
+      ],
+      "tools": [
+        "LLM"
+      ],
+      "tags": [
+        "agent",
+        "here",
+        "ticket",
+        "zendesk",
+        "going",
+        "actually"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -888,6 +960,9 @@
         "which",
         "Claude",
         "model"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "going"
       ]
     },
     "hermes_agent_just_got_10x_better_4_insane_new_feat": {
@@ -941,6 +1016,11 @@
         "Claude",
         "model",
         "actually"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "going",
+        "agent",
+        "actually"
       ]
     },
     "did_kimi_k3_really_beat_fable": {
@@ -990,6 +1070,10 @@
         "really",
         "model",
         "actually"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "here",
+        "actually"
       ]
     },
     "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
@@ -1035,6 +1119,10 @@
       ],
       "new_hermes_paperclip_ai_agent_update_is_insane": [
         "work"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "going",
+        "here"
       ]
     },
     "hermes_agent_build_your_own_personal_ai_assistant_": {
@@ -1072,6 +1160,11 @@
       "new_hermes_paperclip_ai_agent_update_is_insane": [
         "agent",
         "agents"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "going",
+        "agent",
+        "here"
       ]
     },
     "making_with_loop_engineering": {
@@ -1112,6 +1205,10 @@
       "kimi_k3_is_insane_best_open_model_ever_that_beats_": [
         "Claude",
         "really",
+        "actually"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "going",
         "actually"
       ]
     },
@@ -1166,6 +1263,10 @@
         "which",
         "Claude",
         "different"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "here",
+        "agent"
       ]
     },
     "kimi_k3_hermes_agent_changes_everything": {
@@ -1202,6 +1303,10 @@
       ],
       "kimi_k3_is_insane_best_open_model_ever_that_beats_": [
         "model"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "here",
+        "agent"
       ]
     },
     "new_hermes_paperclip_ai_agent_update_is_insane": {
@@ -1240,6 +1345,9 @@
       ],
       "kimi_k3_is_insane_best_open_model_ever_that_beats_": [
         "Claude"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "agent"
       ]
     },
     "kimi_k3_is_insane_best_open_model_ever_that_beats_": {
@@ -1277,9 +1385,53 @@
       ],
       "new_hermes_paperclip_ai_agent_update_is_insane": [
         "Claude"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "actually"
+      ]
+    },
+    "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": {
+      "kimi_k3_testing_moonshot_s_2_8t_open_model_without": [
+        "going"
+      ],
+      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
+        "going",
+        "agent",
+        "actually"
+      ],
+      "did_kimi_k3_really_beat_fable": [
+        "here",
+        "actually"
+      ],
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "going",
+        "here"
+      ],
+      "hermes_agent_build_your_own_personal_ai_assistant_": [
+        "going",
+        "agent",
+        "here"
+      ],
+      "making_with_loop_engineering": [
+        "going",
+        "actually"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "here",
+        "agent"
+      ],
+      "kimi_k3_hermes_agent_changes_everything": [
+        "here",
+        "agent"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "agent"
+      ],
+      "kimi_k3_is_insane_best_open_model_ever_that_beats_": [
+        "actually"
       ]
     }
   },
-  "updated_at": "2026-07-19T02:50:55.863824+00:00",
-  "total_skills": 11
+  "updated_at": "2026-07-19T02:50:55.866984+00:00",
+  "total_skills": 12
 }
