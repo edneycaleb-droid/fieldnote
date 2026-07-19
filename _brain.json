@@ -1180,7 +1180,7 @@
       ]
     },
     "here": {
-      "freq": 33,
+      "freq": 34,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_opus_5_leaks",
@@ -1201,7 +1201,7 @@
       ]
     },
     "actually": {
-      "freq": 24,
+      "freq": 25,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_update_is_insane",
@@ -1242,7 +1242,7 @@
       ]
     },
     "which": {
-      "freq": 14,
+      "freq": 15,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq",
@@ -1365,7 +1365,7 @@
       ]
     },
     "model": {
-      "freq": 27,
+      "freq": 28,
       "skills": [
         "new_claude_opus_5_leaks",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
@@ -1518,7 +1518,7 @@
       ]
     },
     "models": {
-      "freq": 18,
+      "freq": 19,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "did_kimi_k3_really_beat_fable",
@@ -1713,7 +1713,7 @@
       ]
     },
     "fable": {
-      "freq": 14,
+      "freq": 15,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results",
         "i_tested_kimi_k3_so_you_don_t_have_to",
@@ -1726,7 +1726,7 @@
       ]
     },
     "kimi": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results",
         "this_kimi_k3_agent_os_is_wild",
@@ -1741,7 +1741,7 @@
       ]
     },
     "these": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results",
         "yes_the_kimi_k3_hype_is_real",
@@ -1914,7 +1914,7 @@
       ]
     },
     "better": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "people_are_creating_insane_things_with_kimi_k3",
         "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_",
@@ -1922,7 +1922,7 @@
       ]
     },
     "much": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "people_are_creating_insane_things_with_kimi_k3",
         "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner"
@@ -10077,6 +10077,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-19T02:42:26.895537+00:00",
+  "updated_at": "2026-07-19T02:42:27.147359+00:00",
   "total_skills": 57
 }
