@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **4 skills** · Last synced: 2026-07-19 02:52 UTC
+> **5 skills** · Last synced: 2026-07-19 02:52 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Hermes Agent - Full Course & Setup Guide - For COMPLETE Beginners](skills/kimi_k3_fully_tested_an_open_model_beats_fable.md) | This video provides a comprehensive guide to setting up and using the Hermes Age | `LLM` `OpenAI` `Anthropic` `Docker` | `hermes` `model` `models` |
 | [Kimi K3 CRUSHED Fable](skills/people_are_creating_insane_things_with_kimi_k3.md) | This video showcases the capabilities of Kimi K3, a large open-source AI model,  | `Kimi K3` `Fable 5` `GPT 5.6` `Claude` | `AI` `model` `game development` |
 | [Kimi K3 vs Fable 5: A Comparative Analysis](skills/kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner.md) | This skill teaches how to compare the performance of Kimi K3 and Fable 5 in a co | `Kimi K3` `Fable 5` `OpenRouter` | `ai-models` `benchmarking` `performance-comparison` |
 | [AI Trading for Beginners: A Step-by-Step Guide](skills/master_ai_trading_in_70_minutes_full_claude_tradin.md) | This skill teaches the fundamentals of AI trading, including how to connect AI m | `Claude` `Trading View` | `ai` `trading` `analysis` |

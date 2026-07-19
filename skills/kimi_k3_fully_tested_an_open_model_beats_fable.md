@@ -1,21 +1,30 @@
-# Kimi K3 (Fully Tested): AN OPEN MODEL BEATS FABLE?!
+# Hermes Agent - Full Course & Setup Guide - For COMPLETE Beginners
 
-> ⚠️ **Auto-extracted draft** — pending AI enhancement for full quality.
-
-By AICodeKing. Key tools: Gemini. (Auto-extracted — pending AI enhancement.)
+## Description
+This video provides a comprehensive guide to setting up and using the Hermes Agent, including a full course and setup guide for complete beginners.
 
 ## Steps
+1. Watch the full video for step-by-step instructions.
+2. Understand the key tools and technologies involved, including LLM, OpenAI, Anthropic, Docker, curl, and SSH.
+3. Learn how to use the Hermes Agent for various tasks and applications.
 
-- Watch the full video for step-by-step instructions.
+## Tools
+* LLM
+* OpenAI
+* Anthropic
+* Docker
+* curl
+* SSH
+* Python
 
-## Tools & Technologies
+## Concepts
+* going
+* want
+* agent
+* here
 
-Gemini
-
-## Source
-
-- **Video**: [Kimi K3 (Fully Tested): AN OPEN MODEL BEATS FABLE?!](https://www.youtube.com/watch?v=JnC2MuAEOiQ)
-- **Video ID**: `JnC2MuAEOiQ`
+## Related Skills
+* hermes_agent_ollama_how_to_install_hermes_locally_
 
 ## Sources
 
