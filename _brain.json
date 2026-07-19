@@ -1176,7 +1176,7 @@
       ]
     },
     "here": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_opus_5_leaks"
@@ -1196,7 +1196,7 @@
       ]
     },
     "inside": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_opus_5_leaks"
@@ -1233,7 +1233,7 @@
       ]
     },
     "claude": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "new_claude_update_is_insane",
         "new_claude_opus_5_leaks"
@@ -1246,7 +1246,7 @@
       ]
     },
     "anthropic": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "new_claude_update_is_insane",
         "new_claude_opus_5_leaks"
@@ -1289,37 +1289,37 @@
       ]
     },
     "opus": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "new_claude_opus_5_leaks"
       ]
     },
     "model": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "new_claude_opus_5_leaks"
       ]
     },
     "profit": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "new_claude_opus_5_leaks"
       ]
     },
     "boardroom": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "new_claude_opus_5_leaks"
       ]
     },
     "people": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "new_claude_opus_5_leaks"
       ]
     },
     "honeycomb": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "new_claude_opus_5_leaks"
       ]
@@ -1327,7 +1327,7 @@
   },
   "tools": {
     "Anthropic": {
-      "freq": 10,
+      "freq": 11,
       "skills": [
         "building_ai_agents",
         "build_production_ready_llm_applications_with_haystack",
@@ -1398,7 +1398,7 @@
       ]
     },
     "Claude": {
-      "freq": 15,
+      "freq": 16,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -4019,6 +4019,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-19T02:40:12.418506+00:00",
+  "updated_at": "2026-07-19T02:40:13.856893+00:00",
   "total_skills": 30
 }
