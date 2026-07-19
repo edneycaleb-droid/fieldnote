@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **30 skills** · Last synced: 2026-07-19 02:40 UTC
+> **31 skills** · Last synced: 2026-07-19 02:40 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [New Claude Opus 5 LEAKS!](skills/new_claude_opus_5_leaks.md) | By Julian Goldie SEO. Key tools: Claude, Anthropic. (Auto-extracted — pending AI | `Claude` `Anthropic` | `opus` `model` `profit` |
 | [New Claude Update Is INSANE!](skills/new_claude_update_is_insane.md) | By Julian Goldie SEO. Key tools: Claude, Anthropic. (Auto-extracted — pending AI | `Claude` `Anthropic` | `claude` `something` `anthropic` |
 | [Kimi K3 + Hermes AI Agent is INSANE!](skills/kimi_k3_hermes_ai_agent_is_insane.md) | By Julian Goldie SEO. Key tools: Claude, Babel. (Auto-extracted — pending AI enh | `Claude` `Babel` | `hermes` `here` `actually` |
 | [Local AI Coding: Speed, Quality, and Control](skills/building_ai_agents.md) | This skill teaches the practical aspects of local AI coding, including the impor | `Mind Sub Co-worker` `LM Studio` `Ollama` `Hermes Agent` | `ai` `ai_agents` `coding` |
