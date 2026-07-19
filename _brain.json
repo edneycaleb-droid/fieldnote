@@ -1180,7 +1180,7 @@
       ]
     },
     "here": {
-      "freq": 23,
+      "freq": 24,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_opus_5_leaks",
@@ -1221,7 +1221,7 @@
       ]
     },
     "example": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "people_are_creating_insane_things_with_kimi_k3"
@@ -1330,7 +1330,7 @@
       ]
     },
     "model": {
-      "freq": 12,
+      "freq": 13,
       "skills": [
         "new_claude_opus_5_leaks",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
@@ -1412,7 +1412,7 @@
       ]
     },
     "think": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "making_with_loop_engineering",
         "the_15_most_insane_things_created_by_kimi_k3_kimi_",
@@ -1649,7 +1649,7 @@
       ]
     },
     "fable": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results",
         "i_tested_kimi_k3_so_you_don_t_have_to",
@@ -1699,7 +1699,7 @@
       ]
     },
     "very": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "master_ai_trading_in_70_minutes_full_claude_tradin",
         "people_are_creating_insane_things_with_kimi_k3"
@@ -1755,7 +1755,7 @@
       ]
     },
     "kimmy": {
-      "freq": 9,
+      "freq": 10,
       "skills": [
         "did_kimi_k3_really_beat_fable",
         "the_15_most_insane_things_created_by_kimi_k3_kimi_",
@@ -1771,7 +1771,7 @@
       ]
     },
     "game": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "the_15_most_insane_things_created_by_kimi_k3_kimi_",
         "kimi_k3_is_just_ridiculous",
@@ -1827,13 +1827,13 @@
       ]
     },
     "better": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "people_are_creating_insane_things_with_kimi_k3"
       ]
     },
     "much": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "people_are_creating_insane_things_with_kimi_k3"
       ]
@@ -1919,7 +1919,7 @@
       ]
     },
     "Claude": {
-      "freq": 41,
+      "freq": 42,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -6788,6 +6788,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-19T02:41:31.345656+00:00",
+  "updated_at": "2026-07-19T02:41:31.721822+00:00",
   "total_skills": 45
 }
