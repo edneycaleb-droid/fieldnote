@@ -1180,7 +1180,7 @@
       ]
     },
     "here": {
-      "freq": 19,
+      "freq": 20,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_opus_5_leaks",
@@ -1326,7 +1326,7 @@
       ]
     },
     "model": {
-      "freq": 10,
+      "freq": 11,
       "skills": [
         "new_claude_opus_5_leaks",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
@@ -1361,7 +1361,7 @@
       ]
     },
     "know": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "making_with_loop_engineering",
         "master_ai_trading_in_70_minutes_full_claude_tradin",
@@ -1376,7 +1376,7 @@
       ]
     },
     "sort": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "making_with_loop_engineering",
         "i_tested_kimi_k3_so_you_don_t_have_to"
@@ -1395,7 +1395,7 @@
       ]
     },
     "going": {
-      "freq": 12,
+      "freq": 13,
       "skills": [
         "making_with_loop_engineering",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
@@ -1413,7 +1413,7 @@
       ]
     },
     "really": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "making_with_loop_engineering",
         "how_to_use_codex_to_build_insanely_beautiful_websi",
@@ -1459,7 +1459,7 @@
       ]
     },
     "models": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "did_kimi_k3_really_beat_fable",
@@ -1641,7 +1641,7 @@
       ]
     },
     "fable": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results",
         "i_tested_kimi_k3_so_you_don_t_have_to"
@@ -1745,7 +1745,7 @@
       ]
     },
     "kimmy": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "did_kimi_k3_really_beat_fable",
         "the_15_most_insane_things_created_by_kimi_k3_kimi_",
@@ -1783,7 +1783,7 @@
       ]
     },
     "mean": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "i_tested_kimi_k3_so_you_don_t_have_to"
       ]
@@ -1791,7 +1791,7 @@
   },
   "tools": {
     "Anthropic": {
-      "freq": 26,
+      "freq": 27,
       "skills": [
         "building_ai_agents",
         "build_production_ready_llm_applications_with_haystack",
@@ -2225,7 +2225,7 @@
       ]
     },
     "OpenAI": {
-      "freq": 15,
+      "freq": 16,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
         "testing_and_comparing_llms",
@@ -2869,7 +2869,7 @@
       ]
     },
     "Ollama": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "building_ai_agents",
         "local_ai_coding",
@@ -6348,6 +6348,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-19T02:41:22.630656+00:00",
+  "updated_at": "2026-07-19T02:41:23.723374+00:00",
   "total_skills": 43
 }
