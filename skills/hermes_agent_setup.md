@@ -1,20 +1,36 @@
-# Building a Hermes Agent Setup for AI Self-Improvement with Human-in-the-Loop Integration
+# Building a Hermes Agent Setup for AI Self-Improvement
 
-This skill teaches how to set up a Hermes agent for AI self-improvement, including defining outcomes, creating identity files, and connecting to tools. It also covers human-in-the-loop integration, allowing AI assistants to ask questions to humans via Discord. This setup enables personalization, automation, and integration of AI agents with other tools and systems.
+## Introduction
+Hermes agent is a powerful tool for creating personalized AI assistants. This skill covers the setup and configuration of a Hermes agent, including defining outcomes, creating identity files, and connecting to tools.
 
 ## Steps
+1. Understand the fundamentals of Hermes agent and its self-learning capability
+2. Set up a virtual private server for running the Hermes agent
+3. Configure the agent with memory, skills, and scheduled tasks
+4. Connect the agent to tools and services for automation and information retrieval
+5. Define outcomes and create identity files for personalized assistance
 
-- Write the Definition of Done (DOD) before starting
-- Create an identity file (CLAUDE.md or AGENTS.md) with role, constraints, and tools
-- Apply reverse prompting: ask the agent to restate the goal in its own words before acting
-- Configure memory: enable 'Reference chats' and 'Generate memory from chat history' in Claude settings
-- Wire tools: connect web search, web extraction, file access, and other tools to the agent
-- Implement human-in-the-loop integration using MCP servers like KOBA789/human-in-the-loop
-- Set up real-time monitoring and notifications for MCP servers using nirholas/mcp-notify
-- Test and refine the Hermes agent setup to ensure seamless integration with human input
+## Tools and Technologies
+* Hermes Agent
+* OpenAI
+* Anthropic
+* Claude
+* Docker
+
+## Concepts
+* AI Self-Improvement
+* Personalized AI Assistant
+* Virtual Private Server
+* Memory and Context Management
+* Scheduled Tasks and Automation
+
+## Related Skills
+* Building AI Agents
+* Running Large Models Locally
+* Moonshot Kimiko 3
 
 ## Sources
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-17 | [How to Build a PREMIUM Hermes Agent Mission Control Dashboard (Step-by-Step Guide)](https://youtu.be/t6W_Zpohb7g?is=Vd2EQGpmDnmoCY_5) | yt_dlp_subs |
+| 2026-07-19 | [Hermes Agent - Full Course & Setup Guide - For COMPLETE Beginners](https://www.youtube.com/watch?v=mTYxpIRK7xA) | yt_dlp_subs |
