@@ -67,15 +67,17 @@
       ]
     },
     "agent": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "gpt_5_6_on_hermes_agent_is_actually_insane_full_he"
+        "gpt_5_6_on_hermes_agent_is_actually_insane_full_he",
+        "6_insane_hermes_agent_use_cases_that_you_need_righ"
       ]
     },
     "hermes": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "gpt_5_6_on_hermes_agent_is_actually_insane_full_he"
+        "gpt_5_6_on_hermes_agent_is_actually_insane_full_he",
+        "6_insane_hermes_agent_use_cases_that_you_need_righ"
       ]
     },
     "right": {
@@ -119,14 +121,63 @@
       "skills": [
         "gpt_5_6_on_hermes_agent_is_actually_insane_full_he"
       ]
+    },
+    "video": {
+      "freq": 1,
+      "skills": [
+        "6_insane_hermes_agent_use_cases_that_you_need_righ"
+      ]
+    },
+    "skills": {
+      "freq": 1,
+      "skills": [
+        "6_insane_hermes_agent_use_cases_that_you_need_righ"
+      ]
+    },
+    "context": {
+      "freq": 1,
+      "skills": [
+        "6_insane_hermes_agent_use_cases_that_you_need_righ"
+      ]
+    },
+    "skill": {
+      "freq": 1,
+      "skills": [
+        "6_insane_hermes_agent_use_cases_that_you_need_righ"
+      ]
+    },
+    "actually": {
+      "freq": 1,
+      "skills": [
+        "6_insane_hermes_agent_use_cases_that_you_need_righ"
+      ]
+    },
+    "cron": {
+      "freq": 1,
+      "skills": [
+        "6_insane_hermes_agent_use_cases_that_you_need_righ"
+      ]
+    },
+    "same": {
+      "freq": 1,
+      "skills": [
+        "6_insane_hermes_agent_use_cases_that_you_need_righ"
+      ]
+    },
+    "those": {
+      "freq": 1,
+      "skills": [
+        "6_insane_hermes_agent_use_cases_that_you_need_righ"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "kimi_k3_just_knocked_claude_to_third_place_chinese",
-        "gpt_5_6_on_hermes_agent_is_actually_insane_full_he"
+        "gpt_5_6_on_hermes_agent_is_actually_insane_full_he",
+        "6_insane_hermes_agent_use_cases_that_you_need_righ"
       ]
     },
     "Anthropic": {
@@ -145,6 +196,24 @@
       "freq": 1,
       "skills": [
         "gpt_5_6_on_hermes_agent_is_actually_insane_full_he"
+      ]
+    },
+    "LLM": {
+      "freq": 1,
+      "skills": [
+        "6_insane_hermes_agent_use_cases_that_you_need_righ"
+      ]
+    },
+    "AWS": {
+      "freq": 1,
+      "skills": [
+        "6_insane_hermes_agent_use_cases_that_you_need_righ"
+      ]
+    },
+    "Gemini": {
+      "freq": 1,
+      "skills": [
+        "6_insane_hermes_agent_use_cases_that_you_need_righ"
       ]
     }
   },
@@ -203,20 +272,67 @@
         "click"
       ],
       "step_count": 1
+    },
+    "6_insane_hermes_agent_use_cases_that_you_need_righ": {
+      "concepts": [
+        "agent",
+        "hermes",
+        "video",
+        "skills",
+        "context",
+        "skill",
+        "actually",
+        "cron",
+        "same",
+        "those"
+      ],
+      "tools": [
+        "Claude",
+        "LLM",
+        "AWS",
+        "Gemini"
+      ],
+      "tags": [
+        "agent",
+        "hermes",
+        "video",
+        "skills",
+        "context",
+        "skill"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
     "kimi_k3_just_knocked_claude_to_third_place_chinese": {
       "gpt_5_6_on_hermes_agent_is_actually_insane_full_he": [
         "Claude"
+      ],
+      "6_insane_hermes_agent_use_cases_that_you_need_righ": [
+        "Claude"
       ]
     },
     "gpt_5_6_on_hermes_agent_is_actually_insane_full_he": {
       "kimi_k3_just_knocked_claude_to_third_place_chinese": [
         "Claude"
+      ],
+      "6_insane_hermes_agent_use_cases_that_you_need_righ": [
+        "Claude",
+        "hermes",
+        "agent"
+      ]
+    },
+    "6_insane_hermes_agent_use_cases_that_you_need_righ": {
+      "kimi_k3_just_knocked_claude_to_third_place_chinese": [
+        "Claude"
+      ],
+      "gpt_5_6_on_hermes_agent_is_actually_insane_full_he": [
+        "Claude",
+        "hermes",
+        "agent"
       ]
     }
   },
-  "updated_at": "2026-07-19T02:45:24.848376+00:00",
-  "total_skills": 2
+  "updated_at": "2026-07-19T02:45:24.875539+00:00",
+  "total_skills": 3
 }
