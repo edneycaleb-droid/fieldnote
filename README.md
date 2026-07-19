@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **2 skills** · Last synced: 2026-07-19 02:52 UTC
+> **1 skill** · Last synced: 2026-07-19 02:52 UTC
 
 ---
 
@@ -9,7 +9,6 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [Kimi K3 CRUSHED Fable](skills/kimi_k3_crushed_fable.md) | By Wes Roth. Key tools: Claude, Anthropic, OpenAI. (Auto-extracted — pending AI  | `Claude` `Anthropic` `OpenAI` | `kind` `know` `here` |
 | [Hermes Agent: Zero to Personal AI Assistant (1 Hour Course)](skills/hermes_agent_zero_to_personal_ai_assistant_1_hour_.md) | By Nate Herk \| AI Automation. Key tools: Claude, Docker, Anthropic, OpenAI, Llam | `Claude` `Docker` `Anthropic` `OpenAI` | `going` `hermes` `here` |
 
 ---
