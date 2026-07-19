@@ -1,63 +1,63 @@
 {
   "concepts": {
-    "know": {
+    "design": {
       "freq": 1,
       "skills": [
-        "master_ai_trading_in_70_minutes_full_claude_tradin"
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
+      ]
+    },
+    "website": {
+      "freq": 1,
+      "skills": [
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
+      ]
+    },
+    "codeex": {
+      "freq": 1,
+      "skills": [
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
+      ]
+    },
+    "skill": {
+      "freq": 1,
+      "skills": [
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
     },
     "here": {
       "freq": 1,
       "skills": [
-        "master_ai_trading_in_70_minutes_full_claude_tradin"
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
     },
-    "trading": {
+    "before": {
       "freq": 1,
       "skills": [
-        "master_ai_trading_in_70_minutes_full_claude_tradin"
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
     },
-    "claude": {
+    "really": {
       "freq": 1,
       "skills": [
-        "master_ai_trading_in_70_minutes_full_claude_tradin"
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
     },
-    "right": {
+    "need": {
       "freq": 1,
       "skills": [
-        "master_ai_trading_in_70_minutes_full_claude_tradin"
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
     },
-    "actually": {
+    "file": {
       "freq": 1,
       "skills": [
-        "master_ai_trading_in_70_minutes_full_claude_tradin"
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
     },
-    "want": {
+    "site": {
       "freq": 1,
       "skills": [
-        "master_ai_trading_in_70_minutes_full_claude_tradin"
-      ]
-    },
-    "time": {
-      "freq": 1,
-      "skills": [
-        "master_ai_trading_in_70_minutes_full_claude_tradin"
-      ]
-    },
-    "very": {
-      "freq": 1,
-      "skills": [
-        "master_ai_trading_in_70_minutes_full_claude_tradin"
-      ]
-    },
-    "view": {
-      "freq": 1,
-      "skills": [
-        "master_ai_trading_in_70_minutes_full_claude_tradin"
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
     }
   },
@@ -65,55 +65,69 @@
     "Claude": {
       "freq": 1,
       "skills": [
-        "master_ai_trading_in_70_minutes_full_claude_tradin"
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
     },
-    "LLM": {
+    "next.js": {
       "freq": 1,
       "skills": [
-        "master_ai_trading_in_70_minutes_full_claude_tradin"
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
     },
-    "node": {
+    "Anthropic": {
       "freq": 1,
       "skills": [
-        "master_ai_trading_in_70_minutes_full_claude_tradin"
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
+      ]
+    },
+    "OpenAI": {
+      "freq": 1,
+      "skills": [
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
+      ]
+    },
+    "git": {
+      "freq": 1,
+      "skills": [
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
     }
   },
   "skill_map": {
-    "master_ai_trading_in_70_minutes_full_claude_tradin": {
+    "how_to_use_codex_to_build_insanely_beautiful_websi": {
       "concepts": [
-        "know",
+        "design",
+        "website",
+        "codeex",
+        "skill",
         "here",
-        "trading",
-        "claude",
-        "right",
-        "actually",
-        "want",
-        "time",
-        "very",
-        "view"
+        "before",
+        "really",
+        "need",
+        "file",
+        "site"
       ],
       "tools": [
         "Claude",
-        "LLM",
-        "node"
+        "next.js",
+        "Anthropic",
+        "OpenAI",
+        "git"
       ],
       "tags": [
-        "know",
+        "design",
+        "website",
+        "codeex",
+        "skill",
         "here",
-        "trading",
-        "claude",
-        "right",
-        "actually"
+        "before"
       ],
       "step_count": 1
     }
   },
   "relationships": {
-    "master_ai_trading_in_70_minutes_full_claude_tradin": {}
+    "how_to_use_codex_to_build_insanely_beautiful_websi": {}
   },
-  "updated_at": "2026-07-19T02:45:23.549434+00:00",
+  "updated_at": "2026-07-19T02:45:23.552667+00:00",
   "total_skills": 1
 }
