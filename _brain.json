@@ -1180,7 +1180,7 @@
       ]
     },
     "here": {
-      "freq": 16,
+      "freq": 17,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_opus_5_leaks",
@@ -1193,7 +1193,7 @@
       ]
     },
     "actually": {
-      "freq": 13,
+      "freq": 14,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_update_is_insane",
@@ -1243,7 +1243,7 @@
       ]
     },
     "right": {
-      "freq": 10,
+      "freq": 11,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
@@ -1308,7 +1308,7 @@
       ]
     },
     "about": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "new_claude_update_is_insane",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
@@ -1322,7 +1322,7 @@
       ]
     },
     "model": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "new_claude_opus_5_leaks",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
@@ -1403,7 +1403,7 @@
       ]
     },
     "really": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "making_with_loop_engineering",
         "how_to_use_codex_to_build_insanely_beautiful_websi",
@@ -1448,7 +1448,7 @@
       ]
     },
     "models": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "did_kimi_k3_really_beat_fable"
@@ -1717,19 +1717,19 @@
       ]
     },
     "open": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "did_kimi_k3_really_beat_fable"
       ]
     },
     "source": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "did_kimi_k3_really_beat_fable"
       ]
     },
     "kimmy": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "did_kimi_k3_really_beat_fable",
         "the_15_most_insane_things_created_by_kimi_k3_kimi_"
@@ -1756,7 +1756,7 @@
   },
   "tools": {
     "Anthropic": {
-      "freq": 22,
+      "freq": 23,
       "skills": [
         "building_ai_agents",
         "build_production_ready_llm_applications_with_haystack",
@@ -1832,7 +1832,7 @@
       ]
     },
     "Claude": {
-      "freq": 34,
+      "freq": 35,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -2186,7 +2186,7 @@
       ]
     },
     "OpenAI": {
-      "freq": 11,
+      "freq": 12,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
         "testing_and_comparing_llms",
@@ -5837,6 +5837,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-19T02:41:08.319728+00:00",
+  "updated_at": "2026-07-19T02:41:08.620221+00:00",
   "total_skills": 41
 }
