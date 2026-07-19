@@ -1180,7 +1180,7 @@
       ]
     },
     "here": {
-      "freq": 39,
+      "freq": 40,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_opus_5_leaks",
@@ -1277,7 +1277,7 @@
       ]
     },
     "right": {
-      "freq": 18,
+      "freq": 19,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
@@ -1421,7 +1421,7 @@
       ]
     },
     "know": {
-      "freq": 12,
+      "freq": 13,
       "skills": [
         "making_with_loop_engineering",
         "master_ai_trading_in_70_minutes_full_claude_tradin",
@@ -1458,7 +1458,7 @@
       ]
     },
     "going": {
-      "freq": 26,
+      "freq": 27,
       "skills": [
         "making_with_loop_engineering",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
@@ -1521,7 +1521,7 @@
       ]
     },
     "soul": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "kimi_k3_is_insanely_strong_real_tests_and_review"
@@ -1747,7 +1747,7 @@
       ]
     },
     "kimi": {
-      "freq": 9,
+      "freq": 10,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results",
         "this_kimi_k3_agent_os_is_wild",
@@ -1757,7 +1757,7 @@
       ]
     },
     "look": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results",
         "china_just_beat_claude_ai_kimi_k3",
@@ -1766,7 +1766,7 @@
       ]
     },
     "these": {
-      "freq": 9,
+      "freq": 10,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results",
         "yes_the_kimi_k3_hype_is_real",
@@ -1803,7 +1803,7 @@
       ]
     },
     "very": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "master_ai_trading_in_70_minutes_full_claude_tradin",
         "people_are_creating_insane_things_with_kimi_k3",
@@ -1922,7 +1922,7 @@
       ]
     },
     "okay": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "kimi_k3_is_just_ridiculous",
         "use_kimi_k3_completely_free_best_ai_coding_setup_2",
@@ -2151,7 +2151,7 @@
   },
   "tools": {
     "Anthropic": {
-      "freq": 36,
+      "freq": 37,
       "skills": [
         "building_ai_agents",
         "build_production_ready_llm_applications_with_haystack",
@@ -2234,7 +2234,7 @@
       ]
     },
     "Claude": {
-      "freq": 63,
+      "freq": 64,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -2684,7 +2684,7 @@
       ]
     },
     "GPT-4": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
         "china_just_beat_claude_ai_kimi_k3",
@@ -11564,6 +11564,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-19T02:42:45.775791+00:00",
+  "updated_at": "2026-07-19T02:42:47.159317+00:00",
   "total_skills": 61
 }
