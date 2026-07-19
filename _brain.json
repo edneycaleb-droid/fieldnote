@@ -1292,7 +1292,7 @@
       ]
     },
     "which": {
-      "freq": 23,
+      "freq": 24,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq",
@@ -1304,7 +1304,8 @@
         "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
         "kimi_k3_is_insane_best_open_model_ever_that_beats_",
         "every_hermes_concept_explained_for_normal_people",
-        "use_this_to_make_the_hermes_agent_basically_free"
+        "use_this_to_make_the_hermes_agent_basically_free",
+        "ornith_35b_9b_hermes_zed_the_fully_private_local_a"
       ]
     },
     "video": {
@@ -1318,7 +1319,7 @@
       ]
     },
     "well": {
-      "freq": 15,
+      "freq": 16,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "kimi_k3_vs_claude_fable_5_raw_results",
@@ -1326,7 +1327,8 @@
         "run_kimi_k3_inside_claude_code_max_power",
         "kimi_k3_is_fable_level_they_should_be_worried",
         "use_kimi_k3_completely_free_best_ai_coding_setup_2",
-        "kimi_k3_is_insane_best_open_model_ever_that_beats_"
+        "kimi_k3_is_insane_best_open_model_ever_that_beats_",
+        "ornith_35b_9b_hermes_zed_the_fully_private_local_a"
       ]
     },
     "right": {
@@ -1447,7 +1449,7 @@
       ]
     },
     "model": {
-      "freq": 46,
+      "freq": 47,
       "skills": [
         "new_claude_opus_5_leaks",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
@@ -1471,7 +1473,8 @@
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
         "kimi_k3_hermes_agent_changes_everything",
         "use_this_to_make_the_hermes_agent_basically_free",
-        "full_hermes_agent_tutorial_desktop_a_useful_agenti"
+        "full_hermes_agent_tutorial_desktop_a_useful_agenti",
+        "ornith_35b_9b_hermes_zed_the_fully_private_local_a"
       ]
     },
     "profit": {
@@ -1637,7 +1640,7 @@
       ]
     },
     "models": {
-      "freq": 25,
+      "freq": 26,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "did_kimi_k3_really_beat_fable",
@@ -1651,7 +1654,8 @@
         "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner",
         "kimi_k3_is_fable_level_they_should_be_worried",
         "kimi_k3_just_knocked_claude_to_third_place_chinese",
-        "kimi_k3_crushed_fable"
+        "kimi_k3_crushed_fable",
+        "ornith_35b_9b_hermes_zed_the_fully_private_local_a"
       ]
     },
     "luna": {
@@ -1770,12 +1774,13 @@
       ]
     },
     "good": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "chatgpt_work_everything_you_need_to_know_to_get_st",
         "kimi_k3_is_just_ridiculous",
         "kimi_k3_just_knocked_claude_to_third_place_chinese",
-        "kimi_k3_crushed_fable"
+        "kimi_k3_crushed_fable",
+        "ornith_35b_9b_hermes_zed_the_fully_private_local_a"
       ]
     },
     "need": {
@@ -2547,6 +2552,36 @@
       "skills": [
         "full_hermes_agent_tutorial_desktop_a_useful_agenti"
       ]
+    },
+    "coding": {
+      "freq": 1,
+      "skills": [
+        "ornith_35b_9b_hermes_zed_the_fully_private_local_a"
+      ]
+    },
+    "local": {
+      "freq": 1,
+      "skills": [
+        "ornith_35b_9b_hermes_zed_the_fully_private_local_a"
+      ]
+    },
+    "tool": {
+      "freq": 1,
+      "skills": [
+        "ornith_35b_9b_hermes_zed_the_fully_private_local_a"
+      ]
+    },
+    "around": {
+      "freq": 1,
+      "skills": [
+        "ornith_35b_9b_hermes_zed_the_fully_private_local_a"
+      ]
+    },
+    "ornith": {
+      "freq": 1,
+      "skills": [
+        "ornith_35b_9b_hermes_zed_the_fully_private_local_a"
+      ]
     }
   },
   "tools": {
@@ -2641,7 +2676,7 @@
       ]
     },
     "Claude": {
-      "freq": 94,
+      "freq": 95,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -2688,7 +2723,8 @@
         "6_insane_hermes_agent_use_cases_that_you_need_righ",
         "hermes_claude_code_mcp_integration_loop_engineerin",
         "new_hermes_paperclip_ai_agent_update_is_insane",
-        "full_hermes_agent_tutorial_desktop_a_useful_agenti"
+        "full_hermes_agent_tutorial_desktop_a_useful_agenti",
+        "ornith_35b_9b_hermes_zed_the_fully_private_local_a"
       ]
     },
     "Google Drive": {
@@ -3712,14 +3748,15 @@
       ]
     },
     "Ollama": {
-      "freq": 10,
+      "freq": 11,
       "skills": [
         "building_ai_agents",
         "local_ai_coding",
         "kimi_k3_vs_claude_fable_5_raw_results",
         "i_tested_kimi_k3_so_you_don_t_have_to",
         "every_hermes_concept_explained_for_normal_people",
-        "full_hermes_agent_tutorial_desktop_a_useful_agenti"
+        "full_hermes_agent_tutorial_desktop_a_useful_agenti",
+        "ornith_35b_9b_hermes_zed_the_fully_private_local_a"
       ]
     },
     "Babel": {
@@ -3729,7 +3766,7 @@
       ]
     },
     "LLM": {
-      "freq": 17,
+      "freq": 18,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "master_ai_trading_in_70_minutes_full_claude_tradin",
@@ -3739,7 +3776,8 @@
         "hermes_agent_zero_to_personal_ai_assistant_1_hour_",
         "6_insane_hermes_agent_use_cases_that_you_need_righ",
         "hermes_agent_full_course_setup_guide_for_complete_",
-        "full_hermes_agent_tutorial_desktop_a_useful_agenti"
+        "full_hermes_agent_tutorial_desktop_a_useful_agenti",
+        "ornith_35b_9b_hermes_zed_the_fully_private_local_a"
       ]
     },
     "Llama": {
@@ -6134,6 +6172,34 @@
         "model"
       ],
       "step_count": 1
+    },
+    "ornith_35b_9b_hermes_zed_the_fully_private_local_a": {
+      "concepts": [
+        "model",
+        "models",
+        "coding",
+        "good",
+        "local",
+        "tool",
+        "which",
+        "around",
+        "ornith",
+        "well"
+      ],
+      "tools": [
+        "LLM",
+        "Claude",
+        "Ollama"
+      ],
+      "tags": [
+        "model",
+        "models",
+        "coding",
+        "good",
+        "local",
+        "tool"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -6315,6 +6381,10 @@
         "Claude"
       ],
       "full_hermes_agent_tutorial_desktop_a_useful_agenti": [
+        "Claude",
+        "Ollama"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "Claude",
         "Ollama"
       ]
@@ -6677,6 +6747,9 @@
         "Docker",
         "OpenAI",
         "Anthropic"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "LLM"
       ]
     },
     "swanlab_ai_training_analysis_platform": {
@@ -6832,6 +6905,9 @@
         "Claude"
       ],
       "full_hermes_agent_tutorial_desktop_a_useful_agenti": [
+        "Claude"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "Claude"
       ]
     },
@@ -7046,6 +7122,9 @@
       "full_hermes_agent_tutorial_desktop_a_useful_agenti": [
         "Claude",
         "Gemini"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "Claude"
       ]
     },
     "pydantic_ai_framework": {
@@ -7228,6 +7307,9 @@
         "Claude"
       ],
       "full_hermes_agent_tutorial_desktop_a_useful_agenti": [
+        "Claude"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "Claude"
       ]
     },
@@ -7495,6 +7577,9 @@
       "full_hermes_agent_tutorial_desktop_a_useful_agenti": [
         "LLM",
         "Docker"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "LLM"
       ]
     },
     "superagi_building_autonomous_agents": {
@@ -7721,6 +7806,9 @@
         "Claude"
       ],
       "full_hermes_agent_tutorial_desktop_a_useful_agenti": [
+        "Claude"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "Claude"
       ]
     },
@@ -8137,6 +8225,11 @@
         "hermes",
         "agent",
         "here"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "which",
+        "Claude",
+        "well"
       ]
     },
     "new_claude_update_is_insane": {
@@ -8368,6 +8461,9 @@
       "full_hermes_agent_tutorial_desktop_a_useful_agenti": [
         "Claude",
         "Anthropic"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "Claude"
       ]
     },
     "new_claude_opus_5_leaks": {
@@ -8622,6 +8718,10 @@
         "here",
         "Anthropic",
         "model"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "Claude",
+        "model"
       ]
     },
     "making_with_loop_engineering": {
@@ -8863,6 +8963,9 @@
         "Claude",
         "going",
         "OpenAI"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "Claude"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -9127,6 +9230,12 @@
         "OpenAI",
         "model",
         "Anthropic"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "Claude",
+        "LLM",
+        "models",
+        "model"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -9301,6 +9410,9 @@
       "full_hermes_agent_tutorial_desktop_a_useful_agenti": [
         "Claude",
         "Anthropic"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "Claude"
       ]
     },
     "local_ai_coding": {
@@ -9325,6 +9437,9 @@
         "Ollama"
       ],
       "full_hermes_agent_tutorial_desktop_a_useful_agenti": [
+        "Ollama"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "Ollama"
       ]
     },
@@ -9487,6 +9602,9 @@
       "full_hermes_agent_tutorial_desktop_a_useful_agenti": [
         "going",
         "here"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "good"
       ]
     },
     "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
@@ -9579,6 +9697,9 @@
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
         "Python"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "which"
       ]
     },
     "kimi_k3_vs_claude_fable_5_raw_results": {
@@ -9860,6 +9981,11 @@
         "Claude",
         "here",
         "Anthropic"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "Claude",
+        "Ollama",
+        "well"
       ]
     },
     "master_ai_trading_in_70_minutes_full_claude_tradin": {
@@ -10116,6 +10242,10 @@
         "LLM",
         "here",
         "want"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "Claude",
+        "LLM"
       ]
     },
     "how_to_use_codex_to_build_insanely_beautiful_websi": {
@@ -10371,6 +10501,9 @@
         "here",
         "OpenAI",
         "Anthropic"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "Claude"
       ]
     },
     "did_kimi_k3_really_beat_fable": {
@@ -10694,6 +10827,11 @@
         "OpenAI",
         "model",
         "Anthropic"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "Claude",
+        "models",
+        "model"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -10942,6 +11080,9 @@
         "Claude",
         "going",
         "here"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "Claude"
       ]
     },
     "kimi_k3_is_the_best_model_ever_made_sometimes": {
@@ -11277,6 +11418,12 @@
         "Docker",
         "OpenAI",
         "model"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "which",
+        "Claude",
+        "models",
+        "model"
       ]
     },
     "i_tested_kimi_k3_so_you_don_t_have_to": {
@@ -11544,6 +11691,11 @@
         "OpenAI",
         "model",
         "Anthropic"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "models",
+        "Ollama",
+        "model"
       ]
     },
     "kimi_k3_is_just_ridiculous": {
@@ -11781,6 +11933,10 @@
         "Claude",
         "going",
         "here"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "good",
+        "Claude"
       ]
     },
     "people_are_creating_insane_things_with_kimi_k3": {
@@ -12024,6 +12180,10 @@
       "full_hermes_agent_tutorial_desktop_a_useful_agenti": [
         "Claude",
         "here",
+        "model"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "Claude",
         "model"
       ]
     },
@@ -12303,6 +12463,11 @@
         "OpenAI",
         "model",
         "Anthropic"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "models",
+        "Claude",
+        "model"
       ]
     },
     "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": {
@@ -12564,6 +12729,12 @@
         "Claude",
         "OpenAI",
         "model"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "which",
+        "Claude",
+        "models",
+        "model"
       ]
     },
     "this_kimi_k3_agent_os_is_wild": {
@@ -12809,6 +12980,11 @@
         "Claude",
         "Gemini",
         "agent",
+        "model"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "models",
+        "Claude",
         "model"
       ]
     },
@@ -13290,6 +13466,10 @@
         "here",
         "OpenAI",
         "Anthropic"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "which",
+        "Claude"
       ]
     },
     "kimi_k3_ai_full_course_1_hour_build_automate_anyth": {
@@ -13572,6 +13752,11 @@
         "Claude",
         "want",
         "here"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "Claude",
+        "LLM",
+        "well"
       ]
     },
     "kimi_k3_fully_tested_an_open_model_beats_fable": {
@@ -13749,6 +13934,10 @@
       ],
       "full_hermes_agent_tutorial_desktop_a_useful_agenti": [
         "Gemini",
+        "model"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "models",
         "model"
       ]
     },
@@ -13960,6 +14149,10 @@
         "going",
         "Gemini",
         "OpenAI",
+        "model"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "which",
         "model"
       ]
     },
@@ -14222,6 +14415,10 @@
         "going",
         "want",
         "here"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "Claude",
+        "well"
       ]
     },
     "2_8_trillion_parameters_kimi_k3_is_here": {
@@ -14468,6 +14665,10 @@
         "Claude",
         "OpenAI",
         "model"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "Claude",
+        "model"
       ]
     },
     "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
@@ -14648,6 +14849,10 @@
       "full_hermes_agent_tutorial_desktop_a_useful_agenti": [
         "OpenAI",
         "Anthropic",
+        "model"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "models",
         "model"
       ]
     },
@@ -14851,6 +15056,11 @@
       ],
       "full_hermes_agent_tutorial_desktop_a_useful_agenti": [
         "here",
+        "model"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "which",
+        "models",
         "model"
       ]
     },
@@ -15111,6 +15321,12 @@
       "full_hermes_agent_tutorial_desktop_a_useful_agenti": [
         "Claude",
         "here",
+        "model"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "models",
+        "Claude",
+        "well",
         "model"
       ]
     },
@@ -15375,6 +15591,12 @@
         "going",
         "Anthropic",
         "model"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "good",
+        "Claude",
+        "models",
+        "model"
       ]
     },
     "use_kimi_k3_completely_free_best_ai_coding_setup_2": {
@@ -15584,6 +15806,10 @@
       "full_hermes_agent_tutorial_desktop_a_useful_agenti": [
         "Claude",
         "here"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "Claude",
+        "well"
       ]
     },
     "kimi_k3_is_insanely_strong_real_tests_and_review": {
@@ -15863,6 +16089,9 @@
         "going",
         "Anthropic",
         "here"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "Claude"
       ]
     },
     "kimi_k3_crushed_fable": {
@@ -16179,6 +16408,12 @@
         "OpenAI",
         "model",
         "Anthropic"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "good",
+        "Claude",
+        "models",
+        "model"
       ]
     },
     "kimi_k3_ai_model": {},
@@ -16477,6 +16712,11 @@
         "OpenAI",
         "model",
         "Anthropic"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "which",
+        "Claude",
+        "model"
       ]
     },
     "kimi_k3_is_insane_best_open_model_ever_that_beats_": {
@@ -16710,6 +16950,12 @@
       "full_hermes_agent_tutorial_desktop_a_useful_agenti": [
         "Claude",
         "different",
+        "model"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "which",
+        "Claude",
+        "well",
         "model"
       ]
     },
@@ -16978,6 +17224,10 @@
         "going",
         "agent",
         "model"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "Claude",
+        "model"
       ]
     },
     "100_hours_of_hermes_agent_lessons_in_19_minutes": {
@@ -17216,6 +17466,9 @@
         "Claude",
         "want",
         "agent"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "Claude"
       ]
     },
     "every_hermes_concept_explained_for_normal_people": {
@@ -17525,6 +17778,11 @@
         "Claude",
         "want",
         "here"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "which",
+        "Claude",
+        "Ollama"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -17706,6 +17964,9 @@
       "full_hermes_agent_tutorial_desktop_a_useful_agenti": [
         "Claude",
         "agent"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "Claude"
       ]
     },
     "kimi_k3_hermes_agent_changes_everything": {
@@ -17906,6 +18167,9 @@
         "hermes",
         "agent",
         "here",
+        "model"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "model"
       ]
     },
@@ -18240,6 +18504,10 @@
         "Docker",
         "here",
         "OpenAI"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "Claude",
+        "LLM"
       ]
     },
     "gpt_5_6_on_hermes_agent_is_actually_insane_full_he": {
@@ -18539,6 +18807,9 @@
         "want",
         "here",
         "Docker"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "Claude"
       ]
     },
     "use_this_to_make_the_hermes_agent_basically_free": {
@@ -18828,6 +19099,11 @@
         "Claude",
         "OpenAI",
         "agent",
+        "model"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "which",
+        "Claude",
         "model"
       ]
     },
@@ -19337,6 +19613,10 @@
         "going",
         "Claude",
         "here"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "Claude",
+        "LLM"
       ]
     },
     "hermes_agent_zero_to_personal_ai_assistant_1_hour_": {
@@ -19701,6 +19981,10 @@
         "Claude",
         "Docker",
         "want"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "Claude",
+        "LLM"
       ]
     },
     "6_insane_hermes_agent_use_cases_that_you_need_righ": {
@@ -19940,6 +20224,10 @@
         "Gemini",
         "Claude",
         "agent"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "Claude",
+        "LLM"
       ]
     },
     "hermes_agent_full_course_setup_guide_for_complete_": {
@@ -20234,6 +20522,9 @@
         "here",
         "want",
         "Docker"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "LLM"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -20439,6 +20730,9 @@
         "Claude",
         "hermes",
         "agent"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "Claude"
       ]
     },
     "new_hermes_paperclip_ai_agent_update_is_insane": {
@@ -20652,6 +20946,9 @@
         "hermes",
         "Gemini",
         "agent"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "Claude"
       ]
     },
     "full_hermes_agent_tutorial_desktop_a_useful_agenti": {
@@ -21014,9 +21311,254 @@
         "hermes",
         "Gemini",
         "agent"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "Claude",
+        "LLM",
+        "Ollama",
+        "model"
+      ]
+    },
+    "ornith_35b_9b_hermes_zed_the_fully_private_local_a": {
+      "building_ai_agents": [
+        "Claude",
+        "Ollama"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "LLM"
+      ],
+      "mastering_loop_engineering": [
+        "Claude"
+      ],
+      "higsfield_integration": [
+        "Claude"
+      ],
+      "hermes_agent_setup": [
+        "Claude"
+      ],
+      "graphrag_deployment": [
+        "LLM"
+      ],
+      "building_ai_agents_with_loop": [
+        "Claude"
+      ],
+      "kimi_k3_hermes_ai_agent_is_insane": [
+        "which",
+        "Claude",
+        "well"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude"
+      ],
+      "new_claude_opus_5_leaks": [
+        "Claude",
+        "model"
+      ],
+      "making_with_loop_engineering": [
+        "Claude"
+      ],
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "Claude",
+        "LLM",
+        "models",
+        "model"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Claude"
+      ],
+      "local_ai_coding": [
+        "Ollama"
+      ],
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "good"
+      ],
+      "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": [
+        "which"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Claude",
+        "Ollama",
+        "well"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "Claude",
+        "LLM"
+      ],
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "Claude"
+      ],
+      "did_kimi_k3_really_beat_fable": [
+        "Claude",
+        "models",
+        "model"
+      ],
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "Claude"
+      ],
+      "kimi_k3_is_the_best_model_ever_made_sometimes": [
+        "which",
+        "Claude",
+        "models",
+        "model"
+      ],
+      "i_tested_kimi_k3_so_you_don_t_have_to": [
+        "models",
+        "Ollama",
+        "model"
+      ],
+      "kimi_k3_is_just_ridiculous": [
+        "good",
+        "Claude"
+      ],
+      "people_are_creating_insane_things_with_kimi_k3": [
+        "Claude",
+        "model"
+      ],
+      "china_just_beat_claude_ai_kimi_k3": [
+        "models",
+        "Claude",
+        "model"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "which",
+        "Claude",
+        "models",
+        "model"
+      ],
+      "this_kimi_k3_agent_os_is_wild": [
+        "models",
+        "Claude",
+        "model"
+      ],
+      "yes_the_kimi_k3_hype_is_real": [
+        "which",
+        "Claude"
+      ],
+      "kimi_k3_ai_full_course_1_hour_build_automate_anyth": [
+        "Claude",
+        "LLM",
+        "well"
+      ],
+      "kimi_k3_fully_tested_an_open_model_beats_fable": [
+        "models",
+        "model"
+      ],
+      "kimi_k3_is_out_and_the_real_opportunity_isn_t_the_": [
+        "which",
+        "model"
+      ],
+      "run_kimi_k3_inside_claude_code_max_power": [
+        "Claude",
+        "well"
+      ],
+      "2_8_trillion_parameters_kimi_k3_is_here": [
+        "Claude",
+        "model"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "models",
+        "model"
+      ],
+      "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner": [
+        "which",
+        "models",
+        "model"
+      ],
+      "kimi_k3_is_fable_level_they_should_be_worried": [
+        "models",
+        "Claude",
+        "well",
+        "model"
+      ],
+      "kimi_k3_just_knocked_claude_to_third_place_chinese": [
+        "good",
+        "Claude",
+        "models",
+        "model"
+      ],
+      "use_kimi_k3_completely_free_best_ai_coding_setup_2": [
+        "Claude",
+        "well"
+      ],
+      "kimi_k3_is_insanely_strong_real_tests_and_review": [
+        "Claude"
+      ],
+      "kimi_k3_crushed_fable": [
+        "good",
+        "Claude",
+        "models",
+        "model"
+      ],
+      "kimi_k3_testing_moonshot_s_2_8t_open_model_without": [
+        "which",
+        "Claude",
+        "model"
+      ],
+      "kimi_k3_is_insane_best_open_model_ever_that_beats_": [
+        "which",
+        "Claude",
+        "well",
+        "model"
+      ],
+      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
+        "Claude",
+        "model"
+      ],
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "Claude"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "which",
+        "Claude",
+        "Ollama"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Claude"
+      ],
+      "kimi_k3_hermes_agent_changes_everything": [
+        "model"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "Claude",
+        "LLM"
+      ],
+      "gpt_5_6_on_hermes_agent_is_actually_insane_full_he": [
+        "Claude"
+      ],
+      "use_this_to_make_the_hermes_agent_basically_free": [
+        "which",
+        "Claude",
+        "model"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Claude",
+        "LLM"
+      ],
+      "hermes_agent_zero_to_personal_ai_assistant_1_hour_": [
+        "Claude",
+        "LLM"
+      ],
+      "6_insane_hermes_agent_use_cases_that_you_need_righ": [
+        "Claude",
+        "LLM"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "LLM"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude"
+      ],
+      "full_hermes_agent_tutorial_desktop_a_useful_agenti": [
+        "Claude",
+        "LLM",
+        "Ollama",
+        "model"
       ]
     }
   },
-  "updated_at": "2026-07-19T02:44:12.797067+00:00",
-  "total_skills": 81
+  "updated_at": "2026-07-19T02:44:20.726677+00:00",
+  "total_skills": 82
 }
