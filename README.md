@@ -9,8 +9,8 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [Kimi K3 (Fully Tested): AN OPEN MODEL BEATS FABLE?!](skills/kimi_k3_fully_tested_an_open_model_beats_fable.md) | By AICodeKing. Key tools: Gemini. (Auto-extracted — pending AI enhancement.) | `Gemini` | `model` `question` `models` |
 | [Kimi K3 AI Full COURSE 1 HOUR (Build & Automate Anything)](skills/kimi_k3_ai_full_course_1_hour_build_automate_anyth.md) | By Julian Goldie SEO. Key tools: LLM, Claude. (Auto-extracted — pending AI enhan | `LLM` `Claude` | `kimmy` `here` `want` |
+| [Kimi K3 (Fully Tested): AN OPEN MODEL BEATS FABLE?!](skills/kimi_k3_fully_tested_an_open_model_beats_fable.md) | By AICodeKing. Key tools: Gemini. (Auto-extracted — pending AI enhancement.) | `Gemini` | `model` `question` `models` |
 | [Yes, the Kimi K3 Hype is Real](skills/yes_the_kimi_k3_hype_is_real.md) | By Chase AI. Key tools: Anthropic, OpenAI, Claude. (Auto-extracted — pending AI  | `Anthropic` `OpenAI` `Claude` | `these` `fable` `kimmy` |
 | [How to Run Kimi K3 for FREE!](skills/how_to_run_kimi_k3_for_free.md) | By Julian Goldie SEO. (Auto-extracted — pending AI enhancement.) |  | `free` `going` `here` |
 | [This Kimi K3 Agent OS Is WILD](skills/this_kimi_k3_agent_os_is_wild.md) | By Julian Goldie SEO. Key tools: Claude, Gemini. (Auto-extracted — pending AI en | `Claude` `Gemini` | `model` `agent` `kimi` |
