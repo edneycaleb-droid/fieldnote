@@ -1180,11 +1180,12 @@
       ]
     },
     "here": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_opus_5_leaks",
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
+        "chatgpt_work_everything_you_need_to_know_to_get_st",
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "actually": {
@@ -1228,16 +1229,18 @@
       ]
     },
     "well": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
-        "kimi_k3_hermes_ai_agent_is_insane"
+        "kimi_k3_hermes_ai_agent_is_insane",
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "right": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
+        "chatgpt_work_everything_you_need_to_know_to_get_st",
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "claude": {
@@ -1369,10 +1372,11 @@
       ]
     },
     "going": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "making_with_loop_engineering",
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
+        "chatgpt_work_everything_you_need_to_know_to_get_st",
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "think": {
@@ -1597,11 +1601,47 @@
       "skills": [
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
       ]
+    },
+    "fable": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "kimi": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "look": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "these": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "little": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "output": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
     }
   },
   "tools": {
     "Anthropic": {
-      "freq": 17,
+      "freq": 18,
       "skills": [
         "building_ai_agents",
         "build_production_ready_llm_applications_with_haystack",
@@ -1609,7 +1649,8 @@
         "new_claude_update_is_insane",
         "new_claude_opus_5_leaks",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
-        "this_ai_business_model_is_creating_new_millionaire"
+        "this_ai_business_model_is_creating_new_millionaire",
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "Haiku": {
@@ -1674,7 +1715,7 @@
       ]
     },
     "Claude": {
-      "freq": 26,
+      "freq": 27,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -1686,7 +1727,8 @@
         "new_claude_opus_5_leaks",
         "making_with_loop_engineering",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
-        "this_ai_business_model_is_creating_new_millionaire"
+        "this_ai_business_model_is_creating_new_millionaire",
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "Google Drive": {
@@ -2660,10 +2702,11 @@
       ]
     },
     "Ollama": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "building_ai_agents",
-        "local_ai_coding"
+        "local_ai_coding",
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "Babel": {
@@ -3701,6 +3744,34 @@
         "search"
       ],
       "step_count": 1
+    },
+    "kimi_k3_vs_claude_fable_5_raw_results": {
+      "concepts": [
+        "fable",
+        "kimi",
+        "right",
+        "going",
+        "look",
+        "well",
+        "these",
+        "here",
+        "little",
+        "output"
+      ],
+      "tools": [
+        "Claude",
+        "Anthropic",
+        "Ollama"
+      ],
+      "tags": [
+        "fable",
+        "kimi",
+        "right",
+        "going",
+        "look",
+        "well"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -3773,6 +3844,10 @@
         "Cost",
         "Compatibility",
         "Speed"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Claude",
+        "Ollama"
       ]
     },
     "running_large_models_locally": {
@@ -3968,6 +4043,9 @@
       ],
       "local_ai_coding": [
         "Mistral"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Anthropic"
       ]
     },
     "swanlab_ai_training_analysis_platform": {
@@ -4018,6 +4096,9 @@
         "Claude"
       ],
       "this_ai_business_model_is_creating_new_millionaire": [
+        "Claude"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
         "Claude"
       ]
     },
@@ -4111,6 +4192,9 @@
       ],
       "this_ai_business_model_is_creating_new_millionaire": [
         "Claude"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Claude"
       ]
     },
     "pydantic_ai_framework": {
@@ -4188,6 +4272,9 @@
         "Claude"
       ],
       "this_ai_business_model_is_creating_new_millionaire": [
+        "Claude"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
         "Claude"
       ]
     },
@@ -4446,6 +4533,9 @@
       ],
       "this_ai_business_model_is_creating_new_millionaire": [
         "Claude"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Claude"
       ]
     },
     "testing_and_comparing_llms": {
@@ -4489,6 +4579,9 @@
         "OpenAI"
       ],
       "this_ai_business_model_is_creating_new_millionaire": [
+        "Anthropic"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
         "Anthropic"
       ]
     },
@@ -4547,6 +4640,12 @@
       ],
       "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": [
         "which"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Claude",
+        "right",
+        "well",
+        "here"
       ]
     },
     "new_claude_update_is_insane": {
@@ -4600,6 +4699,10 @@
       ],
       "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": [
         "every"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Claude",
+        "Anthropic"
       ]
     },
     "new_claude_opus_5_leaks": {
@@ -4650,6 +4753,11 @@
       ],
       "chatgpt_work_everything_you_need_to_know_to_get_st": [
         "here"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Claude",
+        "here",
+        "Anthropic"
       ]
     },
     "making_with_loop_engineering": {
@@ -4693,6 +4801,10 @@
         "Claude"
       ],
       "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "going"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Claude",
         "going"
       ]
     },
@@ -4746,6 +4858,10 @@
         "Claude",
         "Anthropic",
         "music"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Claude",
+        "Anthropic"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -4789,6 +4905,10 @@
         "Claude",
         "Anthropic",
         "music"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Claude",
+        "Anthropic"
       ]
     },
     "local_ai_coding": {
@@ -4802,6 +4922,9 @@
       ],
       "build_production_ready_llm_applications_with_haystack": [
         "Mistral"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Ollama"
       ]
     },
     "chatgpt_work_everything_you_need_to_know_to_get_st": {
@@ -4817,6 +4940,11 @@
       ],
       "making_with_loop_engineering": [
         "going"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "going",
+        "right",
+        "here"
       ]
     },
     "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
@@ -4839,8 +4967,67 @@
       "new_claude_update_is_insane": [
         "every"
       ]
+    },
+    "kimi_k3_vs_claude_fable_5_raw_results": {
+      "building_ai_agents": [
+        "Claude",
+        "Ollama"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "Anthropic"
+      ],
+      "mastering_loop_engineering": [
+        "Claude"
+      ],
+      "higsfield_integration": [
+        "Claude"
+      ],
+      "hermes_agent_setup": [
+        "Claude"
+      ],
+      "building_ai_agents_with_loop": [
+        "Claude"
+      ],
+      "testing_and_comparing_llms": [
+        "Anthropic"
+      ],
+      "kimi_k3_hermes_ai_agent_is_insane": [
+        "Claude",
+        "right",
+        "well",
+        "here"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude",
+        "Anthropic"
+      ],
+      "new_claude_opus_5_leaks": [
+        "Claude",
+        "here",
+        "Anthropic"
+      ],
+      "making_with_loop_engineering": [
+        "Claude",
+        "going"
+      ],
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "Claude",
+        "Anthropic"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Claude",
+        "Anthropic"
+      ],
+      "local_ai_coding": [
+        "Ollama"
+      ],
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "going",
+        "right",
+        "here"
+      ]
     }
   },
-  "updated_at": "2026-07-19T02:40:49.413911+00:00",
-  "total_skills": 36
+  "updated_at": "2026-07-19T02:40:50.502376+00:00",
+  "total_skills": 37
 }
