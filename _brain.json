@@ -1180,7 +1180,7 @@
       ]
     },
     "here": {
-      "freq": 24,
+      "freq": 25,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_opus_5_leaks",
@@ -1192,11 +1192,12 @@
         "the_15_most_insane_things_created_by_kimi_k3_kimi_",
         "i_tested_kimi_k3_so_you_don_t_have_to",
         "kimi_k3_is_just_ridiculous",
-        "people_are_creating_insane_things_with_kimi_k3"
+        "people_are_creating_insane_things_with_kimi_k3",
+        "how_to_run_kimi_k3_for_free"
       ]
     },
     "actually": {
-      "freq": 17,
+      "freq": 18,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_update_is_insane",
@@ -1204,7 +1205,8 @@
         "master_ai_trading_in_70_minutes_full_claude_tradin",
         "did_kimi_k3_really_beat_fable",
         "the_15_most_insane_things_created_by_kimi_k3_kimi_",
-        "kimi_k3_is_just_ridiculous"
+        "kimi_k3_is_just_ridiculous",
+        "how_to_run_kimi_k3_for_free"
       ]
     },
     "agent": {
@@ -1215,11 +1217,12 @@
       ]
     },
     "inside": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_opus_5_leaks",
-        "this_kimi_k3_agent_os_is_wild"
+        "this_kimi_k3_agent_os_is_wild",
+        "how_to_run_kimi_k3_for_free"
       ]
     },
     "example": {
@@ -1412,7 +1415,7 @@
       ]
     },
     "going": {
-      "freq": 15,
+      "freq": 16,
       "skills": [
         "making_with_loop_engineering",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
@@ -1420,7 +1423,8 @@
         "the_15_most_insane_things_created_by_kimi_k3_kimi_",
         "kimi_k3_is_the_best_model_ever_made_sometimes",
         "i_tested_kimi_k3_so_you_don_t_have_to",
-        "kimi_k3_is_just_ridiculous"
+        "kimi_k3_is_just_ridiculous",
+        "how_to_run_kimi_k3_for_free"
       ]
     },
     "think": {
@@ -1713,9 +1717,10 @@
       ]
     },
     "want": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
-        "master_ai_trading_in_70_minutes_full_claude_tradin"
+        "master_ai_trading_in_70_minutes_full_claude_tradin",
+        "how_to_run_kimi_k3_for_free"
       ]
     },
     "very": {
@@ -1860,9 +1865,10 @@
       ]
     },
     "free": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
-        "china_just_beat_claude_ai_kimi_k3"
+        "china_just_beat_claude_ai_kimi_k3",
+        "how_to_run_kimi_k3_for_free"
       ]
     },
     "week": {
@@ -1911,6 +1917,30 @@
       "freq": 2,
       "skills": [
         "this_kimi_k3_agent_os_is_wild"
+      ]
+    },
+    "kimik": {
+      "freq": 1,
+      "skills": [
+        "how_to_run_kimi_k3_for_free"
+      ]
+    },
+    "show": {
+      "freq": 1,
+      "skills": [
+        "how_to_run_kimi_k3_for_free"
+      ]
+    },
+    "sign": {
+      "freq": 1,
+      "skills": [
+        "how_to_run_kimi_k3_for_free"
+      ]
+    },
+    "tokens": {
+      "freq": 1,
+      "skills": [
+        "how_to_run_kimi_k3_for_free"
       ]
     }
   },
@@ -4419,6 +4449,30 @@
         "real"
       ],
       "step_count": 1
+    },
+    "how_to_run_kimi_k3_for_free": {
+      "concepts": [
+        "free",
+        "going",
+        "here",
+        "kimik",
+        "want",
+        "actually",
+        "inside",
+        "show",
+        "sign",
+        "tokens"
+      ],
+      "tools": [],
+      "tags": [
+        "free",
+        "going",
+        "here",
+        "kimik",
+        "want",
+        "actually"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -5584,6 +5638,11 @@
         "Claude",
         "inside",
         "agent"
+      ],
+      "how_to_run_kimi_k3_for_free": [
+        "here",
+        "inside",
+        "actually"
       ]
     },
     "new_claude_update_is_insane": {
@@ -5694,6 +5753,9 @@
         "Claude",
         "real",
         "already"
+      ],
+      "how_to_run_kimi_k3_for_free": [
+        "actually"
       ]
     },
     "new_claude_opus_5_leaks": {
@@ -5805,6 +5867,10 @@
         "Claude",
         "inside",
         "model"
+      ],
+      "how_to_run_kimi_k3_for_free": [
+        "here",
+        "inside"
       ]
     },
     "making_with_loop_engineering": {
@@ -5908,6 +5974,10 @@
       ],
       "this_kimi_k3_agent_os_is_wild": [
         "Claude"
+      ],
+      "how_to_run_kimi_k3_for_free": [
+        "going",
+        "actually"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -6184,6 +6254,10 @@
       ],
       "people_are_creating_insane_things_with_kimi_k3": [
         "here"
+      ],
+      "how_to_run_kimi_k3_for_free": [
+        "going",
+        "here"
       ]
     },
     "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
@@ -6330,6 +6404,10 @@
       "this_kimi_k3_agent_os_is_wild": [
         "Claude",
         "kimi"
+      ],
+      "how_to_run_kimi_k3_for_free": [
+        "going",
+        "here"
       ]
     },
     "master_ai_trading_in_70_minutes_full_claude_tradin": {
@@ -6434,6 +6512,11 @@
       ],
       "this_kimi_k3_agent_os_is_wild": [
         "Claude"
+      ],
+      "how_to_run_kimi_k3_for_free": [
+        "want",
+        "here",
+        "actually"
       ]
     },
     "how_to_use_codex_to_build_insanely_beautiful_websi": {
@@ -6546,6 +6629,9 @@
       ],
       "this_kimi_k3_agent_os_is_wild": [
         "Claude"
+      ],
+      "how_to_run_kimi_k3_for_free": [
+        "here"
       ]
     },
     "did_kimi_k3_really_beat_fable": {
@@ -6683,6 +6769,10 @@
         "models",
         "Claude",
         "model"
+      ],
+      "how_to_run_kimi_k3_for_free": [
+        "here",
+        "actually"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -6786,6 +6876,11 @@
       ],
       "this_kimi_k3_agent_os_is_wild": [
         "Claude"
+      ],
+      "how_to_run_kimi_k3_for_free": [
+        "going",
+        "here",
+        "actually"
       ]
     },
     "kimi_k3_is_the_best_model_ever_made_sometimes": {
@@ -6938,6 +7033,9 @@
         "model",
         "models",
         "because"
+      ],
+      "how_to_run_kimi_k3_for_free": [
+        "going"
       ]
     },
     "i_tested_kimi_k3_so_you_don_t_have_to": {
@@ -7050,6 +7148,10 @@
       "this_kimi_k3_agent_os_is_wild": [
         "models",
         "model"
+      ],
+      "how_to_run_kimi_k3_for_free": [
+        "going",
+        "here"
       ]
     },
     "kimi_k3_is_just_ridiculous": {
@@ -7148,6 +7250,11 @@
       ],
       "this_kimi_k3_agent_os_is_wild": [
         "Claude"
+      ],
+      "how_to_run_kimi_k3_for_free": [
+        "going",
+        "here",
+        "actually"
       ]
     },
     "people_are_creating_insane_things_with_kimi_k3": {
@@ -7248,6 +7355,9 @@
       "this_kimi_k3_agent_os_is_wild": [
         "Claude",
         "model"
+      ],
+      "how_to_run_kimi_k3_for_free": [
+        "here"
       ]
     },
     "china_just_beat_claude_ai_kimi_k3": {
@@ -7369,6 +7479,9 @@
         "Claude",
         "Gemini",
         "model"
+      ],
+      "how_to_run_kimi_k3_for_free": [
+        "free"
       ]
     },
     "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": {
@@ -7582,9 +7695,76 @@
         "model",
         "models",
         "already"
+      ],
+      "how_to_run_kimi_k3_for_free": [
+        "inside"
+      ]
+    },
+    "how_to_run_kimi_k3_for_free": {
+      "kimi_k3_hermes_ai_agent_is_insane": [
+        "here",
+        "inside",
+        "actually"
+      ],
+      "new_claude_update_is_insane": [
+        "actually"
+      ],
+      "new_claude_opus_5_leaks": [
+        "here",
+        "inside"
+      ],
+      "making_with_loop_engineering": [
+        "going",
+        "actually"
+      ],
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "going",
+        "here"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "going",
+        "here"
+      ],
+      "master_ai_trading_in_70_minutes_full_claude_tradin": [
+        "want",
+        "here",
+        "actually"
+      ],
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "here"
+      ],
+      "did_kimi_k3_really_beat_fable": [
+        "here",
+        "actually"
+      ],
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "going",
+        "here",
+        "actually"
+      ],
+      "kimi_k3_is_the_best_model_ever_made_sometimes": [
+        "going"
+      ],
+      "i_tested_kimi_k3_so_you_don_t_have_to": [
+        "going",
+        "here"
+      ],
+      "kimi_k3_is_just_ridiculous": [
+        "going",
+        "here",
+        "actually"
+      ],
+      "people_are_creating_insane_things_with_kimi_k3": [
+        "here"
+      ],
+      "china_just_beat_claude_ai_kimi_k3": [
+        "free"
+      ],
+      "this_kimi_k3_agent_os_is_wild": [
+        "inside"
       ]
     }
   },
-  "updated_at": "2026-07-19T02:41:44.406063+00:00",
-  "total_skills": 48
+  "updated_at": "2026-07-19T02:41:49.561014+00:00",
+  "total_skills": 49
 }
