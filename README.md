@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **1 skill** · Last synced: 2026-07-19 02:46 UTC
+> **3 skills** · Last synced: 2026-07-19 02:46 UTC
 
 ---
 
@@ -9,7 +9,9 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [Use This To Make The Hermes Agent Basically Free](skills/use_this_to_make_the_hermes_agent_basically_free.md) | By AI LABS. Key tools: OpenAI, Claude, Anthropic, Gemini. (Auto-extracted — pend | `OpenAI` `Claude` `Anthropic` `Gemini` | `hermes` `tokens` `context` |
+| [Hermes Agent - Full Course & Setup Guide - For COMPLETE Beginners](skills/hermes_agent_full_course_setup_guide_for_complete_.md) | By Tech With Tim. Key tools: LLM, OpenAI, Anthropic, Docker, curl. (Auto-extract | `LLM` `OpenAI` `Anthropic` `Docker` | `going` `want` `agent` |
+| [Ornith (35B,9B) + Hermes,Zed: THE FULLY PRIVATE LOCAL AGENT is ACTUALLY HERE!](skills/ornith_35b_9b_hermes_zed_the_fully_private_local_a.md) | By AICodeKing. Key tools: LLM, Claude, Ollama. (Auto-extracted — pending AI enha | `LLM` `Claude` `Ollama` | `model` `models` `coding` |
+| [Hermes Agent + Ollama: How to Install Hermes Locally Fast](skills/hermes_agent_ollama_how_to_install_hermes_locally_.md) | By proflead. Key tools: llama, anthropic. (Auto-extracted — pending AI enhanceme | `llama` `anthropic` | `hermes` `model` `models` |
 
 ---
 
