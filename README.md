@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **55 skills** · Last synced: 2026-07-19 02:42 UTC
+> **56 skills** · Last synced: 2026-07-19 02:42 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [2.8 Trillion Parameters - Kimi K3 is here](skills/2_8_trillion_parameters_kimi_k3_is_here.md) | By 1littlecoder. Key tools: OpenAI, bash, Claude. (Auto-extracted — pending AI e | `OpenAI` `bash` `Claude` | `model` `website` `open` |
 | [Run Kimi K3 Inside Claude Code (MAX POWER)](skills/run_kimi_k3_inside_claude_code_max_power.md) | By Superbash (BoxminingAI). Key tools: Claude, anthropic. (Auto-extracted — pend | `Claude` `anthropic` | `code` `kimmy` `cloud` |
 | [Kimi K3 Is Out — and the Real Opportunity Isn't the Model](skills/kimi_k3_is_out_and_the_real_opportunity_isn_t_the_.md) | By Manolo Remiddi. Key tools: OpenAI, Gemini. (Auto-extracted — pending AI enhan | `OpenAI` `Gemini` | `model` `those` `going` |
 | [Kimi K3 (Fully Tested): AN OPEN MODEL BEATS FABLE?!](skills/kimi_k3_fully_tested_an_open_model_beats_fable.md) | By AICodeKing. Key tools: Gemini. (Auto-extracted — pending AI enhancement.) | `Gemini` | `model` `question` `models` |
