@@ -1168,6 +1168,66 @@
       "skills": [
         "building_ai_agents"
       ]
+    },
+    "hermes": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_hermes_ai_agent_is_insane"
+      ]
+    },
+    "here": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_hermes_ai_agent_is_insane"
+      ]
+    },
+    "actually": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_hermes_ai_agent_is_insane"
+      ]
+    },
+    "agent": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_hermes_ai_agent_is_insane"
+      ]
+    },
+    "inside": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_hermes_ai_agent_is_insane"
+      ]
+    },
+    "example": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_hermes_ai_agent_is_insane"
+      ]
+    },
+    "which": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_hermes_ai_agent_is_insane"
+      ]
+    },
+    "video": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_hermes_ai_agent_is_insane"
+      ]
+    },
+    "well": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_hermes_ai_agent_is_insane"
+      ]
+    },
+    "right": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_hermes_ai_agent_is_insane"
+      ]
     }
   },
   "tools": {
@@ -1241,13 +1301,14 @@
       ]
     },
     "Claude": {
-      "freq": 10,
+      "freq": 11,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
         "higsfield_integration",
         "hermes_agent_setup",
-        "building_ai_agents_with_loop"
+        "building_ai_agents_with_loop",
+        "kimi_k3_hermes_ai_agent_is_insane"
       ]
     },
     "Google Drive": {
@@ -2218,6 +2279,12 @@
       "skills": [
         "building_ai_agents"
       ]
+    },
+    "Babel": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_hermes_ai_agent_is_insane"
+      ]
     }
   },
   "skill_map": {
@@ -2966,6 +3033,33 @@
         "self-improvement"
       ],
       "step_count": 7
+    },
+    "kimi_k3_hermes_ai_agent_is_insane": {
+      "concepts": [
+        "hermes",
+        "here",
+        "actually",
+        "agent",
+        "inside",
+        "example",
+        "which",
+        "video",
+        "well",
+        "right"
+      ],
+      "tools": [
+        "Claude",
+        "Babel"
+      ],
+      "tags": [
+        "hermes",
+        "here",
+        "actually",
+        "agent",
+        "inside",
+        "example"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -3011,6 +3105,9 @@
         "Contabo",
         "Personalization",
         "AI agents",
+        "Claude"
+      ],
+      "kimi_k3_hermes_ai_agent_is_insane": [
         "Claude"
       ]
     },
@@ -3210,6 +3307,9 @@
         "Loop Engineering",
         "ChatGPT 5.6",
         "Self-Correction"
+      ],
+      "kimi_k3_hermes_ai_agent_is_insane": [
+        "Claude"
       ]
     },
     "moonshot_kimiko_automation": {
@@ -3284,6 +3384,9 @@
       ],
       "building_ai_agents_with_loop": [
         "Claude"
+      ],
+      "kimi_k3_hermes_ai_agent_is_insane": [
+        "Claude"
       ]
     },
     "pydantic_ai_framework": {
@@ -3341,6 +3444,9 @@
         "Automation",
         "RackNerd",
         "Hermes Agent"
+      ],
+      "kimi_k3_hermes_ai_agent_is_insane": [
+        "Claude"
       ]
     },
     "ragflow_deployment": {
@@ -3577,6 +3683,9 @@
       ],
       "microsoft_mcp_curriculum": [
         "Discord"
+      ],
+      "kimi_k3_hermes_ai_agent_is_insane": [
+        "Claude"
       ]
     },
     "testing_and_comparing_llms": {
@@ -3620,8 +3729,25 @@
         "Llama.cpp",
         "Hugging Face"
       ]
+    },
+    "kimi_k3_hermes_ai_agent_is_insane": {
+      "building_ai_agents": [
+        "Claude"
+      ],
+      "mastering_loop_engineering": [
+        "Claude"
+      ],
+      "higsfield_integration": [
+        "Claude"
+      ],
+      "hermes_agent_setup": [
+        "Claude"
+      ],
+      "building_ai_agents_with_loop": [
+        "Claude"
+      ]
     }
   },
-  "updated_at": "2026-07-19T02:40:00.498609+00:00",
-  "total_skills": 27
+  "updated_at": "2026-07-19T02:40:00.780654+00:00",
+  "total_skills": 28
 }
