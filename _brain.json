@@ -189,15 +189,76 @@
       "skills": [
         "kimi_k3_is_fable_level_they_should_be_worried"
       ]
+    },
+    "same": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
+    },
+    "outreach": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
+    },
+    "agent": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
+    },
+    "squad": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
+    },
+    "memory": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
+    },
+    "each": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
+    },
+    "already": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
+    },
+    "profit": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
+    },
+    "boardroom": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
+    },
+    "every": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "how_to_use_codex_to_build_insanely_beautiful_websi",
         "kimi_k3_is_just_ridiculous",
-        "kimi_k3_is_fable_level_they_should_be_worried"
+        "kimi_k3_is_fable_level_they_should_be_worried",
+        "new_hermes_agent_os_is_insane"
       ]
     },
     "next.js": {
@@ -359,6 +420,32 @@
         "well"
       ],
       "step_count": 1
+    },
+    "new_hermes_agent_os_is_insane": {
+      "concepts": [
+        "same",
+        "outreach",
+        "agent",
+        "squad",
+        "memory",
+        "each",
+        "already",
+        "profit",
+        "boardroom",
+        "every"
+      ],
+      "tools": [
+        "Claude"
+      ],
+      "tags": [
+        "same",
+        "outreach",
+        "agent",
+        "squad",
+        "memory",
+        "each"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -373,6 +460,9 @@
       "kimi_k3_is_fable_level_they_should_be_worried": [
         "Claude",
         "here"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Claude"
       ]
     },
     "kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner": {
@@ -406,6 +496,9 @@
         "here",
         "pretty",
         "actually"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Claude"
       ]
     },
     "kimi_k3_is_fable_level_they_should_be_worried": {
@@ -426,9 +519,23 @@
         "here",
         "pretty",
         "actually"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Claude"
+      ]
+    },
+    "new_hermes_agent_os_is_insane": {
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "Claude"
+      ],
+      "kimi_k3_is_just_ridiculous": [
+        "Claude"
+      ],
+      "kimi_k3_is_fable_level_they_should_be_worried": [
+        "Claude"
       ]
     }
   },
-  "updated_at": "2026-07-19T02:45:24.212467+00:00",
-  "total_skills": 4
+  "updated_at": "2026-07-19T02:45:24.318354+00:00",
+  "total_skills": 5
 }
