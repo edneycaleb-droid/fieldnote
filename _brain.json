@@ -20,9 +20,10 @@
       ]
     },
     "model": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "use_this_to_make_the_hermes_agent_basically_free"
+        "use_this_to_make_the_hermes_agent_basically_free",
+        "new_claude_opus_5_leaks"
       ]
     },
     "every": {
@@ -78,11 +79,12 @@
       ]
     },
     "here": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "hermes_agent_full_course_setup_guide_for_complete_",
         "kimi_k3_vs_claude_fable_5_raw_results",
-        "run_kimi_k3_inside_claude_code_max_power"
+        "run_kimi_k3_inside_claude_code_max_power",
+        "new_claude_opus_5_leaks"
       ]
     },
     "okay": {
@@ -189,6 +191,54 @@
       "skills": [
         "run_kimi_k3_inside_claude_code_max_power"
       ]
+    },
+    "opus": {
+      "freq": 1,
+      "skills": [
+        "new_claude_opus_5_leaks"
+      ]
+    },
+    "profit": {
+      "freq": 1,
+      "skills": [
+        "new_claude_opus_5_leaks"
+      ]
+    },
+    "boardroom": {
+      "freq": 1,
+      "skills": [
+        "new_claude_opus_5_leaks"
+      ]
+    },
+    "people": {
+      "freq": 1,
+      "skills": [
+        "new_claude_opus_5_leaks"
+      ]
+    },
+    "claude": {
+      "freq": 1,
+      "skills": [
+        "new_claude_opus_5_leaks"
+      ]
+    },
+    "honeycomb": {
+      "freq": 1,
+      "skills": [
+        "new_claude_opus_5_leaks"
+      ]
+    },
+    "inside": {
+      "freq": 1,
+      "skills": [
+        "new_claude_opus_5_leaks"
+      ]
+    },
+    "anthropic": {
+      "freq": 1,
+      "skills": [
+        "new_claude_opus_5_leaks"
+      ]
     }
   },
   "tools": {
@@ -200,19 +250,21 @@
       ]
     },
     "Claude": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "use_this_to_make_the_hermes_agent_basically_free",
         "kimi_k3_vs_claude_fable_5_raw_results",
-        "run_kimi_k3_inside_claude_code_max_power"
+        "run_kimi_k3_inside_claude_code_max_power",
+        "new_claude_opus_5_leaks"
       ]
     },
     "Anthropic": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "use_this_to_make_the_hermes_agent_basically_free",
         "hermes_agent_full_course_setup_guide_for_complete_",
-        "kimi_k3_vs_claude_fable_5_raw_results"
+        "kimi_k3_vs_claude_fable_5_raw_results",
+        "new_claude_opus_5_leaks"
       ]
     },
     "Gemini": {
@@ -380,6 +432,33 @@
         "really"
       ],
       "step_count": 1
+    },
+    "new_claude_opus_5_leaks": {
+      "concepts": [
+        "opus",
+        "model",
+        "profit",
+        "boardroom",
+        "people",
+        "claude",
+        "here",
+        "honeycomb",
+        "inside",
+        "anthropic"
+      ],
+      "tools": [
+        "Claude",
+        "Anthropic"
+      ],
+      "tags": [
+        "opus",
+        "model",
+        "profit",
+        "boardroom",
+        "people",
+        "claude"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -396,6 +475,11 @@
       ],
       "run_kimi_k3_inside_claude_code_max_power": [
         "Claude"
+      ],
+      "new_claude_opus_5_leaks": [
+        "Claude",
+        "Anthropic",
+        "model"
       ]
     },
     "hermes_agent_full_course_setup_guide_for_complete_": {
@@ -416,6 +500,10 @@
         "going",
         "right",
         "here"
+      ],
+      "new_claude_opus_5_leaks": [
+        "here",
+        "Anthropic"
       ]
     },
     "kimi_k3_vs_claude_fable_5_raw_results": {
@@ -435,6 +523,11 @@
         "going",
         "Claude",
         "here"
+      ],
+      "new_claude_opus_5_leaks": [
+        "Claude",
+        "here",
+        "Anthropic"
       ]
     },
     "run_kimi_k3_inside_claude_code_max_power": {
@@ -453,9 +546,35 @@
         "going",
         "Claude",
         "here"
+      ],
+      "new_claude_opus_5_leaks": [
+        "Claude",
+        "anthropic",
+        "here"
+      ]
+    },
+    "new_claude_opus_5_leaks": {
+      "use_this_to_make_the_hermes_agent_basically_free": [
+        "Claude",
+        "Anthropic",
+        "model"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "here",
+        "Anthropic"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Claude",
+        "here",
+        "Anthropic"
+      ],
+      "run_kimi_k3_inside_claude_code_max_power": [
+        "Claude",
+        "anthropic",
+        "here"
       ]
     }
   },
-  "updated_at": "2026-07-19T02:45:25.540100+00:00",
-  "total_skills": 4
+  "updated_at": "2026-07-19T02:45:25.713768+00:00",
+  "total_skills": 5
 }
