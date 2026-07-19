@@ -1180,7 +1180,7 @@
       ]
     },
     "here": {
-      "freq": 26,
+      "freq": 27,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_opus_5_leaks",
@@ -1198,7 +1198,7 @@
       ]
     },
     "actually": {
-      "freq": 19,
+      "freq": 20,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_update_is_insane",
@@ -1219,7 +1219,7 @@
       ]
     },
     "inside": {
-      "freq": 9,
+      "freq": 10,
       "skills": [
         "kimi_k3_hermes_ai_agent_is_insane",
         "new_claude_opus_5_leaks",
@@ -1420,7 +1420,7 @@
       ]
     },
     "going": {
-      "freq": 16,
+      "freq": 17,
       "skills": [
         "making_with_loop_engineering",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
@@ -1724,7 +1724,7 @@
       ]
     },
     "want": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "master_ai_trading_in_70_minutes_full_claude_tradin",
         "how_to_run_kimi_k3_for_free"
@@ -1873,7 +1873,7 @@
       ]
     },
     "free": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "china_just_beat_claude_ai_kimi_k3",
         "how_to_run_kimi_k3_for_free"
@@ -1928,25 +1928,25 @@
       ]
     },
     "kimik": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "how_to_run_kimi_k3_for_free"
       ]
     },
     "show": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "how_to_run_kimi_k3_for_free"
       ]
     },
     "sign": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "how_to_run_kimi_k3_for_free"
       ]
     },
     "tokens": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "how_to_run_kimi_k3_for_free",
         "yes_the_kimi_k3_hype_is_real"
@@ -8099,6 +8099,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-19T02:41:51.308646+00:00",
+  "updated_at": "2026-07-19T02:41:52.065285+00:00",
   "total_skills": 50
 }
