@@ -1,105 +1,119 @@
 {
   "concepts": {
-    "model": {
+    "know": {
       "freq": 1,
       "skills": [
-        "kimi_k3_fully_tested_an_open_model_beats_fable"
+        "master_ai_trading_in_70_minutes_full_claude_tradin"
       ]
     },
-    "question": {
+    "here": {
       "freq": 1,
       "skills": [
-        "kimi_k3_fully_tested_an_open_model_beats_fable"
+        "master_ai_trading_in_70_minutes_full_claude_tradin"
       ]
     },
-    "models": {
+    "trading": {
       "freq": 1,
       "skills": [
-        "kimi_k3_fully_tested_an_open_model_beats_fable"
+        "master_ai_trading_in_70_minutes_full_claude_tradin"
       ]
     },
-    "kimmy": {
+    "claude": {
       "freq": 1,
       "skills": [
-        "kimi_k3_fully_tested_an_open_model_beats_fable"
-      ]
-    },
-    "opus": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_fully_tested_an_open_model_beats_fable"
-      ]
-    },
-    "send": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_fully_tested_an_open_model_beats_fable"
-      ]
-    },
-    "gets": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_fully_tested_an_open_model_beats_fable"
-      ]
-    },
-    "fable": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_fully_tested_an_open_model_beats_fable"
-      ]
-    },
-    "video": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_fully_tested_an_open_model_beats_fable"
+        "master_ai_trading_in_70_minutes_full_claude_tradin"
       ]
     },
     "right": {
       "freq": 1,
       "skills": [
-        "kimi_k3_fully_tested_an_open_model_beats_fable"
+        "master_ai_trading_in_70_minutes_full_claude_tradin"
+      ]
+    },
+    "actually": {
+      "freq": 1,
+      "skills": [
+        "master_ai_trading_in_70_minutes_full_claude_tradin"
+      ]
+    },
+    "want": {
+      "freq": 1,
+      "skills": [
+        "master_ai_trading_in_70_minutes_full_claude_tradin"
+      ]
+    },
+    "time": {
+      "freq": 1,
+      "skills": [
+        "master_ai_trading_in_70_minutes_full_claude_tradin"
+      ]
+    },
+    "very": {
+      "freq": 1,
+      "skills": [
+        "master_ai_trading_in_70_minutes_full_claude_tradin"
+      ]
+    },
+    "view": {
+      "freq": 1,
+      "skills": [
+        "master_ai_trading_in_70_minutes_full_claude_tradin"
       ]
     }
   },
   "tools": {
-    "Gemini": {
+    "Claude": {
       "freq": 1,
       "skills": [
-        "kimi_k3_fully_tested_an_open_model_beats_fable"
+        "master_ai_trading_in_70_minutes_full_claude_tradin"
+      ]
+    },
+    "LLM": {
+      "freq": 1,
+      "skills": [
+        "master_ai_trading_in_70_minutes_full_claude_tradin"
+      ]
+    },
+    "node": {
+      "freq": 1,
+      "skills": [
+        "master_ai_trading_in_70_minutes_full_claude_tradin"
       ]
     }
   },
   "skill_map": {
-    "kimi_k3_fully_tested_an_open_model_beats_fable": {
+    "master_ai_trading_in_70_minutes_full_claude_tradin": {
       "concepts": [
-        "model",
-        "question",
-        "models",
-        "kimmy",
-        "opus",
-        "send",
-        "gets",
-        "fable",
-        "video",
-        "right"
+        "know",
+        "here",
+        "trading",
+        "claude",
+        "right",
+        "actually",
+        "want",
+        "time",
+        "very",
+        "view"
       ],
       "tools": [
-        "Gemini"
+        "Claude",
+        "LLM",
+        "node"
       ],
       "tags": [
-        "model",
-        "question",
-        "models",
-        "kimmy",
-        "opus",
-        "send"
+        "know",
+        "here",
+        "trading",
+        "claude",
+        "right",
+        "actually"
       ],
       "step_count": 1
     }
   },
   "relationships": {
-    "kimi_k3_fully_tested_an_open_model_beats_fable": {}
+    "master_ai_trading_in_70_minutes_full_claude_tradin": {}
   },
-  "updated_at": "2026-07-19T02:45:23.532571+00:00",
+  "updated_at": "2026-07-19T02:45:23.549434+00:00",
   "total_skills": 1
 }
