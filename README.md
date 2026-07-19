@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **44 skills** · Last synced: 2026-07-19 02:41 UTC
+> **45 skills** · Last synced: 2026-07-19 02:41 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Kimi K3 is just ridiculous](skills/kimi_k3_is_just_ridiculous.md) | By LanceyPoo. Key tools: Claude. (Auto-extracted — pending AI enhancement.) | `Claude` | `okay` `going` `wait` |
 | [I Tested Kimi K3 So You Don't Have To...](skills/i_tested_kimi_k3_so_you_don_t_have_to.md) | By Nick Saraev. Key tools: Ollama, Anthropic, OpenAI. (Auto-extracted — pending  | `Ollama` `Anthropic` `OpenAI` | `know` `kimmy` `here` |
 | [Kimi K3 is the best model ever made (sometimes)](skills/kimi_k3_is_the_best_model_ever_made_sometimes.md) | By Theo - t3․gg. Key tools: Docker, AWS, Anthropic, Claude, Gemini. (Auto-extrac | `Docker` `AWS` `Anthropic` `Claude` | `model` `about` `models` |
 | [The 15 Most INSANE Things Created by KIMI K3 ( KIMI K3 Use Cases)](skills/the_15_most_insane_things_created_by_kimi_k3_kimi_.md) | By TheAIGRID. Key tools: Claude. (Auto-extracted — pending AI enhancement.) | `Claude` | `know` `course` `game` |
