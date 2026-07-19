@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **22 skills** · Last synced: 2026-07-19 02:51 UTC
+> **21 skills** · Last synced: 2026-07-19 02:51 UTC
 
 ---
 
@@ -9,7 +9,6 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [Kimi K3 Is Out — and the Real Opportunity Isn't the Model](skills/kimi_k3_is_out_and_the_real_opportunity_isn_t_the_.md) | By Manolo Remiddi. Key tools: OpenAI, Gemini. (Auto-extracted — pending AI enhan | `OpenAI` `Gemini` | `model` `those` `going` |
 | [How To Use Codex To Build Insanely Beautiful Websites Using GPT 5.6 Sol](skills/how_to_use_codex_to_build_insanely_beautiful_websi.md) | By AI LABS. Key tools: Claude, next.js, Anthropic, OpenAI, git. (Auto-extracted  | `Claude` `next.js` `Anthropic` `OpenAI` | `design` `website` `codeex` |
 | [This Kimi K3 Agent OS Is WILD](skills/this_kimi_k3_agent_os_is_wild.md) | By Julian Goldie SEO. Key tools: Claude, Gemini. (Auto-extracted — pending AI en | `Claude` `Gemini` | `model` `agent` `kimi` |
 | [Kimi K3 AI Full COURSE 1 HOUR (Build & Automate Anything)](skills/kimi_k3_ai_full_course_1_hour_build_automate_anyth.md) | By Julian Goldie SEO. Key tools: LLM, Claude. (Auto-extracted — pending AI enhan | `LLM` `Claude` | `kimmy` `here` `want` |
