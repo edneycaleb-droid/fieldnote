@@ -174,22 +174,84 @@
       "skills": [
         "this_ai_business_model_is_creating_new_millionaire"
       ]
+    },
+    "tests": {
+      "freq": 1,
+      "skills": [
+        "hermes_claude_code_mcp_integration_loop_engineerin"
+      ]
+    },
+    "skill": {
+      "freq": 1,
+      "skills": [
+        "hermes_claude_code_mcp_integration_loop_engineerin"
+      ]
+    },
+    "hermes": {
+      "freq": 1,
+      "skills": [
+        "hermes_claude_code_mcp_integration_loop_engineerin"
+      ]
+    },
+    "code": {
+      "freq": 1,
+      "skills": [
+        "hermes_claude_code_mcp_integration_loop_engineerin"
+      ]
+    },
+    "loop": {
+      "freq": 1,
+      "skills": [
+        "hermes_claude_code_mcp_integration_loop_engineerin"
+      ]
+    },
+    "step": {
+      "freq": 1,
+      "skills": [
+        "hermes_claude_code_mcp_integration_loop_engineerin"
+      ]
+    },
+    "agent": {
+      "freq": 1,
+      "skills": [
+        "hermes_claude_code_mcp_integration_loop_engineerin"
+      ]
+    },
+    "pass": {
+      "freq": 1,
+      "skills": [
+        "hermes_claude_code_mcp_integration_loop_engineerin"
+      ]
+    },
+    "because": {
+      "freq": 1,
+      "skills": [
+        "hermes_claude_code_mcp_integration_loop_engineerin"
+      ]
+    },
+    "does": {
+      "freq": 1,
+      "skills": [
+        "hermes_claude_code_mcp_integration_loop_engineerin"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "new_claude_update_is_insane",
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
-        "this_ai_business_model_is_creating_new_millionaire"
+        "this_ai_business_model_is_creating_new_millionaire",
+        "hermes_claude_code_mcp_integration_loop_engineerin"
       ]
     },
     "Anthropic": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "new_claude_update_is_insane",
-        "this_ai_business_model_is_creating_new_millionaire"
+        "this_ai_business_model_is_creating_new_millionaire",
+        "hermes_claude_code_mcp_integration_loop_engineerin"
       ]
     },
     "anthropic": {
@@ -208,6 +270,24 @@
       "freq": 1,
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+      ]
+    },
+    "Flask": {
+      "freq": 1,
+      "skills": [
+        "hermes_claude_code_mcp_integration_loop_engineerin"
+      ]
+    },
+    "Python": {
+      "freq": 1,
+      "skills": [
+        "hermes_claude_code_mcp_integration_loop_engineerin"
+      ]
+    },
+    "pytest": {
+      "freq": 1,
+      "skills": [
+        "hermes_claude_code_mcp_integration_loop_engineerin"
       ]
     }
   },
@@ -294,6 +374,36 @@
         "first"
       ],
       "step_count": 1
+    },
+    "hermes_claude_code_mcp_integration_loop_engineerin": {
+      "concepts": [
+        "tests",
+        "skill",
+        "hermes",
+        "code",
+        "loop",
+        "step",
+        "agent",
+        "pass",
+        "because",
+        "does"
+      ],
+      "tools": [
+        "Anthropic",
+        "Flask",
+        "Python",
+        "pytest",
+        "Claude"
+      ],
+      "tags": [
+        "tests",
+        "skill",
+        "hermes",
+        "code",
+        "loop",
+        "step"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -306,6 +416,10 @@
       "this_ai_business_model_is_creating_new_millionaire": [
         "Anthropic",
         "Claude"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Anthropic",
+        "Claude"
       ]
     },
     "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": {
@@ -316,6 +430,9 @@
       ],
       "this_ai_business_model_is_creating_new_millionaire": [
         "Claude"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -325,9 +442,26 @@
       ],
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
         "Claude"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Anthropic",
+        "Claude"
+      ]
+    },
+    "hermes_claude_code_mcp_integration_loop_engineerin": {
+      "new_claude_update_is_insane": [
+        "Anthropic",
+        "Claude"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Anthropic",
+        "Claude"
       ]
     }
   },
-  "updated_at": "2026-07-20T02:51:27.716119+00:00",
-  "total_skills": 3
+  "updated_at": "2026-07-20T02:51:27.988620+00:00",
+  "total_skills": 4
 }
