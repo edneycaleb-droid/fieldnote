@@ -1,21 +1,24 @@
-# NEW Hermes + Paperclip AI Agent Update Is INSANE
+# By August, We'll Have Frontier AI Running Locally
 
-> ⚠️ **Auto-extracted draft** — pending AI enhancement for full quality.
-
-By Julian Goldie SEO. Key tools: Claude, Gemini. (Auto-extracted — pending AI enhancement.)
+## Description
+By Manolo Remiddi. Key tools: OpenAI, Gemini. (Auto-extracted — pending AI enhancement.)
 
 ## Steps
+1. Watch the full video for step-by-step instructions.
+2. Understand the current state of AI models and their rankings.
 
-- Watch the full video for step-by-step instructions.
+## Tools
+* OpenAI
+* Gemini
 
-## Tools & Technologies
+## Concepts
+* model
+* those
+* going
+* because
 
-Claude, Gemini
-
-## Source
-
-- **Video**: [NEW Hermes + Paperclip AI Agent Update Is INSANE](https://www.youtube.com/watch?v=O_irkwZoQw8)
-- **Video ID**: `O_irkwZoQw8`
+## Related Skills
+* by_august_we_ll_have_frontier_ai_running_locally
 
 ## Sources
 
