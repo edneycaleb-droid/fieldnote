@@ -21,4 +21,4 @@ Claude, React, Next.js, SQLite, Node
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-19 | [Kimi K3 Is Fable Level... (they should be worried)](https://www.youtube.com/watch?v=QfCpRTLSOB4) | yt_dlp_subs |
+| 2026-07-20 | [Kimi K3 Is Fable Level... (they should be worried)](https://www.youtube.com/watch?v=QfCpRTLSOB4) | yt_dlp_subs |
