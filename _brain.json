@@ -1,154 +1,112 @@
 {
   "concepts": {
-    "model": {
+    "very": {
       "freq": 1,
       "skills": [
-        "kimi_k3_is_the_best_model_ever_made_sometimes"
+        "kimi_k3_is_not_the_story_china_s_ai_master_plan_is"
       ]
     },
     "about": {
       "freq": 1,
       "skills": [
-        "kimi_k3_is_the_best_model_ever_made_sometimes"
+        "kimi_k3_is_not_the_story_china_s_ai_master_plan_is"
       ]
     },
     "models": {
       "freq": 1,
       "skills": [
-        "kimi_k3_is_the_best_model_ever_made_sometimes"
-      ]
-    },
-    "open": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_is_the_best_model_ever_made_sometimes"
-      ]
-    },
-    "work": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_is_the_best_model_ever_made_sometimes"
-      ]
-    },
-    "things": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_is_the_best_model_ever_made_sometimes"
-      ]
-    },
-    "which": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_is_the_best_model_ever_made_sometimes"
-      ]
-    },
-    "code": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_is_the_best_model_ever_made_sometimes"
+        "kimi_k3_is_not_the_story_china_s_ai_master_plan_is"
       ]
     },
     "because": {
       "freq": 1,
       "skills": [
-        "kimi_k3_is_the_best_model_ever_made_sometimes"
+        "kimi_k3_is_not_the_story_china_s_ai_master_plan_is"
       ]
     },
     "going": {
       "freq": 1,
       "skills": [
-        "kimi_k3_is_the_best_model_ever_made_sometimes"
+        "kimi_k3_is_not_the_story_china_s_ai_master_plan_is"
+      ]
+    },
+    "good": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_is_not_the_story_china_s_ai_master_plan_is"
+      ]
+    },
+    "model": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_is_not_the_story_china_s_ai_master_plan_is"
+      ]
+    },
+    "intelligence": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_is_not_the_story_china_s_ai_master_plan_is"
+      ]
+    },
+    "chinese": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_is_not_the_story_china_s_ai_master_plan_is"
+      ]
+    },
+    "artificial": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_is_not_the_story_china_s_ai_master_plan_is"
       ]
     }
   },
   "tools": {
-    "Docker": {
+    "Claude": {
       "freq": 1,
       "skills": [
-        "kimi_k3_is_the_best_model_ever_made_sometimes"
-      ]
-    },
-    "AWS": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_is_the_best_model_ever_made_sometimes"
+        "kimi_k3_is_not_the_story_china_s_ai_master_plan_is"
       ]
     },
     "Anthropic": {
       "freq": 1,
       "skills": [
-        "kimi_k3_is_the_best_model_ever_made_sometimes"
-      ]
-    },
-    "Claude": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_is_the_best_model_ever_made_sometimes"
-      ]
-    },
-    "Gemini": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_is_the_best_model_ever_made_sometimes"
-      ]
-    },
-    "OpenAI": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_is_the_best_model_ever_made_sometimes"
-      ]
-    },
-    "GCP": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_is_the_best_model_ever_made_sometimes"
-      ]
-    },
-    "Azure": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_is_the_best_model_ever_made_sometimes"
+        "kimi_k3_is_not_the_story_china_s_ai_master_plan_is"
       ]
     }
   },
   "skill_map": {
-    "kimi_k3_is_the_best_model_ever_made_sometimes": {
+    "kimi_k3_is_not_the_story_china_s_ai_master_plan_is": {
       "concepts": [
-        "model",
+        "very",
         "about",
         "models",
-        "open",
-        "work",
-        "things",
-        "which",
-        "code",
         "because",
-        "going"
+        "going",
+        "good",
+        "model",
+        "intelligence",
+        "chinese",
+        "artificial"
       ],
       "tools": [
-        "Docker",
-        "AWS",
-        "Anthropic",
         "Claude",
-        "Gemini",
-        "OpenAI",
-        "GCP",
-        "Azure"
+        "Anthropic"
       ],
       "tags": [
-        "model",
+        "very",
         "about",
         "models",
-        "open",
-        "work",
-        "things"
+        "because",
+        "going",
+        "good"
       ],
       "step_count": 1
     }
   },
   "relationships": {
-    "kimi_k3_is_the_best_model_ever_made_sometimes": {}
+    "kimi_k3_is_not_the_story_china_s_ai_master_plan_is": {}
   },
-  "updated_at": "2026-07-20T02:40:26.005280+00:00",
+  "updated_at": "2026-07-20T02:40:26.005466+00:00",
   "total_skills": 1
 }
