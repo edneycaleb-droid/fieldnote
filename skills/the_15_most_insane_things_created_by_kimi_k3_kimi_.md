@@ -1,22 +1,21 @@
-# Building a Horror Game with Kimmy K3
+# The 15 Most INSANE Things Created by KIMI K3 ( KIMI K3 Use Cases)
 
-## Description
-This skill teaches how to build a comprehensive horror game using Kimmy K3, a powerful AI model.
+> ⚠️ **Auto-extracted draft** — pending AI enhancement for full quality.
+
+By TheAIGRID. Key tools: Claude. (Auto-extracted — pending AI enhancement.)
 
 ## Steps
-1. Create a new project in Kimmy K3 and ask it to build a horror game.
-2. Use the light on and off feature to create a spooky atmosphere.
-3. Implement sound effects to enhance the gaming experience.
-4. Add mechanics to the game, such as a mob that chases the player.
 
-## Tools
-Kimmy K3
+- Watch the full video for step-by-step instructions.
 
-## Concepts
-Horror game, Kimmy K3, AI model
+## Tools & Technologies
 
-## Related Skills
-This AI Business Model Is Creating New Millionaires In 2026, Every Hermes Concept Explained For Normal People
+Claude
+
+## Source
+
+- **Video**: [The 15 Most INSANE Things Created by KIMI K3 ( KIMI K3 Use Cases)](https://www.youtube.com/watch?v=0eXdjlTXkaw)
+- **Video ID**: `0eXdjlTXkaw`
 
 ## Sources
 
