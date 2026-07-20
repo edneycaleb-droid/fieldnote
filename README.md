@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **18 skills** · Last synced: 2026-07-20 02:52 UTC
+> **89 skills** · Last synced: 2026-07-20 02:53 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [New Hermes Agent OS is INSANE!](skills/new_hermes_agent_os_is_insane.md) | By Julian Goldie SEO. Key tools: Claude. (Auto-extracted — pending AI enhancemen | `Claude` | `same` `outreach` `agent` |
 | [Chemistry 3 Model: A Powerful, Open-Source AI Model](skills/nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe.md) | This skill covers the Chemistry 3 model, a powerful, open-source AI model that s | `Clou` `Anthropic` `API` `Chemistry 3 API` | `ai` `web-development` `front-end-design` |
 | [Kimi K3 Downfall: A Threat to Anthropic's Dominance](skills/kimi_k3_is_not_the_story_china_s_ai_master_plan_is.md) | Kimi K3's emergence as a top AI model poses a significant threat to Anthropic's  | `Claude` `Anthropic` `OpenAI` `Gemini` | `ai` `machine learning` `natural language processing` |
 | [Hermes Agent Setup: A Step-by-Step Guide](skills/this_100_self_improving_ai_agent_is_insane_just_wa.md) | This skill teaches how to set up Hermes Agent, a self-improving AI assistant, an | `Hostinger` `Hermes Agent` | `AI` `self-improvement` `Hermes Agent` |
@@ -27,6 +28,76 @@
 | [New Claude Update Is INSANE!](skills/new_claude_update_is_insane.md) | By Julian Goldie SEO. Key tools: Claude, Anthropic. (Auto-extracted — pending AI | `Claude` `Anthropic` | `claude` `something` `anthropic` |
 | [New Claude Opus 5 LEAKS!](skills/new_claude_opus_5_leaks.md) | By Julian Goldie SEO. Key tools: Claude, Anthropic. (Auto-extracted — pending AI | `Claude` `Anthropic` | `opus` `model` `profit` |
 | [Hermes Agent - Full Course & Setup Guide - For COMPLETE Beginners](skills/hermes_agent_full_course_setup_guide_for_complete_.md) | By Tech With Tim. Key tools: LLM, OpenAI, Anthropic, Docker, curl. (Auto-extract | `LLM` `OpenAI` `Anthropic` `Docker` | `going` `want` `agent` |
+| [moonshot_kimiko_3](skills/moonshot_kimiko_3.md) |  |  |  |
+| [qwen_3_6_pi_agent_build_your_own_ai_assistant_full](skills/qwen_3_6_pi_agent_build_your_own_ai_assistant_full.md) |  |  |  |
+| [kimi_k3_is_insane_best_open_model_ever_that_beats_](skills/kimi_k3_is_insane_best_open_model_ever_that_beats_.md) |  |  |  |
+| [use_kimi_k3_completely_free_best_ai_coding_setup_2](skills/use_kimi_k3_completely_free_best_ai_coding_setup_2.md) |  |  |  |
+| [making_with_loop_engineering](skills/making_with_loop_engineering.md) |  |  |  |
+| [full_hermes_agent_tutorial_desktop_a_useful_agenti](skills/full_hermes_agent_tutorial_desktop_a_useful_agenti.md) |  |  |  |
+| [moonshot_kimiko_3_skill](skills/moonshot_kimiko_3_skill.md) |  |  |  |
+| [graphrag_deployment](skills/graphrag_deployment.md) |  |  |  |
+| [how_to_use_codex_to_build_insanely_beautiful_websi](skills/how_to_use_codex_to_build_insanely_beautiful_websi.md) |  |  |  |
+| [did_kimi_k3_really_beat_fable](skills/did_kimi_k3_really_beat_fable.md) |  |  |  |
+| [hermes_agent_just_got_10x_better_4_insane_new_feat](skills/hermes_agent_just_got_10x_better_4_insane_new_feat.md) |  |  |  |
+| [building_a_second_brain](skills/building_a_second_brain.md) |  |  |  |
+| [build_production_ready_llm_applications_with_haystack](skills/build_production_ready_llm_applications_with_haystack.md) |  |  |  |
+| [2_8_trillion_parameters_kimi_k3_is_here](skills/2_8_trillion_parameters_kimi_k3_is_here.md) |  |  |  |
+| [chrome_mcp_server](skills/chrome_mcp_server.md) |  |  |  |
+| [run_kimi_k3_inside_claude_code_max_power](skills/run_kimi_k3_inside_claude_code_max_power.md) |  |  |  |
+| [ragflow_deployment](skills/ragflow_deployment.md) |  |  |  |
+| [kimi_k3_ai_full_course_1_hour_build_automate_anyth](skills/kimi_k3_ai_full_course_1_hour_build_automate_anyth.md) |  |  |  |
+| [experimenting_with_longs](skills/experimenting_with_longs.md) |  |  |  |
+| [local_ai_coding](skills/local_ai_coding.md) |  |  |  |
+| [kimi_k3_is_fable_level_they_should_be_worried](skills/kimi_k3_is_fable_level_they_should_be_worried.md) |  |  |  |
+| [mastering_loop_engineering](skills/mastering_loop_engineering.md) |  |  |  |
+| [by_august_we_ll_have_frontier_ai_running_locally](skills/by_august_we_ll_have_frontier_ai_running_locally.md) |  |  |  |
+| [kimi_k3_is_the_best_model_ever_made_sometimes](skills/kimi_k3_is_the_best_model_ever_made_sometimes.md) |  |  |  |
+| [hermes_agent_tutorial_for_beginners_full_step_by_s](skills/hermes_agent_tutorial_for_beginners_full_step_by_s.md) |  |  |  |
+| [running_large_models_locally](skills/running_large_models_locally.md) |  |  |  |
+| [kimi_k3_is_insanely_strong_real_tests_and_review](skills/kimi_k3_is_insanely_strong_real_tests_and_review.md) |  |  |  |
+| [kimi_k3_hermes_agent_changes_everything](skills/kimi_k3_hermes_agent_changes_everything.md) |  |  |  |
+| [kimi_k3_just_knocked_claude_to_third_place_chinese](skills/kimi_k3_just_knocked_claude_to_third_place_chinese.md) |  |  |  |
+| [6_insane_hermes_agent_use_cases_that_you_need_righ](skills/6_insane_hermes_agent_use_cases_that_you_need_righ.md) |  |  |  |
+| [this_kimi_k3_agent_os_is_wild](skills/this_kimi_k3_agent_os_is_wild.md) |  |  |  |
+| [superagi_building_autonomous_agents](skills/superagi_building_autonomous_agents.md) |  |  |  |
+| [kimi_k3_is_out_and_the_real_opportunity_isn_t_the_](skills/kimi_k3_is_out_and_the_real_opportunity_isn_t_the_.md) |  |  |  |
+| [how_to_run_kimi_k3_for_free](skills/how_to_run_kimi_k3_for_free.md) |  |  |  |
+| [building_resilient_ai_agents_with_langgraph](skills/building_resilient_ai_agents_with_langgraph.md) |  |  |  |
+| [chatgpt_work_everything_you_need_to_know_to_get_st](skills/chatgpt_work_everything_you_need_to_know_to_get_st.md) |  |  |  |
+| [ragaai_catalyst](skills/ragaai_catalyst.md) |  |  |  |
+| [people_are_creating_insane_things_with_kimi_k3](skills/people_are_creating_insane_things_with_kimi_k3.md) |  |  |  |
+| [hermes_agent_ollama_how_to_install_hermes_locally_](skills/hermes_agent_ollama_how_to_install_hermes_locally_.md) |  |  |  |
+| [moonshot_kimiko_automation](skills/moonshot_kimiko_automation.md) |  |  |  |
+| [prism_ml_bonzai_deployment](skills/prism_ml_bonzai_deployment.md) |  |  |  |
+| [hermes_agent_build_your_own_personal_ai_assistant_](skills/hermes_agent_build_your_own_personal_ai_assistant_.md) |  |  |  |
+| [testing_and_comparing_llms](skills/testing_and_comparing_llms.md) |  |  |  |
+| [swanlab_ai_training_analysis_platform](skills/swanlab_ai_training_analysis_platform.md) |  |  |  |
+| [astrbot_deployment](skills/astrbot_deployment.md) |  |  |  |
+| [100_hours_of_hermes_agent_lessons_in_19_minutes](skills/100_hours_of_hermes_agent_lessons_in_19_minutes.md) |  |  |  |
+| [hermes_agent_setup](skills/hermes_agent_setup.md) |  |  |  |
+| [building_ai_agents](skills/building_ai_agents.md) |  |  |  |
+| [kimi_k3_testing_moonshot_s_2_8t_open_model_without](skills/kimi_k3_testing_moonshot_s_2_8t_open_model_without.md) |  |  |  |
+| [kimi_k3_vs_claude_fable_5_raw_results](skills/kimi_k3_vs_claude_fable_5_raw_results.md) |  |  |  |
+| [building_ai_agents_with_langchain](skills/building_ai_agents_with_langchain.md) |  |  |  |
+| [building_ai_agents_with_loop](skills/building_ai_agents_with_loop.md) |  |  |  |
+| [lightrag_deployment](skills/lightrag_deployment.md) |  |  |  |
+| [gpt_5_6_on_hermes_agent_is_actually_insane_full_he](skills/gpt_5_6_on_hermes_agent_is_actually_insane_full_he.md) |  |  |  |
+| [openai_agents_sdk](skills/openai_agents_sdk.md) |  |  |  |
+| [kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner](skills/kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner.md) |  |  |  |
+| [google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq](skills/google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq.md) |  |  |  |
+| [higsfield_integration](skills/higsfield_integration.md) |  |  |  |
+| [every_hermes_concept_explained_for_normal_people](skills/every_hermes_concept_explained_for_normal_people.md) |  |  |  |
+| [kimi_k3_fully_tested_an_open_model_beats_fable](skills/kimi_k3_fully_tested_an_open_model_beats_fable.md) |  |  |  |
+| [microsoft_mcp_curriculum](skills/microsoft_mcp_curriculum.md) |  |  |  |
+| [master_ai_trading_in_70_minutes_full_claude_tradin](skills/master_ai_trading_in_70_minutes_full_claude_tradin.md) |  |  |  |
+| [ornith_35b_9b_hermes_zed_the_fully_private_local_a](skills/ornith_35b_9b_hermes_zed_the_fully_private_local_a.md) |  |  |  |
+| [deploying_retrieval_augmented_generation_with_ragflow](skills/deploying_retrieval_augmented_generation_with_ragflow.md) |  |  |  |
+| [kimi_k3_crushed_fable](skills/kimi_k3_crushed_fable.md) |  |  |  |
+| [kimi_k3_hermes_ai_agent_is_insane](skills/kimi_k3_hermes_ai_agent_is_insane.md) |  |  |  |
+| [kimi_k3_is_just_ridiculous](skills/kimi_k3_is_just_ridiculous.md) |  |  |  |
+| [pydantic_ai_framework](skills/pydantic_ai_framework.md) |  |  |  |
+| [incremental_code_review](skills/incremental_code_review.md) |  |  |  |
+| [kimi_k3_ai_model](skills/kimi_k3_ai_model.md) |  |  |  |
 
 ---
 
