@@ -21,4 +21,4 @@ LLM, Claude
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-19 | [Kimi K3 AI Full COURSE 1 HOUR (Build & Automate Anything)](https://www.youtube.com/watch?v=iyXDidb8IG8) | yt_dlp_subs |
+| 2026-07-20 | [Kimi K3 AI Full COURSE 1 HOUR (Build & Automate Anything)](https://www.youtube.com/watch?v=iyXDidb8IG8) | yt_dlp_subs |
