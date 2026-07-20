@@ -8,9 +8,10 @@
       ]
     },
     "model": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "new_claude_opus_5_leaks"
+        "new_claude_opus_5_leaks",
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
       ]
     },
     "profit": {
@@ -149,6 +150,60 @@
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
+    },
+    "chemistry": {
+      "freq": 1,
+      "skills": [
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
+      ]
+    },
+    "models": {
+      "freq": 1,
+      "skills": [
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
+      ]
+    },
+    "clot": {
+      "freq": 1,
+      "skills": [
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
+      ]
+    },
+    "fable": {
+      "freq": 1,
+      "skills": [
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
+      ]
+    },
+    "most": {
+      "freq": 1,
+      "skills": [
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
+      ]
+    },
+    "intelligence": {
+      "freq": 1,
+      "skills": [
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
+      ]
+    },
+    "because": {
+      "freq": 1,
+      "skills": [
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
+      ]
+    },
+    "artificial": {
+      "freq": 1,
+      "skills": [
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
+      ]
+    },
+    "already": {
+      "freq": 1,
+      "skills": [
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
+      ]
     }
   },
   "tools": {
@@ -161,9 +216,10 @@
       ]
     },
     "Anthropic": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "new_claude_opus_5_leaks"
+        "new_claude_opus_5_leaks",
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
       ]
     },
     "Gemini": {
@@ -200,6 +256,12 @@
       "freq": 1,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s"
+      ]
+    },
+    "OpenAI": {
+      "freq": 1,
+      "skills": [
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
       ]
     }
   },
@@ -288,6 +350,33 @@
         "telegram"
       ],
       "step_count": 1
+    },
+    "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
+      "concepts": [
+        "chemistry",
+        "model",
+        "models",
+        "clot",
+        "fable",
+        "most",
+        "intelligence",
+        "because",
+        "artificial",
+        "already"
+      ],
+      "tools": [
+        "Anthropic",
+        "OpenAI"
+      ],
+      "tags": [
+        "chemistry",
+        "model",
+        "models",
+        "clot",
+        "fable",
+        "most"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -299,6 +388,10 @@
       "hermes_agent_tutorial_for_beginners_full_step_by_s": [
         "Claude",
         "here"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "Anthropic",
+        "model"
       ]
     },
     "100_hours_of_hermes_agent_lessons_in_19_minutes": {
@@ -326,8 +419,14 @@
         "want",
         "Claude"
       ]
+    },
+    "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
+      "new_claude_opus_5_leaks": [
+        "Anthropic",
+        "model"
+      ]
     }
   },
-  "updated_at": "2026-07-20T03:37:25.402048+00:00",
-  "total_skills": 3
+  "updated_at": "2026-07-20T03:37:25.455808+00:00",
+  "total_skills": 4
 }
