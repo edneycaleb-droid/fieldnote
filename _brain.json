@@ -458,6 +458,24 @@
       "skills": [
         "hermes_claude_code_mcp_integration_loop_engineerin"
       ]
+    },
+    "AI models": {
+      "freq": 1,
+      "skills": [
+        "i_tested_kimi_k3_so_you_don_t_have_to"
+      ]
+    },
+    "Kimi K3": {
+      "freq": 1,
+      "skills": [
+        "i_tested_kimi_k3_so_you_don_t_have_to"
+      ]
+    },
+    "Fable": {
+      "freq": 1,
+      "skills": [
+        "i_tested_kimi_k3_so_you_don_t_have_to"
+      ]
     }
   },
   "tools": {
@@ -585,6 +603,18 @@
       "freq": 1,
       "skills": [
         "hermes_claude_code_mcp_integration_loop_engineerin"
+      ]
+    },
+    "Kimi K3": {
+      "freq": 1,
+      "skills": [
+        "i_tested_kimi_k3_so_you_don_t_have_to"
+      ]
+    },
+    "Fable": {
+      "freq": 1,
+      "skills": [
+        "i_tested_kimi_k3_so_you_don_t_have_to"
       ]
     }
   },
@@ -920,6 +950,23 @@
         "because"
       ],
       "step_count": 2
+    },
+    "i_tested_kimi_k3_so_you_don_t_have_to": {
+      "concepts": [
+        "AI models",
+        "Kimi K3",
+        "Fable"
+      ],
+      "tools": [
+        "Kimi K3",
+        "Fable"
+      ],
+      "tags": [
+        "ai",
+        "machine_learning",
+        "natural_language_processing"
+      ],
+      "step_count": 3
     }
   },
   "relationships": {
@@ -1512,8 +1559,9 @@
       "hermes_claude_code_mcp_integration_loop_engineerin": [
         "because"
       ]
-    }
+    },
+    "i_tested_kimi_k3_so_you_don_t_have_to": {}
   },
-  "updated_at": "2026-07-20T03:37:31.697242+00:00",
-  "total_skills": 12
+  "updated_at": "2026-07-20T03:37:33.167742+00:00",
+  "total_skills": 13
 }
