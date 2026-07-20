@@ -9,7 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [100 hours of Hermes Agent lessons in 19 minutes](skills/100_hours_of_hermes_agent_lessons_in_19_minutes.md) | By Alex Finn. Key tools: Gemini, SSH, Claude. (Auto-extracted — pending AI enhan | `Gemini` `SSH` `Claude` | `hermes` `agent` `other` |
+| [Every Hermes Concept explained for Normal People](skills/every_hermes_concept_explained_for_normal_people.md) | By Jack Roberts. Key tools: Claude, Anthropic, OpenAI, Ollama, SQLite. (Auto-ext | `Claude` `Anthropic` `OpenAI` `Ollama` | `hermes` `here` `about` |
 | [ChatGPT Work: Everything You Need to Know to Get Started!](skills/chatgpt_work_everything_you_need_to_know_to_get_st.md) | By The AI Advantage. (Auto-extracted — pending AI enhancement.) |  | `work` `here` `site` |
 | [Google Shrunk 31GB of AI Memory Down to 4GB (TurboQuant)](skills/google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq.md) | By Cloud Codes. Key tools: rag, embedding, Python, LangChain. (Auto-extracted —  | `rag` `embedding` `Python` `LangChain` | `memory` `every` `data` |
 | [By August, We'll Have Frontier AI Running Locally](skills/by_august_we_ll_have_frontier_ai_running_locally.md) | By Manolo Remiddi. Key tools: OpenAI, Gemini. (Auto-extracted — pending AI enhan | `OpenAI` `Gemini` | `model` `those` `going` |
