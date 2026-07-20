@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **14 skills** · Last synced: 2026-07-20 02:58 UTC
+> **15 skills** · Last synced: 2026-07-20 02:58 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [The 15 Most INSANE Things Created by KIMI K3 ( KIMI K3 Use Cases)](skills/the_15_most_insane_things_created_by_kimi_k3_kimi_.md) | By TheAIGRID. Key tools: Claude. (Auto-extracted — pending AI enhancement.) | `Claude` | `know` `course` `game` |
 | [Hermes + Claude Code — MCP Integration & Loop Engineering](skills/hermes_claude_code_mcp_integration_loop_engineerin.md) | By NetworkCoder. Key tools: Anthropic, Flask, Python, pytest, Claude. (Auto-extr | `Anthropic` `Flask` `Python` `pytest` | `tests` `skill` `hermes` |
 | [Yes, the Kimi K3 Hype is Real](skills/yes_the_kimi_k3_hype_is_real.md) | By Chase AI. Key tools: Anthropic, OpenAI, Claude. (Auto-extracted — pending AI  | `Anthropic` `OpenAI` `Claude` | `these` `fable` `kimmy` |
 | [This AI Business Model Is Creating New Millionaires In 2026](skills/this_ai_business_model_is_creating_new_millionaire.md) | By Richard Yu. Key tools: Anthropic, Claude. (Auto-extracted — pending AI enhanc | `Anthropic` `Claude` | `people` `product` `most` |
