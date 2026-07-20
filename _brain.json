@@ -7,7 +7,7 @@
       ]
     },
     "going": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "kimi_k3_is_just_ridiculous",
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
@@ -15,7 +15,8 @@
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
         "by_august_we_ll_have_frontier_ai_running_locally",
         "making_with_loop_engineering",
-        "hermes_agent_build_your_own_personal_ai_assistant_"
+        "hermes_agent_build_your_own_personal_ai_assistant_",
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
       ]
     },
     "wait": {
@@ -31,23 +32,25 @@
       ]
     },
     "actually": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "kimi_k3_is_just_ridiculous",
         "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
-        "making_with_loop_engineering"
+        "making_with_loop_engineering",
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
       ]
     },
     "here": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "kimi_k3_is_just_ridiculous",
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "how_to_use_codex_to_build_insanely_beautiful_websi",
         "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
         "hermes_agent_build_your_own_personal_ai_assistant_",
-        "every_hermes_concept_explained_for_normal_people"
+        "every_hermes_concept_explained_for_normal_people",
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
       ]
     },
     "kimmy": {
@@ -77,14 +80,15 @@
       ]
     },
     "agent": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
         "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
         "hermes_agent_build_your_own_personal_ai_assistant_",
-        "every_hermes_concept_explained_for_normal_people"
+        "every_hermes_concept_explained_for_normal_people",
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
       ]
     },
     "hermes": {
@@ -469,6 +473,42 @@
       "skills": [
         "every_hermes_concept_explained_for_normal_people"
       ]
+    },
+    "ticket": {
+      "freq": 1,
+      "skills": [
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
+      ]
+    },
+    "zendesk": {
+      "freq": 1,
+      "skills": [
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
+      ]
+    },
+    "build": {
+      "freq": 1,
+      "skills": [
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
+      ]
+    },
+    "inbox": {
+      "freq": 1,
+      "skills": [
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
+      ]
+    },
+    "able": {
+      "freq": 1,
+      "skills": [
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
+      ]
+    },
+    "response": {
+      "freq": 1,
+      "skills": [
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
+      ]
     }
   },
   "tools": {
@@ -506,10 +546,11 @@
       ]
     },
     "LLM": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
-        "kimi_k3_ai_full_course_1_hour_build_automate_anyth"
+        "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
       ]
     },
     "next.js": {
@@ -926,6 +967,32 @@
         "agent"
       ],
       "step_count": 1
+    },
+    "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": {
+      "concepts": [
+        "agent",
+        "here",
+        "ticket",
+        "zendesk",
+        "going",
+        "actually",
+        "build",
+        "inbox",
+        "able",
+        "response"
+      ],
+      "tools": [
+        "LLM"
+      ],
+      "tags": [
+        "agent",
+        "here",
+        "ticket",
+        "zendesk",
+        "going",
+        "actually"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -972,6 +1039,11 @@
       "every_hermes_concept_explained_for_normal_people": [
         "here",
         "Claude"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "going",
+        "actually",
+        "here"
       ]
     },
     "hermes_agent_tutorial_for_beginners_full_step_by_s": {
@@ -1033,6 +1105,12 @@
         "hermes",
         "agent",
         "bash"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "going",
+        "here",
+        "agent",
+        "LLM"
       ]
     },
     "how_to_use_codex_to_build_insanely_beautiful_websi": {
@@ -1074,6 +1152,9 @@
         "Anthropic",
         "Claude",
         "OpenAI"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "here"
       ]
     },
     "kimi_k3_fully_tested_an_open_model_beats_fable": {
@@ -1151,6 +1232,9 @@
         "Claude",
         "agent",
         "hermes"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "agent"
       ]
     },
     "kimi_k3_ai_full_course_1_hour_build_automate_anyth": {
@@ -1208,6 +1292,13 @@
         "example",
         "Claude",
         "agent"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "here",
+        "actually",
+        "LLM",
+        "going",
+        "agent"
       ]
     },
     "hermes_agent_just_got_10x_better_4_insane_new_feat": {
@@ -1263,6 +1354,11 @@
         "basically",
         "Claude",
         "agent"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "going",
+        "actually",
+        "agent"
       ]
     },
     "by_august_we_ll_have_frontier_ai_running_locally": {
@@ -1305,6 +1401,9 @@
         "about",
         "OpenAI",
         "which"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "going"
       ]
     },
     "making_with_loop_engineering": {
@@ -1349,6 +1448,10 @@
         "basically",
         "Claude",
         "OpenAI"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "going",
+        "actually"
       ]
     },
     "hermes_agent_build_your_own_personal_ai_assistant_": {
@@ -1398,6 +1501,11 @@
         "here",
         "agent",
         "OpenAI"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "going",
+        "here",
+        "agent"
       ]
     },
     "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
@@ -1473,9 +1581,60 @@
       ],
       "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": [
         "which"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "here",
+        "agent"
+      ]
+    },
+    "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": {
+      "kimi_k3_is_just_ridiculous": [
+        "going",
+        "actually",
+        "here"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "going",
+        "here",
+        "agent",
+        "LLM"
+      ],
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "here"
+      ],
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "agent"
+      ],
+      "kimi_k3_ai_full_course_1_hour_build_automate_anyth": [
+        "here",
+        "actually",
+        "LLM",
+        "going",
+        "agent"
+      ],
+      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
+        "going",
+        "actually",
+        "agent"
+      ],
+      "by_august_we_ll_have_frontier_ai_running_locally": [
+        "going"
+      ],
+      "making_with_loop_engineering": [
+        "going",
+        "actually"
+      ],
+      "hermes_agent_build_your_own_personal_ai_assistant_": [
+        "going",
+        "here",
+        "agent"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "here",
+        "agent"
       ]
     }
   },
-  "updated_at": "2026-07-20T02:40:24.145015+00:00",
-  "total_skills": 12
+  "updated_at": "2026-07-20T02:40:24.211219+00:00",
+  "total_skills": 13
 }
