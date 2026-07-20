@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Kimi K3 + Hermes Agent Changes Everything!](skills/kimi_k3_hermes_agent_changes_everything.md) | By Julian Goldie SEO. (Auto-extracted — pending AI enhancement.) |  | `agent` `inside` `model` |
 | [New Hermes Agent OS is INSANE!](skills/new_hermes_agent_os_is_insane.md) | By Julian Goldie SEO. Key tools: Claude. (Auto-extracted — pending AI enhancemen | `Claude` | `same` `outreach` `agent` |
 | [Hermes Agent: Build Your Own Personal AI Assistant (Full Course)](skills/hermes_agent_build_your_own_personal_ai_assistant_.md) | By Komputer Mechanic. Key tools: PowerShell, OpenAI. (Auto-extracted — pending A | `PowerShell` `OpenAI` | `going` `here` `agent` |
 | [Developing and Deploying Kimmy K3: A 2.8 Trillion Parameter Model for Enhanced AI Capabilities](skills/kimmy_k3_development_and_deployment.md) | This skill teaches the development, application, and deployment of Kimmy K3, a 2 | `Docker` `AWS` `Anthropic` `Claude` | `ai` `ai_modeling` `ci_cd` |
@@ -59,7 +60,6 @@
 | [hermes_agent_tutorial_for_beginners_full_step_by_s](skills/hermes_agent_tutorial_for_beginners_full_step_by_s.md) |  |  |  |
 | [running_large_models_locally](skills/running_large_models_locally.md) |  |  |  |
 | [kimi_k3_is_insanely_strong_real_tests_and_review](skills/kimi_k3_is_insanely_strong_real_tests_and_review.md) |  |  |  |
-| [kimi_k3_hermes_agent_changes_everything](skills/kimi_k3_hermes_agent_changes_everything.md) |  |  |  |
 | [kimi_k3_just_knocked_claude_to_third_place_chinese](skills/kimi_k3_just_knocked_claude_to_third_place_chinese.md) |  |  |  |
 | [6_insane_hermes_agent_use_cases_that_you_need_righ](skills/6_insane_hermes_agent_use_cases_that_you_need_righ.md) |  |  |  |
 | [this_kimi_k3_agent_os_is_wild](skills/this_kimi_k3_agent_os_is_wild.md) |  |  |  |
