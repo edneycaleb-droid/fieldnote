@@ -46,7 +46,7 @@
       ]
     },
     "here": {
-      "freq": 11,
+      "freq": 12,
       "skills": [
         "new_claude_opus_5_leaks",
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
@@ -77,7 +77,7 @@
       ]
     },
     "hermes": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
@@ -87,7 +87,7 @@
       ]
     },
     "agent": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
@@ -141,7 +141,7 @@
       ]
     },
     "want": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
@@ -168,7 +168,7 @@
       ]
     },
     "right": {
-      "freq": 9,
+      "freq": 10,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "kimi_k3_vs_claude_fable_5_raw_results",
@@ -179,7 +179,7 @@
       ]
     },
     "going": {
-      "freq": 10,
+      "freq": 11,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "kimi_k3_vs_claude_fable_5_raw_results",
@@ -331,7 +331,7 @@
       ]
     },
     "which": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
         "by_august_we_ll_have_frontier_ai_running_locally",
@@ -378,7 +378,7 @@
       ]
     },
     "open": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "by_august_we_ll_have_frontier_ai_running_locally",
         "this_100_self_improving_ai_agent_is_insane_just_wa"
@@ -429,13 +429,13 @@
       ]
     },
     "claw": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "this_100_self_improving_ai_agent_is_insane_just_wa"
       ]
     },
     "skills": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "this_100_self_improving_ai_agent_is_insane_just_wa"
       ]
@@ -711,7 +711,7 @@
   },
   "tools": {
     "Claude": {
-      "freq": 18,
+      "freq": 19,
       "skills": [
         "new_claude_opus_5_leaks",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
@@ -729,7 +729,7 @@
       ]
     },
     "Anthropic": {
-      "freq": 13,
+      "freq": 14,
       "skills": [
         "new_claude_opus_5_leaks",
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
@@ -755,7 +755,7 @@
       ]
     },
     "SSH": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -763,7 +763,7 @@
       ]
     },
     "Docker": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -777,7 +777,7 @@
       ]
     },
     "Python": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -793,7 +793,7 @@
       ]
     },
     "OpenAI": {
-      "freq": 12,
+      "freq": 13,
       "skills": [
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
@@ -820,25 +820,25 @@
       ]
     },
     "pip": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "this_100_self_improving_ai_agent_is_insane_just_wa"
       ]
     },
     "Git": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "this_100_self_improving_ai_agent_is_insane_just_wa"
       ]
     },
     "Node": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "this_100_self_improving_ai_agent_is_insane_just_wa"
       ]
     },
     "SQLite": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "this_100_self_improving_ai_agent_is_insane_just_wa"
       ]
@@ -2835,6 +2835,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-20T03:42:24.707740+00:00",
+  "updated_at": "2026-07-20T03:42:25.105439+00:00",
   "total_skills": 22
 }
