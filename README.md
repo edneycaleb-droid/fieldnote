@@ -9,7 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [Qwen 3.6 + Pi Agent: Build Your Own AI Assistant (Full Setup)](skills/qwen_3_6_pi_agent_build_your_own_ai_assistant_full.md) | By Bart Slodyczka. Key tools: LLM. (Auto-extracted — pending AI enhancement.) | `LLM` | `agent` `here` `ticket` |
+| [Kimi K3 + Hermes Agent Changes Everything!](skills/kimi_k3_hermes_agent_changes_everything.md) | By Julian Goldie SEO. (Auto-extracted — pending AI enhancement.) |  | `agent` `inside` `model` |
 | [Kimi K3 (Fully Tested): AN OPEN MODEL BEATS FABLE?!](skills/kimi_k3_fully_tested_an_open_model_beats_fable.md) | By AICodeKing. Key tools: Gemini. (Auto-extracted — pending AI enhancement.) | `Gemini` | `model` `question` `models` |
 | [Kimi K3 Is Fable Level... (they should be worried)](skills/kimi_k3_is_fable_level_they_should_be_worried.md) | By Better Stack. Key tools: Claude, React, Next.js, SQLite, Node. (Auto-extracte | `Claude` `React` `Next.js` `SQLite` | `actually` `here` `fable` |
 | [ChatGPT Work: Everything You Need to Know to Get Started!](skills/chatgpt_work_everything_you_need_to_know_to_get_st.md) | By The AI Advantage. (Auto-extracted — pending AI enhancement.) |  | `work` `here` `site` |
@@ -50,6 +50,7 @@
 | [Hermes Agent Just Got 10X Better (4 Insane NEW Features)](skills/hermes_agent_just_got_10x_better_4_insane_new_feat.md) | By Zinho Automates. Key tools: Claude. (Auto-extracted — pending AI enhancement. | `Claude` | `agent` `going` `every` |
 | [Kimi K3 is just ridiculous](skills/kimi_k3_is_just_ridiculous.md) | By LanceyPoo. Key tools: Claude. (Auto-extracted — pending AI enhancement.) | `Claude` | `okay` `going` `wait` |
 | [moonshot_kimiko_3](skills/moonshot_kimiko_3.md) |  |  |  |
+| [qwen_3_6_pi_agent_build_your_own_ai_assistant_full](skills/qwen_3_6_pi_agent_build_your_own_ai_assistant_full.md) |  |  |  |
 | [kimi_k3_is_insane_best_open_model_ever_that_beats_](skills/kimi_k3_is_insane_best_open_model_ever_that_beats_.md) |  |  |  |
 | [use_kimi_k3_completely_free_best_ai_coding_setup_2](skills/use_kimi_k3_completely_free_best_ai_coding_setup_2.md) |  |  |  |
 | [moonshot_kimiko_3_skill](skills/moonshot_kimiko_3_skill.md) |  |  |  |
@@ -65,7 +66,6 @@
 | [new_hermes_paperclip_ai_agent_update_is_insane](skills/new_hermes_paperclip_ai_agent_update_is_insane.md) |  |  |  |
 | [running_large_models_locally](skills/running_large_models_locally.md) |  |  |  |
 | [kimi_k3_is_insanely_strong_real_tests_and_review](skills/kimi_k3_is_insanely_strong_real_tests_and_review.md) |  |  |  |
-| [kimi_k3_hermes_agent_changes_everything](skills/kimi_k3_hermes_agent_changes_everything.md) |  |  |  |
 | [kimi_k3_just_knocked_claude_to_third_place_chinese](skills/kimi_k3_just_knocked_claude_to_third_place_chinese.md) |  |  |  |
 | [6_insane_hermes_agent_use_cases_that_you_need_righ](skills/6_insane_hermes_agent_use_cases_that_you_need_righ.md) |  |  |  |
 | [this_kimi_k3_agent_os_is_wild](skills/this_kimi_k3_agent_os_is_wild.md) |  |  |  |
