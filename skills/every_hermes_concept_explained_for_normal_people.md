@@ -21,4 +21,4 @@ Claude, Anthropic, OpenAI, Ollama, SQLite, bash
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-19 | [Every Hermes Concept explained for Normal People](https://www.youtube.com/watch?v=L0tQrTQBmjI) | yt_dlp_subs |
+| 2026-07-20 | [Every Hermes Concept explained for Normal People](https://www.youtube.com/watch?v=L0tQrTQBmjI) | yt_dlp_subs |

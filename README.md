@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **9 skills** · Last synced: 2026-07-20 02:41 UTC
+> **10 skills** · Last synced: 2026-07-20 02:41 UTC
 
 ---
 
@@ -9,7 +9,8 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [Google Shrunk 31GB of AI Memory Down to 4GB (TurboQuant)](skills/google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq.md) | By Cloud Codes. Key tools: rag, embedding, Python, LangChain. (Auto-extracted —  | `rag` `embedding` `Python` `LangChain` | `memory` `every` `data` |
+| [Every Hermes Concept explained for Normal People](skills/every_hermes_concept_explained_for_normal_people.md) | By Jack Roberts. Key tools: Claude, Anthropic, OpenAI, Ollama, SQLite. (Auto-ext | `Claude` `Anthropic` `OpenAI` `Ollama` | `hermes` `here` `about` |
+| [Kimi K3 IS INSANE! Best Open Model EVER That BEATS FABLE 5 & GPT-5.6! (Fully Tested)](skills/kimi_k3_is_insane_best_open_model_ever_that_beats_.md) | By WorldofAI. Key tools: Claude. (Auto-extracted — pending AI enhancement.) | `Claude` | `model` `different` `which` |
 | [How to Run Kimi K3 for FREE!](skills/how_to_run_kimi_k3_for_free.md) | By Julian Goldie SEO. (Auto-extracted — pending AI enhancement.) |  | `free` `going` `here` |
 | [Hermes Agent: Build Your Own Personal AI Assistant (Full Course)](skills/hermes_agent_build_your_own_personal_ai_assistant_.md) | By Komputer Mechanic. Key tools: PowerShell, OpenAI. (Auto-extracted — pending A | `PowerShell` `OpenAI` | `going` `here` `agent` |
 | [Making $$$ with Loop Engineering](skills/making_with_loop_engineering.md) | By Greg Isenberg. Key tools: Claude, OpenAI. (Auto-extracted — pending AI enhanc | `Claude` `OpenAI` | `know` `loop` `sort` |
