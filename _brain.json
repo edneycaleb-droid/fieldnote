@@ -1,63 +1,63 @@
 {
   "concepts": {
-    "very": {
+    "claude": {
       "freq": 1,
       "skills": [
-        "kimi_k3_is_not_the_story_china_s_ai_master_plan_is"
+        "new_claude_update_is_insane"
+      ]
+    },
+    "something": {
+      "freq": 1,
+      "skills": [
+        "new_claude_update_is_insane"
+      ]
+    },
+    "anthropic": {
+      "freq": 1,
+      "skills": [
+        "new_claude_update_is_insane"
+      ]
+    },
+    "work": {
+      "freq": 1,
+      "skills": [
+        "new_claude_update_is_insane"
+      ]
+    },
+    "real": {
+      "freq": 1,
+      "skills": [
+        "new_claude_update_is_insane"
+      ]
+    },
+    "every": {
+      "freq": 1,
+      "skills": [
+        "new_claude_update_is_insane"
+      ]
+    },
+    "already": {
+      "freq": 1,
+      "skills": [
+        "new_claude_update_is_insane"
+      ]
+    },
+    "built": {
+      "freq": 1,
+      "skills": [
+        "new_claude_update_is_insane"
       ]
     },
     "about": {
       "freq": 1,
       "skills": [
-        "kimi_k3_is_not_the_story_china_s_ai_master_plan_is"
+        "new_claude_update_is_insane"
       ]
     },
-    "models": {
+    "actually": {
       "freq": 1,
       "skills": [
-        "kimi_k3_is_not_the_story_china_s_ai_master_plan_is"
-      ]
-    },
-    "because": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_is_not_the_story_china_s_ai_master_plan_is"
-      ]
-    },
-    "going": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_is_not_the_story_china_s_ai_master_plan_is"
-      ]
-    },
-    "good": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_is_not_the_story_china_s_ai_master_plan_is"
-      ]
-    },
-    "model": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_is_not_the_story_china_s_ai_master_plan_is"
-      ]
-    },
-    "intelligence": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_is_not_the_story_china_s_ai_master_plan_is"
-      ]
-    },
-    "chinese": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_is_not_the_story_china_s_ai_master_plan_is"
-      ]
-    },
-    "artificial": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_is_not_the_story_china_s_ai_master_plan_is"
+        "new_claude_update_is_insane"
       ]
     }
   },
@@ -65,48 +65,48 @@
     "Claude": {
       "freq": 1,
       "skills": [
-        "kimi_k3_is_not_the_story_china_s_ai_master_plan_is"
+        "new_claude_update_is_insane"
       ]
     },
     "Anthropic": {
       "freq": 1,
       "skills": [
-        "kimi_k3_is_not_the_story_china_s_ai_master_plan_is"
+        "new_claude_update_is_insane"
       ]
     }
   },
   "skill_map": {
-    "kimi_k3_is_not_the_story_china_s_ai_master_plan_is": {
+    "new_claude_update_is_insane": {
       "concepts": [
-        "very",
+        "claude",
+        "something",
+        "anthropic",
+        "work",
+        "real",
+        "every",
+        "already",
+        "built",
         "about",
-        "models",
-        "because",
-        "going",
-        "good",
-        "model",
-        "intelligence",
-        "chinese",
-        "artificial"
+        "actually"
       ],
       "tools": [
         "Claude",
         "Anthropic"
       ],
       "tags": [
-        "very",
-        "about",
-        "models",
-        "because",
-        "going",
-        "good"
+        "claude",
+        "something",
+        "anthropic",
+        "work",
+        "real",
+        "every"
       ],
       "step_count": 1
     }
   },
   "relationships": {
-    "kimi_k3_is_not_the_story_china_s_ai_master_plan_is": {}
+    "new_claude_update_is_insane": {}
   },
-  "updated_at": "2026-07-20T02:40:26.005466+00:00",
+  "updated_at": "2026-07-20T02:40:26.010777+00:00",
   "total_skills": 1
 }
