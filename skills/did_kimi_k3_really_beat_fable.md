@@ -1,21 +1,31 @@
-# Did Kimi K3 really beat Fable?
+# Moonshot AI's Kimmy K3: A 2.8 Trillion Parameter Model
 
-> ⚠️ **Auto-extracted draft** — pending AI enhancement for full quality.
-
-By Matthew Berman. Key tools: Claude, Anthropic, OpenAI. (Auto-extracted — pending AI enhancement.)
+## Description
+This skill teaches how to use Kimmy K3, a 2.8 trillion parameter model, for various tasks and applications, including front-end development, 3D asset creation, and game development.
 
 ## Steps
+1. Watch the full video for step-by-step instructions.
+2. Understand the key tools and technologies involved, including LLM, OpenAI, Anthropic, Docker, curl, and SSH.
+3. Learn how to use Kimmy K3 for various tasks and applications.
 
-- Watch the full video for step-by-step instructions.
+## Tools
+* Kimi K3
+* LLM
+* OpenAI
+* Anthropic
+* Docker
+* curl
+* SSH
 
-## Tools & Technologies
+## Concepts
+* 2.8 trillion parameter model
+* front-end development
+* 3D asset creation
+* game development
 
-Claude, Anthropic, OpenAI
-
-## Source
-
-- **Video**: [Did Kimi K3 really beat Fable?](https://www.youtube.com/watch?v=JrVPIy9AdfQ)
-- **Video ID**: `JrVPIy9AdfQ`
+## Related Skills
+* you_need_to_use_hermes_right_now_goodbye_openclaw
+* master_ai_trading_in_70_minutes_full_claude_tradin
 
 ## Sources
 
