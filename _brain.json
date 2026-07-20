@@ -483,15 +483,17 @@
       ]
     },
     "AI model generation": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "you_need_to_use_hermes_right_now_goodbye_openclaw"
+        "you_need_to_use_hermes_right_now_goodbye_openclaw",
+        "people_are_creating_insane_things_with_kimi_k3"
       ]
     },
     "3D model creation": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "you_need_to_use_hermes_right_now_goodbye_openclaw"
+        "you_need_to_use_hermes_right_now_goodbye_openclaw",
+        "people_are_creating_insane_things_with_kimi_k3"
       ]
     },
     "Game development": {
@@ -576,6 +578,30 @@
       "freq": 1,
       "skills": [
         "did_kimi_k3_really_beat_fable"
+      ]
+    },
+    "Kimi K3": {
+      "freq": 1,
+      "skills": [
+        "people_are_creating_insane_things_with_kimi_k3"
+      ]
+    },
+    "Game Development": {
+      "freq": 1,
+      "skills": [
+        "people_are_creating_insane_things_with_kimi_k3"
+      ]
+    },
+    "AI Models": {
+      "freq": 1,
+      "skills": [
+        "people_are_creating_insane_things_with_kimi_k3"
+      ]
+    },
+    "UI design": {
+      "freq": 1,
+      "skills": [
+        "people_are_creating_insane_things_with_kimi_k3"
       ]
     }
   },
@@ -751,24 +777,39 @@
       ]
     },
     "Kimi K3": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "this_kimi_k3_agent_os_is_wild",
-        "did_kimi_k3_really_beat_fable"
+        "did_kimi_k3_really_beat_fable",
+        "people_are_creating_insane_things_with_kimi_k3"
       ]
     },
     "Fable 5": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "this_kimi_k3_agent_os_is_wild",
-        "did_kimi_k3_really_beat_fable"
+        "did_kimi_k3_really_beat_fable",
+        "people_are_creating_insane_things_with_kimi_k3"
       ]
     },
     "OpenRouter": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "this_kimi_k3_agent_os_is_wild",
-        "did_kimi_k3_really_beat_fable"
+        "did_kimi_k3_really_beat_fable",
+        "people_are_creating_insane_things_with_kimi_k3"
+      ]
+    },
+    "Grock": {
+      "freq": 1,
+      "skills": [
+        "people_are_creating_insane_things_with_kimi_k3"
+      ]
+    },
+    "GPT 5.6": {
+      "freq": 1,
+      "skills": [
+        "people_are_creating_insane_things_with_kimi_k3"
       ]
     }
   },
@@ -1171,6 +1212,32 @@
         "performance-comparison"
       ],
       "step_count": 7
+    },
+    "people_are_creating_insane_things_with_kimi_k3": {
+      "concepts": [
+        "Kimi K3",
+        "Game Development",
+        "AI Models",
+        "AI model generation",
+        "3D model creation",
+        "UI design"
+      ],
+      "tools": [
+        "Kimi K3",
+        "Grock",
+        "Fable 5",
+        "GPT 5.6",
+        "OpenRouter"
+      ],
+      "tags": [
+        "game development",
+        "ai models",
+        "kimi k3",
+        "AI",
+        "model",
+        "UI design"
+      ],
+      "step_count": 8
     }
   },
   "relationships": {
@@ -1849,6 +1916,10 @@
         "LLM",
         "SSH",
         "OpenAI"
+      ],
+      "people_are_creating_insane_things_with_kimi_k3": [
+        "AI model generation",
+        "3D model creation"
       ]
     },
     "chatgpt_work_everything_you_need_to_know_to_get_st": {
@@ -1921,6 +1992,11 @@
         "Fable 5",
         "OpenRouter",
         "Kimi K3"
+      ],
+      "people_are_creating_insane_things_with_kimi_k3": [
+        "Fable 5",
+        "OpenRouter",
+        "Kimi K3"
       ]
     },
     "did_kimi_k3_really_beat_fable": {
@@ -1980,9 +2056,30 @@
         "Fable 5",
         "OpenRouter",
         "Kimi K3"
+      ],
+      "people_are_creating_insane_things_with_kimi_k3": [
+        "Fable 5",
+        "OpenRouter",
+        "Kimi K3"
+      ]
+    },
+    "people_are_creating_insane_things_with_kimi_k3": {
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "AI model generation",
+        "3D model creation"
+      ],
+      "this_kimi_k3_agent_os_is_wild": [
+        "Fable 5",
+        "OpenRouter",
+        "Kimi K3"
+      ],
+      "did_kimi_k3_really_beat_fable": [
+        "Fable 5",
+        "OpenRouter",
+        "Kimi K3"
       ]
     }
   },
-  "updated_at": "2026-07-20T02:40:57.752902+00:00",
-  "total_skills": 14
+  "updated_at": "2026-07-20T02:41:00.432365+00:00",
+  "total_skills": 15
 }
