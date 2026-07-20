@@ -56,12 +56,13 @@
       ]
     },
     "about": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "new_claude_update_is_insane",
         "china_just_beat_claude_ai_kimi_k3",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
-        "you_need_to_use_hermes_right_now_goodbye_openclaw"
+        "you_need_to_use_hermes_right_now_goodbye_openclaw",
+        "every_hermes_concept_explained_for_normal_people"
       ]
     },
     "actually": {
@@ -83,10 +84,11 @@
       ]
     },
     "which": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
-        "yes_the_kimi_k3_hype_is_real"
+        "yes_the_kimi_k3_hype_is_real",
+        "every_hermes_concept_explained_for_normal_people"
       ]
     },
     "enthropic": {
@@ -211,10 +213,11 @@
       ]
     },
     "hermes": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "hermes_claude_code_mcp_integration_loop_engineerin",
-        "you_need_to_use_hermes_right_now_goodbye_openclaw"
+        "you_need_to_use_hermes_right_now_goodbye_openclaw",
+        "every_hermes_concept_explained_for_normal_people"
       ]
     },
     "code": {
@@ -236,11 +239,12 @@
       ]
     },
     "agent": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "hermes_claude_code_mcp_integration_loop_engineerin",
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
-        "new_hermes_agent_os_is_insane"
+        "new_hermes_agent_os_is_insane",
+        "every_hermes_concept_explained_for_normal_people"
       ]
     },
     "pass": {
@@ -304,12 +308,13 @@
       ]
     },
     "here": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "the_15_most_insane_things_created_by_kimi_k3_kimi_",
         "i_tested_kimi_k3_so_you_don_t_have_to",
         "yes_the_kimi_k3_hype_is_real",
-        "you_need_to_use_hermes_right_now_goodbye_openclaw"
+        "you_need_to_use_hermes_right_now_goodbye_openclaw",
+        "every_hermes_concept_explained_for_normal_people"
       ]
     },
     "think": {
@@ -614,11 +619,41 @@
       "skills": [
         "new_hermes_agent_os_is_insane"
       ]
+    },
+    "want": {
+      "freq": 1,
+      "skills": [
+        "every_hermes_concept_explained_for_normal_people"
+      ]
+    },
+    "come": {
+      "freq": 1,
+      "skills": [
+        "every_hermes_concept_explained_for_normal_people"
+      ]
+    },
+    "example": {
+      "freq": 1,
+      "skills": [
+        "every_hermes_concept_explained_for_normal_people"
+      ]
+    },
+    "different": {
+      "freq": 1,
+      "skills": [
+        "every_hermes_concept_explained_for_normal_people"
+      ]
+    },
+    "basically": {
+      "freq": 1,
+      "skills": [
+        "every_hermes_concept_explained_for_normal_people"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 13,
+      "freq": 14,
       "skills": [
         "new_claude_update_is_insane",
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
@@ -632,11 +667,12 @@
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
         "new_hermes_paperclip_ai_agent_update_is_insane",
         "kimi_k3_is_not_the_story_china_s_ai_master_plan_is",
-        "new_hermes_agent_os_is_insane"
+        "new_hermes_agent_os_is_insane",
+        "every_hermes_concept_explained_for_normal_people"
       ]
     },
     "Anthropic": {
-      "freq": 9,
+      "freq": 10,
       "skills": [
         "new_claude_update_is_insane",
         "this_ai_business_model_is_creating_new_millionaire",
@@ -646,7 +682,8 @@
         "china_just_beat_claude_ai_kimi_k3",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "kimi_k3_is_not_the_story_china_s_ai_master_plan_is",
-        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
+        "every_hermes_concept_explained_for_normal_people"
       ]
     },
     "anthropic": {
@@ -665,7 +702,7 @@
       ]
     },
     "OpenAI": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
         "i_tested_kimi_k3_so_you_don_t_have_to",
@@ -674,7 +711,8 @@
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "use_this_to_make_the_hermes_agent_basically_free",
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
-        "kimi_k3_is_not_the_story_china_s_ai_master_plan_is"
+        "kimi_k3_is_not_the_story_china_s_ai_master_plan_is",
+        "every_hermes_concept_explained_for_normal_people"
       ]
     },
     "Flask": {
@@ -697,9 +735,10 @@
       ]
     },
     "Ollama": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "i_tested_kimi_k3_so_you_don_t_have_to"
+        "i_tested_kimi_k3_so_you_don_t_have_to",
+        "every_hermes_concept_explained_for_normal_people"
       ]
     },
     "GPT-4": {
@@ -793,6 +832,18 @@
       "freq": 1,
       "skills": [
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
+      ]
+    },
+    "SQLite": {
+      "freq": 1,
+      "skills": [
+        "every_hermes_concept_explained_for_normal_people"
+      ]
+    },
+    "bash": {
+      "freq": 1,
+      "skills": [
+        "every_hermes_concept_explained_for_normal_people"
       ]
     }
   },
@@ -1232,6 +1283,37 @@
         "each"
       ],
       "step_count": 1
+    },
+    "every_hermes_concept_explained_for_normal_people": {
+      "concepts": [
+        "hermes",
+        "here",
+        "about",
+        "want",
+        "which",
+        "agent",
+        "come",
+        "example",
+        "different",
+        "basically"
+      ],
+      "tools": [
+        "Claude",
+        "Anthropic",
+        "OpenAI",
+        "Ollama",
+        "SQLite",
+        "bash"
+      ],
+      "tags": [
+        "hermes",
+        "here",
+        "about",
+        "want",
+        "which",
+        "agent"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -1298,6 +1380,11 @@
         "already",
         "Claude",
         "every"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "about",
+        "Anthropic",
+        "Claude"
       ]
     },
     "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": {
@@ -1364,6 +1451,11 @@
       "new_hermes_agent_os_is_insane": [
         "already",
         "Claude"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "Claude",
+        "OpenAI",
+        "which"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -1414,6 +1506,10 @@
         "Anthropic"
       ],
       "new_hermes_agent_os_is_insane": [
+        "Claude"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "Anthropic",
         "Claude"
       ]
     },
@@ -1469,6 +1565,12 @@
       "new_hermes_agent_os_is_insane": [
         "Claude",
         "agent"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "Anthropic",
+        "Claude",
+        "agent",
+        "hermes"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -1521,6 +1623,10 @@
         "Claude"
       ],
       "new_hermes_agent_os_is_insane": [
+        "Claude"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "here",
         "Claude"
       ]
     },
@@ -1580,6 +1686,12 @@
       ],
       "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
         "Anthropic"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "here",
+        "Anthropic",
+        "Ollama",
+        "OpenAI"
       ]
     },
     "yes_the_kimi_k3_hype_is_real": {
@@ -1654,6 +1766,13 @@
       ],
       "new_hermes_agent_os_is_insane": [
         "Claude"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "here",
+        "Anthropic",
+        "Claude",
+        "which",
+        "OpenAI"
       ]
     },
     "china_just_beat_claude_ai_kimi_k3": {
@@ -1728,6 +1847,12 @@
       ],
       "new_hermes_agent_os_is_insane": [
         "Claude"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "about",
+        "Anthropic",
+        "Claude",
+        "OpenAI"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -1800,6 +1925,12 @@
       ],
       "new_hermes_agent_os_is_insane": [
         "Claude"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "about",
+        "Anthropic",
+        "Claude",
+        "OpenAI"
       ]
     },
     "hermes_agent_zero_to_personal_ai_assistant_1_hour_": {
@@ -1842,6 +1973,9 @@
       ],
       "new_hermes_agent_os_is_insane": [
         "Claude"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "Claude"
       ]
     },
     "use_this_to_make_the_hermes_agent_basically_free": {
@@ -1864,6 +1998,9 @@
         "OpenAI"
       ],
       "kimi_k3_is_not_the_story_china_s_ai_master_plan_is": [
+        "OpenAI"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
         "OpenAI"
       ]
     },
@@ -1936,6 +2073,14 @@
       "new_hermes_agent_os_is_insane": [
         "Claude",
         "agent"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "here",
+        "about",
+        "Claude",
+        "hermes",
+        "agent",
+        "OpenAI"
       ]
     },
     "new_hermes_paperclip_ai_agent_update_is_insane": {
@@ -1979,6 +2124,9 @@
         "AI self-improvement"
       ],
       "new_hermes_agent_os_is_insane": [
+        "Claude"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
         "Claude"
       ]
     },
@@ -2052,6 +2200,11 @@
       ],
       "new_hermes_agent_os_is_insane": [
         "Claude"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "Anthropic",
+        "Claude",
+        "OpenAI"
       ]
     },
     "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
@@ -2083,6 +2236,9 @@
         "AI self-improvement"
       ],
       "kimi_k3_is_not_the_story_china_s_ai_master_plan_is": [
+        "Anthropic"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
         "Anthropic"
       ]
     },
@@ -2127,9 +2283,93 @@
       ],
       "kimi_k3_is_not_the_story_china_s_ai_master_plan_is": [
         "Claude"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "Claude",
+        "agent"
+      ]
+    },
+    "every_hermes_concept_explained_for_normal_people": {
+      "new_claude_update_is_insane": [
+        "about",
+        "Anthropic",
+        "Claude"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude",
+        "OpenAI",
+        "which"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Anthropic",
+        "Claude"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Anthropic",
+        "Claude",
+        "agent",
+        "hermes"
+      ],
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "here",
+        "Claude"
+      ],
+      "i_tested_kimi_k3_so_you_don_t_have_to": [
+        "here",
+        "Anthropic",
+        "Ollama",
+        "OpenAI"
+      ],
+      "yes_the_kimi_k3_hype_is_real": [
+        "here",
+        "Anthropic",
+        "Claude",
+        "which",
+        "OpenAI"
+      ],
+      "china_just_beat_claude_ai_kimi_k3": [
+        "about",
+        "Anthropic",
+        "Claude",
+        "OpenAI"
+      ],
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "about",
+        "Anthropic",
+        "Claude",
+        "OpenAI"
+      ],
+      "hermes_agent_zero_to_personal_ai_assistant_1_hour_": [
+        "Claude"
+      ],
+      "use_this_to_make_the_hermes_agent_basically_free": [
+        "OpenAI"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "here",
+        "about",
+        "Claude",
+        "hermes",
+        "agent",
+        "OpenAI"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude"
+      ],
+      "kimi_k3_is_not_the_story_china_s_ai_master_plan_is": [
+        "Anthropic",
+        "Claude",
+        "OpenAI"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "Anthropic"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Claude",
+        "agent"
       ]
     }
   },
-  "updated_at": "2026-07-20T02:53:02.651459+00:00",
-  "total_skills": 17
+  "updated_at": "2026-07-20T02:53:04.182080+00:00",
+  "total_skills": 18
 }
