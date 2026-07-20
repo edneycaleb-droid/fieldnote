@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **2 skills** · Last synced: 2026-07-20 03:37 UTC
+> **3 skills** · Last synced: 2026-07-20 03:37 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Hermes Agent Tutorial for Beginners (Full Step-by-Step Setup)](skills/hermes_agent_tutorial_for_beginners_full_step_by_s.md) | By Metics Media. Key tools: Claude, Docker, bash, Python, LLM. (Auto-extracted — | `Claude` `Docker` `bash` `Python` | `agent` `hermes` `want` |
 | [100 hours of Hermes Agent lessons in 19 minutes](skills/100_hours_of_hermes_agent_lessons_in_19_minutes.md) | By Alex Finn. Key tools: Gemini, SSH, Claude. (Auto-extracted — pending AI enhan | `Gemini` `SSH` `Claude` | `hermes` `agent` `other` |
 | [New Claude Opus 5 LEAKS!](skills/new_claude_opus_5_leaks.md) | By Julian Goldie SEO. Key tools: Claude, Anthropic. (Auto-extracted — pending AI | `Claude` `Anthropic` | `opus` `model` `profit` |
 
