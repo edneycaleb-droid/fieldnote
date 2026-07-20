@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **35 skills** · Last synced: 2026-07-20 02:47 UTC
+> **36 skills** · Last synced: 2026-07-20 02:47 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Building a Comprehensive Second Brain with AI](skills/building_a_second_brain.md) | Learn how to create a second brain with AI, a system that organizes and connects | `Obsidian` `ChatGPT` `Grok` `Gemini` | `AI` `development` `organization` |
 | [Hermes Agent Cost Reduction: Optimizing Token Usage](skills/use_this_to_make_the_hermes_agent_basically_free.md) | This skill teaches how to reduce Hermes agent costs by optimizing token usage, u | `OpenAI` `Parto Router` `config.yaml` | `cost reduction` `hermes agent` `optimization` |
 | [you need to use Hermes RIGHT NOW!! (goodbye OpenClaw!!)](skills/you_need_to_use_hermes_right_now_goodbye_openclaw.md) | By NetworkChuck. Key tools: Python, Docker, LLM, OpenAI, anthropic. (Auto-extrac | `Python` `Docker` `LLM` `OpenAI` | `hermes` `gonna` `here` |
 | [GPT 5.6 Mystery, New 2.7T AI, DeepSeek New AI Chip, Orca World Model, Grok 4.5 and More AI News...](skills/gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o.md) | By AI Revolution. Key tools: OpenAI, Claude, Anthropic, LLM, Llama. (Auto-extrac | `OpenAI` `Claude` `Anthropic` `LLM` | `music` `model` `openai` |
