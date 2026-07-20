@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **10 skills** · Last synced: 2026-07-20 02:42 UTC
+> **11 skills** · Last synced: 2026-07-20 02:42 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [China just beat Claude AI: Kimi K3](skills/china_just_beat_claude_ai_kimi_k3.md) | By TechLead. Key tools: Claude, Anthropic, OpenAI, GPT-4, Gemini. (Auto-extracte | `Claude` `Anthropic` `OpenAI` `GPT-4` | `model` `models` `open` |
 | [Yes, the Kimi K3 Hype is Real](skills/yes_the_kimi_k3_hype_is_real.md) | By Chase AI. Key tools: Anthropic, OpenAI, Claude. (Auto-extracted — pending AI  | `Anthropic` `OpenAI` `Claude` | `these` `fable` `kimmy` |
 | [Use This To Make The Hermes Agent Basically Free](skills/use_this_to_make_the_hermes_agent_basically_free.md) | By AI LABS. Key tools: OpenAI, Claude, Anthropic, Gemini. (Auto-extracted — pend | `OpenAI` `Claude` `Anthropic` `Gemini` | `hermes` `tokens` `context` |
 | [Hermes + Claude Code — MCP Integration & Loop Engineering](skills/hermes_claude_code_mcp_integration_loop_engineerin.md) | By NetworkCoder. Key tools: Anthropic, Flask, Python, pytest, Claude. (Auto-extr | `Anthropic` `Flask` `Python` `pytest` | `tests` `skill` `hermes` |

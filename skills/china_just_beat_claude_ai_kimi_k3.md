@@ -21,4 +21,4 @@ Claude, Anthropic, OpenAI, GPT-4, Gemini
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-19 | [China just beat Claude AI: Kimi K3](https://www.youtube.com/watch?v=2wDXtzIE7qw) | yt_dlp_subs |
+| 2026-07-20 | [China just beat Claude AI: Kimi K3](https://www.youtube.com/watch?v=2wDXtzIE7qw) | yt_dlp_subs |
