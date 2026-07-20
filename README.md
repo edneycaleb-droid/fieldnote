@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **4 skills** · Last synced: 2026-07-20 02:52 UTC
+> **2 skills** · Last synced: 2026-07-20 02:52 UTC
 
 ---
 
@@ -9,10 +9,8 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [Kimi K3 VS Claude Fable 5 (Raw Results)](skills/kimi_k3_vs_claude_fable_5_raw_results.md) | By Dubibubi. Key tools: Claude, Anthropic, Ollama. (Auto-extracted — pending AI  | `Claude` `Anthropic` `Ollama` | `fable` `kimi` `right` |
-| [By August, We'll Have Frontier AI Running Locally](skills/by_august_we_ll_have_frontier_ai_running_locally.md) | By Manolo Remiddi. Key tools: OpenAI, Gemini. (Auto-extracted — pending AI enhan | `OpenAI` `Gemini` | `model` `those` `going` |
-| [Hermes Agent: Build Your Own Personal AI Assistant (Full Course)](skills/hermes_agent_build_your_own_personal_ai_assistant_.md) | By Komputer Mechanic. Key tools: PowerShell, OpenAI. (Auto-extracted — pending A | `PowerShell` `OpenAI` | `going` `here` `agent` |
-| [Hermes Agent Just Got 10X Better (4 Insane NEW Features)](skills/hermes_agent_just_got_10x_better_4_insane_new_feat.md) | By Zinho Automates. Key tools: Claude. (Auto-extracted — pending AI enhancement. | `Claude` | `agent` `going` `every` |
+| [New Claude Opus 5 LEAKS!](skills/new_claude_opus_5_leaks.md) | By Julian Goldie SEO. Key tools: Claude, Anthropic. (Auto-extracted — pending AI | `Claude` `Anthropic` | `opus` `model` `profit` |
+| [Hermes Agent - Full Course & Setup Guide - For COMPLETE Beginners](skills/hermes_agent_full_course_setup_guide_for_complete_.md) | By Tech With Tim. Key tools: LLM, OpenAI, Anthropic, Docker, curl. (Auto-extract | `LLM` `OpenAI` `Anthropic` `Docker` | `going` `want` `agent` |
 
 ---
 
