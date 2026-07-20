@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **86 skills** · Last synced: 2026-07-20 02:40 UTC
+> **86 skills** · Last synced: 2026-07-20 02:41 UTC
 
 ---
 
@@ -9,7 +9,8 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [Kimi K3 Is Fable Level... (they should be worried)](skills/kimi_k3_is_fable_level_they_should_be_worried.md) | By Better Stack. Key tools: Claude, React, Next.js, SQLite, Node. (Auto-extracte | `Claude` `React` `Next.js` `SQLite` | `actually` `here` `fable` |
+| [Kimi K3 is just ridiculous](skills/kimi_k3_is_just_ridiculous.md) | By LanceyPoo. Key tools: Claude. (Auto-extracted — pending AI enhancement.) | `Claude` | `okay` `going` `wait` |
+| [New Hermes Agent OS is INSANE!](skills/new_hermes_agent_os_is_insane.md) | By Julian Goldie SEO. Key tools: Claude. (Auto-extracted — pending AI enhancemen | `Claude` | `same` `outreach` `agent` |
 | [NEW Hermes + Paperclip AI Agent Update Is INSANE](skills/new_hermes_paperclip_ai_agent_update_is_insane.md) | By Julian Goldie SEO. Key tools: Claude, Gemini. (Auto-extracted — pending AI en | `Claude` `Gemini` | `agent` `hermes` `paperclip` |
 | [Kimmy K3.1, Grok 4.6, DeepSeek v4 GA, U.S. Gov's Gold Eagle, & Robot MMA!](skills/anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v.md) | This video discusses the latest developments in AI, including Kimmy K3.1, Grok 4 | `Moonshot AI` `Enthropic` `Claude` `Grok` | `AI` `Machine Learning` `Deep Learning` |
 | [Kimi K3: A Huge Leap in Open-Weight Models](skills/kimi_k3_is_the_best_model_ever_made_sometimes.md) | Kimi K3 is a 2.8 trillion parameter model that surpasses previous open-weight mo | `Kimi K3` `OpenAI` `Anthropic` `Docker` | `ai` `models` `development` |
@@ -27,6 +28,7 @@
 | [mastering_loop_engineering](skills/mastering_loop_engineering.md) |  |  |  |
 | [running_large_models_locally](skills/running_large_models_locally.md) |  |  |  |
 | [how_to_run_kimi_k3_for_free](skills/how_to_run_kimi_k3_for_free.md) |  |  |  |
+| [kimi_k3_is_fable_level_they_should_be_worried](skills/kimi_k3_is_fable_level_they_should_be_worried.md) |  |  |  |
 | [building_ai_agents_with_loop](skills/building_ai_agents_with_loop.md) |  |  |  |
 | [kimi_k3_just_knocked_claude_to_third_place_chinese](skills/kimi_k3_just_knocked_claude_to_third_place_chinese.md) |  |  |  |
 | [kimi_k3_crushed_fable](skills/kimi_k3_crushed_fable.md) |  |  |  |
@@ -42,7 +44,6 @@
 | [use_this_to_make_the_hermes_agent_basically_free](skills/use_this_to_make_the_hermes_agent_basically_free.md) |  |  |  |
 | [building_resilient_ai_agents_with_langgraph](skills/building_resilient_ai_agents_with_langgraph.md) |  |  |  |
 | [hermes_agent_tutorial_for_beginners_full_step_by_s](skills/hermes_agent_tutorial_for_beginners_full_step_by_s.md) |  |  |  |
-| [kimi_k3_is_just_ridiculous](skills/kimi_k3_is_just_ridiculous.md) |  |  |  |
 | [swanlab_ai_training_analysis_platform](skills/swanlab_ai_training_analysis_platform.md) |  |  |  |
 | [run_kimi_k3_inside_claude_code_max_power](skills/run_kimi_k3_inside_claude_code_max_power.md) |  |  |  |
 | [deploying_retrieval_augmented_generation_with_ragflow](skills/deploying_retrieval_augmented_generation_with_ragflow.md) |  |  |  |
@@ -66,7 +67,6 @@
 | [hermes_agent_zero_to_personal_ai_assistant_1_hour_](skills/hermes_agent_zero_to_personal_ai_assistant_1_hour_.md) |  |  |  |
 | [incremental_code_review](skills/incremental_code_review.md) |  |  |  |
 | [100_hours_of_hermes_agent_lessons_in_19_minutes](skills/100_hours_of_hermes_agent_lessons_in_19_minutes.md) |  |  |  |
-| [new_hermes_agent_os_is_insane](skills/new_hermes_agent_os_is_insane.md) |  |  |  |
 | [gpt_5_6_on_hermes_agent_is_actually_insane_full_he](skills/gpt_5_6_on_hermes_agent_is_actually_insane_full_he.md) |  |  |  |
 | [testing_and_comparing_llms](skills/testing_and_comparing_llms.md) |  |  |  |
 | [kimi_k3_ai_model](skills/kimi_k3_ai_model.md) |  |  |  |

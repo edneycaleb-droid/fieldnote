@@ -21,4 +21,4 @@ Claude
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-19 | [Kimi K3 is just ridiculous](https://www.youtube.com/watch?v=dmw7iTQvTRo) | yt_dlp_subs |
+| 2026-07-20 | [Kimi K3 is just ridiculous](https://www.youtube.com/watch?v=dmw7iTQvTRo) | yt_dlp_subs |
