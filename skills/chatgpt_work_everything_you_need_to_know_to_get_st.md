@@ -1,21 +1,29 @@
-# ChatGPT Work: Everything You Need to Know to Get Started!
+# Hermes Agent + Ollama: How to Install Hermes Locally Fast
 
-> ⚠️ **Auto-extracted draft** — pending AI enhancement for full quality.
-
-By The AI Advantage. (Auto-extracted — pending AI enhancement.)
+## Description
+This skill teaches how to install Hermes Agent locally, enabling fast and efficient AI development.
 
 ## Steps
+1. Watch the full video for step-by-step instructions.
+2. Understand the key tools and technologies involved, including LLM, OpenAI, Anthropic, Docker, curl, and SSH.
+3. Learn how to use the Hermes Agent for various tasks and applications.
 
-- Watch the full video for step-by-step instructions.
+## Tools
+* LLM
+* OpenAI
+* Anthropic
+* Docker
+* curl
+* SSH
 
-## Tools & Technologies
+## Concepts
+* going
+* want
+* agent
+* here
 
-See transcript.
-
-## Source
-
-- **Video**: [ChatGPT Work: Everything You Need to Know to Get Started!](https://www.youtube.com/watch?v=MpVX4fMXv0A)
-- **Video ID**: `MpVX4fMXv0A`
+## Related Skills
+* you_need_to_use_hermes_right_now_goodbye_openclaw
 
 ## Sources
 

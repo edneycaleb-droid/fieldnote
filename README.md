@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **14 skills** · Last synced: 2026-07-20 02:42 UTC
+> **15 skills** · Last synced: 2026-07-20 02:42 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Chat GPT Work Tutorial: Building a Live Website](skills/chatgpt_work_everything_you_need_to_know_to_get_st.md) | This skill teaches how to use Chat GPT Work to build a live website, including s | `Chat GPT Work` `Sites tool` `LLM` `OpenAI` | `AI` `Chat GPT` `Website building` |
 | [Hermes Agent Security Guidance](skills/you_need_to_use_hermes_right_now_goodbye_openclaw.md) | This skill teaches how to use Hermes Agent to check every file, commit, and move | `LLM` `OpenAI` `Anthropic` `Docker` | `security` `guidance` `hermes` |
 | [I Tested Kimi K3 So You Don't Have To...](skills/i_tested_kimi_k3_so_you_don_t_have_to.md) | By Nick Saraev. Key tools: Ollama, Anthropic, OpenAI. (Auto-extracted — pending  | `Ollama` `Anthropic` `OpenAI` | `know` `kimmy` `here` |
 | [GPT 5.6 Mystery, New 2.7T AI, DeepSeek New AI Chip, Orca World Model, Grok 4.5 and More AI News...](skills/gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o.md) | By AI Revolution. Key tools: OpenAI, Claude, Anthropic, LLM, Llama. (Auto-extrac | `OpenAI` `Claude` `Anthropic` `LLM` | `music` `model` `openai` |
