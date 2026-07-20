@@ -26,11 +26,12 @@
       ]
     },
     "here": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "how_to_use_codex_to_build_insanely_beautiful_websi",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
-        "every_hermes_concept_explained_for_normal_people"
+        "every_hermes_concept_explained_for_normal_people",
+        "kimi_k3_crushed_fable"
       ]
     },
     "before": {
@@ -67,9 +68,10 @@
       ]
     },
     "model": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "by_august_we_ll_have_frontier_ai_running_locally"
+        "by_august_we_ll_have_frontier_ai_running_locally",
+        "kimi_k3_crushed_fable"
       ]
     },
     "those": {
@@ -79,10 +81,11 @@
       ]
     },
     "going": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "by_august_we_ll_have_frontier_ai_running_locally",
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
+        "chatgpt_work_everything_you_need_to_know_to_get_st",
+        "kimi_k3_crushed_fable"
       ]
     },
     "because": {
@@ -205,9 +208,10 @@
       ]
     },
     "good": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
+        "chatgpt_work_everything_you_need_to_know_to_get_st",
+        "kimi_k3_crushed_fable"
       ]
     },
     "hermes": {
@@ -243,9 +247,10 @@
       ]
     },
     "know": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+        "100_hours_of_hermes_agent_lessons_in_19_minutes",
+        "kimi_k3_crushed_fable"
       ]
     },
     "want": {
@@ -284,15 +289,46 @@
       "skills": [
         "every_hermes_concept_explained_for_normal_people"
       ]
+    },
+    "kind": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_crushed_fable"
+      ]
+    },
+    "models": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_crushed_fable"
+      ]
+    },
+    "kimmy": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_crushed_fable"
+      ]
+    },
+    "think": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_crushed_fable"
+      ]
+    },
+    "very": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_crushed_fable"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "how_to_use_codex_to_build_insanely_beautiful_websi",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
-        "every_hermes_concept_explained_for_normal_people"
+        "every_hermes_concept_explained_for_normal_people",
+        "kimi_k3_crushed_fable"
       ]
     },
     "next.js": {
@@ -302,18 +338,20 @@
       ]
     },
     "Anthropic": {
-      "freq": 2,
-      "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi",
-        "every_hermes_concept_explained_for_normal_people"
-      ]
-    },
-    "OpenAI": {
       "freq": 3,
       "skills": [
         "how_to_use_codex_to_build_insanely_beautiful_websi",
+        "every_hermes_concept_explained_for_normal_people",
+        "kimi_k3_crushed_fable"
+      ]
+    },
+    "OpenAI": {
+      "freq": 4,
+      "skills": [
+        "how_to_use_codex_to_build_insanely_beautiful_websi",
         "by_august_we_ll_have_frontier_ai_running_locally",
-        "every_hermes_concept_explained_for_normal_people"
+        "every_hermes_concept_explained_for_normal_people",
+        "kimi_k3_crushed_fable"
       ]
     },
     "git": {
@@ -547,6 +585,34 @@
         "agent"
       ],
       "step_count": 1
+    },
+    "kimi_k3_crushed_fable": {
+      "concepts": [
+        "kind",
+        "know",
+        "here",
+        "good",
+        "model",
+        "models",
+        "kimmy",
+        "going",
+        "think",
+        "very"
+      ],
+      "tools": [
+        "Claude",
+        "Anthropic",
+        "OpenAI"
+      ],
+      "tags": [
+        "kind",
+        "know",
+        "here",
+        "good",
+        "model",
+        "models"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -565,6 +631,12 @@
         "Claude"
       ],
       "every_hermes_concept_explained_for_normal_people": [
+        "here",
+        "Anthropic",
+        "Claude",
+        "OpenAI"
+      ],
+      "kimi_k3_crushed_fable": [
         "here",
         "Anthropic",
         "Claude",
@@ -589,6 +661,11 @@
         "about",
         "OpenAI",
         "which"
+      ],
+      "kimi_k3_crushed_fable": [
+        "going",
+        "model",
+        "OpenAI"
       ]
     },
     "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
@@ -618,6 +695,11 @@
       ],
       "every_hermes_concept_explained_for_normal_people": [
         "here"
+      ],
+      "kimi_k3_crushed_fable": [
+        "going",
+        "here",
+        "good"
       ]
     },
     "100_hours_of_hermes_agent_lessons_in_19_minutes": {
@@ -639,6 +721,10 @@
         "Claude",
         "agent",
         "hermes"
+      ],
+      "kimi_k3_crushed_fable": [
+        "know",
+        "Claude"
       ]
     },
     "every_hermes_concept_explained_for_normal_people": {
@@ -664,9 +750,43 @@
         "Claude",
         "agent",
         "hermes"
+      ],
+      "kimi_k3_crushed_fable": [
+        "here",
+        "Anthropic",
+        "Claude",
+        "OpenAI"
+      ]
+    },
+    "kimi_k3_crushed_fable": {
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "here",
+        "Anthropic",
+        "Claude",
+        "OpenAI"
+      ],
+      "by_august_we_ll_have_frontier_ai_running_locally": [
+        "going",
+        "model",
+        "OpenAI"
+      ],
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "going",
+        "here",
+        "good"
+      ],
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "know",
+        "Claude"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "here",
+        "Anthropic",
+        "Claude",
+        "OpenAI"
       ]
     }
   },
-  "updated_at": "2026-07-20T02:56:53.163018+00:00",
-  "total_skills": 6
+  "updated_at": "2026-07-20T02:56:54.567503+00:00",
+  "total_skills": 7
 }
