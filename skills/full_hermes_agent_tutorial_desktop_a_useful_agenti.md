@@ -21,4 +21,4 @@ LLM, OpenAI, Anthropic, llama, Ollama, Claude, Gemini, Docker, SSH
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-19 | [Full Hermes Agent Tutorial (Desktop) 🧠 A Useful Agentic AI Workflow](https://www.youtube.com/watch?v=GL67DEf2nyI) | yt_dlp_subs |
+| 2026-07-20 | [Full Hermes Agent Tutorial (Desktop) 🧠 A Useful Agentic AI Workflow](https://www.youtube.com/watch?v=GL67DEf2nyI) | yt_dlp_subs |
