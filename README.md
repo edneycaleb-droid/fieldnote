@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Kimi K3 CRUSHED Fable](skills/kimi_k3_crushed_fable.md) | By Wes Roth. Key tools: Claude, Anthropic, OpenAI. (Auto-extracted — pending AI  | `Claude` `Anthropic` `OpenAI` | `kind` `know` `here` |
 | [Every Hermes Concept explained for Normal People](skills/every_hermes_concept_explained_for_normal_people.md) | By Jack Roberts. Key tools: Claude, Anthropic, OpenAI, Ollama, SQLite. (Auto-ext | `Claude` `Anthropic` `OpenAI` `Ollama` | `hermes` `here` `about` |
 | [New Hermes Agent OS is INSANE!](skills/new_hermes_agent_os_is_insane.md) | By Julian Goldie SEO. Key tools: Claude. (Auto-extracted — pending AI enhancemen | `Claude` | `same` `outreach` `agent` |
 | [Chemistry 3 Model: A Powerful, Open-Source AI Model](skills/nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe.md) | This skill covers the Chemistry 3 model, a powerful, open-source AI model that s | `Clou` `Anthropic` `API` `Chemistry 3 API` | `ai` `web-development` `front-end-design` |
@@ -92,7 +93,6 @@
 | [master_ai_trading_in_70_minutes_full_claude_tradin](skills/master_ai_trading_in_70_minutes_full_claude_tradin.md) |  |  |  |
 | [ornith_35b_9b_hermes_zed_the_fully_private_local_a](skills/ornith_35b_9b_hermes_zed_the_fully_private_local_a.md) |  |  |  |
 | [deploying_retrieval_augmented_generation_with_ragflow](skills/deploying_retrieval_augmented_generation_with_ragflow.md) |  |  |  |
-| [kimi_k3_crushed_fable](skills/kimi_k3_crushed_fable.md) |  |  |  |
 | [kimi_k3_hermes_ai_agent_is_insane](skills/kimi_k3_hermes_ai_agent_is_insane.md) |  |  |  |
 | [kimi_k3_is_just_ridiculous](skills/kimi_k3_is_just_ridiculous.md) |  |  |  |
 | [pydantic_ai_framework](skills/pydantic_ai_framework.md) |  |  |  |
