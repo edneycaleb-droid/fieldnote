@@ -7,9 +7,10 @@
       ]
     },
     "agent": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+        "100_hours_of_hermes_agent_lessons_in_19_minutes",
+        "kimi_k3_ai_full_course_1_hour_build_automate_anyth"
       ]
     },
     "other": {
@@ -26,9 +27,10 @@
       ]
     },
     "over": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+        "100_hours_of_hermes_agent_lessons_in_19_minutes",
+        "kimi_k3_ai_full_course_1_hour_build_automate_anyth"
       ]
     },
     "using": {
@@ -50,9 +52,10 @@
       ]
     },
     "want": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+        "100_hours_of_hermes_agent_lessons_in_19_minutes",
+        "kimi_k3_ai_full_course_1_hour_build_automate_anyth"
       ]
     },
     "opus": {
@@ -68,9 +71,10 @@
       ]
     },
     "here": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
+        "chatgpt_work_everything_you_need_to_know_to_get_st",
+        "kimi_k3_ai_full_course_1_hour_build_automate_anyth"
       ]
     },
     "site": {
@@ -110,9 +114,40 @@
       ]
     },
     "going": {
+      "freq": 2,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st",
+        "kimi_k3_ai_full_course_1_hour_build_automate_anyth"
+      ]
+    },
+    "kimmy": {
       "freq": 1,
       "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
+        "kimi_k3_ai_full_course_1_hour_build_automate_anyth"
+      ]
+    },
+    "example": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_ai_full_course_1_hour_build_automate_anyth"
+      ]
+    },
+    "actually": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_ai_full_course_1_hour_build_automate_anyth"
+      ]
+    },
+    "well": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_ai_full_course_1_hour_build_automate_anyth"
+      ]
+    },
+    "create": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_ai_full_course_1_hour_build_automate_anyth"
       ]
     }
   },
@@ -130,9 +165,16 @@
       ]
     },
     "Claude": {
+      "freq": 2,
+      "skills": [
+        "100_hours_of_hermes_agent_lessons_in_19_minutes",
+        "kimi_k3_ai_full_course_1_hour_build_automate_anyth"
+      ]
+    },
+    "LLM": {
       "freq": 1,
       "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+        "kimi_k3_ai_full_course_1_hour_build_automate_anyth"
       ]
     }
   },
@@ -188,20 +230,69 @@
         "dave"
       ],
       "step_count": 1
+    },
+    "kimi_k3_ai_full_course_1_hour_build_automate_anyth": {
+      "concepts": [
+        "kimmy",
+        "here",
+        "want",
+        "example",
+        "actually",
+        "over",
+        "going",
+        "well",
+        "agent",
+        "create"
+      ],
+      "tools": [
+        "LLM",
+        "Claude"
+      ],
+      "tags": [
+        "kimmy",
+        "here",
+        "want",
+        "example",
+        "actually",
+        "over"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
     "100_hours_of_hermes_agent_lessons_in_19_minutes": {
       "chatgpt_work_everything_you_need_to_know_to_get_st": [
         "need"
+      ],
+      "kimi_k3_ai_full_course_1_hour_build_automate_anyth": [
+        "want",
+        "Claude",
+        "agent",
+        "over"
       ]
     },
     "chatgpt_work_everything_you_need_to_know_to_get_st": {
       "100_hours_of_hermes_agent_lessons_in_19_minutes": [
         "need"
+      ],
+      "kimi_k3_ai_full_course_1_hour_build_automate_anyth": [
+        "going",
+        "here"
+      ]
+    },
+    "kimi_k3_ai_full_course_1_hour_build_automate_anyth": {
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "want",
+        "Claude",
+        "agent",
+        "over"
+      ],
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "going",
+        "here"
       ]
     }
   },
-  "updated_at": "2026-07-20T02:51:24.511213+00:00",
-  "total_skills": 2
+  "updated_at": "2026-07-20T02:51:24.530184+00:00",
+  "total_skills": 3
 }
