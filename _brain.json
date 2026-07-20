@@ -59,13 +59,80 @@
       "skills": [
         "the_15_most_insane_things_created_by_kimi_k3_kimi_"
       ]
+    },
+    "people": {
+      "freq": 1,
+      "skills": [
+        "this_ai_business_model_is_creating_new_millionaire"
+      ]
+    },
+    "product": {
+      "freq": 1,
+      "skills": [
+        "this_ai_business_model_is_creating_new_millionaire"
+      ]
+    },
+    "most": {
+      "freq": 1,
+      "skills": [
+        "this_ai_business_model_is_creating_new_millionaire"
+      ]
+    },
+    "build": {
+      "freq": 1,
+      "skills": [
+        "this_ai_business_model_is_creating_new_millionaire"
+      ]
+    },
+    "completely": {
+      "freq": 1,
+      "skills": [
+        "this_ai_business_model_is_creating_new_millionaire"
+      ]
+    },
+    "first": {
+      "freq": 1,
+      "skills": [
+        "this_ai_business_model_is_creating_new_millionaire"
+      ]
+    },
+    "time": {
+      "freq": 1,
+      "skills": [
+        "this_ai_business_model_is_creating_new_millionaire"
+      ]
+    },
+    "niche": {
+      "freq": 1,
+      "skills": [
+        "this_ai_business_model_is_creating_new_millionaire"
+      ]
+    },
+    "music": {
+      "freq": 1,
+      "skills": [
+        "this_ai_business_model_is_creating_new_millionaire"
+      ]
+    },
+    "selling": {
+      "freq": 1,
+      "skills": [
+        "this_ai_business_model_is_creating_new_millionaire"
+      ]
     }
   },
   "tools": {
     "Claude": {
+      "freq": 2,
+      "skills": [
+        "the_15_most_insane_things_created_by_kimi_k3_kimi_",
+        "this_ai_business_model_is_creating_new_millionaire"
+      ]
+    },
+    "Anthropic": {
       "freq": 1,
       "skills": [
-        "the_15_most_insane_things_created_by_kimi_k3_kimi_"
+        "this_ai_business_model_is_creating_new_millionaire"
       ]
     }
   },
@@ -95,11 +162,47 @@
         "something"
       ],
       "step_count": 1
+    },
+    "this_ai_business_model_is_creating_new_millionaire": {
+      "concepts": [
+        "people",
+        "product",
+        "most",
+        "build",
+        "completely",
+        "first",
+        "time",
+        "niche",
+        "music",
+        "selling"
+      ],
+      "tools": [
+        "Anthropic",
+        "Claude"
+      ],
+      "tags": [
+        "people",
+        "product",
+        "most",
+        "build",
+        "completely",
+        "first"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
-    "the_15_most_insane_things_created_by_kimi_k3_kimi_": {}
+    "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Claude"
+      ]
+    },
+    "this_ai_business_model_is_creating_new_millionaire": {
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "Claude"
+      ]
+    }
   },
-  "updated_at": "2026-07-20T02:40:26.067047+00:00",
-  "total_skills": 1
+  "updated_at": "2026-07-20T02:40:26.107342+00:00",
+  "total_skills": 2
 }
