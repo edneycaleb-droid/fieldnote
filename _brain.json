@@ -23,11 +23,12 @@
       ]
     },
     "actually": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "the_15_most_insane_things_created_by_kimi_k3_kimi_",
         "yes_the_kimi_k3_hype_is_real",
-        "you_need_to_use_hermes_right_now_goodbye_openclaw"
+        "you_need_to_use_hermes_right_now_goodbye_openclaw",
+        "kimi_k3_is_fable_level_they_should_be_worried"
       ]
     },
     "kimmy": {
@@ -62,7 +63,7 @@
       ]
     },
     "here": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "the_15_most_insane_things_created_by_kimi_k3_kimi_",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -70,7 +71,8 @@
         "i_tested_kimi_k3_so_you_don_t_have_to",
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
-        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+        "hermes_agent_tutorial_for_beginners_full_step_by_s",
+        "kimi_k3_is_fable_level_they_should_be_worried"
       ]
     },
     "think": {
@@ -142,14 +144,15 @@
       ]
     },
     "model": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
         "use_this_to_make_the_hermes_agent_basically_free",
         "china_just_beat_claude_ai_kimi_k3",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "i_tested_kimi_k3_so_you_don_t_have_to",
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
+        "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
+        "kimi_k3_is_fable_level_they_should_be_worried"
       ]
     },
     "which": {
@@ -176,11 +179,12 @@
       ]
     },
     "fable": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
         "yes_the_kimi_k3_hype_is_real",
-        "i_tested_kimi_k3_so_you_don_t_have_to"
+        "i_tested_kimi_k3_so_you_don_t_have_to",
+        "kimi_k3_is_fable_level_they_should_be_worried"
       ]
     },
     "already": {
@@ -197,12 +201,13 @@
       ]
     },
     "models": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
         "china_just_beat_claude_ai_kimi_k3",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
-        "i_tested_kimi_k3_so_you_don_t_have_to"
+        "i_tested_kimi_k3_so_you_don_t_have_to",
+        "kimi_k3_is_fable_level_they_should_be_worried"
       ]
     },
     "today": {
@@ -291,9 +296,10 @@
       ]
     },
     "code": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "hermes_claude_code_mcp_integration_loop_engineerin"
+        "hermes_claude_code_mcp_integration_loop_engineerin",
+        "kimi_k3_is_fable_level_they_should_be_worried"
       ]
     },
     "loop": {
@@ -366,9 +372,10 @@
       ]
     },
     "these": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "yes_the_kimi_k3_hype_is_real"
+        "yes_the_kimi_k3_hype_is_real",
+        "kimi_k3_is_fable_level_they_should_be_worried"
       ]
     },
     "free": {
@@ -781,11 +788,29 @@
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
+    },
+    "pretty": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_is_fable_level_they_should_be_worried"
+      ]
+    },
+    "well": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_is_fable_level_they_should_be_worried"
+      ]
+    },
+    "didn": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_is_fable_level_they_should_be_worried"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 14,
+      "freq": 15,
       "skills": [
         "the_15_most_insane_things_created_by_kimi_k3_kimi_",
         "this_ai_business_model_is_creating_new_millionaire",
@@ -800,7 +825,8 @@
         "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
         "new_hermes_agent_os_is_insane",
         "new_hermes_paperclip_ai_agent_update_is_insane",
-        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+        "hermes_agent_tutorial_for_beginners_full_step_by_s",
+        "kimi_k3_is_fable_level_they_should_be_worried"
       ]
     },
     "Anthropic": {
@@ -885,16 +911,18 @@
       ]
     },
     "Node": {
-      "freq": 1,
-      "skills": [
-        "this_100_self_improving_ai_agent_is_insane_just_wa"
-      ]
-    },
-    "SQLite": {
       "freq": 2,
       "skills": [
         "this_100_self_improving_ai_agent_is_insane_just_wa",
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
+        "kimi_k3_is_fable_level_they_should_be_worried"
+      ]
+    },
+    "SQLite": {
+      "freq": 3,
+      "skills": [
+        "this_100_self_improving_ai_agent_is_insane_just_wa",
+        "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
+        "kimi_k3_is_fable_level_they_should_be_worried"
       ]
     },
     "SSH": {
@@ -1006,6 +1034,18 @@
       "freq": 1,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s"
+      ]
+    },
+    "React": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_is_fable_level_they_should_be_worried"
+      ]
+    },
+    "Next.js": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_is_fable_level_they_should_be_worried"
       ]
     }
   },
@@ -1542,6 +1582,36 @@
         "telegram"
       ],
       "step_count": 1
+    },
+    "kimi_k3_is_fable_level_they_should_be_worried": {
+      "concepts": [
+        "actually",
+        "here",
+        "fable",
+        "pretty",
+        "model",
+        "well",
+        "models",
+        "these",
+        "code",
+        "didn"
+      ],
+      "tools": [
+        "Claude",
+        "React",
+        "Next.js",
+        "SQLite",
+        "Node"
+      ],
+      "tags": [
+        "actually",
+        "here",
+        "fable",
+        "pretty",
+        "model",
+        "well"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -1608,6 +1678,11 @@
         "going",
         "here",
         "Claude"
+      ],
+      "kimi_k3_is_fable_level_they_should_be_worried": [
+        "actually",
+        "here",
+        "Claude"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -1665,6 +1740,9 @@
         "Claude"
       ],
       "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Claude"
+      ],
+      "kimi_k3_is_fable_level_they_should_be_worried": [
         "Claude"
       ]
     },
@@ -1743,6 +1821,12 @@
       ],
       "hermes_agent_tutorial_for_beginners_full_step_by_s": [
         "Claude"
+      ],
+      "kimi_k3_is_fable_level_they_should_be_worried": [
+        "model",
+        "models",
+        "Claude",
+        "fable"
       ]
     },
     "this_100_self_improving_ai_agent_is_insane_just_wa": {
@@ -1842,6 +1926,12 @@
         "Claude",
         "Python",
         "hermes"
+      ],
+      "kimi_k3_is_fable_level_they_should_be_worried": [
+        "here",
+        "Claude",
+        "SQLite",
+        "Node"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -1912,6 +2002,10 @@
         "agent",
         "Python",
         "hermes"
+      ],
+      "kimi_k3_is_fable_level_they_should_be_worried": [
+        "Claude",
+        "code"
       ]
     },
     "use_this_to_make_the_hermes_agent_basically_free": {
@@ -2005,6 +2099,10 @@
         "Claude",
         "agent",
         "hermes"
+      ],
+      "kimi_k3_is_fable_level_they_should_be_worried": [
+        "Claude",
+        "model"
       ]
     },
     "yes_the_kimi_k3_hype_is_real": {
@@ -2092,6 +2190,13 @@
         "right",
         "here",
         "Claude"
+      ],
+      "kimi_k3_is_fable_level_they_should_be_worried": [
+        "here",
+        "these",
+        "actually",
+        "Claude",
+        "fable"
       ]
     },
     "china_just_beat_claude_ai_kimi_k3": {
@@ -2175,6 +2280,11 @@
       ],
       "hermes_agent_tutorial_for_beginners_full_step_by_s": [
         "Claude"
+      ],
+      "kimi_k3_is_fable_level_they_should_be_worried": [
+        "models",
+        "Claude",
+        "model"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -2257,6 +2367,11 @@
       "hermes_agent_tutorial_for_beginners_full_step_by_s": [
         "Claude",
         "LLM"
+      ],
+      "kimi_k3_is_fable_level_they_should_be_worried": [
+        "models",
+        "Claude",
+        "model"
       ]
     },
     "i_tested_kimi_k3_so_you_don_t_have_to": {
@@ -2331,6 +2446,12 @@
       "hermes_agent_tutorial_for_beginners_full_step_by_s": [
         "going",
         "here"
+      ],
+      "kimi_k3_is_fable_level_they_should_be_worried": [
+        "here",
+        "models",
+        "fable",
+        "model"
       ]
     },
     "you_need_to_use_hermes_right_now_goodbye_openclaw": {
@@ -2480,6 +2601,9 @@
         "right",
         "here",
         "need"
+      ],
+      "kimi_k3_is_fable_level_they_should_be_worried": [
+        "here"
       ]
     },
     "this_kimi_k3_agent_os_is_wild": {
@@ -2669,6 +2793,11 @@
       "hermes_agent_tutorial_for_beginners_full_step_by_s": [
         "going",
         "Claude"
+      ],
+      "kimi_k3_is_fable_level_they_should_be_worried": [
+        "Claude",
+        "SQLite",
+        "model"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -2719,6 +2848,9 @@
       "hermes_agent_tutorial_for_beginners_full_step_by_s": [
         "Claude",
         "agent"
+      ],
+      "kimi_k3_is_fable_level_they_should_be_worried": [
+        "Claude"
       ]
     },
     "new_hermes_paperclip_ai_agent_update_is_insane": {
@@ -2775,6 +2907,9 @@
         "Claude",
         "agent",
         "hermes"
+      ],
+      "kimi_k3_is_fable_level_they_should_be_worried": [
+        "Claude"
       ]
     },
     "hermes_agent_tutorial_for_beginners_full_step_by_s": {
@@ -2851,9 +2986,84 @@
         "Claude",
         "agent",
         "hermes"
+      ],
+      "kimi_k3_is_fable_level_they_should_be_worried": [
+        "here",
+        "Claude"
+      ]
+    },
+    "kimi_k3_is_fable_level_they_should_be_worried": {
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "actually",
+        "here",
+        "Claude"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Claude"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "model",
+        "models",
+        "Claude",
+        "fable"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "here",
+        "Claude",
+        "SQLite",
+        "Node"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude",
+        "code"
+      ],
+      "use_this_to_make_the_hermes_agent_basically_free": [
+        "Claude",
+        "model"
+      ],
+      "yes_the_kimi_k3_hype_is_real": [
+        "here",
+        "these",
+        "actually",
+        "Claude",
+        "fable"
+      ],
+      "china_just_beat_claude_ai_kimi_k3": [
+        "models",
+        "Claude",
+        "model"
+      ],
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "models",
+        "Claude",
+        "model"
+      ],
+      "i_tested_kimi_k3_so_you_don_t_have_to": [
+        "here",
+        "models",
+        "fable",
+        "model"
+      ],
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "here"
+      ],
+      "kimi_k3_testing_moonshot_s_2_8t_open_model_without": [
+        "Claude",
+        "SQLite",
+        "model"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Claude"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "here",
+        "Claude"
       ]
     }
   },
-  "updated_at": "2026-07-20T02:45:52.901332+00:00",
-  "total_skills": 19
+  "updated_at": "2026-07-20T02:45:53.091006+00:00",
+  "total_skills": 20
 }
