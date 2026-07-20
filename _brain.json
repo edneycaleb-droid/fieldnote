@@ -42,7 +42,7 @@
       ]
     },
     "here": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "new_claude_opus_5_leaks",
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
@@ -95,7 +95,7 @@
       ]
     },
     "need": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
@@ -155,7 +155,7 @@
       ]
     },
     "right": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "kimi_k3_vs_claude_fable_5_raw_results",
@@ -165,7 +165,7 @@
       ]
     },
     "going": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "kimi_k3_vs_claude_fable_5_raw_results",
@@ -276,37 +276,37 @@
       ]
     },
     "work": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "chatgpt_work_everything_you_need_to_know_to_get_st"
       ]
     },
     "site": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "chatgpt_work_everything_you_need_to_know_to_get_st"
       ]
     },
     "chat": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "chatgpt_work_everything_you_need_to_know_to_get_st"
       ]
     },
     "dave": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "chatgpt_work_everything_you_need_to_know_to_get_st"
       ]
     },
     "website": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "chatgpt_work_everything_you_need_to_know_to_get_st"
       ]
     },
     "good": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "chatgpt_work_everything_you_need_to_know_to_get_st"
       ]
@@ -2211,6 +2211,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-20T03:37:47.151795+00:00",
+  "updated_at": "2026-07-20T03:42:22.004472+00:00",
   "total_skills": 19
 }
