@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **8 skills** · Last synced: 2026-07-20 02:41 UTC
+> **9 skills** · Last synced: 2026-07-20 02:41 UTC
 
 ---
 
@@ -9,7 +9,8 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [Kimi K3 + Hermes Agent Changes Everything!](skills/kimi_k3_hermes_agent_changes_everything.md) | By Julian Goldie SEO. (Auto-extracted — pending AI enhancement.) |  | `agent` `inside` `model` |
+| [Google Shrunk 31GB of AI Memory Down to 4GB (TurboQuant)](skills/google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq.md) | By Cloud Codes. Key tools: rag, embedding, Python, LangChain. (Auto-extracted —  | `rag` `embedding` `Python` `LangChain` | `memory` `every` `data` |
+| [How to Run Kimi K3 for FREE!](skills/how_to_run_kimi_k3_for_free.md) | By Julian Goldie SEO. (Auto-extracted — pending AI enhancement.) |  | `free` `going` `here` |
 | [Hermes Agent: Build Your Own Personal AI Assistant (Full Course)](skills/hermes_agent_build_your_own_personal_ai_assistant_.md) | By Komputer Mechanic. Key tools: PowerShell, OpenAI. (Auto-extracted — pending A | `PowerShell` `OpenAI` | `going` `here` `agent` |
 | [Making $$$ with Loop Engineering](skills/making_with_loop_engineering.md) | By Greg Isenberg. Key tools: Claude, OpenAI. (Auto-extracted — pending AI enhanc | `Claude` `OpenAI` | `know` `loop` `sort` |
 | [By August, We'll Have Frontier AI Running Locally](skills/by_august_we_ll_have_frontier_ai_running_locally.md) | By Manolo Remiddi. Key tools: OpenAI, Gemini. (Auto-extracted — pending AI enhan | `OpenAI` `Gemini` | `model` `those` `going` |

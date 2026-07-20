@@ -21,4 +21,4 @@ rag, embedding, Python, LangChain
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-19 | [Google Shrunk 31GB of AI Memory Down to 4GB (TurboQuant)](https://www.youtube.com/watch?v=LvBsACJy4ww) | yt_dlp_subs |
+| 2026-07-20 | [Google Shrunk 31GB of AI Memory Down to 4GB (TurboQuant)](https://www.youtube.com/watch?v=LvBsACJy4ww) | yt_dlp_subs |
