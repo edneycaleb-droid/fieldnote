@@ -26,12 +26,13 @@
       ]
     },
     "here": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "how_to_use_codex_to_build_insanely_beautiful_websi",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
         "every_hermes_concept_explained_for_normal_people",
-        "kimi_k3_crushed_fable"
+        "kimi_k3_crushed_fable",
+        "hermes_agent_full_course_setup_guide_for_complete_"
       ]
     },
     "before": {
@@ -47,11 +48,12 @@
       ]
     },
     "need": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "how_to_use_codex_to_build_insanely_beautiful_websi",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
-        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+        "100_hours_of_hermes_agent_lessons_in_19_minutes",
+        "hermes_agent_full_course_setup_guide_for_complete_"
       ]
     },
     "file": {
@@ -81,11 +83,12 @@
       ]
     },
     "going": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "by_august_we_ll_have_frontier_ai_running_locally",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
-        "kimi_k3_crushed_fable"
+        "kimi_k3_crushed_fable",
+        "hermes_agent_full_course_setup_guide_for_complete_"
       ]
     },
     "because": {
@@ -190,9 +193,10 @@
       ]
     },
     "right": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
+        "chatgpt_work_everything_you_need_to_know_to_get_st",
+        "hermes_agent_full_course_setup_guide_for_complete_"
       ]
     },
     "chat": {
@@ -215,17 +219,19 @@
       ]
     },
     "hermes": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
-        "every_hermes_concept_explained_for_normal_people"
+        "every_hermes_concept_explained_for_normal_people",
+        "hermes_agent_full_course_setup_guide_for_complete_"
       ]
     },
     "agent": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
-        "every_hermes_concept_explained_for_normal_people"
+        "every_hermes_concept_explained_for_normal_people",
+        "hermes_agent_full_course_setup_guide_for_complete_"
       ]
     },
     "other": {
@@ -254,10 +260,11 @@
       ]
     },
     "want": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
-        "every_hermes_concept_explained_for_normal_people"
+        "every_hermes_concept_explained_for_normal_people",
+        "hermes_agent_full_course_setup_guide_for_complete_"
       ]
     },
     "opus": {
@@ -291,9 +298,10 @@
       ]
     },
     "kind": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_crushed_fable"
+        "kimi_k3_crushed_fable",
+        "hermes_agent_full_course_setup_guide_for_complete_"
       ]
     },
     "models": {
@@ -319,6 +327,18 @@
       "skills": [
         "kimi_k3_crushed_fable"
       ]
+    },
+    "okay": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_full_course_setup_guide_for_complete_"
+      ]
+    },
+    "give": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_full_course_setup_guide_for_complete_"
+      ]
     }
   },
   "tools": {
@@ -338,20 +358,22 @@
       ]
     },
     "Anthropic": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "how_to_use_codex_to_build_insanely_beautiful_websi",
         "every_hermes_concept_explained_for_normal_people",
-        "kimi_k3_crushed_fable"
+        "kimi_k3_crushed_fable",
+        "hermes_agent_full_course_setup_guide_for_complete_"
       ]
     },
     "OpenAI": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "how_to_use_codex_to_build_insanely_beautiful_websi",
         "by_august_we_ll_have_frontier_ai_running_locally",
         "every_hermes_concept_explained_for_normal_people",
-        "kimi_k3_crushed_fable"
+        "kimi_k3_crushed_fable",
+        "hermes_agent_full_course_setup_guide_for_complete_"
       ]
     },
     "git": {
@@ -380,9 +402,10 @@
       ]
     },
     "Python": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
+        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq",
+        "hermes_agent_full_course_setup_guide_for_complete_"
       ]
     },
     "LangChain": {
@@ -392,9 +415,10 @@
       ]
     },
     "SSH": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+        "100_hours_of_hermes_agent_lessons_in_19_minutes",
+        "hermes_agent_full_course_setup_guide_for_complete_"
       ]
     },
     "Ollama": {
@@ -413,6 +437,24 @@
       "freq": 1,
       "skills": [
         "every_hermes_concept_explained_for_normal_people"
+      ]
+    },
+    "LLM": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_full_course_setup_guide_for_complete_"
+      ]
+    },
+    "Docker": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_full_course_setup_guide_for_complete_"
+      ]
+    },
+    "curl": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_full_course_setup_guide_for_complete_"
       ]
     }
   },
@@ -613,6 +655,38 @@
         "models"
       ],
       "step_count": 1
+    },
+    "hermes_agent_full_course_setup_guide_for_complete_": {
+      "concepts": [
+        "going",
+        "want",
+        "agent",
+        "here",
+        "hermes",
+        "okay",
+        "kind",
+        "need",
+        "right",
+        "give"
+      ],
+      "tools": [
+        "LLM",
+        "OpenAI",
+        "Anthropic",
+        "Docker",
+        "curl",
+        "SSH",
+        "Python"
+      ],
+      "tags": [
+        "going",
+        "want",
+        "agent",
+        "here",
+        "hermes",
+        "okay"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -641,6 +715,12 @@
         "Anthropic",
         "Claude",
         "OpenAI"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "here",
+        "Anthropic",
+        "need",
+        "OpenAI"
       ]
     },
     "by_august_we_ll_have_frontier_ai_running_locally": {
@@ -666,6 +746,10 @@
         "going",
         "model",
         "OpenAI"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "going",
+        "OpenAI"
       ]
     },
     "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
@@ -678,6 +762,9 @@
       ],
       "every_hermes_concept_explained_for_normal_people": [
         "which"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "Python"
       ]
     },
     "chatgpt_work_everything_you_need_to_know_to_get_st": {
@@ -700,6 +787,12 @@
         "going",
         "here",
         "good"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "going",
+        "right",
+        "here",
+        "need"
       ]
     },
     "100_hours_of_hermes_agent_lessons_in_19_minutes": {
@@ -725,6 +818,13 @@
       "kimi_k3_crushed_fable": [
         "know",
         "Claude"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "want",
+        "SSH",
+        "hermes",
+        "agent",
+        "need"
       ]
     },
     "every_hermes_concept_explained_for_normal_people": {
@@ -756,6 +856,14 @@
         "Anthropic",
         "Claude",
         "OpenAI"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "want",
+        "here",
+        "Anthropic",
+        "hermes",
+        "agent",
+        "OpenAI"
       ]
     },
     "kimi_k3_crushed_fable": {
@@ -784,9 +892,59 @@
         "Anthropic",
         "Claude",
         "OpenAI"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "here",
+        "Anthropic",
+        "kind",
+        "going",
+        "OpenAI"
+      ]
+    },
+    "hermes_agent_full_course_setup_guide_for_complete_": {
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "here",
+        "Anthropic",
+        "need",
+        "OpenAI"
+      ],
+      "by_august_we_ll_have_frontier_ai_running_locally": [
+        "going",
+        "OpenAI"
+      ],
+      "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": [
+        "Python"
+      ],
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "going",
+        "right",
+        "here",
+        "need"
+      ],
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "want",
+        "SSH",
+        "hermes",
+        "agent",
+        "need"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "want",
+        "here",
+        "Anthropic",
+        "hermes",
+        "agent",
+        "OpenAI"
+      ],
+      "kimi_k3_crushed_fable": [
+        "here",
+        "Anthropic",
+        "kind",
+        "going",
+        "OpenAI"
       ]
     }
   },
-  "updated_at": "2026-07-20T02:56:54.567503+00:00",
-  "total_skills": 7
+  "updated_at": "2026-07-20T02:56:54.777610+00:00",
+  "total_skills": 8
 }
