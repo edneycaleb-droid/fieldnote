@@ -1,9 +1,10 @@
 {
   "concepts": {
     "opus": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "new_claude_opus_5_leaks"
+        "new_claude_opus_5_leaks",
+        "100_hours_of_hermes_agent_lessons_in_19_minutes"
       ]
     },
     "model": {
@@ -59,19 +60,86 @@
       "skills": [
         "new_claude_opus_5_leaks"
       ]
+    },
+    "hermes": {
+      "freq": 1,
+      "skills": [
+        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+      ]
+    },
+    "agent": {
+      "freq": 1,
+      "skills": [
+        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+      ]
+    },
+    "other": {
+      "freq": 1,
+      "skills": [
+        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+      ]
+    },
+    "need": {
+      "freq": 1,
+      "skills": [
+        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+      ]
+    },
+    "over": {
+      "freq": 1,
+      "skills": [
+        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+      ]
+    },
+    "using": {
+      "freq": 1,
+      "skills": [
+        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+      ]
+    },
+    "know": {
+      "freq": 1,
+      "skills": [
+        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+      ]
+    },
+    "every": {
+      "freq": 1,
+      "skills": [
+        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+      ]
+    },
+    "want": {
+      "freq": 1,
+      "skills": [
+        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "new_claude_opus_5_leaks"
+        "new_claude_opus_5_leaks",
+        "100_hours_of_hermes_agent_lessons_in_19_minutes"
       ]
     },
     "Anthropic": {
       "freq": 1,
       "skills": [
         "new_claude_opus_5_leaks"
+      ]
+    },
+    "Gemini": {
+      "freq": 1,
+      "skills": [
+        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+      ]
+    },
+    "SSH": {
+      "freq": 1,
+      "skills": [
+        "100_hours_of_hermes_agent_lessons_in_19_minutes"
       ]
     }
   },
@@ -102,11 +170,50 @@
         "claude"
       ],
       "step_count": 1
+    },
+    "100_hours_of_hermes_agent_lessons_in_19_minutes": {
+      "concepts": [
+        "hermes",
+        "agent",
+        "other",
+        "need",
+        "over",
+        "using",
+        "know",
+        "every",
+        "want",
+        "opus"
+      ],
+      "tools": [
+        "Gemini",
+        "SSH",
+        "Claude"
+      ],
+      "tags": [
+        "hermes",
+        "agent",
+        "other",
+        "need",
+        "over",
+        "using"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
-    "new_claude_opus_5_leaks": {}
+    "new_claude_opus_5_leaks": {
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "Claude",
+        "opus"
+      ]
+    },
+    "100_hours_of_hermes_agent_lessons_in_19_minutes": {
+      "new_claude_opus_5_leaks": [
+        "Claude",
+        "opus"
+      ]
+    }
   },
-  "updated_at": "2026-07-20T03:37:25.105002+00:00",
-  "total_skills": 1
+  "updated_at": "2026-07-20T03:37:25.308571+00:00",
+  "total_skills": 2
 }
