@@ -917,6 +917,36 @@
       "skills": [
         "use_this_to_make_the_hermes_agent_basically_free"
       ]
+    },
+    "AI development": {
+      "freq": 1,
+      "skills": [
+        "building_a_second_brain"
+      ]
+    },
+    "digital notebook": {
+      "freq": 1,
+      "skills": [
+        "building_a_second_brain"
+      ]
+    },
+    "large language model": {
+      "freq": 1,
+      "skills": [
+        "building_a_second_brain"
+      ]
+    },
+    "second brain": {
+      "freq": 1,
+      "skills": [
+        "building_a_second_brain"
+      ]
+    },
+    "self-improvement": {
+      "freq": 1,
+      "skills": [
+        "building_a_second_brain"
+      ]
     }
   },
   "tools": {
@@ -972,13 +1002,14 @@
       ]
     },
     "Gemini": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "kimi_k3_fully_tested_an_open_model_beats_fable",
         "by_august_we_ll_have_frontier_ai_running_locally",
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
         "kimi_k3_is_the_best_model_ever_made_sometimes",
-        "china_just_beat_claude_ai_kimi_k3"
+        "china_just_beat_claude_ai_kimi_k3",
+        "building_a_second_brain"
       ]
     },
     "rag": {
@@ -1168,6 +1199,30 @@
       "freq": 1,
       "skills": [
         "use_this_to_make_the_hermes_agent_basically_free"
+      ]
+    },
+    "Obsidian": {
+      "freq": 1,
+      "skills": [
+        "building_a_second_brain"
+      ]
+    },
+    "ChatGPT": {
+      "freq": 1,
+      "skills": [
+        "building_a_second_brain"
+      ]
+    },
+    "Grok": {
+      "freq": 1,
+      "skills": [
+        "building_a_second_brain"
+      ]
+    },
+    "LLM Wiki": {
+      "freq": 1,
+      "skills": [
+        "building_a_second_brain"
       ]
     }
   },
@@ -1990,6 +2045,31 @@
         "optimization"
       ],
       "step_count": 4
+    },
+    "building_a_second_brain": {
+      "concepts": [
+        "AI development",
+        "digital notebook",
+        "large language model",
+        "second brain",
+        "self-improvement"
+      ],
+      "tools": [
+        "Obsidian",
+        "ChatGPT",
+        "Grok",
+        "Gemini",
+        "LLM Wiki"
+      ],
+      "tags": [
+        "AI",
+        "ai",
+        "development",
+        "organization",
+        "productivity",
+        "self-improvement"
+      ],
+      "step_count": 6
     }
   },
   "relationships": {
@@ -2320,6 +2400,9 @@
       ],
       "you_need_to_use_hermes_right_now_goodbye_openclaw": [
         "right"
+      ],
+      "building_a_second_brain": [
+        "Gemini"
       ]
     },
     "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
@@ -2485,6 +2568,9 @@
       ],
       "use_this_to_make_the_hermes_agent_basically_free": [
         "OpenAI"
+      ],
+      "building_a_second_brain": [
+        "Gemini"
       ]
     },
     "kimi_k3_hermes_agent_changes_everything": {
@@ -3360,6 +3446,9 @@
       ],
       "use_this_to_make_the_hermes_agent_basically_free": [
         "OpenAI"
+      ],
+      "building_a_second_brain": [
+        "Gemini"
       ]
     },
     "kimi_k3_is_not_the_story_china_s_ai_master_plan_is": {
@@ -3662,6 +3751,9 @@
       ],
       "use_this_to_make_the_hermes_agent_basically_free": [
         "OpenAI"
+      ],
+      "building_a_second_brain": [
+        "Gemini"
       ]
     },
     "kimi_k3_vs_claude_fable_5_raw_results": {
@@ -5271,6 +5363,9 @@
       ],
       "use_this_to_make_the_hermes_agent_basically_free": [
         "OpenAI"
+      ],
+      "building_a_second_brain": [
+        "Gemini"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -5614,8 +5709,25 @@
       "you_need_to_use_hermes_right_now_goodbye_openclaw": [
         "OpenAI"
       ]
+    },
+    "building_a_second_brain": {
+      "kimi_k3_fully_tested_an_open_model_beats_fable": [
+        "Gemini"
+      ],
+      "by_august_we_ll_have_frontier_ai_running_locally": [
+        "Gemini"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Gemini"
+      ],
+      "kimi_k3_is_the_best_model_ever_made_sometimes": [
+        "Gemini"
+      ],
+      "china_just_beat_claude_ai_kimi_k3": [
+        "Gemini"
+      ]
     }
   },
-  "updated_at": "2026-07-20T02:47:27.461455+00:00",
-  "total_skills": 29
+  "updated_at": "2026-07-20T02:47:32.290899+00:00",
+  "total_skills": 30
 }
