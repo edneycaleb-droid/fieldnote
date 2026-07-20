@@ -8,12 +8,13 @@
       ]
     },
     "agent": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
         "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
         "qwen_3_6_pi_agent_build_your_own_ai_assistant_full",
-        "kimi_k3_hermes_agent_changes_everything"
+        "kimi_k3_hermes_agent_changes_everything",
+        "hermes_agent_build_your_own_personal_ai_assistant_"
       ]
     },
     "other": {
@@ -56,10 +57,11 @@
       ]
     },
     "want": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
-        "kimi_k3_ai_full_course_1_hour_build_automate_anyth"
+        "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
+        "hermes_agent_build_your_own_personal_ai_assistant_"
       ]
     },
     "opus": {
@@ -76,13 +78,14 @@
       ]
     },
     "here": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "chatgpt_work_everything_you_need_to_know_to_get_st",
         "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
         "kimi_k3_is_fable_level_they_should_be_worried",
         "qwen_3_6_pi_agent_build_your_own_ai_assistant_full",
-        "kimi_k3_hermes_agent_changes_everything"
+        "kimi_k3_hermes_agent_changes_everything",
+        "hermes_agent_build_your_own_personal_ai_assistant_"
       ]
     },
     "site": {
@@ -124,11 +127,12 @@
       ]
     },
     "going": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "chatgpt_work_everything_you_need_to_know_to_get_st",
         "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
-        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full",
+        "hermes_agent_build_your_own_personal_ai_assistant_"
       ]
     },
     "kimmy": {
@@ -218,9 +222,10 @@
       ]
     },
     "send": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_fully_tested_an_open_model_beats_fable"
+        "kimi_k3_fully_tested_an_open_model_beats_fable",
+        "hermes_agent_build_your_own_personal_ai_assistant_"
       ]
     },
     "gets": {
@@ -349,6 +354,36 @@
       "skills": [
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
       ]
+    },
+    "agents": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_build_your_own_personal_ai_assistant_"
+      ]
+    },
+    "click": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_build_your_own_personal_ai_assistant_"
+      ]
+    },
+    "calendar": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_build_your_own_personal_ai_assistant_"
+      ]
+    },
+    "coms": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_build_your_own_personal_ai_assistant_"
+      ]
+    },
+    "give": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_build_your_own_personal_ai_assistant_"
+      ]
     }
   },
   "tools": {
@@ -426,6 +461,18 @@
       "freq": 1,
       "skills": [
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
+      ]
+    },
+    "PowerShell": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_build_your_own_personal_ai_assistant_"
+      ]
+    },
+    "OpenAI": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_build_your_own_personal_ai_assistant_"
       ]
     }
   },
@@ -643,6 +690,33 @@
         "search"
       ],
       "step_count": 1
+    },
+    "hermes_agent_build_your_own_personal_ai_assistant_": {
+      "concepts": [
+        "going",
+        "here",
+        "agent",
+        "want",
+        "agents",
+        "click",
+        "send",
+        "calendar",
+        "coms",
+        "give"
+      ],
+      "tools": [
+        "PowerShell",
+        "OpenAI"
+      ],
+      "tags": [
+        "going",
+        "here",
+        "agent",
+        "want",
+        "agents",
+        "click"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -672,6 +746,10 @@
       ],
       "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": [
         "every"
+      ],
+      "hermes_agent_build_your_own_personal_ai_assistant_": [
+        "want",
+        "agent"
       ]
     },
     "chatgpt_work_everything_you_need_to_know_to_get_st": {
@@ -694,6 +772,10 @@
       ],
       "kimi_k3_hermes_agent_changes_everything": [
         "right",
+        "here"
+      ],
+      "hermes_agent_build_your_own_personal_ai_assistant_": [
+        "going",
         "here"
       ]
     },
@@ -727,6 +809,12 @@
       "kimi_k3_hermes_agent_changes_everything": [
         "here",
         "agent"
+      ],
+      "hermes_agent_build_your_own_personal_ai_assistant_": [
+        "going",
+        "want",
+        "here",
+        "agent"
       ]
     },
     "kimi_k3_is_fable_level_they_should_be_worried": {
@@ -754,6 +842,9 @@
       "kimi_k3_hermes_agent_changes_everything": [
         "here",
         "model"
+      ],
+      "hermes_agent_build_your_own_personal_ai_assistant_": [
+        "here"
       ]
     },
     "kimi_k3_fully_tested_an_open_model_beats_fable": {
@@ -776,6 +867,9 @@
         "right",
         "model",
         "video"
+      ],
+      "hermes_agent_build_your_own_personal_ai_assistant_": [
+        "send"
       ]
     },
     "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": {
@@ -798,6 +892,11 @@
         "here"
       ],
       "kimi_k3_hermes_agent_changes_everything": [
+        "here",
+        "agent"
+      ],
+      "hermes_agent_build_your_own_personal_ai_assistant_": [
+        "going",
         "here",
         "agent"
       ]
@@ -827,14 +926,49 @@
       "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
         "here",
         "agent"
+      ],
+      "hermes_agent_build_your_own_personal_ai_assistant_": [
+        "here",
+        "agent"
       ]
     },
     "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
       "100_hours_of_hermes_agent_lessons_in_19_minutes": [
         "every"
       ]
+    },
+    "hermes_agent_build_your_own_personal_ai_assistant_": {
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "want",
+        "agent"
+      ],
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "going",
+        "here"
+      ],
+      "kimi_k3_ai_full_course_1_hour_build_automate_anyth": [
+        "going",
+        "want",
+        "here",
+        "agent"
+      ],
+      "kimi_k3_is_fable_level_they_should_be_worried": [
+        "here"
+      ],
+      "kimi_k3_fully_tested_an_open_model_beats_fable": [
+        "send"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "going",
+        "here",
+        "agent"
+      ],
+      "kimi_k3_hermes_agent_changes_everything": [
+        "here",
+        "agent"
+      ]
     }
   },
-  "updated_at": "2026-07-20T02:51:25.359545+00:00",
-  "total_skills": 8
+  "updated_at": "2026-07-20T02:51:25.523172+00:00",
+  "total_skills": 9
 }
