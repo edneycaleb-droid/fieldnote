@@ -21,4 +21,4 @@ Ollama, Anthropic, OpenAI
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-19 | [I Tested Kimi K3 So You Don't Have To...](https://www.youtube.com/watch?v=To0kYStFS3I) | yt_dlp_subs |
+| 2026-07-20 | [I Tested Kimi K3 So You Don't Have To...](https://www.youtube.com/watch?v=To0kYStFS3I) | yt_dlp_subs |
