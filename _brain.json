@@ -123,16 +123,18 @@
       ]
     },
     "model": {
-      "freq": 1,
-      "skills": [
-        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
-      ]
-    },
-    "which": {
       "freq": 2,
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
-        "this_100_self_improving_ai_agent_is_insane_just_wa"
+        "use_this_to_make_the_hermes_agent_basically_free"
+      ]
+    },
+    "which": {
+      "freq": 3,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
+        "this_100_self_improving_ai_agent_is_insane_just_wa",
+        "use_this_to_make_the_hermes_agent_basically_free"
       ]
     },
     "enthropic": {
@@ -184,17 +186,19 @@
       ]
     },
     "agent": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "this_100_self_improving_ai_agent_is_insane_just_wa",
-        "hermes_claude_code_mcp_integration_loop_engineerin"
+        "hermes_claude_code_mcp_integration_loop_engineerin",
+        "use_this_to_make_the_hermes_agent_basically_free"
       ]
     },
     "hermes": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "this_100_self_improving_ai_agent_is_insane_just_wa",
-        "hermes_claude_code_mcp_integration_loop_engineerin"
+        "hermes_claude_code_mcp_integration_loop_engineerin",
+        "use_this_to_make_the_hermes_agent_basically_free"
       ]
     },
     "right": {
@@ -274,25 +278,63 @@
       "skills": [
         "hermes_claude_code_mcp_integration_loop_engineerin"
       ]
+    },
+    "tokens": {
+      "freq": 1,
+      "skills": [
+        "use_this_to_make_the_hermes_agent_basically_free"
+      ]
+    },
+    "context": {
+      "freq": 1,
+      "skills": [
+        "use_this_to_make_the_hermes_agent_basically_free"
+      ]
+    },
+    "every": {
+      "freq": 1,
+      "skills": [
+        "use_this_to_make_the_hermes_agent_basically_free"
+      ]
+    },
+    "tools": {
+      "freq": 1,
+      "skills": [
+        "use_this_to_make_the_hermes_agent_basically_free"
+      ]
+    },
+    "through": {
+      "freq": 1,
+      "skills": [
+        "use_this_to_make_the_hermes_agent_basically_free"
+      ]
+    },
+    "cost": {
+      "freq": 1,
+      "skills": [
+        "use_this_to_make_the_hermes_agent_basically_free"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "the_15_most_insane_things_created_by_kimi_k3_kimi_",
         "this_ai_business_model_is_creating_new_millionaire",
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
-        "hermes_claude_code_mcp_integration_loop_engineerin"
+        "hermes_claude_code_mcp_integration_loop_engineerin",
+        "use_this_to_make_the_hermes_agent_basically_free"
       ]
     },
     "Anthropic": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "this_ai_business_model_is_creating_new_millionaire",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
-        "hermes_claude_code_mcp_integration_loop_engineerin"
+        "hermes_claude_code_mcp_integration_loop_engineerin",
+        "use_this_to_make_the_hermes_agent_basically_free"
       ]
     },
     "anthropic": {
@@ -302,16 +344,18 @@
       ]
     },
     "Gemini": {
-      "freq": 1,
-      "skills": [
-        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
-      ]
-    },
-    "OpenAI": {
       "freq": 2,
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
-        "this_100_self_improving_ai_agent_is_insane_just_wa"
+        "use_this_to_make_the_hermes_agent_basically_free"
+      ]
+    },
+    "OpenAI": {
+      "freq": 3,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
+        "this_100_self_improving_ai_agent_is_insane_just_wa",
+        "use_this_to_make_the_hermes_agent_basically_free"
       ]
     },
     "Docker": {
@@ -517,6 +561,35 @@
         "step"
       ],
       "step_count": 1
+    },
+    "use_this_to_make_the_hermes_agent_basically_free": {
+      "concepts": [
+        "hermes",
+        "tokens",
+        "context",
+        "model",
+        "every",
+        "tools",
+        "through",
+        "which",
+        "agent",
+        "cost"
+      ],
+      "tools": [
+        "OpenAI",
+        "Claude",
+        "Anthropic",
+        "Gemini"
+      ],
+      "tags": [
+        "hermes",
+        "tokens",
+        "context",
+        "model",
+        "every",
+        "tools"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -534,6 +607,9 @@
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
         "Claude"
+      ],
+      "use_this_to_make_the_hermes_agent_basically_free": [
+        "Claude"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -548,6 +624,10 @@
         "Claude"
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Anthropic",
+        "Claude"
+      ],
+      "use_this_to_make_the_hermes_agent_basically_free": [
         "Anthropic",
         "Claude"
       ]
@@ -566,6 +646,13 @@
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
         "Claude"
+      ],
+      "use_this_to_make_the_hermes_agent_basically_free": [
+        "Gemini",
+        "Claude",
+        "which",
+        "OpenAI",
+        "model"
       ]
     },
     "this_100_self_improving_ai_agent_is_insane_just_wa": {
@@ -589,6 +676,14 @@
         "Python",
         "hermes",
         "agent"
+      ],
+      "use_this_to_make_the_hermes_agent_basically_free": [
+        "Anthropic",
+        "Claude",
+        "which",
+        "hermes",
+        "agent",
+        "OpenAI"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -608,9 +703,45 @@
         "Python",
         "hermes",
         "agent"
+      ],
+      "use_this_to_make_the_hermes_agent_basically_free": [
+        "Anthropic",
+        "Claude",
+        "agent",
+        "hermes"
+      ]
+    },
+    "use_this_to_make_the_hermes_agent_basically_free": {
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "Claude"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Anthropic",
+        "Claude"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Gemini",
+        "Claude",
+        "which",
+        "OpenAI",
+        "model"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "Anthropic",
+        "Claude",
+        "which",
+        "hermes",
+        "agent",
+        "OpenAI"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Anthropic",
+        "Claude",
+        "agent",
+        "hermes"
       ]
     }
   },
-  "updated_at": "2026-07-20T02:40:26.285293+00:00",
-  "total_skills": 5
+  "updated_at": "2026-07-20T02:40:26.361338+00:00",
+  "total_skills": 6
 }
