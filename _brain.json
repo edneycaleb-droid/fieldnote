@@ -7,14 +7,15 @@
       ]
     },
     "going": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "kimi_k3_is_just_ridiculous",
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
         "by_august_we_ll_have_frontier_ai_running_locally",
-        "making_with_loop_engineering"
+        "making_with_loop_engineering",
+        "hermes_agent_build_your_own_personal_ai_assistant_"
       ]
     },
     "wait": {
@@ -39,12 +40,13 @@
       ]
     },
     "here": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "kimi_k3_is_just_ridiculous",
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "how_to_use_codex_to_build_insanely_beautiful_websi",
-        "kimi_k3_ai_full_course_1_hour_build_automate_anyth"
+        "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
+        "hermes_agent_build_your_own_personal_ai_assistant_"
       ]
     },
     "kimmy": {
@@ -74,12 +76,13 @@
       ]
     },
     "agent": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
         "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "hermes_agent_just_got_10x_better_4_insane_new_feat",
+        "hermes_agent_build_your_own_personal_ai_assistant_"
       ]
     },
     "hermes": {
@@ -90,11 +93,12 @@
       ]
     },
     "want": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
-        "kimi_k3_ai_full_course_1_hour_build_automate_anyth"
+        "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
+        "hermes_agent_build_your_own_personal_ai_assistant_"
       ]
     },
     "ahead": {
@@ -110,9 +114,10 @@
       ]
     },
     "click": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+        "hermes_agent_tutorial_for_beginners_full_step_by_s",
+        "hermes_agent_build_your_own_personal_ai_assistant_"
       ]
     },
     "right": {
@@ -209,9 +214,10 @@
       ]
     },
     "send": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_fully_tested_an_open_model_beats_fable"
+        "kimi_k3_fully_tested_an_open_model_beats_fable",
+        "hermes_agent_build_your_own_personal_ai_assistant_"
       ]
     },
     "gets": {
@@ -297,9 +303,10 @@
       ]
     },
     "agents": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "hermes_agent_just_got_10x_better_4_insane_new_feat",
+        "hermes_agent_build_your_own_personal_ai_assistant_"
       ]
     },
     "those": {
@@ -379,6 +386,24 @@
       "skills": [
         "making_with_loop_engineering"
       ]
+    },
+    "calendar": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_build_your_own_personal_ai_assistant_"
+      ]
+    },
+    "coms": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_build_your_own_personal_ai_assistant_"
+      ]
+    },
+    "give": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_build_your_own_personal_ai_assistant_"
+      ]
     }
   },
   "tools": {
@@ -432,11 +457,12 @@
       ]
     },
     "OpenAI": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "how_to_use_codex_to_build_insanely_beautiful_websi",
         "by_august_we_ll_have_frontier_ai_running_locally",
-        "making_with_loop_engineering"
+        "making_with_loop_engineering",
+        "hermes_agent_build_your_own_personal_ai_assistant_"
       ]
     },
     "git": {
@@ -457,6 +483,12 @@
       "freq": 1,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes"
+      ]
+    },
+    "PowerShell": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_build_your_own_personal_ai_assistant_"
       ]
     }
   },
@@ -707,6 +739,33 @@
         "actually"
       ],
       "step_count": 1
+    },
+    "hermes_agent_build_your_own_personal_ai_assistant_": {
+      "concepts": [
+        "going",
+        "here",
+        "agent",
+        "want",
+        "agents",
+        "click",
+        "send",
+        "calendar",
+        "coms",
+        "give"
+      ],
+      "tools": [
+        "PowerShell",
+        "OpenAI"
+      ],
+      "tags": [
+        "going",
+        "here",
+        "agent",
+        "want",
+        "agents",
+        "click"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -745,6 +804,10 @@
         "going",
         "actually",
         "Claude"
+      ],
+      "hermes_agent_build_your_own_personal_ai_assistant_": [
+        "going",
+        "here"
       ]
     },
     "hermes_agent_tutorial_for_beginners_full_step_by_s": {
@@ -788,6 +851,13 @@
       "making_with_loop_engineering": [
         "going",
         "Claude"
+      ],
+      "hermes_agent_build_your_own_personal_ai_assistant_": [
+        "want",
+        "here",
+        "going",
+        "click",
+        "agent"
       ]
     },
     "how_to_use_codex_to_build_insanely_beautiful_websi": {
@@ -819,6 +889,10 @@
         "really",
         "Claude",
         "OpenAI"
+      ],
+      "hermes_agent_build_your_own_personal_ai_assistant_": [
+        "here",
+        "OpenAI"
       ]
     },
     "kimi_k3_fully_tested_an_open_model_beats_fable": {
@@ -842,6 +916,9 @@
       "by_august_we_ll_have_frontier_ai_running_locally": [
         "Gemini",
         "model"
+      ],
+      "hermes_agent_build_your_own_personal_ai_assistant_": [
+        "send"
       ]
     },
     "100_hours_of_hermes_agent_lessons_in_19_minutes": {
@@ -880,6 +957,10 @@
       "making_with_loop_engineering": [
         "know",
         "Claude"
+      ],
+      "hermes_agent_build_your_own_personal_ai_assistant_": [
+        "want",
+        "agent"
       ]
     },
     "kimi_k3_ai_full_course_1_hour_build_automate_anyth": {
@@ -924,6 +1005,12 @@
         "going",
         "actually",
         "Claude"
+      ],
+      "hermes_agent_build_your_own_personal_ai_assistant_": [
+        "going",
+        "want",
+        "here",
+        "agent"
       ]
     },
     "hermes_agent_just_got_10x_better_4_insane_new_feat": {
@@ -966,6 +1053,11 @@
         "actually",
         "basically",
         "Claude"
+      ],
+      "hermes_agent_build_your_own_personal_ai_assistant_": [
+        "going",
+        "agents",
+        "agent"
       ]
     },
     "by_august_we_ll_have_frontier_ai_running_locally": {
@@ -993,6 +1085,10 @@
         "model"
       ],
       "making_with_loop_engineering": [
+        "going",
+        "OpenAI"
+      ],
+      "hermes_agent_build_your_own_personal_ai_assistant_": [
         "going",
         "OpenAI"
       ]
@@ -1030,9 +1126,56 @@
       "by_august_we_ll_have_frontier_ai_running_locally": [
         "going",
         "OpenAI"
+      ],
+      "hermes_agent_build_your_own_personal_ai_assistant_": [
+        "going",
+        "OpenAI"
+      ]
+    },
+    "hermes_agent_build_your_own_personal_ai_assistant_": {
+      "kimi_k3_is_just_ridiculous": [
+        "going",
+        "here"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "want",
+        "here",
+        "going",
+        "click",
+        "agent"
+      ],
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "here",
+        "OpenAI"
+      ],
+      "kimi_k3_fully_tested_an_open_model_beats_fable": [
+        "send"
+      ],
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "want",
+        "agent"
+      ],
+      "kimi_k3_ai_full_course_1_hour_build_automate_anyth": [
+        "going",
+        "want",
+        "here",
+        "agent"
+      ],
+      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
+        "going",
+        "agents",
+        "agent"
+      ],
+      "by_august_we_ll_have_frontier_ai_running_locally": [
+        "going",
+        "OpenAI"
+      ],
+      "making_with_loop_engineering": [
+        "going",
+        "OpenAI"
       ]
     }
   },
-  "updated_at": "2026-07-20T02:40:23.806105+00:00",
-  "total_skills": 9
+  "updated_at": "2026-07-20T02:40:23.831698+00:00",
+  "total_skills": 10
 }
