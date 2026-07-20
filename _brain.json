@@ -1,236 +1,313 @@
 {
   "concepts": {
-    "design": {
-      "freq": 1,
+    "agent": {
+      "freq": 3,
       "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
+        "kimi_k3_hermes_agent_changes_everything",
+        "new_hermes_paperclip_ai_agent_update_is_insane",
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     },
-    "website": {
-      "freq": 1,
+    "inside": {
+      "freq": 2,
       "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
-      ]
-    },
-    "codeex": {
-      "freq": 1,
-      "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
-      ]
-    },
-    "skill": {
-      "freq": 1,
-      "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
-      ]
-    },
-    "here": {
-      "freq": 1,
-      "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
-      ]
-    },
-    "before": {
-      "freq": 1,
-      "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
-      ]
-    },
-    "really": {
-      "freq": 1,
-      "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
-      ]
-    },
-    "need": {
-      "freq": 1,
-      "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
-      ]
-    },
-    "file": {
-      "freq": 1,
-      "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
-      ]
-    },
-    "site": {
-      "freq": 1,
-      "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
+        "kimi_k3_hermes_agent_changes_everything",
+        "new_hermes_paperclip_ai_agent_update_is_insane"
       ]
     },
     "model": {
       "freq": 1,
       "skills": [
-        "by_august_we_ll_have_frontier_ai_running_locally"
+        "kimi_k3_hermes_agent_changes_everything"
       ]
     },
-    "those": {
+    "right": {
+      "freq": 2,
+      "skills": [
+        "kimi_k3_hermes_agent_changes_everything",
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+      ]
+    },
+    "here": {
+      "freq": 2,
+      "skills": [
+        "kimi_k3_hermes_agent_changes_everything",
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+      ]
+    },
+    "system": {
       "freq": 1,
       "skills": [
-        "by_august_we_ll_have_frontier_ai_running_locally"
+        "kimi_k3_hermes_agent_changes_everything"
+      ]
+    },
+    "full": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_hermes_agent_changes_everything"
+      ]
+    },
+    "kimiko": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_hermes_agent_changes_everything"
+      ]
+    },
+    "hermes": {
+      "freq": 3,
+      "skills": [
+        "kimi_k3_hermes_agent_changes_everything",
+        "new_hermes_paperclip_ai_agent_update_is_insane",
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+      ]
+    },
+    "video": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_hermes_agent_changes_everything"
+      ]
+    },
+    "paperclip": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_paperclip_ai_agent_update_is_insane"
+      ]
+    },
+    "agents": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_paperclip_ai_agent_update_is_insane"
+      ]
+    },
+    "team": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_paperclip_ai_agent_update_is_insane"
+      ]
+    },
+    "goal": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_paperclip_ai_agent_update_is_insane"
+      ]
+    },
+    "work": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_paperclip_ai_agent_update_is_insane"
+      ]
+    },
+    "profit": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_paperclip_ai_agent_update_is_insane"
+      ]
+    },
+    "boardroom": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_paperclip_ai_agent_update_is_insane"
+      ]
+    },
+    "want": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+      ]
+    },
+    "ahead": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+      ]
+    },
+    "telegram": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+      ]
+    },
+    "click": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     },
     "going": {
       "freq": 1,
       "skills": [
-        "by_august_we_ll_have_frontier_ai_running_locally"
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     },
-    "because": {
+    "need": {
       "freq": 1,
       "skills": [
-        "by_august_we_ll_have_frontier_ai_running_locally"
-      ]
-    },
-    "something": {
-      "freq": 1,
-      "skills": [
-        "by_august_we_ll_have_frontier_ai_running_locally"
-      ]
-    },
-    "open": {
-      "freq": 1,
-      "skills": [
-        "by_august_we_ll_have_frontier_ai_running_locally"
-      ]
-    },
-    "frontier": {
-      "freq": 1,
-      "skills": [
-        "by_august_we_ll_have_frontier_ai_running_locally"
-      ]
-    },
-    "which": {
-      "freq": 1,
-      "skills": [
-        "by_august_we_ll_have_frontier_ai_running_locally"
-      ]
-    },
-    "better": {
-      "freq": 1,
-      "skills": [
-        "by_august_we_ll_have_frontier_ai_running_locally"
-      ]
-    },
-    "about": {
-      "freq": 1,
-      "skills": [
-        "by_august_we_ll_have_frontier_ai_running_locally"
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 1,
-      "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
-      ]
-    },
-    "next.js": {
-      "freq": 1,
-      "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
-      ]
-    },
-    "Anthropic": {
-      "freq": 1,
-      "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
-      ]
-    },
-    "OpenAI": {
       "freq": 2,
       "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi",
-        "by_august_we_ll_have_frontier_ai_running_locally"
-      ]
-    },
-    "git": {
-      "freq": 1,
-      "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
+        "new_hermes_paperclip_ai_agent_update_is_insane",
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     },
     "Gemini": {
       "freq": 1,
       "skills": [
-        "by_august_we_ll_have_frontier_ai_running_locally"
+        "new_hermes_paperclip_ai_agent_update_is_insane"
+      ]
+    },
+    "Docker": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+      ]
+    },
+    "bash": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+      ]
+    },
+    "Python": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+      ]
+    },
+    "LLM": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     }
   },
   "skill_map": {
-    "how_to_use_codex_to_build_insanely_beautiful_websi": {
+    "kimi_k3_hermes_agent_changes_everything": {
       "concepts": [
-        "design",
-        "website",
-        "codeex",
-        "skill",
+        "agent",
+        "inside",
+        "model",
+        "right",
         "here",
-        "before",
-        "really",
-        "need",
-        "file",
-        "site"
+        "system",
+        "full",
+        "kimiko",
+        "hermes",
+        "video"
       ],
-      "tools": [
-        "Claude",
-        "next.js",
-        "Anthropic",
-        "OpenAI",
-        "git"
-      ],
+      "tools": [],
       "tags": [
-        "design",
-        "website",
-        "codeex",
-        "skill",
+        "agent",
+        "inside",
+        "model",
+        "right",
         "here",
-        "before"
+        "system"
       ],
       "step_count": 1
     },
-    "by_august_we_ll_have_frontier_ai_running_locally": {
+    "new_hermes_paperclip_ai_agent_update_is_insane": {
       "concepts": [
-        "model",
-        "those",
-        "going",
-        "because",
-        "something",
-        "open",
-        "frontier",
-        "which",
-        "better",
-        "about"
+        "agent",
+        "hermes",
+        "paperclip",
+        "agents",
+        "team",
+        "inside",
+        "goal",
+        "work",
+        "profit",
+        "boardroom"
       ],
       "tools": [
-        "OpenAI",
+        "Claude",
         "Gemini"
       ],
       "tags": [
-        "model",
-        "those",
+        "agent",
+        "hermes",
+        "paperclip",
+        "agents",
+        "team",
+        "inside"
+      ],
+      "step_count": 1
+    },
+    "hermes_agent_tutorial_for_beginners_full_step_by_s": {
+      "concepts": [
+        "agent",
+        "hermes",
+        "want",
+        "here",
+        "ahead",
+        "telegram",
+        "click",
+        "right",
         "going",
-        "because",
-        "something",
-        "open"
+        "need"
+      ],
+      "tools": [
+        "Claude",
+        "Docker",
+        "bash",
+        "Python",
+        "LLM"
+      ],
+      "tags": [
+        "agent",
+        "hermes",
+        "want",
+        "here",
+        "ahead",
+        "telegram"
       ],
       "step_count": 1
     }
   },
   "relationships": {
-    "how_to_use_codex_to_build_insanely_beautiful_websi": {
-      "by_august_we_ll_have_frontier_ai_running_locally": [
-        "OpenAI"
+    "kimi_k3_hermes_agent_changes_everything": {
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "inside",
+        "agent",
+        "hermes"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "right",
+        "here",
+        "agent",
+        "hermes"
       ]
     },
-    "by_august_we_ll_have_frontier_ai_running_locally": {
-      "how_to_use_codex_to_build_insanely_beautiful_websi": [
-        "OpenAI"
+    "new_hermes_paperclip_ai_agent_update_is_insane": {
+      "kimi_k3_hermes_agent_changes_everything": [
+        "inside",
+        "agent",
+        "hermes"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Claude",
+        "agent",
+        "hermes"
+      ]
+    },
+    "hermes_agent_tutorial_for_beginners_full_step_by_s": {
+      "kimi_k3_hermes_agent_changes_everything": [
+        "right",
+        "here",
+        "agent",
+        "hermes"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude",
+        "agent",
+        "hermes"
       ]
     }
   },
-  "updated_at": "2026-07-20T02:56:52.919922+00:00",
-  "total_skills": 2
+  "updated_at": "2026-07-20T02:56:52.911639+00:00",
+  "total_skills": 3
 }
