@@ -21,4 +21,4 @@ Claude, Docker, Anthropic, OpenAI, Llama, Python, SSH, LLM, Git
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-19 | [Hermes Agent: Zero to Personal AI Assistant (1 Hour Course)](https://www.youtube.com/watch?v=gb5TlGw6Uks) | yt_dlp_subs |
+| 2026-07-20 | [Hermes Agent: Zero to Personal AI Assistant (1 Hour Course)](https://www.youtube.com/watch?v=gb5TlGw6Uks) | yt_dlp_subs |
