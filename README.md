@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **17 skills** · Last synced: 2026-07-20 02:52 UTC
+> **18 skills** · Last synced: 2026-07-20 02:52 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Chemistry 3 Model: A Powerful, Open-Source AI Model](skills/nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe.md) | This skill covers the Chemistry 3 model, a powerful, open-source AI model that s | `Clou` `Anthropic` `API` `Chemistry 3 API` | `ai` `web-development` `front-end-design` |
 | [Kimi K3 Downfall: A Threat to Anthropic's Dominance](skills/kimi_k3_is_not_the_story_china_s_ai_master_plan_is.md) | Kimi K3's emergence as a top AI model poses a significant threat to Anthropic's  | `Claude` `Anthropic` `OpenAI` `Gemini` | `ai` `machine learning` `natural language processing` |
 | [Hermes Agent Setup: A Step-by-Step Guide](skills/this_100_self_improving_ai_agent_is_insane_just_wa.md) | This skill teaches how to set up Hermes Agent, a self-improving AI assistant, an | `Hostinger` `Hermes Agent` | `AI` `self-improvement` `Hermes Agent` |
 | [Hermes + Paperclip: A Powerful AI Agent Integration](skills/new_hermes_paperclip_ai_agent_update_is_insane.md) | Learn how to integrate Hermes and Paperclip to create a powerful AI agent that c | `Hermes` `Paperclip` `Claude` | `ai-agents` `team-management` `task-automation` |
