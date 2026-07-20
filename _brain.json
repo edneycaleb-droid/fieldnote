@@ -71,10 +71,11 @@
       ]
     },
     "here": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "chatgpt_work_everything_you_need_to_know_to_get_st",
-        "kimi_k3_ai_full_course_1_hour_build_automate_anyth"
+        "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
+        "kimi_k3_is_fable_level_they_should_be_worried"
       ]
     },
     "site": {
@@ -133,21 +134,65 @@
       ]
     },
     "actually": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_ai_full_course_1_hour_build_automate_anyth"
+        "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
+        "kimi_k3_is_fable_level_they_should_be_worried"
       ]
     },
     "well": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_ai_full_course_1_hour_build_automate_anyth"
+        "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
+        "kimi_k3_is_fable_level_they_should_be_worried"
       ]
     },
     "create": {
       "freq": 1,
       "skills": [
         "kimi_k3_ai_full_course_1_hour_build_automate_anyth"
+      ]
+    },
+    "fable": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_is_fable_level_they_should_be_worried"
+      ]
+    },
+    "pretty": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_is_fable_level_they_should_be_worried"
+      ]
+    },
+    "model": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_is_fable_level_they_should_be_worried"
+      ]
+    },
+    "models": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_is_fable_level_they_should_be_worried"
+      ]
+    },
+    "these": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_is_fable_level_they_should_be_worried"
+      ]
+    },
+    "code": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_is_fable_level_they_should_be_worried"
+      ]
+    },
+    "didn": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_is_fable_level_they_should_be_worried"
       ]
     }
   },
@@ -165,16 +210,41 @@
       ]
     },
     "Claude": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
-        "kimi_k3_ai_full_course_1_hour_build_automate_anyth"
+        "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
+        "kimi_k3_is_fable_level_they_should_be_worried"
       ]
     },
     "LLM": {
       "freq": 1,
       "skills": [
         "kimi_k3_ai_full_course_1_hour_build_automate_anyth"
+      ]
+    },
+    "React": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_is_fable_level_they_should_be_worried"
+      ]
+    },
+    "Next.js": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_is_fable_level_they_should_be_worried"
+      ]
+    },
+    "SQLite": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_is_fable_level_they_should_be_worried"
+      ]
+    },
+    "Node": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_is_fable_level_they_should_be_worried"
       ]
     }
   },
@@ -257,6 +327,36 @@
         "over"
       ],
       "step_count": 1
+    },
+    "kimi_k3_is_fable_level_they_should_be_worried": {
+      "concepts": [
+        "actually",
+        "here",
+        "fable",
+        "pretty",
+        "model",
+        "well",
+        "models",
+        "these",
+        "code",
+        "didn"
+      ],
+      "tools": [
+        "Claude",
+        "React",
+        "Next.js",
+        "SQLite",
+        "Node"
+      ],
+      "tags": [
+        "actually",
+        "here",
+        "fable",
+        "pretty",
+        "model",
+        "well"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -269,6 +369,9 @@
         "Claude",
         "agent",
         "over"
+      ],
+      "kimi_k3_is_fable_level_they_should_be_worried": [
+        "Claude"
       ]
     },
     "chatgpt_work_everything_you_need_to_know_to_get_st": {
@@ -277,6 +380,9 @@
       ],
       "kimi_k3_ai_full_course_1_hour_build_automate_anyth": [
         "going",
+        "here"
+      ],
+      "kimi_k3_is_fable_level_they_should_be_worried": [
         "here"
       ]
     },
@@ -290,9 +396,29 @@
       "chatgpt_work_everything_you_need_to_know_to_get_st": [
         "going",
         "here"
+      ],
+      "kimi_k3_is_fable_level_they_should_be_worried": [
+        "actually",
+        "here",
+        "Claude",
+        "well"
+      ]
+    },
+    "kimi_k3_is_fable_level_they_should_be_worried": {
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "Claude"
+      ],
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "here"
+      ],
+      "kimi_k3_ai_full_course_1_hour_build_automate_anyth": [
+        "actually",
+        "here",
+        "Claude",
+        "well"
       ]
     }
   },
-  "updated_at": "2026-07-20T02:51:24.530184+00:00",
-  "total_skills": 3
+  "updated_at": "2026-07-20T02:51:24.569740+00:00",
+  "total_skills": 4
 }
