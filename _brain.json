@@ -1,108 +1,63 @@
 {
   "concepts": {
-    "agent": {
-      "freq": 2,
-      "skills": [
-        "kimi_k3_hermes_agent_changes_everything",
-        "new_hermes_paperclip_ai_agent_update_is_insane"
-      ]
-    },
-    "inside": {
-      "freq": 2,
-      "skills": [
-        "kimi_k3_hermes_agent_changes_everything",
-        "new_hermes_paperclip_ai_agent_update_is_insane"
-      ]
-    },
-    "model": {
+    "design": {
       "freq": 1,
       "skills": [
-        "kimi_k3_hermes_agent_changes_everything"
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
     },
-    "right": {
+    "website": {
       "freq": 1,
       "skills": [
-        "kimi_k3_hermes_agent_changes_everything"
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
+      ]
+    },
+    "codeex": {
+      "freq": 1,
+      "skills": [
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
+      ]
+    },
+    "skill": {
+      "freq": 1,
+      "skills": [
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
     },
     "here": {
       "freq": 1,
       "skills": [
-        "kimi_k3_hermes_agent_changes_everything"
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
     },
-    "system": {
+    "before": {
       "freq": 1,
       "skills": [
-        "kimi_k3_hermes_agent_changes_everything"
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
     },
-    "full": {
+    "really": {
       "freq": 1,
       "skills": [
-        "kimi_k3_hermes_agent_changes_everything"
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
     },
-    "kimiko": {
+    "need": {
       "freq": 1,
       "skills": [
-        "kimi_k3_hermes_agent_changes_everything"
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
     },
-    "hermes": {
-      "freq": 2,
-      "skills": [
-        "kimi_k3_hermes_agent_changes_everything",
-        "new_hermes_paperclip_ai_agent_update_is_insane"
-      ]
-    },
-    "video": {
+    "file": {
       "freq": 1,
       "skills": [
-        "kimi_k3_hermes_agent_changes_everything"
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
     },
-    "paperclip": {
+    "site": {
       "freq": 1,
       "skills": [
-        "new_hermes_paperclip_ai_agent_update_is_insane"
-      ]
-    },
-    "agents": {
-      "freq": 1,
-      "skills": [
-        "new_hermes_paperclip_ai_agent_update_is_insane"
-      ]
-    },
-    "team": {
-      "freq": 1,
-      "skills": [
-        "new_hermes_paperclip_ai_agent_update_is_insane"
-      ]
-    },
-    "goal": {
-      "freq": 1,
-      "skills": [
-        "new_hermes_paperclip_ai_agent_update_is_insane"
-      ]
-    },
-    "work": {
-      "freq": 1,
-      "skills": [
-        "new_hermes_paperclip_ai_agent_update_is_insane"
-      ]
-    },
-    "profit": {
-      "freq": 1,
-      "skills": [
-        "new_hermes_paperclip_ai_agent_update_is_insane"
-      ]
-    },
-    "boardroom": {
-      "freq": 1,
-      "skills": [
-        "new_hermes_paperclip_ai_agent_update_is_insane"
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
     }
   },
@@ -110,85 +65,69 @@
     "Claude": {
       "freq": 1,
       "skills": [
-        "new_hermes_paperclip_ai_agent_update_is_insane"
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
     },
-    "Gemini": {
+    "next.js": {
       "freq": 1,
       "skills": [
-        "new_hermes_paperclip_ai_agent_update_is_insane"
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
+      ]
+    },
+    "Anthropic": {
+      "freq": 1,
+      "skills": [
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
+      ]
+    },
+    "OpenAI": {
+      "freq": 1,
+      "skills": [
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
+      ]
+    },
+    "git": {
+      "freq": 1,
+      "skills": [
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
     }
   },
   "skill_map": {
-    "kimi_k3_hermes_agent_changes_everything": {
+    "how_to_use_codex_to_build_insanely_beautiful_websi": {
       "concepts": [
-        "agent",
-        "inside",
-        "model",
-        "right",
+        "design",
+        "website",
+        "codeex",
+        "skill",
         "here",
-        "system",
-        "full",
-        "kimiko",
-        "hermes",
-        "video"
-      ],
-      "tools": [],
-      "tags": [
-        "agent",
-        "inside",
-        "model",
-        "right",
-        "here",
-        "system"
-      ],
-      "step_count": 1
-    },
-    "new_hermes_paperclip_ai_agent_update_is_insane": {
-      "concepts": [
-        "agent",
-        "hermes",
-        "paperclip",
-        "agents",
-        "team",
-        "inside",
-        "goal",
-        "work",
-        "profit",
-        "boardroom"
+        "before",
+        "really",
+        "need",
+        "file",
+        "site"
       ],
       "tools": [
         "Claude",
-        "Gemini"
+        "next.js",
+        "Anthropic",
+        "OpenAI",
+        "git"
       ],
       "tags": [
-        "agent",
-        "hermes",
-        "paperclip",
-        "agents",
-        "team",
-        "inside"
+        "design",
+        "website",
+        "codeex",
+        "skill",
+        "here",
+        "before"
       ],
       "step_count": 1
     }
   },
   "relationships": {
-    "kimi_k3_hermes_agent_changes_everything": {
-      "new_hermes_paperclip_ai_agent_update_is_insane": [
-        "inside",
-        "agent",
-        "hermes"
-      ]
-    },
-    "new_hermes_paperclip_ai_agent_update_is_insane": {
-      "kimi_k3_hermes_agent_changes_everything": [
-        "inside",
-        "agent",
-        "hermes"
-      ]
-    }
+    "how_to_use_codex_to_build_insanely_beautiful_websi": {}
   },
-  "updated_at": "2026-07-20T02:56:52.892051+00:00",
-  "total_skills": 2
+  "updated_at": "2026-07-20T02:56:52.914223+00:00",
+  "total_skills": 1
 }
