@@ -1,10 +1,11 @@
 {
   "concepts": {
     "agent": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
-        "hermes_agent_build_your_own_personal_ai_assistant_"
+        "hermes_agent_build_your_own_personal_ai_assistant_",
+        "kimi_k3_hermes_agent_changes_everything"
       ]
     },
     "going": {
@@ -35,18 +36,20 @@
       ]
     },
     "model": {
+      "freq": 4,
+      "skills": [
+        "hermes_agent_just_got_10x_better_4_insane_new_feat",
+        "kimi_k3_fully_tested_an_open_model_beats_fable",
+        "by_august_we_ll_have_frontier_ai_running_locally",
+        "kimi_k3_hermes_agent_changes_everything"
+      ]
+    },
+    "right": {
       "freq": 3,
       "skills": [
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
         "kimi_k3_fully_tested_an_open_model_beats_fable",
-        "by_august_we_ll_have_frontier_ai_running_locally"
-      ]
-    },
-    "right": {
-      "freq": 2,
-      "skills": [
-        "hermes_agent_just_got_10x_better_4_insane_new_feat",
-        "kimi_k3_fully_tested_an_open_model_beats_fable"
+        "kimi_k3_hermes_agent_changes_everything"
       ]
     },
     "basically": {
@@ -69,9 +72,10 @@
       ]
     },
     "here": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "hermes_agent_build_your_own_personal_ai_assistant_"
+        "hermes_agent_build_your_own_personal_ai_assistant_",
+        "kimi_k3_hermes_agent_changes_everything"
       ]
     },
     "want": {
@@ -148,9 +152,10 @@
       ]
     },
     "video": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_fully_tested_an_open_model_beats_fable"
+        "kimi_k3_fully_tested_an_open_model_beats_fable",
+        "kimi_k3_hermes_agent_changes_everything"
       ]
     },
     "memory": {
@@ -243,6 +248,36 @@
       "freq": 1,
       "skills": [
         "by_august_we_ll_have_frontier_ai_running_locally"
+      ]
+    },
+    "inside": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_hermes_agent_changes_everything"
+      ]
+    },
+    "system": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_hermes_agent_changes_everything"
+      ]
+    },
+    "full": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_hermes_agent_changes_everything"
+      ]
+    },
+    "kimiko": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_hermes_agent_changes_everything"
+      ]
+    },
+    "hermes": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_hermes_agent_changes_everything"
       ]
     }
   },
@@ -433,6 +468,30 @@
         "open"
       ],
       "step_count": 1
+    },
+    "kimi_k3_hermes_agent_changes_everything": {
+      "concepts": [
+        "agent",
+        "inside",
+        "model",
+        "right",
+        "here",
+        "system",
+        "full",
+        "kimiko",
+        "hermes",
+        "video"
+      ],
+      "tools": [],
+      "tags": [
+        "agent",
+        "inside",
+        "model",
+        "right",
+        "here",
+        "system"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -452,6 +511,11 @@
       "by_august_we_ll_have_frontier_ai_running_locally": [
         "going",
         "model"
+      ],
+      "kimi_k3_hermes_agent_changes_everything": [
+        "right",
+        "model",
+        "agent"
       ]
     },
     "hermes_agent_build_your_own_personal_ai_assistant_": {
@@ -466,6 +530,10 @@
       "by_august_we_ll_have_frontier_ai_running_locally": [
         "going",
         "OpenAI"
+      ],
+      "kimi_k3_hermes_agent_changes_everything": [
+        "here",
+        "agent"
       ]
     },
     "kimi_k3_fully_tested_an_open_model_beats_fable": {
@@ -479,6 +547,11 @@
       "by_august_we_ll_have_frontier_ai_running_locally": [
         "Gemini",
         "model"
+      ],
+      "kimi_k3_hermes_agent_changes_everything": [
+        "right",
+        "model",
+        "video"
       ]
     },
     "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
@@ -506,9 +579,31 @@
       "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": [
         "because",
         "which"
+      ],
+      "kimi_k3_hermes_agent_changes_everything": [
+        "model"
+      ]
+    },
+    "kimi_k3_hermes_agent_changes_everything": {
+      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
+        "right",
+        "model",
+        "agent"
+      ],
+      "hermes_agent_build_your_own_personal_ai_assistant_": [
+        "here",
+        "agent"
+      ],
+      "kimi_k3_fully_tested_an_open_model_beats_fable": [
+        "right",
+        "model",
+        "video"
+      ],
+      "by_august_we_ll_have_frontier_ai_running_locally": [
+        "model"
       ]
     }
   },
-  "updated_at": "2026-07-20T02:45:54.112391+00:00",
-  "total_skills": 5
+  "updated_at": "2026-07-20T02:45:54.151899+00:00",
+  "total_skills": 6
 }
