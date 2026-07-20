@@ -119,20 +119,99 @@
       "skills": [
         "this_ai_business_model_is_creating_new_millionaire"
       ]
+    },
+    "model": {
+      "freq": 1,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+      ]
+    },
+    "which": {
+      "freq": 1,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+      ]
+    },
+    "enthropic": {
+      "freq": 1,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+      ]
+    },
+    "even": {
+      "freq": 1,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+      ]
+    },
+    "fable": {
+      "freq": 1,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+      ]
+    },
+    "already": {
+      "freq": 1,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+      ]
+    },
+    "over": {
+      "freq": 1,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+      ]
+    },
+    "models": {
+      "freq": 1,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+      ]
+    },
+    "today": {
+      "freq": 1,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+      ]
+    },
+    "next": {
+      "freq": 1,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "the_15_most_insane_things_created_by_kimi_k3_kimi_",
-        "this_ai_business_model_is_creating_new_millionaire"
+        "this_ai_business_model_is_creating_new_millionaire",
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
       ]
     },
     "Anthropic": {
       "freq": 1,
       "skills": [
         "this_ai_business_model_is_creating_new_millionaire"
+      ]
+    },
+    "anthropic": {
+      "freq": 1,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+      ]
+    },
+    "Gemini": {
+      "freq": 1,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+      ]
+    },
+    "OpenAI": {
+      "freq": 1,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
       ]
     }
   },
@@ -189,20 +268,63 @@
         "first"
       ],
       "step_count": 1
+    },
+    "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": {
+      "concepts": [
+        "model",
+        "which",
+        "enthropic",
+        "even",
+        "fable",
+        "already",
+        "over",
+        "models",
+        "today",
+        "next"
+      ],
+      "tools": [
+        "Claude",
+        "anthropic",
+        "Gemini",
+        "OpenAI"
+      ],
+      "tags": [
+        "model",
+        "which",
+        "enthropic",
+        "even",
+        "fable",
+        "already"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
       "this_ai_business_model_is_creating_new_millionaire": [
         "Claude"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
       "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
         "Claude"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
+      ]
+    },
+    "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": {
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "Claude"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Claude"
       ]
     }
   },
-  "updated_at": "2026-07-20T02:40:26.107342+00:00",
-  "total_skills": 2
+  "updated_at": "2026-07-20T02:40:26.192273+00:00",
+  "total_skills": 3
 }
