@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **4 skills** · Last synced: 2026-07-20 02:57 UTC
+> **5 skills** · Last synced: 2026-07-20 02:57 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Kimi K3 CRUSHED Fable](skills/kimi_k3_crushed_fable.md) | By Wes Roth. Key tools: Claude, Anthropic, OpenAI. (Auto-extracted — pending AI  | `Claude` `Anthropic` `OpenAI` | `kind` `know` `here` |
 | [Every Hermes Concept explained for Normal People](skills/every_hermes_concept_explained_for_normal_people.md) | By Jack Roberts. Key tools: Claude, Anthropic, OpenAI, Ollama, SQLite. (Auto-ext | `Claude` `Anthropic` `OpenAI` `Ollama` | `hermes` `here` `about` |
 | [ChatGPT Work: Everything You Need to Know to Get Started!](skills/chatgpt_work_everything_you_need_to_know_to_get_st.md) | By The AI Advantage. (Auto-extracted — pending AI enhancement.) |  | `work` `here` `site` |
 | [Google Shrunk 31GB of AI Memory Down to 4GB (TurboQuant)](skills/google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq.md) | By Cloud Codes. Key tools: rag, embedding, Python, LangChain. (Auto-extracted —  | `rag` `embedding` `Python` `LangChain` | `memory` `every` `data` |
