@@ -21,4 +21,4 @@ Claude, Docker, bash, Python, LLM
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-19 | [Hermes Agent Tutorial for Beginners (Full Step-by-Step Setup)](https://www.youtube.com/watch?v=LvWobwr0Neg) | yt_dlp_subs |
+| 2026-07-20 | [Hermes Agent Tutorial for Beginners (Full Step-by-Step Setup)](https://www.youtube.com/watch?v=LvWobwr0Neg) | yt_dlp_subs |

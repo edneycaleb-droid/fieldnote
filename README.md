@@ -9,7 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [Kimi K3 is just ridiculous](skills/kimi_k3_is_just_ridiculous.md) | By LanceyPoo. Key tools: Claude. (Auto-extracted — pending AI enhancement.) | `Claude` | `okay` `going` `wait` |
+| [Hermes Agent Tutorial for Beginners (Full Step-by-Step Setup)](skills/hermes_agent_tutorial_for_beginners_full_step_by_s.md) | By Metics Media. Key tools: Claude, Docker, bash, Python, LLM. (Auto-extracted — | `Claude` `Docker` `bash` `Python` | `agent` `hermes` `want` |
 | [New Hermes Agent OS is INSANE!](skills/new_hermes_agent_os_is_insane.md) | By Julian Goldie SEO. Key tools: Claude. (Auto-extracted — pending AI enhancemen | `Claude` | `same` `outreach` `agent` |
 | [NEW Hermes + Paperclip AI Agent Update Is INSANE](skills/new_hermes_paperclip_ai_agent_update_is_insane.md) | By Julian Goldie SEO. Key tools: Claude, Gemini. (Auto-extracted — pending AI en | `Claude` `Gemini` | `agent` `hermes` `paperclip` |
 | [Kimmy K3.1, Grok 4.6, DeepSeek v4 GA, U.S. Gov's Gold Eagle, & Robot MMA!](skills/anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v.md) | This video discusses the latest developments in AI, including Kimmy K3.1, Grok 4 | `Moonshot AI` `Enthropic` `Claude` `Grok` | `AI` `Machine Learning` `Deep Learning` |
@@ -43,7 +43,7 @@
 | [graphrag_deployment](skills/graphrag_deployment.md) |  |  |  |
 | [use_this_to_make_the_hermes_agent_basically_free](skills/use_this_to_make_the_hermes_agent_basically_free.md) |  |  |  |
 | [building_resilient_ai_agents_with_langgraph](skills/building_resilient_ai_agents_with_langgraph.md) |  |  |  |
-| [hermes_agent_tutorial_for_beginners_full_step_by_s](skills/hermes_agent_tutorial_for_beginners_full_step_by_s.md) |  |  |  |
+| [kimi_k3_is_just_ridiculous](skills/kimi_k3_is_just_ridiculous.md) |  |  |  |
 | [swanlab_ai_training_analysis_platform](skills/swanlab_ai_training_analysis_platform.md) |  |  |  |
 | [run_kimi_k3_inside_claude_code_max_power](skills/run_kimi_k3_inside_claude_code_max_power.md) |  |  |  |
 | [deploying_retrieval_augmented_generation_with_ragflow](skills/deploying_retrieval_augmented_generation_with_ragflow.md) |  |  |  |
