@@ -21,4 +21,4 @@ Claude, Anthropic, Ollama
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-19 | [Kimi K3 VS Claude Fable 5 (Raw Results)](https://www.youtube.com/watch?v=5t24ZZgYLBg) | yt_dlp_subs |
+| 2026-07-20 | [Kimi K3 VS Claude Fable 5 (Raw Results)](https://www.youtube.com/watch?v=5t24ZZgYLBg) | yt_dlp_subs |
