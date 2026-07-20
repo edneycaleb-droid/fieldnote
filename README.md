@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **15 skills** · Last synced: 2026-07-20 02:42 UTC
+> **16 skills** · Last synced: 2026-07-20 02:42 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Kimi K3 Testing Moonshot's 2.8T Open Model Without](skills/this_kimi_k3_agent_os_is_wild.md) | This skill teaches how to compare the performance of Kimi K3 and Fable 5 in a co | `Kimi K3` `Fable 5` `OpenRouter` | `ai-models` `benchmarking` `performance-comparison` |
 | [Chat GPT Work Tutorial: Building a Live Website](skills/chatgpt_work_everything_you_need_to_know_to_get_st.md) | This skill teaches how to use Chat GPT Work to build a live website, including s | `Chat GPT Work` `Sites tool` `LLM` `OpenAI` | `AI` `Chat GPT` `Website building` |
 | [Hermes Agent Security Guidance](skills/you_need_to_use_hermes_right_now_goodbye_openclaw.md) | This skill teaches how to use Hermes Agent to check every file, commit, and move | `LLM` `OpenAI` `Anthropic` `Docker` | `security` `guidance` `hermes` |
 | [I Tested Kimi K3 So You Don't Have To...](skills/i_tested_kimi_k3_so_you_don_t_have_to.md) | By Nick Saraev. Key tools: Ollama, Anthropic, OpenAI. (Auto-extracted — pending  | `Ollama` `Anthropic` `OpenAI` | `know` `kimmy` `here` |
