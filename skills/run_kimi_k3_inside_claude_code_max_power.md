@@ -21,4 +21,4 @@ Claude, anthropic
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-19 | [Run Kimi K3 Inside Claude Code (MAX POWER)](https://www.youtube.com/watch?v=wMyVeDx719s) | yt_dlp_subs |
+| 2026-07-20 | [Run Kimi K3 Inside Claude Code (MAX POWER)](https://www.youtube.com/watch?v=wMyVeDx719s) | yt_dlp_subs |
