@@ -21,4 +21,4 @@ Anthropic, OpenAI, Claude
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-19 | [Yes, the Kimi K3 Hype is Real](https://www.youtube.com/watch?v=MeYdaNnXuHI) | yt_dlp_subs |
+| 2026-07-20 | [Yes, the Kimi K3 Hype is Real](https://www.youtube.com/watch?v=MeYdaNnXuHI) | yt_dlp_subs |
