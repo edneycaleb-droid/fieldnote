@@ -1,1258 +1,147 @@
 {
   "concepts": {
-    "hermes": {
-      "freq": 2,
-      "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes",
-        "kimi_k3_hermes_agent_changes_everything"
-      ]
-    },
-    "agent": {
-      "freq": 5,
-      "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes",
-        "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
-        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full",
-        "kimi_k3_hermes_agent_changes_everything",
-        "hermes_agent_build_your_own_personal_ai_assistant_"
-      ]
-    },
-    "other": {
+    "going": {
       "freq": 1,
       "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes"
-      ]
-    },
-    "need": {
-      "freq": 2,
-      "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes",
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
-      ]
-    },
-    "over": {
-      "freq": 2,
-      "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes",
-        "kimi_k3_ai_full_course_1_hour_build_automate_anyth"
-      ]
-    },
-    "using": {
-      "freq": 1,
-      "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes"
-      ]
-    },
-    "know": {
-      "freq": 1,
-      "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes"
-      ]
-    },
-    "every": {
-      "freq": 2,
-      "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes",
-        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
+        "hermes_agent_full_course_setup_guide_for_complete_"
       ]
     },
     "want": {
-      "freq": 3,
-      "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes",
-        "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
-        "hermes_agent_build_your_own_personal_ai_assistant_"
-      ]
-    },
-    "opus": {
-      "freq": 2,
-      "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes",
-        "kimi_k3_fully_tested_an_open_model_beats_fable"
-      ]
-    },
-    "work": {
       "freq": 1,
       "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
+        "hermes_agent_full_course_setup_guide_for_complete_"
+      ]
+    },
+    "agent": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_full_course_setup_guide_for_complete_"
       ]
     },
     "here": {
-      "freq": 7,
-      "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st",
-        "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
-        "kimi_k3_is_fable_level_they_should_be_worried",
-        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full",
-        "kimi_k3_hermes_agent_changes_everything",
-        "hermes_agent_build_your_own_personal_ai_assistant_",
-        "kimi_k3_vs_claude_fable_5_raw_results"
-      ]
-    },
-    "site": {
       "freq": 1,
       "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
+        "hermes_agent_full_course_setup_guide_for_complete_"
+      ]
+    },
+    "hermes": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_full_course_setup_guide_for_complete_"
+      ]
+    },
+    "okay": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_full_course_setup_guide_for_complete_"
+      ]
+    },
+    "kind": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_full_course_setup_guide_for_complete_"
+      ]
+    },
+    "need": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_full_course_setup_guide_for_complete_"
       ]
     },
     "right": {
-      "freq": 4,
-      "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st",
-        "kimi_k3_fully_tested_an_open_model_beats_fable",
-        "kimi_k3_hermes_agent_changes_everything",
-        "kimi_k3_vs_claude_fable_5_raw_results"
-      ]
-    },
-    "chat": {
       "freq": 1,
       "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
-      ]
-    },
-    "dave": {
-      "freq": 1,
-      "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
-      ]
-    },
-    "website": {
-      "freq": 1,
-      "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
-      ]
-    },
-    "good": {
-      "freq": 1,
-      "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
-      ]
-    },
-    "going": {
-      "freq": 6,
-      "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st",
-        "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
-        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full",
-        "hermes_agent_build_your_own_personal_ai_assistant_",
-        "by_august_we_ll_have_frontier_ai_running_locally",
-        "kimi_k3_vs_claude_fable_5_raw_results"
-      ]
-    },
-    "kimmy": {
-      "freq": 2,
-      "skills": [
-        "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
-        "kimi_k3_fully_tested_an_open_model_beats_fable"
-      ]
-    },
-    "example": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_ai_full_course_1_hour_build_automate_anyth"
-      ]
-    },
-    "actually": {
-      "freq": 3,
-      "skills": [
-        "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
-        "kimi_k3_is_fable_level_they_should_be_worried",
-        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
-      ]
-    },
-    "well": {
-      "freq": 3,
-      "skills": [
-        "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
-        "kimi_k3_is_fable_level_they_should_be_worried",
-        "kimi_k3_vs_claude_fable_5_raw_results"
-      ]
-    },
-    "create": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_ai_full_course_1_hour_build_automate_anyth"
-      ]
-    },
-    "fable": {
-      "freq": 3,
-      "skills": [
-        "kimi_k3_is_fable_level_they_should_be_worried",
-        "kimi_k3_fully_tested_an_open_model_beats_fable",
-        "kimi_k3_vs_claude_fable_5_raw_results"
-      ]
-    },
-    "pretty": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_is_fable_level_they_should_be_worried"
-      ]
-    },
-    "model": {
-      "freq": 4,
-      "skills": [
-        "kimi_k3_is_fable_level_they_should_be_worried",
-        "kimi_k3_fully_tested_an_open_model_beats_fable",
-        "kimi_k3_hermes_agent_changes_everything",
-        "by_august_we_ll_have_frontier_ai_running_locally"
-      ]
-    },
-    "models": {
-      "freq": 2,
-      "skills": [
-        "kimi_k3_is_fable_level_they_should_be_worried",
-        "kimi_k3_fully_tested_an_open_model_beats_fable"
-      ]
-    },
-    "these": {
-      "freq": 2,
-      "skills": [
-        "kimi_k3_is_fable_level_they_should_be_worried",
-        "kimi_k3_vs_claude_fable_5_raw_results"
-      ]
-    },
-    "code": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_is_fable_level_they_should_be_worried"
-      ]
-    },
-    "didn": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_is_fable_level_they_should_be_worried"
-      ]
-    },
-    "question": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_fully_tested_an_open_model_beats_fable"
-      ]
-    },
-    "send": {
-      "freq": 2,
-      "skills": [
-        "kimi_k3_fully_tested_an_open_model_beats_fable",
-        "hermes_agent_build_your_own_personal_ai_assistant_"
-      ]
-    },
-    "gets": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_fully_tested_an_open_model_beats_fable"
-      ]
-    },
-    "video": {
-      "freq": 2,
-      "skills": [
-        "kimi_k3_fully_tested_an_open_model_beats_fable",
-        "kimi_k3_hermes_agent_changes_everything"
-      ]
-    },
-    "ticket": {
-      "freq": 1,
-      "skills": [
-        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
-      ]
-    },
-    "zendesk": {
-      "freq": 1,
-      "skills": [
-        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
-      ]
-    },
-    "build": {
-      "freq": 1,
-      "skills": [
-        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
-      ]
-    },
-    "inbox": {
-      "freq": 1,
-      "skills": [
-        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
-      ]
-    },
-    "able": {
-      "freq": 1,
-      "skills": [
-        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
-      ]
-    },
-    "response": {
-      "freq": 1,
-      "skills": [
-        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
-      ]
-    },
-    "inside": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_hermes_agent_changes_everything"
-      ]
-    },
-    "system": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_hermes_agent_changes_everything"
-      ]
-    },
-    "full": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_hermes_agent_changes_everything"
-      ]
-    },
-    "kimiko": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_hermes_agent_changes_everything"
-      ]
-    },
-    "memory": {
-      "freq": 1,
-      "skills": [
-        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
-      ]
-    },
-    "data": {
-      "freq": 1,
-      "skills": [
-        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
-      ]
-    },
-    "vector": {
-      "freq": 1,
-      "skills": [
-        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
-      ]
-    },
-    "google": {
-      "freq": 1,
-      "skills": [
-        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
-      ]
-    },
-    "search": {
-      "freq": 1,
-      "skills": [
-        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
-      ]
-    },
-    "whole": {
-      "freq": 1,
-      "skills": [
-        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
-      ]
-    },
-    "because": {
-      "freq": 2,
-      "skills": [
-        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq",
-        "by_august_we_ll_have_frontier_ai_running_locally"
-      ]
-    },
-    "which": {
-      "freq": 2,
-      "skills": [
-        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq",
-        "by_august_we_ll_have_frontier_ai_running_locally"
-      ]
-    },
-    "same": {
-      "freq": 1,
-      "skills": [
-        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
-      ]
-    },
-    "agents": {
-      "freq": 1,
-      "skills": [
-        "hermes_agent_build_your_own_personal_ai_assistant_"
-      ]
-    },
-    "click": {
-      "freq": 1,
-      "skills": [
-        "hermes_agent_build_your_own_personal_ai_assistant_"
-      ]
-    },
-    "calendar": {
-      "freq": 1,
-      "skills": [
-        "hermes_agent_build_your_own_personal_ai_assistant_"
-      ]
-    },
-    "coms": {
-      "freq": 1,
-      "skills": [
-        "hermes_agent_build_your_own_personal_ai_assistant_"
+        "hermes_agent_full_course_setup_guide_for_complete_"
       ]
     },
     "give": {
       "freq": 1,
       "skills": [
-        "hermes_agent_build_your_own_personal_ai_assistant_"
-      ]
-    },
-    "those": {
-      "freq": 1,
-      "skills": [
-        "by_august_we_ll_have_frontier_ai_running_locally"
-      ]
-    },
-    "something": {
-      "freq": 1,
-      "skills": [
-        "by_august_we_ll_have_frontier_ai_running_locally"
-      ]
-    },
-    "open": {
-      "freq": 1,
-      "skills": [
-        "by_august_we_ll_have_frontier_ai_running_locally"
-      ]
-    },
-    "frontier": {
-      "freq": 1,
-      "skills": [
-        "by_august_we_ll_have_frontier_ai_running_locally"
-      ]
-    },
-    "better": {
-      "freq": 1,
-      "skills": [
-        "by_august_we_ll_have_frontier_ai_running_locally"
-      ]
-    },
-    "about": {
-      "freq": 1,
-      "skills": [
-        "by_august_we_ll_have_frontier_ai_running_locally"
-      ]
-    },
-    "kimi": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_vs_claude_fable_5_raw_results"
-      ]
-    },
-    "look": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_vs_claude_fable_5_raw_results"
-      ]
-    },
-    "little": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_vs_claude_fable_5_raw_results"
-      ]
-    },
-    "output": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_vs_claude_fable_5_raw_results"
+        "hermes_agent_full_course_setup_guide_for_complete_"
       ]
     }
   },
   "tools": {
-    "Gemini": {
-      "freq": 3,
-      "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes",
-        "kimi_k3_fully_tested_an_open_model_beats_fable",
-        "by_august_we_ll_have_frontier_ai_running_locally"
-      ]
-    },
-    "SSH": {
-      "freq": 1,
-      "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes"
-      ]
-    },
-    "Claude": {
-      "freq": 4,
-      "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes",
-        "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
-        "kimi_k3_is_fable_level_they_should_be_worried",
-        "kimi_k3_vs_claude_fable_5_raw_results"
-      ]
-    },
     "LLM": {
-      "freq": 2,
-      "skills": [
-        "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
-        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
-      ]
-    },
-    "React": {
       "freq": 1,
       "skills": [
-        "kimi_k3_is_fable_level_they_should_be_worried"
-      ]
-    },
-    "Next.js": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_is_fable_level_they_should_be_worried"
-      ]
-    },
-    "SQLite": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_is_fable_level_they_should_be_worried"
-      ]
-    },
-    "Node": {
-      "freq": 1,
-      "skills": [
-        "kimi_k3_is_fable_level_they_should_be_worried"
-      ]
-    },
-    "rag": {
-      "freq": 1,
-      "skills": [
-        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
-      ]
-    },
-    "embedding": {
-      "freq": 1,
-      "skills": [
-        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
-      ]
-    },
-    "Python": {
-      "freq": 1,
-      "skills": [
-        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
-      ]
-    },
-    "LangChain": {
-      "freq": 1,
-      "skills": [
-        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
-      ]
-    },
-    "PowerShell": {
-      "freq": 1,
-      "skills": [
-        "hermes_agent_build_your_own_personal_ai_assistant_"
+        "hermes_agent_full_course_setup_guide_for_complete_"
       ]
     },
     "OpenAI": {
-      "freq": 2,
+      "freq": 1,
       "skills": [
-        "hermes_agent_build_your_own_personal_ai_assistant_",
-        "by_august_we_ll_have_frontier_ai_running_locally"
+        "hermes_agent_full_course_setup_guide_for_complete_"
       ]
     },
     "Anthropic": {
       "freq": 1,
       "skills": [
-        "kimi_k3_vs_claude_fable_5_raw_results"
+        "hermes_agent_full_course_setup_guide_for_complete_"
       ]
     },
-    "Ollama": {
+    "Docker": {
       "freq": 1,
       "skills": [
-        "kimi_k3_vs_claude_fable_5_raw_results"
+        "hermes_agent_full_course_setup_guide_for_complete_"
+      ]
+    },
+    "curl": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_full_course_setup_guide_for_complete_"
+      ]
+    },
+    "SSH": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_full_course_setup_guide_for_complete_"
+      ]
+    },
+    "Python": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_full_course_setup_guide_for_complete_"
       ]
     }
   },
   "skill_map": {
-    "100_hours_of_hermes_agent_lessons_in_19_minutes": {
+    "hermes_agent_full_course_setup_guide_for_complete_": {
       "concepts": [
-        "hermes",
+        "going",
+        "want",
         "agent",
-        "other",
+        "here",
+        "hermes",
+        "okay",
+        "kind",
         "need",
-        "over",
-        "using",
-        "know",
-        "every",
-        "want",
-        "opus"
-      ],
-      "tools": [
-        "Gemini",
-        "SSH",
-        "Claude"
-      ],
-      "tags": [
-        "hermes",
-        "agent",
-        "other",
-        "need",
-        "over",
-        "using"
-      ],
-      "step_count": 1
-    },
-    "chatgpt_work_everything_you_need_to_know_to_get_st": {
-      "concepts": [
-        "work",
-        "here",
-        "site",
         "right",
-        "chat",
-        "dave",
-        "website",
-        "good",
-        "going",
-        "need"
-      ],
-      "tools": [],
-      "tags": [
-        "work",
-        "here",
-        "site",
-        "right",
-        "chat",
-        "dave"
-      ],
-      "step_count": 1
-    },
-    "kimi_k3_ai_full_course_1_hour_build_automate_anyth": {
-      "concepts": [
-        "kimmy",
-        "here",
-        "want",
-        "example",
-        "actually",
-        "over",
-        "going",
-        "well",
-        "agent",
-        "create"
-      ],
-      "tools": [
-        "LLM",
-        "Claude"
-      ],
-      "tags": [
-        "kimmy",
-        "here",
-        "want",
-        "example",
-        "actually",
-        "over"
-      ],
-      "step_count": 1
-    },
-    "kimi_k3_is_fable_level_they_should_be_worried": {
-      "concepts": [
-        "actually",
-        "here",
-        "fable",
-        "pretty",
-        "model",
-        "well",
-        "models",
-        "these",
-        "code",
-        "didn"
-      ],
-      "tools": [
-        "Claude",
-        "React",
-        "Next.js",
-        "SQLite",
-        "Node"
-      ],
-      "tags": [
-        "actually",
-        "here",
-        "fable",
-        "pretty",
-        "model",
-        "well"
-      ],
-      "step_count": 1
-    },
-    "kimi_k3_fully_tested_an_open_model_beats_fable": {
-      "concepts": [
-        "model",
-        "question",
-        "models",
-        "kimmy",
-        "opus",
-        "send",
-        "gets",
-        "fable",
-        "video",
-        "right"
-      ],
-      "tools": [
-        "Gemini"
-      ],
-      "tags": [
-        "model",
-        "question",
-        "models",
-        "kimmy",
-        "opus",
-        "send"
-      ],
-      "step_count": 1
-    },
-    "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": {
-      "concepts": [
-        "agent",
-        "here",
-        "ticket",
-        "zendesk",
-        "going",
-        "actually",
-        "build",
-        "inbox",
-        "able",
-        "response"
-      ],
-      "tools": [
-        "LLM"
-      ],
-      "tags": [
-        "agent",
-        "here",
-        "ticket",
-        "zendesk",
-        "going",
-        "actually"
-      ],
-      "step_count": 1
-    },
-    "kimi_k3_hermes_agent_changes_everything": {
-      "concepts": [
-        "agent",
-        "inside",
-        "model",
-        "right",
-        "here",
-        "system",
-        "full",
-        "kimiko",
-        "hermes",
-        "video"
-      ],
-      "tools": [],
-      "tags": [
-        "agent",
-        "inside",
-        "model",
-        "right",
-        "here",
-        "system"
-      ],
-      "step_count": 1
-    },
-    "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
-      "concepts": [
-        "memory",
-        "every",
-        "data",
-        "vector",
-        "google",
-        "search",
-        "whole",
-        "because",
-        "which",
-        "same"
-      ],
-      "tools": [
-        "rag",
-        "embedding",
-        "Python",
-        "LangChain"
-      ],
-      "tags": [
-        "memory",
-        "every",
-        "data",
-        "vector",
-        "google",
-        "search"
-      ],
-      "step_count": 1
-    },
-    "hermes_agent_build_your_own_personal_ai_assistant_": {
-      "concepts": [
-        "going",
-        "here",
-        "agent",
-        "want",
-        "agents",
-        "click",
-        "send",
-        "calendar",
-        "coms",
         "give"
       ],
       "tools": [
-        "PowerShell",
-        "OpenAI"
-      ],
-      "tags": [
-        "going",
-        "here",
-        "agent",
-        "want",
-        "agents",
-        "click"
-      ],
-      "step_count": 1
-    },
-    "by_august_we_ll_have_frontier_ai_running_locally": {
-      "concepts": [
-        "model",
-        "those",
-        "going",
-        "because",
-        "something",
-        "open",
-        "frontier",
-        "which",
-        "better",
-        "about"
-      ],
-      "tools": [
+        "LLM",
         "OpenAI",
-        "Gemini"
-      ],
-      "tags": [
-        "model",
-        "those",
-        "going",
-        "because",
-        "something",
-        "open"
-      ],
-      "step_count": 1
-    },
-    "kimi_k3_vs_claude_fable_5_raw_results": {
-      "concepts": [
-        "fable",
-        "kimi",
-        "right",
-        "going",
-        "look",
-        "well",
-        "these",
-        "here",
-        "little",
-        "output"
-      ],
-      "tools": [
-        "Claude",
         "Anthropic",
-        "Ollama"
+        "Docker",
+        "curl",
+        "SSH",
+        "Python"
       ],
       "tags": [
-        "fable",
-        "kimi",
-        "right",
         "going",
-        "look",
-        "well"
+        "want",
+        "agent",
+        "here",
+        "hermes",
+        "okay"
       ],
       "step_count": 1
     }
   },
   "relationships": {
-    "100_hours_of_hermes_agent_lessons_in_19_minutes": {
-      "chatgpt_work_everything_you_need_to_know_to_get_st": [
-        "need"
-      ],
-      "kimi_k3_ai_full_course_1_hour_build_automate_anyth": [
-        "want",
-        "Claude",
-        "agent",
-        "over"
-      ],
-      "kimi_k3_is_fable_level_they_should_be_worried": [
-        "Claude"
-      ],
-      "kimi_k3_fully_tested_an_open_model_beats_fable": [
-        "Gemini",
-        "opus"
-      ],
-      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
-        "agent"
-      ],
-      "kimi_k3_hermes_agent_changes_everything": [
-        "agent",
-        "hermes"
-      ],
-      "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": [
-        "every"
-      ],
-      "hermes_agent_build_your_own_personal_ai_assistant_": [
-        "want",
-        "agent"
-      ],
-      "by_august_we_ll_have_frontier_ai_running_locally": [
-        "Gemini"
-      ],
-      "kimi_k3_vs_claude_fable_5_raw_results": [
-        "Claude"
-      ]
-    },
-    "chatgpt_work_everything_you_need_to_know_to_get_st": {
-      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
-        "need"
-      ],
-      "kimi_k3_ai_full_course_1_hour_build_automate_anyth": [
-        "going",
-        "here"
-      ],
-      "kimi_k3_is_fable_level_they_should_be_worried": [
-        "here"
-      ],
-      "kimi_k3_fully_tested_an_open_model_beats_fable": [
-        "right"
-      ],
-      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
-        "going",
-        "here"
-      ],
-      "kimi_k3_hermes_agent_changes_everything": [
-        "right",
-        "here"
-      ],
-      "hermes_agent_build_your_own_personal_ai_assistant_": [
-        "going",
-        "here"
-      ],
-      "by_august_we_ll_have_frontier_ai_running_locally": [
-        "going"
-      ],
-      "kimi_k3_vs_claude_fable_5_raw_results": [
-        "going",
-        "right",
-        "here"
-      ]
-    },
-    "kimi_k3_ai_full_course_1_hour_build_automate_anyth": {
-      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
-        "want",
-        "Claude",
-        "agent",
-        "over"
-      ],
-      "chatgpt_work_everything_you_need_to_know_to_get_st": [
-        "going",
-        "here"
-      ],
-      "kimi_k3_is_fable_level_they_should_be_worried": [
-        "actually",
-        "here",
-        "Claude",
-        "well"
-      ],
-      "kimi_k3_fully_tested_an_open_model_beats_fable": [
-        "kimmy"
-      ],
-      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
-        "here",
-        "actually",
-        "LLM",
-        "going",
-        "agent"
-      ],
-      "kimi_k3_hermes_agent_changes_everything": [
-        "here",
-        "agent"
-      ],
-      "hermes_agent_build_your_own_personal_ai_assistant_": [
-        "going",
-        "want",
-        "here",
-        "agent"
-      ],
-      "by_august_we_ll_have_frontier_ai_running_locally": [
-        "going"
-      ],
-      "kimi_k3_vs_claude_fable_5_raw_results": [
-        "going",
-        "here",
-        "Claude",
-        "well"
-      ]
-    },
-    "kimi_k3_is_fable_level_they_should_be_worried": {
-      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
-        "Claude"
-      ],
-      "chatgpt_work_everything_you_need_to_know_to_get_st": [
-        "here"
-      ],
-      "kimi_k3_ai_full_course_1_hour_build_automate_anyth": [
-        "actually",
-        "here",
-        "Claude",
-        "well"
-      ],
-      "kimi_k3_fully_tested_an_open_model_beats_fable": [
-        "models",
-        "fable",
-        "model"
-      ],
-      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
-        "actually",
-        "here"
-      ],
-      "kimi_k3_hermes_agent_changes_everything": [
-        "here",
-        "model"
-      ],
-      "hermes_agent_build_your_own_personal_ai_assistant_": [
-        "here"
-      ],
-      "by_august_we_ll_have_frontier_ai_running_locally": [
-        "model"
-      ],
-      "kimi_k3_vs_claude_fable_5_raw_results": [
-        "here",
-        "these",
-        "Claude",
-        "fable",
-        "well"
-      ]
-    },
-    "kimi_k3_fully_tested_an_open_model_beats_fable": {
-      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
-        "Gemini",
-        "opus"
-      ],
-      "chatgpt_work_everything_you_need_to_know_to_get_st": [
-        "right"
-      ],
-      "kimi_k3_ai_full_course_1_hour_build_automate_anyth": [
-        "kimmy"
-      ],
-      "kimi_k3_is_fable_level_they_should_be_worried": [
-        "models",
-        "fable",
-        "model"
-      ],
-      "kimi_k3_hermes_agent_changes_everything": [
-        "right",
-        "model",
-        "video"
-      ],
-      "hermes_agent_build_your_own_personal_ai_assistant_": [
-        "send"
-      ],
-      "by_august_we_ll_have_frontier_ai_running_locally": [
-        "Gemini",
-        "model"
-      ],
-      "kimi_k3_vs_claude_fable_5_raw_results": [
-        "right",
-        "fable"
-      ]
-    },
-    "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": {
-      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
-        "agent"
-      ],
-      "chatgpt_work_everything_you_need_to_know_to_get_st": [
-        "going",
-        "here"
-      ],
-      "kimi_k3_ai_full_course_1_hour_build_automate_anyth": [
-        "here",
-        "actually",
-        "LLM",
-        "going",
-        "agent"
-      ],
-      "kimi_k3_is_fable_level_they_should_be_worried": [
-        "actually",
-        "here"
-      ],
-      "kimi_k3_hermes_agent_changes_everything": [
-        "here",
-        "agent"
-      ],
-      "hermes_agent_build_your_own_personal_ai_assistant_": [
-        "going",
-        "here",
-        "agent"
-      ],
-      "by_august_we_ll_have_frontier_ai_running_locally": [
-        "going"
-      ],
-      "kimi_k3_vs_claude_fable_5_raw_results": [
-        "going",
-        "here"
-      ]
-    },
-    "kimi_k3_hermes_agent_changes_everything": {
-      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
-        "agent",
-        "hermes"
-      ],
-      "chatgpt_work_everything_you_need_to_know_to_get_st": [
-        "right",
-        "here"
-      ],
-      "kimi_k3_ai_full_course_1_hour_build_automate_anyth": [
-        "here",
-        "agent"
-      ],
-      "kimi_k3_is_fable_level_they_should_be_worried": [
-        "here",
-        "model"
-      ],
-      "kimi_k3_fully_tested_an_open_model_beats_fable": [
-        "right",
-        "model",
-        "video"
-      ],
-      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
-        "here",
-        "agent"
-      ],
-      "hermes_agent_build_your_own_personal_ai_assistant_": [
-        "here",
-        "agent"
-      ],
-      "by_august_we_ll_have_frontier_ai_running_locally": [
-        "model"
-      ],
-      "kimi_k3_vs_claude_fable_5_raw_results": [
-        "right",
-        "here"
-      ]
-    },
-    "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
-      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
-        "every"
-      ],
-      "by_august_we_ll_have_frontier_ai_running_locally": [
-        "because",
-        "which"
-      ]
-    },
-    "hermes_agent_build_your_own_personal_ai_assistant_": {
-      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
-        "want",
-        "agent"
-      ],
-      "chatgpt_work_everything_you_need_to_know_to_get_st": [
-        "going",
-        "here"
-      ],
-      "kimi_k3_ai_full_course_1_hour_build_automate_anyth": [
-        "going",
-        "want",
-        "here",
-        "agent"
-      ],
-      "kimi_k3_is_fable_level_they_should_be_worried": [
-        "here"
-      ],
-      "kimi_k3_fully_tested_an_open_model_beats_fable": [
-        "send"
-      ],
-      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
-        "going",
-        "here",
-        "agent"
-      ],
-      "kimi_k3_hermes_agent_changes_everything": [
-        "here",
-        "agent"
-      ],
-      "by_august_we_ll_have_frontier_ai_running_locally": [
-        "going",
-        "OpenAI"
-      ],
-      "kimi_k3_vs_claude_fable_5_raw_results": [
-        "going",
-        "here"
-      ]
-    },
-    "by_august_we_ll_have_frontier_ai_running_locally": {
-      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
-        "Gemini"
-      ],
-      "chatgpt_work_everything_you_need_to_know_to_get_st": [
-        "going"
-      ],
-      "kimi_k3_ai_full_course_1_hour_build_automate_anyth": [
-        "going"
-      ],
-      "kimi_k3_is_fable_level_they_should_be_worried": [
-        "model"
-      ],
-      "kimi_k3_fully_tested_an_open_model_beats_fable": [
-        "Gemini",
-        "model"
-      ],
-      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
-        "going"
-      ],
-      "kimi_k3_hermes_agent_changes_everything": [
-        "model"
-      ],
-      "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": [
-        "because",
-        "which"
-      ],
-      "hermes_agent_build_your_own_personal_ai_assistant_": [
-        "going",
-        "OpenAI"
-      ],
-      "kimi_k3_vs_claude_fable_5_raw_results": [
-        "going"
-      ]
-    },
-    "kimi_k3_vs_claude_fable_5_raw_results": {
-      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
-        "Claude"
-      ],
-      "chatgpt_work_everything_you_need_to_know_to_get_st": [
-        "going",
-        "right",
-        "here"
-      ],
-      "kimi_k3_ai_full_course_1_hour_build_automate_anyth": [
-        "going",
-        "here",
-        "Claude",
-        "well"
-      ],
-      "kimi_k3_is_fable_level_they_should_be_worried": [
-        "here",
-        "these",
-        "Claude",
-        "fable",
-        "well"
-      ],
-      "kimi_k3_fully_tested_an_open_model_beats_fable": [
-        "right",
-        "fable"
-      ],
-      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
-        "going",
-        "here"
-      ],
-      "kimi_k3_hermes_agent_changes_everything": [
-        "right",
-        "here"
-      ],
-      "hermes_agent_build_your_own_personal_ai_assistant_": [
-        "going",
-        "here"
-      ],
-      "by_august_we_ll_have_frontier_ai_running_locally": [
-        "going"
-      ]
-    }
+    "hermes_agent_full_course_setup_guide_for_complete_": {}
   },
-  "updated_at": "2026-07-20T02:51:26.321298+00:00",
-  "total_skills": 11
+  "updated_at": "2026-07-20T02:51:26.413352+00:00",
+  "total_skills": 1
 }
