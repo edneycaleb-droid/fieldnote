@@ -9,7 +9,6 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [ChatGPT Work: Everything You Need to Know to Get Started!](skills/chatgpt_work_everything_you_need_to_know_to_get_st.md) | By The AI Advantage. (Auto-extracted — pending AI enhancement.) |  | `work` `here` `site` |
 | [Kimi K3 AI Full COURSE 1 HOUR (Build & Automate Anything)](skills/kimi_k3_ai_full_course_1_hour_build_automate_anyth.md) | By Julian Goldie SEO. Key tools: LLM, Claude. (Auto-extracted — pending AI enhan | `LLM` `Claude` | `kimmy` `here` `want` |
 | [100 hours of Hermes Agent lessons in 19 minutes](skills/100_hours_of_hermes_agent_lessons_in_19_minutes.md) | By Alex Finn. Key tools: Gemini, SSH, Claude. (Auto-extracted — pending AI enhan | `Gemini` `SSH` `Claude` | `hermes` `agent` `other` |
 | [Hermes Agent Tutorial for Beginners (Full Step-by-Step Setup)](skills/hermes_agent_tutorial_for_beginners_full_step_by_s.md) | By Metics Media. Key tools: Claude, Docker, bash, Python, LLM. (Auto-extracted — | `Claude` `Docker` `bash` `Python` | `agent` `hermes` `want` |
@@ -74,6 +73,7 @@
 | [i_tested_kimi_k3_so_you_don_t_have_to](skills/i_tested_kimi_k3_so_you_don_t_have_to.md) |  |  |  |
 | [how_to_run_kimi_k3_for_free](skills/how_to_run_kimi_k3_for_free.md) |  |  |  |
 | [building_resilient_ai_agents_with_langgraph](skills/building_resilient_ai_agents_with_langgraph.md) |  |  |  |
+| [chatgpt_work_everything_you_need_to_know_to_get_st](skills/chatgpt_work_everything_you_need_to_know_to_get_st.md) |  |  |  |
 | [ragaai_catalyst](skills/ragaai_catalyst.md) |  |  |  |
 | [people_are_creating_insane_things_with_kimi_k3](skills/people_are_creating_insane_things_with_kimi_k3.md) |  |  |  |
 | [hermes_agent_ollama_how_to_install_hermes_locally_](skills/hermes_agent_ollama_how_to_install_hermes_locally_.md) |  |  |  |
