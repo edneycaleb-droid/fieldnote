@@ -7,9 +7,10 @@
       ]
     },
     "website": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
+        "how_to_use_codex_to_build_insanely_beautiful_websi",
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
       ]
     },
     "codeex": {
@@ -25,9 +26,10 @@
       ]
     },
     "here": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
+        "how_to_use_codex_to_build_insanely_beautiful_websi",
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
       ]
     },
     "before": {
@@ -43,9 +45,10 @@
       ]
     },
     "need": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
+        "how_to_use_codex_to_build_insanely_beautiful_websi",
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
       ]
     },
     "file": {
@@ -55,9 +58,10 @@
       ]
     },
     "site": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
+        "how_to_use_codex_to_build_insanely_beautiful_websi",
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
       ]
     },
     "model": {
@@ -73,9 +77,10 @@
       ]
     },
     "going": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "by_august_we_ll_have_frontier_ai_running_locally"
+        "by_august_we_ll_have_frontier_ai_running_locally",
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
       ]
     },
     "because": {
@@ -168,6 +173,36 @@
       "freq": 1,
       "skills": [
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
+      ]
+    },
+    "work": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "right": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "chat": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "dave": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "good": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
       ]
     }
   },
@@ -320,12 +355,42 @@
         "search"
       ],
       "step_count": 1
+    },
+    "chatgpt_work_everything_you_need_to_know_to_get_st": {
+      "concepts": [
+        "work",
+        "here",
+        "site",
+        "right",
+        "chat",
+        "dave",
+        "website",
+        "good",
+        "going",
+        "need"
+      ],
+      "tools": [],
+      "tags": [
+        "work",
+        "here",
+        "site",
+        "right",
+        "chat",
+        "dave"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
     "how_to_use_codex_to_build_insanely_beautiful_websi": {
       "by_august_we_ll_have_frontier_ai_running_locally": [
         "OpenAI"
+      ],
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "here",
+        "need",
+        "website",
+        "site"
       ]
     },
     "by_august_we_ll_have_frontier_ai_running_locally": {
@@ -335,6 +400,9 @@
       "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": [
         "because",
         "which"
+      ],
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "going"
       ]
     },
     "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
@@ -342,8 +410,19 @@
         "because",
         "which"
       ]
+    },
+    "chatgpt_work_everything_you_need_to_know_to_get_st": {
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "here",
+        "need",
+        "website",
+        "site"
+      ],
+      "by_august_we_ll_have_frontier_ai_running_locally": [
+        "going"
+      ]
     }
   },
-  "updated_at": "2026-07-20T02:56:52.942915+00:00",
-  "total_skills": 3
+  "updated_at": "2026-07-20T02:56:53.010891+00:00",
+  "total_skills": 4
 }
