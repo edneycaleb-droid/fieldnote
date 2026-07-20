@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **9 skills** · Last synced: 2026-07-20 03:38 UTC
+> **10 skills** · Last synced: 2026-07-20 03:38 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Setting Up Hermes for AI Self-Improvement](skills/you_need_to_use_hermes_right_now_goodbye_openclaw.md) | Learn how to install and set up Hermes, a self-improving AI agent, for AI self-i | `Hermes` `Hostinger` `OpenAI Codex` `GPT-5.5` | `ai` `self-improvement` `hermes` |
 | [Kimi K3 Overview: A New Open Model Surpassing Top AI Models](skills/china_just_beat_claude_ai_kimi_k3.md) | Kimi K3, a Chinese AI model, has surpassed top AI models in various benchmarks,  | `Claude` `Anthropic` `OpenAI` `Gemini` | `AI` `machine_learning` `natural_language_processing` |
 | [Kimi K3 vs Fable: A Comparison of AI Models](skills/i_tested_kimi_k3_so_you_don_t_have_to.md) | This skill compares the performance and capabilities of Kimi K3 and Fable, two p | `Kimi K3` `Fable` | `ai` `machine_learning` `natural_language_processing` |
 | [By August, We'll Have Frontier AI Running Locally](skills/new_hermes_paperclip_ai_agent_update_is_insane.md) | By Manolo Remiddi. Key tools: OpenAI, Gemini. (Auto-extracted — pending AI enhan | `OpenAI` `Gemini` | `model` `those` `going` |
