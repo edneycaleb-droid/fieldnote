@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **14 skills** · Last synced: 2026-07-20 02:52 UTC
+> **15 skills** · Last synced: 2026-07-20 02:52 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Hermes + Paperclip: A Powerful AI Agent Integration](skills/new_hermes_paperclip_ai_agent_update_is_insane.md) | Learn how to integrate Hermes and Paperclip to create a powerful AI agent that c | `Hermes` `Paperclip` `Claude` | `ai-agents` `team-management` `task-automation` |
 | [you need to use Hermes RIGHT NOW!! (goodbye OpenClaw!!)](skills/you_need_to_use_hermes_right_now_goodbye_openclaw.md) | By NetworkChuck. Key tools: Python, Docker, LLM, OpenAI, anthropic. (Auto-extrac | `Python` `Docker` `LLM` `OpenAI` | `hermes` `gonna` `here` |
 | [Hermes Agent Cost Reduction: Optimizing Token Usage](skills/use_this_to_make_the_hermes_agent_basically_free.md) | Learn how to reduce Hermes agent costs by optimizing token usage, using OpenAI s | `OpenAI` `Parto Router` `config.yaml` | `cost reduction` `Hermes agent` `optimization` |
 | [Skill Fea3E1](skills/hermes_agent_zero_to_personal_ai_assistant_1_hour_.md) | Skill Fea3E1 | `Hermes Agent` `Claude` `Docker` `Telegram` | `hermes` `ai` `automation` |
