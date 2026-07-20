@@ -59,13 +59,74 @@
       "skills": [
         "kimi_k3_is_fable_level_they_should_be_worried"
       ]
+    },
+    "same": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
+    },
+    "outreach": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
+    },
+    "agent": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
+    },
+    "squad": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
+    },
+    "memory": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
+    },
+    "each": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
+    },
+    "already": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
+    },
+    "profit": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
+    },
+    "boardroom": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
+    },
+    "every": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_is_fable_level_they_should_be_worried"
+        "kimi_k3_is_fable_level_they_should_be_worried",
+        "new_hermes_agent_os_is_insane"
       ]
     },
     "React": {
@@ -123,11 +184,46 @@
         "well"
       ],
       "step_count": 1
+    },
+    "new_hermes_agent_os_is_insane": {
+      "concepts": [
+        "same",
+        "outreach",
+        "agent",
+        "squad",
+        "memory",
+        "each",
+        "already",
+        "profit",
+        "boardroom",
+        "every"
+      ],
+      "tools": [
+        "Claude"
+      ],
+      "tags": [
+        "same",
+        "outreach",
+        "agent",
+        "squad",
+        "memory",
+        "each"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
-    "kimi_k3_is_fable_level_they_should_be_worried": {}
+    "kimi_k3_is_fable_level_they_should_be_worried": {
+      "new_hermes_agent_os_is_insane": [
+        "Claude"
+      ]
+    },
+    "new_hermes_agent_os_is_insane": {
+      "kimi_k3_is_fable_level_they_should_be_worried": [
+        "Claude"
+      ]
+    }
   },
-  "updated_at": "2026-07-20T02:40:22.554631+00:00",
-  "total_skills": 1
+  "updated_at": "2026-07-20T02:40:22.557947+00:00",
+  "total_skills": 2
 }
