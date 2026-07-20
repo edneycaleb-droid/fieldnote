@@ -7,9 +7,10 @@
       ]
     },
     "something": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "new_claude_update_is_insane"
+        "new_claude_update_is_insane",
+        "the_15_most_insane_things_created_by_kimi_k3_kimi_"
       ]
     },
     "anthropic": {
@@ -56,9 +57,10 @@
       ]
     },
     "actually": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "new_claude_update_is_insane"
+        "new_claude_update_is_insane",
+        "the_15_most_insane_things_created_by_kimi_k3_kimi_"
       ]
     },
     "model": {
@@ -234,16 +236,65 @@
       "skills": [
         "hermes_claude_code_mcp_integration_loop_engineerin"
       ]
+    },
+    "know": {
+      "freq": 1,
+      "skills": [
+        "the_15_most_insane_things_created_by_kimi_k3_kimi_"
+      ]
+    },
+    "course": {
+      "freq": 1,
+      "skills": [
+        "the_15_most_insane_things_created_by_kimi_k3_kimi_"
+      ]
+    },
+    "game": {
+      "freq": 1,
+      "skills": [
+        "the_15_most_insane_things_created_by_kimi_k3_kimi_"
+      ]
+    },
+    "kimmy": {
+      "freq": 1,
+      "skills": [
+        "the_15_most_insane_things_created_by_kimi_k3_kimi_"
+      ]
+    },
+    "going": {
+      "freq": 1,
+      "skills": [
+        "the_15_most_insane_things_created_by_kimi_k3_kimi_"
+      ]
+    },
+    "guys": {
+      "freq": 1,
+      "skills": [
+        "the_15_most_insane_things_created_by_kimi_k3_kimi_"
+      ]
+    },
+    "here": {
+      "freq": 1,
+      "skills": [
+        "the_15_most_insane_things_created_by_kimi_k3_kimi_"
+      ]
+    },
+    "think": {
+      "freq": 1,
+      "skills": [
+        "the_15_most_insane_things_created_by_kimi_k3_kimi_"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "new_claude_update_is_insane",
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
         "this_ai_business_model_is_creating_new_millionaire",
-        "hermes_claude_code_mcp_integration_loop_engineerin"
+        "hermes_claude_code_mcp_integration_loop_engineerin",
+        "the_15_most_insane_things_created_by_kimi_k3_kimi_"
       ]
     },
     "Anthropic": {
@@ -404,6 +455,32 @@
         "step"
       ],
       "step_count": 1
+    },
+    "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
+      "concepts": [
+        "know",
+        "course",
+        "game",
+        "actually",
+        "kimmy",
+        "something",
+        "going",
+        "guys",
+        "here",
+        "think"
+      ],
+      "tools": [
+        "Claude"
+      ],
+      "tags": [
+        "know",
+        "course",
+        "game",
+        "actually",
+        "kimmy",
+        "something"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -420,6 +497,11 @@
       "hermes_claude_code_mcp_integration_loop_engineerin": [
         "Anthropic",
         "Claude"
+      ],
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "actually",
+        "Claude",
+        "something"
       ]
     },
     "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": {
@@ -432,6 +514,9 @@
         "Claude"
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude"
+      ],
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
         "Claude"
       ]
     },
@@ -446,6 +531,9 @@
       "hermes_claude_code_mcp_integration_loop_engineerin": [
         "Anthropic",
         "Claude"
+      ],
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "Claude"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -459,9 +547,28 @@
       "this_ai_business_model_is_creating_new_millionaire": [
         "Anthropic",
         "Claude"
+      ],
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "Claude"
+      ]
+    },
+    "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
+      "new_claude_update_is_insane": [
+        "actually",
+        "Claude",
+        "something"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Claude"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude"
       ]
     }
   },
-  "updated_at": "2026-07-20T02:51:27.988620+00:00",
-  "total_skills": 4
+  "updated_at": "2026-07-20T02:51:28.103121+00:00",
+  "total_skills": 5
 }
