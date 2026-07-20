@@ -40,13 +40,14 @@
       ]
     },
     "here": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "kimi_k3_is_just_ridiculous",
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "how_to_use_codex_to_build_insanely_beautiful_websi",
         "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
-        "hermes_agent_build_your_own_personal_ai_assistant_"
+        "hermes_agent_build_your_own_personal_ai_assistant_",
+        "kimi_k3_hermes_agent_changes_everything"
       ]
     },
     "kimmy": {
@@ -76,20 +77,22 @@
       ]
     },
     "agent": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
         "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
-        "hermes_agent_build_your_own_personal_ai_assistant_"
+        "hermes_agent_build_your_own_personal_ai_assistant_",
+        "kimi_k3_hermes_agent_changes_everything"
       ]
     },
     "hermes": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
-        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+        "100_hours_of_hermes_agent_lessons_in_19_minutes",
+        "kimi_k3_hermes_agent_changes_everything"
       ]
     },
     "want": {
@@ -121,11 +124,12 @@
       ]
     },
     "right": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "kimi_k3_fully_tested_an_open_model_beats_fable",
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "hermes_agent_just_got_10x_better_4_insane_new_feat",
+        "kimi_k3_hermes_agent_changes_everything"
       ]
     },
     "need": {
@@ -187,11 +191,12 @@
       ]
     },
     "model": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "kimi_k3_fully_tested_an_open_model_beats_fable",
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
-        "by_august_we_ll_have_frontier_ai_running_locally"
+        "by_august_we_ll_have_frontier_ai_running_locally",
+        "kimi_k3_hermes_agent_changes_everything"
       ]
     },
     "question": {
@@ -233,9 +238,10 @@
       ]
     },
     "video": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_fully_tested_an_open_model_beats_fable"
+        "kimi_k3_fully_tested_an_open_model_beats_fable",
+        "kimi_k3_hermes_agent_changes_everything"
       ]
     },
     "other": {
@@ -403,6 +409,30 @@
       "freq": 1,
       "skills": [
         "hermes_agent_build_your_own_personal_ai_assistant_"
+      ]
+    },
+    "inside": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_hermes_agent_changes_everything"
+      ]
+    },
+    "system": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_hermes_agent_changes_everything"
+      ]
+    },
+    "full": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_hermes_agent_changes_everything"
+      ]
+    },
+    "kimiko": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_hermes_agent_changes_everything"
       ]
     }
   },
@@ -766,6 +796,30 @@
         "click"
       ],
       "step_count": 1
+    },
+    "kimi_k3_hermes_agent_changes_everything": {
+      "concepts": [
+        "agent",
+        "inside",
+        "model",
+        "right",
+        "here",
+        "system",
+        "full",
+        "kimiko",
+        "hermes",
+        "video"
+      ],
+      "tools": [],
+      "tags": [
+        "agent",
+        "inside",
+        "model",
+        "right",
+        "here",
+        "system"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -807,6 +861,9 @@
       ],
       "hermes_agent_build_your_own_personal_ai_assistant_": [
         "going",
+        "here"
+      ],
+      "kimi_k3_hermes_agent_changes_everything": [
         "here"
       ]
     },
@@ -858,6 +915,12 @@
         "going",
         "click",
         "agent"
+      ],
+      "kimi_k3_hermes_agent_changes_everything": [
+        "right",
+        "here",
+        "agent",
+        "hermes"
       ]
     },
     "how_to_use_codex_to_build_insanely_beautiful_websi": {
@@ -893,6 +956,9 @@
       "hermes_agent_build_your_own_personal_ai_assistant_": [
         "here",
         "OpenAI"
+      ],
+      "kimi_k3_hermes_agent_changes_everything": [
+        "here"
       ]
     },
     "kimi_k3_fully_tested_an_open_model_beats_fable": {
@@ -919,6 +985,11 @@
       ],
       "hermes_agent_build_your_own_personal_ai_assistant_": [
         "send"
+      ],
+      "kimi_k3_hermes_agent_changes_everything": [
+        "right",
+        "model",
+        "video"
       ]
     },
     "100_hours_of_hermes_agent_lessons_in_19_minutes": {
@@ -961,6 +1032,10 @@
       "hermes_agent_build_your_own_personal_ai_assistant_": [
         "want",
         "agent"
+      ],
+      "kimi_k3_hermes_agent_changes_everything": [
+        "agent",
+        "hermes"
       ]
     },
     "kimi_k3_ai_full_course_1_hour_build_automate_anyth": {
@@ -1011,6 +1086,10 @@
         "want",
         "here",
         "agent"
+      ],
+      "kimi_k3_hermes_agent_changes_everything": [
+        "here",
+        "agent"
       ]
     },
     "hermes_agent_just_got_10x_better_4_insane_new_feat": {
@@ -1058,6 +1137,11 @@
         "going",
         "agents",
         "agent"
+      ],
+      "kimi_k3_hermes_agent_changes_everything": [
+        "right",
+        "model",
+        "agent"
       ]
     },
     "by_august_we_ll_have_frontier_ai_running_locally": {
@@ -1091,6 +1175,9 @@
       "hermes_agent_build_your_own_personal_ai_assistant_": [
         "going",
         "OpenAI"
+      ],
+      "kimi_k3_hermes_agent_changes_everything": [
+        "model"
       ]
     },
     "making_with_loop_engineering": {
@@ -1173,9 +1260,52 @@
       "making_with_loop_engineering": [
         "going",
         "OpenAI"
+      ],
+      "kimi_k3_hermes_agent_changes_everything": [
+        "here",
+        "agent"
+      ]
+    },
+    "kimi_k3_hermes_agent_changes_everything": {
+      "kimi_k3_is_just_ridiculous": [
+        "here"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "right",
+        "here",
+        "agent",
+        "hermes"
+      ],
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "here"
+      ],
+      "kimi_k3_fully_tested_an_open_model_beats_fable": [
+        "right",
+        "model",
+        "video"
+      ],
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "agent",
+        "hermes"
+      ],
+      "kimi_k3_ai_full_course_1_hour_build_automate_anyth": [
+        "here",
+        "agent"
+      ],
+      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
+        "right",
+        "model",
+        "agent"
+      ],
+      "by_august_we_ll_have_frontier_ai_running_locally": [
+        "model"
+      ],
+      "hermes_agent_build_your_own_personal_ai_assistant_": [
+        "here",
+        "agent"
       ]
     }
   },
-  "updated_at": "2026-07-20T02:40:23.831698+00:00",
-  "total_skills": 10
+  "updated_at": "2026-07-20T02:40:23.995407+00:00",
+  "total_skills": 11
 }
