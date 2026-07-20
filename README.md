@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **13 skills** · Last synced: 2026-07-20 03:38 UTC
+> **14 skills** · Last synced: 2026-07-20 03:38 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Every Hermes Concept Explained for Normal People](skills/every_hermes_concept_explained_for_normal_people.md) | This skill covers the fundamental concepts of Hermes, a powerful AI agent, and h | `Hermes` `Cloud Code` `Claude` | `AI` `Hermes` `agent` |
 | [Building a Horror Game with Kimmy K3](skills/the_15_most_insane_things_created_by_kimi_k3_kimi_.md) | This skill teaches how to build a comprehensive horror game using Kimmy K3, a po | `Kimmy K3` | `games` `AI` `horror` |
 | [GPT-5.6 Mystery, New 2.7T AI, DeepSeek New AI Chip, Orca World Model, Grok 4.5 and More AI News](skills/gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o.md) | This week in AI, OpenAI launched GPT-5.6, and it's not just one model, it's a wh | `OpenAI` `Gemini` `Soul` `Terra` | `AI` `Machine Learning` `Natural Language Processing` |
 | [Hermes Agent OS: A New AI Management System](skills/new_hermes_agent_os_is_insane.md) | Learn how to use Hermes Agent OS to automate research, content, and outreach for | `Hermes` `Claude` `GPT 5.6` `Grok` | `ai-automation` `ai-management` |
