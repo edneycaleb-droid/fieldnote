@@ -8,10 +8,11 @@
       ]
     },
     "going": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
-        "hermes_agent_build_your_own_personal_ai_assistant_"
+        "hermes_agent_build_your_own_personal_ai_assistant_",
+        "by_august_we_ll_have_frontier_ai_running_locally"
       ]
     },
     "every": {
@@ -34,10 +35,11 @@
       ]
     },
     "model": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
-        "kimi_k3_fully_tested_an_open_model_beats_fable"
+        "kimi_k3_fully_tested_an_open_model_beats_fable",
+        "by_august_we_ll_have_frontier_ai_running_locally"
       ]
     },
     "right": {
@@ -188,21 +190,59 @@
       ]
     },
     "because": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
+        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq",
+        "by_august_we_ll_have_frontier_ai_running_locally"
       ]
     },
     "which": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
+        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq",
+        "by_august_we_ll_have_frontier_ai_running_locally"
       ]
     },
     "same": {
       "freq": 1,
       "skills": [
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
+      ]
+    },
+    "those": {
+      "freq": 1,
+      "skills": [
+        "by_august_we_ll_have_frontier_ai_running_locally"
+      ]
+    },
+    "something": {
+      "freq": 1,
+      "skills": [
+        "by_august_we_ll_have_frontier_ai_running_locally"
+      ]
+    },
+    "open": {
+      "freq": 1,
+      "skills": [
+        "by_august_we_ll_have_frontier_ai_running_locally"
+      ]
+    },
+    "frontier": {
+      "freq": 1,
+      "skills": [
+        "by_august_we_ll_have_frontier_ai_running_locally"
+      ]
+    },
+    "better": {
+      "freq": 1,
+      "skills": [
+        "by_august_we_ll_have_frontier_ai_running_locally"
+      ]
+    },
+    "about": {
+      "freq": 1,
+      "skills": [
+        "by_august_we_ll_have_frontier_ai_running_locally"
       ]
     }
   },
@@ -220,15 +260,17 @@
       ]
     },
     "OpenAI": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "hermes_agent_build_your_own_personal_ai_assistant_"
+        "hermes_agent_build_your_own_personal_ai_assistant_",
+        "by_august_we_ll_have_frontier_ai_running_locally"
       ]
     },
     "Gemini": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_fully_tested_an_open_model_beats_fable"
+        "kimi_k3_fully_tested_an_open_model_beats_fable",
+        "by_august_we_ll_have_frontier_ai_running_locally"
       ]
     },
     "rag": {
@@ -364,6 +406,33 @@
         "search"
       ],
       "step_count": 1
+    },
+    "by_august_we_ll_have_frontier_ai_running_locally": {
+      "concepts": [
+        "model",
+        "those",
+        "going",
+        "because",
+        "something",
+        "open",
+        "frontier",
+        "which",
+        "better",
+        "about"
+      ],
+      "tools": [
+        "OpenAI",
+        "Gemini"
+      ],
+      "tags": [
+        "model",
+        "those",
+        "going",
+        "because",
+        "something",
+        "open"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -379,6 +448,10 @@
       ],
       "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": [
         "every"
+      ],
+      "by_august_we_ll_have_frontier_ai_running_locally": [
+        "going",
+        "model"
       ]
     },
     "hermes_agent_build_your_own_personal_ai_assistant_": {
@@ -389,6 +462,10 @@
       ],
       "kimi_k3_fully_tested_an_open_model_beats_fable": [
         "send"
+      ],
+      "by_august_we_ll_have_frontier_ai_running_locally": [
+        "going",
+        "OpenAI"
       ]
     },
     "kimi_k3_fully_tested_an_open_model_beats_fable": {
@@ -398,14 +475,40 @@
       ],
       "hermes_agent_build_your_own_personal_ai_assistant_": [
         "send"
+      ],
+      "by_august_we_ll_have_frontier_ai_running_locally": [
+        "Gemini",
+        "model"
       ]
     },
     "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
       "hermes_agent_just_got_10x_better_4_insane_new_feat": [
         "every"
+      ],
+      "by_august_we_ll_have_frontier_ai_running_locally": [
+        "because",
+        "which"
+      ]
+    },
+    "by_august_we_ll_have_frontier_ai_running_locally": {
+      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
+        "going",
+        "model"
+      ],
+      "hermes_agent_build_your_own_personal_ai_assistant_": [
+        "going",
+        "OpenAI"
+      ],
+      "kimi_k3_fully_tested_an_open_model_beats_fable": [
+        "Gemini",
+        "model"
+      ],
+      "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": [
+        "because",
+        "which"
       ]
     }
   },
-  "updated_at": "2026-07-20T02:45:53.977186+00:00",
-  "total_skills": 4
+  "updated_at": "2026-07-20T02:45:54.112391+00:00",
+  "total_skills": 5
 }
