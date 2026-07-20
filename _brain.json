@@ -45,13 +45,14 @@
       ]
     },
     "going": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "the_15_most_insane_things_created_by_kimi_k3_kimi_",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
         "i_tested_kimi_k3_so_you_don_t_have_to",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
-        "kimi_k3_testing_moonshot_s_2_8t_open_model_without"
+        "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     },
     "guys": {
@@ -61,14 +62,15 @@
       ]
     },
     "here": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "the_15_most_insane_things_created_by_kimi_k3_kimi_",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
         "yes_the_kimi_k3_hype_is_real",
         "i_tested_kimi_k3_so_you_don_t_have_to",
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
+        "chatgpt_work_everything_you_need_to_know_to_get_st",
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     },
     "think": {
@@ -216,7 +218,7 @@
       ]
     },
     "agent": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "this_100_self_improving_ai_agent_is_insane_just_wa",
         "hermes_claude_code_mcp_integration_loop_engineerin",
@@ -224,26 +226,29 @@
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
         "new_hermes_agent_os_is_insane",
-        "new_hermes_paperclip_ai_agent_update_is_insane"
+        "new_hermes_paperclip_ai_agent_update_is_insane",
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     },
     "hermes": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "this_100_self_improving_ai_agent_is_insane_just_wa",
         "hermes_claude_code_mcp_integration_loop_engineerin",
         "use_this_to_make_the_hermes_agent_basically_free",
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
-        "new_hermes_paperclip_ai_agent_update_is_insane"
+        "new_hermes_paperclip_ai_agent_update_is_insane",
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     },
     "right": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "this_100_self_improving_ai_agent_is_insane_just_wa",
         "yes_the_kimi_k3_hype_is_real",
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
+        "chatgpt_work_everything_you_need_to_know_to_get_st",
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     },
     "open": {
@@ -266,10 +271,11 @@
       ]
     },
     "want": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "this_100_self_improving_ai_agent_is_insane_just_wa",
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
+        "chatgpt_work_everything_you_need_to_know_to_get_st",
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     },
     "tests": {
@@ -752,15 +758,34 @@
       ]
     },
     "need": {
+      "freq": 2,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st",
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+      ]
+    },
+    "ahead": {
       "freq": 1,
       "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+      ]
+    },
+    "telegram": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+      ]
+    },
+    "click": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 13,
+      "freq": 14,
       "skills": [
         "the_15_most_insane_things_created_by_kimi_k3_kimi_",
         "this_ai_business_model_is_creating_new_millionaire",
@@ -774,7 +799,8 @@
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
         "kimi_k3_testing_moonshot_s_2_8t_open_model_without",
         "new_hermes_agent_os_is_insane",
-        "new_hermes_paperclip_ai_agent_update_is_insane"
+        "new_hermes_paperclip_ai_agent_update_is_insane",
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     },
     "Anthropic": {
@@ -828,12 +854,13 @@
       ]
     },
     "Docker": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "this_100_self_improving_ai_agent_is_insane_just_wa",
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
-        "did_kimi_k3_really_beat_fable"
+        "did_kimi_k3_really_beat_fable",
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     },
     "pip": {
@@ -843,11 +870,12 @@
       ]
     },
     "Python": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "this_100_self_improving_ai_agent_is_insane_just_wa",
         "hermes_claude_code_mcp_integration_loop_engineerin",
-        "you_need_to_use_hermes_right_now_goodbye_openclaw"
+        "you_need_to_use_hermes_right_now_goodbye_openclaw",
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     },
     "Git": {
@@ -897,12 +925,13 @@
       ]
     },
     "LLM": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
-        "did_kimi_k3_really_beat_fable"
+        "did_kimi_k3_really_beat_fable",
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     },
     "Llama": {
@@ -971,6 +1000,12 @@
       "freq": 1,
       "skills": [
         "people_are_creating_insane_things_with_kimi_k3"
+      ]
+    },
+    "bash": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     }
   },
@@ -1477,6 +1512,36 @@
         "inside"
       ],
       "step_count": 1
+    },
+    "hermes_agent_tutorial_for_beginners_full_step_by_s": {
+      "concepts": [
+        "agent",
+        "hermes",
+        "want",
+        "here",
+        "ahead",
+        "telegram",
+        "click",
+        "right",
+        "going",
+        "need"
+      ],
+      "tools": [
+        "Claude",
+        "Docker",
+        "bash",
+        "Python",
+        "LLM"
+      ],
+      "tags": [
+        "agent",
+        "hermes",
+        "want",
+        "here",
+        "ahead",
+        "telegram"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -1538,6 +1603,11 @@
       ],
       "new_hermes_paperclip_ai_agent_update_is_insane": [
         "Claude"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "going",
+        "here",
+        "Claude"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -1592,6 +1662,9 @@
         "Claude"
       ],
       "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
         "Claude"
       ]
     },
@@ -1666,6 +1739,9 @@
       ],
       "new_hermes_paperclip_ai_agent_update_is_insane": [
         "Gemini",
+        "Claude"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
         "Claude"
       ]
     },
@@ -1758,6 +1834,14 @@
         "Claude",
         "agent",
         "hermes"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "want",
+        "here",
+        "Docker",
+        "Claude",
+        "Python",
+        "hermes"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -1821,6 +1905,12 @@
       "new_hermes_paperclip_ai_agent_update_is_insane": [
         "Claude",
         "agent",
+        "hermes"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Claude",
+        "agent",
+        "Python",
         "hermes"
       ]
     },
@@ -1910,6 +2000,11 @@
         "Claude",
         "agent",
         "hermes"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Claude",
+        "agent",
+        "hermes"
       ]
     },
     "yes_the_kimi_k3_hype_is_real": {
@@ -1992,6 +2087,11 @@
       ],
       "new_hermes_paperclip_ai_agent_update_is_insane": [
         "Claude"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "right",
+        "here",
+        "Claude"
       ]
     },
     "china_just_beat_claude_ai_kimi_k3": {
@@ -2072,6 +2172,9 @@
       "new_hermes_paperclip_ai_agent_update_is_insane": [
         "Gemini",
         "Claude"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Claude"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -2150,6 +2253,10 @@
       ],
       "new_hermes_paperclip_ai_agent_update_is_insane": [
         "Claude"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Claude",
+        "LLM"
       ]
     },
     "i_tested_kimi_k3_so_you_don_t_have_to": {
@@ -2220,6 +2327,10 @@
         "OpenAI",
         "know",
         "model"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "going",
+        "here"
       ]
     },
     "you_need_to_use_hermes_right_now_goodbye_openclaw": {
@@ -2290,6 +2401,11 @@
       "kimi_k3_testing_moonshot_s_2_8t_open_model_without": [
         "Anthropic",
         "OpenAI"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Docker",
+        "Python",
+        "LLM"
       ]
     },
     "chatgpt_work_everything_you_need_to_know_to_get_st": {
@@ -2358,6 +2474,12 @@
       ],
       "new_hermes_paperclip_ai_agent_update_is_insane": [
         "work"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "going",
+        "right",
+        "here",
+        "need"
       ]
     },
     "this_kimi_k3_agent_os_is_wild": {
@@ -2438,6 +2560,10 @@
       "kimi_k3_testing_moonshot_s_2_8t_open_model_without": [
         "Anthropic",
         "OpenAI"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Docker",
+        "LLM"
       ]
     },
     "people_are_creating_insane_things_with_kimi_k3": {
@@ -2539,6 +2665,10 @@
       "new_hermes_paperclip_ai_agent_update_is_insane": [
         "Gemini",
         "Claude"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "going",
+        "Claude"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -2584,6 +2714,10 @@
         "profit",
         "Claude",
         "boardroom",
+        "agent"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Claude",
         "agent"
       ]
     },
@@ -2636,9 +2770,90 @@
         "Claude",
         "boardroom",
         "agent"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Claude",
+        "agent",
+        "hermes"
+      ]
+    },
+    "hermes_agent_tutorial_for_beginners_full_step_by_s": {
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "going",
+        "here",
+        "Claude"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Claude"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "want",
+        "here",
+        "Docker",
+        "Claude",
+        "Python",
+        "hermes"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude",
+        "agent",
+        "Python",
+        "hermes"
+      ],
+      "use_this_to_make_the_hermes_agent_basically_free": [
+        "Claude",
+        "agent",
+        "hermes"
+      ],
+      "yes_the_kimi_k3_hype_is_real": [
+        "right",
+        "here",
+        "Claude"
+      ],
+      "china_just_beat_claude_ai_kimi_k3": [
+        "Claude"
+      ],
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "Claude",
+        "LLM"
+      ],
+      "i_tested_kimi_k3_so_you_don_t_have_to": [
+        "going",
+        "here"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "Docker",
+        "Python",
+        "LLM"
+      ],
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "going",
+        "right",
+        "here",
+        "need"
+      ],
+      "did_kimi_k3_really_beat_fable": [
+        "Docker",
+        "LLM"
+      ],
+      "kimi_k3_testing_moonshot_s_2_8t_open_model_without": [
+        "going",
+        "Claude"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Claude",
+        "agent"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude",
+        "agent",
+        "hermes"
       ]
     }
   },
-  "updated_at": "2026-07-20T02:45:52.820229+00:00",
-  "total_skills": 18
+  "updated_at": "2026-07-20T02:45:52.901332+00:00",
+  "total_skills": 19
 }
