@@ -39,12 +39,13 @@
       ]
     },
     "model": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
         "kimi_k3_fully_tested_an_open_model_beats_fable",
         "by_august_we_ll_have_frontier_ai_running_locally",
-        "kimi_k3_hermes_agent_changes_everything"
+        "kimi_k3_hermes_agent_changes_everything",
+        "ornith_35b_9b_hermes_zed_the_fully_private_local_a"
       ]
     },
     "right": {
@@ -126,9 +127,10 @@
       ]
     },
     "models": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_fully_tested_an_open_model_beats_fable"
+        "kimi_k3_fully_tested_an_open_model_beats_fable",
+        "ornith_35b_9b_hermes_zed_the_fully_private_local_a"
       ]
     },
     "kimmy": {
@@ -206,10 +208,11 @@
       ]
     },
     "which": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq",
-        "by_august_we_ll_have_frontier_ai_running_locally"
+        "by_august_we_ll_have_frontier_ai_running_locally",
+        "ornith_35b_9b_hermes_zed_the_fully_private_local_a"
       ]
     },
     "same": {
@@ -319,13 +322,56 @@
       "skills": [
         "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
       ]
+    },
+    "coding": {
+      "freq": 1,
+      "skills": [
+        "ornith_35b_9b_hermes_zed_the_fully_private_local_a"
+      ]
+    },
+    "good": {
+      "freq": 1,
+      "skills": [
+        "ornith_35b_9b_hermes_zed_the_fully_private_local_a"
+      ]
+    },
+    "local": {
+      "freq": 1,
+      "skills": [
+        "ornith_35b_9b_hermes_zed_the_fully_private_local_a"
+      ]
+    },
+    "tool": {
+      "freq": 1,
+      "skills": [
+        "ornith_35b_9b_hermes_zed_the_fully_private_local_a"
+      ]
+    },
+    "around": {
+      "freq": 1,
+      "skills": [
+        "ornith_35b_9b_hermes_zed_the_fully_private_local_a"
+      ]
+    },
+    "ornith": {
+      "freq": 1,
+      "skills": [
+        "ornith_35b_9b_hermes_zed_the_fully_private_local_a"
+      ]
+    },
+    "well": {
+      "freq": 1,
+      "skills": [
+        "ornith_35b_9b_hermes_zed_the_fully_private_local_a"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "hermes_agent_just_got_10x_better_4_insane_new_feat",
+        "ornith_35b_9b_hermes_zed_the_fully_private_local_a"
       ]
     },
     "PowerShell": {
@@ -373,9 +419,16 @@
       ]
     },
     "LLM": {
+      "freq": 2,
+      "skills": [
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full",
+        "ornith_35b_9b_hermes_zed_the_fully_private_local_a"
+      ]
+    },
+    "Ollama": {
       "freq": 1,
       "skills": [
-        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
+        "ornith_35b_9b_hermes_zed_the_fully_private_local_a"
       ]
     }
   },
@@ -564,6 +617,34 @@
         "actually"
       ],
       "step_count": 1
+    },
+    "ornith_35b_9b_hermes_zed_the_fully_private_local_a": {
+      "concepts": [
+        "model",
+        "models",
+        "coding",
+        "good",
+        "local",
+        "tool",
+        "which",
+        "around",
+        "ornith",
+        "well"
+      ],
+      "tools": [
+        "LLM",
+        "Claude",
+        "Ollama"
+      ],
+      "tags": [
+        "model",
+        "models",
+        "coding",
+        "good",
+        "local",
+        "tool"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -593,6 +674,10 @@
         "going",
         "actually",
         "agent"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "Claude",
+        "model"
       ]
     },
     "hermes_agent_build_your_own_personal_ai_assistant_": {
@@ -634,6 +719,10 @@
         "right",
         "model",
         "video"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "models",
+        "model"
       ]
     },
     "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
@@ -642,6 +731,9 @@
       ],
       "by_august_we_ll_have_frontier_ai_running_locally": [
         "because",
+        "which"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
         "which"
       ]
     },
@@ -667,6 +759,10 @@
       ],
       "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
         "going"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "model",
+        "which"
       ]
     },
     "kimi_k3_hermes_agent_changes_everything": {
@@ -690,6 +786,9 @@
       "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
         "here",
         "agent"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "model"
       ]
     },
     "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": {
@@ -709,9 +808,35 @@
       "kimi_k3_hermes_agent_changes_everything": [
         "here",
         "agent"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "LLM"
+      ]
+    },
+    "ornith_35b_9b_hermes_zed_the_fully_private_local_a": {
+      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
+        "Claude",
+        "model"
+      ],
+      "kimi_k3_fully_tested_an_open_model_beats_fable": [
+        "models",
+        "model"
+      ],
+      "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": [
+        "which"
+      ],
+      "by_august_we_ll_have_frontier_ai_running_locally": [
+        "model",
+        "which"
+      ],
+      "kimi_k3_hermes_agent_changes_everything": [
+        "model"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "LLM"
       ]
     }
   },
-  "updated_at": "2026-07-20T02:45:54.342521+00:00",
-  "total_skills": 7
+  "updated_at": "2026-07-20T02:45:54.559677+00:00",
+  "total_skills": 8
 }
