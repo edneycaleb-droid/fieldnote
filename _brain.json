@@ -8,11 +8,12 @@
       ]
     },
     "model": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "new_claude_opus_5_leaks",
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
-        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
+        "by_august_we_ll_have_frontier_ai_running_locally"
       ]
     },
     "profit": {
@@ -153,11 +154,12 @@
       ]
     },
     "going": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "kimi_k3_vs_claude_fable_5_raw_results",
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
+        "chatgpt_work_everything_you_need_to_know_to_get_st",
+        "by_august_we_ll_have_frontier_ai_running_locally"
       ]
     },
     "chemistry": {
@@ -200,9 +202,10 @@
       ]
     },
     "because": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
+        "by_august_we_ll_have_frontier_ai_running_locally"
       ]
     },
     "artificial": {
@@ -291,9 +294,10 @@
       ]
     },
     "which": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
+        "by_august_we_ll_have_frontier_ai_running_locally"
       ]
     },
     "enthropic": {
@@ -319,6 +323,42 @@
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
       ]
+    },
+    "those": {
+      "freq": 1,
+      "skills": [
+        "by_august_we_ll_have_frontier_ai_running_locally"
+      ]
+    },
+    "something": {
+      "freq": 1,
+      "skills": [
+        "by_august_we_ll_have_frontier_ai_running_locally"
+      ]
+    },
+    "open": {
+      "freq": 1,
+      "skills": [
+        "by_august_we_ll_have_frontier_ai_running_locally"
+      ]
+    },
+    "frontier": {
+      "freq": 1,
+      "skills": [
+        "by_august_we_ll_have_frontier_ai_running_locally"
+      ]
+    },
+    "better": {
+      "freq": 1,
+      "skills": [
+        "by_august_we_ll_have_frontier_ai_running_locally"
+      ]
+    },
+    "about": {
+      "freq": 1,
+      "skills": [
+        "by_august_we_ll_have_frontier_ai_running_locally"
+      ]
     }
   },
   "tools": {
@@ -341,10 +381,11 @@
       ]
     },
     "Gemini": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
-        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
+        "by_august_we_ll_have_frontier_ai_running_locally"
       ]
     },
     "SSH": {
@@ -378,10 +419,11 @@
       ]
     },
     "OpenAI": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
-        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
+        "by_august_we_ll_have_frontier_ai_running_locally"
       ]
     },
     "Ollama": {
@@ -590,6 +632,33 @@
         "already"
       ],
       "step_count": 1
+    },
+    "by_august_we_ll_have_frontier_ai_running_locally": {
+      "concepts": [
+        "model",
+        "those",
+        "going",
+        "because",
+        "something",
+        "open",
+        "frontier",
+        "which",
+        "better",
+        "about"
+      ],
+      "tools": [
+        "OpenAI",
+        "Gemini"
+      ],
+      "tags": [
+        "model",
+        "those",
+        "going",
+        "because",
+        "something",
+        "open"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -618,6 +687,9 @@
         "Claude",
         "anthropic",
         "model"
+      ],
+      "by_august_we_ll_have_frontier_ai_running_locally": [
+        "model"
       ]
     },
     "100_hours_of_hermes_agent_lessons_in_19_minutes": {
@@ -642,6 +714,9 @@
         "Claude",
         "Gemini",
         "over"
+      ],
+      "by_august_we_ll_have_frontier_ai_running_locally": [
+        "Gemini"
       ]
     },
     "hermes_agent_tutorial_for_beginners_full_step_by_s": {
@@ -670,6 +745,9 @@
       ],
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
         "Claude"
+      ],
+      "by_august_we_ll_have_frontier_ai_running_locally": [
+        "going"
       ]
     },
     "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
@@ -687,6 +765,11 @@
         "fable",
         "model",
         "already"
+      ],
+      "by_august_we_ll_have_frontier_ai_running_locally": [
+        "OpenAI",
+        "because",
+        "model"
       ]
     },
     "kimi_k3_vs_claude_fable_5_raw_results": {
@@ -716,6 +799,9 @@
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
         "Claude",
         "fable"
+      ],
+      "by_august_we_ll_have_frontier_ai_running_locally": [
+        "going"
       ]
     },
     "chatgpt_work_everything_you_need_to_know_to_get_st": {
@@ -735,6 +821,9 @@
         "going",
         "here",
         "right"
+      ],
+      "by_august_we_ll_have_frontier_ai_running_locally": [
+        "going"
       ]
     },
     "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": {
@@ -761,9 +850,43 @@
       "kimi_k3_vs_claude_fable_5_raw_results": [
         "Claude",
         "fable"
+      ],
+      "by_august_we_ll_have_frontier_ai_running_locally": [
+        "OpenAI",
+        "which",
+        "Gemini",
+        "model"
+      ]
+    },
+    "by_august_we_ll_have_frontier_ai_running_locally": {
+      "new_claude_opus_5_leaks": [
+        "model"
+      ],
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "Gemini"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "going"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "OpenAI",
+        "because",
+        "model"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "going"
+      ],
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "going"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "OpenAI",
+        "which",
+        "Gemini",
+        "model"
       ]
     }
   },
-  "updated_at": "2026-07-20T03:37:25.496548+00:00",
-  "total_skills": 7
+  "updated_at": "2026-07-20T03:37:25.594429+00:00",
+  "total_skills": 8
 }
