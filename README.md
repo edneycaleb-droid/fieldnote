@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **20 skills** · Last synced: 2026-07-20 02:58 UTC
+> **4 skills** · Last synced: 2026-07-20 03:37 UTC
 
 ---
 
@@ -9,26 +9,10 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [you need to use Hermes RIGHT NOW!! (goodbye OpenClaw!!)](skills/you_need_to_use_hermes_right_now_goodbye_openclaw.md) | By NetworkChuck. Key tools: Python, Docker, LLM, OpenAI, anthropic. (Auto-extrac | `Python` `Docker` `LLM` `OpenAI` | `hermes` `gonna` `here` |
-| [I Tested Kimi K3 So You Don't Have To...](skills/i_tested_kimi_k3_so_you_don_t_have_to.md) | By Nick Saraev. Key tools: Ollama, Anthropic, OpenAI. (Auto-extracted — pending  | `Ollama` `Anthropic` `OpenAI` | `know` `kimmy` `here` |
-| [GPT 5.6 Mystery, New 2.7T AI, DeepSeek New AI Chip, Orca World Model, Grok 4.5 and More AI News...](skills/gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o.md) | By AI Revolution. Key tools: OpenAI, Claude, Anthropic, LLM, Llama. (Auto-extrac | `OpenAI` `Claude` `Anthropic` `LLM` | `music` `model` `openai` |
-| [China just beat Claude AI: Kimi K3](skills/china_just_beat_claude_ai_kimi_k3.md) | By TechLead. Key tools: Claude, Anthropic, OpenAI, GPT-4, Gemini. (Auto-extracte | `Claude` `Anthropic` `OpenAI` `GPT-4` | `model` `models` `open` |
-| [Kimi K3: The Insane Open Model Beating State-of-the-Art AI](skills/kimi_k3_is_not_the_story_china_s_ai_master_plan_is.md) | Kimi K3, a new Chinese AI model, has surpassed top AI models in various benchmar | `Claude` `Anthropic` `OpenAI` `Gemini` | `ai` `machine_learning` `natural_language_processing` |
-| [The 15 Most INSANE Things Created by KIMI K3 ( KIMI K3 Use Cases)](skills/the_15_most_insane_things_created_by_kimi_k3_kimi_.md) | By TheAIGRID. Key tools: Claude. (Auto-extracted — pending AI enhancement.) | `Claude` | `know` `course` `game` |
-| [Hermes + Claude Code — MCP Integration & Loop Engineering](skills/hermes_claude_code_mcp_integration_loop_engineerin.md) | By NetworkCoder. Key tools: Anthropic, Flask, Python, pytest, Claude. (Auto-extr | `Anthropic` `Flask` `Python` `pytest` | `tests` `skill` `hermes` |
-| [Yes, the Kimi K3 Hype is Real](skills/yes_the_kimi_k3_hype_is_real.md) | By Chase AI. Key tools: Anthropic, OpenAI, Claude. (Auto-extracted — pending AI  | `Anthropic` `OpenAI` `Claude` | `these` `fable` `kimmy` |
-| [This AI Business Model Is Creating New Millionaires In 2026](skills/this_ai_business_model_is_creating_new_millionaire.md) | By Richard Yu. Key tools: Anthropic, Claude. (Auto-extracted — pending AI enhanc | `Anthropic` `Claude` | `people` `product` `most` |
-| [This 100% self-improving AI Agent is insane… just watch](skills/this_100_self_improving_ai_agent_is_insane_just_wa.md) | By David Ondrej. Key tools: Claude, Docker, pip, Python, Git. (Auto-extracted —  | `Claude` `Docker` `pip` `Python` | `agent` `hermes` `going` |
-| [Anthropic's Downfall... Kimi K3.1, Grok 4.6, DeepSeek v4 GA, U.S. Gov's Gold Eagle, & Robot MMA!](skills/anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v.md) | By WorldofAI. Key tools: Claude, anthropic, Gemini, OpenAI. (Auto-extracted — pe | `Claude` `anthropic` `Gemini` `OpenAI` | `model` `which` `enthropic` |
-| [NUEVO Kimi K3 DESTRUYE a Claude Fable 5 (Debes Saber Esto)](skills/nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe.md) | By Juan Pe Navarro \| IA y Automatización. Key tools: Anthropic, OpenAI. (Auto-ex | `Anthropic` `OpenAI` | `chemistry` `model` `models` |
-| [New Claude Update Is INSANE!](skills/new_claude_update_is_insane.md) | By Julian Goldie SEO. Key tools: Claude, Anthropic. (Auto-extracted — pending AI | `Claude` `Anthropic` | `claude` `something` `anthropic` |
 | [Kimi K3 VS Claude Fable 5 (Raw Results)](skills/kimi_k3_vs_claude_fable_5_raw_results.md) | By Dubibubi. Key tools: Claude, Anthropic, Ollama. (Auto-extracted — pending AI  | `Claude` `Anthropic` `Ollama` | `fable` `kimi` `right` |
+| [Hermes Agent: Zero to Personal AI Assistant (1 Hour Course)](skills/hermes_agent_zero_to_personal_ai_assistant_1_hour_.md) | By Nate Herk \| AI Automation. Key tools: Claude, Docker, Anthropic, OpenAI, Llam | `Claude` `Docker` `Anthropic` `OpenAI` | `going` `hermes` `here` |
+| [100 hours of Hermes Agent lessons in 19 minutes](skills/100_hours_of_hermes_agent_lessons_in_19_minutes.md) | By Alex Finn. Key tools: Gemini, SSH, Claude. (Auto-extracted — pending AI enhan | `Gemini` `SSH` `Claude` | `hermes` `agent` `other` |
 | [New Claude Opus 5 LEAKS!](skills/new_claude_opus_5_leaks.md) | By Julian Goldie SEO. Key tools: Claude, Anthropic. (Auto-extracted — pending AI | `Claude` `Anthropic` | `opus` `model` `profit` |
-| [Kimi K3 CRUSHED Fable](skills/kimi_k3_crushed_fable.md) | By Wes Roth. Key tools: Claude, Anthropic, OpenAI. (Auto-extracted — pending AI  | `Claude` `Anthropic` `OpenAI` | `kind` `know` `here` |
-| [Every Hermes Concept explained for Normal People](skills/every_hermes_concept_explained_for_normal_people.md) | By Jack Roberts. Key tools: Claude, Anthropic, OpenAI, Ollama, SQLite. (Auto-ext | `Claude` `Anthropic` `OpenAI` `Ollama` | `hermes` `here` `about` |
-| [ChatGPT Work: Everything You Need to Know to Get Started!](skills/chatgpt_work_everything_you_need_to_know_to_get_st.md) | By The AI Advantage. (Auto-extracted — pending AI enhancement.) |  | `work` `here` `site` |
-| [Google Shrunk 31GB of AI Memory Down to 4GB (TurboQuant)](skills/google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq.md) | By Cloud Codes. Key tools: rag, embedding, Python, LangChain. (Auto-extracted —  | `rag` `embedding` `Python` `LangChain` | `memory` `every` `data` |
-| [By August, We'll Have Frontier AI Running Locally](skills/by_august_we_ll_have_frontier_ai_running_locally.md) | By Manolo Remiddi. Key tools: OpenAI, Gemini. (Auto-extracted — pending AI enhan | `OpenAI` `Gemini` | `model` `those` `going` |
 
 ---
 
