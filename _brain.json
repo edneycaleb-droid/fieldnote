@@ -59,6 +59,66 @@
       "skills": [
         "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
+    },
+    "model": {
+      "freq": 1,
+      "skills": [
+        "by_august_we_ll_have_frontier_ai_running_locally"
+      ]
+    },
+    "those": {
+      "freq": 1,
+      "skills": [
+        "by_august_we_ll_have_frontier_ai_running_locally"
+      ]
+    },
+    "going": {
+      "freq": 1,
+      "skills": [
+        "by_august_we_ll_have_frontier_ai_running_locally"
+      ]
+    },
+    "because": {
+      "freq": 1,
+      "skills": [
+        "by_august_we_ll_have_frontier_ai_running_locally"
+      ]
+    },
+    "something": {
+      "freq": 1,
+      "skills": [
+        "by_august_we_ll_have_frontier_ai_running_locally"
+      ]
+    },
+    "open": {
+      "freq": 1,
+      "skills": [
+        "by_august_we_ll_have_frontier_ai_running_locally"
+      ]
+    },
+    "frontier": {
+      "freq": 1,
+      "skills": [
+        "by_august_we_ll_have_frontier_ai_running_locally"
+      ]
+    },
+    "which": {
+      "freq": 1,
+      "skills": [
+        "by_august_we_ll_have_frontier_ai_running_locally"
+      ]
+    },
+    "better": {
+      "freq": 1,
+      "skills": [
+        "by_august_we_ll_have_frontier_ai_running_locally"
+      ]
+    },
+    "about": {
+      "freq": 1,
+      "skills": [
+        "by_august_we_ll_have_frontier_ai_running_locally"
+      ]
     }
   },
   "tools": {
@@ -81,15 +141,22 @@
       ]
     },
     "OpenAI": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
+        "how_to_use_codex_to_build_insanely_beautiful_websi",
+        "by_august_we_ll_have_frontier_ai_running_locally"
       ]
     },
     "git": {
       "freq": 1,
       "skills": [
         "how_to_use_codex_to_build_insanely_beautiful_websi"
+      ]
+    },
+    "Gemini": {
+      "freq": 1,
+      "skills": [
+        "by_august_we_ll_have_frontier_ai_running_locally"
       ]
     }
   },
@@ -123,11 +190,47 @@
         "before"
       ],
       "step_count": 1
+    },
+    "by_august_we_ll_have_frontier_ai_running_locally": {
+      "concepts": [
+        "model",
+        "those",
+        "going",
+        "because",
+        "something",
+        "open",
+        "frontier",
+        "which",
+        "better",
+        "about"
+      ],
+      "tools": [
+        "OpenAI",
+        "Gemini"
+      ],
+      "tags": [
+        "model",
+        "those",
+        "going",
+        "because",
+        "something",
+        "open"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
-    "how_to_use_codex_to_build_insanely_beautiful_websi": {}
+    "how_to_use_codex_to_build_insanely_beautiful_websi": {
+      "by_august_we_ll_have_frontier_ai_running_locally": [
+        "OpenAI"
+      ]
+    },
+    "by_august_we_ll_have_frontier_ai_running_locally": {
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "OpenAI"
+      ]
+    }
   },
-  "updated_at": "2026-07-20T02:56:52.914223+00:00",
-  "total_skills": 1
+  "updated_at": "2026-07-20T02:56:52.919922+00:00",
+  "total_skills": 2
 }
