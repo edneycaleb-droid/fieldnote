@@ -64,9 +64,10 @@
       ]
     },
     "model": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
+        "i_tested_kimi_k3_so_you_don_t_have_to"
       ]
     },
     "which": {
@@ -88,9 +89,10 @@
       ]
     },
     "fable": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
+        "i_tested_kimi_k3_so_you_don_t_have_to"
       ]
     },
     "over": {
@@ -100,9 +102,10 @@
       ]
     },
     "models": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
+        "i_tested_kimi_k3_so_you_don_t_have_to"
       ]
     },
     "today": {
@@ -238,9 +241,10 @@
       ]
     },
     "know": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "the_15_most_insane_things_created_by_kimi_k3_kimi_"
+        "the_15_most_insane_things_created_by_kimi_k3_kimi_",
+        "i_tested_kimi_k3_so_you_don_t_have_to"
       ]
     },
     "course": {
@@ -256,15 +260,17 @@
       ]
     },
     "kimmy": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "the_15_most_insane_things_created_by_kimi_k3_kimi_"
+        "the_15_most_insane_things_created_by_kimi_k3_kimi_",
+        "i_tested_kimi_k3_so_you_don_t_have_to"
       ]
     },
     "going": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "the_15_most_insane_things_created_by_kimi_k3_kimi_"
+        "the_15_most_insane_things_created_by_kimi_k3_kimi_",
+        "i_tested_kimi_k3_so_you_don_t_have_to"
       ]
     },
     "guys": {
@@ -274,15 +280,34 @@
       ]
     },
     "here": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "the_15_most_insane_things_created_by_kimi_k3_kimi_"
+        "the_15_most_insane_things_created_by_kimi_k3_kimi_",
+        "i_tested_kimi_k3_so_you_don_t_have_to"
       ]
     },
     "think": {
       "freq": 1,
       "skills": [
         "the_15_most_insane_things_created_by_kimi_k3_kimi_"
+      ]
+    },
+    "sort": {
+      "freq": 1,
+      "skills": [
+        "i_tested_kimi_k3_so_you_don_t_have_to"
+      ]
+    },
+    "really": {
+      "freq": 1,
+      "skills": [
+        "i_tested_kimi_k3_so_you_don_t_have_to"
+      ]
+    },
+    "mean": {
+      "freq": 1,
+      "skills": [
+        "i_tested_kimi_k3_so_you_don_t_have_to"
       ]
     }
   },
@@ -298,11 +323,12 @@
       ]
     },
     "Anthropic": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "new_claude_update_is_insane",
         "this_ai_business_model_is_creating_new_millionaire",
-        "hermes_claude_code_mcp_integration_loop_engineerin"
+        "hermes_claude_code_mcp_integration_loop_engineerin",
+        "i_tested_kimi_k3_so_you_don_t_have_to"
       ]
     },
     "anthropic": {
@@ -318,9 +344,10 @@
       ]
     },
     "OpenAI": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
+        "i_tested_kimi_k3_so_you_don_t_have_to"
       ]
     },
     "Flask": {
@@ -339,6 +366,12 @@
       "freq": 1,
       "skills": [
         "hermes_claude_code_mcp_integration_loop_engineerin"
+      ]
+    },
+    "Ollama": {
+      "freq": 1,
+      "skills": [
+        "i_tested_kimi_k3_so_you_don_t_have_to"
       ]
     }
   },
@@ -481,6 +514,34 @@
         "something"
       ],
       "step_count": 1
+    },
+    "i_tested_kimi_k3_so_you_don_t_have_to": {
+      "concepts": [
+        "know",
+        "kimmy",
+        "here",
+        "fable",
+        "sort",
+        "going",
+        "models",
+        "really",
+        "model",
+        "mean"
+      ],
+      "tools": [
+        "Ollama",
+        "Anthropic",
+        "OpenAI"
+      ],
+      "tags": [
+        "know",
+        "kimmy",
+        "here",
+        "fable",
+        "sort",
+        "going"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -502,6 +563,9 @@
         "actually",
         "Claude",
         "something"
+      ],
+      "i_tested_kimi_k3_so_you_don_t_have_to": [
+        "Anthropic"
       ]
     },
     "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": {
@@ -518,6 +582,12 @@
       ],
       "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
         "Claude"
+      ],
+      "i_tested_kimi_k3_so_you_don_t_have_to": [
+        "models",
+        "fable",
+        "model",
+        "OpenAI"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -534,6 +604,9 @@
       ],
       "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
         "Claude"
+      ],
+      "i_tested_kimi_k3_so_you_don_t_have_to": [
+        "Anthropic"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -550,6 +623,9 @@
       ],
       "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
         "Claude"
+      ],
+      "i_tested_kimi_k3_so_you_don_t_have_to": [
+        "Anthropic"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -566,9 +642,38 @@
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
         "Claude"
+      ],
+      "i_tested_kimi_k3_so_you_don_t_have_to": [
+        "going",
+        "here",
+        "kimmy",
+        "know"
+      ]
+    },
+    "i_tested_kimi_k3_so_you_don_t_have_to": {
+      "new_claude_update_is_insane": [
+        "Anthropic"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "models",
+        "fable",
+        "model",
+        "OpenAI"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Anthropic"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Anthropic"
+      ],
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "going",
+        "here",
+        "kimmy",
+        "know"
       ]
     }
   },
-  "updated_at": "2026-07-20T02:51:28.103121+00:00",
-  "total_skills": 5
+  "updated_at": "2026-07-20T02:51:28.564623+00:00",
+  "total_skills": 6
 }
