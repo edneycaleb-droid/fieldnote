@@ -21,4 +21,4 @@ Claude, Anthropic, OpenAI
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-19 | [Kimi K3 CRUSHED Fable](https://www.youtube.com/watch?v=4fPLsmJNaMI) | yt_dlp_subs |
+| 2026-07-20 | [Kimi K3 CRUSHED Fable](https://www.youtube.com/watch?v=4fPLsmJNaMI) | yt_dlp_subs |
