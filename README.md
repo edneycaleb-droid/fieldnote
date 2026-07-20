@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **17 skills** · Last synced: 2026-07-20 02:58 UTC
+> **18 skills** · Last synced: 2026-07-20 02:58 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [GPT 5.6 Mystery, New 2.7T AI, DeepSeek New AI Chip, Orca World Model, Grok 4.5 and More AI News...](skills/gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o.md) | By AI Revolution. Key tools: OpenAI, Claude, Anthropic, LLM, Llama. (Auto-extrac | `OpenAI` `Claude` `Anthropic` `LLM` | `music` `model` `openai` |
 | [China just beat Claude AI: Kimi K3](skills/china_just_beat_claude_ai_kimi_k3.md) | By TechLead. Key tools: Claude, Anthropic, OpenAI, GPT-4, Gemini. (Auto-extracte | `Claude` `Anthropic` `OpenAI` `GPT-4` | `model` `models` `open` |
 | [Kimi K3: The Insane Open Model Beating State-of-the-Art AI](skills/kimi_k3_is_not_the_story_china_s_ai_master_plan_is.md) | Kimi K3, a new Chinese AI model, has surpassed top AI models in various benchmar | `Claude` `Anthropic` `OpenAI` `Gemini` | `ai` `machine_learning` `natural_language_processing` |
 | [The 15 Most INSANE Things Created by KIMI K3 ( KIMI K3 Use Cases)](skills/the_15_most_insane_things_created_by_kimi_k3_kimi_.md) | By TheAIGRID. Key tools: Claude. (Auto-extracted — pending AI enhancement.) | `Claude` | `know` `course` `game` |
