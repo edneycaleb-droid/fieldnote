@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **17 skills** · Last synced: 2026-07-20 02:42 UTC
+> **18 skills** · Last synced: 2026-07-20 02:42 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Kimi K3 Game Development: Creating Games with AI](skills/people_are_creating_insane_things_with_kimi_k3.md) | This skill teaches how to create games using Kimi K3, a large open-source AI mod | `Kimi K3` `Grock` `Fable 5` `GPT 5.6` | `game development` `ai models` `kimi k3` |
 | [Moonshot AI's Kimmy K3: A 2.8 Trillion Parameter Model](skills/did_kimi_k3_really_beat_fable.md) | This skill teaches how to use Kimmy K3, a 2.8 trillion parameter model, for vari | `Kimi K3` `LLM` `OpenAI` `Anthropic` | `ai` `machine learning` `deep learning` |
 | [Kimi K3 Testing Moonshot's 2.8T Open Model Without](skills/this_kimi_k3_agent_os_is_wild.md) | This skill teaches how to compare the performance of Kimi K3 and Fable 5 in a co | `Kimi K3` `Fable 5` `OpenRouter` | `ai-models` `benchmarking` `performance-comparison` |
 | [Chat GPT Work Tutorial: Building a Live Website](skills/chatgpt_work_everything_you_need_to_know_to_get_st.md) | This skill teaches how to use Chat GPT Work to build a live website, including s | `Chat GPT Work` `Sites tool` `LLM` `OpenAI` | `AI` `Chat GPT` `Website building` |

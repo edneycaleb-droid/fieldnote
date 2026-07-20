@@ -1,21 +1,30 @@
-# Kimi K3 CRUSHED Fable
+# Kimi K3: Creating Insane Things with AI
 
 ## Description
-Kimi K3 is the best model ever made (sometimes), and it just took the number one spot on all the AI coding benchmarks, beating Claude Fable 5 itself.
+This skill teaches how to use Kimi K3 to create impressive AI-generated content, including games, websites, and animations.
 
 ## Steps
 1. Watch the full video for step-by-step instructions.
-2. The creator of the game, a user named Chutas Lua, basically built a Paper Mario inspired game using Kimmy K3 and Grock build as the harness.
-3. The game made by GPT6 is very chaotic, but the design of the slot wheel does not look as appealing to me as the one made by Fable 5.
+2. Create a Kimi K3 API account and obtain an API key.
+3. Use the API key to run a controlled screenshot-to-code benchmark with Kimi K3.
+4. Compare the results with Fable 5 and analyze the performance differences.
+5. Evaluate the costs of using Kimi K3 and Fable 5 for the same task.
 
 ## Tools
-Claude, Anthropic, OpenAI
+* Kimi K3
+* Fable 5
+* GPT 5.6
+* OpenRouter
 
 ## Concepts
-model, models, coding, good
+* AI model generation
+* 3D model creation
+* Game development
+* UI design
 
 ## Related Skills
-hermes_agent_ollama_how_to_install_hermes_locally_, ornith_35b_9b_hermes_zed_the_fully_private_local_a
+* you_need_to_use_hermes_right_now_goodbye_openclaw
+* master_ai_trading_in_70_minutes_full_claude_tradin
 
 ## Sources
 
