@@ -32,10 +32,11 @@
       ]
     },
     "here": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "kimi_k3_is_just_ridiculous",
-        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+        "hermes_agent_tutorial_for_beginners_full_step_by_s",
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
     },
     "kimmy": {
@@ -105,18 +106,68 @@
       ]
     },
     "need": {
+      "freq": 2,
+      "skills": [
+        "hermes_agent_tutorial_for_beginners_full_step_by_s",
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
+      ]
+    },
+    "design": {
       "freq": 1,
       "skills": [
-        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
+      ]
+    },
+    "website": {
+      "freq": 1,
+      "skills": [
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
+      ]
+    },
+    "codeex": {
+      "freq": 1,
+      "skills": [
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
+      ]
+    },
+    "skill": {
+      "freq": 1,
+      "skills": [
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
+      ]
+    },
+    "before": {
+      "freq": 1,
+      "skills": [
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
+      ]
+    },
+    "really": {
+      "freq": 1,
+      "skills": [
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
+      ]
+    },
+    "file": {
+      "freq": 1,
+      "skills": [
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
+      ]
+    },
+    "site": {
+      "freq": 1,
+      "skills": [
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "kimi_k3_is_just_ridiculous",
-        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+        "hermes_agent_tutorial_for_beginners_full_step_by_s",
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
     },
     "Docker": {
@@ -141,6 +192,30 @@
       "freq": 1,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s"
+      ]
+    },
+    "next.js": {
+      "freq": 1,
+      "skills": [
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
+      ]
+    },
+    "Anthropic": {
+      "freq": 1,
+      "skills": [
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
+      ]
+    },
+    "OpenAI": {
+      "freq": 1,
+      "skills": [
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
+      ]
+    },
+    "git": {
+      "freq": 1,
+      "skills": [
+        "how_to_use_codex_to_build_insanely_beautiful_websi"
       ]
     }
   },
@@ -200,12 +275,46 @@
         "telegram"
       ],
       "step_count": 1
+    },
+    "how_to_use_codex_to_build_insanely_beautiful_websi": {
+      "concepts": [
+        "design",
+        "website",
+        "codeex",
+        "skill",
+        "here",
+        "before",
+        "really",
+        "need",
+        "file",
+        "site"
+      ],
+      "tools": [
+        "Claude",
+        "next.js",
+        "Anthropic",
+        "OpenAI",
+        "git"
+      ],
+      "tags": [
+        "design",
+        "website",
+        "codeex",
+        "skill",
+        "here",
+        "before"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
     "kimi_k3_is_just_ridiculous": {
       "hermes_agent_tutorial_for_beginners_full_step_by_s": [
         "going",
+        "here",
+        "Claude"
+      ],
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
         "here",
         "Claude"
       ]
@@ -215,9 +324,25 @@
         "going",
         "here",
         "Claude"
+      ],
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "here",
+        "need",
+        "Claude"
+      ]
+    },
+    "how_to_use_codex_to_build_insanely_beautiful_websi": {
+      "kimi_k3_is_just_ridiculous": [
+        "here",
+        "Claude"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "here",
+        "need",
+        "Claude"
       ]
     }
   },
-  "updated_at": "2026-07-20T02:40:22.666718+00:00",
-  "total_skills": 2
+  "updated_at": "2026-07-20T02:40:22.823173+00:00",
+  "total_skills": 3
 }
