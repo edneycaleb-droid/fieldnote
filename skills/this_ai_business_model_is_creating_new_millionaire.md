@@ -21,4 +21,4 @@ Anthropic, Claude
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-19 | [This AI Business Model Is Creating New Millionaires In 2026](https://www.youtube.com/watch?v=HRlgSTaPfiI) | yt_dlp_subs |
+| 2026-07-20 | [This AI Business Model Is Creating New Millionaires In 2026](https://www.youtube.com/watch?v=HRlgSTaPfiI) | yt_dlp_subs |
