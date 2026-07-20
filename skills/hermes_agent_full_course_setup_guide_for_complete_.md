@@ -21,4 +21,4 @@ LLM, OpenAI, Anthropic, Docker, curl, SSH, Python
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-19 | [Hermes Agent - Full Course & Setup Guide - For COMPLETE Beginners](https://www.youtube.com/watch?v=mTYxpIRK7xA) | yt_dlp_subs |
+| 2026-07-20 | [Hermes Agent - Full Course & Setup Guide - For COMPLETE Beginners](https://www.youtube.com/watch?v=mTYxpIRK7xA) | yt_dlp_subs |
