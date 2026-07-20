@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **36 skills** · Last synced: 2026-07-20 02:47 UTC
+> **89 skills** · Last synced: 2026-07-20 02:51 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [How To Use Codex To Build Insanely Beautiful Websites Using GPT 5.6 Sol](skills/how_to_use_codex_to_build_insanely_beautiful_websi.md) | By AI LABS. Key tools: Claude, next.js, Anthropic, OpenAI, git. (Auto-extracted  | `Claude` `next.js` `Anthropic` `OpenAI` | `design` `website` `codeex` |
 | [Building a Comprehensive Second Brain with AI](skills/building_a_second_brain.md) | Learn how to create a second brain with AI, a system that organizes and connects | `Obsidian` `ChatGPT` `Grok` `Gemini` | `AI` `development` `organization` |
 | [Hermes Agent Cost Reduction: Optimizing Token Usage](skills/use_this_to_make_the_hermes_agent_basically_free.md) | This skill teaches how to reduce Hermes agent costs by optimizing token usage, u | `OpenAI` `Parto Router` `config.yaml` | `cost reduction` `hermes agent` `optimization` |
 | [you need to use Hermes RIGHT NOW!! (goodbye OpenClaw!!)](skills/you_need_to_use_hermes_right_now_goodbye_openclaw.md) | By NetworkChuck. Key tools: Python, Docker, LLM, OpenAI, anthropic. (Auto-extrac | `Python` `Docker` `LLM` `OpenAI` | `hermes` `gonna` `here` |
@@ -45,6 +46,58 @@
 | [Kimi K3 Is Fable Level... (they should be worried)](skills/kimi_k3_is_fable_level_they_should_be_worried.md) | By Better Stack. Key tools: Claude, React, Next.js, SQLite, Node. (Auto-extracte | `Claude` `React` `Next.js` `SQLite` | `actually` `here` `fable` |
 | [Hermes Agent Tutorial for Beginners (Full Step-by-Step Setup)](skills/hermes_agent_tutorial_for_beginners_full_step_by_s.md) | By Metics Media. Key tools: Claude, Docker, bash, Python, LLM. (Auto-extracted — | `Claude` `Docker` `bash` `Python` | `agent` `hermes` `want` |
 | [Kimi K3 is just ridiculous](skills/kimi_k3_is_just_ridiculous.md) | By LanceyPoo. Key tools: Claude. (Auto-extracted — pending AI enhancement.) | `Claude` | `okay` `going` `wait` |
+| [moonshot_kimiko_3](skills/moonshot_kimiko_3.md) |  |  |  |
+| [qwen_3_6_pi_agent_build_your_own_ai_assistant_full](skills/qwen_3_6_pi_agent_build_your_own_ai_assistant_full.md) |  |  |  |
+| [kimi_k3_is_insane_best_open_model_ever_that_beats_](skills/kimi_k3_is_insane_best_open_model_ever_that_beats_.md) |  |  |  |
+| [use_kimi_k3_completely_free_best_ai_coding_setup_2](skills/use_kimi_k3_completely_free_best_ai_coding_setup_2.md) |  |  |  |
+| [moonshot_kimiko_3_skill](skills/moonshot_kimiko_3_skill.md) |  |  |  |
+| [graphrag_deployment](skills/graphrag_deployment.md) |  |  |  |
+| [did_kimi_k3_really_beat_fable](skills/did_kimi_k3_really_beat_fable.md) |  |  |  |
+| [build_production_ready_llm_applications_with_haystack](skills/build_production_ready_llm_applications_with_haystack.md) |  |  |  |
+| [2_8_trillion_parameters_kimi_k3_is_here](skills/2_8_trillion_parameters_kimi_k3_is_here.md) |  |  |  |
+| [chrome_mcp_server](skills/chrome_mcp_server.md) |  |  |  |
+| [ragflow_deployment](skills/ragflow_deployment.md) |  |  |  |
+| [experimenting_with_longs](skills/experimenting_with_longs.md) |  |  |  |
+| [local_ai_coding](skills/local_ai_coding.md) |  |  |  |
+| [mastering_loop_engineering](skills/mastering_loop_engineering.md) |  |  |  |
+| [new_hermes_paperclip_ai_agent_update_is_insane](skills/new_hermes_paperclip_ai_agent_update_is_insane.md) |  |  |  |
+| [running_large_models_locally](skills/running_large_models_locally.md) |  |  |  |
+| [kimi_k3_is_insanely_strong_real_tests_and_review](skills/kimi_k3_is_insanely_strong_real_tests_and_review.md) |  |  |  |
+| [kimi_k3_hermes_agent_changes_everything](skills/kimi_k3_hermes_agent_changes_everything.md) |  |  |  |
+| [kimi_k3_just_knocked_claude_to_third_place_chinese](skills/kimi_k3_just_knocked_claude_to_third_place_chinese.md) |  |  |  |
+| [6_insane_hermes_agent_use_cases_that_you_need_righ](skills/6_insane_hermes_agent_use_cases_that_you_need_righ.md) |  |  |  |
+| [this_kimi_k3_agent_os_is_wild](skills/this_kimi_k3_agent_os_is_wild.md) |  |  |  |
+| [superagi_building_autonomous_agents](skills/superagi_building_autonomous_agents.md) |  |  |  |
+| [kimi_k3_is_out_and_the_real_opportunity_isn_t_the_](skills/kimi_k3_is_out_and_the_real_opportunity_isn_t_the_.md) |  |  |  |
+| [i_tested_kimi_k3_so_you_don_t_have_to](skills/i_tested_kimi_k3_so_you_don_t_have_to.md) |  |  |  |
+| [how_to_run_kimi_k3_for_free](skills/how_to_run_kimi_k3_for_free.md) |  |  |  |
+| [building_resilient_ai_agents_with_langgraph](skills/building_resilient_ai_agents_with_langgraph.md) |  |  |  |
+| [chatgpt_work_everything_you_need_to_know_to_get_st](skills/chatgpt_work_everything_you_need_to_know_to_get_st.md) |  |  |  |
+| [ragaai_catalyst](skills/ragaai_catalyst.md) |  |  |  |
+| [people_are_creating_insane_things_with_kimi_k3](skills/people_are_creating_insane_things_with_kimi_k3.md) |  |  |  |
+| [hermes_agent_ollama_how_to_install_hermes_locally_](skills/hermes_agent_ollama_how_to_install_hermes_locally_.md) |  |  |  |
+| [moonshot_kimiko_automation](skills/moonshot_kimiko_automation.md) |  |  |  |
+| [prism_ml_bonzai_deployment](skills/prism_ml_bonzai_deployment.md) |  |  |  |
+| [testing_and_comparing_llms](skills/testing_and_comparing_llms.md) |  |  |  |
+| [swanlab_ai_training_analysis_platform](skills/swanlab_ai_training_analysis_platform.md) |  |  |  |
+| [astrbot_deployment](skills/astrbot_deployment.md) |  |  |  |
+| [hermes_agent_setup](skills/hermes_agent_setup.md) |  |  |  |
+| [building_ai_agents](skills/building_ai_agents.md) |  |  |  |
+| [kimi_k3_testing_moonshot_s_2_8t_open_model_without](skills/kimi_k3_testing_moonshot_s_2_8t_open_model_without.md) |  |  |  |
+| [building_ai_agents_with_langchain](skills/building_ai_agents_with_langchain.md) |  |  |  |
+| [building_ai_agents_with_loop](skills/building_ai_agents_with_loop.md) |  |  |  |
+| [lightrag_deployment](skills/lightrag_deployment.md) |  |  |  |
+| [openai_agents_sdk](skills/openai_agents_sdk.md) |  |  |  |
+| [kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner](skills/kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner.md) |  |  |  |
+| [higsfield_integration](skills/higsfield_integration.md) |  |  |  |
+| [microsoft_mcp_curriculum](skills/microsoft_mcp_curriculum.md) |  |  |  |
+| [master_ai_trading_in_70_minutes_full_claude_tradin](skills/master_ai_trading_in_70_minutes_full_claude_tradin.md) |  |  |  |
+| [deploying_retrieval_augmented_generation_with_ragflow](skills/deploying_retrieval_augmented_generation_with_ragflow.md) |  |  |  |
+| [kimi_k3_hermes_ai_agent_is_insane](skills/kimi_k3_hermes_ai_agent_is_insane.md) |  |  |  |
+| [pydantic_ai_framework](skills/pydantic_ai_framework.md) |  |  |  |
+| [incremental_code_review](skills/incremental_code_review.md) |  |  |  |
+| [new_hermes_agent_os_is_insane](skills/new_hermes_agent_os_is_insane.md) |  |  |  |
+| [kimi_k3_ai_model](skills/kimi_k3_ai_model.md) |  |  |  |
 
 ---
 
