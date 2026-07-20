@@ -21,4 +21,4 @@ OpenAI, Claude, Docker
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-19 | [GPT-5.6 on Hermes Agent Is Actually Insane (Full Hermes Setup with $0 Codex)](https://www.youtube.com/watch?v=eo4X_BqDozA) | yt_dlp_subs |
+| 2026-07-20 | [GPT-5.6 on Hermes Agent Is Actually Insane (Full Hermes Setup with $0 Codex)](https://www.youtube.com/watch?v=eo4X_BqDozA) | yt_dlp_subs |
