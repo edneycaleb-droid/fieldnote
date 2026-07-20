@@ -1,21 +1,25 @@
-# This 100% self-improving AI Agent is insane… just watch
+# Hermes Agent Setup
 
-> ⚠️ **Auto-extracted draft** — pending AI enhancement for full quality.
-
-By David Ondrej. Key tools: Claude, Docker, pip, Python, Git. (Auto-extracted — pending AI enhancement.)
+## Description
+This skill teaches how to set up Hermes Agent, a self-improving AI assistant, and its applications in AI self-improvement.
 
 ## Steps
+1. Deploy Hermes Agent on a $5 VPS
+2. Set up a new VPS server for AI agents
+3. Add user Hermes and set up the Hostinger terminal
+4. Install Hermes using the quick install script
 
-- Watch the full video for step-by-step instructions.
+## Tools
+* Hostinger
+* Hermes Agent
 
-## Tools & Technologies
+## Concepts
+* Self-improving AI
+* AI self-improvement
+* Hermes Agent
 
-Claude, Docker, pip, Python, Git, Node, Anthropic, OpenAI, SQLite, SSH
-
-## Source
-
-- **Video**: [This 100% self-improving AI Agent is insane… just watch](https://www.youtube.com/watch?v=EHlqRx0r4BI)
-- **Video ID**: `EHlqRx0r4BI`
+## Related Skills
+* Hermes Agent Zero to Personal AI Assistant (1 Hour Course)
 
 ## Sources
 
