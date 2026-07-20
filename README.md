@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **88 skills** · Last synced: 2026-07-20 02:45 UTC
+> **88 skills** · Last synced: 2026-07-20 02:46 UTC
 
 ---
 
@@ -9,6 +9,8 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [NEW Hermes + Paperclip AI Agent Update Is INSANE](skills/new_hermes_paperclip_ai_agent_update_is_insane.md) | By Julian Goldie SEO. Key tools: Claude, Gemini. (Auto-extracted — pending AI en | `Claude` `Gemini` | `agent` `hermes` `paperclip` |
+| [New Hermes Agent OS is INSANE!](skills/new_hermes_agent_os_is_insane.md) | By Julian Goldie SEO. Key tools: Claude. (Auto-extracted — pending AI enhancemen | `Claude` | `same` `outreach` `agent` |
 | [Kimi K3: Testing Moonshot's 2.8T Open Model without Hype](skills/kimi_k3_testing_moonshot_s_2_8t_open_model_without.md) | By Fahd Mirza. Key tools: SQLite, Claude, Gemini, OpenAI, Anthropic. (Auto-extra | `SQLite` `Claude` `Gemini` `OpenAI` | `which` `model` `going` |
 | [Kimi K3 Game Development: Creating Games with AI](skills/people_are_creating_insane_things_with_kimi_k3.md) | This skill teaches how to create games using Kimi K3, a large open-source AI mod | `Kimi K3` `Grock` `Fable 5` `GPT 5.6` | `game development` `ai models` `kimi k3` |
 | [Moonshot AI's Kimmy K3: A 2.8 Trillion Parameter Model](skills/did_kimi_k3_really_beat_fable.md) | This skill teaches how to use Kimmy K3, a 2.8 trillion parameter model, for vari | `Kimi K3` `LLM` `OpenAI` `Anthropic` | `ai` `machine learning` `deep learning` |
@@ -49,7 +51,6 @@
 | [local_ai_coding](skills/local_ai_coding.md) |  |  |  |
 | [kimi_k3_is_fable_level_they_should_be_worried](skills/kimi_k3_is_fable_level_they_should_be_worried.md) |  |  |  |
 | [mastering_loop_engineering](skills/mastering_loop_engineering.md) |  |  |  |
-| [new_hermes_paperclip_ai_agent_update_is_insane](skills/new_hermes_paperclip_ai_agent_update_is_insane.md) |  |  |  |
 | [by_august_we_ll_have_frontier_ai_running_locally](skills/by_august_we_ll_have_frontier_ai_running_locally.md) |  |  |  |
 | [kimi_k3_is_the_best_model_ever_made_sometimes](skills/kimi_k3_is_the_best_model_ever_made_sometimes.md) |  |  |  |
 | [hermes_agent_tutorial_for_beginners_full_step_by_s](skills/hermes_agent_tutorial_for_beginners_full_step_by_s.md) |  |  |  |
@@ -94,7 +95,6 @@
 | [kimi_k3_is_just_ridiculous](skills/kimi_k3_is_just_ridiculous.md) |  |  |  |
 | [pydantic_ai_framework](skills/pydantic_ai_framework.md) |  |  |  |
 | [incremental_code_review](skills/incremental_code_review.md) |  |  |  |
-| [new_hermes_agent_os_is_insane](skills/new_hermes_agent_os_is_insane.md) |  |  |  |
 | [hermes_agent_zero_to_personal_ai_assistant_1_hour_](skills/hermes_agent_zero_to_personal_ai_assistant_1_hour_.md) |  |  |  |
 | [kimi_k3_ai_model](skills/kimi_k3_ai_model.md) |  |  |  |
 
