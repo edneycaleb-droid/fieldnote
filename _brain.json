@@ -1,105 +1,96 @@
 {
   "concepts": {
-    "same": {
-      "freq": 1,
-      "skills": [
-        "new_hermes_agent_os_is_insane"
-      ]
-    },
-    "outreach": {
-      "freq": 1,
-      "skills": [
-        "new_hermes_agent_os_is_insane"
-      ]
-    },
     "agent": {
       "freq": 1,
       "skills": [
-        "new_hermes_agent_os_is_insane"
+        "kimi_k3_hermes_agent_changes_everything"
       ]
     },
-    "squad": {
+    "inside": {
       "freq": 1,
       "skills": [
-        "new_hermes_agent_os_is_insane"
+        "kimi_k3_hermes_agent_changes_everything"
       ]
     },
-    "memory": {
+    "model": {
       "freq": 1,
       "skills": [
-        "new_hermes_agent_os_is_insane"
+        "kimi_k3_hermes_agent_changes_everything"
       ]
     },
-    "each": {
+    "right": {
       "freq": 1,
       "skills": [
-        "new_hermes_agent_os_is_insane"
+        "kimi_k3_hermes_agent_changes_everything"
       ]
     },
-    "already": {
+    "here": {
       "freq": 1,
       "skills": [
-        "new_hermes_agent_os_is_insane"
+        "kimi_k3_hermes_agent_changes_everything"
       ]
     },
-    "profit": {
+    "system": {
       "freq": 1,
       "skills": [
-        "new_hermes_agent_os_is_insane"
+        "kimi_k3_hermes_agent_changes_everything"
       ]
     },
-    "boardroom": {
+    "full": {
       "freq": 1,
       "skills": [
-        "new_hermes_agent_os_is_insane"
+        "kimi_k3_hermes_agent_changes_everything"
       ]
     },
-    "every": {
+    "kimiko": {
       "freq": 1,
       "skills": [
-        "new_hermes_agent_os_is_insane"
+        "kimi_k3_hermes_agent_changes_everything"
+      ]
+    },
+    "hermes": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_hermes_agent_changes_everything"
+      ]
+    },
+    "video": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_hermes_agent_changes_everything"
       ]
     }
   },
-  "tools": {
-    "Claude": {
-      "freq": 1,
-      "skills": [
-        "new_hermes_agent_os_is_insane"
-      ]
-    }
-  },
+  "tools": {},
   "skill_map": {
-    "new_hermes_agent_os_is_insane": {
+    "kimi_k3_hermes_agent_changes_everything": {
       "concepts": [
-        "same",
-        "outreach",
         "agent",
-        "squad",
-        "memory",
-        "each",
-        "already",
-        "profit",
-        "boardroom",
-        "every"
+        "inside",
+        "model",
+        "right",
+        "here",
+        "system",
+        "full",
+        "kimiko",
+        "hermes",
+        "video"
       ],
-      "tools": [
-        "Claude"
-      ],
+      "tools": [],
       "tags": [
-        "same",
-        "outreach",
         "agent",
-        "squad",
-        "memory",
-        "each"
+        "inside",
+        "model",
+        "right",
+        "here",
+        "system"
       ],
       "step_count": 1
     }
   },
   "relationships": {
-    "new_hermes_agent_os_is_insane": {}
+    "kimi_k3_hermes_agent_changes_everything": {}
   },
-  "updated_at": "2026-07-20T02:56:52.684557+00:00",
+  "updated_at": "2026-07-20T02:56:52.769077+00:00",
   "total_skills": 1
 }
