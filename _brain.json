@@ -40,9 +40,10 @@
       ]
     },
     "kimmy": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_is_just_ridiculous"
+        "kimi_k3_is_just_ridiculous",
+        "kimi_k3_fully_tested_an_open_model_beats_fable"
       ]
     },
     "pretty": {
@@ -100,9 +101,10 @@
       ]
     },
     "right": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+        "hermes_agent_tutorial_for_beginners_full_step_by_s",
+        "kimi_k3_fully_tested_an_open_model_beats_fable"
       ]
     },
     "need": {
@@ -158,6 +160,54 @@
       "freq": 1,
       "skills": [
         "how_to_use_codex_to_build_insanely_beautiful_websi"
+      ]
+    },
+    "model": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_fully_tested_an_open_model_beats_fable"
+      ]
+    },
+    "question": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_fully_tested_an_open_model_beats_fable"
+      ]
+    },
+    "models": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_fully_tested_an_open_model_beats_fable"
+      ]
+    },
+    "opus": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_fully_tested_an_open_model_beats_fable"
+      ]
+    },
+    "send": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_fully_tested_an_open_model_beats_fable"
+      ]
+    },
+    "gets": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_fully_tested_an_open_model_beats_fable"
+      ]
+    },
+    "fable": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_fully_tested_an_open_model_beats_fable"
+      ]
+    },
+    "video": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_fully_tested_an_open_model_beats_fable"
       ]
     }
   },
@@ -216,6 +266,12 @@
       "freq": 1,
       "skills": [
         "how_to_use_codex_to_build_insanely_beautiful_websi"
+      ]
+    },
+    "Gemini": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_fully_tested_an_open_model_beats_fable"
       ]
     }
   },
@@ -305,6 +361,32 @@
         "before"
       ],
       "step_count": 1
+    },
+    "kimi_k3_fully_tested_an_open_model_beats_fable": {
+      "concepts": [
+        "model",
+        "question",
+        "models",
+        "kimmy",
+        "opus",
+        "send",
+        "gets",
+        "fable",
+        "video",
+        "right"
+      ],
+      "tools": [
+        "Gemini"
+      ],
+      "tags": [
+        "model",
+        "question",
+        "models",
+        "kimmy",
+        "opus",
+        "send"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -317,6 +399,9 @@
       "how_to_use_codex_to_build_insanely_beautiful_websi": [
         "here",
         "Claude"
+      ],
+      "kimi_k3_fully_tested_an_open_model_beats_fable": [
+        "kimmy"
       ]
     },
     "hermes_agent_tutorial_for_beginners_full_step_by_s": {
@@ -329,6 +414,9 @@
         "here",
         "need",
         "Claude"
+      ],
+      "kimi_k3_fully_tested_an_open_model_beats_fable": [
+        "right"
       ]
     },
     "how_to_use_codex_to_build_insanely_beautiful_websi": {
@@ -341,8 +429,16 @@
         "need",
         "Claude"
       ]
+    },
+    "kimi_k3_fully_tested_an_open_model_beats_fable": {
+      "kimi_k3_is_just_ridiculous": [
+        "kimmy"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "right"
+      ]
     }
   },
-  "updated_at": "2026-07-20T02:40:22.823173+00:00",
-  "total_skills": 3
+  "updated_at": "2026-07-20T02:40:22.882464+00:00",
+  "total_skills": 4
 }
