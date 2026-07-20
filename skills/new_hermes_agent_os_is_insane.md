@@ -21,4 +21,4 @@ Claude
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-19 | [New Hermes Agent OS is INSANE!](https://www.youtube.com/watch?v=NMcfnZcMjSU) | yt_dlp_subs |
+| 2026-07-20 | [New Hermes Agent OS is INSANE!](https://www.youtube.com/watch?v=NMcfnZcMjSU) | yt_dlp_subs |
