@@ -21,4 +21,4 @@ Claude, Gemini
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-19 | [NEW Hermes + Paperclip AI Agent Update Is INSANE](https://www.youtube.com/watch?v=O_irkwZoQw8) | yt_dlp_subs |
+| 2026-07-20 | [NEW Hermes + Paperclip AI Agent Update Is INSANE](https://www.youtube.com/watch?v=O_irkwZoQw8) | yt_dlp_subs |
