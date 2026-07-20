@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Every Hermes Concept explained for Normal People](skills/every_hermes_concept_explained_for_normal_people.md) | By Jack Roberts. Key tools: Claude, Anthropic, OpenAI, Ollama, SQLite. (Auto-ext | `Claude` `Anthropic` `OpenAI` `Ollama` | `hermes` `here` `about` |
 | [New Hermes Agent OS is INSANE!](skills/new_hermes_agent_os_is_insane.md) | By Julian Goldie SEO. Key tools: Claude. (Auto-extracted — pending AI enhancemen | `Claude` | `same` `outreach` `agent` |
 | [Chemistry 3 Model: A Powerful, Open-Source AI Model](skills/nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe.md) | This skill covers the Chemistry 3 model, a powerful, open-source AI model that s | `Clou` `Anthropic` `API` `Chemistry 3 API` | `ai` `web-development` `front-end-design` |
 | [Kimi K3 Downfall: A Threat to Anthropic's Dominance](skills/kimi_k3_is_not_the_story_china_s_ai_master_plan_is.md) | Kimi K3's emergence as a top AI model poses a significant threat to Anthropic's  | `Claude` `Anthropic` `OpenAI` `Gemini` | `ai` `machine learning` `natural language processing` |
@@ -86,7 +87,6 @@
 | [kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner](skills/kimi_k3_vs_fable_5_vs_gpt_5_6_one_game_one_winner.md) |  |  |  |
 | [google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq](skills/google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq.md) |  |  |  |
 | [higsfield_integration](skills/higsfield_integration.md) |  |  |  |
-| [every_hermes_concept_explained_for_normal_people](skills/every_hermes_concept_explained_for_normal_people.md) |  |  |  |
 | [kimi_k3_fully_tested_an_open_model_beats_fable](skills/kimi_k3_fully_tested_an_open_model_beats_fable.md) |  |  |  |
 | [microsoft_mcp_curriculum](skills/microsoft_mcp_curriculum.md) |  |  |  |
 | [master_ai_trading_in_70_minutes_full_claude_tradin](skills/master_ai_trading_in_70_minutes_full_claude_tradin.md) |  |  |  |
