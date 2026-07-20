@@ -114,20 +114,82 @@
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
       ]
+    },
+    "people": {
+      "freq": 1,
+      "skills": [
+        "this_ai_business_model_is_creating_new_millionaire"
+      ]
+    },
+    "product": {
+      "freq": 1,
+      "skills": [
+        "this_ai_business_model_is_creating_new_millionaire"
+      ]
+    },
+    "most": {
+      "freq": 1,
+      "skills": [
+        "this_ai_business_model_is_creating_new_millionaire"
+      ]
+    },
+    "build": {
+      "freq": 1,
+      "skills": [
+        "this_ai_business_model_is_creating_new_millionaire"
+      ]
+    },
+    "completely": {
+      "freq": 1,
+      "skills": [
+        "this_ai_business_model_is_creating_new_millionaire"
+      ]
+    },
+    "first": {
+      "freq": 1,
+      "skills": [
+        "this_ai_business_model_is_creating_new_millionaire"
+      ]
+    },
+    "time": {
+      "freq": 1,
+      "skills": [
+        "this_ai_business_model_is_creating_new_millionaire"
+      ]
+    },
+    "niche": {
+      "freq": 1,
+      "skills": [
+        "this_ai_business_model_is_creating_new_millionaire"
+      ]
+    },
+    "music": {
+      "freq": 1,
+      "skills": [
+        "this_ai_business_model_is_creating_new_millionaire"
+      ]
+    },
+    "selling": {
+      "freq": 1,
+      "skills": [
+        "this_ai_business_model_is_creating_new_millionaire"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "new_claude_update_is_insane",
-        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
+        "this_ai_business_model_is_creating_new_millionaire"
       ]
     },
     "Anthropic": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "new_claude_update_is_insane"
+        "new_claude_update_is_insane",
+        "this_ai_business_model_is_creating_new_millionaire"
       ]
     },
     "anthropic": {
@@ -205,6 +267,33 @@
         "already"
       ],
       "step_count": 1
+    },
+    "this_ai_business_model_is_creating_new_millionaire": {
+      "concepts": [
+        "people",
+        "product",
+        "most",
+        "build",
+        "completely",
+        "first",
+        "time",
+        "niche",
+        "music",
+        "selling"
+      ],
+      "tools": [
+        "Anthropic",
+        "Claude"
+      ],
+      "tags": [
+        "people",
+        "product",
+        "most",
+        "build",
+        "completely",
+        "first"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -213,6 +302,10 @@
         "already",
         "Claude",
         "anthropic"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Anthropic",
+        "Claude"
       ]
     },
     "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": {
@@ -220,9 +313,21 @@
         "already",
         "Claude",
         "anthropic"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Claude"
+      ]
+    },
+    "this_ai_business_model_is_creating_new_millionaire": {
+      "new_claude_update_is_insane": [
+        "Anthropic",
+        "Claude"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
       ]
     }
   },
-  "updated_at": "2026-07-20T02:51:26.975920+00:00",
-  "total_skills": 2
+  "updated_at": "2026-07-20T02:51:27.716119+00:00",
+  "total_skills": 3
 }
