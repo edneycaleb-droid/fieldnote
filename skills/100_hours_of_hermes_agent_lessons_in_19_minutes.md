@@ -21,4 +21,4 @@ Gemini, SSH, Claude
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-19 | [100 hours of Hermes Agent lessons in 19 minutes](https://www.youtube.com/watch?v=SpEwNq9H23w) | yt_dlp_subs |
+| 2026-07-20 | [100 hours of Hermes Agent lessons in 19 minutes](https://www.youtube.com/watch?v=SpEwNq9H23w) | yt_dlp_subs |
