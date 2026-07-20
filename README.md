@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **89 skills** · Last synced: 2026-07-20 02:51 UTC
+> **89 skills** · Last synced: 2026-07-20 02:52 UTC
 
 ---
 
@@ -9,7 +9,9 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [100 hours of Hermes Agent lessons in 19 minutes](skills/100_hours_of_hermes_agent_lessons_in_19_minutes.md) | By Alex Finn. Key tools: Gemini, SSH, Claude. (Auto-extracted — pending AI enhan | `Gemini` `SSH` `Claude` | `hermes` `agent` `other` |
 | [Hermes Agent Tutorial for Beginners (Full Step-by-Step Setup)](skills/hermes_agent_tutorial_for_beginners_full_step_by_s.md) | By Metics Media. Key tools: Claude, Docker, bash, Python, LLM. (Auto-extracted — | `Claude` `Docker` `bash` `Python` | `agent` `hermes` `want` |
+| [Kimi K3: Testing Moonshot's 2.8T Open Model without Hype](skills/kimi_k3_testing_moonshot_s_2_8t_open_model_without.md) | By Fahd Mirza. Key tools: SQLite, Claude, Gemini, OpenAI, Anthropic. (Auto-extra | `SQLite` `Claude` `Gemini` `OpenAI` | `which` `model` `going` |
 | [How To Use Codex To Build Insanely Beautiful Websites Using GPT 5.6 Sol](skills/how_to_use_codex_to_build_insanely_beautiful_websi.md) | By AI LABS. Key tools: Claude, next.js, Anthropic, OpenAI, git. (Auto-extracted  | `Claude` `next.js` `Anthropic` `OpenAI` | `design` `website` `codeex` |
 | [Building a Comprehensive Second Brain with AI](skills/building_a_second_brain.md) | Learn how to create a second brain with AI, a system that organizes and connects | `Obsidian` `ChatGPT` `Grok` `Gemini` | `AI` `development` `organization` |
 | [Hermes Agent Cost Reduction: Optimizing Token Usage](skills/use_this_to_make_the_hermes_agent_basically_free.md) | This skill teaches how to reduce Hermes agent costs by optimizing token usage, u | `OpenAI` `Parto Router` `config.yaml` | `cost reduction` `hermes agent` `optimization` |
@@ -42,7 +44,6 @@
 | [Hermes Agent: Build Your Own Personal AI Assistant (Full Course)](skills/hermes_agent_build_your_own_personal_ai_assistant_.md) | By Komputer Mechanic. Key tools: PowerShell, OpenAI. (Auto-extracted — pending A | `PowerShell` `OpenAI` | `going` `here` `agent` |
 | [Kimi K3 (Fully Tested): AN OPEN MODEL BEATS FABLE?!](skills/kimi_k3_fully_tested_an_open_model_beats_fable.md) | By AICodeKing. Key tools: Gemini. (Auto-extracted — pending AI enhancement.) | `Gemini` | `model` `question` `models` |
 | [Hermes Agent Just Got 10X Better (4 Insane NEW Features)](skills/hermes_agent_just_got_10x_better_4_insane_new_feat.md) | By Zinho Automates. Key tools: Claude. (Auto-extracted — pending AI enhancement. | `Claude` | `agent` `going` `every` |
-| [100 hours of Hermes Agent lessons in 19 minutes](skills/100_hours_of_hermes_agent_lessons_in_19_minutes.md) | By Alex Finn. Key tools: Gemini, SSH, Claude. (Auto-extracted — pending AI enhan | `Gemini` `SSH` `Claude` | `hermes` `agent` `other` |
 | [Kimi K3 AI Full COURSE 1 HOUR (Build & Automate Anything)](skills/kimi_k3_ai_full_course_1_hour_build_automate_anyth.md) | By Julian Goldie SEO. Key tools: LLM, Claude. (Auto-extracted — pending AI enhan | `LLM` `Claude` | `kimmy` `here` `want` |
 | [Kimi K3 Is Fable Level... (they should be worried)](skills/kimi_k3_is_fable_level_they_should_be_worried.md) | By Better Stack. Key tools: Claude, React, Next.js, SQLite, Node. (Auto-extracte | `Claude` `React` `Next.js` `SQLite` | `actually` `here` `fable` |
 | [Kimi K3 is just ridiculous](skills/kimi_k3_is_just_ridiculous.md) | By LanceyPoo. Key tools: Claude. (Auto-extracted — pending AI enhancement.) | `Claude` | `okay` `going` `wait` |
@@ -83,7 +84,6 @@
 | [astrbot_deployment](skills/astrbot_deployment.md) |  |  |  |
 | [hermes_agent_setup](skills/hermes_agent_setup.md) |  |  |  |
 | [building_ai_agents](skills/building_ai_agents.md) |  |  |  |
-| [kimi_k3_testing_moonshot_s_2_8t_open_model_without](skills/kimi_k3_testing_moonshot_s_2_8t_open_model_without.md) |  |  |  |
 | [building_ai_agents_with_langchain](skills/building_ai_agents_with_langchain.md) |  |  |  |
 | [building_ai_agents_with_loop](skills/building_ai_agents_with_loop.md) |  |  |  |
 | [lightrag_deployment](skills/lightrag_deployment.md) |  |  |  |
