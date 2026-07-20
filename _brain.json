@@ -1,63 +1,63 @@
 {
   "concepts": {
+    "opus": {
+      "freq": 1,
+      "skills": [
+        "new_claude_opus_5_leaks"
+      ]
+    },
+    "model": {
+      "freq": 1,
+      "skills": [
+        "new_claude_opus_5_leaks"
+      ]
+    },
+    "profit": {
+      "freq": 1,
+      "skills": [
+        "new_claude_opus_5_leaks"
+      ]
+    },
+    "boardroom": {
+      "freq": 1,
+      "skills": [
+        "new_claude_opus_5_leaks"
+      ]
+    },
+    "people": {
+      "freq": 1,
+      "skills": [
+        "new_claude_opus_5_leaks"
+      ]
+    },
     "claude": {
       "freq": 1,
       "skills": [
-        "new_claude_update_is_insane"
+        "new_claude_opus_5_leaks"
       ]
     },
-    "something": {
+    "here": {
       "freq": 1,
       "skills": [
-        "new_claude_update_is_insane"
+        "new_claude_opus_5_leaks"
+      ]
+    },
+    "honeycomb": {
+      "freq": 1,
+      "skills": [
+        "new_claude_opus_5_leaks"
+      ]
+    },
+    "inside": {
+      "freq": 1,
+      "skills": [
+        "new_claude_opus_5_leaks"
       ]
     },
     "anthropic": {
       "freq": 1,
       "skills": [
-        "new_claude_update_is_insane"
-      ]
-    },
-    "work": {
-      "freq": 1,
-      "skills": [
-        "new_claude_update_is_insane"
-      ]
-    },
-    "real": {
-      "freq": 1,
-      "skills": [
-        "new_claude_update_is_insane"
-      ]
-    },
-    "every": {
-      "freq": 1,
-      "skills": [
-        "new_claude_update_is_insane"
-      ]
-    },
-    "already": {
-      "freq": 1,
-      "skills": [
-        "new_claude_update_is_insane"
-      ]
-    },
-    "built": {
-      "freq": 1,
-      "skills": [
-        "new_claude_update_is_insane"
-      ]
-    },
-    "about": {
-      "freq": 1,
-      "skills": [
-        "new_claude_update_is_insane"
-      ]
-    },
-    "actually": {
-      "freq": 1,
-      "skills": [
-        "new_claude_update_is_insane"
+        "new_claude_opus_5_leaks"
       ]
     }
   },
@@ -65,48 +65,48 @@
     "Claude": {
       "freq": 1,
       "skills": [
-        "new_claude_update_is_insane"
+        "new_claude_opus_5_leaks"
       ]
     },
     "Anthropic": {
       "freq": 1,
       "skills": [
-        "new_claude_update_is_insane"
+        "new_claude_opus_5_leaks"
       ]
     }
   },
   "skill_map": {
-    "new_claude_update_is_insane": {
+    "new_claude_opus_5_leaks": {
       "concepts": [
+        "opus",
+        "model",
+        "profit",
+        "boardroom",
+        "people",
         "claude",
-        "something",
-        "anthropic",
-        "work",
-        "real",
-        "every",
-        "already",
-        "built",
-        "about",
-        "actually"
+        "here",
+        "honeycomb",
+        "inside",
+        "anthropic"
       ],
       "tools": [
         "Claude",
         "Anthropic"
       ],
       "tags": [
-        "claude",
-        "something",
-        "anthropic",
-        "work",
-        "real",
-        "every"
+        "opus",
+        "model",
+        "profit",
+        "boardroom",
+        "people",
+        "claude"
       ],
       "step_count": 1
     }
   },
   "relationships": {
-    "new_claude_update_is_insane": {}
+    "new_claude_opus_5_leaks": {}
   },
-  "updated_at": "2026-07-20T03:37:25.054916+00:00",
+  "updated_at": "2026-07-20T03:37:25.105002+00:00",
   "total_skills": 1
 }
