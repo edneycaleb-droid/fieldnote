@@ -1,21 +1,21 @@
-# China just beat Claude AI: Kimi K3
+# Kimi K3 Overview
 
-> ⚠️ **Auto-extracted draft** — pending AI enhancement for full quality.
-
-By TechLead. Key tools: Claude, Anthropic, OpenAI, GPT-4, Gemini. (Auto-extracted — pending AI enhancement.)
+## Description
+Kimi K3, a Chinese AI model, has surpassed top AI models in various benchmarks, posing a significant threat to Anthropic's dominance.
 
 ## Steps
+1. Watch the full video for step-by-step instructions.
+2. Understand the current state of AI models and their rankings.
+3. Learn about the implications of Kimi K3 on the AI market.
 
-- Watch the full video for step-by-step instructions.
+## Tools
+Claude, Anthropic, OpenAI, Gemini
 
-## Tools & Technologies
+## Concepts
+AI models, Kimi K3, Anthropic, AI market
 
-Claude, Anthropic, OpenAI, GPT-4, Gemini
-
-## Source
-
-- **Video**: [China just beat Claude AI: Kimi K3](https://www.youtube.com/watch?v=2wDXtzIE7qw)
-- **Video ID**: `2wDXtzIE7qw`
+## Related Skills
+Every Hermes Concept Explained for Normal People
 
 ## Sources
 
