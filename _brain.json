@@ -45,7 +45,7 @@
       ]
     },
     "going": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "the_15_most_insane_things_created_by_kimi_k3_kimi_",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -61,7 +61,7 @@
       ]
     },
     "here": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "the_15_most_insane_things_created_by_kimi_k3_kimi_",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -238,11 +238,12 @@
       ]
     },
     "right": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "this_100_self_improving_ai_agent_is_insane_just_wa",
         "yes_the_kimi_k3_hype_is_real",
-        "you_need_to_use_hermes_right_now_goodbye_openclaw"
+        "you_need_to_use_hermes_right_now_goodbye_openclaw",
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
       ]
     },
     "open": {
@@ -714,9 +715,46 @@
       ]
     },
     "work": {
+      "freq": 2,
+      "skills": [
+        "new_hermes_paperclip_ai_agent_update_is_insane",
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "site": {
       "freq": 1,
       "skills": [
-        "new_hermes_paperclip_ai_agent_update_is_insane"
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "chat": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "dave": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "website": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "good": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "need": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
       ]
     }
   },
@@ -1259,32 +1297,27 @@
     },
     "chatgpt_work_everything_you_need_to_know_to_get_st": {
       "concepts": [
-        "Chat GPT Work",
-        "Sites tool",
-        "Prompt crafting",
+        "work",
+        "here",
+        "site",
+        "right",
+        "chat",
+        "dave",
+        "website",
+        "good",
         "going",
-        "want",
-        "agent",
-        "here"
+        "need"
       ],
-      "tools": [
-        "Chat GPT Work",
-        "Sites tool",
-        "LLM",
-        "OpenAI",
-        "Anthropic",
-        "Docker",
-        "curl",
-        "SSH"
-      ],
+      "tools": [],
       "tags": [
-        "AI",
-        "Chat GPT",
-        "Website building",
-        "development",
-        "hermes"
+        "work",
+        "here",
+        "site",
+        "right",
+        "chat",
+        "dave"
       ],
-      "step_count": 6
+      "step_count": 1
     },
     "this_kimi_k3_agent_os_is_wild": {
       "concepts": [
@@ -1699,12 +1732,9 @@
         "OpenAI"
       ],
       "chatgpt_work_everything_you_need_to_know_to_get_st": [
-        "want",
-        "here",
-        "Anthropic",
-        "Docker",
-        "SSH",
-        "going"
+        "going",
+        "right",
+        "here"
       ],
       "did_kimi_k3_really_beat_fable": [
         "Anthropic",
@@ -1943,9 +1973,8 @@
         "OpenAI"
       ],
       "chatgpt_work_everything_you_need_to_know_to_get_st": [
-        "here",
-        "Anthropic",
-        "OpenAI"
+        "right",
+        "here"
       ],
       "did_kimi_k3_really_beat_fable": [
         "Anthropic",
@@ -2179,9 +2208,7 @@
       ],
       "chatgpt_work_everything_you_need_to_know_to_get_st": [
         "going",
-        "here",
-        "Anthropic",
-        "OpenAI"
+        "here"
       ],
       "did_kimi_k3_really_beat_fable": [
         "Anthropic",
@@ -2277,12 +2304,9 @@
         "OpenAI"
       ],
       "this_100_self_improving_ai_agent_is_insane_just_wa": [
-        "want",
-        "here",
-        "Anthropic",
-        "Docker",
-        "SSH",
-        "going"
+        "going",
+        "right",
+        "here"
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
         "Anthropic",
@@ -2294,9 +2318,8 @@
         "OpenAI"
       ],
       "yes_the_kimi_k3_hype_is_real": [
-        "here",
-        "Anthropic",
-        "OpenAI"
+        "right",
+        "here"
       ],
       "china_just_beat_claude_ai_kimi_k3": [
         "Anthropic",
@@ -2309,9 +2332,7 @@
       ],
       "i_tested_kimi_k3_so_you_don_t_have_to": [
         "going",
-        "here",
-        "Anthropic",
-        "OpenAI"
+        "here"
       ],
       "you_need_to_use_hermes_right_now_goodbye_openclaw": [
         "Anthropic",
@@ -2330,15 +2351,13 @@
         "OpenAI"
       ],
       "kimi_k3_testing_moonshot_s_2_8t_open_model_without": [
-        "going",
-        "Anthropic",
-        "OpenAI"
+        "going"
       ],
       "new_hermes_agent_os_is_insane": [
         "agent"
       ],
       "new_hermes_paperclip_ai_agent_update_is_insane": [
-        "agent"
+        "work"
       ]
     },
     "this_kimi_k3_agent_os_is_wild": {
@@ -2508,9 +2527,7 @@
         "OpenAI"
       ],
       "chatgpt_work_everything_you_need_to_know_to_get_st": [
-        "going",
-        "Anthropic",
-        "OpenAI"
+        "going"
       ],
       "did_kimi_k3_really_beat_fable": [
         "Anthropic",
@@ -2608,7 +2625,7 @@
         "Claude"
       ],
       "chatgpt_work_everything_you_need_to_know_to_get_st": [
-        "agent"
+        "work"
       ],
       "kimi_k3_testing_moonshot_s_2_8t_open_model_without": [
         "Gemini",
@@ -2622,6 +2639,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-20T02:45:52.539108+00:00",
+  "updated_at": "2026-07-20T02:45:52.820229+00:00",
   "total_skills": 18
 }
