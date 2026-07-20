@@ -74,11 +74,12 @@
       ]
     },
     "model": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "by_august_we_ll_have_frontier_ai_running_locally",
         "kimi_k3_crushed_fable",
-        "new_claude_opus_5_leaks"
+        "new_claude_opus_5_leaks",
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
       ]
     },
     "those": {
@@ -99,10 +100,11 @@
       ]
     },
     "because": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "by_august_we_ll_have_frontier_ai_running_locally",
-        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
+        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq",
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
       ]
     },
     "something": {
@@ -324,9 +326,10 @@
       ]
     },
     "models": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_crushed_fable"
+        "kimi_k3_crushed_fable",
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
       ]
     },
     "kimmy": {
@@ -410,9 +413,10 @@
       ]
     },
     "fable": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_vs_claude_fable_5_raw_results"
+        "kimi_k3_vs_claude_fable_5_raw_results",
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
       ]
     },
     "kimi": {
@@ -458,9 +462,10 @@
       ]
     },
     "already": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "new_claude_update_is_insane"
+        "new_claude_update_is_insane",
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
       ]
     },
     "built": {
@@ -473,6 +478,36 @@
       "freq": 1,
       "skills": [
         "new_claude_update_is_insane"
+      ]
+    },
+    "chemistry": {
+      "freq": 1,
+      "skills": [
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
+      ]
+    },
+    "clot": {
+      "freq": 1,
+      "skills": [
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
+      ]
+    },
+    "most": {
+      "freq": 1,
+      "skills": [
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
+      ]
+    },
+    "intelligence": {
+      "freq": 1,
+      "skills": [
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
+      ]
+    },
+    "artificial": {
+      "freq": 1,
+      "skills": [
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
       ]
     }
   },
@@ -497,7 +532,7 @@
       ]
     },
     "Anthropic": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "how_to_use_codex_to_build_insanely_beautiful_websi",
         "every_hermes_concept_explained_for_normal_people",
@@ -506,18 +541,20 @@
         "new_claude_opus_5_leaks",
         "hermes_agent_zero_to_personal_ai_assistant_1_hour_",
         "kimi_k3_vs_claude_fable_5_raw_results",
-        "new_claude_update_is_insane"
+        "new_claude_update_is_insane",
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
       ]
     },
     "OpenAI": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "how_to_use_codex_to_build_insanely_beautiful_websi",
         "by_august_we_ll_have_frontier_ai_running_locally",
         "every_hermes_concept_explained_for_normal_people",
         "kimi_k3_crushed_fable",
         "hermes_agent_full_course_setup_guide_for_complete_",
-        "hermes_agent_zero_to_personal_ai_assistant_1_hour_"
+        "hermes_agent_zero_to_personal_ai_assistant_1_hour_",
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
       ]
     },
     "git": {
@@ -964,6 +1001,33 @@
         "every"
       ],
       "step_count": 1
+    },
+    "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
+      "concepts": [
+        "chemistry",
+        "model",
+        "models",
+        "clot",
+        "fable",
+        "most",
+        "intelligence",
+        "because",
+        "artificial",
+        "already"
+      ],
+      "tools": [
+        "Anthropic",
+        "OpenAI"
+      ],
+      "tags": [
+        "chemistry",
+        "model",
+        "models",
+        "clot",
+        "fable",
+        "most"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -1019,6 +1083,10 @@
       "new_claude_update_is_insane": [
         "Anthropic",
         "Claude"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "Anthropic",
+        "OpenAI"
       ]
     },
     "by_august_we_ll_have_frontier_ai_running_locally": {
@@ -1063,6 +1131,11 @@
       "new_claude_update_is_insane": [
         "about",
         "something"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "because",
+        "model",
+        "OpenAI"
       ]
     },
     "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
@@ -1084,6 +1157,9 @@
       ],
       "new_claude_update_is_insane": [
         "every"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "because"
       ]
     },
     "chatgpt_work_everything_you_need_to_know_to_get_st": {
@@ -1242,6 +1318,10 @@
         "about",
         "Anthropic",
         "Claude"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "Anthropic",
+        "OpenAI"
       ]
     },
     "kimi_k3_crushed_fable": {
@@ -1301,6 +1381,12 @@
       "new_claude_update_is_insane": [
         "Anthropic",
         "Claude"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "Anthropic",
+        "models",
+        "model",
+        "OpenAI"
       ]
     },
     "hermes_agent_full_course_setup_guide_for_complete_": {
@@ -1365,6 +1451,10 @@
       ],
       "new_claude_update_is_insane": [
         "Anthropic"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "Anthropic",
+        "OpenAI"
       ]
     },
     "new_claude_opus_5_leaks": {
@@ -1413,6 +1503,10 @@
         "claude",
         "Claude",
         "anthropic"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "Anthropic",
+        "model"
       ]
     },
     "hermes_agent_zero_to_personal_ai_assistant_1_hour_": {
@@ -1484,6 +1578,10 @@
         "about",
         "Anthropic",
         "Claude"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "Anthropic",
+        "OpenAI"
       ]
     },
     "kimi_k3_vs_claude_fable_5_raw_results": {
@@ -1536,6 +1634,10 @@
       "new_claude_update_is_insane": [
         "Anthropic",
         "Claude"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "Anthropic",
+        "fable"
       ]
     },
     "new_claude_update_is_insane": {
@@ -1583,9 +1685,57 @@
       "kimi_k3_vs_claude_fable_5_raw_results": [
         "Anthropic",
         "Claude"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "already",
+        "Anthropic"
+      ]
+    },
+    "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "Anthropic",
+        "OpenAI"
+      ],
+      "by_august_we_ll_have_frontier_ai_running_locally": [
+        "because",
+        "model",
+        "OpenAI"
+      ],
+      "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": [
+        "because"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "Anthropic",
+        "OpenAI"
+      ],
+      "kimi_k3_crushed_fable": [
+        "Anthropic",
+        "models",
+        "model",
+        "OpenAI"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "Anthropic",
+        "OpenAI"
+      ],
+      "new_claude_opus_5_leaks": [
+        "Anthropic",
+        "model"
+      ],
+      "hermes_agent_zero_to_personal_ai_assistant_1_hour_": [
+        "Anthropic",
+        "OpenAI"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Anthropic",
+        "fable"
+      ],
+      "new_claude_update_is_insane": [
+        "already",
+        "Anthropic"
       ]
     }
   },
-  "updated_at": "2026-07-20T02:56:55.000196+00:00",
-  "total_skills": 12
+  "updated_at": "2026-07-20T02:56:55.175464+00:00",
+  "total_skills": 13
 }
