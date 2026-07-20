@@ -21,4 +21,4 @@ LLM, Claude, Ollama
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-19 | [Ornith (35B,9B) + Hermes,Zed: THE FULLY PRIVATE LOCAL AGENT is ACTUALLY HERE!](https://www.youtube.com/watch?v=9PkNh6b1P8A) | yt_dlp_subs |
+| 2026-07-20 | [Ornith (35B,9B) + Hermes,Zed: THE FULLY PRIVATE LOCAL AGENT is ACTUALLY HERE!](https://www.youtube.com/watch?v=9PkNh6b1P8A) | yt_dlp_subs |
