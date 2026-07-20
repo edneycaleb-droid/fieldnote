@@ -517,6 +517,24 @@
       "skills": [
         "chatgpt_work_everything_you_need_to_know_to_get_st"
       ]
+    },
+    "Screenshot-to-code benchmark": {
+      "freq": 1,
+      "skills": [
+        "this_kimi_k3_agent_os_is_wild"
+      ]
+    },
+    "Controlled benchmark": {
+      "freq": 1,
+      "skills": [
+        "this_kimi_k3_agent_os_is_wild"
+      ]
+    },
+    "Performance comparison": {
+      "freq": 1,
+      "skills": [
+        "this_kimi_k3_agent_os_is_wild"
+      ]
     }
   },
   "tools": {
@@ -682,6 +700,24 @@
       "freq": 1,
       "skills": [
         "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "Kimi K3": {
+      "freq": 1,
+      "skills": [
+        "this_kimi_k3_agent_os_is_wild"
+      ]
+    },
+    "Fable 5": {
+      "freq": 1,
+      "skills": [
+        "this_kimi_k3_agent_os_is_wild"
+      ]
+    },
+    "OpenRouter": {
+      "freq": 1,
+      "skills": [
+        "this_kimi_k3_agent_os_is_wild"
       ]
     }
   },
@@ -1034,6 +1070,24 @@
         "hermes"
       ],
       "step_count": 6
+    },
+    "this_kimi_k3_agent_os_is_wild": {
+      "concepts": [
+        "Screenshot-to-code benchmark",
+        "Controlled benchmark",
+        "Performance comparison"
+      ],
+      "tools": [
+        "Kimi K3",
+        "Fable 5",
+        "OpenRouter"
+      ],
+      "tags": [
+        "ai-models",
+        "benchmarking",
+        "performance-comparison"
+      ],
+      "step_count": 4
     }
   },
   "relationships": {
@@ -1726,8 +1780,9 @@
         "SSH",
         "OpenAI"
       ]
-    }
+    },
+    "this_kimi_k3_agent_os_is_wild": {}
   },
-  "updated_at": "2026-07-20T02:40:53.011400+00:00",
-  "total_skills": 12
+  "updated_at": "2026-07-20T02:40:53.895314+00:00",
+  "total_skills": 13
 }
