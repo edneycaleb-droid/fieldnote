@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **10 skills** · Last synced: 2026-07-20 02:41 UTC
+> **11 skills** · Last synced: 2026-07-20 02:41 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Qwen 3.6 + Pi Agent: Build Your Own AI Assistant (Full Setup)](skills/qwen_3_6_pi_agent_build_your_own_ai_assistant_full.md) | By Bart Slodyczka. Key tools: LLM. (Auto-extracted — pending AI enhancement.) | `LLM` | `agent` `here` `ticket` |
 | [Every Hermes Concept explained for Normal People](skills/every_hermes_concept_explained_for_normal_people.md) | By Jack Roberts. Key tools: Claude, Anthropic, OpenAI, Ollama, SQLite. (Auto-ext | `Claude` `Anthropic` `OpenAI` `Ollama` | `hermes` `here` `about` |
 | [Kimi K3 IS INSANE! Best Open Model EVER That BEATS FABLE 5 & GPT-5.6! (Fully Tested)](skills/kimi_k3_is_insane_best_open_model_ever_that_beats_.md) | By WorldofAI. Key tools: Claude. (Auto-extracted — pending AI enhancement.) | `Claude` | `model` `different` `which` |
 | [How to Run Kimi K3 for FREE!](skills/how_to_run_kimi_k3_for_free.md) | By Julian Goldie SEO. (Auto-extracted — pending AI enhancement.) |  | `free` `going` `here` |

@@ -21,4 +21,4 @@ LLM
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-19 | [Qwen 3.6 + Pi Agent: Build Your Own AI Assistant (Full Setup)](https://www.youtube.com/watch?v=7KwoyDzxEuk) | yt_dlp_subs |
+| 2026-07-20 | [Qwen 3.6 + Pi Agent: Build Your Own AI Assistant (Full Setup)](https://www.youtube.com/watch?v=7KwoyDzxEuk) | yt_dlp_subs |
