@@ -49,9 +49,10 @@
       ]
     },
     "every": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+        "100_hours_of_hermes_agent_lessons_in_19_minutes",
+        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
       ]
     },
     "want": {
@@ -294,6 +295,60 @@
       "skills": [
         "kimi_k3_hermes_agent_changes_everything"
       ]
+    },
+    "memory": {
+      "freq": 1,
+      "skills": [
+        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
+      ]
+    },
+    "data": {
+      "freq": 1,
+      "skills": [
+        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
+      ]
+    },
+    "vector": {
+      "freq": 1,
+      "skills": [
+        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
+      ]
+    },
+    "google": {
+      "freq": 1,
+      "skills": [
+        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
+      ]
+    },
+    "search": {
+      "freq": 1,
+      "skills": [
+        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
+      ]
+    },
+    "whole": {
+      "freq": 1,
+      "skills": [
+        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
+      ]
+    },
+    "because": {
+      "freq": 1,
+      "skills": [
+        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
+      ]
+    },
+    "which": {
+      "freq": 1,
+      "skills": [
+        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
+      ]
+    },
+    "same": {
+      "freq": 1,
+      "skills": [
+        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
+      ]
     }
   },
   "tools": {
@@ -347,6 +402,30 @@
       "freq": 1,
       "skills": [
         "kimi_k3_is_fable_level_they_should_be_worried"
+      ]
+    },
+    "rag": {
+      "freq": 1,
+      "skills": [
+        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
+      ]
+    },
+    "embedding": {
+      "freq": 1,
+      "skills": [
+        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
+      ]
+    },
+    "Python": {
+      "freq": 1,
+      "skills": [
+        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
+      ]
+    },
+    "LangChain": {
+      "freq": 1,
+      "skills": [
+        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
       ]
     }
   },
@@ -535,6 +614,35 @@
         "system"
       ],
       "step_count": 1
+    },
+    "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
+      "concepts": [
+        "memory",
+        "every",
+        "data",
+        "vector",
+        "google",
+        "search",
+        "whole",
+        "because",
+        "which",
+        "same"
+      ],
+      "tools": [
+        "rag",
+        "embedding",
+        "Python",
+        "LangChain"
+      ],
+      "tags": [
+        "memory",
+        "every",
+        "data",
+        "vector",
+        "google",
+        "search"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -561,6 +669,9 @@
       "kimi_k3_hermes_agent_changes_everything": [
         "agent",
         "hermes"
+      ],
+      "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": [
+        "every"
       ]
     },
     "chatgpt_work_everything_you_need_to_know_to_get_st": {
@@ -717,8 +828,13 @@
         "here",
         "agent"
       ]
+    },
+    "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "every"
+      ]
     }
   },
-  "updated_at": "2026-07-20T02:51:25.176885+00:00",
-  "total_skills": 7
+  "updated_at": "2026-07-20T02:51:25.359545+00:00",
+  "total_skills": 8
 }
