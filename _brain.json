@@ -40,13 +40,14 @@
       ]
     },
     "here": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "kimi_k3_is_just_ridiculous",
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "how_to_use_codex_to_build_insanely_beautiful_websi",
         "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
-        "hermes_agent_build_your_own_personal_ai_assistant_"
+        "hermes_agent_build_your_own_personal_ai_assistant_",
+        "every_hermes_concept_explained_for_normal_people"
       ]
     },
     "kimmy": {
@@ -76,29 +77,32 @@
       ]
     },
     "agent": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
         "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
-        "hermes_agent_build_your_own_personal_ai_assistant_"
+        "hermes_agent_build_your_own_personal_ai_assistant_",
+        "every_hermes_concept_explained_for_normal_people"
       ]
     },
     "hermes": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
-        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+        "100_hours_of_hermes_agent_lessons_in_19_minutes",
+        "every_hermes_concept_explained_for_normal_people"
       ]
     },
     "want": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
         "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
-        "hermes_agent_build_your_own_personal_ai_assistant_"
+        "hermes_agent_build_your_own_personal_ai_assistant_",
+        "every_hermes_concept_explained_for_normal_people"
       ]
     },
     "ahead": {
@@ -273,9 +277,10 @@
       ]
     },
     "example": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_ai_full_course_1_hour_build_automate_anyth"
+        "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
+        "every_hermes_concept_explained_for_normal_people"
       ]
     },
     "well": {
@@ -297,10 +302,11 @@
       ]
     },
     "basically": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
-        "making_with_loop_engineering"
+        "making_with_loop_engineering",
+        "every_hermes_concept_explained_for_normal_people"
       ]
     },
     "agents": {
@@ -342,10 +348,11 @@
       ]
     },
     "which": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "by_august_we_ll_have_frontier_ai_running_locally",
-        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
+        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq",
+        "every_hermes_concept_explained_for_normal_people"
       ]
     },
     "better": {
@@ -355,9 +362,10 @@
       ]
     },
     "about": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "by_august_we_ll_have_frontier_ai_running_locally"
+        "by_august_we_ll_have_frontier_ai_running_locally",
+        "every_hermes_concept_explained_for_normal_people"
       ]
     },
     "loop": {
@@ -449,11 +457,23 @@
       "skills": [
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
       ]
+    },
+    "come": {
+      "freq": 1,
+      "skills": [
+        "every_hermes_concept_explained_for_normal_people"
+      ]
+    },
+    "different": {
+      "freq": 1,
+      "skills": [
+        "every_hermes_concept_explained_for_normal_people"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "kimi_k3_is_just_ridiculous",
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
@@ -461,7 +481,8 @@
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
         "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
-        "making_with_loop_engineering"
+        "making_with_loop_engineering",
+        "every_hermes_concept_explained_for_normal_people"
       ]
     },
     "Docker": {
@@ -471,9 +492,10 @@
       ]
     },
     "bash": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+        "hermes_agent_tutorial_for_beginners_full_step_by_s",
+        "every_hermes_concept_explained_for_normal_people"
       ]
     },
     "Python": {
@@ -497,18 +519,20 @@
       ]
     },
     "Anthropic": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
+        "how_to_use_codex_to_build_insanely_beautiful_websi",
+        "every_hermes_concept_explained_for_normal_people"
       ]
     },
     "OpenAI": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "how_to_use_codex_to_build_insanely_beautiful_websi",
         "by_august_we_ll_have_frontier_ai_running_locally",
         "making_with_loop_engineering",
-        "hermes_agent_build_your_own_personal_ai_assistant_"
+        "hermes_agent_build_your_own_personal_ai_assistant_",
+        "every_hermes_concept_explained_for_normal_people"
       ]
     },
     "git": {
@@ -553,6 +577,18 @@
       "freq": 1,
       "skills": [
         "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
+      ]
+    },
+    "Ollama": {
+      "freq": 1,
+      "skills": [
+        "every_hermes_concept_explained_for_normal_people"
+      ]
+    },
+    "SQLite": {
+      "freq": 1,
+      "skills": [
+        "every_hermes_concept_explained_for_normal_people"
       ]
     }
   },
@@ -859,6 +895,37 @@
         "search"
       ],
       "step_count": 1
+    },
+    "every_hermes_concept_explained_for_normal_people": {
+      "concepts": [
+        "hermes",
+        "here",
+        "about",
+        "want",
+        "which",
+        "agent",
+        "come",
+        "example",
+        "different",
+        "basically"
+      ],
+      "tools": [
+        "Claude",
+        "Anthropic",
+        "OpenAI",
+        "Ollama",
+        "SQLite",
+        "bash"
+      ],
+      "tags": [
+        "hermes",
+        "here",
+        "about",
+        "want",
+        "which",
+        "agent"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -901,6 +968,10 @@
       "hermes_agent_build_your_own_personal_ai_assistant_": [
         "going",
         "here"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "here",
+        "Claude"
       ]
     },
     "hermes_agent_tutorial_for_beginners_full_step_by_s": {
@@ -954,6 +1025,14 @@
       ],
       "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": [
         "Python"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "want",
+        "here",
+        "Claude",
+        "hermes",
+        "agent",
+        "bash"
       ]
     },
     "how_to_use_codex_to_build_insanely_beautiful_websi": {
@@ -988,6 +1067,12 @@
       ],
       "hermes_agent_build_your_own_personal_ai_assistant_": [
         "here",
+        "OpenAI"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "here",
+        "Anthropic",
+        "Claude",
         "OpenAI"
       ]
     },
@@ -1060,6 +1145,12 @@
       ],
       "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": [
         "every"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "want",
+        "Claude",
+        "agent",
+        "hermes"
       ]
     },
     "kimi_k3_ai_full_course_1_hour_build_automate_anyth": {
@@ -1109,6 +1200,13 @@
         "going",
         "want",
         "here",
+        "agent"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "want",
+        "here",
+        "example",
+        "Claude",
         "agent"
       ]
     },
@@ -1160,6 +1258,11 @@
       ],
       "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": [
         "every"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "basically",
+        "Claude",
+        "agent"
       ]
     },
     "by_august_we_ll_have_frontier_ai_running_locally": {
@@ -1196,6 +1299,11 @@
       ],
       "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": [
         "because",
+        "which"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "about",
+        "OpenAI",
         "which"
       ]
     },
@@ -1235,6 +1343,11 @@
       ],
       "hermes_agent_build_your_own_personal_ai_assistant_": [
         "going",
+        "OpenAI"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "basically",
+        "Claude",
         "OpenAI"
       ]
     },
@@ -1279,6 +1392,12 @@
       "making_with_loop_engineering": [
         "going",
         "OpenAI"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "want",
+        "here",
+        "agent",
+        "OpenAI"
       ]
     },
     "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
@@ -1294,9 +1413,69 @@
       "by_august_we_ll_have_frontier_ai_running_locally": [
         "because",
         "which"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "which"
+      ]
+    },
+    "every_hermes_concept_explained_for_normal_people": {
+      "kimi_k3_is_just_ridiculous": [
+        "here",
+        "Claude"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "want",
+        "here",
+        "Claude",
+        "hermes",
+        "agent",
+        "bash"
+      ],
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "here",
+        "Anthropic",
+        "Claude",
+        "OpenAI"
+      ],
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "want",
+        "Claude",
+        "agent",
+        "hermes"
+      ],
+      "kimi_k3_ai_full_course_1_hour_build_automate_anyth": [
+        "want",
+        "here",
+        "example",
+        "Claude",
+        "agent"
+      ],
+      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
+        "basically",
+        "Claude",
+        "agent"
+      ],
+      "by_august_we_ll_have_frontier_ai_running_locally": [
+        "about",
+        "OpenAI",
+        "which"
+      ],
+      "making_with_loop_engineering": [
+        "basically",
+        "Claude",
+        "OpenAI"
+      ],
+      "hermes_agent_build_your_own_personal_ai_assistant_": [
+        "want",
+        "here",
+        "agent",
+        "OpenAI"
+      ],
+      "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": [
+        "which"
       ]
     }
   },
-  "updated_at": "2026-07-20T02:40:24.025521+00:00",
-  "total_skills": 11
+  "updated_at": "2026-07-20T02:40:24.145015+00:00",
+  "total_skills": 12
 }
