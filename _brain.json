@@ -1,15 +1,17 @@
 {
   "concepts": {
     "agent": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "hermes_agent_just_got_10x_better_4_insane_new_feat",
+        "hermes_agent_build_your_own_personal_ai_assistant_"
       ]
     },
     "going": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "hermes_agent_just_got_10x_better_4_insane_new_feat",
+        "hermes_agent_build_your_own_personal_ai_assistant_"
       ]
     },
     "every": {
@@ -49,15 +51,58 @@
       ]
     },
     "agents": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "hermes_agent_just_got_10x_better_4_insane_new_feat",
+        "hermes_agent_build_your_own_personal_ai_assistant_"
       ]
     },
     "skill": {
       "freq": 1,
       "skills": [
         "hermes_agent_just_got_10x_better_4_insane_new_feat"
+      ]
+    },
+    "here": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_build_your_own_personal_ai_assistant_"
+      ]
+    },
+    "want": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_build_your_own_personal_ai_assistant_"
+      ]
+    },
+    "click": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_build_your_own_personal_ai_assistant_"
+      ]
+    },
+    "send": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_build_your_own_personal_ai_assistant_"
+      ]
+    },
+    "calendar": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_build_your_own_personal_ai_assistant_"
+      ]
+    },
+    "coms": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_build_your_own_personal_ai_assistant_"
+      ]
+    },
+    "give": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_build_your_own_personal_ai_assistant_"
       ]
     }
   },
@@ -66,6 +111,18 @@
       "freq": 1,
       "skills": [
         "hermes_agent_just_got_10x_better_4_insane_new_feat"
+      ]
+    },
+    "PowerShell": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_build_your_own_personal_ai_assistant_"
+      ]
+    },
+    "OpenAI": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_build_your_own_personal_ai_assistant_"
       ]
     }
   },
@@ -95,11 +152,51 @@
         "model"
       ],
       "step_count": 1
+    },
+    "hermes_agent_build_your_own_personal_ai_assistant_": {
+      "concepts": [
+        "going",
+        "here",
+        "agent",
+        "want",
+        "agents",
+        "click",
+        "send",
+        "calendar",
+        "coms",
+        "give"
+      ],
+      "tools": [
+        "PowerShell",
+        "OpenAI"
+      ],
+      "tags": [
+        "going",
+        "here",
+        "agent",
+        "want",
+        "agents",
+        "click"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
-    "hermes_agent_just_got_10x_better_4_insane_new_feat": {}
+    "hermes_agent_just_got_10x_better_4_insane_new_feat": {
+      "hermes_agent_build_your_own_personal_ai_assistant_": [
+        "going",
+        "agents",
+        "agent"
+      ]
+    },
+    "hermes_agent_build_your_own_personal_ai_assistant_": {
+      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
+        "going",
+        "agents",
+        "agent"
+      ]
+    }
   },
-  "updated_at": "2026-07-20T02:45:53.582868+00:00",
-  "total_skills": 1
+  "updated_at": "2026-07-20T02:45:53.887251+00:00",
+  "total_skills": 2
 }
