@@ -45,7 +45,7 @@
       ]
     },
     "here": {
-      "freq": 9,
+      "freq": 10,
       "skills": [
         "new_claude_opus_5_leaks",
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
@@ -162,7 +162,7 @@
       ]
     },
     "right": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "kimi_k3_vs_claude_fable_5_raw_results",
@@ -172,7 +172,7 @@
       ]
     },
     "going": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "kimi_k3_vs_claude_fable_5_raw_results",
@@ -202,7 +202,7 @@
       ]
     },
     "fable": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
         "kimi_k3_vs_claude_fable_5_raw_results",
@@ -248,38 +248,38 @@
       ]
     },
     "kimi": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "look": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "well": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "these": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results",
         "yes_the_kimi_k3_hype_is_real"
       ]
     },
     "little": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "output": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results"
       ]
@@ -636,7 +636,7 @@
   },
   "tools": {
     "Claude": {
-      "freq": 16,
+      "freq": 17,
       "skills": [
         "new_claude_opus_5_leaks",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
@@ -653,7 +653,7 @@
       ]
     },
     "Anthropic": {
-      "freq": 10,
+      "freq": 11,
       "skills": [
         "new_claude_opus_5_leaks",
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
@@ -725,7 +725,7 @@
       ]
     },
     "Ollama": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results"
       ]
@@ -2423,6 +2423,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-20T03:42:24.055352+00:00",
+  "updated_at": "2026-07-20T03:42:24.139877+00:00",
   "total_skills": 20
 }
