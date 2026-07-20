@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **10 skills** · Last synced: 2026-07-20 02:57 UTC
+> **11 skills** · Last synced: 2026-07-20 02:57 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [This 100% self-improving AI Agent is insane… just watch](skills/this_100_self_improving_ai_agent_is_insane_just_wa.md) | By David Ondrej. Key tools: Claude, Docker, pip, Python, Git. (Auto-extracted —  | `Claude` `Docker` `pip` `Python` | `agent` `hermes` `going` |
 | [Anthropic's Downfall... Kimi K3.1, Grok 4.6, DeepSeek v4 GA, U.S. Gov's Gold Eagle, & Robot MMA!](skills/anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v.md) | By WorldofAI. Key tools: Claude, anthropic, Gemini, OpenAI. (Auto-extracted — pe | `Claude` `anthropic` `Gemini` `OpenAI` | `model` `which` `enthropic` |
 | [NUEVO Kimi K3 DESTRUYE a Claude Fable 5 (Debes Saber Esto)](skills/nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe.md) | By Juan Pe Navarro \| IA y Automatización. Key tools: Anthropic, OpenAI. (Auto-ex | `Anthropic` `OpenAI` | `chemistry` `model` `models` |
 | [New Claude Update Is INSANE!](skills/new_claude_update_is_insane.md) | By Julian Goldie SEO. Key tools: Claude, Anthropic. (Auto-extracted — pending AI | `Claude` `Anthropic` | `claude` `something` `anthropic` |
