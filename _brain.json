@@ -7,11 +7,12 @@
       ]
     },
     "going": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "kimi_k3_is_just_ridiculous",
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
-        "kimi_k3_ai_full_course_1_hour_build_automate_anyth"
+        "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
+        "hermes_agent_just_got_10x_better_4_insane_new_feat"
       ]
     },
     "wait": {
@@ -27,10 +28,11 @@
       ]
     },
     "actually": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "kimi_k3_is_just_ridiculous",
-        "kimi_k3_ai_full_course_1_hour_build_automate_anyth"
+        "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
+        "hermes_agent_just_got_10x_better_4_insane_new_feat"
       ]
     },
     "here": {
@@ -69,11 +71,12 @@
       ]
     },
     "agent": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
-        "kimi_k3_ai_full_course_1_hour_build_automate_anyth"
+        "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
+        "hermes_agent_just_got_10x_better_4_insane_new_feat"
       ]
     },
     "hermes": {
@@ -110,10 +113,11 @@
       ]
     },
     "right": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
-        "kimi_k3_fully_tested_an_open_model_beats_fable"
+        "kimi_k3_fully_tested_an_open_model_beats_fable",
+        "hermes_agent_just_got_10x_better_4_insane_new_feat"
       ]
     },
     "need": {
@@ -143,9 +147,10 @@
       ]
     },
     "skill": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "how_to_use_codex_to_build_insanely_beautiful_websi"
+        "how_to_use_codex_to_build_insanely_beautiful_websi",
+        "hermes_agent_just_got_10x_better_4_insane_new_feat"
       ]
     },
     "before": {
@@ -173,9 +178,10 @@
       ]
     },
     "model": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_fully_tested_an_open_model_beats_fable"
+        "kimi_k3_fully_tested_an_open_model_beats_fable",
+        "hermes_agent_just_got_10x_better_4_insane_new_feat"
       ]
     },
     "question": {
@@ -247,9 +253,10 @@
       ]
     },
     "every": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+        "100_hours_of_hermes_agent_lessons_in_19_minutes",
+        "hermes_agent_just_got_10x_better_4_insane_new_feat"
       ]
     },
     "example": {
@@ -269,17 +276,36 @@
       "skills": [
         "kimi_k3_ai_full_course_1_hour_build_automate_anyth"
       ]
+    },
+    "work": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+      ]
+    },
+    "basically": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+      ]
+    },
+    "agents": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "kimi_k3_is_just_ridiculous",
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "how_to_use_codex_to_build_insanely_beautiful_websi",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
-        "kimi_k3_ai_full_course_1_hour_build_automate_anyth"
+        "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
+        "hermes_agent_just_got_10x_better_4_insane_new_feat"
       ]
     },
     "Docker": {
@@ -512,6 +538,32 @@
         "over"
       ],
       "step_count": 1
+    },
+    "hermes_agent_just_got_10x_better_4_insane_new_feat": {
+      "concepts": [
+        "agent",
+        "going",
+        "every",
+        "actually",
+        "work",
+        "model",
+        "right",
+        "basically",
+        "agents",
+        "skill"
+      ],
+      "tools": [
+        "Claude"
+      ],
+      "tags": [
+        "agent",
+        "going",
+        "every",
+        "actually",
+        "work",
+        "model"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -537,6 +589,11 @@
         "Claude",
         "going",
         "kimmy"
+      ],
+      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
+        "going",
+        "actually",
+        "Claude"
       ]
     },
     "hermes_agent_tutorial_for_beginners_full_step_by_s": {
@@ -567,6 +624,12 @@
         "LLM",
         "going",
         "agent"
+      ],
+      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
+        "going",
+        "right",
+        "Claude",
+        "agent"
       ]
     },
     "how_to_use_codex_to_build_insanely_beautiful_websi": {
@@ -586,6 +649,10 @@
       "kimi_k3_ai_full_course_1_hour_build_automate_anyth": [
         "here",
         "Claude"
+      ],
+      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
+        "skill",
+        "Claude"
       ]
     },
     "kimi_k3_fully_tested_an_open_model_beats_fable": {
@@ -601,6 +668,10 @@
       ],
       "kimi_k3_ai_full_course_1_hour_build_automate_anyth": [
         "kimmy"
+      ],
+      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
+        "right",
+        "model"
       ]
     },
     "100_hours_of_hermes_agent_lessons_in_19_minutes": {
@@ -627,6 +698,11 @@
         "Claude",
         "agent",
         "over"
+      ],
+      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
+        "Claude",
+        "agent",
+        "every"
       ]
     },
     "kimi_k3_ai_full_course_1_hour_build_automate_anyth": {
@@ -657,9 +733,47 @@
         "Claude",
         "agent",
         "over"
+      ],
+      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
+        "going",
+        "actually",
+        "Claude",
+        "agent"
+      ]
+    },
+    "hermes_agent_just_got_10x_better_4_insane_new_feat": {
+      "kimi_k3_is_just_ridiculous": [
+        "going",
+        "actually",
+        "Claude"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "going",
+        "right",
+        "Claude",
+        "agent"
+      ],
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "skill",
+        "Claude"
+      ],
+      "kimi_k3_fully_tested_an_open_model_beats_fable": [
+        "right",
+        "model"
+      ],
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "Claude",
+        "agent",
+        "every"
+      ],
+      "kimi_k3_ai_full_course_1_hour_build_automate_anyth": [
+        "going",
+        "actually",
+        "Claude",
+        "agent"
       ]
     }
   },
-  "updated_at": "2026-07-20T02:40:23.525215+00:00",
-  "total_skills": 6
+  "updated_at": "2026-07-20T02:40:23.597547+00:00",
+  "total_skills": 7
 }
