@@ -26,24 +26,27 @@
       ]
     },
     "every": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
-        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq"
+        "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq",
+        "new_claude_update_is_insane"
       ]
     },
     "actually": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
-        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full"
+        "qwen_3_6_pi_agent_build_your_own_ai_assistant_full",
+        "new_claude_update_is_insane"
       ]
     },
     "work": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
-        "kimi_k3_is_the_best_model_ever_made_sometimes"
+        "kimi_k3_is_the_best_model_ever_made_sometimes",
+        "new_claude_update_is_insane"
       ]
     },
     "model": {
@@ -262,9 +265,10 @@
       ]
     },
     "something": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "by_august_we_ll_have_frontier_ai_running_locally"
+        "by_august_we_ll_have_frontier_ai_running_locally",
+        "new_claude_update_is_insane"
       ]
     },
     "open": {
@@ -287,12 +291,13 @@
       ]
     },
     "about": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "by_august_we_ll_have_frontier_ai_running_locally",
         "every_hermes_concept_explained_for_normal_people",
         "kimi_k3_is_not_the_story_china_s_ai_master_plan_is",
-        "kimi_k3_is_the_best_model_ever_made_sometimes"
+        "kimi_k3_is_the_best_model_ever_made_sometimes",
+        "new_claude_update_is_insane"
       ]
     },
     "inside": {
@@ -482,9 +487,10 @@
       ]
     },
     "already": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
+        "new_claude_update_is_insane"
       ]
     },
     "over": {
@@ -564,11 +570,35 @@
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results"
       ]
+    },
+    "claude": {
+      "freq": 1,
+      "skills": [
+        "new_claude_update_is_insane"
+      ]
+    },
+    "anthropic": {
+      "freq": 1,
+      "skills": [
+        "new_claude_update_is_insane"
+      ]
+    },
+    "real": {
+      "freq": 1,
+      "skills": [
+        "new_claude_update_is_insane"
+      ]
+    },
+    "built": {
+      "freq": 1,
+      "skills": [
+        "new_claude_update_is_insane"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
         "ornith_35b_9b_hermes_zed_the_fully_private_local_a",
@@ -577,7 +607,8 @@
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
         "kimi_k3_is_not_the_story_china_s_ai_master_plan_is",
         "kimi_k3_is_the_best_model_ever_made_sometimes",
-        "kimi_k3_vs_claude_fable_5_raw_results"
+        "kimi_k3_vs_claude_fable_5_raw_results",
+        "new_claude_update_is_insane"
       ]
     },
     "PowerShell": {
@@ -648,13 +679,14 @@
       ]
     },
     "Anthropic": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "every_hermes_concept_explained_for_normal_people",
         "hermes_agent_full_course_setup_guide_for_complete_",
         "kimi_k3_is_not_the_story_china_s_ai_master_plan_is",
         "kimi_k3_is_the_best_model_ever_made_sometimes",
-        "kimi_k3_vs_claude_fable_5_raw_results"
+        "kimi_k3_vs_claude_fable_5_raw_results",
+        "new_claude_update_is_insane"
       ]
     },
     "SQLite": {
@@ -1134,6 +1166,33 @@
         "well"
       ],
       "step_count": 1
+    },
+    "new_claude_update_is_insane": {
+      "concepts": [
+        "claude",
+        "something",
+        "anthropic",
+        "work",
+        "real",
+        "every",
+        "already",
+        "built",
+        "about",
+        "actually"
+      ],
+      "tools": [
+        "Claude",
+        "Anthropic"
+      ],
+      "tags": [
+        "claude",
+        "something",
+        "anthropic",
+        "work",
+        "real",
+        "every"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -1202,6 +1261,12 @@
         "going",
         "right",
         "Claude"
+      ],
+      "new_claude_update_is_insane": [
+        "every",
+        "actually",
+        "Claude",
+        "work"
       ]
     },
     "hermes_agent_build_your_own_personal_ai_assistant_": {
@@ -1334,6 +1399,9 @@
       "kimi_k3_is_the_best_model_ever_made_sometimes": [
         "because",
         "which"
+      ],
+      "new_claude_update_is_insane": [
+        "every"
       ]
     },
     "by_august_we_ll_have_frontier_ai_running_locally": {
@@ -1397,6 +1465,10 @@
       ],
       "kimi_k3_vs_claude_fable_5_raw_results": [
         "going"
+      ],
+      "new_claude_update_is_insane": [
+        "about",
+        "something"
       ]
     },
     "kimi_k3_hermes_agent_changes_everything": {
@@ -1497,6 +1569,9 @@
       "kimi_k3_vs_claude_fable_5_raw_results": [
         "going",
         "here"
+      ],
+      "new_claude_update_is_insane": [
+        "actually"
       ]
     },
     "ornith_35b_9b_hermes_zed_the_fully_private_local_a": {
@@ -1555,6 +1630,9 @@
         "Claude",
         "Ollama",
         "well"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude"
       ]
     },
     "every_hermes_concept_explained_for_normal_people": {
@@ -1624,6 +1702,11 @@
       "kimi_k3_vs_claude_fable_5_raw_results": [
         "Ollama",
         "here",
+        "Anthropic",
+        "Claude"
+      ],
+      "new_claude_update_is_insane": [
+        "about",
         "Anthropic",
         "Claude"
       ]
@@ -1699,6 +1782,9 @@
         "right",
         "here",
         "Anthropic"
+      ],
+      "new_claude_update_is_insane": [
+        "Anthropic"
       ]
     },
     "run_kimi_k3_inside_claude_code_max_power": {
@@ -1761,6 +1847,10 @@
         "going",
         "right",
         "well"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude",
+        "anthropic"
       ]
     },
     "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": {
@@ -1823,6 +1913,11 @@
       "kimi_k3_vs_claude_fable_5_raw_results": [
         "Claude",
         "fable"
+      ],
+      "new_claude_update_is_insane": [
+        "already",
+        "Claude",
+        "anthropic"
       ]
     },
     "kimi_k3_is_not_the_story_china_s_ai_master_plan_is": {
@@ -1887,6 +1982,11 @@
       ],
       "kimi_k3_vs_claude_fable_5_raw_results": [
         "going",
+        "Anthropic",
+        "Claude"
+      ],
+      "new_claude_update_is_insane": [
+        "about",
         "Anthropic",
         "Claude"
       ]
@@ -1969,6 +2069,12 @@
         "going",
         "Anthropic",
         "Claude"
+      ],
+      "new_claude_update_is_insane": [
+        "about",
+        "Anthropic",
+        "Claude",
+        "work"
       ]
     },
     "kimi_k3_vs_claude_fable_5_raw_results": {
@@ -2033,9 +2139,66 @@
         "going",
         "Anthropic",
         "Claude"
+      ],
+      "new_claude_update_is_insane": [
+        "Anthropic",
+        "Claude"
+      ]
+    },
+    "new_claude_update_is_insane": {
+      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
+        "every",
+        "actually",
+        "Claude",
+        "work"
+      ],
+      "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": [
+        "every"
+      ],
+      "by_august_we_ll_have_frontier_ai_running_locally": [
+        "about",
+        "something"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "actually"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "Claude"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "about",
+        "Anthropic",
+        "Claude"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "Anthropic"
+      ],
+      "run_kimi_k3_inside_claude_code_max_power": [
+        "Claude",
+        "anthropic"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "already",
+        "Claude",
+        "anthropic"
+      ],
+      "kimi_k3_is_not_the_story_china_s_ai_master_plan_is": [
+        "about",
+        "Anthropic",
+        "Claude"
+      ],
+      "kimi_k3_is_the_best_model_ever_made_sometimes": [
+        "about",
+        "Anthropic",
+        "Claude",
+        "work"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Anthropic",
+        "Claude"
       ]
     }
   },
-  "updated_at": "2026-07-20T02:45:55.494587+00:00",
-  "total_skills": 15
+  "updated_at": "2026-07-20T02:45:55.518872+00:00",
+  "total_skills": 16
 }
