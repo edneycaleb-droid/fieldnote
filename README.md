@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **19 skills** · Last synced: 2026-07-20 02:58 UTC
+> **20 skills** · Last synced: 2026-07-20 02:58 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [you need to use Hermes RIGHT NOW!! (goodbye OpenClaw!!)](skills/you_need_to_use_hermes_right_now_goodbye_openclaw.md) | By NetworkChuck. Key tools: Python, Docker, LLM, OpenAI, anthropic. (Auto-extrac | `Python` `Docker` `LLM` `OpenAI` | `hermes` `gonna` `here` |
 | [I Tested Kimi K3 So You Don't Have To...](skills/i_tested_kimi_k3_so_you_don_t_have_to.md) | By Nick Saraev. Key tools: Ollama, Anthropic, OpenAI. (Auto-extracted — pending  | `Ollama` `Anthropic` `OpenAI` | `know` `kimmy` `here` |
 | [GPT 5.6 Mystery, New 2.7T AI, DeepSeek New AI Chip, Orca World Model, Grok 4.5 and More AI News...](skills/gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o.md) | By AI Revolution. Key tools: OpenAI, Claude, Anthropic, LLM, Llama. (Auto-extrac | `OpenAI` `Claude` `Anthropic` `LLM` | `music` `model` `openai` |
 | [China just beat Claude AI: Kimi K3](skills/china_just_beat_claude_ai_kimi_k3.md) | By TechLead. Key tools: Claude, Anthropic, OpenAI, GPT-4, Gemini. (Auto-extracte | `Claude` `Anthropic` `OpenAI` `GPT-4` | `model` `models` `open` |
