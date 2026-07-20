@@ -19,9 +19,10 @@
       ]
     },
     "need": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+        "100_hours_of_hermes_agent_lessons_in_19_minutes",
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
       ]
     },
     "over": {
@@ -58,6 +59,60 @@
       "freq": 1,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes"
+      ]
+    },
+    "work": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "here": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "site": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "right": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "chat": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "dave": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "website": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "good": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "going": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
       ]
     }
   },
@@ -109,11 +164,44 @@
         "using"
       ],
       "step_count": 1
+    },
+    "chatgpt_work_everything_you_need_to_know_to_get_st": {
+      "concepts": [
+        "work",
+        "here",
+        "site",
+        "right",
+        "chat",
+        "dave",
+        "website",
+        "good",
+        "going",
+        "need"
+      ],
+      "tools": [],
+      "tags": [
+        "work",
+        "here",
+        "site",
+        "right",
+        "chat",
+        "dave"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
-    "100_hours_of_hermes_agent_lessons_in_19_minutes": {}
+    "100_hours_of_hermes_agent_lessons_in_19_minutes": {
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "need"
+      ]
+    },
+    "chatgpt_work_everything_you_need_to_know_to_get_st": {
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "need"
+      ]
+    }
   },
-  "updated_at": "2026-07-20T02:51:24.388638+00:00",
-  "total_skills": 1
+  "updated_at": "2026-07-20T02:51:24.511213+00:00",
+  "total_skills": 2
 }
