@@ -33,15 +33,17 @@
       ]
     },
     "model": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "hermes_agent_just_got_10x_better_4_insane_new_feat",
+        "kimi_k3_fully_tested_an_open_model_beats_fable"
       ]
     },
     "right": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "hermes_agent_just_got_10x_better_4_insane_new_feat",
+        "kimi_k3_fully_tested_an_open_model_beats_fable"
       ]
     },
     "basically": {
@@ -82,9 +84,10 @@
       ]
     },
     "send": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "hermes_agent_build_your_own_personal_ai_assistant_"
+        "hermes_agent_build_your_own_personal_ai_assistant_",
+        "kimi_k3_fully_tested_an_open_model_beats_fable"
       ]
     },
     "calendar": {
@@ -103,6 +106,48 @@
       "freq": 1,
       "skills": [
         "hermes_agent_build_your_own_personal_ai_assistant_"
+      ]
+    },
+    "question": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_fully_tested_an_open_model_beats_fable"
+      ]
+    },
+    "models": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_fully_tested_an_open_model_beats_fable"
+      ]
+    },
+    "kimmy": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_fully_tested_an_open_model_beats_fable"
+      ]
+    },
+    "opus": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_fully_tested_an_open_model_beats_fable"
+      ]
+    },
+    "gets": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_fully_tested_an_open_model_beats_fable"
+      ]
+    },
+    "fable": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_fully_tested_an_open_model_beats_fable"
+      ]
+    },
+    "video": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_fully_tested_an_open_model_beats_fable"
       ]
     }
   },
@@ -123,6 +168,12 @@
       "freq": 1,
       "skills": [
         "hermes_agent_build_your_own_personal_ai_assistant_"
+      ]
+    },
+    "Gemini": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_fully_tested_an_open_model_beats_fable"
       ]
     }
   },
@@ -179,6 +230,32 @@
         "click"
       ],
       "step_count": 1
+    },
+    "kimi_k3_fully_tested_an_open_model_beats_fable": {
+      "concepts": [
+        "model",
+        "question",
+        "models",
+        "kimmy",
+        "opus",
+        "send",
+        "gets",
+        "fable",
+        "video",
+        "right"
+      ],
+      "tools": [
+        "Gemini"
+      ],
+      "tags": [
+        "model",
+        "question",
+        "models",
+        "kimmy",
+        "opus",
+        "send"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -187,6 +264,10 @@
         "going",
         "agents",
         "agent"
+      ],
+      "kimi_k3_fully_tested_an_open_model_beats_fable": [
+        "right",
+        "model"
       ]
     },
     "hermes_agent_build_your_own_personal_ai_assistant_": {
@@ -194,9 +275,21 @@
         "going",
         "agents",
         "agent"
+      ],
+      "kimi_k3_fully_tested_an_open_model_beats_fable": [
+        "send"
+      ]
+    },
+    "kimi_k3_fully_tested_an_open_model_beats_fable": {
+      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
+        "right",
+        "model"
+      ],
+      "hermes_agent_build_your_own_personal_ai_assistant_": [
+        "send"
       ]
     }
   },
-  "updated_at": "2026-07-20T02:45:53.887251+00:00",
-  "total_skills": 2
+  "updated_at": "2026-07-20T02:45:53.907988+00:00",
+  "total_skills": 3
 }
