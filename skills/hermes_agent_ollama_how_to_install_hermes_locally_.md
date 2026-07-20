@@ -21,4 +21,4 @@ llama, anthropic
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-19 | [Hermes Agent + Ollama: How to Install Hermes Locally Fast](https://www.youtube.com/watch?v=aAQWB3-XD5s) | yt_dlp_subs |
+| 2026-07-20 | [Hermes Agent + Ollama: How to Install Hermes Locally Fast](https://www.youtube.com/watch?v=aAQWB3-XD5s) | yt_dlp_subs |
