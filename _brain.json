@@ -12,13 +12,14 @@
       ]
     },
     "going": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
         "hermes_agent_build_your_own_personal_ai_assistant_",
         "by_august_we_ll_have_frontier_ai_running_locally",
         "qwen_3_6_pi_agent_build_your_own_ai_assistant_full",
-        "hermes_agent_full_course_setup_guide_for_complete_"
+        "hermes_agent_full_course_setup_guide_for_complete_",
+        "run_kimi_k3_inside_claude_code_max_power"
       ]
     },
     "every": {
@@ -52,12 +53,13 @@
       ]
     },
     "right": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
         "kimi_k3_fully_tested_an_open_model_beats_fable",
         "kimi_k3_hermes_agent_changes_everything",
-        "hermes_agent_full_course_setup_guide_for_complete_"
+        "hermes_agent_full_course_setup_guide_for_complete_",
+        "run_kimi_k3_inside_claude_code_max_power"
       ]
     },
     "basically": {
@@ -81,21 +83,23 @@
       ]
     },
     "here": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "hermes_agent_build_your_own_personal_ai_assistant_",
         "kimi_k3_hermes_agent_changes_everything",
         "qwen_3_6_pi_agent_build_your_own_ai_assistant_full",
         "every_hermes_concept_explained_for_normal_people",
-        "hermes_agent_full_course_setup_guide_for_complete_"
+        "hermes_agent_full_course_setup_guide_for_complete_",
+        "run_kimi_k3_inside_claude_code_max_power"
       ]
     },
     "want": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "hermes_agent_build_your_own_personal_ai_assistant_",
         "every_hermes_concept_explained_for_normal_people",
-        "hermes_agent_full_course_setup_guide_for_complete_"
+        "hermes_agent_full_course_setup_guide_for_complete_",
+        "run_kimi_k3_inside_claude_code_max_power"
       ]
     },
     "click": {
@@ -144,9 +148,10 @@
       ]
     },
     "kimmy": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_fully_tested_an_open_model_beats_fable"
+        "kimi_k3_fully_tested_an_open_model_beats_fable",
+        "run_kimi_k3_inside_claude_code_max_power"
       ]
     },
     "opus": {
@@ -374,9 +379,10 @@
       ]
     },
     "well": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "ornith_35b_9b_hermes_zed_the_fully_private_local_a"
+        "ornith_35b_9b_hermes_zed_the_fully_private_local_a",
+        "run_kimi_k3_inside_claude_code_max_power"
       ]
     },
     "come": {
@@ -414,15 +420,40 @@
       "skills": [
         "hermes_agent_full_course_setup_guide_for_complete_"
       ]
+    },
+    "code": {
+      "freq": 1,
+      "skills": [
+        "run_kimi_k3_inside_claude_code_max_power"
+      ]
+    },
+    "cloud": {
+      "freq": 1,
+      "skills": [
+        "run_kimi_k3_inside_claude_code_max_power"
+      ]
+    },
+    "really": {
+      "freq": 1,
+      "skills": [
+        "run_kimi_k3_inside_claude_code_max_power"
+      ]
+    },
+    "loop": {
+      "freq": 1,
+      "skills": [
+        "run_kimi_k3_inside_claude_code_max_power"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "hermes_agent_just_got_10x_better_4_insane_new_feat",
         "ornith_35b_9b_hermes_zed_the_fully_private_local_a",
-        "every_hermes_concept_explained_for_normal_people"
+        "every_hermes_concept_explained_for_normal_people",
+        "run_kimi_k3_inside_claude_code_max_power"
       ]
     },
     "PowerShell": {
@@ -522,6 +553,12 @@
       "freq": 1,
       "skills": [
         "hermes_agent_full_course_setup_guide_for_complete_"
+      ]
+    },
+    "anthropic": {
+      "freq": 1,
+      "skills": [
+        "run_kimi_k3_inside_claude_code_max_power"
       ]
     }
   },
@@ -801,6 +838,33 @@
         "okay"
       ],
       "step_count": 1
+    },
+    "run_kimi_k3_inside_claude_code_max_power": {
+      "concepts": [
+        "code",
+        "kimmy",
+        "cloud",
+        "here",
+        "going",
+        "really",
+        "well",
+        "right",
+        "want",
+        "loop"
+      ],
+      "tools": [
+        "Claude",
+        "anthropic"
+      ],
+      "tags": [
+        "code",
+        "kimmy",
+        "cloud",
+        "here",
+        "going",
+        "really"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -844,6 +908,11 @@
         "going",
         "right",
         "agent"
+      ],
+      "run_kimi_k3_inside_claude_code_max_power": [
+        "going",
+        "right",
+        "Claude"
       ]
     },
     "hermes_agent_build_your_own_personal_ai_assistant_": {
@@ -881,6 +950,11 @@
         "agent",
         "OpenAI",
         "give"
+      ],
+      "run_kimi_k3_inside_claude_code_max_power": [
+        "going",
+        "want",
+        "here"
       ]
     },
     "kimi_k3_fully_tested_an_open_model_beats_fable": {
@@ -906,6 +980,10 @@
       ],
       "hermes_agent_full_course_setup_guide_for_complete_": [
         "right"
+      ],
+      "run_kimi_k3_inside_claude_code_max_power": [
+        "right",
+        "kimmy"
       ]
     },
     "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
@@ -961,6 +1039,9 @@
       "hermes_agent_full_course_setup_guide_for_complete_": [
         "going",
         "OpenAI"
+      ],
+      "run_kimi_k3_inside_claude_code_max_power": [
+        "going"
       ]
     },
     "kimi_k3_hermes_agent_changes_everything": {
@@ -998,6 +1079,10 @@
         "here",
         "agent",
         "hermes"
+      ],
+      "run_kimi_k3_inside_claude_code_max_power": [
+        "right",
+        "here"
       ]
     },
     "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": {
@@ -1030,6 +1115,10 @@
         "here",
         "agent",
         "LLM"
+      ],
+      "run_kimi_k3_inside_claude_code_max_power": [
+        "going",
+        "here"
       ]
     },
     "ornith_35b_9b_hermes_zed_the_fully_private_local_a": {
@@ -1061,6 +1150,10 @@
       ],
       "hermes_agent_full_course_setup_guide_for_complete_": [
         "LLM"
+      ],
+      "run_kimi_k3_inside_claude_code_max_power": [
+        "Claude",
+        "well"
       ]
     },
     "every_hermes_concept_explained_for_normal_people": {
@@ -1104,6 +1197,11 @@
         "hermes",
         "agent",
         "OpenAI"
+      ],
+      "run_kimi_k3_inside_claude_code_max_power": [
+        "want",
+        "here",
+        "Claude"
       ]
     },
     "hermes_agent_full_course_setup_guide_for_complete_": {
@@ -1152,9 +1250,57 @@
         "hermes",
         "agent",
         "OpenAI"
+      ],
+      "run_kimi_k3_inside_claude_code_max_power": [
+        "going",
+        "want",
+        "here",
+        "right"
+      ]
+    },
+    "run_kimi_k3_inside_claude_code_max_power": {
+      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
+        "going",
+        "right",
+        "Claude"
+      ],
+      "hermes_agent_build_your_own_personal_ai_assistant_": [
+        "going",
+        "want",
+        "here"
+      ],
+      "kimi_k3_fully_tested_an_open_model_beats_fable": [
+        "right",
+        "kimmy"
+      ],
+      "by_august_we_ll_have_frontier_ai_running_locally": [
+        "going"
+      ],
+      "kimi_k3_hermes_agent_changes_everything": [
+        "right",
+        "here"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "going",
+        "here"
+      ],
+      "ornith_35b_9b_hermes_zed_the_fully_private_local_a": [
+        "Claude",
+        "well"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "want",
+        "here",
+        "Claude"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "going",
+        "want",
+        "here",
+        "right"
       ]
     }
   },
-  "updated_at": "2026-07-20T02:45:54.704782+00:00",
-  "total_skills": 10
+  "updated_at": "2026-07-20T02:45:54.743166+00:00",
+  "total_skills": 11
 }
