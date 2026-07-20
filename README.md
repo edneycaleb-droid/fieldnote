@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **2 skills** · Last synced: 2026-07-20 02:41 UTC
+> **4 skills** · Last synced: 2026-07-20 02:41 UTC
 
 ---
 
@@ -9,7 +9,9 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [Hermes Agent: Zero to Personal AI Assistant (1 Hour Course)](skills/hermes_agent_zero_to_personal_ai_assistant_1_hour_.md) | By Nate Herk \| AI Automation. Key tools: Claude, Docker, Anthropic, OpenAI, Llam | `Claude` `Docker` `Anthropic` `OpenAI` | `going` `hermes` `here` |
+| [The 15 Most INSANE Things Created by KIMI K3 ( KIMI K3 Use Cases)](skills/the_15_most_insane_things_created_by_kimi_k3_kimi_.md) | By TheAIGRID. Key tools: Claude. (Auto-extracted — pending AI enhancement.) | `Claude` | `know` `course` `game` |
+| [New Claude Opus 5 LEAKS!](skills/new_claude_opus_5_leaks.md) | By Julian Goldie SEO. Key tools: Claude, Anthropic. (Auto-extracted — pending AI | `Claude` `Anthropic` | `opus` `model` `profit` |
+| [Kimi K3 Is NOT the Story. China's AI Master Plan Is](skills/kimi_k3_is_not_the_story_china_s_ai_master_plan_is.md) | By Kyle Balmer \| AI with Kyle. Key tools: Claude, Anthropic. (Auto-extracted — p | `Claude` `Anthropic` | `very` `about` `models` |
 | [Run Kimi K3 Inside Claude Code (MAX POWER)](skills/run_kimi_k3_inside_claude_code_max_power.md) | By Superbash (BoxminingAI). Key tools: Claude, anthropic. (Auto-extracted — pend | `Claude` `anthropic` | `code` `kimmy` `cloud` |
 
 ---
