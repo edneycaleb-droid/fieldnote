@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **6 skills** · Last synced: 2026-07-20 03:42 UTC
+> **7 skills** · Last synced: 2026-07-20 03:42 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Kimi K3 VS Claude Fable 5 (Raw Results)](skills/kimi_k3_vs_claude_fable_5_raw_results.md) | By Dubibubi. Key tools: Claude, Anthropic, Ollama. (Auto-extracted — pending AI  | `Claude` `Anthropic` `Ollama` | `fable` `kimi` `right` |
 | [New Claude Opus 5 LEAKS!](skills/new_claude_opus_5_leaks.md) | By Julian Goldie SEO. Key tools: Claude, Anthropic. (Auto-extracted — pending AI | `Claude` `Anthropic` | `opus` `model` `profit` |
 | [NUEVO Kimi K3 DESTRUYE a Claude Fable 5 (Debes Saber Esto)](skills/nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe.md) | By Juan Pe Navarro \| IA y Automatización. Key tools: Anthropic, OpenAI. (Auto-ex | `Anthropic` `OpenAI` | `chemistry` `model` `models` |
 | [Anthropic's Downfall... Kimi K3.1, Grok 4.6, DeepSeek v4 GA, U.S. Gov's Gold Eagle, & Robot MMA!](skills/anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v.md) | By WorldofAI. Key tools: Claude, anthropic, Gemini, OpenAI. (Auto-extracted — pe | `Claude` `anthropic` `Gemini` `OpenAI` | `model` `which` `enthropic` |
