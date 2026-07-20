@@ -21,4 +21,4 @@ PowerShell, OpenAI
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-19 | [Hermes Agent: Build Your Own Personal AI Assistant (Full Course)](https://www.youtube.com/watch?v=erMROJqU5t4) | yt_dlp_subs |
+| 2026-07-20 | [Hermes Agent: Build Your Own Personal AI Assistant (Full Course)](https://www.youtube.com/watch?v=erMROJqU5t4) | yt_dlp_subs |
