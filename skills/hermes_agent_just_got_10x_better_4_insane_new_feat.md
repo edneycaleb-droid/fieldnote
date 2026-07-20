@@ -21,4 +21,4 @@ Claude
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-19 | [Hermes Agent Just Got 10X Better (4 Insane NEW Features)](https://www.youtube.com/watch?v=oBdk_hFHEuY) | yt_dlp_subs |
+| 2026-07-20 | [Hermes Agent Just Got 10X Better (4 Insane NEW Features)](https://www.youtube.com/watch?v=oBdk_hFHEuY) | yt_dlp_subs |
