@@ -21,4 +21,4 @@ Anthropic, OpenAI
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-19 | [NUEVO Kimi K3 DESTRUYE a Claude Fable 5 (Debes Saber Esto)](https://www.youtube.com/watch?v=R_0rx_M2WHQ) | yt_dlp_subs |
+| 2026-07-20 | [NUEVO Kimi K3 DESTRUYE a Claude Fable 5 (Debes Saber Esto)](https://www.youtube.com/watch?v=R_0rx_M2WHQ) | yt_dlp_subs |
