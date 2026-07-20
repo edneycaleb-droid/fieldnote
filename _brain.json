@@ -46,7 +46,7 @@
       ]
     },
     "here": {
-      "freq": 13,
+      "freq": 14,
       "skills": [
         "new_claude_opus_5_leaks",
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
@@ -127,7 +127,7 @@
       ]
     },
     "know": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
         "yes_the_kimi_k3_hype_is_real",
@@ -170,7 +170,7 @@
       ]
     },
     "right": {
-      "freq": 10,
+      "freq": 11,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "kimi_k3_vs_claude_fable_5_raw_results",
@@ -213,7 +213,7 @@
       ]
     },
     "fable": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
         "kimi_k3_vs_claude_fable_5_raw_results",
@@ -278,7 +278,7 @@
       ]
     },
     "these": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results",
         "yes_the_kimi_k3_hype_is_real"
@@ -334,7 +334,7 @@
       ]
     },
     "which": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
         "by_august_we_ll_have_frontier_ai_running_locally",
@@ -408,20 +408,20 @@
       ]
     },
     "kimmy": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "yes_the_kimi_k3_hype_is_real",
         "the_15_most_insane_things_created_by_kimi_k3_kimi_"
       ]
     },
     "cost": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "yes_the_kimi_k3_hype_is_real"
       ]
     },
     "actually": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "yes_the_kimi_k3_hype_is_real",
         "new_claude_update_is_insane",
@@ -429,7 +429,7 @@
       ]
     },
     "tokens": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "yes_the_kimi_k3_hype_is_real"
       ]
@@ -741,7 +741,7 @@
   },
   "tools": {
     "Claude": {
-      "freq": 21,
+      "freq": 22,
       "skills": [
         "new_claude_opus_5_leaks",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
@@ -760,7 +760,7 @@
       ]
     },
     "Anthropic": {
-      "freq": 15,
+      "freq": 16,
       "skills": [
         "new_claude_opus_5_leaks",
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
@@ -824,7 +824,7 @@
       ]
     },
     "OpenAI": {
-      "freq": 13,
+      "freq": 14,
       "skills": [
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
@@ -3013,6 +3013,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-20T03:42:25.384420+00:00",
+  "updated_at": "2026-07-20T03:42:25.592409+00:00",
   "total_skills": 22
 }
