@@ -27,7 +27,7 @@
       ]
     },
     "here": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "how_to_use_codex_to_build_insanely_beautiful_websi",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
@@ -35,7 +35,8 @@
         "kimi_k3_crushed_fable",
         "hermes_agent_full_course_setup_guide_for_complete_",
         "new_claude_opus_5_leaks",
-        "hermes_agent_zero_to_personal_ai_assistant_1_hour_"
+        "hermes_agent_zero_to_personal_ai_assistant_1_hour_",
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "before": {
@@ -87,13 +88,14 @@
       ]
     },
     "going": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "by_august_we_ll_have_frontier_ai_running_locally",
         "chatgpt_work_everything_you_need_to_know_to_get_st",
         "kimi_k3_crushed_fable",
         "hermes_agent_full_course_setup_guide_for_complete_",
-        "hermes_agent_zero_to_personal_ai_assistant_1_hour_"
+        "hermes_agent_zero_to_personal_ai_assistant_1_hour_",
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "because": {
@@ -199,11 +201,12 @@
       ]
     },
     "right": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "chatgpt_work_everything_you_need_to_know_to_get_st",
         "hermes_agent_full_course_setup_guide_for_complete_",
-        "hermes_agent_zero_to_personal_ai_assistant_1_hour_"
+        "hermes_agent_zero_to_personal_ai_assistant_1_hour_",
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "chat": {
@@ -399,18 +402,61 @@
       "skills": [
         "hermes_agent_zero_to_personal_ai_assistant_1_hour_"
       ]
+    },
+    "fable": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "kimi": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "look": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "well": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "these": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "little": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "output": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "how_to_use_codex_to_build_insanely_beautiful_websi",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
         "every_hermes_concept_explained_for_normal_people",
         "kimi_k3_crushed_fable",
         "new_claude_opus_5_leaks",
-        "hermes_agent_zero_to_personal_ai_assistant_1_hour_"
+        "hermes_agent_zero_to_personal_ai_assistant_1_hour_",
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "next.js": {
@@ -420,14 +466,15 @@
       ]
     },
     "Anthropic": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "how_to_use_codex_to_build_insanely_beautiful_websi",
         "every_hermes_concept_explained_for_normal_people",
         "kimi_k3_crushed_fable",
         "hermes_agent_full_course_setup_guide_for_complete_",
         "new_claude_opus_5_leaks",
-        "hermes_agent_zero_to_personal_ai_assistant_1_hour_"
+        "hermes_agent_zero_to_personal_ai_assistant_1_hour_",
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "OpenAI": {
@@ -489,9 +536,10 @@
       ]
     },
     "Ollama": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "every_hermes_concept_explained_for_normal_people"
+        "every_hermes_concept_explained_for_normal_people",
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "SQLite": {
@@ -829,6 +877,34 @@
         "about"
       ],
       "step_count": 1
+    },
+    "kimi_k3_vs_claude_fable_5_raw_results": {
+      "concepts": [
+        "fable",
+        "kimi",
+        "right",
+        "going",
+        "look",
+        "well",
+        "these",
+        "here",
+        "little",
+        "output"
+      ],
+      "tools": [
+        "Claude",
+        "Anthropic",
+        "Ollama"
+      ],
+      "tags": [
+        "fable",
+        "kimi",
+        "right",
+        "going",
+        "look",
+        "well"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -875,6 +951,11 @@
         "Anthropic",
         "Claude",
         "OpenAI"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "here",
+        "Anthropic",
+        "Claude"
       ]
     },
     "by_august_we_ll_have_frontier_ai_running_locally": {
@@ -912,6 +993,9 @@
         "going",
         "about",
         "OpenAI"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "going"
       ]
     },
     "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
@@ -966,6 +1050,11 @@
         "going",
         "right",
         "here"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "going",
+        "right",
+        "here"
       ]
     },
     "100_hours_of_hermes_agent_lessons_in_19_minutes": {
@@ -1010,6 +1099,9 @@
         "hermes",
         "agent",
         "know"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Claude"
       ]
     },
     "every_hermes_concept_explained_for_normal_people": {
@@ -1062,6 +1154,12 @@
         "about",
         "Claude",
         "hermes"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Ollama",
+        "here",
+        "Anthropic",
+        "Claude"
       ]
     },
     "kimi_k3_crushed_fable": {
@@ -1111,6 +1209,12 @@
         "going",
         "OpenAI",
         "know"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "going",
+        "here",
+        "Anthropic",
+        "Claude"
       ]
     },
     "hermes_agent_full_course_setup_guide_for_complete_": {
@@ -1166,6 +1270,12 @@
         "Docker",
         "LLM",
         "hermes"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "going",
+        "right",
+        "here",
+        "Anthropic"
       ]
     },
     "new_claude_opus_5_leaks": {
@@ -1200,6 +1310,11 @@
         "Anthropic"
       ],
       "hermes_agent_zero_to_personal_ai_assistant_1_hour_": [
+        "here",
+        "Anthropic",
+        "Claude"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
         "here",
         "Anthropic",
         "Claude"
@@ -1262,9 +1377,64 @@
         "here",
         "Anthropic",
         "Claude"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "here",
+        "Anthropic",
+        "Claude",
+        "going",
+        "right"
+      ]
+    },
+    "kimi_k3_vs_claude_fable_5_raw_results": {
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "here",
+        "Anthropic",
+        "Claude"
+      ],
+      "by_august_we_ll_have_frontier_ai_running_locally": [
+        "going"
+      ],
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "going",
+        "right",
+        "here"
+      ],
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "Claude"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "Ollama",
+        "here",
+        "Anthropic",
+        "Claude"
+      ],
+      "kimi_k3_crushed_fable": [
+        "going",
+        "here",
+        "Anthropic",
+        "Claude"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "going",
+        "right",
+        "here",
+        "Anthropic"
+      ],
+      "new_claude_opus_5_leaks": [
+        "here",
+        "Anthropic",
+        "Claude"
+      ],
+      "hermes_agent_zero_to_personal_ai_assistant_1_hour_": [
+        "here",
+        "Anthropic",
+        "Claude",
+        "going",
+        "right"
       ]
     }
   },
-  "updated_at": "2026-07-20T02:56:54.901068+00:00",
-  "total_skills": 10
+  "updated_at": "2026-07-20T02:56:54.903026+00:00",
+  "total_skills": 11
 }
