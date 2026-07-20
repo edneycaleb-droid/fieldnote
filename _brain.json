@@ -497,10 +497,11 @@
       ]
     },
     "AI self-improvement": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "new_hermes_paperclip_ai_agent_update_is_insane",
-        "this_100_self_improving_ai_agent_is_insane_just_wa"
+        "this_100_self_improving_ai_agent_is_insane_just_wa",
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
       ]
     },
     "agent integration": {
@@ -544,6 +545,30 @@
       "skills": [
         "kimi_k3_is_not_the_story_china_s_ai_master_plan_is"
       ]
+    },
+    "Chemistry 3": {
+      "freq": 1,
+      "skills": [
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
+      ]
+    },
+    "Artificial Intelligence": {
+      "freq": 1,
+      "skills": [
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
+      ]
+    },
+    "Web Development": {
+      "freq": 1,
+      "skills": [
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
+      ]
+    },
+    "Clot Fable 5": {
+      "freq": 1,
+      "skills": [
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
+      ]
     }
   },
   "tools": {
@@ -565,7 +590,7 @@
       ]
     },
     "Anthropic": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "new_claude_update_is_insane",
         "this_ai_business_model_is_creating_new_millionaire",
@@ -574,7 +599,8 @@
         "yes_the_kimi_k3_hype_is_real",
         "china_just_beat_claude_ai_kimi_k3",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
-        "kimi_k3_is_not_the_story_china_s_ai_master_plan_is"
+        "kimi_k3_is_not_the_story_china_s_ai_master_plan_is",
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
       ]
     },
     "anthropic": {
@@ -703,6 +729,24 @@
       "freq": 1,
       "skills": [
         "this_100_self_improving_ai_agent_is_insane_just_wa"
+      ]
+    },
+    "Clou": {
+      "freq": 1,
+      "skills": [
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
+      ]
+    },
+    "API": {
+      "freq": 1,
+      "skills": [
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
+      ]
+    },
+    "Chemistry 3 API": {
+      "freq": 1,
+      "skills": [
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
       ]
     }
   },
@@ -1093,6 +1137,29 @@
         "natural language processing"
       ],
       "step_count": 3
+    },
+    "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
+      "concepts": [
+        "Chemistry 3",
+        "Artificial Intelligence",
+        "Web Development",
+        "Clot Fable 5",
+        "AI self-improvement"
+      ],
+      "tools": [
+        "Clou",
+        "Anthropic",
+        "API",
+        "Chemistry 3 API"
+      ],
+      "tags": [
+        "ai",
+        "web-development",
+        "front-end-design",
+        "self-improvement",
+        "chemistry"
+      ],
+      "step_count": 6
     }
   },
   "relationships": {
@@ -1151,6 +1218,9 @@
       "kimi_k3_is_not_the_story_china_s_ai_master_plan_is": [
         "Anthropic",
         "Claude"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "Anthropic"
       ]
     },
     "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": {
@@ -1258,6 +1328,9 @@
       "kimi_k3_is_not_the_story_china_s_ai_master_plan_is": [
         "Anthropic",
         "Claude"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "Anthropic"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -1305,6 +1378,9 @@
       "kimi_k3_is_not_the_story_china_s_ai_master_plan_is": [
         "Anthropic",
         "Claude"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "Anthropic"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -1410,6 +1486,9 @@
       "kimi_k3_is_not_the_story_china_s_ai_master_plan_is": [
         "Anthropic",
         "OpenAI"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "Anthropic"
       ]
     },
     "yes_the_kimi_k3_hype_is_real": {
@@ -1478,6 +1557,9 @@
         "Anthropic",
         "Claude",
         "OpenAI"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "Anthropic"
       ]
     },
     "china_just_beat_claude_ai_kimi_k3": {
@@ -1546,6 +1628,9 @@
         "Gemini",
         "Claude",
         "OpenAI"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "Anthropic"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -1612,6 +1697,9 @@
         "Anthropic",
         "Claude",
         "OpenAI"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "Anthropic"
       ]
     },
     "hermes_agent_zero_to_personal_ai_assistant_1_hour_": {
@@ -1779,6 +1867,9 @@
       ],
       "kimi_k3_is_not_the_story_china_s_ai_master_plan_is": [
         "Claude"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "AI self-improvement"
       ]
     },
     "this_100_self_improving_ai_agent_is_insane_just_wa": {
@@ -1786,6 +1877,9 @@
         "Hermes Agent"
       ],
       "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "AI self-improvement"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
         "AI self-improvement"
       ]
     },
@@ -1842,9 +1936,44 @@
       ],
       "new_hermes_paperclip_ai_agent_update_is_insane": [
         "Claude"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "Anthropic"
+      ]
+    },
+    "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
+      "new_claude_update_is_insane": [
+        "Anthropic"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Anthropic"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Anthropic"
+      ],
+      "i_tested_kimi_k3_so_you_don_t_have_to": [
+        "Anthropic"
+      ],
+      "yes_the_kimi_k3_hype_is_real": [
+        "Anthropic"
+      ],
+      "china_just_beat_claude_ai_kimi_k3": [
+        "Anthropic"
+      ],
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "Anthropic"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "AI self-improvement"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "AI self-improvement"
+      ],
+      "kimi_k3_is_not_the_story_china_s_ai_master_plan_is": [
+        "Anthropic"
       ]
     }
   },
-  "updated_at": "2026-07-20T02:51:59.588080+00:00",
-  "total_skills": 15
+  "updated_at": "2026-07-20T02:52:05.229824+00:00",
+  "total_skills": 16
 }
