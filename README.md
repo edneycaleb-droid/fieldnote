@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **90 skills** · Last synced: 2026-07-20 02:53 UTC
+> **90 skills** · Last synced: 2026-07-20 02:57 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Hermes Agent: Build Your Own Personal AI Assistant (Full Course)](skills/hermes_agent_build_your_own_personal_ai_assistant_.md) | By Komputer Mechanic. Key tools: PowerShell, OpenAI. (Auto-extracted — pending A | `PowerShell` `OpenAI` | `going` `here` `agent` |
 | [Developing and Deploying Kimmy K3: A 2.8 Trillion Parameter Model for Enhanced AI Capabilities](skills/kimmy_k3_development_and_deployment.md) | This skill teaches the development, application, and deployment of Kimmy K3, a 2 | `Docker` `AWS` `Anthropic` `Claude` | `ai` `ai_modeling` `ci_cd` |
 | [Kimi K3 CRUSHED Fable](skills/kimi_k3_crushed_fable.md) | By Wes Roth. Key tools: Claude, Anthropic, OpenAI. (Auto-extracted — pending AI  | `Claude` `Anthropic` `OpenAI` | `kind` `know` `here` |
 | [Every Hermes Concept explained for Normal People](skills/every_hermes_concept_explained_for_normal_people.md) | By Jack Roberts. Key tools: Claude, Anthropic, OpenAI, Ollama, SQLite. (Auto-ext | `Claude` `Anthropic` `OpenAI` `Ollama` | `hermes` `here` `about` |
@@ -72,7 +73,6 @@
 | [hermes_agent_ollama_how_to_install_hermes_locally_](skills/hermes_agent_ollama_how_to_install_hermes_locally_.md) |  |  |  |
 | [moonshot_kimiko_automation](skills/moonshot_kimiko_automation.md) |  |  |  |
 | [prism_ml_bonzai_deployment](skills/prism_ml_bonzai_deployment.md) |  |  |  |
-| [hermes_agent_build_your_own_personal_ai_assistant_](skills/hermes_agent_build_your_own_personal_ai_assistant_.md) |  |  |  |
 | [testing_and_comparing_llms](skills/testing_and_comparing_llms.md) |  |  |  |
 | [swanlab_ai_training_analysis_platform](skills/swanlab_ai_training_analysis_platform.md) |  |  |  |
 | [astrbot_deployment](skills/astrbot_deployment.md) |  |  |  |
