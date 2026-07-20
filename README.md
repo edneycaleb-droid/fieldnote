@@ -9,12 +9,11 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [Kimi K3 Is Fable Level... (they should be worried)](skills/kimi_k3_is_fable_level_they_should_be_worried.md) | By Better Stack. Key tools: Claude, React, Next.js, SQLite, Node. (Auto-extracte | `Claude` `React` `Next.js` `SQLite` | `actually` `here` `fable` |
+| [New Hermes Agent OS is INSANE!](skills/new_hermes_agent_os_is_insane.md) | By Julian Goldie SEO. Key tools: Claude. (Auto-extracted — pending AI enhancemen | `Claude` | `same` `outreach` `agent` |
 | [Hermes Agent: Build Your Own Personal AI Assistant (Full Course)](skills/hermes_agent_build_your_own_personal_ai_assistant_.md) | By Komputer Mechanic. Key tools: PowerShell, OpenAI. (Auto-extracted — pending A | `PowerShell` `OpenAI` | `going` `here` `agent` |
 | [Developing and Deploying Kimmy K3: A 2.8 Trillion Parameter Model for Enhanced AI Capabilities](skills/kimmy_k3_development_and_deployment.md) | This skill teaches the development, application, and deployment of Kimmy K3, a 2 | `Docker` `AWS` `Anthropic` `Claude` | `ai` `ai_modeling` `ci_cd` |
 | [Kimi K3 CRUSHED Fable](skills/kimi_k3_crushed_fable.md) | By Wes Roth. Key tools: Claude, Anthropic, OpenAI. (Auto-extracted — pending AI  | `Claude` `Anthropic` `OpenAI` | `kind` `know` `here` |
 | [Every Hermes Concept explained for Normal People](skills/every_hermes_concept_explained_for_normal_people.md) | By Jack Roberts. Key tools: Claude, Anthropic, OpenAI, Ollama, SQLite. (Auto-ext | `Claude` `Anthropic` `OpenAI` `Ollama` | `hermes` `here` `about` |
-| [New Hermes Agent OS is INSANE!](skills/new_hermes_agent_os_is_insane.md) | By Julian Goldie SEO. Key tools: Claude. (Auto-extracted — pending AI enhancemen | `Claude` | `same` `outreach` `agent` |
 | [Chemistry 3 Model: A Powerful, Open-Source AI Model](skills/nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe.md) | This skill covers the Chemistry 3 model, a powerful, open-source AI model that s | `Clou` `Anthropic` `API` `Chemistry 3 API` | `ai` `web-development` `front-end-design` |
 | [Kimi K3 Downfall: A Threat to Anthropic's Dominance](skills/kimi_k3_is_not_the_story_china_s_ai_master_plan_is.md) | Kimi K3's emergence as a top AI model poses a significant threat to Anthropic's  | `Claude` `Anthropic` `OpenAI` `Gemini` | `ai` `machine learning` `natural language processing` |
 | [Hermes Agent Setup: A Step-by-Step Guide](skills/this_100_self_improving_ai_agent_is_insane_just_wa.md) | This skill teaches how to set up Hermes Agent, a self-improving AI assistant, an | `Hostinger` `Hermes Agent` | `AI` `self-improvement` `Hermes Agent` |
@@ -53,6 +52,7 @@
 | [kimi_k3_ai_full_course_1_hour_build_automate_anyth](skills/kimi_k3_ai_full_course_1_hour_build_automate_anyth.md) |  |  |  |
 | [experimenting_with_longs](skills/experimenting_with_longs.md) |  |  |  |
 | [local_ai_coding](skills/local_ai_coding.md) |  |  |  |
+| [kimi_k3_is_fable_level_they_should_be_worried](skills/kimi_k3_is_fable_level_they_should_be_worried.md) |  |  |  |
 | [mastering_loop_engineering](skills/mastering_loop_engineering.md) |  |  |  |
 | [by_august_we_ll_have_frontier_ai_running_locally](skills/by_august_we_ll_have_frontier_ai_running_locally.md) |  |  |  |
 | [kimi_k3_is_the_best_model_ever_made_sometimes](skills/kimi_k3_is_the_best_model_ever_made_sometimes.md) |  |  |  |
