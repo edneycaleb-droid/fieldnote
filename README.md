@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **9 skills** · Last synced: 2026-07-20 02:46 UTC
+> **10 skills** · Last synced: 2026-07-20 02:46 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [By August, We'll Have Frontier AI Running Locally](skills/by_august_we_ll_have_frontier_ai_running_locally.md) | By Manolo Remiddi. Key tools: OpenAI, Gemini. (Auto-extracted — pending AI enhan | `OpenAI` `Gemini` | `model` `those` `going` |
 | [Google Shrunk 31GB of AI Memory Down to 4GB (TurboQuant)](skills/google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq.md) | By Cloud Codes. Key tools: rag, embedding, Python, LangChain. (Auto-extracted —  | `rag` `embedding` `Python` `LangChain` | `memory` `every` `data` |
 | [Hermes Agent: Build Your Own Personal AI Assistant (Full Course)](skills/hermes_agent_build_your_own_personal_ai_assistant_.md) | By Komputer Mechanic. Key tools: PowerShell, OpenAI. (Auto-extracted — pending A | `PowerShell` `OpenAI` | `going` `here` `agent` |
 | [Kimi K3 (Fully Tested): AN OPEN MODEL BEATS FABLE?!](skills/kimi_k3_fully_tested_an_open_model_beats_fable.md) | By AICodeKing. Key tools: Gemini. (Auto-extracted — pending AI enhancement.) | `Gemini` | `model` `question` `models` |
