@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Hermes Agent Tutorial for Beginners (Full Step-by-Step Setup)](skills/hermes_agent_tutorial_for_beginners_full_step_by_s.md) | By Metics Media. Key tools: Claude, Docker, bash, Python, LLM. (Auto-extracted — | `Claude` `Docker` `bash` `Python` | `agent` `hermes` `want` |
 | [How To Use Codex To Build Insanely Beautiful Websites Using GPT 5.6 Sol](skills/how_to_use_codex_to_build_insanely_beautiful_websi.md) | By AI LABS. Key tools: Claude, next.js, Anthropic, OpenAI, git. (Auto-extracted  | `Claude` `next.js` `Anthropic` `OpenAI` | `design` `website` `codeex` |
 | [Building a Comprehensive Second Brain with AI](skills/building_a_second_brain.md) | Learn how to create a second brain with AI, a system that organizes and connects | `Obsidian` `ChatGPT` `Grok` `Gemini` | `AI` `development` `organization` |
 | [Hermes Agent Cost Reduction: Optimizing Token Usage](skills/use_this_to_make_the_hermes_agent_basically_free.md) | This skill teaches how to reduce Hermes agent costs by optimizing token usage, u | `OpenAI` `Parto Router` `config.yaml` | `cost reduction` `hermes agent` `optimization` |
@@ -44,7 +45,6 @@
 | [100 hours of Hermes Agent lessons in 19 minutes](skills/100_hours_of_hermes_agent_lessons_in_19_minutes.md) | By Alex Finn. Key tools: Gemini, SSH, Claude. (Auto-extracted — pending AI enhan | `Gemini` `SSH` `Claude` | `hermes` `agent` `other` |
 | [Kimi K3 AI Full COURSE 1 HOUR (Build & Automate Anything)](skills/kimi_k3_ai_full_course_1_hour_build_automate_anyth.md) | By Julian Goldie SEO. Key tools: LLM, Claude. (Auto-extracted — pending AI enhan | `LLM` `Claude` | `kimmy` `here` `want` |
 | [Kimi K3 Is Fable Level... (they should be worried)](skills/kimi_k3_is_fable_level_they_should_be_worried.md) | By Better Stack. Key tools: Claude, React, Next.js, SQLite, Node. (Auto-extracte | `Claude` `React` `Next.js` `SQLite` | `actually` `here` `fable` |
-| [Hermes Agent Tutorial for Beginners (Full Step-by-Step Setup)](skills/hermes_agent_tutorial_for_beginners_full_step_by_s.md) | By Metics Media. Key tools: Claude, Docker, bash, Python, LLM. (Auto-extracted — | `Claude` `Docker` `bash` `Python` | `agent` `hermes` `want` |
 | [Kimi K3 is just ridiculous](skills/kimi_k3_is_just_ridiculous.md) | By LanceyPoo. Key tools: Claude. (Auto-extracted — pending AI enhancement.) | `Claude` | `okay` `going` `wait` |
 | [moonshot_kimiko_3](skills/moonshot_kimiko_3.md) |  |  |  |
 | [qwen_3_6_pi_agent_build_your_own_ai_assistant_full](skills/qwen_3_6_pi_agent_build_your_own_ai_assistant_full.md) |  |  |  |
