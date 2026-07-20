@@ -38,9 +38,10 @@
       ]
     },
     "here": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "new_claude_opus_5_leaks"
+        "new_claude_opus_5_leaks",
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     },
     "honeycomb": {
@@ -62,15 +63,17 @@
       ]
     },
     "hermes": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+        "100_hours_of_hermes_agent_lessons_in_19_minutes",
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     },
     "agent": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+        "100_hours_of_hermes_agent_lessons_in_19_minutes",
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     },
     "other": {
@@ -80,9 +83,10 @@
       ]
     },
     "need": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+        "100_hours_of_hermes_agent_lessons_in_19_minutes",
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     },
     "over": {
@@ -110,18 +114,50 @@
       ]
     },
     "want": {
+      "freq": 2,
+      "skills": [
+        "100_hours_of_hermes_agent_lessons_in_19_minutes",
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+      ]
+    },
+    "ahead": {
       "freq": 1,
       "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+      ]
+    },
+    "telegram": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+      ]
+    },
+    "click": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+      ]
+    },
+    "right": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+      ]
+    },
+    "going": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "new_claude_opus_5_leaks",
-        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+        "100_hours_of_hermes_agent_lessons_in_19_minutes",
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     },
     "Anthropic": {
@@ -140,6 +176,30 @@
       "freq": 1,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes"
+      ]
+    },
+    "Docker": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+      ]
+    },
+    "bash": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+      ]
+    },
+    "Python": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+      ]
+    },
+    "LLM": {
+      "freq": 1,
+      "skills": [
+        "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     }
   },
@@ -198,6 +258,36 @@
         "using"
       ],
       "step_count": 1
+    },
+    "hermes_agent_tutorial_for_beginners_full_step_by_s": {
+      "concepts": [
+        "agent",
+        "hermes",
+        "want",
+        "here",
+        "ahead",
+        "telegram",
+        "click",
+        "right",
+        "going",
+        "need"
+      ],
+      "tools": [
+        "Claude",
+        "Docker",
+        "bash",
+        "Python",
+        "LLM"
+      ],
+      "tags": [
+        "agent",
+        "hermes",
+        "want",
+        "here",
+        "ahead",
+        "telegram"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -205,15 +295,39 @@
       "100_hours_of_hermes_agent_lessons_in_19_minutes": [
         "Claude",
         "opus"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Claude",
+        "here"
       ]
     },
     "100_hours_of_hermes_agent_lessons_in_19_minutes": {
       "new_claude_opus_5_leaks": [
         "Claude",
         "opus"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "need",
+        "hermes",
+        "agent",
+        "want",
+        "Claude"
+      ]
+    },
+    "hermes_agent_tutorial_for_beginners_full_step_by_s": {
+      "new_claude_opus_5_leaks": [
+        "Claude",
+        "here"
+      ],
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "need",
+        "hermes",
+        "agent",
+        "want",
+        "Claude"
       ]
     }
   },
-  "updated_at": "2026-07-20T03:37:25.308571+00:00",
-  "total_skills": 2
+  "updated_at": "2026-07-20T03:37:25.402048+00:00",
+  "total_skills": 3
 }
