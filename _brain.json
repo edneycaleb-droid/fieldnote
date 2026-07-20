@@ -59,9 +59,10 @@
       ]
     },
     "opus": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+        "100_hours_of_hermes_agent_lessons_in_19_minutes",
+        "kimi_k3_fully_tested_an_open_model_beats_fable"
       ]
     },
     "work": {
@@ -85,9 +86,10 @@
       ]
     },
     "right": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
+        "chatgpt_work_everything_you_need_to_know_to_get_st",
+        "kimi_k3_fully_tested_an_open_model_beats_fable"
       ]
     },
     "chat": {
@@ -122,9 +124,10 @@
       ]
     },
     "kimmy": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_ai_full_course_1_hour_build_automate_anyth"
+        "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
+        "kimi_k3_fully_tested_an_open_model_beats_fable"
       ]
     },
     "example": {
@@ -154,9 +157,10 @@
       ]
     },
     "fable": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_is_fable_level_they_should_be_worried"
+        "kimi_k3_is_fable_level_they_should_be_worried",
+        "kimi_k3_fully_tested_an_open_model_beats_fable"
       ]
     },
     "pretty": {
@@ -166,15 +170,17 @@
       ]
     },
     "model": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_is_fable_level_they_should_be_worried"
+        "kimi_k3_is_fable_level_they_should_be_worried",
+        "kimi_k3_fully_tested_an_open_model_beats_fable"
       ]
     },
     "models": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_is_fable_level_they_should_be_worried"
+        "kimi_k3_is_fable_level_they_should_be_worried",
+        "kimi_k3_fully_tested_an_open_model_beats_fable"
       ]
     },
     "these": {
@@ -194,13 +200,38 @@
       "skills": [
         "kimi_k3_is_fable_level_they_should_be_worried"
       ]
+    },
+    "question": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_fully_tested_an_open_model_beats_fable"
+      ]
+    },
+    "send": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_fully_tested_an_open_model_beats_fable"
+      ]
+    },
+    "gets": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_fully_tested_an_open_model_beats_fable"
+      ]
+    },
+    "video": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_fully_tested_an_open_model_beats_fable"
+      ]
     }
   },
   "tools": {
     "Gemini": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "100_hours_of_hermes_agent_lessons_in_19_minutes"
+        "100_hours_of_hermes_agent_lessons_in_19_minutes",
+        "kimi_k3_fully_tested_an_open_model_beats_fable"
       ]
     },
     "SSH": {
@@ -357,6 +388,32 @@
         "well"
       ],
       "step_count": 1
+    },
+    "kimi_k3_fully_tested_an_open_model_beats_fable": {
+      "concepts": [
+        "model",
+        "question",
+        "models",
+        "kimmy",
+        "opus",
+        "send",
+        "gets",
+        "fable",
+        "video",
+        "right"
+      ],
+      "tools": [
+        "Gemini"
+      ],
+      "tags": [
+        "model",
+        "question",
+        "models",
+        "kimmy",
+        "opus",
+        "send"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -372,6 +429,10 @@
       ],
       "kimi_k3_is_fable_level_they_should_be_worried": [
         "Claude"
+      ],
+      "kimi_k3_fully_tested_an_open_model_beats_fable": [
+        "Gemini",
+        "opus"
       ]
     },
     "chatgpt_work_everything_you_need_to_know_to_get_st": {
@@ -384,6 +445,9 @@
       ],
       "kimi_k3_is_fable_level_they_should_be_worried": [
         "here"
+      ],
+      "kimi_k3_fully_tested_an_open_model_beats_fable": [
+        "right"
       ]
     },
     "kimi_k3_ai_full_course_1_hour_build_automate_anyth": {
@@ -402,6 +466,9 @@
         "here",
         "Claude",
         "well"
+      ],
+      "kimi_k3_fully_tested_an_open_model_beats_fable": [
+        "kimmy"
       ]
     },
     "kimi_k3_is_fable_level_they_should_be_worried": {
@@ -416,9 +483,31 @@
         "here",
         "Claude",
         "well"
+      ],
+      "kimi_k3_fully_tested_an_open_model_beats_fable": [
+        "models",
+        "fable",
+        "model"
+      ]
+    },
+    "kimi_k3_fully_tested_an_open_model_beats_fable": {
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "Gemini",
+        "opus"
+      ],
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "right"
+      ],
+      "kimi_k3_ai_full_course_1_hour_build_automate_anyth": [
+        "kimmy"
+      ],
+      "kimi_k3_is_fable_level_they_should_be_worried": [
+        "models",
+        "fable",
+        "model"
       ]
     }
   },
-  "updated_at": "2026-07-20T02:51:24.569740+00:00",
-  "total_skills": 4
+  "updated_at": "2026-07-20T02:51:24.688036+00:00",
+  "total_skills": 5
 }
