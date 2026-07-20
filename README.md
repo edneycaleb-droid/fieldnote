@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **5 skills** · Last synced: 2026-07-20 02:41 UTC
+> **6 skills** · Last synced: 2026-07-20 02:41 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Making $$$ with Loop Engineering](skills/making_with_loop_engineering.md) | By Greg Isenberg. Key tools: Claude, OpenAI. (Auto-extracted — pending AI enhanc | `Claude` `OpenAI` | `know` `loop` `sort` |
 | [By August, We'll Have Frontier AI Running Locally](skills/by_august_we_ll_have_frontier_ai_running_locally.md) | By Manolo Remiddi. Key tools: OpenAI, Gemini. (Auto-extracted — pending AI enhan | `OpenAI` `Gemini` | `model` `those` `going` |
 | [Hermes Agent Just Got 10X Better (4 Insane NEW Features)](skills/hermes_agent_just_got_10x_better_4_insane_new_feat.md) | By Zinho Automates. Key tools: Claude. (Auto-extracted — pending AI enhancement. | `Claude` | `agent` `going` `every` |
 | [Kimi K3 AI Full COURSE 1 HOUR (Build & Automate Anything)](skills/kimi_k3_ai_full_course_1_hour_build_automate_anyth.md) | By Julian Goldie SEO. Key tools: LLM, Claude. (Auto-extracted — pending AI enhan | `LLM` `Claude` | `kimmy` `here` `want` |

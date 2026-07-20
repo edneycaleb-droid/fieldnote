@@ -21,4 +21,4 @@ Claude, OpenAI
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-19 | [Making $$$ with Loop Engineering](https://www.youtube.com/watch?v=5p_BBdfvzgQ) | yt_dlp_subs |
+| 2026-07-20 | [Making $$$ with Loop Engineering](https://www.youtube.com/watch?v=5p_BBdfvzgQ) | yt_dlp_subs |
