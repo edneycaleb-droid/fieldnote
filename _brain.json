@@ -8,13 +8,14 @@
       ]
     },
     "model": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "new_claude_opus_5_leaks",
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
         "by_august_we_ll_have_frontier_ai_running_locally",
-        "new_hermes_paperclip_ai_agent_update_is_insane"
+        "new_hermes_paperclip_ai_agent_update_is_insane",
+        "china_just_beat_claude_ai_kimi_k3"
       ]
     },
     "profit": {
@@ -39,10 +40,11 @@
       ]
     },
     "claude": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "new_claude_opus_5_leaks",
-        "new_claude_update_is_insane"
+        "new_claude_update_is_insane",
+        "china_just_beat_claude_ai_kimi_k3"
       ]
     },
     "here": {
@@ -71,10 +73,11 @@
       ]
     },
     "anthropic": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "new_claude_opus_5_leaks",
-        "new_claude_update_is_insane"
+        "new_claude_update_is_insane",
+        "china_just_beat_claude_ai_kimi_k3"
       ]
     },
     "hermes": {
@@ -200,10 +203,11 @@
       ]
     },
     "models": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
-        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
+        "china_just_beat_claude_ai_kimi_k3"
       ]
     },
     "clot": {
@@ -266,9 +270,10 @@
       ]
     },
     "look": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
-        "kimi_k3_vs_claude_fable_5_raw_results"
+        "kimi_k3_vs_claude_fable_5_raw_results",
+        "china_just_beat_claude_ai_kimi_k3"
       ]
     },
     "well": {
@@ -382,10 +387,11 @@
       ]
     },
     "open": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "by_august_we_ll_have_frontier_ai_running_locally",
-        "this_100_self_improving_ai_agent_is_insane_just_wa"
+        "this_100_self_improving_ai_agent_is_insane_just_wa",
+        "china_just_beat_claude_ai_kimi_k3"
       ]
     },
     "frontier": {
@@ -401,10 +407,11 @@
       ]
     },
     "about": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "by_august_we_ll_have_frontier_ai_running_locally",
-        "new_claude_update_is_insane"
+        "new_claude_update_is_insane",
+        "china_just_beat_claude_ai_kimi_k3"
       ]
     },
     "kimmy": {
@@ -737,11 +744,29 @@
       "skills": [
         "the_15_most_insane_things_created_by_kimi_k3_kimi_"
       ]
+    },
+    "free": {
+      "freq": 1,
+      "skills": [
+        "china_just_beat_claude_ai_kimi_k3"
+      ]
+    },
+    "week": {
+      "freq": 1,
+      "skills": [
+        "china_just_beat_claude_ai_kimi_k3"
+      ]
+    },
+    "china": {
+      "freq": 1,
+      "skills": [
+        "china_just_beat_claude_ai_kimi_k3"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 22,
+      "freq": 23,
       "skills": [
         "new_claude_opus_5_leaks",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
@@ -760,7 +785,7 @@
       ]
     },
     "Anthropic": {
-      "freq": 16,
+      "freq": 17,
       "skills": [
         "new_claude_opus_5_leaks",
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
@@ -775,7 +800,7 @@
       ]
     },
     "Gemini": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
@@ -824,7 +849,7 @@
       ]
     },
     "OpenAI": {
-      "freq": 14,
+      "freq": 15,
       "skills": [
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
@@ -982,6 +1007,12 @@
       "freq": 1,
       "skills": [
         "hermes_agent_full_course_setup_guide_for_complete_"
+      ]
+    },
+    "GPT-4": {
+      "freq": 1,
+      "skills": [
+        "china_just_beat_claude_ai_kimi_k3"
       ]
     }
   },
@@ -1337,23 +1368,33 @@
     },
     "china_just_beat_claude_ai_kimi_k3": {
       "concepts": [
-        "AI models",
-        "Kimi K3",
-        "Anthropic",
-        "AI market"
+        "model",
+        "models",
+        "open",
+        "free",
+        "about",
+        "look",
+        "week",
+        "claude",
+        "anthropic",
+        "china"
       ],
       "tools": [
         "Claude",
         "Anthropic",
         "OpenAI",
+        "GPT-4",
         "Gemini"
       ],
       "tags": [
-        "AI",
-        "machine_learning",
-        "natural_language_processing"
+        "model",
+        "models",
+        "open",
+        "free",
+        "about",
+        "look"
       ],
-      "step_count": 3
+      "step_count": 1
     },
     "you_need_to_use_hermes_right_now_goodbye_openclaw": {
       "concepts": [
@@ -1605,8 +1646,11 @@
         "model"
       ],
       "china_just_beat_claude_ai_kimi_k3": [
-        "Claude",
-        "Anthropic"
+        "anthropic",
+        "claude",
+        "model",
+        "Anthropic",
+        "Claude"
       ],
       "new_hermes_agent_os_is_insane": [
         "Claude",
@@ -1838,7 +1882,9 @@
       ],
       "china_just_beat_claude_ai_kimi_k3": [
         "OpenAI",
-        "Anthropic"
+        "Anthropic",
+        "models",
+        "model"
       ],
       "new_hermes_agent_os_is_insane": [
         "already"
@@ -1917,6 +1963,7 @@
       ],
       "china_just_beat_claude_ai_kimi_k3": [
         "Claude",
+        "look",
         "Anthropic"
       ],
       "new_hermes_agent_os_is_insane": [
@@ -2043,9 +2090,12 @@
         "model"
       ],
       "china_just_beat_claude_ai_kimi_k3": [
-        "Claude",
+        "Gemini",
         "OpenAI",
-        "Gemini"
+        "models",
+        "anthropic",
+        "model",
+        "Claude"
       ],
       "new_hermes_agent_os_is_insane": [
         "Claude",
@@ -2123,7 +2173,10 @@
       ],
       "china_just_beat_claude_ai_kimi_k3": [
         "OpenAI",
-        "Gemini"
+        "Gemini",
+        "open",
+        "model",
+        "about"
       ],
       "new_hermes_agent_os_is_insane": [
         "OpenAI"
@@ -2309,7 +2362,8 @@
       "china_just_beat_claude_ai_kimi_k3": [
         "Claude",
         "OpenAI",
-        "Anthropic"
+        "Anthropic",
+        "open"
       ],
       "new_hermes_agent_os_is_insane": [
         "Claude",
@@ -2462,7 +2516,8 @@
       ],
       "china_just_beat_claude_ai_kimi_k3": [
         "OpenAI",
-        "Gemini"
+        "Gemini",
+        "model"
       ],
       "new_hermes_agent_os_is_insane": [
         "OpenAI"
@@ -2487,8 +2542,11 @@
     },
     "china_just_beat_claude_ai_kimi_k3": {
       "new_claude_opus_5_leaks": [
-        "Claude",
-        "Anthropic"
+        "anthropic",
+        "claude",
+        "model",
+        "Anthropic",
+        "Claude"
       ],
       "100_hours_of_hermes_agent_lessons_in_19_minutes": [
         "Claude",
@@ -2499,20 +2557,29 @@
       ],
       "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
         "OpenAI",
-        "Anthropic"
+        "Anthropic",
+        "models",
+        "model"
       ],
       "kimi_k3_vs_claude_fable_5_raw_results": [
         "Claude",
+        "look",
         "Anthropic"
       ],
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
-        "Claude",
+        "Gemini",
         "OpenAI",
-        "Gemini"
+        "models",
+        "anthropic",
+        "model",
+        "Claude"
       ],
       "by_august_we_ll_have_frontier_ai_running_locally": [
         "OpenAI",
-        "Gemini"
+        "Gemini",
+        "open",
+        "model",
+        "about"
       ],
       "yes_the_kimi_k3_hype_is_real": [
         "Claude",
@@ -2522,7 +2589,8 @@
       "this_100_self_improving_ai_agent_is_insane_just_wa": [
         "Claude",
         "OpenAI",
-        "Anthropic"
+        "Anthropic",
+        "open"
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
         "Claude",
@@ -2530,7 +2598,8 @@
       ],
       "new_hermes_paperclip_ai_agent_update_is_insane": [
         "OpenAI",
-        "Gemini"
+        "Gemini",
+        "model"
       ],
       "i_tested_kimi_k3_so_you_don_t_have_to": [
         "Kimi K3",
@@ -2547,8 +2616,11 @@
         "Claude"
       ],
       "new_claude_update_is_insane": [
+        "anthropic",
+        "claude",
+        "Anthropic",
         "Claude",
-        "Anthropic"
+        "about"
       ],
       "hermes_agent_full_course_setup_guide_for_complete_": [
         "OpenAI",
@@ -2844,8 +2916,11 @@
         "Anthropic"
       ],
       "china_just_beat_claude_ai_kimi_k3": [
+        "anthropic",
+        "claude",
+        "Anthropic",
         "Claude",
-        "Anthropic"
+        "about"
       ],
       "new_hermes_agent_os_is_insane": [
         "Claude",
@@ -3013,6 +3088,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-20T03:42:25.592409+00:00",
+  "updated_at": "2026-07-20T03:42:26.301491+00:00",
   "total_skills": 22
 }
