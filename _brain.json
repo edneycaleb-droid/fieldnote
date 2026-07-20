@@ -39,10 +39,11 @@
       ]
     },
     "here": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "new_claude_opus_5_leaks",
-        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+        "hermes_agent_tutorial_for_beginners_full_step_by_s",
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "honeycomb": {
@@ -140,15 +141,17 @@
       ]
     },
     "right": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+        "hermes_agent_tutorial_for_beginners_full_step_by_s",
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "going": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+        "hermes_agent_tutorial_for_beginners_full_step_by_s",
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "chemistry": {
@@ -170,9 +173,10 @@
       ]
     },
     "fable": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "most": {
@@ -204,22 +208,60 @@
       "skills": [
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
       ]
+    },
+    "kimi": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "look": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "well": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "these": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "little": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "output": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "new_claude_opus_5_leaks",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
-        "hermes_agent_tutorial_for_beginners_full_step_by_s"
+        "hermes_agent_tutorial_for_beginners_full_step_by_s",
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "Anthropic": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "new_claude_opus_5_leaks",
-        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "Gemini": {
@@ -262,6 +304,12 @@
       "freq": 1,
       "skills": [
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
+      ]
+    },
+    "Ollama": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     }
   },
@@ -377,6 +425,34 @@
         "most"
       ],
       "step_count": 1
+    },
+    "kimi_k3_vs_claude_fable_5_raw_results": {
+      "concepts": [
+        "fable",
+        "kimi",
+        "right",
+        "going",
+        "look",
+        "well",
+        "these",
+        "here",
+        "little",
+        "output"
+      ],
+      "tools": [
+        "Claude",
+        "Anthropic",
+        "Ollama"
+      ],
+      "tags": [
+        "fable",
+        "kimi",
+        "right",
+        "going",
+        "look",
+        "well"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -392,6 +468,11 @@
       "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
         "Anthropic",
         "model"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Claude",
+        "here",
+        "Anthropic"
       ]
     },
     "100_hours_of_hermes_agent_lessons_in_19_minutes": {
@@ -404,6 +485,9 @@
         "hermes",
         "agent",
         "want",
+        "Claude"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
         "Claude"
       ]
     },
@@ -418,15 +502,45 @@
         "agent",
         "want",
         "Claude"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "going",
+        "here",
+        "Claude",
+        "right"
       ]
     },
     "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
       "new_claude_opus_5_leaks": [
         "Anthropic",
         "model"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "fable",
+        "Anthropic"
+      ]
+    },
+    "kimi_k3_vs_claude_fable_5_raw_results": {
+      "new_claude_opus_5_leaks": [
+        "Claude",
+        "here",
+        "Anthropic"
+      ],
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "Claude"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "going",
+        "here",
+        "Claude",
+        "right"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "fable",
+        "Anthropic"
       ]
     }
   },
-  "updated_at": "2026-07-20T03:37:25.455808+00:00",
-  "total_skills": 4
+  "updated_at": "2026-07-20T03:37:25.462784+00:00",
+  "total_skills": 5
 }
