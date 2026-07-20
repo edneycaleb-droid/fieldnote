@@ -9,7 +9,8 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [Hermes Agent Tutorial for Beginners (Full Step-by-Step Setup)](skills/hermes_agent_tutorial_for_beginners_full_step_by_s.md) | By Metics Media. Key tools: Claude, Docker, bash, Python, LLM. (Auto-extracted — | `Claude` `Docker` `bash` `Python` | `agent` `hermes` `want` |
+| [How To Use Codex To Build Insanely Beautiful Websites Using GPT 5.6 Sol](skills/how_to_use_codex_to_build_insanely_beautiful_websi.md) | By AI LABS. Key tools: Claude, next.js, Anthropic, OpenAI, git. (Auto-extracted  | `Claude` `next.js` `Anthropic` `OpenAI` | `design` `website` `codeex` |
+| [Kimi K3: Testing Moonshot's 2.8T Open Model without Hype](skills/kimi_k3_testing_moonshot_s_2_8t_open_model_without.md) | By Fahd Mirza. Key tools: SQLite, Claude, Gemini, OpenAI, Anthropic. (Auto-extra | `SQLite` `Claude` `Gemini` `OpenAI` | `which` `model` `going` |
 | [New Hermes Agent OS is INSANE!](skills/new_hermes_agent_os_is_insane.md) | By Julian Goldie SEO. Key tools: Claude. (Auto-extracted — pending AI enhancemen | `Claude` | `same` `outreach` `agent` |
 | [NEW Hermes + Paperclip AI Agent Update Is INSANE](skills/new_hermes_paperclip_ai_agent_update_is_insane.md) | By Julian Goldie SEO. Key tools: Claude, Gemini. (Auto-extracted — pending AI en | `Claude` `Gemini` | `agent` `hermes` `paperclip` |
 | [Kimmy K3.1, Grok 4.6, DeepSeek v4 GA, U.S. Gov's Gold Eagle, & Robot MMA!](skills/anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v.md) | This video discusses the latest developments in AI, including Kimmy K3.1, Grok 4 | `Moonshot AI` `Enthropic` `Claude` `Grok` | `AI` `Machine Learning` `Deep Learning` |
@@ -35,7 +36,6 @@
 | [higsfield_integration](skills/higsfield_integration.md) |  |  |  |
 | [superagi_building_autonomous_agents](skills/superagi_building_autonomous_agents.md) |  |  |  |
 | [moonshot_kimiko_3](skills/moonshot_kimiko_3.md) |  |  |  |
-| [kimi_k3_testing_moonshot_s_2_8t_open_model_without](skills/kimi_k3_testing_moonshot_s_2_8t_open_model_without.md) |  |  |  |
 | [kimi_k3_ai_full_course_1_hour_build_automate_anyth](skills/kimi_k3_ai_full_course_1_hour_build_automate_anyth.md) |  |  |  |
 | [local_ai_coding](skills/local_ai_coding.md) |  |  |  |
 | [6_insane_hermes_agent_use_cases_that_you_need_righ](skills/6_insane_hermes_agent_use_cases_that_you_need_righ.md) |  |  |  |
@@ -43,6 +43,7 @@
 | [graphrag_deployment](skills/graphrag_deployment.md) |  |  |  |
 | [use_this_to_make_the_hermes_agent_basically_free](skills/use_this_to_make_the_hermes_agent_basically_free.md) |  |  |  |
 | [building_resilient_ai_agents_with_langgraph](skills/building_resilient_ai_agents_with_langgraph.md) |  |  |  |
+| [hermes_agent_tutorial_for_beginners_full_step_by_s](skills/hermes_agent_tutorial_for_beginners_full_step_by_s.md) |  |  |  |
 | [kimi_k3_is_just_ridiculous](skills/kimi_k3_is_just_ridiculous.md) |  |  |  |
 | [swanlab_ai_training_analysis_platform](skills/swanlab_ai_training_analysis_platform.md) |  |  |  |
 | [run_kimi_k3_inside_claude_code_max_power](skills/run_kimi_k3_inside_claude_code_max_power.md) |  |  |  |
@@ -60,7 +61,6 @@
 | [hermes_agent_setup](skills/hermes_agent_setup.md) |  |  |  |
 | [new_claude_update_is_insane](skills/new_claude_update_is_insane.md) |  |  |  |
 | [building_ai_agents](skills/building_ai_agents.md) |  |  |  |
-| [how_to_use_codex_to_build_insanely_beautiful_websi](skills/how_to_use_codex_to_build_insanely_beautiful_websi.md) |  |  |  |
 | [astrbot_deployment](skills/astrbot_deployment.md) |  |  |  |
 | [this_kimi_k3_agent_os_is_wild](skills/this_kimi_k3_agent_os_is_wild.md) |  |  |  |
 | [pydantic_ai_framework](skills/pydantic_ai_framework.md) |  |  |  |

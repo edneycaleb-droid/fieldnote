@@ -21,4 +21,4 @@ Claude, next.js, Anthropic, OpenAI, git
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-19 | [How To Use Codex To Build Insanely Beautiful Websites Using GPT 5.6 Sol](https://www.youtube.com/watch?v=pHstb0JGGhE) | yt_dlp_subs |
+| 2026-07-20 | [How To Use Codex To Build Insanely Beautiful Websites Using GPT 5.6 Sol](https://www.youtube.com/watch?v=pHstb0JGGhE) | yt_dlp_subs |
