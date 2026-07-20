@@ -38,13 +38,14 @@
       ]
     },
     "claude": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "new_claude_opus_5_leaks"
+        "new_claude_opus_5_leaks",
+        "new_claude_update_is_insane"
       ]
     },
     "here": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "new_claude_opus_5_leaks",
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
@@ -67,13 +68,14 @@
       ]
     },
     "anthropic": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "new_claude_opus_5_leaks"
+        "new_claude_opus_5_leaks",
+        "new_claude_update_is_insane"
       ]
     },
     "hermes": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
@@ -82,7 +84,7 @@
       ]
     },
     "agent": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
@@ -98,7 +100,7 @@
       ]
     },
     "need": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
@@ -126,14 +128,15 @@
       ]
     },
     "every": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
-        "new_hermes_agent_os_is_insane"
+        "new_hermes_agent_os_is_insane",
+        "new_claude_update_is_insane"
       ]
     },
     "want": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
@@ -141,25 +144,25 @@
       ]
     },
     "ahead": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     },
     "telegram": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     },
     "click": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     },
     "right": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "kimi_k3_vs_claude_fable_5_raw_results",
@@ -169,7 +172,7 @@
       ]
     },
     "going": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "kimi_k3_vs_claude_fable_5_raw_results",
@@ -236,11 +239,12 @@
       ]
     },
     "already": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
-        "new_hermes_agent_os_is_insane"
+        "new_hermes_agent_os_is_insane",
+        "new_claude_update_is_insane"
       ]
     },
     "kimi": {
@@ -281,9 +285,10 @@
       ]
     },
     "work": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
+        "chatgpt_work_everything_you_need_to_know_to_get_st",
+        "new_claude_update_is_insane"
       ]
     },
     "site": {
@@ -357,9 +362,10 @@
       ]
     },
     "something": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "by_august_we_ll_have_frontier_ai_running_locally"
+        "by_august_we_ll_have_frontier_ai_running_locally",
+        "new_claude_update_is_insane"
       ]
     },
     "open": {
@@ -382,9 +388,10 @@
       ]
     },
     "about": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "by_august_we_ll_have_frontier_ai_running_locally"
+        "by_august_we_ll_have_frontier_ai_running_locally",
+        "new_claude_update_is_insane"
       ]
     },
     "kimmy": {
@@ -400,9 +407,10 @@
       ]
     },
     "actually": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "yes_the_kimi_k3_hype_is_real"
+        "yes_the_kimi_k3_hype_is_real",
+        "new_claude_update_is_insane"
       ]
     },
     "tokens": {
@@ -612,11 +620,23 @@
       "skills": [
         "new_hermes_agent_os_is_insane"
       ]
+    },
+    "real": {
+      "freq": 1,
+      "skills": [
+        "new_claude_update_is_insane"
+      ]
+    },
+    "built": {
+      "freq": 1,
+      "skills": [
+        "new_claude_update_is_insane"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 12,
+      "freq": 14,
       "skills": [
         "new_claude_opus_5_leaks",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
@@ -628,11 +648,12 @@
         "hermes_claude_code_mcp_integration_loop_engineerin",
         "china_just_beat_claude_ai_kimi_k3",
         "new_hermes_agent_os_is_insane",
-        "every_hermes_concept_explained_for_normal_people"
+        "every_hermes_concept_explained_for_normal_people",
+        "new_claude_update_is_insane"
       ]
     },
     "Anthropic": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "new_claude_opus_5_leaks",
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
@@ -640,7 +661,8 @@
         "yes_the_kimi_k3_hype_is_real",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
         "hermes_claude_code_mcp_integration_loop_engineerin",
-        "china_just_beat_claude_ai_kimi_k3"
+        "china_just_beat_claude_ai_kimi_k3",
+        "new_claude_update_is_insane"
       ]
     },
     "Gemini": {
@@ -662,20 +684,20 @@
       ]
     },
     "Docker": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa"
       ]
     },
     "bash": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
     },
     "Python": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -683,7 +705,7 @@
       ]
     },
     "LLM": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s"
       ]
@@ -1317,6 +1339,33 @@
         "tools"
       ],
       "step_count": 7
+    },
+    "new_claude_update_is_insane": {
+      "concepts": [
+        "claude",
+        "something",
+        "anthropic",
+        "work",
+        "real",
+        "every",
+        "already",
+        "built",
+        "about",
+        "actually"
+      ],
+      "tools": [
+        "Claude",
+        "Anthropic"
+      ],
+      "tags": [
+        "claude",
+        "something",
+        "anthropic",
+        "work",
+        "real",
+        "every"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -1377,6 +1426,12 @@
       ],
       "every_hermes_concept_explained_for_normal_people": [
         "Claude"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude",
+        "Anthropic",
+        "anthropic",
+        "claude"
       ]
     },
     "100_hours_of_hermes_agent_lessons_in_19_minutes": {
@@ -1438,6 +1493,10 @@
       ],
       "every_hermes_concept_explained_for_normal_people": [
         "Claude"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude",
+        "every"
       ]
     },
     "hermes_agent_tutorial_for_beginners_full_step_by_s": {
@@ -1501,6 +1560,9 @@
       ],
       "every_hermes_concept_explained_for_normal_people": [
         "Claude"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude"
       ]
     },
     "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
@@ -1554,6 +1616,10 @@
       ],
       "every_hermes_concept_explained_for_normal_people": [
         "intelligence"
+      ],
+      "new_claude_update_is_insane": [
+        "already",
+        "Anthropic"
       ]
     },
     "kimi_k3_vs_claude_fable_5_raw_results": {
@@ -1618,6 +1684,10 @@
       ],
       "every_hermes_concept_explained_for_normal_people": [
         "Claude"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude",
+        "Anthropic"
       ]
     },
     "chatgpt_work_everything_you_need_to_know_to_get_st": {
@@ -1652,6 +1722,9 @@
       ],
       "new_hermes_paperclip_ai_agent_update_is_insane": [
         "going"
+      ],
+      "new_claude_update_is_insane": [
+        "work"
       ]
     },
     "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": {
@@ -1719,6 +1792,11 @@
       ],
       "every_hermes_concept_explained_for_normal_people": [
         "Claude"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude",
+        "already",
+        "anthropic"
       ]
     },
     "by_august_we_ll_have_frontier_ai_running_locally": {
@@ -1779,6 +1857,10 @@
       "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
         "OpenAI",
         "Gemini"
+      ],
+      "new_claude_update_is_insane": [
+        "something",
+        "about"
       ]
     },
     "yes_the_kimi_k3_hype_is_real": {
@@ -1851,6 +1933,11 @@
       ],
       "every_hermes_concept_explained_for_normal_people": [
         "Claude"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude",
+        "actually",
+        "Anthropic"
       ]
     },
     "this_100_self_improving_ai_agent_is_insane_just_wa": {
@@ -1934,6 +2021,10 @@
       ],
       "every_hermes_concept_explained_for_normal_people": [
         "Claude"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude",
+        "Anthropic"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -1990,6 +2081,10 @@
       ],
       "every_hermes_concept_explained_for_normal_people": [
         "Claude"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude",
+        "Anthropic"
       ]
     },
     "new_hermes_paperclip_ai_agent_update_is_insane": {
@@ -2114,6 +2209,10 @@
       ],
       "every_hermes_concept_explained_for_normal_people": [
         "Claude"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude",
+        "Anthropic"
       ]
     },
     "you_need_to_use_hermes_right_now_goodbye_openclaw": {
@@ -2180,6 +2279,11 @@
       "every_hermes_concept_explained_for_normal_people": [
         "Claude",
         "memory"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude",
+        "every",
+        "already"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -2253,9 +2357,72 @@
       "new_hermes_agent_os_is_insane": [
         "Claude",
         "memory"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude"
+      ]
+    },
+    "new_claude_update_is_insane": {
+      "new_claude_opus_5_leaks": [
+        "Claude",
+        "Anthropic",
+        "anthropic",
+        "claude"
+      ],
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "Claude",
+        "every"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Claude"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "already",
+        "Anthropic"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Claude",
+        "Anthropic"
+      ],
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "work"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude",
+        "already",
+        "anthropic"
+      ],
+      "by_august_we_ll_have_frontier_ai_running_locally": [
+        "something",
+        "about"
+      ],
+      "yes_the_kimi_k3_hype_is_real": [
+        "Claude",
+        "actually",
+        "Anthropic"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "Claude",
+        "Anthropic"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude",
+        "Anthropic"
+      ],
+      "china_just_beat_claude_ai_kimi_k3": [
+        "Claude",
+        "Anthropic"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Claude",
+        "every",
+        "already"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "Claude"
       ]
     }
   },
-  "updated_at": "2026-07-20T03:42:22.064408+00:00",
-  "total_skills": 19
+  "updated_at": "2026-07-20T03:42:23.921735+00:00",
+  "total_skills": 20
 }
