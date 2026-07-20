@@ -21,4 +21,4 @@ See transcript.
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-19 | [Kimi K3 + Hermes Agent Changes Everything!](https://www.youtube.com/watch?v=Nz5gFVBYZsg) | yt_dlp_subs |
+| 2026-07-20 | [Kimi K3 + Hermes Agent Changes Everything!](https://www.youtube.com/watch?v=Nz5gFVBYZsg) | yt_dlp_subs |
