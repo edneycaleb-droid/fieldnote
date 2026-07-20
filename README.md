@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **1 skill** · Last synced: 2026-07-20 02:46 UTC
+> **2 skills** · Last synced: 2026-07-20 02:46 UTC
 
 ---
 
@@ -9,7 +9,8 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [ChatGPT Work: Everything You Need to Know to Get Started!](skills/chatgpt_work_everything_you_need_to_know_to_get_st.md) | By The AI Advantage. (Auto-extracted — pending AI enhancement.) |  | `work` `here` `site` |
+| [Hermes Agent Tutorial for Beginners (Full Step-by-Step Setup)](skills/hermes_agent_tutorial_for_beginners_full_step_by_s.md) | By Metics Media. Key tools: Claude, Docker, bash, Python, LLM. (Auto-extracted — | `Claude` `Docker` `bash` `Python` | `agent` `hermes` `want` |
+| [Kimi K3 is just ridiculous](skills/kimi_k3_is_just_ridiculous.md) | By LanceyPoo. Key tools: Claude. (Auto-extracted — pending AI enhancement.) | `Claude` | `okay` `going` `wait` |
 
 ---
 
