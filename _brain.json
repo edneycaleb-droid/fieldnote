@@ -545,6 +545,24 @@
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
       ]
+    },
+    "horror game": {
+      "freq": 1,
+      "skills": [
+        "the_15_most_insane_things_created_by_kimi_k3_kimi_"
+      ]
+    },
+    "Kimmy K3": {
+      "freq": 1,
+      "skills": [
+        "the_15_most_insane_things_created_by_kimi_k3_kimi_"
+      ]
+    },
+    "AI model": {
+      "freq": 1,
+      "skills": [
+        "the_15_most_insane_things_created_by_kimi_k3_kimi_"
+      ]
     }
   },
   "tools": {
@@ -759,6 +777,12 @@
       "freq": 1,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
+      ]
+    },
+    "Kimmy K3": {
+      "freq": 1,
+      "skills": [
+        "the_15_most_insane_things_created_by_kimi_k3_kimi_"
       ]
     }
   },
@@ -1193,6 +1217,22 @@
         "Natural Language Processing"
       ],
       "step_count": 3
+    },
+    "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
+      "concepts": [
+        "horror game",
+        "Kimmy K3",
+        "AI model"
+      ],
+      "tools": [
+        "Kimmy K3"
+      ],
+      "tags": [
+        "games",
+        "AI",
+        "horror"
+      ],
+      "step_count": 4
     }
   },
   "relationships": {
@@ -2045,8 +2085,9 @@
       "new_hermes_agent_os_is_insane": [
         "OpenAI"
       ]
-    }
+    },
+    "the_15_most_insane_things_created_by_kimi_k3_kimi_": {}
   },
-  "updated_at": "2026-07-20T03:37:38.539096+00:00",
-  "total_skills": 17
+  "updated_at": "2026-07-20T03:37:42.237711+00:00",
+  "total_skills": 18
 }
