@@ -75,12 +75,13 @@
       ]
     },
     "model": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
         "i_tested_kimi_k3_so_you_don_t_have_to",
         "china_just_beat_claude_ai_kimi_k3",
-        "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
+        "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
+        "kimi_k3_crushed_fable"
       ]
     },
     "which": {
@@ -119,12 +120,13 @@
       ]
     },
     "models": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
         "i_tested_kimi_k3_so_you_don_t_have_to",
         "china_just_beat_claude_ai_kimi_k3",
-        "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
+        "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
+        "kimi_k3_crushed_fable"
       ]
     },
     "today": {
@@ -266,12 +268,13 @@
       ]
     },
     "know": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "the_15_most_insane_things_created_by_kimi_k3_kimi_",
         "i_tested_kimi_k3_so_you_don_t_have_to",
         "yes_the_kimi_k3_hype_is_real",
-        "you_need_to_use_hermes_right_now_goodbye_openclaw"
+        "you_need_to_use_hermes_right_now_goodbye_openclaw",
+        "kimi_k3_crushed_fable"
       ]
     },
     "course": {
@@ -287,18 +290,20 @@
       ]
     },
     "kimmy": {
+      "freq": 4,
+      "skills": [
+        "the_15_most_insane_things_created_by_kimi_k3_kimi_",
+        "i_tested_kimi_k3_so_you_don_t_have_to",
+        "yes_the_kimi_k3_hype_is_real",
+        "kimi_k3_crushed_fable"
+      ]
+    },
+    "going": {
       "freq": 3,
       "skills": [
         "the_15_most_insane_things_created_by_kimi_k3_kimi_",
         "i_tested_kimi_k3_so_you_don_t_have_to",
-        "yes_the_kimi_k3_hype_is_real"
-      ]
-    },
-    "going": {
-      "freq": 2,
-      "skills": [
-        "the_15_most_insane_things_created_by_kimi_k3_kimi_",
-        "i_tested_kimi_k3_so_you_don_t_have_to"
+        "kimi_k3_crushed_fable"
       ]
     },
     "guys": {
@@ -308,19 +313,21 @@
       ]
     },
     "here": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "the_15_most_insane_things_created_by_kimi_k3_kimi_",
         "i_tested_kimi_k3_so_you_don_t_have_to",
         "yes_the_kimi_k3_hype_is_real",
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
-        "every_hermes_concept_explained_for_normal_people"
+        "every_hermes_concept_explained_for_normal_people",
+        "kimi_k3_crushed_fable"
       ]
     },
     "think": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "the_15_most_insane_things_created_by_kimi_k3_kimi_"
+        "the_15_most_insane_things_created_by_kimi_k3_kimi_",
+        "kimi_k3_crushed_fable"
       ]
     },
     "sort": {
@@ -649,11 +656,29 @@
       "skills": [
         "every_hermes_concept_explained_for_normal_people"
       ]
+    },
+    "kind": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_crushed_fable"
+      ]
+    },
+    "good": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_crushed_fable"
+      ]
+    },
+    "very": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_crushed_fable"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 14,
+      "freq": 15,
       "skills": [
         "new_claude_update_is_insane",
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
@@ -668,11 +693,12 @@
         "new_hermes_paperclip_ai_agent_update_is_insane",
         "kimi_k3_is_not_the_story_china_s_ai_master_plan_is",
         "new_hermes_agent_os_is_insane",
-        "every_hermes_concept_explained_for_normal_people"
+        "every_hermes_concept_explained_for_normal_people",
+        "kimi_k3_crushed_fable"
       ]
     },
     "Anthropic": {
-      "freq": 10,
+      "freq": 11,
       "skills": [
         "new_claude_update_is_insane",
         "this_ai_business_model_is_creating_new_millionaire",
@@ -683,7 +709,8 @@
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "kimi_k3_is_not_the_story_china_s_ai_master_plan_is",
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
-        "every_hermes_concept_explained_for_normal_people"
+        "every_hermes_concept_explained_for_normal_people",
+        "kimi_k3_crushed_fable"
       ]
     },
     "anthropic": {
@@ -702,7 +729,7 @@
       ]
     },
     "OpenAI": {
-      "freq": 9,
+      "freq": 10,
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
         "i_tested_kimi_k3_so_you_don_t_have_to",
@@ -712,7 +739,8 @@
         "use_this_to_make_the_hermes_agent_basically_free",
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
         "kimi_k3_is_not_the_story_china_s_ai_master_plan_is",
-        "every_hermes_concept_explained_for_normal_people"
+        "every_hermes_concept_explained_for_normal_people",
+        "kimi_k3_crushed_fable"
       ]
     },
     "Flask": {
@@ -1314,6 +1342,34 @@
         "agent"
       ],
       "step_count": 1
+    },
+    "kimi_k3_crushed_fable": {
+      "concepts": [
+        "kind",
+        "know",
+        "here",
+        "good",
+        "model",
+        "models",
+        "kimmy",
+        "going",
+        "think",
+        "very"
+      ],
+      "tools": [
+        "Claude",
+        "Anthropic",
+        "OpenAI"
+      ],
+      "tags": [
+        "kind",
+        "know",
+        "here",
+        "good",
+        "model",
+        "models"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -1383,6 +1439,10 @@
       ],
       "every_hermes_concept_explained_for_normal_people": [
         "about",
+        "Anthropic",
+        "Claude"
+      ],
+      "kimi_k3_crushed_fable": [
         "Anthropic",
         "Claude"
       ]
@@ -1456,6 +1516,12 @@
         "Claude",
         "OpenAI",
         "which"
+      ],
+      "kimi_k3_crushed_fable": [
+        "models",
+        "Claude",
+        "model",
+        "OpenAI"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -1509,6 +1575,10 @@
         "Claude"
       ],
       "every_hermes_concept_explained_for_normal_people": [
+        "Anthropic",
+        "Claude"
+      ],
+      "kimi_k3_crushed_fable": [
         "Anthropic",
         "Claude"
       ]
@@ -1571,6 +1641,10 @@
         "Claude",
         "agent",
         "hermes"
+      ],
+      "kimi_k3_crushed_fable": [
+        "Anthropic",
+        "Claude"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -1628,6 +1702,14 @@
       "every_hermes_concept_explained_for_normal_people": [
         "here",
         "Claude"
+      ],
+      "kimi_k3_crushed_fable": [
+        "here",
+        "Claude",
+        "think",
+        "going",
+        "kimmy",
+        "know"
       ]
     },
     "i_tested_kimi_k3_so_you_don_t_have_to": {
@@ -1691,6 +1773,14 @@
         "here",
         "Anthropic",
         "Ollama",
+        "OpenAI"
+      ],
+      "kimi_k3_crushed_fable": [
+        "here",
+        "Anthropic",
+        "models",
+        "going",
+        "kimmy",
         "OpenAI"
       ]
     },
@@ -1773,6 +1863,14 @@
         "Claude",
         "which",
         "OpenAI"
+      ],
+      "kimi_k3_crushed_fable": [
+        "here",
+        "Anthropic",
+        "Claude",
+        "kimmy",
+        "OpenAI",
+        "know"
       ]
     },
     "china_just_beat_claude_ai_kimi_k3": {
@@ -1853,6 +1951,13 @@
         "Anthropic",
         "Claude",
         "OpenAI"
+      ],
+      "kimi_k3_crushed_fable": [
+        "Anthropic",
+        "models",
+        "Claude",
+        "OpenAI",
+        "model"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -1931,6 +2036,13 @@
         "Anthropic",
         "Claude",
         "OpenAI"
+      ],
+      "kimi_k3_crushed_fable": [
+        "Anthropic",
+        "models",
+        "Claude",
+        "OpenAI",
+        "model"
       ]
     },
     "hermes_agent_zero_to_personal_ai_assistant_1_hour_": {
@@ -1976,6 +2088,9 @@
       ],
       "every_hermes_concept_explained_for_normal_people": [
         "Claude"
+      ],
+      "kimi_k3_crushed_fable": [
+        "Claude"
       ]
     },
     "use_this_to_make_the_hermes_agent_basically_free": {
@@ -2001,6 +2116,9 @@
         "OpenAI"
       ],
       "every_hermes_concept_explained_for_normal_people": [
+        "OpenAI"
+      ],
+      "kimi_k3_crushed_fable": [
         "OpenAI"
       ]
     },
@@ -2081,6 +2199,12 @@
         "hermes",
         "agent",
         "OpenAI"
+      ],
+      "kimi_k3_crushed_fable": [
+        "know",
+        "here",
+        "Claude",
+        "OpenAI"
       ]
     },
     "new_hermes_paperclip_ai_agent_update_is_insane": {
@@ -2127,6 +2251,9 @@
         "Claude"
       ],
       "every_hermes_concept_explained_for_normal_people": [
+        "Claude"
+      ],
+      "kimi_k3_crushed_fable": [
         "Claude"
       ]
     },
@@ -2205,6 +2332,11 @@
         "Anthropic",
         "Claude",
         "OpenAI"
+      ],
+      "kimi_k3_crushed_fable": [
+        "Anthropic",
+        "Claude",
+        "OpenAI"
       ]
     },
     "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
@@ -2239,6 +2371,9 @@
         "Anthropic"
       ],
       "every_hermes_concept_explained_for_normal_people": [
+        "Anthropic"
+      ],
+      "kimi_k3_crushed_fable": [
         "Anthropic"
       ]
     },
@@ -2287,6 +2422,9 @@
       "every_hermes_concept_explained_for_normal_people": [
         "Claude",
         "agent"
+      ],
+      "kimi_k3_crushed_fable": [
+        "Claude"
       ]
     },
     "every_hermes_concept_explained_for_normal_people": {
@@ -2367,9 +2505,105 @@
       "new_hermes_agent_os_is_insane": [
         "Claude",
         "agent"
+      ],
+      "kimi_k3_crushed_fable": [
+        "here",
+        "Anthropic",
+        "Claude",
+        "OpenAI"
+      ]
+    },
+    "kimi_k3_crushed_fable": {
+      "new_claude_update_is_insane": [
+        "Anthropic",
+        "Claude"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "models",
+        "Claude",
+        "model",
+        "OpenAI"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Anthropic",
+        "Claude"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Anthropic",
+        "Claude"
+      ],
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "here",
+        "Claude",
+        "think",
+        "going",
+        "kimmy",
+        "know"
+      ],
+      "i_tested_kimi_k3_so_you_don_t_have_to": [
+        "here",
+        "Anthropic",
+        "models",
+        "going",
+        "kimmy",
+        "OpenAI"
+      ],
+      "yes_the_kimi_k3_hype_is_real": [
+        "here",
+        "Anthropic",
+        "Claude",
+        "kimmy",
+        "OpenAI",
+        "know"
+      ],
+      "china_just_beat_claude_ai_kimi_k3": [
+        "Anthropic",
+        "models",
+        "Claude",
+        "OpenAI",
+        "model"
+      ],
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "Anthropic",
+        "models",
+        "Claude",
+        "OpenAI",
+        "model"
+      ],
+      "hermes_agent_zero_to_personal_ai_assistant_1_hour_": [
+        "Claude"
+      ],
+      "use_this_to_make_the_hermes_agent_basically_free": [
+        "OpenAI"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "know",
+        "here",
+        "Claude",
+        "OpenAI"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "Claude"
+      ],
+      "kimi_k3_is_not_the_story_china_s_ai_master_plan_is": [
+        "Anthropic",
+        "Claude",
+        "OpenAI"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "Anthropic"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Claude"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "here",
+        "Anthropic",
+        "Claude",
+        "OpenAI"
       ]
     }
   },
-  "updated_at": "2026-07-20T02:53:04.182080+00:00",
-  "total_skills": 18
+  "updated_at": "2026-07-20T02:53:05.036768+00:00",
+  "total_skills": 19
 }
