@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Kimi K3 Is Fable Level... (they should be worried)](skills/kimi_k3_is_fable_level_they_should_be_worried.md) | By Better Stack. Key tools: Claude, React, Next.js, SQLite, Node. (Auto-extracte | `Claude` `React` `Next.js` `SQLite` | `actually` `here` `fable` |
 | [Hermes Agent: Build Your Own Personal AI Assistant (Full Course)](skills/hermes_agent_build_your_own_personal_ai_assistant_.md) | By Komputer Mechanic. Key tools: PowerShell, OpenAI. (Auto-extracted — pending A | `PowerShell` `OpenAI` | `going` `here` `agent` |
 | [Developing and Deploying Kimmy K3: A 2.8 Trillion Parameter Model for Enhanced AI Capabilities](skills/kimmy_k3_development_and_deployment.md) | This skill teaches the development, application, and deployment of Kimmy K3, a 2 | `Docker` `AWS` `Anthropic` `Claude` | `ai` `ai_modeling` `ci_cd` |
 | [Kimi K3 CRUSHED Fable](skills/kimi_k3_crushed_fable.md) | By Wes Roth. Key tools: Claude, Anthropic, OpenAI. (Auto-extracted — pending AI  | `Claude` `Anthropic` `OpenAI` | `kind` `know` `here` |
@@ -52,7 +53,6 @@
 | [kimi_k3_ai_full_course_1_hour_build_automate_anyth](skills/kimi_k3_ai_full_course_1_hour_build_automate_anyth.md) |  |  |  |
 | [experimenting_with_longs](skills/experimenting_with_longs.md) |  |  |  |
 | [local_ai_coding](skills/local_ai_coding.md) |  |  |  |
-| [kimi_k3_is_fable_level_they_should_be_worried](skills/kimi_k3_is_fable_level_they_should_be_worried.md) |  |  |  |
 | [mastering_loop_engineering](skills/mastering_loop_engineering.md) |  |  |  |
 | [by_august_we_ll_have_frontier_ai_running_locally](skills/by_august_we_ll_have_frontier_ai_running_locally.md) |  |  |  |
 | [kimi_k3_is_the_best_model_ever_made_sometimes](skills/kimi_k3_is_the_best_model_ever_made_sometimes.md) |  |  |  |
