@@ -387,9 +387,10 @@
       ]
     },
     "people": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "new_claude_opus_5_leaks"
+        "new_claude_opus_5_leaks",
+        "this_ai_business_model_is_creating_new_millionaire"
       ]
     },
     "claude": {
@@ -507,9 +508,10 @@
       ]
     },
     "most": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe"
+        "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
+        "this_ai_business_model_is_creating_new_millionaire"
       ]
     },
     "intelligence": {
@@ -559,11 +561,59 @@
       "skills": [
         "this_100_self_improving_ai_agent_is_insane_just_wa"
       ]
+    },
+    "product": {
+      "freq": 1,
+      "skills": [
+        "this_ai_business_model_is_creating_new_millionaire"
+      ]
+    },
+    "build": {
+      "freq": 1,
+      "skills": [
+        "this_ai_business_model_is_creating_new_millionaire"
+      ]
+    },
+    "completely": {
+      "freq": 1,
+      "skills": [
+        "this_ai_business_model_is_creating_new_millionaire"
+      ]
+    },
+    "first": {
+      "freq": 1,
+      "skills": [
+        "this_ai_business_model_is_creating_new_millionaire"
+      ]
+    },
+    "time": {
+      "freq": 1,
+      "skills": [
+        "this_ai_business_model_is_creating_new_millionaire"
+      ]
+    },
+    "niche": {
+      "freq": 1,
+      "skills": [
+        "this_ai_business_model_is_creating_new_millionaire"
+      ]
+    },
+    "music": {
+      "freq": 1,
+      "skills": [
+        "this_ai_business_model_is_creating_new_millionaire"
+      ]
+    },
+    "selling": {
+      "freq": 1,
+      "skills": [
+        "this_ai_business_model_is_creating_new_millionaire"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 10,
+      "freq": 11,
       "skills": [
         "how_to_use_codex_to_build_insanely_beautiful_websi",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
@@ -574,7 +624,8 @@
         "kimi_k3_vs_claude_fable_5_raw_results",
         "new_claude_update_is_insane",
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
-        "this_100_self_improving_ai_agent_is_insane_just_wa"
+        "this_100_self_improving_ai_agent_is_insane_just_wa",
+        "this_ai_business_model_is_creating_new_millionaire"
       ]
     },
     "next.js": {
@@ -584,7 +635,7 @@
       ]
     },
     "Anthropic": {
-      "freq": 10,
+      "freq": 11,
       "skills": [
         "how_to_use_codex_to_build_insanely_beautiful_websi",
         "every_hermes_concept_explained_for_normal_people",
@@ -595,7 +646,8 @@
         "kimi_k3_vs_claude_fable_5_raw_results",
         "new_claude_update_is_insane",
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
-        "this_100_self_improving_ai_agent_is_insane_just_wa"
+        "this_100_self_improving_ai_agent_is_insane_just_wa",
+        "this_ai_business_model_is_creating_new_millionaire"
       ]
     },
     "OpenAI": {
@@ -1171,6 +1223,33 @@
         "claw"
       ],
       "step_count": 1
+    },
+    "this_ai_business_model_is_creating_new_millionaire": {
+      "concepts": [
+        "people",
+        "product",
+        "most",
+        "build",
+        "completely",
+        "first",
+        "time",
+        "niche",
+        "music",
+        "selling"
+      ],
+      "tools": [
+        "Anthropic",
+        "Claude"
+      ],
+      "tags": [
+        "people",
+        "product",
+        "most",
+        "build",
+        "completely",
+        "first"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -1240,6 +1319,10 @@
         "Anthropic",
         "Claude",
         "OpenAI"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Anthropic",
+        "Claude"
       ]
     },
     "by_august_we_ll_have_frontier_ai_running_locally": {
@@ -1444,6 +1527,9 @@
         "SSH",
         "hermes",
         "agent"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Claude"
       ]
     },
     "every_hermes_concept_explained_for_normal_people": {
@@ -1524,6 +1610,10 @@
         "SQLite",
         "Claude",
         "which"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Anthropic",
+        "Claude"
       ]
     },
     "kimi_k3_crushed_fable": {
@@ -1602,6 +1692,10 @@
         "Claude",
         "going",
         "OpenAI"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Anthropic",
+        "Claude"
       ]
     },
     "hermes_agent_full_course_setup_guide_for_complete_": {
@@ -1681,6 +1775,9 @@
         "Docker",
         "Python",
         "hermes"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Anthropic"
       ]
     },
     "new_claude_opus_5_leaks": {
@@ -1743,6 +1840,11 @@
         "here",
         "Anthropic",
         "Claude"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Anthropic",
+        "Claude",
+        "people"
       ]
     },
     "hermes_agent_zero_to_personal_ai_assistant_1_hour_": {
@@ -1830,6 +1932,10 @@
         "Git",
         "here",
         "Claude"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Anthropic",
+        "Claude"
       ]
     },
     "kimi_k3_vs_claude_fable_5_raw_results": {
@@ -1897,6 +2003,10 @@
         "Claude",
         "going",
         "right"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Anthropic",
+        "Claude"
       ]
     },
     "new_claude_update_is_insane": {
@@ -1957,6 +2067,10 @@
       "this_100_self_improving_ai_agent_is_insane_just_wa": [
         "Anthropic",
         "Claude"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Anthropic",
+        "Claude"
       ]
     },
     "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
@@ -2012,6 +2126,10 @@
       "this_100_self_improving_ai_agent_is_insane_just_wa": [
         "Anthropic",
         "OpenAI"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "most",
+        "Anthropic"
       ]
     },
     "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": {
@@ -2076,6 +2194,9 @@
         "Claude",
         "OpenAI",
         "which"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Claude"
       ]
     },
     "this_100_self_improving_ai_agent_is_insane_just_wa": {
@@ -2162,9 +2283,61 @@
         "Claude",
         "OpenAI",
         "which"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Anthropic",
+        "Claude"
+      ]
+    },
+    "this_ai_business_model_is_creating_new_millionaire": {
+      "how_to_use_codex_to_build_insanely_beautiful_websi": [
+        "Anthropic",
+        "Claude"
+      ],
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "Claude"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "Anthropic",
+        "Claude"
+      ],
+      "kimi_k3_crushed_fable": [
+        "Anthropic",
+        "Claude"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "Anthropic"
+      ],
+      "new_claude_opus_5_leaks": [
+        "Anthropic",
+        "Claude",
+        "people"
+      ],
+      "hermes_agent_zero_to_personal_ai_assistant_1_hour_": [
+        "Anthropic",
+        "Claude"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Anthropic",
+        "Claude"
+      ],
+      "new_claude_update_is_insane": [
+        "Anthropic",
+        "Claude"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "most",
+        "Anthropic"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "Anthropic",
+        "Claude"
       ]
     }
   },
-  "updated_at": "2026-07-20T02:56:55.665660+00:00",
-  "total_skills": 15
+  "updated_at": "2026-07-20T02:56:55.735564+00:00",
+  "total_skills": 16
 }
