@@ -78,14 +78,15 @@
       ]
     },
     "here": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "chatgpt_work_everything_you_need_to_know_to_get_st",
         "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
         "kimi_k3_is_fable_level_they_should_be_worried",
         "qwen_3_6_pi_agent_build_your_own_ai_assistant_full",
         "kimi_k3_hermes_agent_changes_everything",
-        "hermes_agent_build_your_own_personal_ai_assistant_"
+        "hermes_agent_build_your_own_personal_ai_assistant_",
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "site": {
@@ -95,11 +96,12 @@
       ]
     },
     "right": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "chatgpt_work_everything_you_need_to_know_to_get_st",
         "kimi_k3_fully_tested_an_open_model_beats_fable",
-        "kimi_k3_hermes_agent_changes_everything"
+        "kimi_k3_hermes_agent_changes_everything",
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "chat": {
@@ -127,13 +129,14 @@
       ]
     },
     "going": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "chatgpt_work_everything_you_need_to_know_to_get_st",
         "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
         "qwen_3_6_pi_agent_build_your_own_ai_assistant_full",
         "hermes_agent_build_your_own_personal_ai_assistant_",
-        "by_august_we_ll_have_frontier_ai_running_locally"
+        "by_august_we_ll_have_frontier_ai_running_locally",
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "kimmy": {
@@ -158,10 +161,11 @@
       ]
     },
     "well": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
-        "kimi_k3_is_fable_level_they_should_be_worried"
+        "kimi_k3_is_fable_level_they_should_be_worried",
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "create": {
@@ -171,10 +175,11 @@
       ]
     },
     "fable": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "kimi_k3_is_fable_level_they_should_be_worried",
-        "kimi_k3_fully_tested_an_open_model_beats_fable"
+        "kimi_k3_fully_tested_an_open_model_beats_fable",
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "pretty": {
@@ -200,9 +205,10 @@
       ]
     },
     "these": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kimi_k3_is_fable_level_they_should_be_worried"
+        "kimi_k3_is_fable_level_they_should_be_worried",
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "code": {
@@ -424,6 +430,30 @@
       "skills": [
         "by_august_we_ll_have_frontier_ai_running_locally"
       ]
+    },
+    "kimi": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "look": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "little": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "output": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
     }
   },
   "tools": {
@@ -442,11 +472,12 @@
       ]
     },
     "Claude": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
         "kimi_k3_ai_full_course_1_hour_build_automate_anyth",
-        "kimi_k3_is_fable_level_they_should_be_worried"
+        "kimi_k3_is_fable_level_they_should_be_worried",
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "LLM": {
@@ -515,6 +546,18 @@
       "skills": [
         "hermes_agent_build_your_own_personal_ai_assistant_",
         "by_august_we_ll_have_frontier_ai_running_locally"
+      ]
+    },
+    "Anthropic": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "Ollama": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     }
   },
@@ -786,6 +829,34 @@
         "open"
       ],
       "step_count": 1
+    },
+    "kimi_k3_vs_claude_fable_5_raw_results": {
+      "concepts": [
+        "fable",
+        "kimi",
+        "right",
+        "going",
+        "look",
+        "well",
+        "these",
+        "here",
+        "little",
+        "output"
+      ],
+      "tools": [
+        "Claude",
+        "Anthropic",
+        "Ollama"
+      ],
+      "tags": [
+        "fable",
+        "kimi",
+        "right",
+        "going",
+        "look",
+        "well"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -822,6 +893,9 @@
       ],
       "by_august_we_ll_have_frontier_ai_running_locally": [
         "Gemini"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Claude"
       ]
     },
     "chatgpt_work_everything_you_need_to_know_to_get_st": {
@@ -852,6 +926,11 @@
       ],
       "by_august_we_ll_have_frontier_ai_running_locally": [
         "going"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "going",
+        "right",
+        "here"
       ]
     },
     "kimi_k3_ai_full_course_1_hour_build_automate_anyth": {
@@ -893,6 +972,12 @@
       ],
       "by_august_we_ll_have_frontier_ai_running_locally": [
         "going"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "going",
+        "here",
+        "Claude",
+        "well"
       ]
     },
     "kimi_k3_is_fable_level_they_should_be_worried": {
@@ -926,6 +1011,13 @@
       ],
       "by_august_we_ll_have_frontier_ai_running_locally": [
         "model"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "here",
+        "these",
+        "Claude",
+        "fable",
+        "well"
       ]
     },
     "kimi_k3_fully_tested_an_open_model_beats_fable": {
@@ -955,6 +1047,10 @@
       "by_august_we_ll_have_frontier_ai_running_locally": [
         "Gemini",
         "model"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "right",
+        "fable"
       ]
     },
     "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": {
@@ -987,6 +1083,10 @@
       ],
       "by_august_we_ll_have_frontier_ai_running_locally": [
         "going"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "going",
+        "here"
       ]
     },
     "kimi_k3_hermes_agent_changes_everything": {
@@ -1021,6 +1121,10 @@
       ],
       "by_august_we_ll_have_frontier_ai_running_locally": [
         "model"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "right",
+        "here"
       ]
     },
     "google_shrunk_31gb_of_ai_memory_down_to_4gb_turboq": {
@@ -1065,6 +1169,10 @@
       "by_august_we_ll_have_frontier_ai_running_locally": [
         "going",
         "OpenAI"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "going",
+        "here"
       ]
     },
     "by_august_we_ll_have_frontier_ai_running_locally": {
@@ -1097,9 +1205,54 @@
       "hermes_agent_build_your_own_personal_ai_assistant_": [
         "going",
         "OpenAI"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "going"
+      ]
+    },
+    "kimi_k3_vs_claude_fable_5_raw_results": {
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "Claude"
+      ],
+      "chatgpt_work_everything_you_need_to_know_to_get_st": [
+        "going",
+        "right",
+        "here"
+      ],
+      "kimi_k3_ai_full_course_1_hour_build_automate_anyth": [
+        "going",
+        "here",
+        "Claude",
+        "well"
+      ],
+      "kimi_k3_is_fable_level_they_should_be_worried": [
+        "here",
+        "these",
+        "Claude",
+        "fable",
+        "well"
+      ],
+      "kimi_k3_fully_tested_an_open_model_beats_fable": [
+        "right",
+        "fable"
+      ],
+      "qwen_3_6_pi_agent_build_your_own_ai_assistant_full": [
+        "going",
+        "here"
+      ],
+      "kimi_k3_hermes_agent_changes_everything": [
+        "right",
+        "here"
+      ],
+      "hermes_agent_build_your_own_personal_ai_assistant_": [
+        "going",
+        "here"
+      ],
+      "by_august_we_ll_have_frontier_ai_running_locally": [
+        "going"
       ]
     }
   },
-  "updated_at": "2026-07-20T02:51:25.758932+00:00",
-  "total_skills": 10
+  "updated_at": "2026-07-20T02:51:26.321298+00:00",
+  "total_skills": 11
 }
