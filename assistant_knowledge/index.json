@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "modelcontextprotocol--registry",
+      "title": "Discovered: modelcontextprotocol/registry",
+      "category": "discoveries",
+      "confidence": "verified",
+      "updated_at": "2026-07-21T18:32:27.331329+00:00",
+      "path": "discoveries/modelcontextprotocol--registry.md"
+    },
+    {
       "slug": "sciphi-ai--r2r",
       "title": "Discovered: SciPhi-AI/R2R",
       "category": "discoveries",
@@ -233,5 +241,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-21T18:32:25.937787+00:00"
+  "updated_at": "2026-07-21T18:32:27.334689+00:00"
 }
