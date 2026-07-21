@@ -69,12 +69,13 @@ class SupplyChainPolicyTests(unittest.TestCase):
             "url": "https://github.com/example/tool",
             "npm_package": "example-tool",
         }
-        with tempfile.TemporaryDirectory() as temporary, (
-            mock.patch.object(policy, "DEFAULT_QUEUE", Path(temporary) / "queue.json"),
-            mock.patch("subprocess.run") as run,
-            mock.patch("subprocess.Popen") as popen,
-        ):
-            result = policy.quarantine_github_results([item], source="test")
+        with tempfile.TemporaryDirectory() as temporary:
+            with (
+                mock.patch.object(policy, "DEFAULT_QUEUE", Path(temporary) / "queue.json"),
+                mock.patch("subprocess.run") as run,
+                mock.patch("subprocess.Popen") as popen,
+            ):
+                result = policy.quarantine_github_results([item], source="test")
         self.assertEqual("quarantined", result[0]["state"])
         run.assert_not_called()
         popen.assert_not_called()
