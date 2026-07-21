@@ -1,14 +1,14 @@
 {
   "concepts": {
     "opus": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "new_claude_opus_5_leaks",
         "100_hours_of_hermes_agent_lessons_in_19_minutes"
       ]
     },
     "model": {
-      "freq": 12,
+      "freq": 13,
       "skills": [
         "new_claude_opus_5_leaks",
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
@@ -20,28 +20,28 @@
       ]
     },
     "profit": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "new_claude_opus_5_leaks",
         "new_hermes_agent_os_is_insane"
       ]
     },
     "boardroom": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "new_claude_opus_5_leaks",
         "new_hermes_agent_os_is_insane"
       ]
     },
     "people": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "new_claude_opus_5_leaks",
         "this_ai_business_model_is_creating_new_millionaire"
       ]
     },
     "claude": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "new_claude_opus_5_leaks",
         "new_claude_update_is_insane",
@@ -49,7 +49,7 @@
       ]
     },
     "here": {
-      "freq": 20,
+      "freq": 21,
       "skills": [
         "new_claude_opus_5_leaks",
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
@@ -63,19 +63,19 @@
       ]
     },
     "honeycomb": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "new_claude_opus_5_leaks"
       ]
     },
     "inside": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "new_claude_opus_5_leaks"
       ]
     },
     "anthropic": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "new_claude_opus_5_leaks",
         "new_claude_update_is_insane",
@@ -890,7 +890,7 @@
   },
   "tools": {
     "Claude": {
-      "freq": 36,
+      "freq": 37,
       "skills": [
         "new_claude_opus_5_leaks",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
@@ -912,7 +912,7 @@
       ]
     },
     "Anthropic": {
-      "freq": 26,
+      "freq": 27,
       "skills": [
         "new_claude_opus_5_leaks",
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
@@ -1832,10 +1832,10 @@
       ],
       "china_just_beat_claude_ai_kimi_k3": [
         "anthropic",
-        "claude",
         "model",
+        "Claude",
         "Anthropic",
-        "Claude"
+        "claude"
       ],
       "new_hermes_agent_os_is_insane": [
         "Claude",
@@ -2815,10 +2815,10 @@
     "china_just_beat_claude_ai_kimi_k3": {
       "new_claude_opus_5_leaks": [
         "anthropic",
-        "claude",
         "model",
+        "Claude",
         "Anthropic",
-        "Claude"
+        "claude"
       ],
       "100_hours_of_hermes_agent_lessons_in_19_minutes": [
         "Claude",
@@ -3600,6 +3600,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-21T14:52:26.811075+00:00",
+  "updated_at": "2026-07-21T14:52:28.822870+00:00",
   "total_skills": 22
 }
