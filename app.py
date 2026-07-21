@@ -170,6 +170,18 @@ try:
 except Exception:
     pass  # non-fatal; best-effort
 
+# Reset stale 'connected' MCP hub badges — servers haven't been verified since the last restart.
+# The first _mcp_health_check tick (≤15 min after boot) will resolve each back to
+# 'connected' or 'offline'. Until then the UI shows an amber 'Checking…' badge instead of
+# a false green 'Connected'.
+try:
+    from agents.mcp_registry import mark_connected_as_unverified as _mark_unverified
+    _reset = _mark_unverified()
+    if _reset:
+        print(f"[fieldnote] MCP hub: {_reset} server(s) reset to 'unverified' (pending first health check)", flush=True)
+except Exception as _mue:
+    print(f"[fieldnote] MCP hub unverified reset skipped: {_mue}", flush=True)
+
 # Migrate any action:"error" discovery log entries → enrichment backlog.
 # Must run AFTER SKILLS_DIR is guaranteed to exist (i.e. here, not at module import).
 try:
