@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "nirdiamant--rag-techniques",
+      "title": "Discovered: NirDiamant/RAG_Techniques",
+      "category": "discoveries",
+      "confidence": "inferred",
+      "updated_at": "2026-07-21T15:24:35.583914+00:00",
+      "path": "discoveries/nirdiamant--rag-techniques.md"
+    },
+    {
       "slug": "microsoft--graphrag",
       "title": "Discovered: microsoft/graphrag",
       "category": "discoveries",
@@ -193,5 +201,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-21T15:24:34.089826+00:00"
+  "updated_at": "2026-07-21T15:24:35.586633+00:00"
 }
