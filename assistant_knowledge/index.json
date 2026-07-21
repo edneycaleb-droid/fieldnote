@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "langgenius--dify",
+      "title": "Discovered: langgenius/dify",
+      "category": "discoveries",
+      "confidence": "verified",
+      "updated_at": "2026-07-21T15:24:29.611871+00:00",
+      "path": "discoveries/langgenius--dify.md"
+    },
+    {
       "slug": "raga-ai-hub--ragaai-catalyst",
       "title": "Discovered: raga-ai-hub/RagaAI-Catalyst",
       "category": "discoveries",
@@ -161,5 +169,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-17T02:02:25.167123+00:00"
+  "updated_at": "2026-07-21T15:24:29.660086+00:00"
 }
