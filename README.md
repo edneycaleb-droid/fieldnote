@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **90 skills** · Last synced: 2026-07-21 14:58 UTC
+> **90 skills** · Last synced: 2026-07-21 15:02 UTC
 
 ---
 
@@ -9,8 +9,8 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [New Hermes Agent OS is INSANE!](skills/new_hermes_agent_os_is_insane.md) | This skill details the advanced capabilities of the New Hermes Agent OS, which u | `Claude` `Docker` `bash` `Python` | `agent` `ai os` `automation` |
-| [New Claude Update: Enhanced Capabilities for Teachers and Business Automation](skills/new_claude_update_is_insane.md) | This skill details Anthropic's significant update to Claude, focusing on its new | `Claude` `Anthropic` `Claude Code` `Claude Co-work` | `claude` `anthropic` `education` |
+| [New Hermes Agent OS is INSANE!](skills/new_hermes_agent_os_is_insane.md) | By Julian Goldie SEO. Key tools: Claude. (Auto-extracted — pending AI enhancemen | `Claude` | `same` `outreach` `agent` |
+| [Skill 7B2683](skills/new_claude_update_is_insane.md) | Skill 7B2683 | `Claude` `Anthropic` `Claude Co-work` | `ai` `automation` `claude` |
 | [Kimi K3 vs Claude Fable 5: Raw Results and Live Trading Competition](skills/kimi_k3_vs_claude_fable_5_raw_results.md) | This video compares Kimi K3 and Claude Fable 5 in a live trading competition, hi | `Kimi K3` `Claude Fable 5` `Trading View` `Tradingkit.com` | `AI` `Competition` `Models` |
 | [Getting Started with ChatGPT Work: A Beginner's Guide](skills/chatgpt_work_everything_you_need_to_know_to_get_st.md) | Learn how to use ChatGPT Work to automate tasks, build websites, and create cont | `ChatGPT` `ChatGPT Work` | `ai` `automation` `chatgpt` |
 | [New Claude Opus 5 LEAKS!](skills/new_claude_opus_5_leaks.md) | By Julian Goldie SEO. Key tools: Claude, Anthropic. (Auto-extracted — pending AI | `Claude` `Anthropic` | `opus` `model` `profit` |
