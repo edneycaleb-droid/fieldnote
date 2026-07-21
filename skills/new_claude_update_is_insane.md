@@ -21,4 +21,4 @@ Claude, Anthropic
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-20 | [New Claude Update Is INSANE!](https://www.youtube.com/watch?v=vsXkRKhk7SA) | yt_dlp_subs |
+| 2026-07-21 | [New Claude Update Is INSANE!](https://www.youtube.com/watch?v=vsXkRKhk7SA) | yt_dlp_subs |
