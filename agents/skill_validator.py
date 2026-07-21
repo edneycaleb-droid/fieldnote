@@ -70,19 +70,22 @@ def validate_extraction(d: Any, context: str = "") -> dict:
     # ── List fields — the primary null-safety target ──────────────────────────
     for field in _LIST_FIELDS:
         raw = d.get(field)
-        if not isinstance(raw, list):
-            converted = _to_list(raw)
-            if raw is not None:
-                fixes.append(f"{field}: {type(raw).__name__} → list({len(converted)})")
-            d[field] = converted
+        converted = _to_list(raw)
+        if raw is not None and converted != raw:
+            fixes.append(f"{field}: {type(raw).__name__} → list({len(converted)})")
+        d[field] = converted
 
     # ── String fields — coerce non-strings and strip ──────────────────────────
     for field in _STR_FIELDS:
         raw = d.get(field)
         if field == "enhance_target":
-            # allowed to be None
-            if raw is not None and not isinstance(raw, str):
+            # allowed to be None, but always present for a stable result shape
+            if raw is None:
+                d[field] = None
+            elif not isinstance(raw, str):
                 d[field] = str(raw).strip() or None
+            else:
+                d[field] = raw.strip() or None
         elif raw is None:
             d[field] = ""
         elif not isinstance(raw, str):
