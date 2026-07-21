@@ -1621,6 +1621,26 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
   animation: spin .7s linear infinite; flex-shrink: 0;
 }
 
+/* ── Integrations: ultra-narrow viewport fix (≤ 360px / Galaxy A / 320px) ── *
+ * Placed AFTER all base .integ-card / .ic-key-* rules so the media overrides
+ * win in the cascade at equal specificity.
+ */
+@media (max-width: 360px) {
+  /* Reduce card horizontal padding so content has more room at 320px.
+     Without this, card content area = 320 - 32(container) - 32(card) = 256px,
+     which is tight for the key-row flex items. */
+  .integ-card { padding: 12px 12px; }
+
+  /* Allow the key-input + Get-key-link row to wrap so neither element is
+     squashed to 0 or clipped by the card's overflow:hidden.
+     Input takes its own line; link drops below with auto sizing. */
+  .ic-key-row { flex-wrap: wrap; }
+  .ic-key-input { flex: 1 1 100%; min-width: 0; }
+  .ic-key-link  { flex: 0 0 auto; }
+
+  /* Auth button is already width:100% — no change needed */
+}
+
 /* ── Integration Agent status strip ─────────────────────────────────────── */
 .integ-agent-strip {
   background: var(--bg2); border: 1px solid var(--border);
