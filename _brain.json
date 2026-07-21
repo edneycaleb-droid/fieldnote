@@ -1169,7 +1169,7 @@
       ]
     },
     "ai": {
-      "freq": 11,
+      "freq": 12,
       "skills": [
         "dify",
         "ragflow",
@@ -1181,7 +1181,8 @@
         "awesome_mcp_servers",
         "griptape",
         "trainer",
-        "pasa"
+        "pasa",
+        "sqlite_vector"
       ]
     },
     "AI workflow management": {
@@ -1436,13 +1437,14 @@
       ]
     },
     "llm": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "graphrag",
         "mcp_go",
         "mcp_agent",
         "registry",
-        "pasa"
+        "pasa",
+        "sqlite_vector"
       ]
     },
     "Knowledge Graph Memory Structures": {
@@ -2648,6 +2650,12 @@
       "skills": [
         "lightagent_framework"
       ]
+    },
+    "c": {
+      "freq": 1,
+      "skills": [
+        "sqlite_vector"
+      ]
     }
   },
   "tools": {
@@ -3233,10 +3241,11 @@
       ]
     },
     "redis": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "ragflow",
-        "awesome_mcp_servers"
+        "awesome_mcp_servers",
+        "sqlite_vector"
       ]
     },
     "gemini": {
@@ -3862,9 +3871,10 @@
       ]
     },
     "sqlite": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "awesome_mcp_servers"
+        "awesome_mcp_servers",
+        "sqlite_vector"
       ]
     },
     "anthropic-claude": {
@@ -4775,6 +4785,24 @@
       "freq": 1,
       "skills": [
         "lightagent_framework"
+      ]
+    },
+    "weaviate": {
+      "freq": 1,
+      "skills": [
+        "sqlite_vector"
+      ]
+    },
+    "faiss": {
+      "freq": 1,
+      "skills": [
+        "sqlite_vector"
+      ]
+    },
+    "C": {
+      "freq": 1,
+      "skills": [
+        "sqlite_vector"
       ]
     }
   },
@@ -6586,6 +6614,26 @@
         "workflow"
       ],
       "step_count": 14
+    },
+    "sqlite_vector": {
+      "concepts": [
+        "c",
+        "ai",
+        "llm"
+      ],
+      "tools": [
+        "redis",
+        "weaviate",
+        "faiss",
+        "sqlite",
+        "C"
+      ],
+      "tags": [
+        "c",
+        "ai",
+        "llm"
+      ],
+      "step_count": 8
     }
   },
   "relationships": {
@@ -9014,6 +9062,9 @@
       ],
       "lightagent": [
         "openai"
+      ],
+      "sqlite_vector": [
+        "ai"
       ]
     },
     "dify_deployment": {
@@ -9136,6 +9187,10 @@
       ],
       "lightagent": [
         "openai"
+      ],
+      "sqlite_vector": [
+        "redis",
+        "ai"
       ]
     },
     "ragflow_self_hosting_guide": {
@@ -9286,6 +9341,9 @@
       ],
       "lightagent_framework": [
         "Python"
+      ],
+      "sqlite_vector": [
+        "llm"
       ]
     },
     "lightrag_setup": {
@@ -9419,6 +9477,9 @@
       ],
       "lightagent_framework": [
         "Python"
+      ],
+      "sqlite_vector": [
+        "llm"
       ]
     },
     "graphrag_system": {
@@ -9572,6 +9633,10 @@
         "python",
         "langchain",
         "openai"
+      ],
+      "sqlite_vector": [
+        "llm",
+        "ai"
       ]
     },
     "advanced_retrieval_augmented_generation": {
@@ -9694,6 +9759,10 @@
       ],
       "lightagent_framework": [
         "Python"
+      ],
+      "sqlite_vector": [
+        "llm",
+        "ai"
       ]
     },
     "fastapi_mcp_integration": {
@@ -9817,6 +9886,10 @@
       ],
       "lightagent": [
         "llm"
+      ],
+      "sqlite_vector": [
+        "llm",
+        "ai"
       ]
     },
     "mcp_agent": {
@@ -9927,6 +10000,10 @@
         "mcp",
         "agents",
         "python"
+      ],
+      "sqlite_vector": [
+        "llm",
+        "ai"
       ]
     },
     "mcp_agent_framework": {
@@ -10117,6 +10194,10 @@
       "lightagent": [
         "mcp",
         "llm"
+      ],
+      "sqlite_vector": [
+        "llm",
+        "ai"
       ]
     },
     "mcp_registry_development_deployment": {
@@ -10266,6 +10347,11 @@
       ],
       "lightagent": [
         "mcp"
+      ],
+      "sqlite_vector": [
+        "redis",
+        "sqlite",
+        "ai"
       ]
     },
     "mcp_server_implementations": {
@@ -10525,6 +10611,10 @@
         "python",
         "langchain",
         "openai"
+      ],
+      "sqlite_vector": [
+        "llm",
+        "ai"
       ]
     },
     "griptape_framework": {
@@ -10755,6 +10845,9 @@
         "openai",
         "agents",
         "python"
+      ],
+      "sqlite_vector": [
+        "llm"
       ]
     },
     "forge_llm_tool_calling_framework": {
@@ -10920,6 +11013,10 @@
       "lightagent": [
         "llm",
         "python"
+      ],
+      "sqlite_vector": [
+        "llm",
+        "ai"
       ]
     },
     "pasa": {
@@ -11007,6 +11104,10 @@
       ],
       "lightagent_framework": [
         "Python"
+      ],
+      "sqlite_vector": [
+        "llm",
+        "ai"
       ]
     },
     "paper_agent": {},
@@ -11079,6 +11180,9 @@
       "pasa": [
         "llm",
         "python"
+      ],
+      "sqlite_vector": [
+        "llm"
       ]
     },
     "lightagent_framework": {
@@ -11133,8 +11237,66 @@
       "pasa": [
         "Python"
       ]
+    },
+    "sqlite_vector": {
+      "dify": [
+        "ai"
+      ],
+      "ragflow": [
+        "redis",
+        "ai"
+      ],
+      "lightrag": [
+        "llm"
+      ],
+      "graphrag": [
+        "llm"
+      ],
+      "rag_techniques": [
+        "llm",
+        "ai"
+      ],
+      "fastapi_mcp": [
+        "llm",
+        "ai"
+      ],
+      "mcp_go": [
+        "llm",
+        "ai"
+      ],
+      "mcp_agent": [
+        "llm",
+        "ai"
+      ],
+      "registry": [
+        "llm",
+        "ai"
+      ],
+      "awesome_mcp_servers": [
+        "redis",
+        "sqlite",
+        "ai"
+      ],
+      "griptape": [
+        "llm",
+        "ai"
+      ],
+      "forge": [
+        "llm"
+      ],
+      "trainer": [
+        "llm",
+        "ai"
+      ],
+      "pasa": [
+        "llm",
+        "ai"
+      ],
+      "lightagent": [
+        "llm"
+      ]
     }
   },
-  "updated_at": "2026-07-21T21:37:37.720301+00:00",
-  "total_skills": 57
+  "updated_at": "2026-07-21T21:37:48.103021+00:00",
+  "total_skills": 58
 }
