@@ -1239,6 +1239,108 @@
       "skills": [
         "ragflow"
       ]
+    },
+    "Agent-Harness": {
+      "freq": 1,
+      "skills": [
+        "ragflow_self_hosting_guide"
+      ]
+    },
+    "Agentic-AI": {
+      "freq": 1,
+      "skills": [
+        "ragflow_self_hosting_guide"
+      ]
+    },
+    "Agentic-Retrieval": {
+      "freq": 1,
+      "skills": [
+        "ragflow_self_hosting_guide"
+      ]
+    },
+    "Context Engine": {
+      "freq": 1,
+      "skills": [
+        "ragflow_self_hosting_guide"
+      ]
+    },
+    "Context Engineering": {
+      "freq": 1,
+      "skills": [
+        "ragflow_self_hosting_guide"
+      ]
+    },
+    "Context Layer for LLMs": {
+      "freq": 1,
+      "skills": [
+        "ragflow_self_hosting_guide"
+      ]
+    },
+    "Context Management": {
+      "freq": 1,
+      "skills": [
+        "ragflow_self_hosting_guide"
+      ]
+    },
+    "Docker Images": {
+      "freq": 1,
+      "skills": [
+        "ragflow_self_hosting_guide"
+      ]
+    },
+    "Document Engines (Elasticsearch, Infinity)": {
+      "freq": 1,
+      "skills": [
+        "ragflow_self_hosting_guide"
+      ]
+    },
+    "GPU Acceleration": {
+      "freq": 1,
+      "skills": [
+        "ragflow_self_hosting_guide"
+      ]
+    },
+    "Harness Engineering": {
+      "freq": 1,
+      "skills": [
+        "ragflow_self_hosting_guide"
+      ]
+    },
+    "Knowledge Compilation": {
+      "freq": 1,
+      "skills": [
+        "ragflow_self_hosting_guide"
+      ]
+    },
+    "Large Language Models (LLMs)": {
+      "freq": 1,
+      "skills": [
+        "ragflow_self_hosting_guide"
+      ]
+    },
+    "LLM Apps": {
+      "freq": 1,
+      "skills": [
+        "ragflow_self_hosting_guide"
+      ]
+    },
+    "RAG": {
+      "freq": 1,
+      "skills": [
+        "ragflow_self_hosting_guide"
+      ]
+    },
+    "Retrieval Augmented Generation (RAG)": {
+      "freq": 1,
+      "skills": [
+        "ragflow_self_hosting_guide"
+      ]
+    },
+    "Self-Hosting": {
+      "freq": 1,
+      "skills": [
+        "ragflow_self_hosting_guide"
+      ]
     }
   },
   "tools": {
@@ -1302,21 +1404,23 @@
       ]
     },
     "Docker": {
-      "freq": 12,
+      "freq": 13,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
         "hermes_agent_full_course_setup_guide_for_complete_",
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
         "new_hermes_agent_os_is_insane",
-        "dify_deployment"
+        "dify_deployment",
+        "ragflow_self_hosting_guide"
       ]
     },
     "bash": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
-        "new_hermes_agent_os_is_insane"
+        "new_hermes_agent_os_is_insane",
+        "ragflow_self_hosting_guide"
       ]
     },
     "Python": {
@@ -1715,9 +1819,10 @@
       ]
     },
     "Docker Compose": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "dify_deployment"
+        "dify_deployment",
+        "ragflow_self_hosting_guide"
       ]
     },
     "Kubernetes": {
@@ -1826,6 +1931,54 @@
       "freq": 1,
       "skills": [
         "ragflow"
+      ]
+    },
+    "RAGFlow": {
+      "freq": 1,
+      "skills": [
+        "ragflow_self_hosting_guide"
+      ]
+    },
+    "Elasticsearch": {
+      "freq": 1,
+      "skills": [
+        "ragflow_self_hosting_guide"
+      ]
+    },
+    "MinIO": {
+      "freq": 1,
+      "skills": [
+        "ragflow_self_hosting_guide"
+      ]
+    },
+    "Redis": {
+      "freq": 1,
+      "skills": [
+        "ragflow_self_hosting_guide"
+      ]
+    },
+    "MySQL": {
+      "freq": 1,
+      "skills": [
+        "ragflow_self_hosting_guide"
+      ]
+    },
+    "git": {
+      "freq": 1,
+      "skills": [
+        "ragflow_self_hosting_guide"
+      ]
+    },
+    "sed": {
+      "freq": 1,
+      "skills": [
+        "ragflow_self_hosting_guide"
+      ]
+    },
+    "gVisor": {
+      "freq": 1,
+      "skills": [
+        "ragflow_self_hosting_guide"
       ]
     }
   },
@@ -2523,6 +2676,52 @@
         "llm"
       ],
       "step_count": 8
+    },
+    "ragflow_self_hosting_guide": {
+      "concepts": [
+        "Agent-Harness",
+        "Agentic-AI",
+        "Agentic-Retrieval",
+        "Context Engine",
+        "Context Engineering",
+        "Context Layer for LLMs",
+        "Context Management",
+        "Docker Images",
+        "Document Engines (Elasticsearch, Infinity)",
+        "GPU Acceleration",
+        "Harness Engineering",
+        "Knowledge Compilation",
+        "Large Language Models (LLMs)",
+        "LLM Apps",
+        "RAG",
+        "Retrieval Augmented Generation (RAG)",
+        "Self-Hosting"
+      ],
+      "tools": [
+        "RAGFlow",
+        "Docker",
+        "Docker Compose",
+        "Elasticsearch",
+        "MinIO",
+        "Redis",
+        "MySQL",
+        "git",
+        "bash",
+        "sed",
+        "gVisor"
+      ],
+      "tags": [
+        "ai",
+        "rag",
+        "llm",
+        "context-layer",
+        "self-hosting",
+        "docker",
+        "llm-apps",
+        "agentic-ai",
+        "retrieval-augmented-generation"
+      ],
+      "step_count": 11
     }
   },
   "relationships": {
@@ -2801,6 +3000,10 @@
         "agent"
       ],
       "dify_deployment": [
+        "Docker"
+      ],
+      "ragflow_self_hosting_guide": [
+        "bash",
         "Docker"
       ]
     },
@@ -3409,6 +3612,9 @@
       ],
       "dify_deployment": [
         "Docker"
+      ],
+      "ragflow_self_hosting_guide": [
+        "Docker"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -3799,6 +4005,9 @@
       ],
       "dify_deployment": [
         "Docker"
+      ],
+      "ragflow_self_hosting_guide": [
+        "Docker"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -3892,6 +4101,10 @@
         "AI automation"
       ],
       "dify_deployment": [
+        "Docker"
+      ],
+      "ragflow_self_hosting_guide": [
+        "bash",
         "Docker"
       ]
     },
@@ -4310,6 +4523,9 @@
       ],
       "dify_deployment": [
         "Docker"
+      ],
+      "ragflow_self_hosting_guide": [
+        "Docker"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -4439,6 +4655,10 @@
       ],
       "hermes_agent_full_course_setup_guide_for_complete_": [
         "Docker"
+      ],
+      "ragflow_self_hosting_guide": [
+        "Docker Compose",
+        "Docker"
       ]
     },
     "ragflow": {
@@ -4451,8 +4671,31 @@
         "ai",
         "docker"
       ]
+    },
+    "ragflow_self_hosting_guide": {
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "bash",
+        "Docker"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "Docker"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "Docker"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "bash",
+        "Docker"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "Docker"
+      ],
+      "dify_deployment": [
+        "Docker Compose",
+        "Docker"
+      ]
     }
   },
-  "updated_at": "2026-07-21T15:21:04.874284+00:00",
-  "total_skills": 25
+  "updated_at": "2026-07-21T15:21:29.795915+00:00",
+  "total_skills": 26
 }
