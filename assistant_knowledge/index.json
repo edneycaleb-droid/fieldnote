@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "wanxingai--lightagent",
+      "title": "Discovered: wanxingai/LightAgent",
+      "category": "discoveries",
+      "confidence": "verified",
+      "updated_at": "2026-07-21T21:38:24.647521+00:00",
+      "path": "discoveries/wanxingai--lightagent.md"
+    },
+    {
       "slug": "bytedance--pasa",
       "title": "Discovered: bytedance/pasa",
       "category": "discoveries",
@@ -289,5 +297,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-21T21:38:23.264353+00:00"
+  "updated_at": "2026-07-21T21:38:24.651765+00:00"
 }
