@@ -2494,6 +2494,42 @@
       "skills": [
         "pasa"
       ]
+    },
+    "Large Language Models": {
+      "freq": 1,
+      "skills": [
+        "paper_agent"
+      ]
+    },
+    "Automated Paper Search": {
+      "freq": 1,
+      "skills": [
+        "paper_agent"
+      ]
+    },
+    "Reinforcement Learning": {
+      "freq": 1,
+      "skills": [
+        "paper_agent"
+      ]
+    },
+    "Synthetic Dataset": {
+      "freq": 1,
+      "skills": [
+        "paper_agent"
+      ]
+    },
+    "AutoScholarQuery": {
+      "freq": 1,
+      "skills": [
+        "paper_agent"
+      ]
+    },
+    "RealScholarQuery": {
+      "freq": 1,
+      "skills": [
+        "paper_agent"
+      ]
     }
   },
   "tools": {
@@ -4453,6 +4489,48 @@
       "skills": [
         "pasa"
       ]
+    },
+    "PaSa-Agent AI": {
+      "freq": 1,
+      "skills": [
+        "paper_agent"
+      ]
+    },
+    "GitHub Repository README": {
+      "freq": 1,
+      "skills": [
+        "paper_agent"
+      ]
+    },
+    "Google Search API": {
+      "freq": 1,
+      "skills": [
+        "paper_agent"
+      ]
+    },
+    "PaSa-agent.ai": {
+      "freq": 1,
+      "skills": [
+        "paper_agent"
+      ]
+    },
+    "pasa-dataset": {
+      "freq": 1,
+      "skills": [
+        "paper_agent"
+      ]
+    },
+    "Hugging Face Transformers": {
+      "freq": 1,
+      "skills": [
+        "paper_agent"
+      ]
+    },
+    "ArXiv Search API": {
+      "freq": 1,
+      "skills": [
+        "paper_agent"
+      ]
     }
   },
   "skill_map": {
@@ -6148,6 +6226,34 @@
         "python",
         "ai",
         "llm"
+      ],
+      "step_count": 8
+    },
+    "paper_agent": {
+      "concepts": [
+        "Large Language Models",
+        "Automated Paper Search",
+        "Reinforcement Learning",
+        "Synthetic Dataset",
+        "AutoScholarQuery",
+        "RealScholarQuery"
+      ],
+      "tools": [
+        "PaSa-Agent AI",
+        "GitHub Repository README",
+        "Google Search API",
+        "PaSa-agent.ai",
+        "pasa-dataset",
+        "Hugging Face Transformers",
+        "ArXiv Search API"
+      ],
+      "tags": [
+        "research",
+        "academic_search",
+        "large_language_models",
+        "paper_search",
+        "llm_agent",
+        "pasa"
       ],
       "step_count": 8
     }
@@ -10452,8 +10558,9 @@
         "python",
         "huggingface"
       ]
-    }
+    },
+    "paper_agent": {}
   },
-  "updated_at": "2026-07-21T21:35:51.142988+00:00",
-  "total_skills": 54
+  "updated_at": "2026-07-21T21:36:59.357890+00:00",
+  "total_skills": 55
 }
