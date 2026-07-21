@@ -25,6 +25,25 @@ def has(path: str, *needles: str) -> bool:
     return all(needle in text for needle in needles)
 
 
+def generated_skill_library_valid() -> bool:
+    """Reject truncated generated skills without importing or executing project code."""
+    skills_dir = ROOT / "skills"
+    try:
+        skill_files = list(skills_dir.glob("*.md"))
+    except OSError:
+        return False
+    if not skill_files:
+        return False
+    for skill_file in skill_files:
+        try:
+            markdown = skill_file.read_text(encoding="utf-8").strip()
+        except OSError:
+            return False
+        if len(markdown) < 80 or not markdown.startswith("#"):
+            return False
+    return True
+
+
 def main() -> int:
     try:
         tomllib.loads(read("pyproject.toml"))
@@ -51,7 +70,8 @@ def main() -> int:
             "poetry==1.8.5",
             "poetry install --no-interaction --no-ansi --no-root",
         ),
-        "deterministic_fallback": (ROOT / "scripts/check_repository_quality.py").is_file(),
+        "deterministic_fallback": (ROOT / "scripts/check_repository_quality.py").is_file()
+        and generated_skill_library_valid(),
         "safe_workflow": has(
             ".github/workflows/repository-quality.yml",
             "permissions:\n  contents: read",
