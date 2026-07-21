@@ -39,6 +39,9 @@ class RepositoryQualityRubricTests(unittest.TestCase):
             ),
             ".github/workflows/repository-quality.yml": (
                 "workflow_dispatch:\n"
+                '      - "README.md"\n'
+                '      - "skills/**"\n'
+                '      - "_brain.json"\n'
                 "permissions:\n  contents: read\n"
                 "timeout-minutes: 5\n"
                 "persist-credentials: false\n"
@@ -94,6 +97,17 @@ class RepositoryQualityRubricTests(unittest.TestCase):
         result, output = self.run_quality()
         self.assertEqual(1, result)
         self.assertIn("[FAIL] dependency_policy", output)
+        self.assertIn("REPOSITORY_QUALITY_SCORE=9/10", output)
+
+    def test_generated_content_must_trigger_validation(self) -> None:
+        workflow = self.root / ".github/workflows/repository-quality.yml"
+        workflow.write_text(
+            workflow.read_text(encoding="utf-8").replace('      - "skills/**"\\n', ""),
+            encoding="utf-8",
+        )
+        result, output = self.run_quality()
+        self.assertEqual(1, result)
+        self.assertIn("[FAIL] safe_workflow", output)
         self.assertIn("REPOSITORY_QUALITY_SCORE=9/10", output)
 
 
