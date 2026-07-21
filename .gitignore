@@ -36,3 +36,14 @@ fieldnote_skills/_brain.json
 fieldnote_skills/_discovery_log.json
 fieldnote_skills/_index.json
 fieldnote_skills/_verify_log.json
+
+# Live GitHub mirror — auto-generated runtime state, not source
+.fieldnote_mirror/README.md
+.fieldnote_mirror/_brain.json
+.fieldnote_mirror/fieldnote_mcp/mcp_hub_registry.json
+
+# MCP hub registry — runtime state persisted by the app
+fieldnote_mcp/mcp_hub_registry.json
+
+# Enrichment queue — runtime state
+fieldnote_skills/_enrichment_queue.json
