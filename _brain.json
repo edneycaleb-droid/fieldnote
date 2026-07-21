@@ -1097,9 +1097,10 @@
       ]
     },
     "agent": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "new_hermes_agent_os_is_insane"
+        "new_hermes_agent_os_is_insane",
+        "hermes_claude_code_mcp_integration_loop_engineerin"
       ]
     },
     "squad": {
@@ -1283,17 +1284,72 @@
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
       ]
+    },
+    "tests": {
+      "freq": 1,
+      "skills": [
+        "hermes_claude_code_mcp_integration_loop_engineerin"
+      ]
+    },
+    "skill": {
+      "freq": 1,
+      "skills": [
+        "hermes_claude_code_mcp_integration_loop_engineerin"
+      ]
+    },
+    "hermes": {
+      "freq": 1,
+      "skills": [
+        "hermes_claude_code_mcp_integration_loop_engineerin"
+      ]
+    },
+    "code": {
+      "freq": 1,
+      "skills": [
+        "hermes_claude_code_mcp_integration_loop_engineerin"
+      ]
+    },
+    "loop": {
+      "freq": 1,
+      "skills": [
+        "hermes_claude_code_mcp_integration_loop_engineerin"
+      ]
+    },
+    "step": {
+      "freq": 1,
+      "skills": [
+        "hermes_claude_code_mcp_integration_loop_engineerin"
+      ]
+    },
+    "pass": {
+      "freq": 1,
+      "skills": [
+        "hermes_claude_code_mcp_integration_loop_engineerin"
+      ]
+    },
+    "because": {
+      "freq": 1,
+      "skills": [
+        "hermes_claude_code_mcp_integration_loop_engineerin"
+      ]
+    },
+    "does": {
+      "freq": 1,
+      "skills": [
+        "hermes_claude_code_mcp_integration_loop_engineerin"
+      ]
     }
   },
   "tools": {
     "Anthropic": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "building_ai_agents",
         "build_production_ready_llm_applications_with_haystack",
         "testing_and_comparing_llms",
         "new_claude_update_is_insane",
-        "new_claude_opus_5_leaks"
+        "new_claude_opus_5_leaks",
+        "hermes_claude_code_mcp_integration_loop_engineerin"
       ]
     },
     "Haiku": {
@@ -1358,7 +1414,7 @@
       ]
     },
     "Claude": {
-      "freq": 13,
+      "freq": 14,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -1368,7 +1424,8 @@
         "new_hermes_agent_os_is_insane",
         "new_claude_update_is_insane",
         "new_claude_opus_5_leaks",
-        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
+        "hermes_claude_code_mcp_integration_loop_engineerin"
       ]
     },
     "Google Drive": {
@@ -1691,9 +1748,10 @@
       ]
     },
     "Python": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "openai_agents_sdk"
+        "openai_agents_sdk",
+        "hermes_claude_code_mcp_integration_loop_engineerin"
       ]
     },
     "Haystack": {
@@ -2300,6 +2358,18 @@
       "freq": 1,
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+      ]
+    },
+    "Flask": {
+      "freq": 1,
+      "skills": [
+        "hermes_claude_code_mcp_integration_loop_engineerin"
+      ]
+    },
+    "pytest": {
+      "freq": 1,
+      "skills": [
+        "hermes_claude_code_mcp_integration_loop_engineerin"
       ]
     }
   },
@@ -3118,6 +3188,36 @@
         "already"
       ],
       "step_count": 1
+    },
+    "hermes_claude_code_mcp_integration_loop_engineerin": {
+      "concepts": [
+        "tests",
+        "skill",
+        "hermes",
+        "code",
+        "loop",
+        "step",
+        "agent",
+        "pass",
+        "because",
+        "does"
+      ],
+      "tools": [
+        "Anthropic",
+        "Flask",
+        "Python",
+        "pytest",
+        "Claude"
+      ],
+      "tags": [
+        "tests",
+        "skill",
+        "hermes",
+        "code",
+        "loop",
+        "step"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -3175,6 +3275,9 @@
         "Claude"
       ],
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
         "Claude"
       ]
     },
@@ -3293,6 +3396,9 @@
       ],
       "testing_and_comparing_llms": [
         "LLMs (Large Language Models)"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Python"
       ]
     },
     "build_production_ready_llm_applications_with_haystack": {
@@ -3341,6 +3447,9 @@
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
         "Gemini",
         "OpenAI"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Anthropic"
       ]
     },
     "swanlab_ai_training_analysis_platform": {
@@ -3385,6 +3494,9 @@
         "Claude"
       ],
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
         "Claude"
       ]
     },
@@ -3473,6 +3585,9 @@
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
         "Claude",
         "Gemini"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude"
       ]
     },
     "pydantic_ai_framework": {
@@ -3541,6 +3656,9 @@
         "Claude"
       ],
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
         "Claude"
       ]
     },
@@ -3790,6 +3908,9 @@
       ],
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
         "Claude"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude"
       ]
     },
     "testing_and_comparing_llms": {
@@ -3817,6 +3938,9 @@
       ],
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
         "OpenAI"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Anthropic"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -3848,6 +3972,10 @@
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
         "Claude",
         "already"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude",
+        "agent"
       ]
     },
     "new_claude_update_is_insane": {
@@ -3887,6 +4015,10 @@
         "Claude",
         "anthropic",
         "already"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude",
+        "Anthropic"
       ]
     },
     "new_claude_opus_5_leaks": {
@@ -3926,6 +4058,10 @@
         "model",
         "Claude",
         "anthropic"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude",
+        "Anthropic"
       ]
     },
     "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": {
@@ -3965,9 +4101,53 @@
         "model",
         "Claude",
         "anthropic"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude"
+      ]
+    },
+    "hermes_claude_code_mcp_integration_loop_engineerin": {
+      "building_ai_agents": [
+        "Claude"
+      ],
+      "openai_agents_sdk": [
+        "Python"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "Anthropic"
+      ],
+      "mastering_loop_engineering": [
+        "Claude"
+      ],
+      "higsfield_integration": [
+        "Claude"
+      ],
+      "hermes_agent_setup": [
+        "Claude"
+      ],
+      "building_ai_agents_with_loop": [
+        "Claude"
+      ],
+      "testing_and_comparing_llms": [
+        "Anthropic"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Claude",
+        "agent"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude",
+        "Anthropic"
+      ],
+      "new_claude_opus_5_leaks": [
+        "Claude",
+        "Anthropic"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
       ]
     }
   },
-  "updated_at": "2026-07-21T14:55:18.531836+00:00",
-  "total_skills": 30
+  "updated_at": "2026-07-21T14:55:20.244202+00:00",
+  "total_skills": 31
 }
