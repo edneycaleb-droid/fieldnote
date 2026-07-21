@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **109 skills** · Last synced: 2026-07-21 18:32 UTC
+> **110 skills** · Last synced: 2026-07-21 18:34 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Implementing the Model Context Protocol with Go (mcp-go)](skills/model_context_protocol_go.md) | Learn how to build servers that expose data and functionality to LLM application | `mcp-go` | `llm` `go` `sdk` |
 | [MCP Registry Development and Deployment](skills/mcp_registry_development_deployment.md) | Learn how to set up, develop, and deploy the MCP Registry service, a community-d | `docker` `postgresql` `ko` `golangci-lint` | `mcp` `registry` `service discovery` |
 | [Registry](skills/registry.md) | A community driven registry service for Model Context Protocol (MCP) servers. | `postgresql` `docker` `mcp` `mcp-servers` | `mcp` `mcp-servers` `go` |
 | [R2R Agentic Retrieval-Augmented Generation System](skills/r2r.md) | R2R is a production-ready AI retrieval system implementing Agentic Retrieval-Aug | `R2R` `Docker` `Docker Compose` `RESTful API` | `ai` `api` `llm` |
