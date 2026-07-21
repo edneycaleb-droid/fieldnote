@@ -9,7 +9,8 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [New Claude Update: Enhanced Capabilities for Teachers and Business Automation](skills/new_claude_update_is_insane.md) | This skill details Anthropic's significant update to Claude, focusing on its new | `Claude` `Anthropic` `Claude Code` `Claude Co-work` | `claude` `anthropic` `education` |
+| [Skill 7B2683](skills/new_claude_update_is_insane.md) | Skill 7B2683 | `Claude` `Anthropic` `Claude Co-work` | `ai` `automation` `claude` |
+| [New Hermes Agent OS is INSANE!](skills/new_hermes_agent_os_is_insane.md) | By Julian Goldie SEO. Key tools: Claude. (Auto-extracted — pending AI enhancemen | `Claude` | `same` `outreach` `agent` |
 | [Kimi K3 vs Claude Fable 5: Raw Results and Live Trading Competition](skills/kimi_k3_vs_claude_fable_5_raw_results.md) | This video compares Kimi K3 and Claude Fable 5 in a live trading competition, hi | `Kimi K3` `Claude Fable 5` `Trading View` `Tradingkit.com` | `AI` `Competition` `Models` |
 | [Getting Started with ChatGPT Work: A Beginner's Guide](skills/chatgpt_work_everything_you_need_to_know_to_get_st.md) | Learn how to use ChatGPT Work to automate tasks, build websites, and create cont | `ChatGPT` `ChatGPT Work` | `ai` `automation` `chatgpt` |
 | [New Claude Opus 5 LEAKS!](skills/new_claude_opus_5_leaks.md) | By Julian Goldie SEO. Key tools: Claude, Anthropic. (Auto-extracted — pending AI | `Claude` `Anthropic` | `opus` `model` `profit` |
@@ -25,7 +26,6 @@
 | [This 100% self-improving AI Agent is insane… just watch](skills/this_100_self_improving_ai_agent_is_insane_just_wa.md) | By David Ondrej. Key tools: Claude, Docker, pip, Python, Git. (Auto-extracted —  | `Claude` `Docker` `pip` `Python` | `agent` `hermes` `going` |
 | [Hermes Agent Tutorial for Beginners (Full Step-by-Step Setup)](skills/hermes_agent_tutorial_for_beginners_full_step_by_s.md) | By Metics Media. Key tools: Claude, Docker, bash, Python, LLM. (Auto-extracted — | `Claude` `Docker` `bash` `Python` | `agent` `hermes` `want` |
 | [The 15 Most INSANE Things Created by KIMI K3 ( KIMI K3 Use Cases)](skills/the_15_most_insane_things_created_by_kimi_k3_kimi_.md) | By TheAIGRID. Key tools: Claude. (Auto-extracted — pending AI enhancement.) | `Claude` | `know` `course` `game` |
-| [New Hermes Agent OS is INSANE!](skills/new_hermes_agent_os_is_insane.md) | By Julian Goldie SEO. Key tools: Claude. (Auto-extracted — pending AI enhancemen | `Claude` | `same` `outreach` `agent` |
 | [kimi_k3_just_knocked_claude_to_third_place_chinese](skills/kimi_k3_just_knocked_claude_to_third_place_chinese.md) |  |  |  |
 | [building_resilient_ai_agents_with_langgraph](skills/building_resilient_ai_agents_with_langgraph.md) |  |  |  |
 | [experimenting_with_longs](skills/experimenting_with_longs.md) |  |  |  |
