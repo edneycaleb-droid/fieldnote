@@ -6082,17 +6082,32 @@ function renderHubCard(s) {
   let primaryBtn = '';
   let altLink    = '';
   const state = s.health_state;
+
+  // Helper: resolve alt link from python_alternative_id (proactive) or
+  // alternative_id/alternative_name (set after a failed install attempt).
+  function _buildAltLink(altId, altName) {
+    if (!altId) return '';
+    const displayName = altName || altId;
+    return `<a class="hc-alt-link" href="#"
+      onclick="hubInstall('${esc(altId)}');return false;"
+      title="Install ${esc(displayName)} — a Python alternative with the same capability">
+      Try ${esc(displayName)} instead →</a>`;
+  }
+
   if (state === 'not_installed' || state === 'missing_credential') {
     primaryBtn = `<button class="hc-btn hcbtn-install" id="hub-btn-primary-${esc(s.id)}"
       onclick="hubInstall('${esc(s.id)}')">⬇ Install</button>`;
+    // Proactively show the Python alternative for Node-required servers
+    if (s.runtime_required === 'node' && s.python_alternative_id) {
+      const altSrv = _hubData.find(a => a.id === s.python_alternative_id);
+      altLink = _buildAltLink(s.python_alternative_id, altSrv ? altSrv.name : s.python_alternative_id);
+    }
   } else if (state === 'runtime_missing') {
     primaryBtn = `<button class="hc-btn hcbtn-install" disabled id="hub-btn-primary-${esc(s.id)}">⬇ Install</button>`;
-    if (s.alternative_id && s.alternative_name) {
-      altLink = `<a class="hc-alt-link" href="#"
-        onclick="hubInstall('${esc(s.alternative_id)}');return false;"
-        title="Install ${esc(s.alternative_name)} — a Python alternative with the same capability">
-        Try ${esc(s.alternative_name)} instead →</a>`;
-    }
+    // Prefer the post-install alternative_id/name (more precise), fall back to static field
+    const altId   = s.alternative_id   || s.python_alternative_id;
+    const altName = s.alternative_name || (altId ? ((_hubData.find(a => a.id === altId) || {}).name || altId) : '');
+    altLink = _buildAltLink(altId, altName);
   } else if (state === 'offline' || state === 'degraded') {
     primaryBtn = `<button class="hc-btn hcbtn-install" id="hub-btn-primary-${esc(s.id)}"
       onclick="hubInstall('${esc(s.id)}', true)">↺ Re-install</button>`;
