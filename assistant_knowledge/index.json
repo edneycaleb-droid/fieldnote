@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "lastmile-ai--mcp-agent",
+      "title": "Discovered: lastmile-ai/mcp-agent",
+      "category": "discoveries",
+      "confidence": "inferred",
+      "updated_at": "2026-07-21T18:32:24.493994+00:00",
+      "path": "discoveries/lastmile-ai--mcp-agent.md"
+    },
+    {
       "slug": "mark3labs--mcp-go",
       "title": "Discovered: mark3labs/mcp-go",
       "category": "discoveries",
@@ -217,5 +225,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-21T18:32:22.989045+00:00"
+  "updated_at": "2026-07-21T18:32:24.497103+00:00"
 }
