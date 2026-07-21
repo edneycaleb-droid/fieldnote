@@ -6074,6 +6074,15 @@ function hubSearchClear() {
 
 function hubFilter(cat) {
   _hubFilter = cat;
+  // Clear search text when switching to a specific category chip so users
+  // don't end up with a silent combined filter (e.g. "git" + "python" → 0 results).
+  if (cat !== '') {
+    const inp = document.getElementById('hub-search-input');
+    if (inp) inp.value = '';
+    _hubSearch = '';
+    const clr = document.getElementById('hub-search-clear');
+    if (clr) clr.style.display = 'none';
+  }
   document.querySelectorAll('.hub-chip').forEach(c => {
     c.classList.toggle('active', c.textContent.trim().toLowerCase().includes(cat) || (cat === '' && c.textContent.trim() === 'All'));
   });
@@ -6094,9 +6103,14 @@ function renderHubGrid() {
     );
   }
   if (!servers.length) {
-    const msg = _hubSearch
-      ? 'No servers match <strong>' + esc(_hubSearch) + '</strong>.'
-      : 'No servers in this category.';
+    let msg;
+    if (_hubSearch && _hubFilter) {
+      msg = 'No servers match <strong>' + esc(_hubSearch) + '</strong> in the <strong>' + esc(_hubFilter) + '</strong> category.';
+    } else if (_hubSearch) {
+      msg = 'No servers match <strong>' + esc(_hubSearch) + '</strong>.';
+    } else {
+      msg = 'No servers in this category.';
+    }
     grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:20px;color:var(--muted);font-size:.8rem">' + msg + '</div>';
     return;
   }
