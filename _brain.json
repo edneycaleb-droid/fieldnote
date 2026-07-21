@@ -1163,12 +1163,13 @@
       ]
     },
     "ai": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "dify",
         "ragflow",
         "rag_techniques",
-        "fastapi_mcp"
+        "fastapi_mcp",
+        "mcp_go"
       ]
     },
     "AI workflow management": {
@@ -1418,9 +1419,10 @@
       ]
     },
     "llm": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "graphrag"
+        "graphrag",
+        "mcp_go"
       ]
     },
     "Knowledge Graph Memory Structures": {
@@ -1637,6 +1639,12 @@
       "freq": 1,
       "skills": [
         "fastapi_mcp_integration"
+      ]
+    },
+    "go": {
+      "freq": 1,
+      "skills": [
+        "mcp_go"
       ]
     }
   },
@@ -2563,6 +2571,18 @@
       "freq": 1,
       "skills": [
         "fastapi_mcp_integration"
+      ]
+    },
+    "ray": {
+      "freq": 1,
+      "skills": [
+        "mcp_go"
+      ]
+    },
+    "Go": {
+      "freq": 1,
+      "skills": [
+        "mcp_go"
       ]
     }
   },
@@ -3555,6 +3575,23 @@
         "authorization"
       ],
       "step_count": 6
+    },
+    "mcp_go": {
+      "concepts": [
+        "go",
+        "ai",
+        "llm"
+      ],
+      "tools": [
+        "ray",
+        "Go"
+      ],
+      "tags": [
+        "go",
+        "ai",
+        "llm"
+      ],
+      "step_count": 8
     }
   },
   "relationships": {
@@ -5634,6 +5671,9 @@
       "fastapi_mcp": [
         "ai",
         "claude"
+      ],
+      "mcp_go": [
+        "ai"
       ]
     },
     "dify_deployment": {
@@ -5680,6 +5720,9 @@
         "ai"
       ],
       "fastapi_mcp": [
+        "ai"
+      ],
+      "mcp_go": [
         "ai"
       ]
     },
@@ -5756,6 +5799,9 @@
       "fastapi_mcp": [
         "llm",
         "Python"
+      ],
+      "mcp_go": [
+        "llm"
       ]
     },
     "lightrag_setup": {
@@ -5833,6 +5879,9 @@
       "fastapi_mcp": [
         "llm",
         "Python"
+      ],
+      "mcp_go": [
+        "llm"
       ]
     },
     "graphrag_system": {
@@ -5906,6 +5955,10 @@
       "fastapi_mcp": [
         "ai",
         "llm"
+      ],
+      "mcp_go": [
+        "ai",
+        "llm"
       ]
     },
     "advanced_retrieval_augmented_generation": {
@@ -5960,6 +6013,10 @@
         "Python"
       ],
       "rag_techniques": [
+        "ai",
+        "llm"
+      ],
+      "mcp_go": [
         "ai",
         "llm"
       ]
@@ -6017,8 +6074,30 @@
       "lightrag_setup": [
         "uv"
       ]
+    },
+    "mcp_go": {
+      "dify": [
+        "ai"
+      ],
+      "ragflow": [
+        "ai"
+      ],
+      "lightrag": [
+        "llm"
+      ],
+      "graphrag": [
+        "llm"
+      ],
+      "rag_techniques": [
+        "ai",
+        "llm"
+      ],
+      "fastapi_mcp": [
+        "ai",
+        "llm"
+      ]
     }
   },
-  "updated_at": "2026-07-21T18:30:01.117687+00:00",
-  "total_skills": 34
+  "updated_at": "2026-07-21T18:30:11.109343+00:00",
+  "total_skills": 35
 }
