@@ -4251,6 +4251,8 @@ async function enrichSkillNow(skillName, event) {
                 .map(t => `<span class="sr-tag">${esc(t)}</span>`).join("");
             }
             row.dataset.baseline = "";
+            // Keep data-tags in sync so tag filtering works without a page reload
+            row.dataset.tags = (updated.tags || []).join(" ").toLowerCase();
           }
         }
       } catch (_) { /* ignore poll errors */ }
