@@ -44,7 +44,8 @@ def load_queue() -> list[dict]:
 def save_queue(items: list[dict]) -> None:
     path = _queue_path()
     os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
-    tmp = path + ".tmp"
+    import uuid
+    tmp = path + f".{os.getpid()}.{uuid.uuid4().hex}.tmp"
     with open(tmp, "w") as f:
         json.dump(items, f, indent=2)
     os.replace(tmp, path)
@@ -65,7 +66,8 @@ def _load_state() -> dict:
 
 def _save_state(state: dict) -> None:
     path = _state_path()
-    tmp = path + ".tmp"
+    import uuid
+    tmp = path + f".{os.getpid()}.{uuid.uuid4().hex}.tmp"
     with open(tmp, "w") as f:
         json.dump(state, f, indent=2)
     os.replace(tmp, path)
@@ -284,6 +286,17 @@ def _enrich_one(item: dict) -> None:
     skill = gd._extract_from_repo(repo, readme, index)
     if skill is None:
         raise RuntimeError(f"Both lenses returned None for {full_name}")
+
+    # Gate enrichment output — a DENY means the AI produced something weaker
+    # than the baseline it would replace; raise so the item stays in the queue
+    # for retry rather than overwriting a usable baseline with low-quality output.
+    from agents.skill_quality import quality_gate, QualityDecision
+    gate_report = quality_gate(skill)
+    if gate_report.decision == QualityDecision.DENY:
+        raise RuntimeError(
+            f"Enrichment quality gate DENY for {full_name}: {gate_report.summary}"
+        )
+    log.info("Enrichment quality gate: %s → %s", full_name, gate_report.summary)
 
     # Save upgraded skill + update discovery log — both wrapped together so a
     # mid-run failure (e.g. disk write error) keeps _baseline=True in the index
