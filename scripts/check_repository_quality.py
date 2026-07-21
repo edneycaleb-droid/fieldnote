@@ -47,7 +47,7 @@ def main() -> int:
             ".github/workflows/repository-quality.yml",
             "dependency-smoke:",
             "if: github.event_name == 'pull_request'",
-            'python-version: "3.10"',
+            'python-version: "3.11"',
             "poetry==1.8.5",
             "poetry install --no-interaction --no-ansi --no-root",
         ),
