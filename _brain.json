@@ -1165,6 +1165,60 @@
       "skills": [
         "dify"
       ]
+    },
+    "AI workflow management": {
+      "freq": 1,
+      "skills": [
+        "dify_deployment"
+      ]
+    },
+    "Model management": {
+      "freq": 1,
+      "skills": [
+        "dify_deployment"
+      ]
+    },
+    "Workflow orchestration": {
+      "freq": 1,
+      "skills": [
+        "dify_deployment"
+      ]
+    },
+    "Containerization": {
+      "freq": 1,
+      "skills": [
+        "dify_deployment"
+      ]
+    },
+    "Cloud deployment": {
+      "freq": 1,
+      "skills": [
+        "dify_deployment"
+      ]
+    },
+    "AI workflows": {
+      "freq": 1,
+      "skills": [
+        "dify_deployment"
+      ]
+    },
+    "RAG pipelines": {
+      "freq": 1,
+      "skills": [
+        "dify_deployment"
+      ]
+    },
+    "LLM integration": {
+      "freq": 1,
+      "skills": [
+        "dify_deployment"
+      ]
+    },
+    "Agent capabilities": {
+      "freq": 1,
+      "skills": [
+        "dify_deployment"
+      ]
     }
   },
   "tools": {
@@ -1228,13 +1282,14 @@
       ]
     },
     "Docker": {
-      "freq": 11,
+      "freq": 12,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
         "hermes_agent_full_course_setup_guide_for_complete_",
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
-        "new_hermes_agent_os_is_insane"
+        "new_hermes_agent_os_is_insane",
+        "dify_deployment"
       ]
     },
     "bash": {
@@ -1634,6 +1689,48 @@
       "freq": 1,
       "skills": [
         "dify"
+      ]
+    },
+    "Docker Compose": {
+      "freq": 1,
+      "skills": [
+        "dify_deployment"
+      ]
+    },
+    "Kubernetes": {
+      "freq": 1,
+      "skills": [
+        "dify_deployment"
+      ]
+    },
+    "Terraform": {
+      "freq": 1,
+      "skills": [
+        "dify_deployment"
+      ]
+    },
+    "Helm": {
+      "freq": 1,
+      "skills": [
+        "dify_deployment"
+      ]
+    },
+    "PostgreSQL": {
+      "freq": 1,
+      "skills": [
+        "dify_deployment"
+      ]
+    },
+    "NextJS": {
+      "freq": 1,
+      "skills": [
+        "dify_deployment"
+      ]
+    },
+    "TypeScript": {
+      "freq": 1,
+      "skills": [
+        "dify_deployment"
       ]
     }
   },
@@ -2263,6 +2360,38 @@
         "llm"
       ],
       "step_count": 8
+    },
+    "dify_deployment": {
+      "concepts": [
+        "AI workflow management",
+        "Model management",
+        "Workflow orchestration",
+        "Containerization",
+        "Cloud deployment",
+        "AI workflows",
+        "RAG pipelines",
+        "LLM integration",
+        "Agent capabilities"
+      ],
+      "tools": [
+        "Docker",
+        "Docker Compose",
+        "Kubernetes",
+        "Terraform",
+        "Helm",
+        "PostgreSQL",
+        "NextJS",
+        "TypeScript"
+      ],
+      "tags": [
+        "ai",
+        "agentic-ai",
+        "dify",
+        "workflow",
+        "deployment",
+        "containerization"
+      ],
+      "step_count": 12
     }
   },
   "relationships": {
@@ -2539,6 +2668,9 @@
       ],
       "dify": [
         "agent"
+      ],
+      "dify_deployment": [
+        "Docker"
       ]
     },
     "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
@@ -3143,6 +3275,9 @@
       ],
       "dify": [
         "agent"
+      ],
+      "dify_deployment": [
+        "Docker"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -3530,6 +3665,9 @@
       ],
       "dify": [
         "agent"
+      ],
+      "dify_deployment": [
+        "Docker"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -3621,6 +3759,9 @@
       ],
       "chatgpt_work_everything_you_need_to_know_to_get_st": [
         "AI automation"
+      ],
+      "dify_deployment": [
+        "Docker"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -4032,6 +4173,9 @@
       ],
       "dify": [
         "agent"
+      ],
+      "dify_deployment": [
+        "Docker"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -4139,8 +4283,25 @@
       "hermes_agent_full_course_setup_guide_for_complete_": [
         "agent"
       ]
+    },
+    "dify_deployment": {
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Docker"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "Docker"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "Docker"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Docker"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "Docker"
+      ]
     }
   },
-  "updated_at": "2026-07-21T15:20:18.732452+00:00",
-  "total_skills": 23
+  "updated_at": "2026-07-21T15:20:51.873779+00:00",
+  "total_skills": 24
 }
