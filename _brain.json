@@ -2423,6 +2423,48 @@
       "skills": [
         "infinity"
       ]
+    },
+    "AI-native database": {
+      "freq": 1,
+      "skills": [
+        "infinity_database"
+      ]
+    },
+    "Hybrid search": {
+      "freq": 1,
+      "skills": [
+        "infinity_database"
+      ]
+    },
+    "Dense vector search": {
+      "freq": 1,
+      "skills": [
+        "infinity_database"
+      ]
+    },
+    "Sparse vector search": {
+      "freq": 1,
+      "skills": [
+        "infinity_database"
+      ]
+    },
+    "Tensor search": {
+      "freq": 1,
+      "skills": [
+        "infinity_database"
+      ]
+    },
+    "Full-text search": {
+      "freq": 1,
+      "skills": [
+        "infinity_database"
+      ]
+    },
+    "LLM applications": {
+      "freq": 1,
+      "skills": [
+        "infinity_database"
+      ]
     }
   },
   "tools": {
@@ -2489,7 +2531,7 @@
       ]
     },
     "Docker": {
-      "freq": 17,
+      "freq": 18,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -2501,7 +2543,8 @@
         "lightrag_setup",
         "r2r",
         "mcp_server_implementations",
-        "griptape_framework"
+        "griptape_framework",
+        "infinity_database"
       ]
     },
     "bash": {
@@ -4295,6 +4338,18 @@
       "skills": [
         "infinity"
       ]
+    },
+    "Infinity SDK": {
+      "freq": 1,
+      "skills": [
+        "infinity_database"
+      ]
+    },
+    "Python API": {
+      "freq": 1,
+      "skills": [
+        "infinity_database"
+      ]
     }
   },
   "skill_map": {
@@ -5912,6 +5967,29 @@
         "llm"
       ],
       "step_count": 8
+    },
+    "infinity_database": {
+      "concepts": [
+        "AI-native database",
+        "Hybrid search",
+        "Dense vector search",
+        "Sparse vector search",
+        "Tensor search",
+        "Full-text search",
+        "LLM applications"
+      ],
+      "tools": [
+        "Docker",
+        "Infinity SDK",
+        "Python API"
+      ],
+      "tags": [
+        "ai-native",
+        "database",
+        "search",
+        "llm"
+      ],
+      "step_count": 4
     }
   },
   "relationships": {
@@ -6263,6 +6341,9 @@
         "LLM",
         "Python",
         "Claude",
+        "Docker"
+      ],
+      "infinity_database": [
         "Docker"
       ]
     },
@@ -6957,6 +7038,9 @@
         "Claude",
         "OpenAI",
         "Docker"
+      ],
+      "infinity_database": [
+        "Docker"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -7450,6 +7534,9 @@
       ],
       "forge": [
         "anthropic"
+      ],
+      "infinity_database": [
+        "Docker"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -7584,6 +7671,9 @@
         "LLM",
         "Python",
         "Hermes Agent",
+        "Docker"
+      ],
+      "infinity_database": [
         "Docker"
       ]
     },
@@ -8086,6 +8176,9 @@
         "LLM",
         "Hermes Agent",
         "Docker"
+      ],
+      "infinity_database": [
+        "Docker"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -8316,6 +8409,9 @@
       ],
       "griptape_framework": [
         "Docker"
+      ],
+      "infinity_database": [
+        "Docker"
       ]
     },
     "ragflow": {
@@ -8421,6 +8517,9 @@
       ],
       "griptape_framework": [
         "Large Language Models (LLMs)",
+        "Docker"
+      ],
+      "infinity_database": [
         "Docker"
       ]
     },
@@ -8563,6 +8662,9 @@
         "Retrieval-Augmented Generation"
       ],
       "griptape_framework": [
+        "Docker"
+      ],
+      "infinity_database": [
         "Docker"
       ]
     },
@@ -9174,6 +9276,9 @@
         "LLM",
         "Retrieval-Augmented Generation (RAG)",
         "Docker"
+      ],
+      "infinity_database": [
+        "Docker"
       ]
     },
     "registry": {
@@ -9428,6 +9533,9 @@
       ],
       "xcodebuildmcp_installation": [
         "Model Context Protocol"
+      ],
+      "infinity_database": [
+        "Docker"
       ]
     },
     "agentic_rag_for_dummies": {
@@ -9743,6 +9851,9 @@
       "agentic_rag_for_dummies": [
         "OpenAI",
         "LangChain"
+      ],
+      "infinity_database": [
+        "Docker"
       ]
     },
     "forge": {
@@ -9880,8 +9991,43 @@
       "forge": [
         "docker"
       ]
+    },
+    "infinity_database": {
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Docker"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "Docker"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "Docker"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Docker"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "Docker"
+      ],
+      "dify_deployment": [
+        "Docker"
+      ],
+      "ragflow_self_hosting_guide": [
+        "Docker"
+      ],
+      "lightrag_setup": [
+        "Docker"
+      ],
+      "r2r": [
+        "Docker"
+      ],
+      "mcp_server_implementations": [
+        "Docker"
+      ],
+      "griptape_framework": [
+        "Docker"
+      ]
     }
   },
-  "updated_at": "2026-07-21T21:34:01.201501+00:00",
-  "total_skills": 51
+  "updated_at": "2026-07-21T21:34:23.524897+00:00",
+  "total_skills": 52
 }
