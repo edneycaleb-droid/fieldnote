@@ -498,10 +498,20 @@ def load_registry() -> list[MCPServer]:
         except Exception as exc:
             log.warning("mcp_registry: load failed: %s", exc)
 
-    # Merge seed entries — never overwrite runtime state of existing entries
+    # Merge seed entries — add new IDs and push static metadata into existing entries
+    # Runtime state fields are always preserved from the persisted entry.
+    _RUNTIME_FIELDS = {"health_state", "verified_at", "installed_version",
+                       "latest_version", "enabled", "quarantine_reason"}
     for seed in SEED_ENTRIES:
-        if seed["id"] not in existing:
-            existing[seed["id"]] = seed
+        sid = seed["id"]
+        if sid not in existing:
+            existing[sid] = seed
+        else:
+            # Push static seed fields (e.g. python_alternative_id) that may be absent
+            # from older persisted entries, without touching runtime state.
+            for k, v in seed.items():
+                if k not in _RUNTIME_FIELDS and k not in existing[sid]:
+                    existing[sid][k] = v
 
     servers = []
     for d in existing.values():
