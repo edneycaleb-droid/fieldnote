@@ -1169,7 +1169,7 @@
       ]
     },
     "ai": {
-      "freq": 10,
+      "freq": 11,
       "skills": [
         "dify",
         "ragflow",
@@ -1180,7 +1180,8 @@
         "registry",
         "awesome_mcp_servers",
         "griptape",
-        "trainer"
+        "trainer",
+        "pasa"
       ]
     },
     "AI workflow management": {
@@ -1435,12 +1436,13 @@
       ]
     },
     "llm": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "graphrag",
         "mcp_go",
         "mcp_agent",
-        "registry"
+        "registry",
+        "pasa"
       ]
     },
     "Knowledge Graph Memory Structures": {
@@ -1768,9 +1770,10 @@
       ]
     },
     "python": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "r2r"
+        "r2r",
+        "pasa"
       ]
     },
     "question-answering": {
@@ -2485,6 +2488,12 @@
       "skills": [
         "trainer"
       ]
+    },
+    "research": {
+      "freq": 1,
+      "skills": [
+        "pasa"
+      ]
     }
   },
   "tools": {
@@ -2576,7 +2585,7 @@
       ]
     },
     "Python": {
-      "freq": 18,
+      "freq": 19,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -2588,7 +2597,8 @@
         "graphrag",
         "graphrag_system",
         "fastapi_mcp",
-        "griptape_framework"
+        "griptape_framework",
+        "pasa"
       ]
     },
     "LLM": {
@@ -3082,12 +3092,13 @@
       ]
     },
     "huggingface": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "ragflow",
         "agentic_rag_for_dummies",
         "griptape",
-        "trainer"
+        "trainer",
+        "pasa"
       ]
     },
     "elasticsearch": {
@@ -4429,6 +4440,18 @@
       "freq": 1,
       "skills": [
         "trainer"
+      ]
+    },
+    "transformers": {
+      "freq": 1,
+      "skills": [
+        "pasa"
+      ]
+    },
+    "research": {
+      "freq": 1,
+      "skills": [
+        "pasa"
       ]
     }
   },
@@ -6106,6 +6129,27 @@
         "llm"
       ],
       "step_count": 8
+    },
+    "pasa": {
+      "concepts": [
+        "research",
+        "python",
+        "ai",
+        "llm"
+      ],
+      "tools": [
+        "transformers",
+        "huggingface",
+        "research",
+        "Python"
+      ],
+      "tags": [
+        "research",
+        "python",
+        "ai",
+        "llm"
+      ],
+      "step_count": 8
     }
   },
   "relationships": {
@@ -6461,6 +6505,9 @@
       ],
       "infinity_database": [
         "Docker"
+      ],
+      "pasa": [
+        "Python"
       ]
     },
     "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
@@ -7157,6 +7204,9 @@
       ],
       "infinity_database": [
         "Docker"
+      ],
+      "pasa": [
+        "Python"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -7264,6 +7314,9 @@
       "griptape_framework": [
         "Python",
         "Claude"
+      ],
+      "pasa": [
+        "Python"
       ]
     },
     "new_hermes_paperclip_ai_agent_update_is_insane": {
@@ -7653,6 +7706,9 @@
       ],
       "infinity_database": [
         "Docker"
+      ],
+      "pasa": [
+        "Python"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -7791,6 +7847,9 @@
       ],
       "infinity_database": [
         "Docker"
+      ],
+      "pasa": [
+        "Python"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -8486,6 +8545,9 @@
       "trainer": [
         "ai",
         "kubernetes"
+      ],
+      "pasa": [
+        "ai"
       ]
     },
     "dify_deployment": {
@@ -8599,6 +8661,10 @@
         "docker"
       ],
       "trainer": [
+        "ai",
+        "huggingface"
+      ],
+      "pasa": [
         "ai",
         "huggingface"
       ]
@@ -8741,6 +8807,10 @@
       ],
       "trainer": [
         "llm"
+      ],
+      "pasa": [
+        "llm",
+        "Python"
       ]
     },
     "lightrag_setup": {
@@ -8864,6 +8934,10 @@
       ],
       "trainer": [
         "llm"
+      ],
+      "pasa": [
+        "llm",
+        "Python"
       ]
     },
     "graphrag_system": {
@@ -8916,6 +8990,9 @@
       ],
       "griptape_framework": [
         "LLM",
+        "Python"
+      ],
+      "pasa": [
         "Python"
       ]
     },
@@ -8996,6 +9073,11 @@
       ],
       "trainer": [
         "machine-learning",
+        "llm",
+        "ai",
+        "python"
+      ],
+      "pasa": [
         "llm",
         "ai",
         "python"
@@ -9109,6 +9191,11 @@
       "trainer": [
         "llm",
         "ai"
+      ],
+      "pasa": [
+        "llm",
+        "ai",
+        "Python"
       ]
     },
     "fastapi_mcp_integration": {
@@ -9225,6 +9312,10 @@
         "llm",
         "ai",
         "Go"
+      ],
+      "pasa": [
+        "llm",
+        "ai"
       ]
     },
     "mcp_agent": {
@@ -9320,6 +9411,11 @@
         "mcp"
       ],
       "trainer": [
+        "llm",
+        "ai",
+        "python"
+      ],
+      "pasa": [
         "llm",
         "ai",
         "python"
@@ -9502,6 +9598,10 @@
         "llm",
         "ai",
         "Go"
+      ],
+      "pasa": [
+        "llm",
+        "ai"
       ]
     },
     "mcp_registry_development_deployment": {
@@ -9642,6 +9742,9 @@
       "trainer": [
         "ai",
         "kubernetes"
+      ],
+      "pasa": [
+        "ai"
       ]
     },
     "mcp_server_implementations": {
@@ -9889,6 +9992,12 @@
         "ai",
         "python",
         "huggingface"
+      ],
+      "pasa": [
+        "llm",
+        "ai",
+        "python",
+        "huggingface"
       ]
     },
     "griptape_framework": {
@@ -10019,6 +10128,9 @@
       ],
       "infinity_database": [
         "Docker"
+      ],
+      "pasa": [
+        "Python"
       ]
     },
     "forge": {
@@ -10098,6 +10210,10 @@
         "docker"
       ],
       "trainer": [
+        "llm",
+        "python"
+      ],
+      "pasa": [
         "llm",
         "python"
       ]
@@ -10249,9 +10365,95 @@
       "forge": [
         "llm",
         "python"
+      ],
+      "pasa": [
+        "llm",
+        "ai",
+        "python",
+        "huggingface"
+      ]
+    },
+    "pasa": {
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Python"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "Python"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Python"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "Python"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Python"
+      ],
+      "dify": [
+        "ai"
+      ],
+      "ragflow": [
+        "ai",
+        "huggingface"
+      ],
+      "lightrag": [
+        "llm",
+        "Python"
+      ],
+      "graphrag": [
+        "llm",
+        "Python"
+      ],
+      "graphrag_system": [
+        "Python"
+      ],
+      "rag_techniques": [
+        "llm",
+        "ai",
+        "python"
+      ],
+      "fastapi_mcp": [
+        "llm",
+        "ai",
+        "Python"
+      ],
+      "mcp_go": [
+        "llm",
+        "ai"
+      ],
+      "mcp_agent": [
+        "llm",
+        "ai",
+        "python"
+      ],
+      "registry": [
+        "llm",
+        "ai"
+      ],
+      "awesome_mcp_servers": [
+        "ai"
+      ],
+      "griptape": [
+        "llm",
+        "ai",
+        "python",
+        "huggingface"
+      ],
+      "griptape_framework": [
+        "Python"
+      ],
+      "forge": [
+        "llm",
+        "python"
+      ],
+      "trainer": [
+        "llm",
+        "ai",
+        "python",
+        "huggingface"
       ]
     }
   },
-  "updated_at": "2026-07-21T21:34:31.340046+00:00",
-  "total_skills": 53
+  "updated_at": "2026-07-21T21:35:51.142988+00:00",
+  "total_skills": 54
 }
