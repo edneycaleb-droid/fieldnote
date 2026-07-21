@@ -8,7 +8,7 @@
       ]
     },
     "model": {
-      "freq": 10,
+      "freq": 11,
       "skills": [
         "new_claude_opus_5_leaks",
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
@@ -209,7 +209,7 @@
       ]
     },
     "models": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
@@ -361,7 +361,7 @@
       ]
     },
     "even": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
@@ -415,7 +415,7 @@
       ]
     },
     "about": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "by_august_we_ll_have_frontier_ai_running_locally",
         "new_claude_update_is_insane",
@@ -655,7 +655,7 @@
       ]
     },
     "real": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "new_claude_update_is_insane",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
@@ -722,7 +722,7 @@
       ]
     },
     "music": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "this_ai_business_model_is_creating_new_millionaire",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
@@ -777,25 +777,25 @@
       ]
     },
     "openai": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
       ]
     },
     "soul": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
       ]
     },
     "meta": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
       ]
     },
     "luna": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
       ]
@@ -851,7 +851,7 @@
   },
   "tools": {
     "Claude": {
-      "freq": 31,
+      "freq": 32,
       "skills": [
         "new_claude_opus_5_leaks",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
@@ -872,7 +872,7 @@
       ]
     },
     "Anthropic": {
-      "freq": 22,
+      "freq": 23,
       "skills": [
         "new_claude_opus_5_leaks",
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
@@ -932,7 +932,7 @@
       ]
     },
     "LLM": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "hermes_agent_full_course_setup_guide_for_complete_",
@@ -941,7 +941,7 @@
       ]
     },
     "OpenAI": {
-      "freq": 19,
+      "freq": 20,
       "skills": [
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
@@ -1111,7 +1111,7 @@
       ]
     },
     "Llama": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
       ]
@@ -1818,9 +1818,9 @@
         "here"
       ],
       "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "model",
         "Claude",
-        "Anthropic",
-        "model"
+        "Anthropic"
       ],
       "you_need_to_use_hermes_right_now_goodbye_openclaw": [
         "Claude",
@@ -2058,8 +2058,8 @@
       "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
         "OpenAI",
         "Anthropic",
-        "models",
-        "model"
+        "model",
+        "models"
       ],
       "every_hermes_concept_explained_for_normal_people": [
         "intelligence"
@@ -2291,10 +2291,10 @@
       ],
       "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
         "OpenAI",
-        "models",
-        "even",
         "model",
-        "Claude"
+        "Claude",
+        "models",
+        "even"
       ],
       "every_hermes_concept_explained_for_normal_people": [
         "Claude"
@@ -2847,10 +2847,10 @@
       ],
       "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
         "OpenAI",
-        "models",
-        "Anthropic",
         "model",
         "Claude",
+        "models",
+        "Anthropic",
         "about"
       ],
       "every_hermes_concept_explained_for_normal_people": [
@@ -2961,10 +2961,10 @@
         "about"
       ],
       "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
-        "Claude",
         "OpenAI",
-        "LLM",
-        "about"
+        "Claude",
+        "about",
+        "LLM"
       ],
       "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
         "Claude",
@@ -3068,15 +3068,15 @@
       "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
         "OpenAI",
         "Anthropic",
-        "models",
-        "model"
+        "model",
+        "models"
       ],
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
         "OpenAI",
-        "models",
-        "even",
         "model",
-        "Claude"
+        "Claude",
+        "models",
+        "even"
       ],
       "by_august_we_ll_have_frontier_ai_running_locally": [
         "OpenAI",
@@ -3099,10 +3099,10 @@
       ],
       "china_just_beat_claude_ai_kimi_k3": [
         "OpenAI",
-        "models",
-        "Anthropic",
         "model",
         "Claude",
+        "models",
+        "Anthropic",
         "about"
       ],
       "new_hermes_agent_os_is_insane": [
@@ -3110,13 +3110,13 @@
       ],
       "hermes_agent_full_course_setup_guide_for_complete_": [
         "OpenAI",
-        "LLM",
-        "Anthropic"
+        "Anthropic",
+        "LLM"
       ],
       "new_claude_opus_5_leaks": [
+        "model",
         "Claude",
-        "Anthropic",
-        "model"
+        "Anthropic"
       ],
       "hermes_agent_tutorial_for_beginners_full_step_by_s": [
         "Claude",
@@ -3148,10 +3148,10 @@
         "music"
       ],
       "you_need_to_use_hermes_right_now_goodbye_openclaw": [
-        "Claude",
         "OpenAI",
-        "LLM",
-        "about"
+        "Claude",
+        "about",
+        "LLM"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -3447,8 +3447,8 @@
       ],
       "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
         "OpenAI",
-        "LLM",
-        "Anthropic"
+        "Anthropic",
+        "LLM"
       ],
       "new_claude_update_is_insane": [
         "Anthropic"
@@ -3534,6 +3534,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-21T14:51:49.293339+00:00",
+  "updated_at": "2026-07-21T14:51:49.854047+00:00",
   "total_skills": 22
 }
