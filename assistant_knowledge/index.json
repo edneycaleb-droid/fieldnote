@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "sciphi-ai--r2r",
+      "title": "Discovered: SciPhi-AI/R2R",
+      "category": "discoveries",
+      "confidence": "verified",
+      "updated_at": "2026-07-21T18:32:25.934350+00:00",
+      "path": "discoveries/sciphi-ai--r2r.md"
+    },
+    {
       "slug": "lastmile-ai--mcp-agent",
       "title": "Discovered: lastmile-ai/mcp-agent",
       "category": "discoveries",
@@ -225,5 +233,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-21T18:32:24.497103+00:00"
+  "updated_at": "2026-07-21T18:32:25.937787+00:00"
 }
