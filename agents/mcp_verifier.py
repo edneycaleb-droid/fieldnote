@@ -264,36 +264,48 @@ def _run_handshake(proc: subprocess.Popen, entry: Any,
     # ── notifications/initialized ──────────────────────────────────────────────
     _notify(proc, "notifications/initialized", {})
 
-    # ── tools/list ────────────────────────────────────────────────────────────
+    # ── advertised capabilities must pass completely ──────────────────────────
     tools_count = 0
-    if "tools" in server_caps and not _timed_out():
+    if "tools" in server_caps:
         try:
             _send_rpc(proc, "tools/list", {}, req_id=2)
             raw2 = _read_response(proc, deadline)
-            if raw2 is not None:
-                tr = _parse_rpc(raw2)
-                if tr and "result" in tr:
-                    tools_count = len(tr["result"].get("tools", []))
-            # If raw2 is None here it's a post-initialize timeout — log but continue
-            elif _timed_out():
-                log.debug("mcp_verifier: %s tools/list timed out (post-initialize)", entry.id)
         except Exception as exc:
-            log.debug("mcp_verifier: %s tools/list error: %s", entry.id, exc)
+            return VerifyResult(ok=False, error_code="rpc_error",
+                                diagnostics={"error": str(exc)[:200], "probe": "tools/list"})
+        if raw2 is None:
+            return VerifyResult(ok=False, error_code="timeout",
+                                diagnostics={"error": "tools/list did not respond"})
+        tr = _parse_rpc(raw2)
+        if not tr or "error" in tr or "result" not in tr:
+            return VerifyResult(ok=False, error_code="rpc_error",
+                                diagnostics={"error": "invalid tools/list response"})
+        tools = tr["result"].get("tools")
+        if not isinstance(tools, list):
+            return VerifyResult(ok=False, error_code="malformed_json",
+                                diagnostics={"error": "tools/list tools is not a list"})
+        tools_count = len(tools)
 
-    # ── resources/list ────────────────────────────────────────────────────────
     resources_count = 0
-    if "resources" in server_caps and not _timed_out():
+    if "resources" in server_caps:
         try:
             _send_rpc(proc, "resources/list", {}, req_id=3)
             raw3 = _read_response(proc, deadline)
-            if raw3 is not None:
-                rr = _parse_rpc(raw3)
-                if rr and "result" in rr:
-                    resources_count = len(rr["result"].get("resources", []))
-            elif _timed_out():
-                log.debug("mcp_verifier: %s resources/list timed out (post-initialize)", entry.id)
         except Exception as exc:
-            log.debug("mcp_verifier: %s resources/list error: %s", entry.id, exc)
+            return VerifyResult(ok=False, error_code="rpc_error",
+                                diagnostics={"error": str(exc)[:200], "probe": "resources/list"})
+        if raw3 is None:
+            return VerifyResult(ok=False, error_code="timeout",
+                                diagnostics={"error": "resources/list did not respond"})
+        rr = _parse_rpc(raw3)
+        if not rr or "error" in rr or "result" not in rr:
+            return VerifyResult(ok=False, error_code="rpc_error",
+                                diagnostics={"error": "invalid resources/list response"})
+        resources = rr["result"].get("resources")
+        if not isinstance(resources, list):
+            return VerifyResult(ok=False, error_code="malformed_json",
+                                diagnostics={"error": "resources/list resources is not a list"})
+        resources_count = len(resources)
 
     latency_ms = int((time.monotonic() - t0) * 1000)
 
