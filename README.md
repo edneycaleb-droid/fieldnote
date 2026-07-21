@@ -2,7 +2,11 @@
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 > **29 skills** · Last synced: 2026-07-21 14:55 UTC
+=======
+> **28 skills** · Last synced: 2026-07-21 14:55 UTC
+>>>>>>> Stashed changes
 =======
 > **28 skills** · Last synced: 2026-07-21 14:55 UTC
 >>>>>>> Stashed changes
@@ -14,7 +18,10 @@
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 | [New Claude Update Is INSANE!](skills/new_claude_update_is_insane.md) | By Julian Goldie SEO. Key tools: Claude, Anthropic. (Auto-extracted — pending AI | `Claude` `Anthropic` | `claude` `something` `anthropic` |
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 | [New Hermes Agent OS is INSANE!](skills/new_hermes_agent_os_is_insane.md) | By Julian Goldie SEO. Key tools: Claude. (Auto-extracted — pending AI enhancemen | `Claude` | `same` `outreach` `agent` |
