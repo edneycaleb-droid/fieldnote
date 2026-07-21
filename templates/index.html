@@ -4279,6 +4279,13 @@ async function enrichSkillNow(skillName, event) {
             row.dataset.baseline = "";
             row.dataset.tags = (updated.tags || []).join(" ").toLowerCase();
           }
+        } else if (updated && updated._enrich_error) {
+          // Background enrichment failed — surface the reason immediately
+          clearInterval(poll);
+          btn.disabled = false;
+          btn.textContent = "↺ Retry";
+          btn.title = updated._enrich_error;
+          showEnrichMsg(tagsContainer, "⚠ Failed: " + updated._enrich_error, false);
         }
       } catch (_) { /* ignore transient poll errors */ }
       if (elapsed >= MAX_MS) {

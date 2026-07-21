@@ -217,6 +217,7 @@ def list_skills() -> list[dict]:
             "created_at":   meta.get("created_at", ""),
             "updated_at":   meta.get("updated_at", ""),
             "_baseline":    meta.get("_baseline", False),
+            "_enrich_error": meta.get("_enrich_error", ""),
         })
     return sorted(
         skills,
@@ -4285,9 +4286,21 @@ def api_skill_enrich(name: str):
             try:
                 de._enrich_one(queue_item)
                 de.mark_succeeded(queue_item)
+                # Clear any previous error flag on success
+                _idx = load_index()
+                _skill_name = re.sub(r"[^a-z0-9_]", "_", full_name.split("/")[-1].lower()).strip("_")
+                if _skill_name in _idx:
+                    _idx[_skill_name].pop("_enrich_error", None)
+                    save_index(_idx)
             except Exception as exc:
                 log.warning("Manual enrich failed for %s: %s", full_name, exc)
                 de.mark_failed(queue_item, str(exc))
+                # Store the failure reason in the index so the UI can poll for it
+                _idx = load_index()
+                _skill_name = re.sub(r"[^a-z0-9_]", "_", full_name.split("/")[-1].lower()).strip("_")
+                if _skill_name in _idx:
+                    _idx[_skill_name]["_enrich_error"] = str(exc)[:200]
+                    save_index(_idx)
 
         t = threading.Thread(target=_bg_enrich, daemon=True)
         t.start()
