@@ -558,18 +558,23 @@ def update_server(entry_id: str, **kwargs) -> Optional[MCPServer]:
 
 
 def mark_connected_as_unverified() -> int:
-    """On startup, reset all health_state='connected' entries to 'unverified'.
+    """On startup, reset enabled health_state='connected' entries to 'unverified'.
 
-    This prevents the UI from showing a stale green 'Connected' badge for servers
-    that have not been health-checked since the last restart. The first
-    _mcp_health_check tick resolves each entry to 'connected' or 'offline'.
+    Only enabled servers are reset because the health-check scheduler skips disabled
+    ones (``if not srv.enabled: continue``). Resetting a disabled+connected server
+    would leave it stuck as 'unverified' indefinitely with no way for the health
+    check to resolve it. Disabled servers keep their 'connected' state so the UI
+    still shows the enable/disable toggle rather than a locked spinner.
+
+    The first _mcp_health_check tick resolves each reset entry to 'connected' or
+    'offline' as normal.
 
     Returns the number of entries that were reset.
     """
     servers = load_registry()
     reset = 0
     for srv in servers:
-        if srv.health_state == "connected":
+        if srv.health_state == "connected" and srv.enabled:
             srv.health_state = "unverified"
             reset += 1
     if reset:
