@@ -1349,21 +1349,24 @@
       ]
     },
     "gpt": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "lightrag"
+        "lightrag",
+        "graphrag"
       ]
     },
     "gpt-4": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "lightrag"
+        "lightrag",
+        "graphrag"
       ]
     },
     "graphrag": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "lightrag"
+        "lightrag",
+        "graphrag"
       ]
     },
     "knowledge-graph": {
@@ -1400,6 +1403,18 @@
       "freq": 1,
       "skills": [
         "lightrag_setup"
+      ]
+    },
+    "gpt4": {
+      "freq": 1,
+      "skills": [
+        "graphrag"
+      ]
+    },
+    "llm": {
+      "freq": 1,
+      "skills": [
+        "graphrag"
       ]
     }
   },
@@ -1485,7 +1500,7 @@
       ]
     },
     "Python": {
-      "freq": 14,
+      "freq": 15,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -1493,7 +1508,8 @@
         "hermes_agent_full_course_setup_guide_for_complete_",
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
         "new_hermes_agent_os_is_insane",
-        "lightrag"
+        "lightrag",
+        "graphrag"
       ]
     },
     "LLM": {
@@ -1878,10 +1894,11 @@
       ]
     },
     "gpt": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "dify",
-        "lightrag"
+        "lightrag",
+        "graphrag"
       ]
     },
     "Docker Compose": {
@@ -2068,15 +2085,17 @@
       ]
     },
     "gpt-4": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "lightrag"
+        "lightrag",
+        "graphrag"
       ]
     },
     "graphrag": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "lightrag"
+        "lightrag",
+        "graphrag"
       ]
     },
     "knowledge-graph": {
@@ -2092,15 +2111,17 @@
       ]
     },
     "llm": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "lightrag"
+        "lightrag",
+        "graphrag"
       ]
     },
     "rag": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "lightrag"
+        "lightrag",
+        "graphrag"
       ]
     },
     "retrieval-augmented-generation": {
@@ -2143,6 +2164,18 @@
       "freq": 1,
       "skills": [
         "lightrag_setup"
+      ]
+    },
+    "gpt4": {
+      "freq": 1,
+      "skills": [
+        "graphrag"
+      ]
+    },
+    "llms": {
+      "freq": 1,
+      "skills": [
+        "graphrag"
       ]
     }
   },
@@ -2951,6 +2984,35 @@
         "llm"
       ],
       "step_count": 5
+    },
+    "graphrag": {
+      "concepts": [
+        "gpt",
+        "gpt-4",
+        "gpt4",
+        "graphrag",
+        "llm"
+      ],
+      "tools": [
+        "gpt",
+        "gpt-4",
+        "gpt4",
+        "graphrag",
+        "llm",
+        "llms",
+        "rag",
+        "Python"
+      ],
+      "tags": [
+        "gpt",
+        "gpt-4",
+        "gpt4",
+        "graphrag",
+        "llm",
+        "python",
+        "ai"
+      ],
+      "step_count": 8
     }
   },
   "relationships": {
@@ -3240,6 +3302,9 @@
       ],
       "lightrag_setup": [
         "Docker"
+      ],
+      "graphrag": [
+        "Python"
       ]
     },
     "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
@@ -3856,6 +3921,9 @@
       ],
       "lightrag_setup": [
         "Docker"
+      ],
+      "graphrag": [
+        "Python"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -3943,6 +4011,9 @@
         "agent"
       ],
       "lightrag": [
+        "Python"
+      ],
+      "graphrag": [
         "Python"
       ]
     },
@@ -4258,6 +4329,9 @@
       ],
       "lightrag_setup": [
         "Docker"
+      ],
+      "graphrag": [
+        "Python"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -4362,6 +4436,9 @@
       ],
       "lightrag_setup": [
         "Docker"
+      ],
+      "graphrag": [
+        "Python"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -4903,6 +4980,9 @@
         "postgresql",
         "genai",
         "docker"
+      ],
+      "graphrag": [
+        "gpt"
       ]
     },
     "dify_deployment": {
@@ -4996,6 +5076,14 @@
       ],
       "ragflow": [
         "docker"
+      ],
+      "graphrag": [
+        "gpt-4",
+        "gpt",
+        "rag",
+        "Python",
+        "graphrag",
+        "llm"
       ]
     },
     "lightrag_setup": {
@@ -5023,8 +5111,36 @@
         "Docker Compose",
         "Docker"
       ]
+    },
+    "graphrag": {
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Python"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "Python"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Python"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "Python"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Python"
+      ],
+      "dify": [
+        "gpt"
+      ],
+      "lightrag": [
+        "gpt-4",
+        "gpt",
+        "rag",
+        "Python",
+        "graphrag",
+        "llm"
+      ]
     }
   },
-  "updated_at": "2026-07-21T15:21:54.322536+00:00",
-  "total_skills": 28
+  "updated_at": "2026-07-21T15:22:04.151539+00:00",
+  "total_skills": 29
 }
