@@ -383,7 +383,6 @@ def _process_free_alternative(
     Returns a result dict on success, or None on failure.
     """
     import agents.skill_quality as sq
-    import agents.github_sync   as gs
     import app as _a
 
     fn     = alt_repo["full_name"]
@@ -409,11 +408,6 @@ def _process_free_alternative(
 
         skill_name, action = _save_discovered_skill(skill, alt_repo, index)
         index = _a.load_index()
-
-        try:
-            gs.sync_skill(skill_name, _a.SKILLS_DIR, index)
-        except Exception as exc:
-            log.warning("GitHub sync failed for alt skill: %s", exc)
 
         disc_log[fn] = {
             "processed_at":   _now_iso(),
@@ -1154,13 +1148,6 @@ def discover_and_learn() -> dict:
                 # Overlay AI result (may change skill_name)
                 skill_name, action = _save_discovered_skill(ai_skill, repo, index)
                 index = _a.load_index()
-
-                # Sync to GitHub
-                try:
-                    import agents.github_sync as gs
-                    gs.sync_skill(skill_name, _a.SKILLS_DIR, index)
-                except Exception as e:
-                    log.warning("GitHub sync failed after AI save: %s", e)
 
                 # ── Paid-service detection → free alternative ────────────────
                 readme_text = " ".join(repo.get("_readme_words", []))
