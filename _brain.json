@@ -1815,9 +1815,10 @@
       ]
     },
     "mcp": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "registry"
+        "registry",
+        "xcodebuildmcp"
       ]
     },
     "mcp-servers": {
@@ -1932,6 +1933,30 @@
       "freq": 1,
       "skills": [
         "model_context_protocol_go"
+      ]
+    },
+    "mcp-server": {
+      "freq": 1,
+      "skills": [
+        "xcodebuildmcp"
+      ]
+    },
+    "model-context-protocol": {
+      "freq": 1,
+      "skills": [
+        "xcodebuildmcp"
+      ]
+    },
+    "model-context-protocol-servers": {
+      "freq": 1,
+      "skills": [
+        "xcodebuildmcp"
+      ]
+    },
+    "tag-production": {
+      "freq": 1,
+      "skills": [
+        "xcodebuildmcp"
       ]
     }
   },
@@ -2477,9 +2502,10 @@
       ]
     },
     "TypeScript": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "dify_deployment"
+        "dify_deployment",
+        "xcodebuildmcp"
       ]
     },
     "redis": {
@@ -2826,17 +2852,19 @@
       ]
     },
     "mcp": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "fastapi_mcp",
         "mcp_agent",
-        "registry"
+        "registry",
+        "xcodebuildmcp"
       ]
     },
     "mcp-server": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "fastapi_mcp"
+        "fastapi_mcp",
+        "xcodebuildmcp"
       ]
     },
     "mcp-servers": {
@@ -2908,9 +2936,10 @@
       ]
     },
     "model-context-protocol": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "mcp_agent"
+        "mcp_agent",
+        "xcodebuildmcp"
       ]
     },
     "MCPApp": {
@@ -3025,6 +3054,30 @@
       "freq": 1,
       "skills": [
         "model_context_protocol_go"
+      ]
+    },
+    "model-context-protocol-servers": {
+      "freq": 1,
+      "skills": [
+        "xcodebuildmcp"
+      ]
+    },
+    "tag-production": {
+      "freq": 1,
+      "skills": [
+        "xcodebuildmcp"
+      ]
+    },
+    "xcode": {
+      "freq": 1,
+      "skills": [
+        "xcodebuildmcp"
+      ]
+    },
+    "xcodebuild": {
+      "freq": 1,
+      "skills": [
+        "xcodebuildmcp"
       ]
     }
   },
@@ -4206,6 +4259,36 @@
         "developer tools"
       ],
       "step_count": 9
+    },
+    "xcodebuildmcp": {
+      "concepts": [
+        "mcp",
+        "mcp-server",
+        "model-context-protocol",
+        "model-context-protocol-servers",
+        "tag-production"
+      ],
+      "tools": [
+        "mcp",
+        "mcp-server",
+        "model-context-protocol",
+        "model-context-protocol-servers",
+        "tag-production",
+        "xcode",
+        "xcodebuild",
+        "TypeScript"
+      ],
+      "tags": [
+        "mcp",
+        "mcp-server",
+        "model-context-protocol",
+        "model-context-protocol-servers",
+        "tag-production",
+        "typescript",
+        "ai",
+        "llm"
+      ],
+      "step_count": 8
     }
   },
   "relationships": {
@@ -6384,6 +6467,9 @@
       ],
       "mcp_registry_development_deployment": [
         "Containerization"
+      ],
+      "xcodebuildmcp": [
+        "TypeScript"
       ]
     },
     "ragflow": {
@@ -6790,6 +6876,10 @@
         "llm",
         "ai",
         "mcp"
+      ],
+      "xcodebuildmcp": [
+        "mcp-server",
+        "mcp"
       ]
     },
     "fastapi_mcp_integration": {
@@ -6938,6 +7028,10 @@
         "ai",
         "llm",
         "mcp"
+      ],
+      "xcodebuildmcp": [
+        "mcp",
+        "model-context-protocol"
       ]
     },
     "mcp_agent_framework": {
@@ -7071,6 +7165,9 @@
         "docker",
         "go",
         "postgresql"
+      ],
+      "xcodebuildmcp": [
+        "mcp"
       ]
     },
     "mcp_registry_development_deployment": {
@@ -7110,8 +7207,24 @@
       "mcp_registry_development_deployment": [
         "Model Context Protocol (MCP)"
       ]
+    },
+    "xcodebuildmcp": {
+      "dify_deployment": [
+        "TypeScript"
+      ],
+      "fastapi_mcp": [
+        "mcp-server",
+        "mcp"
+      ],
+      "mcp_agent": [
+        "mcp",
+        "model-context-protocol"
+      ],
+      "registry": [
+        "mcp"
+      ]
     }
   },
-  "updated_at": "2026-07-21T18:34:01.868628+00:00",
-  "total_skills": 41
+  "updated_at": "2026-07-21T19:47:19.977091+00:00",
+  "total_skills": 42
 }
