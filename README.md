@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **120 skills** · Last synced: 2026-07-21 21:34 UTC
+> **121 skills** · Last synced: 2026-07-21 21:34 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Infinity Database for AI-Native Applications](skills/infinity_database.md) | The Infinity database is designed for AI-native applications, providing fast hyb | `Docker` `Infinity SDK` `Python API` | `ai-native` `database` `search` |
 | [Infinity](skills/infinity.md) | The AI-native database built for LLM applications, providing incredibly fast hyb | `docker` `ai-native` `approximate-nearest-neighbor-search` `bm25` | `ai-native` `approximate-nearest-neighbor-s` `bm25` |
 | [Installing and Using XcodeBuildMCP for iOS and macOS Projects](skills/xcodebuildmcp_installation.md) | This skill teaches developers how to install and use XcodeBuildMCP, a Model Cont | `XcodeBuildMCP` `MCP server` `CLI` `MacOS` | `ios-development` `macos-development` `model-context-protocol` |
 | [Forge: A Python Framework for Self-Hosted LLM Tool-Calling and Agentic Workflows](skills/forge_llm_tool_calling_framework.md) | Forge is a Python framework designed to enhance the reliability of self-hosted L | `Forge` `WorkflowRunner` `Workflow` `ToolDef` | `llm` `framework` `python` |
