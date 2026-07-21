@@ -1700,11 +1700,12 @@
       ]
     },
     "Model Context Protocol (MCP)": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "mcp_agent_framework",
         "mcp_registry_development_deployment",
-        "model_context_protocol_go"
+        "model_context_protocol_go",
+        "sqlite_vector_extension"
       ]
     },
     "Composable Agent Patterns": {
@@ -2655,6 +2656,72 @@
       "freq": 1,
       "skills": [
         "sqlite_vector"
+      ]
+    },
+    "Approximate Nearest Neighbor (ANN)": {
+      "freq": 1,
+      "skills": [
+        "sqlite_vector_extension"
+      ]
+    },
+    "Edge AI": {
+      "freq": 1,
+      "skills": [
+        "sqlite_vector_extension"
+      ]
+    },
+    "Embedded Databases": {
+      "freq": 1,
+      "skills": [
+        "sqlite_vector_extension"
+      ]
+    },
+    "Offline AI": {
+      "freq": 1,
+      "skills": [
+        "sqlite_vector_extension"
+      ]
+    },
+    "Quantization": {
+      "freq": 1,
+      "skills": [
+        "sqlite_vector_extension"
+      ]
+    },
+    "SIMD Acceleration": {
+      "freq": 1,
+      "skills": [
+        "sqlite_vector_extension"
+      ]
+    },
+    "SQLite Extensions": {
+      "freq": 1,
+      "skills": [
+        "sqlite_vector_extension"
+      ]
+    },
+    "SQLite database": {
+      "freq": 1,
+      "skills": [
+        "sqlite_vector_extension"
+      ]
+    },
+    "TurboQuant": {
+      "freq": 1,
+      "skills": [
+        "sqlite_vector_extension"
+      ]
+    },
+    "Vector Search": {
+      "freq": 1,
+      "skills": [
+        "sqlite_vector_extension"
+      ]
+    },
+    "mobile applications": {
+      "freq": 1,
+      "skills": [
+        "sqlite_vector_extension"
       ]
     }
   },
@@ -3902,33 +3969,38 @@
       ]
     },
     "Claude Desktop": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "mcp_server_implementations"
+        "mcp_server_implementations",
+        "sqlite_vector_extension"
       ]
     },
     "Zed Editor": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "mcp_server_implementations"
+        "mcp_server_implementations",
+        "sqlite_vector_extension"
       ]
     },
     "Sourcegraph Cody": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "mcp_server_implementations"
+        "mcp_server_implementations",
+        "sqlite_vector_extension"
       ]
     },
     "Backup": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "mcp_server_implementations"
+        "mcp_server_implementations",
+        "sqlite_vector_extension"
       ]
     },
     "FileStash": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "mcp_server_implementations"
+        "mcp_server_implementations",
+        "sqlite_vector_extension"
       ]
     },
     "FileSystem1": {
@@ -4803,6 +4875,18 @@
       "freq": 1,
       "skills": [
         "sqlite_vector"
+      ]
+    },
+    "sqlite-vector extension": {
+      "freq": 1,
+      "skills": [
+        "sqlite_vector_extension"
+      ]
+    },
+    "SQLite CLI": {
+      "freq": 1,
+      "skills": [
+        "sqlite_vector_extension"
       ]
     }
   },
@@ -6634,6 +6718,40 @@
         "llm"
       ],
       "step_count": 8
+    },
+    "sqlite_vector_extension": {
+      "concepts": [
+        "Approximate Nearest Neighbor (ANN)",
+        "Edge AI",
+        "Embedded Databases",
+        "Model Context Protocol (MCP)",
+        "Offline AI",
+        "Quantization",
+        "SIMD Acceleration",
+        "SQLite Extensions",
+        "SQLite database",
+        "TurboQuant",
+        "Vector Search",
+        "mobile applications"
+      ],
+      "tools": [
+        "sqlite-vector extension",
+        "SQLite CLI",
+        "Zed Editor",
+        "Sourcegraph Cody",
+        "Claude Desktop",
+        "Backup",
+        "FileStash"
+      ],
+      "tags": [
+        "ai",
+        "embedded-databases",
+        "edge-ai",
+        "sqlite",
+        "sqlite-vector",
+        "vector-search"
+      ],
+      "step_count": 11
     }
   },
   "relationships": {
@@ -10015,6 +10133,9 @@
       ],
       "forge_llm_tool_calling_framework": [
         "Workflow"
+      ],
+      "sqlite_vector_extension": [
+        "Model Context Protocol (MCP)"
       ]
     },
     "r2r": {
@@ -10238,6 +10359,9 @@
       ],
       "infinity": [
         "docker"
+      ],
+      "sqlite_vector_extension": [
+        "Model Context Protocol (MCP)"
       ]
     },
     "model_context_protocol_go": {
@@ -10245,6 +10369,9 @@
         "Model Context Protocol (MCP)"
       ],
       "mcp_registry_development_deployment": [
+        "Model Context Protocol (MCP)"
+      ],
+      "sqlite_vector_extension": [
         "Model Context Protocol (MCP)"
       ]
     },
@@ -10405,6 +10532,13 @@
       ],
       "infinity_database": [
         "Docker"
+      ],
+      "sqlite_vector_extension": [
+        "Sourcegraph Cody",
+        "Backup",
+        "Claude Desktop",
+        "Zed Editor",
+        "FileStash"
       ]
     },
     "agentic_rag_for_dummies": {
@@ -11295,8 +11429,26 @@
       "lightagent": [
         "llm"
       ]
+    },
+    "sqlite_vector_extension": {
+      "mcp_agent_framework": [
+        "Model Context Protocol (MCP)"
+      ],
+      "mcp_registry_development_deployment": [
+        "Model Context Protocol (MCP)"
+      ],
+      "model_context_protocol_go": [
+        "Model Context Protocol (MCP)"
+      ],
+      "mcp_server_implementations": [
+        "Sourcegraph Cody",
+        "Backup",
+        "Claude Desktop",
+        "Zed Editor",
+        "FileStash"
+      ]
     }
   },
-  "updated_at": "2026-07-21T21:37:48.103021+00:00",
-  "total_skills": 58
+  "updated_at": "2026-07-21T21:38:10.352475+00:00",
+  "total_skills": 59
 }
