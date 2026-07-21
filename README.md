@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **122 skills** · Last synced: 2026-07-21 21:34 UTC
+> **123 skills** · Last synced: 2026-07-21 21:35 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Pasa](skills/pasa.md) | PaSa -- an advanced paper search agent powered by large language models. It can  | `transformers` `huggingface` `research` `Python` | `research` `python` `ai` |
 | [Trainer](skills/trainer.md) | Distributed AI Model Training and LLM Fine-Tuning on Kubernetes | `huggingface` `tensorflow` `pytorch` `kubernetes` | `ai` `distributed` `fine-tuning` |
 | [Infinity Database for AI-Native Applications](skills/infinity_database.md) | The Infinity database is designed for AI-native applications, providing fast hyb | `Docker` `Infinity SDK` `Python API` | `ai-native` `database` `search` |
 | [Infinity](skills/infinity.md) | The AI-native database built for LLM applications, providing incredibly fast hyb | `docker` `ai-native` `approximate-nearest-neighbor-search` `bm25` | `ai-native` `approximate-nearest-neighbor-s` `bm25` |
