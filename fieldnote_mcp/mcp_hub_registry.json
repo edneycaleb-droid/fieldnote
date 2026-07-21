@@ -590,7 +590,11 @@
     "credential_optional": true,
     "quarantine_reason": "",
     "health_state": "offline",
+<<<<<<< HEAD
     "verified_at": "2026-07-20T03:39:51.285199+00:00",
+=======
+    "verified_at": "2026-07-18T02:35:06.828184+00:00",
+>>>>>>> 398443ec (Show baseline skills in the library with enrichment-pending state)
     "installed_version": "",
     "latest_version": "",
     "install_hint": "",
