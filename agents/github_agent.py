@@ -327,81 +327,38 @@ def search_tools(tools: list[str], emit) -> list[dict]:
 # ── Repo cloning ──────────────────────────────────────────────────────────────
 
 def clone_best_repos(github_results: list[dict], emit) -> list[dict]:
-    """
-    Clone the most valuable repos:
-      • All detected MCP servers
-      • Python repos with >50 stars
-      • Any repo with >500 stars
-    Cap at 4 clones per video to avoid timeouts.
-    """
-    cloned: list[dict] = []
+    """Persist evidence candidates without cloning or executing repositories."""
+    from agents import supply_chain_policy
 
     candidates = [
-        r for r in github_results
-        if r.get("is_mcp")
-        or (r.get("language_lower") == "python" and r.get("stars", 0) > 50)
-        or r.get("stars", 0) > 500
+        item for item in github_results
+        if item.get("is_mcp")
+        or (item.get("language_lower") == "python" and item.get("stars", 0) > 50)
+        or item.get("stars", 0) > 500
+    ][:4]
+    receipts = supply_chain_policy.quarantine_github_results(
+        candidates, source="github_agent.clone_best_repos"
+    )
+    for item, receipt in zip(candidates, receipts):
+        emit(
+            f"🛡️  Quarantined {item.get('full_name', 'unknown')} "
+            f"(missing: {', '.join(receipt['gaps']) or 'sandbox evidence'})",
+            "warning",
+        )
+    return [
+        {
+            "repo": item.get("full_name", ""),
+            "repo_name": item.get("repo_name", ""),
+            "path": None,
+            "action": "quarantined",
+            "candidate_id": receipt["candidate_id"],
+            "activation_authority": False,
+        }
+        for item, receipt in zip(candidates, receipts)
     ]
-
-    for r in candidates[:4]:
-        full_name = r["full_name"]
-        repo_name = r["repo_name"]
-        clone_url = r["clone_url"]
-        dest      = os.path.join(REPOS_DIR, repo_name)
-
-        try:
-            if os.path.exists(dest):
-                proc = subprocess.run(
-                    ["git", "-C", dest, "pull", "--ff-only", "-q"],
-                    capture_output=True, timeout=30,
-                )
-                if proc.returncode == 0:
-                    emit(f"🔄  Updated {repo_name}", "success")
-                    cloned.append({"repo": full_name, "path": dest,
-                                   "action": "updated", "repo_name": repo_name})
-                    continue
-
-            emit(f"⬇  Cloning {full_name} …", "info")
-            proc = subprocess.run(
-                ["git", "clone", "--depth=1", "-q", clone_url, dest],
-                capture_output=True, text=True, timeout=90,
-            )
-            if proc.returncode == 0:
-                emit(f"✅  Cloned {repo_name}", "success")
-                cloned.append({"repo": full_name, "path": dest,
-                               "action": "cloned", "repo_name": repo_name})
-                _install_python_deps(dest, repo_name, emit)
-            else:
-                emit(f"⚠  Clone failed ({repo_name}): {proc.stderr[:80]}", "warning")
-
-        except Exception as ex:
-            emit(f"⚠  Clone {repo_name}: {ex}", "warning")
-
-    return cloned
 
 
 def _install_python_deps(repo_path: str, repo_name: str, emit):
-    """Install requirements.txt or pip-installable pyproject.toml."""
-    import sys
-    req   = os.path.join(repo_path, "requirements.txt")
-    pypj  = os.path.join(repo_path, "pyproject.toml")
-
-    try:
-        if os.path.exists(req):
-            r = subprocess.run(
-                [sys.executable, "-m", "pip", "install", "-r", req,
-                 "-q", "--no-warn-script-location"],
-                capture_output=True, timeout=120,
-            )
-            if r.returncode == 0:
-                emit(f"📦  pip deps → {repo_name}", "success")
-        elif os.path.exists(pypj):
-            r = subprocess.run(
-                [sys.executable, "-m", "pip", "install", "-e", repo_path,
-                 "-q", "--no-warn-script-location"],
-                capture_output=True, timeout=120,
-            )
-            if r.returncode == 0:
-                emit(f"📦  pip -e → {repo_name}", "success")
-    except Exception:
-        pass
+    """Legacy compatibility hook: dependency execution is permanently quarantined."""
+    emit(f"🛡️  Dependencies for {repo_name} quarantined; host installation is blocked", "warning")
+    return {"repo": repo_name, "path": repo_path, "installed": False, "state": "quarantined"}
