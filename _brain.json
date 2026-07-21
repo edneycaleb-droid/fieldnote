@@ -1162,10 +1162,11 @@
       ]
     },
     "ai": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "dify",
-        "ragflow"
+        "ragflow",
+        "rag_techniques"
       ]
     },
     "AI workflow management": {
@@ -1342,34 +1343,250 @@
         "ragflow_self_hosting_guide"
       ]
     },
-    "Knowledge Graphs": {
+    "genai": {
       "freq": 1,
       "skills": [
-        "install_lightrag"
+        "lightrag"
       ]
     },
-    "RAG Frameworks": {
-      "freq": 1,
+    "gpt": {
+      "freq": 3,
       "skills": [
-        "install_lightrag"
+        "lightrag",
+        "graphrag",
+        "rag_techniques"
       ]
     },
-    "Deep Contextual Understanding": {
-      "freq": 1,
+    "gpt-4": {
+      "freq": 2,
       "skills": [
-        "install_lightrag"
+        "lightrag",
+        "graphrag"
       ]
     },
-    "Knowledge graph": {
-      "freq": 1,
+    "graphrag": {
+      "freq": 2,
       "skills": [
-        "install_lightrag"
+        "lightrag",
+        "graphrag"
       ]
     },
-    "uv package manager": {
+    "knowledge-graph": {
       "freq": 1,
       "skills": [
-        "install_lightrag"
+        "lightrag"
+      ]
+    },
+    "Retrieval-Augmented Generation": {
+      "freq": 3,
+      "skills": [
+        "lightrag_setup",
+        "graphrag_system",
+        "advanced_retrieval_augmented_generation"
+      ]
+    },
+    "Knowledge Graph": {
+      "freq": 1,
+      "skills": [
+        "lightrag_setup"
+      ]
+    },
+    "Vector Embeddings": {
+      "freq": 1,
+      "skills": [
+        "lightrag_setup"
+      ]
+    },
+    "Multimodal Document Parsing": {
+      "freq": 1,
+      "skills": [
+        "lightrag_setup"
+      ]
+    },
+    "Cross-Modal Entity Mapping": {
+      "freq": 1,
+      "skills": [
+        "lightrag_setup"
+      ]
+    },
+    "gpt4": {
+      "freq": 1,
+      "skills": [
+        "graphrag"
+      ]
+    },
+    "llm": {
+      "freq": 1,
+      "skills": [
+        "graphrag"
+      ]
+    },
+    "Knowledge Graph Memory Structures": {
+      "freq": 1,
+      "skills": [
+        "graphrag_system"
+      ]
+    },
+    "LLM": {
+      "freq": 1,
+      "skills": [
+        "graphrag_system"
+      ]
+    },
+    "agentic-rag": {
+      "freq": 1,
+      "skills": [
+        "rag_techniques"
+      ]
+    },
+    "embeddings": {
+      "freq": 1,
+      "skills": [
+        "rag_techniques"
+      ]
+    },
+    "generative-ai": {
+      "freq": 1,
+      "skills": [
+        "rag_techniques"
+      ]
+    },
+    "Retrieval-Augmented Generation (RAG)": {
+      "freq": 1,
+      "skills": [
+        "advanced_retrieval_augmented_generation"
+      ]
+    },
+    "RAG Prototypes": {
+      "freq": 1,
+      "skills": [
+        "advanced_retrieval_augmented_generation"
+      ]
+    },
+    "Production RAG Systems": {
+      "freq": 1,
+      "skills": [
+        "advanced_retrieval_augmented_generation"
+      ]
+    },
+    "Chunking Strategies": {
+      "freq": 1,
+      "skills": [
+        "advanced_retrieval_augmented_generation"
+      ]
+    },
+    "Query Transformation": {
+      "freq": 1,
+      "skills": [
+        "advanced_retrieval_augmented_generation"
+      ]
+    },
+    "Hypothetical Document Embeddings (HyDE)": {
+      "freq": 1,
+      "skills": [
+        "advanced_retrieval_augmented_generation"
+      ]
+    },
+    "Hypothetical Prompt Embeddings (HyPE)": {
+      "freq": 1,
+      "skills": [
+        "advanced_retrieval_augmented_generation"
+      ]
+    },
+    "Context Enrichment": {
+      "freq": 1,
+      "skills": [
+        "advanced_retrieval_augmented_generation"
+      ]
+    },
+    "Semantic Chunking": {
+      "freq": 1,
+      "skills": [
+        "advanced_retrieval_augmented_generation"
+      ]
+    },
+    "Contextual Compression": {
+      "freq": 1,
+      "skills": [
+        "advanced_retrieval_augmented_generation"
+      ]
+    },
+    "Document Augmentation": {
+      "freq": 1,
+      "skills": [
+        "advanced_retrieval_augmented_generation"
+      ]
+    },
+    "Fusion Retrieval": {
+      "freq": 1,
+      "skills": [
+        "advanced_retrieval_augmented_generation"
+      ]
+    },
+    "Reranking": {
+      "freq": 1,
+      "skills": [
+        "advanced_retrieval_augmented_generation"
+      ]
+    },
+    "Multi-faceted Filtering": {
+      "freq": 1,
+      "skills": [
+        "advanced_retrieval_augmented_generation"
+      ]
+    },
+    "Hierarchical Indices": {
+      "freq": 1,
+      "skills": [
+        "advanced_retrieval_augmented_generation"
+      ]
+    },
+    "Dartboard Retrieval": {
+      "freq": 1,
+      "skills": [
+        "advanced_retrieval_augmented_generation"
+      ]
+    },
+    "Multi-modal RAG": {
+      "freq": 1,
+      "skills": [
+        "advanced_retrieval_augmented_generation"
+      ]
+    },
+    "Iterative RAG": {
+      "freq": 1,
+      "skills": [
+        "advanced_retrieval_augmented_generation"
+      ]
+    },
+    "Feedback Loops in RAG": {
+      "freq": 1,
+      "skills": [
+        "advanced_retrieval_augmented_generation"
+      ]
+    },
+    "Adaptive Retrieval": {
+      "freq": 1,
+      "skills": [
+        "advanced_retrieval_augmented_generation"
+      ]
+    },
+    "RAG Evaluation": {
+      "freq": 1,
+      "skills": [
+        "advanced_retrieval_augmented_generation"
+      ]
+    },
+    "Contextual Chunk Headers": {
+      "freq": 1,
+      "skills": [
+        "advanced_retrieval_augmented_generation"
+      ]
+    },
+    "Relevant Segment Extraction": {
+      "freq": 1,
+      "skills": [
+        "advanced_retrieval_augmented_generation"
       ]
     }
   },
@@ -1434,7 +1651,7 @@
       ]
     },
     "Docker": {
-      "freq": 13,
+      "freq": 14,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -1442,7 +1659,8 @@
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
         "new_hermes_agent_os_is_insane",
         "dify_deployment",
-        "ragflow_self_hosting_guide"
+        "ragflow_self_hosting_guide",
+        "lightrag_setup"
       ]
     },
     "bash": {
@@ -1454,14 +1672,17 @@
       ]
     },
     "Python": {
-      "freq": 13,
+      "freq": 16,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
         "hermes_claude_code_mcp_integration_loop_engineerin",
         "hermes_agent_full_course_setup_guide_for_complete_",
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
-        "new_hermes_agent_os_is_insane"
+        "new_hermes_agent_os_is_insane",
+        "lightrag",
+        "graphrag",
+        "graphrag_system"
       ]
     },
     "LLM": {
@@ -1505,10 +1726,9 @@
       ]
     },
     "pip": {
-      "freq": 4,
+      "freq": 3,
       "skills": [
-        "this_100_self_improving_ai_agent_is_insane_just_wa",
-        "install_lightrag"
+        "this_100_self_improving_ai_agent_is_insane_just_wa"
       ]
     },
     "Git": {
@@ -1715,9 +1935,10 @@
       ]
     },
     "Claude Code": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "new_claude_update_is_insane"
+        "new_claude_update_is_insane",
+        "advanced_retrieval_augmented_generation"
       ]
     },
     "Claude Co-work": {
@@ -1775,16 +1996,18 @@
       ]
     },
     "docker": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "dify",
-        "ragflow"
+        "ragflow",
+        "lightrag"
       ]
     },
     "postgresql": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "dify"
+        "dify",
+        "lightrag"
       ]
     },
     "grafana": {
@@ -1794,10 +2017,11 @@
       ]
     },
     "openai": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "dify",
-        "ragflow"
+        "ragflow",
+        "rag_techniques"
       ]
     },
     "agent": {
@@ -1838,15 +2062,19 @@
       ]
     },
     "genai": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "dify"
+        "dify",
+        "lightrag"
       ]
     },
     "gpt": {
-      "freq": 1,
+      "freq": 4,
       "skills": [
-        "dify"
+        "dify",
+        "lightrag",
+        "graphrag",
+        "rag_techniques"
       ]
     },
     "Docker Compose": {
@@ -1854,7 +2082,7 @@
       "skills": [
         "dify_deployment",
         "ragflow_self_hosting_guide",
-        "install_lightrag"
+        "lightrag_setup"
       ]
     },
     "Kubernetes": {
@@ -1876,9 +2104,10 @@
       ]
     },
     "PostgreSQL": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "dify_deployment"
+        "dify_deployment",
+        "lightrag_setup"
       ]
     },
     "NextJS": {
@@ -2013,16 +2242,193 @@
         "ragflow_self_hosting_guide"
       ]
     },
+    "mongodb": {
+      "freq": 1,
+      "skills": [
+        "lightrag"
+      ]
+    },
+    "milvus": {
+      "freq": 1,
+      "skills": [
+        "lightrag"
+      ]
+    },
+    "ollama": {
+      "freq": 1,
+      "skills": [
+        "lightrag"
+      ]
+    },
+    "gpt-4": {
+      "freq": 2,
+      "skills": [
+        "lightrag",
+        "graphrag"
+      ]
+    },
+    "graphrag": {
+      "freq": 3,
+      "skills": [
+        "lightrag",
+        "graphrag",
+        "graphrag_system"
+      ]
+    },
+    "knowledge-graph": {
+      "freq": 1,
+      "skills": [
+        "lightrag"
+      ]
+    },
+    "large-language-models": {
+      "freq": 1,
+      "skills": [
+        "lightrag"
+      ]
+    },
+    "llm": {
+      "freq": 3,
+      "skills": [
+        "lightrag",
+        "graphrag",
+        "rag_techniques"
+      ]
+    },
+    "rag": {
+      "freq": 3,
+      "skills": [
+        "lightrag",
+        "graphrag",
+        "rag_techniques"
+      ]
+    },
+    "retrieval-augmented-generation": {
+      "freq": 2,
+      "skills": [
+        "lightrag",
+        "rag_techniques"
+      ]
+    },
     "uv": {
       "freq": 1,
       "skills": [
-        "install_lightrag"
+        "lightrag_setup"
       ]
     },
-    "spaCy": {
+    "LightRAG": {
       "freq": 1,
       "skills": [
-        "install_lightrag"
+        "lightrag_setup"
+      ]
+    },
+    "bun": {
+      "freq": 1,
+      "skills": [
+        "lightrag_setup"
+      ]
+    },
+    "Neo4J": {
+      "freq": 1,
+      "skills": [
+        "lightrag_setup"
+      ]
+    },
+    "MinerU": {
+      "freq": 1,
+      "skills": [
+        "lightrag_setup"
+      ]
+    },
+    "Docling": {
+      "freq": 1,
+      "skills": [
+        "lightrag_setup"
+      ]
+    },
+    "gpt4": {
+      "freq": 1,
+      "skills": [
+        "graphrag"
+      ]
+    },
+    "llms": {
+      "freq": 2,
+      "skills": [
+        "graphrag",
+        "rag_techniques"
+      ]
+    },
+    "Command Line Interface": {
+      "freq": 1,
+      "skills": [
+        "graphrag_system"
+      ]
+    },
+    "agentic-rag": {
+      "freq": 1,
+      "skills": [
+        "rag_techniques"
+      ]
+    },
+    "embeddings": {
+      "freq": 1,
+      "skills": [
+        "rag_techniques"
+      ]
+    },
+    "generative-ai": {
+      "freq": 1,
+      "skills": [
+        "rag_techniques"
+      ]
+    },
+    "langchain": {
+      "freq": 1,
+      "skills": [
+        "rag_techniques"
+      ]
+    },
+    "llama-index": {
+      "freq": 1,
+      "skills": [
+        "rag_techniques"
+      ]
+    },
+    "machine-learning": {
+      "freq": 1,
+      "skills": [
+        "rag_techniques"
+      ]
+    },
+    "nlp": {
+      "freq": 1,
+      "skills": [
+        "rag_techniques"
+      ]
+    },
+    "python": {
+      "freq": 1,
+      "skills": [
+        "rag_techniques"
+      ]
+    },
+    "semantic-search": {
+      "freq": 1,
+      "skills": [
+        "rag_techniques"
+      ]
+    },
+    "RAG Techniques repository": {
+      "freq": 1,
+      "skills": [
+        "advanced_retrieval_augmented_generation"
+      ]
+    },
+    "GitHub": {
+      "freq": 1,
+      "skills": [
+        "advanced_retrieval_augmented_generation"
       ]
     }
   },
@@ -2767,29 +3173,195 @@
       ],
       "step_count": 11
     },
-    "install_lightrag": {
+    "lightrag": {
       "concepts": [
-        "Knowledge Graphs",
-        "RAG Frameworks",
-        "Deep Contextual Understanding",
-        "Knowledge graph",
-        "uv package manager"
+        "genai",
+        "gpt",
+        "gpt-4",
+        "graphrag",
+        "knowledge-graph"
+      ],
+      "tools": [
+        "mongodb",
+        "milvus",
+        "docker",
+        "postgresql",
+        "ollama",
+        "genai",
+        "gpt",
+        "gpt-4",
+        "graphrag",
+        "knowledge-graph",
+        "large-language-models",
+        "llm",
+        "rag",
+        "retrieval-augmented-generation",
+        "Python"
+      ],
+      "tags": [
+        "genai",
+        "gpt",
+        "gpt-4",
+        "graphrag",
+        "knowledge-graph",
+        "python",
+        "ai",
+        "llm"
+      ],
+      "step_count": 8
+    },
+    "lightrag_setup": {
+      "concepts": [
+        "Retrieval-Augmented Generation",
+        "Knowledge Graph",
+        "Vector Embeddings",
+        "Multimodal Document Parsing",
+        "Cross-Modal Entity Mapping"
       ],
       "tools": [
         "uv",
-        "pip",
+        "LightRAG",
+        "Docker",
         "Docker Compose",
-        "spaCy"
+        "bun",
+        "PostgreSQL",
+        "Neo4J",
+        "MinerU",
+        "Docling"
+      ],
+      "tags": [
+        "genai",
+        "gpt",
+        "graphrag",
+        "knowledge-graph",
+        "llm"
+      ],
+      "step_count": 5
+    },
+    "graphrag": {
+      "concepts": [
+        "gpt",
+        "gpt-4",
+        "gpt4",
+        "graphrag",
+        "llm"
+      ],
+      "tools": [
+        "gpt",
+        "gpt-4",
+        "gpt4",
+        "graphrag",
+        "llm",
+        "llms",
+        "rag",
+        "Python"
+      ],
+      "tags": [
+        "gpt",
+        "gpt-4",
+        "gpt4",
+        "graphrag",
+        "llm",
+        "python",
+        "ai"
+      ],
+      "step_count": 8
+    },
+    "graphrag_system": {
+      "concepts": [
+        "Retrieval-Augmented Generation",
+        "Knowledge Graph Memory Structures",
+        "LLM"
+      ],
+      "tools": [
+        "graphrag",
+        "Python",
+        "Command Line Interface"
+      ],
+      "tags": [
+        "gpt",
+        "gpt-4",
+        "graphrag",
+        "llm"
+      ],
+      "step_count": 5
+    },
+    "rag_techniques": {
+      "concepts": [
+        "agentic-rag",
+        "ai",
+        "embeddings",
+        "generative-ai",
+        "gpt"
+      ],
+      "tools": [
+        "agentic-rag",
+        "embeddings",
+        "generative-ai",
+        "gpt",
+        "langchain",
+        "llama-index",
+        "llm",
+        "llms",
+        "machine-learning",
+        "nlp",
+        "openai",
+        "python",
+        "rag",
+        "retrieval-augmented-generation",
+        "semantic-search"
+      ],
+      "tags": [
+        "agentic-rag",
+        "ai",
+        "embeddings",
+        "generative-ai",
+        "gpt",
+        "jupyter notebook",
+        "llm"
+      ],
+      "step_count": 4
+    },
+    "advanced_retrieval_augmented_generation": {
+      "concepts": [
+        "Retrieval-Augmented Generation (RAG)",
+        "RAG Prototypes",
+        "Production RAG Systems",
+        "Chunking Strategies",
+        "Query Transformation",
+        "Hypothetical Document Embeddings (HyDE)",
+        "Hypothetical Prompt Embeddings (HyPE)",
+        "Context Enrichment",
+        "Semantic Chunking",
+        "Contextual Compression",
+        "Document Augmentation",
+        "Fusion Retrieval",
+        "Reranking",
+        "Multi-faceted Filtering",
+        "Hierarchical Indices",
+        "Dartboard Retrieval",
+        "Multi-modal RAG",
+        "Iterative RAG",
+        "Feedback Loops in RAG",
+        "Adaptive Retrieval",
+        "RAG Evaluation",
+        "Retrieval-Augmented Generation",
+        "Contextual Chunk Headers",
+        "Relevant Segment Extraction"
+      ],
+      "tools": [
+        "RAG Techniques repository",
+        "Claude Code",
+        "GitHub"
       ],
       "tags": [
         "rag",
-        "knowledge-graph",
-        "natural-language-processing",
-        "lightrag",
-        "knowledge-graph",
-        "rag-framework"
+        "llm",
+        "ai",
+        "nlp",
+        "retrieval"
       ],
-      "step_count": 7
+      "step_count": 12
     }
   },
   "relationships": {
@@ -3073,6 +3645,19 @@
       "ragflow_self_hosting_guide": [
         "bash",
         "Docker"
+      ],
+      "lightrag": [
+        "Python"
+      ],
+      "lightrag_setup": [
+        "Docker"
+      ],
+      "graphrag": [
+        "Python"
+      ],
+      "graphrag_system": [
+        "Python",
+        "LLM"
       ]
     },
     "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
@@ -3684,8 +4269,17 @@
       "ragflow_self_hosting_guide": [
         "Docker"
       ],
-      "install_lightrag": [
-        "pip"
+      "lightrag": [
+        "Python"
+      ],
+      "lightrag_setup": [
+        "Docker"
+      ],
+      "graphrag": [
+        "Python"
+      ],
+      "graphrag_system": [
+        "Python"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -3771,6 +4365,15 @@
       ],
       "dify": [
         "agent"
+      ],
+      "lightrag": [
+        "Python"
+      ],
+      "graphrag": [
+        "Python"
+      ],
+      "graphrag_system": [
+        "Python"
       ]
     },
     "new_hermes_paperclip_ai_agent_update_is_insane": {
@@ -4079,6 +4682,19 @@
       ],
       "ragflow_self_hosting_guide": [
         "Docker"
+      ],
+      "lightrag": [
+        "Python"
+      ],
+      "lightrag_setup": [
+        "Docker"
+      ],
+      "graphrag": [
+        "Python"
+      ],
+      "graphrag_system": [
+        "Python",
+        "LLM"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -4177,6 +4793,19 @@
       "ragflow_self_hosting_guide": [
         "bash",
         "Docker"
+      ],
+      "lightrag": [
+        "Python"
+      ],
+      "lightrag_setup": [
+        "Docker"
+      ],
+      "graphrag": [
+        "Python"
+      ],
+      "graphrag_system": [
+        "Python",
+        "LLM"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -4274,6 +4903,12 @@
         "openai"
       ],
       "ragflow": [
+        "openai"
+      ],
+      "graphrag_system": [
+        "LLM"
+      ],
+      "rag_techniques": [
         "openai"
       ]
     },
@@ -4475,6 +5110,9 @@
       ],
       "you_need_to_use_hermes_right_now_goodbye_openclaw": [
         "Claude"
+      ],
+      "advanced_retrieval_augmented_generation": [
+        "Claude Code"
       ]
     },
     "hermes_agent_full_course_setup_guide_for_complete_": {
@@ -4597,6 +5235,12 @@
       ],
       "ragflow_self_hosting_guide": [
         "Docker"
+      ],
+      "lightrag_setup": [
+        "Docker"
+      ],
+      "graphrag_system": [
+        "LLM"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -4709,6 +5353,20 @@
         "openai",
         "ai",
         "docker"
+      ],
+      "lightrag": [
+        "gpt",
+        "postgresql",
+        "genai",
+        "docker"
+      ],
+      "graphrag": [
+        "gpt"
+      ],
+      "rag_techniques": [
+        "gpt",
+        "openai",
+        "ai"
       ]
     },
     "dify_deployment": {
@@ -4731,8 +5389,10 @@
         "Docker Compose",
         "Docker"
       ],
-      "install_lightrag": [
-        "Docker Compose"
+      "lightrag_setup": [
+        "PostgreSQL",
+        "Docker Compose",
+        "Docker"
       ]
     },
     "ragflow": {
@@ -4744,6 +5404,13 @@
         "openai",
         "ai",
         "docker"
+      ],
+      "lightrag": [
+        "docker"
+      ],
+      "rag_techniques": [
+        "openai",
+        "ai"
       ]
     },
     "ragflow_self_hosting_guide": {
@@ -4768,22 +5435,203 @@
         "Docker Compose",
         "Docker"
       ],
-      "install_lightrag": [
-        "Docker Compose"
+      "lightrag_setup": [
+        "Docker Compose",
+        "Docker"
       ]
     },
-    "install_lightrag": {
+    "lightrag": {
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Python"
+      ],
       "this_100_self_improving_ai_agent_is_insane_just_wa": [
-        "pip"
+        "Python"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Python"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "Python"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Python"
+      ],
+      "dify": [
+        "gpt",
+        "postgresql",
+        "genai",
+        "docker"
+      ],
+      "ragflow": [
+        "docker"
+      ],
+      "graphrag": [
+        "gpt-4",
+        "gpt",
+        "rag",
+        "Python",
+        "graphrag",
+        "llm"
+      ],
+      "graphrag_system": [
+        "Python",
+        "graphrag"
+      ],
+      "rag_techniques": [
+        "gpt",
+        "llm",
+        "retrieval-augmented-generation",
+        "rag"
+      ]
+    },
+    "lightrag_setup": {
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Docker"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "Docker"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "Docker"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Docker"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "Docker"
       ],
       "dify_deployment": [
-        "Docker Compose"
+        "PostgreSQL",
+        "Docker Compose",
+        "Docker"
       ],
       "ragflow_self_hosting_guide": [
-        "Docker Compose"
+        "Docker Compose",
+        "Docker"
+      ],
+      "graphrag_system": [
+        "Retrieval-Augmented Generation"
+      ],
+      "advanced_retrieval_augmented_generation": [
+        "Retrieval-Augmented Generation"
+      ]
+    },
+    "graphrag": {
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Python"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "Python"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Python"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "Python"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Python"
+      ],
+      "dify": [
+        "gpt"
+      ],
+      "lightrag": [
+        "gpt-4",
+        "gpt",
+        "rag",
+        "Python",
+        "graphrag",
+        "llm"
+      ],
+      "graphrag_system": [
+        "Python",
+        "graphrag"
+      ],
+      "rag_techniques": [
+        "llm",
+        "gpt",
+        "llms",
+        "rag"
+      ]
+    },
+    "graphrag_system": {
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Python",
+        "LLM"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "Python"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Python"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "Python",
+        "LLM"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Python",
+        "LLM"
+      ],
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "LLM"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "LLM"
+      ],
+      "lightrag": [
+        "Python",
+        "graphrag"
+      ],
+      "lightrag_setup": [
+        "Retrieval-Augmented Generation"
+      ],
+      "graphrag": [
+        "Python",
+        "graphrag"
+      ],
+      "advanced_retrieval_augmented_generation": [
+        "Retrieval-Augmented Generation"
+      ]
+    },
+    "rag_techniques": {
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "openai"
+      ],
+      "dify": [
+        "gpt",
+        "openai",
+        "ai"
+      ],
+      "ragflow": [
+        "openai",
+        "ai"
+      ],
+      "lightrag": [
+        "gpt",
+        "llm",
+        "retrieval-augmented-generation",
+        "rag"
+      ],
+      "graphrag": [
+        "llm",
+        "gpt",
+        "llms",
+        "rag"
+      ]
+    },
+    "advanced_retrieval_augmented_generation": {
+      "new_claude_update_is_insane": [
+        "Claude Code"
+      ],
+      "lightrag_setup": [
+        "Retrieval-Augmented Generation"
+      ],
+      "graphrag_system": [
+        "Retrieval-Augmented Generation"
       ]
     }
   },
-  "updated_at": "2026-07-21T15:25:21.979898+00:00",
-  "total_skills": 27
+  "updated_at": "2026-07-21T15:37:24.384017+00:00",
+  "total_skills": 32
 }
