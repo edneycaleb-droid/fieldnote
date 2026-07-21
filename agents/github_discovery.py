@@ -684,21 +684,21 @@ def _deterministic_baseline(repo: dict, readme: str) -> dict:
     ]
 
     def _is_badge_like(s: str) -> bool:
-        """Return True if s looks like badge alt-text or short image caption noise."""
+        """Return True if s matches a specific badge alt-text or image caption pattern.
+        Intentionally conservative: only rejects strings that match known badge
+        formats (status words, coverage/version/licence/metric patterns).
+        Does NOT reject strings merely for being short or lowercase."""
         t = s.strip()
         if not t:
             return True
         tl = t.lower()
+        # Single bare badge-status keyword (e.g. just the word 'passing')
         if tl in _BADGE_STATUS_WORDS:
             return True
+        # Specific badge format patterns
         for pat in _BADGE_PATTERNS:
             if pat.match(t):
                 return True
-        # Short all-lowercase phrase with <=3 words and no sentence-ending
-        # punctuation is almost always a badge label, not a real step.
-        if (len(t) < 30 and t == tl and not any(c in t for c in '.!?')
-                and len(t.split()) <= 3):
-            return True
         return False
 
    # ── Extract steps from numbered/bulleted lists ──────────────────────────────────────────
