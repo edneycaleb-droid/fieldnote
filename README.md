@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **102 skills** · Last synced: 2026-07-21 18:29 UTC
+> **103 skills** · Last synced: 2026-07-21 18:30 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Integrating FastAPI with Model Context Protocol (MCP)](skills/fastapi_mcp_integration.md) | This skill teaches how to expose FastAPI endpoints as Model Context Protocol (MC | `FastAPI` `MCP` `uv` `pip` | `fastapi` `mcp` `authentication` |
 | [Fastapi Mcp](skills/fastapi_mcp.md) | Expose your FastAPI endpoints as Model Context Protocol (MCP) tools, with Auth! | `fastapi` `authentication` `authorization` `claude` | `ai` `authentication` `authorization` |
 | [Comprehensive Advanced Retrieval-Augmented Generation Techniques Hub](skills/advanced_retrieval_augmented_generation.md) | This hub provides a comprehensive understanding of Retrieval-Augmented Generatio | `RAG Techniques repository` `Claude Code` `GitHub` | `rag` `llm` `ai` |
 | [Rag Techniques](skills/rag_techniques.md) | This repository showcases various advanced techniques for Retrieval-Augmented Ge | `agentic-rag` `embeddings` `generative-ai` `gpt` | `agentic-rag` `ai` `embeddings` |
