@@ -2286,7 +2286,11 @@ def _mcp_health_check() -> dict:
             if not srv.enabled or srv.health_state in ("not_installed", "quarantined"):
                 continue
             prev_state = srv.health_state
-            result = verify_server(srv)
+            try:
+                result = verify_server(srv)
+            except Exception as srv_exc:
+                log.warning("mcp_health: verifier crashed for %s: %s", srv.id, srv_exc)
+                continue
             now_iso = datetime.now(timezone.utc).isoformat()
             new_state = "connected" if result.ok else (
                 "runtime_missing" if result.error_code == "runtime_missing" else "offline"
