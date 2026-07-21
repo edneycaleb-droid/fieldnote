@@ -1193,9 +1193,10 @@
       ]
     },
     "Containerization": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "dify_deployment"
+        "dify_deployment",
+        "mcp_registry_development_deployment"
       ]
     },
     "Cloud deployment": {
@@ -1674,9 +1675,10 @@
       ]
     },
     "Model Context Protocol (MCP)": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "mcp_agent_framework"
+        "mcp_agent_framework",
+        "mcp_registry_development_deployment"
       ]
     },
     "Composable Agent Patterns": {
@@ -1821,6 +1823,72 @@
       "freq": 1,
       "skills": [
         "registry"
+      ]
+    },
+    "API Freeze": {
+      "freq": 1,
+      "skills": [
+        "mcp_registry_development_deployment"
+      ]
+    },
+    "Authentication Methods (OAuth, OIDC, DNS, HTTP)": {
+      "freq": 1,
+      "skills": [
+        "mcp_registry_development_deployment"
+      ]
+    },
+    "Container Image Building": {
+      "freq": 1,
+      "skills": [
+        "mcp_registry_development_deployment"
+      ]
+    },
+    "Continuous Deployment": {
+      "freq": 1,
+      "skills": [
+        "mcp_registry_development_deployment"
+      ]
+    },
+    "Ephemeral Storage": {
+      "freq": 1,
+      "skills": [
+        "mcp_registry_development_deployment"
+      ]
+    },
+    "Local Development Environment": {
+      "freq": 1,
+      "skills": [
+        "mcp_registry_development_deployment"
+      ]
+    },
+    "MCP Registry": {
+      "freq": 1,
+      "skills": [
+        "mcp_registry_development_deployment"
+      ]
+    },
+    "Namespace Ownership": {
+      "freq": 1,
+      "skills": [
+        "mcp_registry_development_deployment"
+      ]
+    },
+    "Namespace Ownership Validation": {
+      "freq": 1,
+      "skills": [
+        "mcp_registry_development_deployment"
+      ]
+    },
+    "Service Discovery": {
+      "freq": 1,
+      "skills": [
+        "mcp_registry_development_deployment"
+      ]
+    },
+    "Seed Data": {
+      "freq": 1,
+      "skills": [
+        "mcp_registry_development_deployment"
       ]
     }
   },
@@ -2236,21 +2304,23 @@
       ]
     },
     "docker": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "dify",
         "ragflow",
         "lightrag",
         "r2r",
-        "registry"
+        "registry",
+        "mcp_registry_development_deployment"
       ]
     },
     "postgresql": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "dify",
         "lightrag",
-        "registry"
+        "registry",
+        "mcp_registry_development_deployment"
       ]
     },
     "grafana": {
@@ -2882,6 +2952,30 @@
       "freq": 1,
       "skills": [
         "r2r"
+      ]
+    },
+    "ko": {
+      "freq": 1,
+      "skills": [
+        "mcp_registry_development_deployment"
+      ]
+    },
+    "golangci-lint": {
+      "freq": 1,
+      "skills": [
+        "mcp_registry_development_deployment"
+      ]
+    },
+    "go": {
+      "freq": 1,
+      "skills": [
+        "mcp_registry_development_deployment"
+      ]
+    },
+    "GitHub Container Registry": {
+      "freq": 1,
+      "skills": [
+        "mcp_registry_development_deployment"
       ]
     }
   },
@@ -4006,6 +4100,40 @@
         "llm"
       ],
       "step_count": 8
+    },
+    "mcp_registry_development_deployment": {
+      "concepts": [
+        "API Freeze",
+        "Authentication Methods (OAuth, OIDC, DNS, HTTP)",
+        "Container Image Building",
+        "Containerization",
+        "Continuous Deployment",
+        "Ephemeral Storage",
+        "Local Development Environment",
+        "MCP Registry",
+        "Model Context Protocol (MCP)",
+        "Namespace Ownership",
+        "Namespace Ownership Validation",
+        "Service Discovery",
+        "Seed Data"
+      ],
+      "tools": [
+        "docker",
+        "postgresql",
+        "ko",
+        "golangci-lint",
+        "go",
+        "GitHub Container Registry"
+      ],
+      "tags": [
+        "mcp",
+        "registry",
+        "service discovery",
+        "go",
+        "docker",
+        "development"
+      ],
+      "step_count": 12
     }
   },
   "relationships": {
@@ -6147,6 +6275,10 @@
         "docker",
         "ai",
         "postgresql"
+      ],
+      "mcp_registry_development_deployment": [
+        "docker",
+        "postgresql"
       ]
     },
     "dify_deployment": {
@@ -6177,6 +6309,9 @@
       "r2r": [
         "Docker",
         "Docker Compose"
+      ],
+      "mcp_registry_development_deployment": [
+        "Containerization"
       ]
     },
     "ragflow": {
@@ -6214,6 +6349,9 @@
       "registry": [
         "docker",
         "ai"
+      ],
+      "mcp_registry_development_deployment": [
+        "docker"
       ]
     },
     "ragflow_self_hosting_guide": {
@@ -6311,6 +6449,10 @@
         "docker",
         "postgresql",
         "llm"
+      ],
+      "mcp_registry_development_deployment": [
+        "docker",
+        "postgresql"
       ]
     },
     "lightrag_setup": {
@@ -6662,6 +6804,9 @@
         "go",
         "Go",
         "llm"
+      ],
+      "mcp_registry_development_deployment": [
+        "go"
       ]
     },
     "mcp_agent": {
@@ -6723,7 +6868,11 @@
         "mcp"
       ]
     },
-    "mcp_agent_framework": {},
+    "mcp_agent_framework": {
+      "mcp_registry_development_deployment": [
+        "Model Context Protocol (MCP)"
+      ]
+    },
     "r2r": {
       "new_claude_opus_5_leaks": [
         "anthropic"
@@ -6842,9 +6991,41 @@
         "ai",
         "llm",
         "mcp"
+      ],
+      "mcp_registry_development_deployment": [
+        "docker",
+        "go",
+        "postgresql"
+      ]
+    },
+    "mcp_registry_development_deployment": {
+      "dify": [
+        "docker",
+        "postgresql"
+      ],
+      "dify_deployment": [
+        "Containerization"
+      ],
+      "ragflow": [
+        "docker"
+      ],
+      "lightrag": [
+        "docker",
+        "postgresql"
+      ],
+      "mcp_go": [
+        "go"
+      ],
+      "mcp_agent_framework": [
+        "Model Context Protocol (MCP)"
+      ],
+      "registry": [
+        "docker",
+        "go",
+        "postgresql"
       ]
     }
   },
-  "updated_at": "2026-07-21T18:31:45.872713+00:00",
-  "total_skills": 39
+  "updated_at": "2026-07-21T18:32:13.563239+00:00",
+  "total_skills": 40
 }
