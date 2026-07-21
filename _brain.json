@@ -1452,10 +1452,11 @@
       ]
     },
     "LLM": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "graphrag_system",
-        "r2r"
+        "r2r",
+        "lightagent_framework"
       ]
     },
     "agentic-rag": {
@@ -2185,9 +2186,10 @@
       ]
     },
     "AI Agents": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "griptape_framework"
+        "griptape_framework",
+        "lightagent_framework"
       ]
     },
     "AI Workflows": {
@@ -2329,9 +2331,10 @@
       ]
     },
     "Guardrails": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "forge_llm_tool_calling_framework"
+        "forge_llm_tool_calling_framework",
+        "lightagent_framework"
       ]
     },
     "Proxy server": {
@@ -2554,6 +2557,96 @@
       "freq": 1,
       "skills": [
         "lightagent"
+      ]
+    },
+    "Agent Framework": {
+      "freq": 1,
+      "skills": [
+        "lightagent_framework"
+      ]
+    },
+    "Lightweight Design": {
+      "freq": 1,
+      "skills": [
+        "lightagent_framework"
+      ]
+    },
+    "Lifecycle Hooks": {
+      "freq": 1,
+      "skills": [
+        "lightagent_framework"
+      ]
+    },
+    "Memory Management": {
+      "freq": 1,
+      "skills": [
+        "lightagent_framework"
+      ]
+    },
+    "Modularity": {
+      "freq": 1,
+      "skills": [
+        "lightagent_framework"
+      ]
+    },
+    "Multi-Agent Collaboration": {
+      "freq": 1,
+      "skills": [
+        "lightagent_framework"
+      ]
+    },
+    "OpenAI Compatibility": {
+      "freq": 1,
+      "skills": [
+        "lightagent_framework"
+      ]
+    },
+    "Python": {
+      "freq": 1,
+      "skills": [
+        "lightagent_framework"
+      ]
+    },
+    "Runtime Hooks": {
+      "freq": 1,
+      "skills": [
+        "lightagent_framework"
+      ]
+    },
+    "Streaming API": {
+      "freq": 1,
+      "skills": [
+        "lightagent_framework"
+      ]
+    },
+    "Tool Calling": {
+      "freq": 1,
+      "skills": [
+        "lightagent_framework"
+      ]
+    },
+    "Tool Integration": {
+      "freq": 1,
+      "skills": [
+        "lightagent_framework"
+      ]
+    },
+    "Trace Observability": {
+      "freq": 1,
+      "skills": [
+        "lightagent_framework"
+      ]
+    },
+    "Tree of Thought (ToT)": {
+      "freq": 1,
+      "skills": [
+        "lightagent_framework"
+      ]
+    },
+    "Workflow Orchestration": {
+      "freq": 1,
+      "skills": [
+        "lightagent_framework"
       ]
     }
   },
@@ -4611,6 +4704,78 @@
       "skills": [
         "lightagent"
       ]
+    },
+    "LightAgent": {
+      "freq": 1,
+      "skills": [
+        "lightagent_framework"
+      ]
+    },
+    "LightSwarm": {
+      "freq": 1,
+      "skills": [
+        "lightagent_framework"
+      ]
+    },
+    "LightFlow": {
+      "freq": 1,
+      "skills": [
+        "lightagent_framework"
+      ]
+    },
+    "ToolRegistry": {
+      "freq": 1,
+      "skills": [
+        "lightagent_framework"
+      ]
+    },
+    "MemoryPolicy": {
+      "freq": 1,
+      "skills": [
+        "lightagent_framework"
+      ]
+    },
+    "MemoryScope": {
+      "freq": 1,
+      "skills": [
+        "lightagent_framework"
+      ]
+    },
+    "SharedMemoryPool": {
+      "freq": 1,
+      "skills": [
+        "lightagent_framework"
+      ]
+    },
+    "input_guardrails": {
+      "freq": 1,
+      "skills": [
+        "lightagent_framework"
+      ]
+    },
+    "tool_guardrails": {
+      "freq": 1,
+      "skills": [
+        "lightagent_framework"
+      ]
+    },
+    "output_guardrails": {
+      "freq": 1,
+      "skills": [
+        "lightagent_framework"
+      ]
+    },
+    "ToolGenerator": {
+      "freq": 1,
+      "skills": [
+        "lightagent_framework"
+      ]
+    },
+    "Mem0": {
+      "freq": 1,
+      "skills": [
+        "lightagent_framework"
+      ]
     }
   },
   "skill_map": {
@@ -6373,6 +6538,54 @@
         "llm"
       ],
       "step_count": 8
+    },
+    "lightagent_framework": {
+      "concepts": [
+        "AI Agents",
+        "Agent Framework",
+        "Guardrails",
+        "Lightweight Design",
+        "Lifecycle Hooks",
+        "LLM",
+        "Memory Management",
+        "Modularity",
+        "Multi-Agent Collaboration",
+        "OpenAI Compatibility",
+        "Python",
+        "Runtime Hooks",
+        "Streaming API",
+        "Tool Calling",
+        "Tool Integration",
+        "Trace Observability",
+        "Tree of Thought (ToT)",
+        "Workflow Orchestration"
+      ],
+      "tools": [
+        "LightAgent",
+        "LightSwarm",
+        "LightFlow",
+        "ToolRegistry",
+        "MemoryPolicy",
+        "MemoryScope",
+        "SharedMemoryPool",
+        "input_guardrails",
+        "tool_guardrails",
+        "output_guardrails",
+        "ToolGenerator",
+        "Mem0"
+      ],
+      "tags": [
+        "agent-framework",
+        "agents",
+        "ai",
+        "ai-agent",
+        "llm",
+        "mcp",
+        "multi-agent",
+        "python",
+        "workflow"
+      ],
+      "step_count": 14
     }
   },
   "relationships": {
@@ -6730,6 +6943,10 @@
         "Docker"
       ],
       "pasa": [
+        "Python"
+      ],
+      "lightagent_framework": [
+        "LLM",
         "Python"
       ]
     },
@@ -7430,6 +7647,9 @@
       ],
       "pasa": [
         "Python"
+      ],
+      "lightagent_framework": [
+        "Python"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -7539,6 +7759,9 @@
         "Claude"
       ],
       "pasa": [
+        "Python"
+      ],
+      "lightagent_framework": [
         "Python"
       ]
     },
@@ -7932,6 +8155,10 @@
       ],
       "pasa": [
         "Python"
+      ],
+      "lightagent_framework": [
+        "LLM",
+        "Python"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -8073,6 +8300,10 @@
       ],
       "pasa": [
         "Python"
+      ],
+      "lightagent_framework": [
+        "LLM",
+        "Python"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -8204,6 +8435,9 @@
       ],
       "lightagent": [
         "openai"
+      ],
+      "lightagent_framework": [
+        "LLM"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -8580,6 +8814,9 @@
       ],
       "infinity_database": [
         "Docker"
+      ],
+      "lightagent_framework": [
+        "LLM"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -9046,6 +9283,9 @@
       ],
       "lightagent": [
         "llm"
+      ],
+      "lightagent_framework": [
+        "Python"
       ]
     },
     "lightrag_setup": {
@@ -9176,6 +9416,9 @@
       ],
       "lightagent": [
         "llm"
+      ],
+      "lightagent_framework": [
+        "Python"
       ]
     },
     "graphrag_system": {
@@ -9231,6 +9474,10 @@
         "Python"
       ],
       "pasa": [
+        "Python"
+      ],
+      "lightagent_framework": [
+        "LLM",
         "Python"
       ]
     },
@@ -9444,6 +9691,9 @@
       "lightagent": [
         "mcp",
         "llm"
+      ],
+      "lightagent_framework": [
+        "Python"
       ]
     },
     "fastapi_mcp_integration": {
@@ -9783,6 +10033,9 @@
       ],
       "infinity_database": [
         "Docker"
+      ],
+      "lightagent_framework": [
+        "LLM"
       ]
     },
     "registry": {
@@ -10405,6 +10658,11 @@
       ],
       "pasa": [
         "Python"
+      ],
+      "lightagent_framework": [
+        "LLM",
+        "Python",
+        "AI Agents"
       ]
     },
     "forge": {
@@ -10502,6 +10760,9 @@
     "forge_llm_tool_calling_framework": {
       "mcp_agent_framework": [
         "Workflow"
+      ],
+      "lightagent_framework": [
+        "Guardrails"
       ]
     },
     "xcodebuildmcp_installation": {
@@ -10743,6 +11004,9 @@
       "lightagent": [
         "llm",
         "python"
+      ],
+      "lightagent_framework": [
+        "Python"
       ]
     },
     "paper_agent": {},
@@ -10816,8 +11080,61 @@
         "llm",
         "python"
       ]
+    },
+    "lightagent_framework": {
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "LLM",
+        "Python"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "Python"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Python"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "LLM",
+        "Python"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "LLM",
+        "Python"
+      ],
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "LLM"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "LLM"
+      ],
+      "lightrag": [
+        "Python"
+      ],
+      "graphrag": [
+        "Python"
+      ],
+      "graphrag_system": [
+        "LLM",
+        "Python"
+      ],
+      "fastapi_mcp": [
+        "Python"
+      ],
+      "r2r": [
+        "LLM"
+      ],
+      "griptape_framework": [
+        "LLM",
+        "Python",
+        "AI Agents"
+      ],
+      "forge_llm_tool_calling_framework": [
+        "Guardrails"
+      ],
+      "pasa": [
+        "Python"
+      ]
     }
   },
-  "updated_at": "2026-07-21T21:37:12.419156+00:00",
-  "total_skills": 56
+  "updated_at": "2026-07-21T21:37:37.720301+00:00",
+  "total_skills": 57
 }
