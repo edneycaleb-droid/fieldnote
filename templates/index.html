@@ -1418,6 +1418,7 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
 .hcd-quarantined { background: #f87171; }
 .hcd-verifying   { background: #fbbf24; animation: pulse 1s infinite; }
 .hcd-installing  { background: #fbbf24; animation: pulse 1s infinite; }
+.hcd-unverified  { background: #fbbf24; animation: pulse 1s infinite; }
 .hcd-not_installed    { background: #444; }
 .hcd-runtime_missing  { background: #f97316; }
 .hcd-missing_credential { background: #fbbf24; }
@@ -5924,6 +5925,7 @@ async function loadMcpOpsDash() {
       const cbColor     = cb === 'CLOSED' ? '#4ade80' : cb === 'OPEN' ? '#f87171' : '#fbbf24';
       const dotClass    = s.health_state === 'connected' ? 'hcd-connected'
                         : s.health_state === 'degraded'  ? 'hcd-degraded'
+                        : (s.health_state === 'verifying' || s.health_state === 'unverified') ? 'hcd-verifying'
                         : 'hcd-offline';
       const vFlag = s.latest_version && s.installed_version && s.latest_version !== s.installed_version
         ? ' <span title="Update available" style="color:#fbbf24">🆕</span>' : '';
@@ -6052,6 +6054,7 @@ function _hubStateLabel(state) {
     connected: '🟢 Connected', degraded: '🟡 Degraded',
     offline: '🔴 Offline', quarantined: '🔒 Quarantined',
     verifying: '⏳ Verifying…', installing: '⏳ Installing…',
+    unverified: '⏳ Checking…',
     not_installed: '⬜ Not installed', runtime_missing: '⚠ Runtime missing',
     missing_credential: '⚠ Missing credential',
   };
@@ -6072,6 +6075,7 @@ function renderHubCard(s) {
   const stateColor = {
     connected: 'hc-connected', offline: 'hc-offline',
     quarantined: 'hc-quarantined', verifying: 'hc-verifying', installing: 'hc-verifying',
+    unverified: 'hc-verifying',
   }[s.health_state] || '';
 
   // Primary action
@@ -6099,12 +6103,13 @@ function renderHubCard(s) {
       onclick="${toggleFn}">${toggleLabel}</button>`;
   } else if (state === 'quarantined') {
     primaryBtn = `<button class="hc-btn hcbtn-disable" disabled>🔒 Quarantined</button>`;
-  } else if (state === 'verifying' || state === 'installing') {
+  } else if (state === 'verifying' || state === 'installing' || state === 'unverified') {
+    const btnLabel = state === 'installing' ? 'Installing…' : state === 'unverified' ? 'Checking…' : 'Verifying…';
     primaryBtn = `<button class="hc-btn hcbtn-install" disabled>
-      <span class="ic-spinner"></span> ${state === 'verifying' ? 'Verifying…' : 'Installing…'}</button>`;
+      <span class="ic-spinner"></span> ${btnLabel}</button>`;
   }
 
-  const testBtn = (state === 'connected' || state === 'degraded')
+  const testBtn = ((state === 'connected' || state === 'degraded') && state !== 'unverified')
     ? `<button class="hc-btn hcbtn-test" onclick="hubVerify('${esc(s.id)}')">🔍 Test</button>`
     : '';
   const uninstBtn = (state !== 'not_installed' && state !== 'quarantined')

@@ -557,6 +557,27 @@ def update_server(entry_id: str, **kwargs) -> Optional[MCPServer]:
     return target
 
 
+def mark_connected_as_unverified() -> int:
+    """On startup, reset all health_state='connected' entries to 'unverified'.
+
+    This prevents the UI from showing a stale green 'Connected' badge for servers
+    that have not been health-checked since the last restart. The first
+    _mcp_health_check tick resolves each entry to 'connected' or 'offline'.
+
+    Returns the number of entries that were reset.
+    """
+    servers = load_registry()
+    reset = 0
+    for srv in servers:
+        if srv.health_state == "connected":
+            srv.health_state = "unverified"
+            reset += 1
+    if reset:
+        save_registry(servers)
+        log.info("mcp_registry: %d server(s) marked 'unverified' at startup (pending first health check)", reset)
+    return reset
+
+
 def get_python_alternative(entry_id: str) -> Optional[MCPServer]:
     """Return the recorded Python/uvx alternative for an npm-only server, or None."""
     srv = get_by_id(entry_id)
