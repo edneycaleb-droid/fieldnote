@@ -305,13 +305,6 @@ def _enrich_one(item: dict) -> None:
         skill_name, action = gd._save_discovered_skill(skill, repo, index)
         index = _a.load_index()
 
-        # Sync to GitHub (non-fatal)
-        try:
-            import agents.github_sync as gs
-            gs.sync_skill(skill_name, _a.SKILLS_DIR, index)
-        except Exception as e:
-            log.warning("GitHub sync failed for enriched skill %s: %s", skill_name, e)
-
         # Update discovery log to mark baseline cleared
         disc_log = gd.load_discovery_log()
         existing = disc_log.get(full_name, {})
