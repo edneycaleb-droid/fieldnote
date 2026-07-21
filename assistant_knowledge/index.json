@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "sqliteai--sqlite-vector",
+      "title": "Discovered: sqliteai/sqlite-vector",
+      "category": "discoveries",
+      "confidence": "verified",
+      "updated_at": "2026-07-21T21:38:26.127083+00:00",
+      "path": "discoveries/sqliteai--sqlite-vector.md"
+    },
+    {
       "slug": "wanxingai--lightagent",
       "title": "Discovered: wanxingai/LightAgent",
       "category": "discoveries",
@@ -297,5 +305,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-21T21:38:24.651765+00:00"
+  "updated_at": "2026-07-21T21:38:26.130933+00:00"
 }
