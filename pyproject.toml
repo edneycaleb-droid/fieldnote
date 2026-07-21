@@ -5,7 +5,7 @@ description = ""
 authors = ["Your Name <you@example.com>"]
 
 [tool.poetry.dependencies]
-python = ">=3.10.0,<3.11"
+python = ">=3.11.0,<3.12"
 google-generativeai = "^0.3.1"
 xds-protos = "^1.60.0"
 groq = "^1.5.0"
@@ -13,8 +13,6 @@ flask = "^3.1.3"
 youtube-transcript-api = "^1.2.4"
 yt-dlp = "^2026.7.4"
 faster-whisper = ">=1.0.0"
-# ONNX Runtime 1.24+ does not publish Linux CPython 3.10 wheels.
-onnxruntime = "<1.24"
 
 [tool.pyright]
 # https://github.com/microsoft/pyright/blob/main/docs/configuration.md
