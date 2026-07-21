@@ -21,4 +21,4 @@ Anthropic, Flask, Python, pytest, Claude
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-20 | [Hermes + Claude Code — MCP Integration & Loop Engineering](https://www.youtube.com/watch?v=HvmCeSRMVVY) | whisper |
+| 2026-07-21 | [Hermes + Claude Code — MCP Integration & Loop Engineering](https://www.youtube.com/watch?v=HvmCeSRMVVY) | whisper |
