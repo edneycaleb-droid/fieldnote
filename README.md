@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **112 skills** · Last synced: 2026-07-21 19:48 UTC
+> **113 skills** · Last synced: 2026-07-21 19:49 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Model Context Protocol (MCP) Server Implementations: A Comprehensive Guide](skills/mcp_server_implementations.md) | This skill teaches how to implement Model Context Protocol (MCP) servers to exte | `Claude Desktop` `Zed Editor` `Sourcegraph Cody` `Backup` | `ai` `api_integrations` `cloud_storage` |
 | [Awesome Mcp Servers](skills/awesome_mcp_servers.md) | Awesome MCP Servers - A curated list of Model Context Protocol servers | `qdrant` `redis` `mongodb` `postgresql` | `ai` `anthropic-claude` `awesome` |
 | [Xcodebuildmcp](skills/xcodebuildmcp.md) | A Model Context Protocol (MCP) server and CLI that provides tools for agent use  | `mcp` `mcp-server` `model-context-protocol` `model-context-protocol-servers` | `mcp` `mcp-server` `model-context-protocol` |
 | [Implementing the Model Context Protocol with Go (mcp-go)](skills/model_context_protocol_go.md) | Learn how to build servers that expose data and functionality to LLM application | `mcp-go` | `llm` `go` `sdk` |
