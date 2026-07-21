@@ -4572,6 +4572,14 @@ def _boot_scheduler():
         fn=_mcp_health_check,
     )
 
+    from agents import supply_chain_policy as _supply_chain_policy
+    s.register(
+        name="ecosystem_policy",
+        description="Audit the quarantined GitHub/tool/MCP candidate control plane",
+        interval_hours=1,
+        fn=_supply_chain_policy.architecture_score,
+    )
+
     s.register(
         name="mcp_refresh",
         description="Check PyPI/npm for newer MCP package versions",
