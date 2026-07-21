@@ -1,6 +1,46 @@
 {
   "entries": [
     {
+      "slug": "infiniflow--infinity",
+      "title": "Discovered: infiniflow/infinity",
+      "category": "discoveries",
+      "confidence": "verified",
+      "updated_at": "2026-07-21T21:38:21.759913+00:00",
+      "path": "discoveries/infiniflow--infinity.md"
+    },
+    {
+      "slug": "antoinezambelli--forge",
+      "title": "Discovered: antoinezambelli/forge",
+      "category": "discoveries",
+      "confidence": "verified",
+      "updated_at": "2026-07-21T19:51:19.721499+00:00",
+      "path": "discoveries/antoinezambelli--forge.md"
+    },
+    {
+      "slug": "griptape-ai--griptape",
+      "title": "Discovered: griptape-ai/griptape",
+      "category": "discoveries",
+      "confidence": "verified",
+      "updated_at": "2026-07-21T19:51:19.051797+00:00",
+      "path": "discoveries/griptape-ai--griptape.md"
+    },
+    {
+      "slug": "giovannipasq--agentic-rag-for-dummies",
+      "title": "Discovered: GiovanniPasq/agentic-rag-for-dummies",
+      "category": "discoveries",
+      "confidence": "verified",
+      "updated_at": "2026-07-21T19:51:17.953603+00:00",
+      "path": "discoveries/giovannipasq--agentic-rag-for-dummies.md"
+    },
+    {
+      "slug": "appcypher--awesome-mcp-servers",
+      "title": "Discovered: appcypher/awesome-mcp-servers",
+      "category": "discoveries",
+      "confidence": "verified",
+      "updated_at": "2026-07-21T19:51:16.433300+00:00",
+      "path": "discoveries/appcypher--awesome-mcp-servers.md"
+    },
+    {
       "slug": "modelcontextprotocol--registry",
       "title": "Discovered: modelcontextprotocol/registry",
       "category": "discoveries",
@@ -241,5 +281,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-21T18:32:27.334689+00:00"
+  "updated_at": "2026-07-21T21:38:21.803506+00:00"
 }
