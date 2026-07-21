@@ -1097,11 +1097,18 @@
       ]
     },
     "agent": {
+<<<<<<< Updated upstream
       "freq": 3,
       "skills": [
         "new_hermes_agent_os_is_insane",
         "hermes_claude_code_mcp_integration_loop_engineerin",
         "this_100_self_improving_ai_agent_is_insane_just_wa"
+=======
+      "freq": 2,
+      "skills": [
+        "new_hermes_agent_os_is_insane",
+        "hermes_claude_code_mcp_integration_loop_engineerin"
+>>>>>>> Stashed changes
       ]
     },
     "squad": {
@@ -1197,11 +1204,18 @@
       ]
     },
     "actually": {
+<<<<<<< Updated upstream
       "freq": 3,
       "skills": [
         "new_claude_update_is_insane",
         "the_15_most_insane_things_created_by_kimi_k3_kimi_",
         "yes_the_kimi_k3_hype_is_real"
+=======
+      "freq": 2,
+      "skills": [
+        "new_claude_update_is_insane",
+        "the_15_most_insane_things_created_by_kimi_k3_kimi_"
+>>>>>>> Stashed changes
       ]
     },
     "opus": {
@@ -1224,12 +1238,19 @@
       ]
     },
     "here": {
+<<<<<<< Updated upstream
       "freq": 4,
       "skills": [
         "new_claude_opus_5_leaks",
         "the_15_most_insane_things_created_by_kimi_k3_kimi_",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
         "yes_the_kimi_k3_hype_is_real"
+=======
+      "freq": 2,
+      "skills": [
+        "new_claude_opus_5_leaks",
+        "the_15_most_insane_things_created_by_kimi_k3_kimi_"
+>>>>>>> Stashed changes
       ]
     },
     "honeycomb": {
@@ -1245,11 +1266,17 @@
       ]
     },
     "which": {
+<<<<<<< Updated upstream
       "freq": 3,
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
         "yes_the_kimi_k3_hype_is_real"
+=======
+      "freq": 1,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+>>>>>>> Stashed changes
       ]
     },
     "enthropic": {
@@ -1265,10 +1292,16 @@
       ]
     },
     "fable": {
+<<<<<<< Updated upstream
       "freq": 2,
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
         "yes_the_kimi_k3_hype_is_real"
+=======
+      "freq": 1,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+>>>>>>> Stashed changes
       ]
     },
     "over": {
@@ -1308,10 +1341,16 @@
       ]
     },
     "hermes": {
+<<<<<<< Updated upstream
       "freq": 2,
       "skills": [
         "hermes_claude_code_mcp_integration_loop_engineerin",
         "this_100_self_improving_ai_agent_is_insane_just_wa"
+=======
+      "freq": 1,
+      "skills": [
+        "hermes_claude_code_mcp_integration_loop_engineerin"
+>>>>>>> Stashed changes
       ]
     },
     "code": {
@@ -1351,10 +1390,16 @@
       ]
     },
     "know": {
+<<<<<<< Updated upstream
       "freq": 2,
       "skills": [
         "the_15_most_insane_things_created_by_kimi_k3_kimi_",
         "yes_the_kimi_k3_hype_is_real"
+=======
+      "freq": 1,
+      "skills": [
+        "the_15_most_insane_things_created_by_kimi_k3_kimi_"
+>>>>>>> Stashed changes
       ]
     },
     "course": {
@@ -1370,6 +1415,7 @@
       ]
     },
     "kimmy": {
+<<<<<<< Updated upstream
       "freq": 2,
       "skills": [
         "the_15_most_insane_things_created_by_kimi_k3_kimi_",
@@ -1381,6 +1427,17 @@
       "skills": [
         "the_15_most_insane_things_created_by_kimi_k3_kimi_",
         "this_100_self_improving_ai_agent_is_insane_just_wa"
+=======
+      "freq": 1,
+      "skills": [
+        "the_15_most_insane_things_created_by_kimi_k3_kimi_"
+      ]
+    },
+    "going": {
+      "freq": 1,
+      "skills": [
+        "the_15_most_insane_things_created_by_kimi_k3_kimi_"
+>>>>>>> Stashed changes
       ]
     },
     "guys": {
@@ -1394,6 +1451,7 @@
       "skills": [
         "the_15_most_insane_things_created_by_kimi_k3_kimi_"
       ]
+<<<<<<< Updated upstream
     },
     "right": {
       "freq": 2,
@@ -1443,20 +1501,30 @@
       "skills": [
         "yes_the_kimi_k3_hype_is_real"
       ]
+=======
+>>>>>>> Stashed changes
     }
   },
   "tools": {
     "Anthropic": {
+<<<<<<< Updated upstream
       "freq": 11,
+=======
+      "freq": 9,
+>>>>>>> Stashed changes
       "skills": [
         "building_ai_agents",
         "build_production_ready_llm_applications_with_haystack",
         "testing_and_comparing_llms",
         "new_claude_update_is_insane",
         "new_claude_opus_5_leaks",
+<<<<<<< Updated upstream
         "hermes_claude_code_mcp_integration_loop_engineerin",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
         "yes_the_kimi_k3_hype_is_real"
+=======
+        "hermes_claude_code_mcp_integration_loop_engineerin"
+>>>>>>> Stashed changes
       ]
     },
     "Haiku": {
@@ -1521,7 +1589,11 @@
       ]
     },
     "Claude": {
+<<<<<<< Updated upstream
       "freq": 17,
+=======
+      "freq": 15,
+>>>>>>> Stashed changes
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -1533,9 +1605,13 @@
         "new_claude_opus_5_leaks",
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
         "hermes_claude_code_mcp_integration_loop_engineerin",
+<<<<<<< Updated upstream
         "the_15_most_insane_things_created_by_kimi_k3_kimi_",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
         "yes_the_kimi_k3_hype_is_real"
+=======
+        "the_15_most_insane_things_created_by_kimi_k3_kimi_"
+>>>>>>> Stashed changes
       ]
     },
     "Google Drive": {
@@ -1784,7 +1860,11 @@
       ]
     },
     "Docker": {
+<<<<<<< Updated upstream
       "freq": 9,
+=======
+      "freq": 8,
+>>>>>>> Stashed changes
       "skills": [
         "astrbot_deployment",
         "build_production_ready_llm_applications_with_haystack",
@@ -1792,8 +1872,12 @@
         "lightrag_deployment",
         "deploying_retrieval_augmented_generation_with_ragflow",
         "graphrag_deployment",
+<<<<<<< Updated upstream
         "superagi_building_autonomous_agents",
         "this_100_self_improving_ai_agent_is_insane_just_wa"
+=======
+        "superagi_building_autonomous_agents"
+>>>>>>> Stashed changes
       ]
     },
     "Docker Compose": {
@@ -1852,6 +1936,7 @@
       ]
     },
     "Git": {
+<<<<<<< Updated upstream
       "freq": 3,
       "skills": [
         "openai_agents_sdk",
@@ -1865,6 +1950,19 @@
         "openai_agents_sdk",
         "hermes_claude_code_mcp_integration_loop_engineerin",
         "this_100_self_improving_ai_agent_is_insane_just_wa"
+=======
+      "freq": 2,
+      "skills": [
+        "openai_agents_sdk",
+        "microsoft_mcp_curriculum"
+      ]
+    },
+    "Python": {
+      "freq": 2,
+      "skills": [
+        "openai_agents_sdk",
+        "hermes_claude_code_mcp_integration_loop_engineerin"
+>>>>>>> Stashed changes
       ]
     },
     "Haystack": {
@@ -1874,6 +1972,7 @@
       ]
     },
     "OpenAI": {
+<<<<<<< Updated upstream
       "freq": 5,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
@@ -1881,6 +1980,13 @@
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
         "yes_the_kimi_k3_hype_is_real"
+=======
+      "freq": 3,
+      "skills": [
+        "build_production_ready_llm_applications_with_haystack",
+        "testing_and_comparing_llms",
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+>>>>>>> Stashed changes
       ]
     },
     "Mistral": {
@@ -2222,11 +2328,18 @@
       ]
     },
     "pip": {
+<<<<<<< Updated upstream
       "freq": 4,
       "skills": [
         "lightrag_deployment",
         "deploying_retrieval_augmented_generation_with_ragflow",
         "this_100_self_improving_ai_agent_is_insane_just_wa"
+=======
+      "freq": 3,
+      "skills": [
+        "lightrag_deployment",
+        "deploying_retrieval_augmented_generation_with_ragflow"
+>>>>>>> Stashed changes
       ]
     },
     "OpenSearch": {
@@ -2486,6 +2599,7 @@
       "freq": 1,
       "skills": [
         "hermes_claude_code_mcp_integration_loop_engineerin"
+<<<<<<< Updated upstream
       ]
     },
     "Node": {
@@ -2504,6 +2618,8 @@
       "freq": 1,
       "skills": [
         "this_100_self_improving_ai_agent_is_insane_just_wa"
+=======
+>>>>>>> Stashed changes
       ]
     }
   },
@@ -3324,6 +3440,7 @@
       "step_count": 1
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
+<<<<<<< Updated upstream
       "concepts": [
         "tests",
         "skill",
@@ -3430,15 +3547,64 @@
       "tools": [
         "Anthropic",
         "OpenAI",
+=======
+      "concepts": [
+        "tests",
+        "skill",
+        "hermes",
+        "code",
+        "loop",
+        "step",
+        "agent",
+        "pass",
+        "because",
+        "does"
+      ],
+      "tools": [
+        "Anthropic",
+        "Flask",
+        "Python",
+        "pytest",
+        "Claude"
+      ],
+      "tags": [
+        "tests",
+        "skill",
+        "hermes",
+        "code",
+        "loop",
+        "step"
+      ],
+      "step_count": 1
+    },
+    "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
+      "concepts": [
+        "know",
+        "course",
+        "game",
+        "actually",
+        "kimmy",
+        "something",
+        "going",
+        "guys",
+        "here",
+        "think"
+      ],
+      "tools": [
+>>>>>>> Stashed changes
         "Claude"
       ],
       "tags": [
         "these",
         "fable",
         "kimmy",
+<<<<<<< Updated upstream
         "cost",
         "right",
         "here"
+=======
+        "something"
+>>>>>>> Stashed changes
       ],
       "step_count": 1
     }
@@ -3497,6 +3663,7 @@
       "new_claude_opus_5_leaks": [
         "Claude"
       ],
+<<<<<<< Updated upstream
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
         "Claude"
       ],
@@ -4729,4 +4896,950 @@
   },
   "updated_at": "2026-07-21T14:55:21.130035+00:00",
   "total_skills": 34
+=======
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude"
+      ],
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "Claude"
+      ]
+    },
+    "running_large_models_locally": {
+      "building_ai_agents": [
+        "Mixture of experts models"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "Hugging Face"
+      ]
+    },
+    "building_ai_agents_with_langchain": {
+      "building_resilient_ai_agents_with_langgraph": [
+        "LangSmith",
+        "Deep Agents",
+        "LangChain",
+        "LangGraph"
+      ],
+      "openai_agents_sdk": [
+        "LangSmith",
+        "Deep Agents",
+        "LangChain",
+        "LangGraph"
+      ],
+      "pydantic_ai_framework": [
+        "LangChain"
+      ],
+      "deploying_retrieval_augmented_generation_with_ragflow": [
+        "Large Language Models (LLMs)"
+      ],
+      "testing_and_comparing_llms": [
+        "Large Language Models (LLMs)"
+      ]
+    },
+    "building_resilient_ai_agents_with_langgraph": {
+      "building_ai_agents_with_langchain": [
+        "LangSmith",
+        "Deep Agents",
+        "LangChain",
+        "LangGraph"
+      ],
+      "openai_agents_sdk": [
+        "LangSmith",
+        "Deep Agents",
+        "LangChain",
+        "LangGraph"
+      ],
+      "pydantic_ai_framework": [
+        "LangChain"
+      ],
+      "hermes_agent_setup": [
+        "Human-in-the-loop"
+      ]
+    },
+    "astrbot_deployment": {
+      "openai_agents_sdk": [
+        "LLMs"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "Docker"
+      ],
+      "building_ai_agents": [
+        "LLMs"
+      ],
+      "ragflow_deployment": [
+        "Docker",
+        "Docker Compose",
+        "uv"
+      ],
+      "lightrag_deployment": [
+        "uv",
+        "Docker Compose",
+        "Docker"
+      ],
+      "deploying_retrieval_augmented_generation_with_ragflow": [
+        "uv",
+        "Docker Compose",
+        "Docker"
+      ],
+      "graphrag_deployment": [
+        "LLMs",
+        "Docker Compose",
+        "Docker"
+      ],
+      "superagi_building_autonomous_agents": [
+        "Docker"
+      ]
+    },
+    "openai_agents_sdk": {
+      "building_ai_agents_with_langchain": [
+        "LangSmith",
+        "Deep Agents",
+        "LangChain",
+        "LangGraph"
+      ],
+      "building_resilient_ai_agents_with_langgraph": [
+        "LangSmith",
+        "Deep Agents",
+        "LangChain",
+        "LangGraph"
+      ],
+      "astrbot_deployment": [
+        "LLMs"
+      ],
+      "pydantic_ai_framework": [
+        "LangChain"
+      ],
+      "building_ai_agents": [
+        "LLMs"
+      ],
+      "graphrag_deployment": [
+        "LLMs"
+      ],
+      "microsoft_mcp_curriculum": [
+        "Git"
+      ],
+      "testing_and_comparing_llms": [
+        "LLMs (Large Language Models)"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Python"
+      ]
+    },
+    "build_production_ready_llm_applications_with_haystack": {
+      "astrbot_deployment": [
+        "Docker"
+      ],
+      "swanlab_ai_training_analysis_platform": [
+        "PyTorch",
+        "Transformers"
+      ],
+      "higsfield_integration": [
+        "Gemini"
+      ],
+      "running_large_models_locally": [
+        "Hugging Face"
+      ],
+      "pydantic_ai_framework": [
+        "Transformers"
+      ],
+      "ragflow_deployment": [
+        "Docker"
+      ],
+      "lightrag_deployment": [
+        "Docker"
+      ],
+      "deploying_retrieval_augmented_generation_with_ragflow": [
+        "Docker"
+      ],
+      "graphrag_deployment": [
+        "Docker",
+        "LLM"
+      ],
+      "superagi_building_autonomous_agents": [
+        "Docker"
+      ],
+      "testing_and_comparing_llms": [
+        "OpenAI",
+        "Anthropic"
+      ],
+      "new_claude_update_is_insane": [
+        "Anthropic"
+      ],
+      "new_claude_opus_5_leaks": [
+        "Anthropic"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Gemini",
+        "OpenAI"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Anthropic"
+      ]
+    },
+    "swanlab_ai_training_analysis_platform": {
+      "build_production_ready_llm_applications_with_haystack": [
+        "PyTorch",
+        "Transformers"
+      ],
+      "pydantic_ai_framework": [
+        "Transformers"
+      ]
+    },
+    "incremental_code_review": {
+      "higsfield_integration": [
+        "MCP"
+      ]
+    },
+    "mastering_loop_engineering": {
+      "building_ai_agents": [
+        "Claude"
+      ],
+      "higsfield_integration": [
+        "Claude"
+      ],
+      "hermes_agent_setup": [
+        "Claude"
+      ],
+      "building_ai_agents_with_loop": [
+        "Claude",
+        "Strategic Thinking",
+        "Fable 5",
+        "Loop Engineering",
+        "ChatGPT 5.6",
+        "Self-Correction"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Claude"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude"
+      ],
+      "new_claude_opus_5_leaks": [
+        "Claude"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude"
+      ],
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "Claude"
+      ]
+    },
+    "moonshot_kimiko_automation": {
+      "moonshot_kimiko_3": [
+        "Open Weights Models",
+        "Open-Weight Models",
+        "Moonshot",
+        "Open Weights",
+        "Moonshot Kimiko 3",
+        "Kimiko 3"
+      ],
+      "building_ai_agents": [
+        "Open Claw"
+      ],
+      "hermes_agent_setup": [
+        "Open Claw"
+      ],
+      "moonshot_kimiko_3_skill": [
+        "Open Weights Models",
+        "Open-Weight Models",
+        "Moonshot",
+        "Open Weights",
+        "Moonshot Kimiko 3",
+        "Kimiko 3"
+      ],
+      "building_ai_agents_with_loop": [
+        "Open Claw"
+      ]
+    },
+    "moonshot_kimiko_3": {
+      "moonshot_kimiko_automation": [
+        "Open Weights Models",
+        "Open-Weight Models",
+        "Moonshot",
+        "Open Weights",
+        "Moonshot Kimiko 3",
+        "Kimiko 3"
+      ],
+      "building_ai_agents": [
+        "Open Claw"
+      ],
+      "hermes_agent_setup": [
+        "Open Claw"
+      ],
+      "moonshot_kimiko_3_skill": [
+        "Open Weights Models",
+        "Open-Weight Models",
+        "Moonshot",
+        "Open Weights",
+        "Moonshot Kimiko 3",
+        "Kimiko 3"
+      ],
+      "building_ai_agents_with_loop": [
+        "Open Claw"
+      ]
+    },
+    "higsfield_integration": {
+      "building_ai_agents": [
+        "Claude"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "Gemini"
+      ],
+      "incremental_code_review": [
+        "MCP"
+      ],
+      "mastering_loop_engineering": [
+        "Claude"
+      ],
+      "hermes_agent_setup": [
+        "Claude"
+      ],
+      "building_ai_agents_with_loop": [
+        "Claude"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Claude"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude"
+      ],
+      "new_claude_opus_5_leaks": [
+        "Claude"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude",
+        "Gemini"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude"
+      ],
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "Claude"
+      ]
+    },
+    "pydantic_ai_framework": {
+      "building_ai_agents_with_langchain": [
+        "LangChain"
+      ],
+      "building_resilient_ai_agents_with_langgraph": [
+        "LangChain"
+      ],
+      "openai_agents_sdk": [
+        "LangChain"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "Transformers"
+      ],
+      "swanlab_ai_training_analysis_platform": [
+        "Transformers"
+      ]
+    },
+    "ragaai_catalyst": {},
+    "hermes_agent_setup": {
+      "building_ai_agents": [
+        "Integration",
+        "Claude",
+        "Personalization",
+        "Automation",
+        "Hermes Agent",
+        "Open Claw"
+      ],
+      "building_resilient_ai_agents_with_langgraph": [
+        "Human-in-the-loop"
+      ],
+      "mastering_loop_engineering": [
+        "Claude"
+      ],
+      "moonshot_kimiko_automation": [
+        "Open Claw"
+      ],
+      "moonshot_kimiko_3": [
+        "Open Claw"
+      ],
+      "higsfield_integration": [
+        "Claude"
+      ],
+      "moonshot_kimiko_3_skill": [
+        "Open Claw"
+      ],
+      "microsoft_mcp_curriculum": [
+        "Discord"
+      ],
+      "building_ai_agents_with_loop": [
+        "Claude",
+        "Integration",
+        "Open Claw",
+        "Automation",
+        "RackNerd",
+        "Hermes Agent"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Claude"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude"
+      ],
+      "new_claude_opus_5_leaks": [
+        "Claude"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude"
+      ],
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "Claude"
+      ]
+    },
+    "ragflow_deployment": {
+      "astrbot_deployment": [
+        "Docker",
+        "Docker Compose",
+        "uv"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "Docker"
+      ],
+      "lightrag_deployment": [
+        "uv",
+        "Docker Compose",
+        "Docker"
+      ],
+      "deploying_retrieval_augmented_generation_with_ragflow": [
+        "Elasticsearch",
+        "Docker Compose",
+        "RAGFlow",
+        "uv",
+        "Infinity",
+        "Docker"
+      ],
+      "graphrag_deployment": [
+        "Retrieval-Augmented Generation",
+        "Docker Compose",
+        "Docker"
+      ],
+      "superagi_building_autonomous_agents": [
+        "Docker",
+        "Agent Capabilities"
+      ]
+    },
+    "lightrag_deployment": {
+      "astrbot_deployment": [
+        "uv",
+        "Docker Compose",
+        "Docker"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "Docker"
+      ],
+      "ragflow_deployment": [
+        "uv",
+        "Docker Compose",
+        "Docker"
+      ],
+      "deploying_retrieval_augmented_generation_with_ragflow": [
+        "Retrieval-Augmented Generation (RAG)",
+        "Docker Compose",
+        "pip",
+        "uv",
+        "Docker"
+      ],
+      "graphrag_deployment": [
+        "Docker Compose",
+        "Docker"
+      ],
+      "superagi_building_autonomous_agents": [
+        "Docker"
+      ]
+    },
+    "moonshot_kimiko_3_skill": {
+      "building_ai_agents": [
+        "Open Claw"
+      ],
+      "moonshot_kimiko_automation": [
+        "Open Weights Models",
+        "Open-Weight Models",
+        "Moonshot",
+        "Open Weights",
+        "Moonshot Kimiko 3",
+        "Kimiko 3"
+      ],
+      "moonshot_kimiko_3": [
+        "Open Weights Models",
+        "Open-Weight Models",
+        "Moonshot",
+        "Open Weights",
+        "Moonshot Kimiko 3",
+        "Kimiko 3"
+      ],
+      "hermes_agent_setup": [
+        "Open Claw"
+      ],
+      "building_ai_agents_with_loop": [
+        "Open Claw"
+      ]
+    },
+    "deploying_retrieval_augmented_generation_with_ragflow": {
+      "building_ai_agents_with_langchain": [
+        "Large Language Models (LLMs)"
+      ],
+      "astrbot_deployment": [
+        "uv",
+        "Docker Compose",
+        "Docker"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "Docker"
+      ],
+      "ragflow_deployment": [
+        "Elasticsearch",
+        "Docker Compose",
+        "RAGFlow",
+        "uv",
+        "Infinity",
+        "Docker"
+      ],
+      "lightrag_deployment": [
+        "Retrieval-Augmented Generation (RAG)",
+        "Docker Compose",
+        "pip",
+        "uv",
+        "Docker"
+      ],
+      "graphrag_deployment": [
+        "Docker Compose",
+        "Docker"
+      ],
+      "superagi_building_autonomous_agents": [
+        "Docker"
+      ],
+      "testing_and_comparing_llms": [
+        "Large Language Models (LLMs)"
+      ]
+    },
+    "graphrag_deployment": {
+      "building_ai_agents": [
+        "LLMs"
+      ],
+      "astrbot_deployment": [
+        "LLMs",
+        "Docker Compose",
+        "Docker"
+      ],
+      "openai_agents_sdk": [
+        "LLMs"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "Docker",
+        "LLM"
+      ],
+      "ragflow_deployment": [
+        "Retrieval-Augmented Generation",
+        "Docker Compose",
+        "Docker"
+      ],
+      "lightrag_deployment": [
+        "Docker Compose",
+        "Docker"
+      ],
+      "deploying_retrieval_augmented_generation_with_ragflow": [
+        "Docker Compose",
+        "Docker"
+      ],
+      "superagi_building_autonomous_agents": [
+        "Docker"
+      ]
+    },
+    "superagi_building_autonomous_agents": {
+      "astrbot_deployment": [
+        "Docker"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "Docker"
+      ],
+      "ragflow_deployment": [
+        "Docker",
+        "Agent Capabilities"
+      ],
+      "lightrag_deployment": [
+        "Docker"
+      ],
+      "deploying_retrieval_augmented_generation_with_ragflow": [
+        "Docker"
+      ],
+      "graphrag_deployment": [
+        "Docker"
+      ]
+    },
+    "microsoft_mcp_curriculum": {
+      "openai_agents_sdk": [
+        "Git"
+      ],
+      "hermes_agent_setup": [
+        "Discord"
+      ],
+      "building_ai_agents_with_loop": [
+        "Discord"
+      ],
+      "testing_and_comparing_llms": [
+        "GitHub"
+      ]
+    },
+    "chrome_mcp_server": {},
+    "building_ai_agents_with_loop": {
+      "building_ai_agents": [
+        "Claude",
+        "Integration",
+        "Open Claw",
+        "Automation",
+        "RackNerd",
+        "Hermes Agent"
+      ],
+      "mastering_loop_engineering": [
+        "Claude",
+        "Strategic Thinking",
+        "Fable 5",
+        "Loop Engineering",
+        "ChatGPT 5.6",
+        "Self-Correction"
+      ],
+      "moonshot_kimiko_automation": [
+        "Open Claw"
+      ],
+      "moonshot_kimiko_3": [
+        "Open Claw"
+      ],
+      "higsfield_integration": [
+        "Claude"
+      ],
+      "hermes_agent_setup": [
+        "Claude",
+        "Integration",
+        "Open Claw",
+        "Automation",
+        "RackNerd",
+        "Hermes Agent"
+      ],
+      "moonshot_kimiko_3_skill": [
+        "Open Claw"
+      ],
+      "microsoft_mcp_curriculum": [
+        "Discord"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Claude"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude"
+      ],
+      "new_claude_opus_5_leaks": [
+        "Claude"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude"
+      ],
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "Claude"
+      ]
+    },
+    "testing_and_comparing_llms": {
+      "building_ai_agents_with_langchain": [
+        "Large Language Models (LLMs)"
+      ],
+      "openai_agents_sdk": [
+        "LLMs (Large Language Models)"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "OpenAI",
+        "Anthropic"
+      ],
+      "deploying_retrieval_augmented_generation_with_ragflow": [
+        "Large Language Models (LLMs)"
+      ],
+      "microsoft_mcp_curriculum": [
+        "GitHub"
+      ],
+      "new_claude_update_is_insane": [
+        "Anthropic"
+      ],
+      "new_claude_opus_5_leaks": [
+        "Anthropic"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "OpenAI"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Anthropic"
+      ]
+    },
+    "new_hermes_agent_os_is_insane": {
+      "building_ai_agents": [
+        "Claude"
+      ],
+      "mastering_loop_engineering": [
+        "Claude"
+      ],
+      "higsfield_integration": [
+        "Claude"
+      ],
+      "hermes_agent_setup": [
+        "Claude"
+      ],
+      "building_ai_agents_with_loop": [
+        "Claude"
+      ],
+      "new_claude_update_is_insane": [
+        "every",
+        "Claude",
+        "already"
+      ],
+      "new_claude_opus_5_leaks": [
+        "profit",
+        "Claude",
+        "boardroom"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude",
+        "already"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude",
+        "agent"
+      ],
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "Claude"
+      ]
+    },
+    "new_claude_update_is_insane": {
+      "building_ai_agents": [
+        "Claude"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "Anthropic"
+      ],
+      "mastering_loop_engineering": [
+        "Claude"
+      ],
+      "higsfield_integration": [
+        "Claude"
+      ],
+      "hermes_agent_setup": [
+        "Claude"
+      ],
+      "building_ai_agents_with_loop": [
+        "Claude"
+      ],
+      "testing_and_comparing_llms": [
+        "Anthropic"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "every",
+        "Claude",
+        "already"
+      ],
+      "new_claude_opus_5_leaks": [
+        "Claude",
+        "anthropic",
+        "claude",
+        "Anthropic"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude",
+        "anthropic",
+        "already"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude",
+        "Anthropic"
+      ],
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "Claude",
+        "actually",
+        "something"
+      ]
+    },
+    "new_claude_opus_5_leaks": {
+      "building_ai_agents": [
+        "Claude"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "Anthropic"
+      ],
+      "mastering_loop_engineering": [
+        "Claude"
+      ],
+      "higsfield_integration": [
+        "Claude"
+      ],
+      "hermes_agent_setup": [
+        "Claude"
+      ],
+      "building_ai_agents_with_loop": [
+        "Claude"
+      ],
+      "testing_and_comparing_llms": [
+        "Anthropic"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "profit",
+        "Claude",
+        "boardroom"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude",
+        "anthropic",
+        "claude",
+        "Anthropic"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "model",
+        "Claude",
+        "anthropic"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude",
+        "Anthropic"
+      ],
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "Claude",
+        "here"
+      ]
+    },
+    "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": {
+      "building_ai_agents": [
+        "Claude"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "Gemini",
+        "OpenAI"
+      ],
+      "mastering_loop_engineering": [
+        "Claude"
+      ],
+      "higsfield_integration": [
+        "Claude",
+        "Gemini"
+      ],
+      "hermes_agent_setup": [
+        "Claude"
+      ],
+      "building_ai_agents_with_loop": [
+        "Claude"
+      ],
+      "testing_and_comparing_llms": [
+        "OpenAI"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Claude",
+        "already"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude",
+        "anthropic",
+        "already"
+      ],
+      "new_claude_opus_5_leaks": [
+        "model",
+        "Claude",
+        "anthropic"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude"
+      ],
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "Claude"
+      ]
+    },
+    "hermes_claude_code_mcp_integration_loop_engineerin": {
+      "building_ai_agents": [
+        "Claude"
+      ],
+      "openai_agents_sdk": [
+        "Python"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "Anthropic"
+      ],
+      "mastering_loop_engineering": [
+        "Claude"
+      ],
+      "higsfield_integration": [
+        "Claude"
+      ],
+      "hermes_agent_setup": [
+        "Claude"
+      ],
+      "building_ai_agents_with_loop": [
+        "Claude"
+      ],
+      "testing_and_comparing_llms": [
+        "Anthropic"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Claude",
+        "agent"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude",
+        "Anthropic"
+      ],
+      "new_claude_opus_5_leaks": [
+        "Claude",
+        "Anthropic"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
+      ],
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "Claude"
+      ]
+    },
+    "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
+      "building_ai_agents": [
+        "Claude"
+      ],
+      "mastering_loop_engineering": [
+        "Claude"
+      ],
+      "higsfield_integration": [
+        "Claude"
+      ],
+      "hermes_agent_setup": [
+        "Claude"
+      ],
+      "building_ai_agents_with_loop": [
+        "Claude"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Claude"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude",
+        "actually",
+        "something"
+      ],
+      "new_claude_opus_5_leaks": [
+        "Claude",
+        "here"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude"
+      ]
+    }
+  },
+  "updated_at": "2026-07-21T14:55:20.529987+00:00",
+  "total_skills": 32
+>>>>>>> Stashed changes
 }
