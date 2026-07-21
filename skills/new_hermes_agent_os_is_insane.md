@@ -1,21 +1,4 @@
-# New Hermes Agent OS is INSANE!
-
-> ⚠️ **Auto-extracted draft** — pending AI enhancement for full quality.
-
-By Julian Goldie SEO. Key tools: Claude. (Auto-extracted — pending AI enhancement.)
-
-## Steps
-
-- Watch the full video for step-by-step instructions.
-
-## Tools & Technologies
-
-Claude
-
-## Source
-
-- **Video**: [New Hermes Agent OS is INSANE!](https://www.youtube.com/watch?v=NMcfnZcMjSU)
-- **Video ID**: `NMcfnZcMjSU`
+This skill details the advanced capabilities of the New Hermes Agent OS, which utilizes over 30 AI agents working in parallel. The system emphasizes the shift from single-agent interaction to a multi-agent system with specialized roles like radar, outreach, and SEO, managed through a shared memory vault for seamless operation and continuous learning. It showcases how to leverage multiple AI agents simultaneously for tasks like news monitoring, outreach, content creation, and memory management, enhancing productivity and automation.
 
 ## Sources
 
