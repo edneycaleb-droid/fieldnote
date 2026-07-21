@@ -868,11 +868,29 @@
       "skills": [
         "hermes_agent_full_course_setup_guide_for_complete_"
       ]
+    },
+    "latent demand": {
+      "freq": 1,
+      "skills": [
+        "this_ai_business_model_is_creating_new_millionaire"
+      ]
+    },
+    "market gap": {
+      "freq": 1,
+      "skills": [
+        "this_ai_business_model_is_creating_new_millionaire"
+      ]
+    },
+    "AI-powered product development": {
+      "freq": 1,
+      "skills": [
+        "this_ai_business_model_is_creating_new_millionaire"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 34,
+      "freq": 35,
       "skills": [
         "new_claude_opus_5_leaks",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
@@ -894,7 +912,7 @@
       ]
     },
     "Anthropic": {
-      "freq": 25,
+      "freq": 26,
       "skills": [
         "new_claude_opus_5_leaks",
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
@@ -964,7 +982,7 @@
       ]
     },
     "OpenAI": {
-      "freq": 23,
+      "freq": 24,
       "skills": [
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
@@ -976,7 +994,8 @@
         "new_hermes_agent_os_is_insane",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "hermes_agent_full_course_setup_guide_for_complete_",
-        "you_need_to_use_hermes_right_now_goodbye_openclaw"
+        "you_need_to_use_hermes_right_now_goodbye_openclaw",
+        "this_ai_business_model_is_creating_new_millionaire"
       ]
     },
     "Ollama": {
@@ -1747,30 +1766,22 @@
     },
     "this_ai_business_model_is_creating_new_millionaire": {
       "concepts": [
-        "people",
-        "product",
-        "most",
-        "build",
-        "completely",
-        "first",
-        "time",
-        "niche",
-        "music",
-        "selling"
+        "latent demand",
+        "market gap",
+        "AI-powered product development"
       ],
       "tools": [
+        "Claude",
         "Anthropic",
-        "Claude"
+        "OpenAI"
       ],
       "tags": [
-        "people",
-        "product",
-        "most",
-        "build",
-        "completely",
-        "first"
+        "ai",
+        "business",
+        "model",
+        "creation"
       ],
-      "step_count": 1
+      "step_count": 3
     }
   },
   "relationships": {
@@ -1847,8 +1858,7 @@
       ],
       "this_ai_business_model_is_creating_new_millionaire": [
         "Claude",
-        "Anthropic",
-        "people"
+        "Anthropic"
       ],
       "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
         "Claude",
@@ -2094,6 +2104,7 @@
         "Anthropic"
       ],
       "this_ai_business_model_is_creating_new_millionaire": [
+        "OpenAI",
         "Anthropic"
       ],
       "you_need_to_use_hermes_right_now_goodbye_openclaw": [
@@ -2326,6 +2337,7 @@
         "Gemini"
       ],
       "this_ai_business_model_is_creating_new_millionaire": [
+        "OpenAI",
         "Claude"
       ],
       "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
@@ -2413,6 +2425,9 @@
       "you_need_to_use_hermes_right_now_goodbye_openclaw": [
         "OpenAI",
         "about"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "OpenAI"
       ]
     },
     "yes_the_kimi_k3_hype_is_real": {
@@ -2499,6 +2514,7 @@
         "here"
       ],
       "this_ai_business_model_is_creating_new_millionaire": [
+        "OpenAI",
         "Claude",
         "Anthropic"
       ],
@@ -2616,6 +2632,7 @@
         "agent"
       ],
       "this_ai_business_model_is_creating_new_millionaire": [
+        "OpenAI",
         "Claude",
         "Anthropic"
       ],
@@ -2778,6 +2795,9 @@
       ],
       "you_need_to_use_hermes_right_now_goodbye_openclaw": [
         "OpenAI"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "OpenAI"
       ]
     },
     "i_tested_kimi_k3_so_you_don_t_have_to": {
@@ -2883,6 +2903,7 @@
         "Gemini"
       ],
       "this_ai_business_model_is_creating_new_millionaire": [
+        "OpenAI",
         "Claude",
         "Anthropic"
       ],
@@ -3002,6 +3023,7 @@
         "hermes"
       ],
       "this_ai_business_model_is_creating_new_millionaire": [
+        "OpenAI",
         "Claude"
       ]
     },
@@ -3159,9 +3181,9 @@
         "about"
       ],
       "this_ai_business_model_is_creating_new_millionaire": [
+        "OpenAI",
         "Claude",
-        "Anthropic",
-        "music"
+        "Anthropic"
       ],
       "you_need_to_use_hermes_right_now_goodbye_openclaw": [
         "OpenAI",
@@ -3480,6 +3502,7 @@
         "Anthropic"
       ],
       "this_ai_business_model_is_creating_new_millionaire": [
+        "OpenAI",
         "Claude",
         "Anthropic"
       ],
@@ -3503,8 +3526,7 @@
     "this_ai_business_model_is_creating_new_millionaire": {
       "new_claude_opus_5_leaks": [
         "Claude",
-        "Anthropic",
-        "people"
+        "Anthropic"
       ],
       "100_hours_of_hermes_agent_lessons_in_19_minutes": [
         "Claude"
@@ -3513,6 +3535,7 @@
         "Claude"
       ],
       "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "OpenAI",
         "Anthropic"
       ],
       "kimi_k3_vs_claude_fable_5_raw_results": [
@@ -3520,13 +3543,16 @@
         "Anthropic"
       ],
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "OpenAI",
         "Claude"
       ],
       "yes_the_kimi_k3_hype_is_real": [
+        "OpenAI",
         "Claude",
         "Anthropic"
       ],
       "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "OpenAI",
         "Claude",
         "Anthropic"
       ],
@@ -3535,6 +3561,7 @@
         "Anthropic"
       ],
       "china_just_beat_claude_ai_kimi_k3": [
+        "OpenAI",
         "Claude",
         "Anthropic"
       ],
@@ -3549,6 +3576,7 @@
         "Anthropic"
       ],
       "hermes_agent_full_course_setup_guide_for_complete_": [
+        "OpenAI",
         "Claude",
         "Anthropic"
       ],
@@ -3556,15 +3584,22 @@
         "Claude"
       ],
       "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "OpenAI",
         "Claude",
-        "Anthropic",
-        "music"
+        "Anthropic"
       ],
       "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "OpenAI",
         "Claude"
+      ],
+      "by_august_we_ll_have_frontier_ai_running_locally": [
+        "OpenAI"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "OpenAI"
       ]
     }
   },
-  "updated_at": "2026-07-21T14:52:23.728412+00:00",
+  "updated_at": "2026-07-21T14:52:25.621532+00:00",
   "total_skills": 22
 }
