@@ -285,31 +285,57 @@ def _enrich_one(item: dict) -> None:
     if skill is None:
         raise RuntimeError(f"Both lenses returned None for {full_name}")
 
-    # Save upgraded skill
-    skill_name, action = gd._save_discovered_skill(skill, repo, index)
-    index = _a.load_index()
-
-    # Sync to GitHub
+    # Save upgraded skill + update discovery log — both wrapped together so a
+    # mid-run failure (e.g. disk write error) keeps _baseline=True in the index
+    # and records the error in the discovery log for the next retry.
     try:
-        import agents.github_sync as gs
-        gs.sync_skill(skill_name, _a.SKILLS_DIR, index)
-    except Exception as e:
-        log.warning("GitHub sync failed for enriched skill %s: %s", skill_name, e)
+        skill_name, action = gd._save_discovered_skill(skill, repo, index)
+        index = _a.load_index()
 
-    # Update discovery log
-    disc_log = gd.load_discovery_log()
-    existing = disc_log.get(full_name, {})
-    disc_log[full_name] = {
-        **existing,
-        "processed_at":       _now_iso(),
-        "skill_name":         skill_name,
-        "action":             "enriched",
-        "enrichment_queued":  False,
-        "enriched_at":        _now_iso(),
-        "_baseline":          False,
-    }
-    gd.save_discovery_log(disc_log)
-    log.info("Enrichment: upgraded %s → '%s' (%s)", full_name, skill_name, action)
+        # Sync to GitHub (non-fatal)
+        try:
+            import agents.github_sync as gs
+            gs.sync_skill(skill_name, _a.SKILLS_DIR, index)
+        except Exception as e:
+            log.warning("GitHub sync failed for enriched skill %s: %s", skill_name, e)
+
+        # Update discovery log to mark baseline cleared
+        disc_log = gd.load_discovery_log()
+        existing = disc_log.get(full_name, {})
+        disc_log[full_name] = {
+            **existing,
+            "processed_at":       _now_iso(),
+            "skill_name":         skill_name,
+            "action":             "enriched",
+            "enrichment_queued":  False,
+            "enriched_at":        _now_iso(),
+            "_baseline":          False,
+        }
+        gd.save_discovery_log(disc_log)
+        log.info("Enrichment: upgraded %s → '%s' (%s)", full_name, skill_name, action)
+
+    except Exception as save_exc:
+        # The save or log-update failed after AI extraction succeeded.
+        # _baseline remains True in the index (the skill write was incomplete).
+        # Record the attempt in the discovery log so future retries have context,
+        # then re-raise so enrich_backlog() calls mark_failed with backoff.
+        reason = f"save_or_log_failed: {save_exc}"
+        log.warning("Enrichment save/log failed for %s: %s", full_name, save_exc)
+        try:
+            disc_log = gd.load_discovery_log()
+            existing = disc_log.get(full_name, {})
+            disc_log[full_name] = {
+                **existing,
+                "_last_save_error":    str(save_exc)[:200],
+                "_last_save_error_at": _now_iso(),
+            }
+            gd.save_discovery_log(disc_log)
+        except Exception as log_exc:
+            log.warning(
+                "Could not update discovery log after save failure for %s: %s",
+                full_name, log_exc,
+            )
+        raise RuntimeError(reason) from save_exc
 
 
 # ── Time helpers ───────────────────────────────────────────────────────────────
