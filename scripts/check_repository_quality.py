@@ -55,6 +55,9 @@ def main() -> int:
         "safe_workflow": has(
             ".github/workflows/repository-quality.yml",
             "permissions:\n  contents: read",
+            '- "README.md"',
+            '- "skills/**"',
+            '- "_brain.json"',
             "timeout-minutes: 5",
             "persist-credentials: false",
             "workflow_dispatch:",
