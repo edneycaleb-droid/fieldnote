@@ -1436,13 +1436,20 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
 
 .integ-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 @media (max-width: 700px) { .integ-grid { grid-template-columns: 1fr; } }
+/* Grid items must declare min-width:0 so they can shrink inside their
+   column — without this, long content (button labels, keys) expands the
+   card beyond the grid track width, causing horizontal body overflow. */
+.integ-card { min-width: 0; }
 
 /* ── MCP Hub: mobile touch-target & layout fixes (≤ 480px) ──────── */
 @media (max-width: 480px) {
-  /* Category chip row: bigger tap targets, allow horizontal scroll as fallback */
+  /* Category chip row: bigger tap targets, allow horizontal scroll as fallback.
+     width:100% + min-width:0 prevent the row from driving body-scroll width;
+     overflow-x:auto creates the internal scroll without leaking to the page. */
   .hub-chips {
     overflow-x: auto; -webkit-overflow-scrolling: touch;
     flex-wrap: nowrap; padding-bottom: 4px;
+    width: 100%; min-width: 0;
   }
   .hub-chip {
     padding: 9px 14px; font-size: .73rem; white-space: nowrap; flex-shrink: 0;
@@ -1477,6 +1484,7 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
   background: var(--surface); border: 1px solid var(--border);
   border-radius: 14px; padding: 14px 16px; display: flex;
   flex-direction: column; gap: 10px; transition: border-color .2s;
+  min-width: 0; overflow: hidden;
 }
 .integ-card.ic-connected { border-color: #1a4a2a; }
 .integ-card.ic-error     { border-color: #5c1a1a; }
@@ -1522,7 +1530,7 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
 /* Key row */
 .ic-key-row { display: flex; gap: 6px; align-items: center; }
 .ic-key-input {
-  flex: 1; background: var(--bg); border: 1px solid var(--border2);
+  flex: 1; min-width: 0; background: var(--bg); border: 1px solid var(--border2);
   border-radius: 8px; padding: 7px 10px; color: var(--text);
   font-size: .72rem; font-family: monospace; outline: none;
   transition: border-color .15s;
