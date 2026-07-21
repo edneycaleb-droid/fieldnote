@@ -1,0 +1,48 @@
+name: Bug report
+description: Report a reproducible Fieldnote defect without secrets or private content.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Do not include tokens, cookies, private transcripts, personal knowledge, or unredacted logs.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What failed and what should have happened?
+    validations:
+      required: true
+  - type: dropdown
+    id: stage
+    attributes:
+      label: Pipeline stage
+      options:
+        - Ingestion or transcription
+        - Extraction or validation
+        - Provider routing
+        - Discovery or enrichment
+        - Scheduling or synchronization
+        - Flask UI or MCP interface
+        - Generated skill or knowledge index
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Minimal redacted reproduction
+      description: Include the commit and safe steps or fixture needed to reproduce the defect.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Executed checks and redacted evidence
+      description: State what actually ran, what was skipped, and any sanitized error output.
+  - type: checkboxes
+    id: confirmation
+    attributes:
+      label: Confirmation
+      options:
+        - label: I removed secrets, private content, and identifying account data.
+          required: true

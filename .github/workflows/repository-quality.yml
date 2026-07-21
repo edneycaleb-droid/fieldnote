@@ -1,0 +1,36 @@
+name: Repository Quality
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/**"
+      - "scripts/check_repository_quality.py"
+      - "pyproject.toml"
+      - "STATUS.md"
+      - "CONTRIBUTING.md"
+      - "SECURITY.md"
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: repository-quality-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out without persisted credentials
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Run deterministic offline quality gate
+        run: python3 -I scripts/check_repository_quality.py
+      - name: Compile Python sources
+        run: python3 -m compileall -q agents fieldnote_mcp app.py main.py

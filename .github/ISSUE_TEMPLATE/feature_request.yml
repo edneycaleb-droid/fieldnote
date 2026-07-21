@@ -1,0 +1,37 @@
+name: Feature request
+description: Propose a bounded improvement to Fieldnote.
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Desired outcome
+      description: Describe the user-visible result and the pipeline stage it improves.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence or motivation
+      description: Link the source, failure, or observation supporting the change.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Include deterministic checks, provenance, rollback, and generated-output expectations.
+    validations:
+      required: true
+  - type: checkboxes
+    id: boundaries
+    attributes:
+      label: Boundaries
+      options:
+        - label: The basic workflow remains free-first or local-first.
+          required: true
+        - label: External content gains no automatic execution authority.
+          required: true
+        - label: No secret or private content is included.
+          required: true
