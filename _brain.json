@@ -41,12 +41,13 @@
       ]
     },
     "claude": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "new_claude_opus_5_leaks",
         "new_claude_update_is_insane",
         "china_just_beat_claude_ai_kimi_k3",
-        "fastapi_mcp"
+        "fastapi_mcp",
+        "griptape"
       ]
     },
     "here": {
@@ -76,11 +77,12 @@
       ]
     },
     "anthropic": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "new_claude_opus_5_leaks",
         "new_claude_update_is_insane",
-        "china_just_beat_claude_ai_kimi_k3"
+        "china_just_beat_claude_ai_kimi_k3",
+        "griptape"
       ]
     },
     "hermes": {
@@ -1145,11 +1147,12 @@
       ]
     },
     "agentic-ai": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "dify",
         "ragflow",
-        "agentic_rag_for_dummies"
+        "agentic_rag_for_dummies",
+        "forge"
       ]
     },
     "agentic-framework": {
@@ -1159,13 +1162,14 @@
       ]
     },
     "agentic-workflow": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "dify"
+        "dify",
+        "forge"
       ]
     },
     "ai": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "dify",
         "ragflow",
@@ -1174,7 +1178,8 @@
         "mcp_go",
         "mcp_agent",
         "registry",
-        "awesome_mcp_servers"
+        "awesome_mcp_servers",
+        "griptape"
       ]
     },
     "AI workflow management": {
@@ -1323,9 +1328,10 @@
       ]
     },
     "Large Language Models (LLMs)": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "ragflow_self_hosting_guide"
+        "ragflow_self_hosting_guide",
+        "griptape_framework"
       ]
     },
     "LLM Apps": {
@@ -1360,11 +1366,12 @@
       ]
     },
     "gpt": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "lightrag",
         "graphrag",
-        "rag_techniques"
+        "rag_techniques",
+        "griptape"
       ]
     },
     "gpt-4": {
@@ -1388,11 +1395,12 @@
       ]
     },
     "Retrieval-Augmented Generation": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "lightrag_setup",
         "graphrag_system",
-        "advanced_retrieval_augmented_generation"
+        "advanced_retrieval_augmented_generation",
+        "agentic_rag_for_dummies"
       ]
     },
     "Knowledge Graph": {
@@ -1467,10 +1475,11 @@
       ]
     },
     "Retrieval-Augmented Generation (RAG)": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "advanced_retrieval_augmented_generation",
-        "r2r"
+        "r2r",
+        "griptape_framework"
       ]
     },
     "RAG Prototypes": {
@@ -1624,10 +1633,11 @@
       ]
     },
     "Model Context Protocol": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "fastapi_mcp_integration",
-        "mcp_server_implementations"
+        "mcp_server_implementations",
+        "xcodebuildmcp_installation"
       ]
     },
     "Authentication": {
@@ -1662,10 +1672,11 @@
       ]
     },
     "agents": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "mcp_agent",
-        "agentic_rag_for_dummies"
+        "agentic_rag_for_dummies",
+        "forge"
       ]
     },
     "ai-agents": {
@@ -1774,9 +1785,10 @@
       ]
     },
     "Agentic RAG": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "r2r"
+        "r2r",
+        "agentic_rag_for_dummies"
       ]
     },
     "Deep Research API": {
@@ -1786,9 +1798,10 @@
       ]
     },
     "Hybrid Search": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "r2r"
+        "r2r",
+        "agentic_rag_for_dummies"
       ]
     },
     "Knowledge Graphs": {
@@ -2074,11 +2087,347 @@
       "skills": [
         "mcp_server_implementations"
       ]
+    },
+    "LangGraph": {
+      "freq": 1,
+      "skills": [
+        "agentic_rag_for_dummies"
+      ]
+    },
+    "Hierarchical Indexing": {
+      "freq": 1,
+      "skills": [
+        "agentic_rag_for_dummies"
+      ]
+    },
+    "Parent Chunks": {
+      "freq": 1,
+      "skills": [
+        "agentic_rag_for_dummies"
+      ]
+    },
+    "Child Chunks": {
+      "freq": 1,
+      "skills": [
+        "agentic_rag_for_dummies"
+      ]
+    },
+    "Conversation Memory": {
+      "freq": 1,
+      "skills": [
+        "agentic_rag_for_dummies"
+      ]
+    },
+    "Query Clarification": {
+      "freq": 1,
+      "skills": [
+        "agentic_rag_for_dummies"
+      ]
+    },
+    "Agent Orchestration": {
+      "freq": 1,
+      "skills": [
+        "agentic_rag_for_dummies"
+      ]
+    },
+    "Multi-Agent Map-Reduce": {
+      "freq": 1,
+      "skills": [
+        "agentic_rag_for_dummies"
+      ]
+    },
+    "Self-Correction": {
+      "freq": 1,
+      "skills": [
+        "agentic_rag_for_dummies"
+      ]
+    },
+    "Context Compression": {
+      "freq": 1,
+      "skills": [
+        "agentic_rag_for_dummies"
+      ]
+    },
+    "Observability": {
+      "freq": 1,
+      "skills": [
+        "agentic_rag_for_dummies"
+      ]
+    },
+    "Evaluation": {
+      "freq": 1,
+      "skills": [
+        "agentic_rag_for_dummies"
+      ]
+    },
+    "Vector Database": {
+      "freq": 1,
+      "skills": [
+        "agentic_rag_for_dummies"
+      ]
+    },
+    "huggingface": {
+      "freq": 1,
+      "skills": [
+        "griptape"
+      ]
+    },
+    "Generative AI": {
+      "freq": 1,
+      "skills": [
+        "griptape_framework"
+      ]
+    },
+    "AI Agents": {
+      "freq": 1,
+      "skills": [
+        "griptape_framework"
+      ]
+    },
+    "AI Workflows": {
+      "freq": 1,
+      "skills": [
+        "griptape_framework"
+      ]
+    },
+    "Chain-of-Thought Reasoning": {
+      "freq": 1,
+      "skills": [
+        "griptape_framework"
+      ]
+    },
+    "Modular Frameworks": {
+      "freq": 1,
+      "skills": [
+        "griptape_framework"
+      ]
+    },
+    "Prompt Engineering": {
+      "freq": 1,
+      "skills": [
+        "griptape_framework"
+      ]
+    },
+    "Memory Management (Conversation, Task, Meta)": {
+      "freq": 1,
+      "skills": [
+        "griptape_framework"
+      ]
+    },
+    "Drivers (LLM, Storage, Web, Multimodal)": {
+      "freq": 1,
+      "skills": [
+        "griptape_framework"
+      ]
+    },
+    "Tools": {
+      "freq": 1,
+      "skills": [
+        "griptape_framework"
+      ]
+    },
+    "Engines (RAG, Extraction, Summary, Eval)": {
+      "freq": 1,
+      "skills": [
+        "griptape_framework"
+      ]
+    },
+    "Rulesets": {
+      "freq": 1,
+      "skills": [
+        "griptape_framework"
+      ]
+    },
+    "Artifacts": {
+      "freq": 1,
+      "skills": [
+        "griptape_framework"
+      ]
+    },
+    "Structured Output": {
+      "freq": 1,
+      "skills": [
+        "griptape_framework"
+      ]
+    },
+    "Workflows": {
+      "freq": 1,
+      "skills": [
+        "griptape_framework"
+      ]
+    },
+    "Pipelines": {
+      "freq": 1,
+      "skills": [
+        "griptape_framework"
+      ]
+    },
+    "Tasks": {
+      "freq": 1,
+      "skills": [
+        "griptape_framework"
+      ]
+    },
+    "Drivers": {
+      "freq": 1,
+      "skills": [
+        "griptape_framework"
+      ]
+    },
+    "Engines": {
+      "freq": 1,
+      "skills": [
+        "griptape_framework"
+      ]
+    },
+    "Memory (Conversation, Task, Meta)": {
+      "freq": 1,
+      "skills": [
+        "griptape_framework"
+      ]
+    },
+    "Modular Framework": {
+      "freq": 1,
+      "skills": [
+        "griptape_framework"
+      ]
+    },
+    "function-calling": {
+      "freq": 1,
+      "skills": [
+        "forge"
+      ]
+    },
+    "llama-cpp": {
+      "freq": 1,
+      "skills": [
+        "forge"
+      ]
+    },
+    "Self-hosted LLMs": {
+      "freq": 1,
+      "skills": [
+        "forge_llm_tool_calling_framework"
+      ]
+    },
+    "Tool-calling": {
+      "freq": 1,
+      "skills": [
+        "forge_llm_tool_calling_framework"
+      ]
+    },
+    "Agentic workflows": {
+      "freq": 1,
+      "skills": [
+        "forge_llm_tool_calling_framework"
+      ]
+    },
+    "Guardrails": {
+      "freq": 1,
+      "skills": [
+        "forge_llm_tool_calling_framework"
+      ]
+    },
+    "Proxy server": {
+      "freq": 1,
+      "skills": [
+        "forge_llm_tool_calling_framework"
+      ]
+    },
+    "WorkflowRunner": {
+      "freq": 1,
+      "skills": [
+        "forge_llm_tool_calling_framework"
+      ]
+    },
+    "Context management": {
+      "freq": 1,
+      "skills": [
+        "forge_llm_tool_calling_framework"
+      ]
+    },
+    "Response validation": {
+      "freq": 1,
+      "skills": [
+        "forge_llm_tool_calling_framework"
+      ]
+    },
+    "Rescue parsing": {
+      "freq": 1,
+      "skills": [
+        "forge_llm_tool_calling_framework"
+      ]
+    },
+    "Retry loop": {
+      "freq": 1,
+      "skills": [
+        "forge_llm_tool_calling_framework"
+      ]
+    },
+    "Synthetic tool injection": {
+      "freq": 1,
+      "skills": [
+        "forge_llm_tool_calling_framework"
+      ]
+    },
+    "Backend compatibility": {
+      "freq": 1,
+      "skills": [
+        "forge_llm_tool_calling_framework"
+      ]
+    },
+    "Agent use": {
+      "freq": 1,
+      "skills": [
+        "xcodebuildmcp_installation"
+      ]
+    },
+    "iOS development": {
+      "freq": 1,
+      "skills": [
+        "xcodebuildmcp_installation"
+      ]
+    },
+    "macOS development": {
+      "freq": 1,
+      "skills": [
+        "xcodebuildmcp_installation"
+      ]
+    },
+    "ai-native": {
+      "freq": 1,
+      "skills": [
+        "infinity"
+      ]
+    },
+    "approximate-nearest-neighbor-s": {
+      "freq": 1,
+      "skills": [
+        "infinity"
+      ]
+    },
+    "bm25": {
+      "freq": 1,
+      "skills": [
+        "infinity"
+      ]
+    },
+    "cpp20": {
+      "freq": 1,
+      "skills": [
+        "infinity"
+      ]
+    },
+    "cpp20-modules": {
+      "freq": 1,
+      "skills": [
+        "infinity"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 41,
+      "freq": 42,
       "skills": [
         "new_claude_opus_5_leaks",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
@@ -2097,11 +2446,12 @@
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
         "hermes_agent_full_course_setup_guide_for_complete_",
-        "fastapi_mcp_integration"
+        "fastapi_mcp_integration",
+        "griptape_framework"
       ]
     },
     "Anthropic": {
-      "freq": 28,
+      "freq": 29,
       "skills": [
         "new_claude_opus_5_leaks",
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
@@ -2113,7 +2463,8 @@
         "new_claude_update_is_insane",
         "hermes_agent_full_course_setup_guide_for_complete_",
         "this_ai_business_model_is_creating_new_millionaire",
-        "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
+        "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
+        "agentic_rag_for_dummies"
       ]
     },
     "Gemini": {
@@ -2138,7 +2489,7 @@
       ]
     },
     "Docker": {
-      "freq": 16,
+      "freq": 17,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -2149,7 +2500,8 @@
         "ragflow_self_hosting_guide",
         "lightrag_setup",
         "r2r",
-        "mcp_server_implementations"
+        "mcp_server_implementations",
+        "griptape_framework"
       ]
     },
     "bash": {
@@ -2161,7 +2513,7 @@
       ]
     },
     "Python": {
-      "freq": 17,
+      "freq": 18,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -2172,21 +2524,23 @@
         "lightrag",
         "graphrag",
         "graphrag_system",
-        "fastapi_mcp"
+        "fastapi_mcp",
+        "griptape_framework"
       ]
     },
     "LLM": {
-      "freq": 10,
+      "freq": 11,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "hermes_agent_full_course_setup_guide_for_complete_",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
-        "new_hermes_agent_os_is_insane"
+        "new_hermes_agent_os_is_insane",
+        "griptape_framework"
       ]
     },
     "OpenAI": {
-      "freq": 27,
+      "freq": 29,
       "skills": [
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
@@ -2199,23 +2553,28 @@
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "hermes_agent_full_course_setup_guide_for_complete_",
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
-        "this_ai_business_model_is_creating_new_millionaire"
+        "this_ai_business_model_is_creating_new_millionaire",
+        "agentic_rag_for_dummies",
+        "griptape_framework"
       ]
     },
     "Ollama": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
-        "kimi_k3_vs_claude_fable_5_raw_results"
+        "kimi_k3_vs_claude_fable_5_raw_results",
+        "agentic_rag_for_dummies"
       ]
     },
     "anthropic": {
-      "freq": 8,
+      "freq": 10,
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
         "mcp_agent",
         "r2r",
-        "agentic_rag_for_dummies"
+        "agentic_rag_for_dummies",
+        "griptape",
+        "forge"
       ]
     },
     "pip": {
@@ -2406,10 +2765,11 @@
       ]
     },
     "Hermes Agent": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "hermes_agent_full_course_setup_guide_for_complete_",
-        "new_hermes_agent_os_is_insane"
+        "new_hermes_agent_os_is_insane",
+        "griptape_framework"
       ]
     },
     "Virtual Private Server": {
@@ -2493,7 +2853,7 @@
       ]
     },
     "docker": {
-      "freq": 7,
+      "freq": 9,
       "skills": [
         "dify",
         "ragflow",
@@ -2501,7 +2861,9 @@
         "r2r",
         "registry",
         "mcp_registry_development_deployment",
-        "awesome_mcp_servers"
+        "awesome_mcp_servers",
+        "forge",
+        "infinity"
       ]
     },
     "postgresql": {
@@ -2521,14 +2883,16 @@
       ]
     },
     "openai": {
-      "freq": 6,
+      "freq": 8,
       "skills": [
         "dify",
         "ragflow",
         "rag_techniques",
         "mcp_agent",
         "r2r",
-        "agentic_rag_for_dummies"
+        "agentic_rag_for_dummies",
+        "griptape",
+        "forge"
       ]
     },
     "agent": {
@@ -2539,11 +2903,12 @@
       ]
     },
     "agentic-ai": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "dify",
         "ragflow",
-        "agentic_rag_for_dummies"
+        "agentic_rag_for_dummies",
+        "forge"
       ]
     },
     "agentic-framework": {
@@ -2553,9 +2918,10 @@
       ]
     },
     "agentic-workflow": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "dify"
+        "dify",
+        "forge"
       ]
     },
     "automation": {
@@ -2565,10 +2931,11 @@
       ]
     },
     "claude": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "dify",
-        "fastapi_mcp"
+        "fastapi_mcp",
+        "griptape"
       ]
     },
     "genai": {
@@ -2579,12 +2946,13 @@
       ]
     },
     "gpt": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "dify",
         "lightrag",
         "graphrag",
-        "rag_techniques"
+        "rag_techniques",
+        "griptape"
       ]
     },
     "Docker Compose": {
@@ -2650,10 +3018,11 @@
       ]
     },
     "huggingface": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "ragflow",
-        "agentic_rag_for_dummies"
+        "agentic_rag_for_dummies",
+        "griptape"
       ]
     },
     "elasticsearch": {
@@ -2776,10 +3145,11 @@
       ]
     },
     "ollama": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "lightrag",
-        "agentic_rag_for_dummies"
+        "agentic_rag_for_dummies",
+        "forge"
       ]
     },
     "gpt-4": {
@@ -2811,22 +3181,25 @@
       ]
     },
     "llm": {
-      "freq": 5,
+      "freq": 7,
       "skills": [
         "lightrag",
         "graphrag",
         "rag_techniques",
         "fastapi_mcp",
-        "mcp_agent"
+        "mcp_agent",
+        "griptape",
+        "forge"
       ]
     },
     "rag": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "lightrag",
         "graphrag",
         "rag_techniques",
-        "r2r"
+        "r2r",
+        "infinity"
       ]
     },
     "retrieval-augmented-generation": {
@@ -2915,10 +3288,11 @@
       ]
     },
     "langchain": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "rag_techniques",
-        "agentic_rag_for_dummies"
+        "agentic_rag_for_dummies",
+        "griptape"
       ]
     },
     "llama-index": {
@@ -2940,11 +3314,13 @@
       ]
     },
     "python": {
-      "freq": 3,
+      "freq": 5,
       "skills": [
         "rag_techniques",
         "mcp_agent",
-        "r2r"
+        "r2r",
+        "griptape",
+        "forge"
       ]
     },
     "semantic-search": {
@@ -2967,9 +3343,10 @@
       ]
     },
     "fastapi": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "fastapi_mcp"
+        "fastapi_mcp",
+        "griptape"
       ]
     },
     "authentication": {
@@ -2991,13 +3368,14 @@
       ]
     },
     "mcp": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "fastapi_mcp",
         "mcp_agent",
         "registry",
         "xcodebuildmcp",
-        "awesome_mcp_servers"
+        "awesome_mcp_servers",
+        "xcodebuildmcp_installation"
       ]
     },
     "mcp-server": {
@@ -3033,9 +3411,10 @@
       ]
     },
     "FastAPI": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "fastapi_mcp_integration"
+        "fastapi_mcp_integration",
+        "griptape_framework"
       ]
     },
     "MCP": {
@@ -3051,10 +3430,11 @@
       ]
     },
     "ray": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "mcp_go",
-        "awesome_mcp_servers"
+        "awesome_mcp_servers",
+        "forge"
       ]
     },
     "Go": {
@@ -3065,16 +3445,19 @@
       ]
     },
     "pydantic": {
-      "freq": 1,
+      "freq": 3,
       "skills": [
-        "mcp_agent"
+        "mcp_agent",
+        "griptape",
+        "forge"
       ]
     },
     "agents": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "mcp_agent",
-        "agentic_rag_for_dummies"
+        "agentic_rag_for_dummies",
+        "forge"
       ]
     },
     "model-context-protocol": {
@@ -3110,9 +3493,10 @@
       ]
     },
     "Workflow": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "mcp_agent_framework"
+        "mcp_agent_framework",
+        "forge_llm_tool_calling_framework"
       ]
     },
     "WorkflowResult": {
@@ -3212,9 +3596,10 @@
       ]
     },
     "xcode": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "xcodebuildmcp"
+        "xcodebuildmcp",
+        "xcodebuildmcp_installation"
       ]
     },
     "xcodebuild": {
@@ -3417,9 +3802,10 @@
       ]
     },
     "Qdrant": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "mcp_server_implementations"
+        "mcp_server_implementations",
+        "agentic_rag_for_dummies"
       ]
     },
     "MongoDB": {
@@ -3597,9 +3983,317 @@
       ]
     },
     "bm25": {
+      "freq": 2,
+      "skills": [
+        "agentic_rag_for_dummies",
+        "infinity"
+      ]
+    },
+    "LangGraph": {
       "freq": 1,
       "skills": [
         "agentic_rag_for_dummies"
+      ]
+    },
+    "Google Gemini": {
+      "freq": 1,
+      "skills": [
+        "agentic_rag_for_dummies"
+      ]
+    },
+    "LangChain": {
+      "freq": 2,
+      "skills": [
+        "agentic_rag_for_dummies",
+        "griptape_framework"
+      ]
+    },
+    "HuggingFaceEmbeddings": {
+      "freq": 1,
+      "skills": [
+        "agentic_rag_for_dummies"
+      ]
+    },
+    "FastEmbedSparse": {
+      "freq": 1,
+      "skills": [
+        "agentic_rag_for_dummies"
+      ]
+    },
+    "pymupdf": {
+      "freq": 1,
+      "skills": [
+        "agentic_rag_for_dummies"
+      ]
+    },
+    "pymupdf4llm": {
+      "freq": 1,
+      "skills": [
+        "agentic_rag_for_dummies"
+      ]
+    },
+    "Langfuse": {
+      "freq": 1,
+      "skills": [
+        "agentic_rag_for_dummies"
+      ]
+    },
+    "RAGAS": {
+      "freq": 1,
+      "skills": [
+        "agentic_rag_for_dummies"
+      ]
+    },
+    "crewai": {
+      "freq": 1,
+      "skills": [
+        "griptape"
+      ]
+    },
+    "CrewAI": {
+      "freq": 1,
+      "skills": [
+        "griptape_framework"
+      ]
+    },
+    "Pydantic": {
+      "freq": 1,
+      "skills": [
+        "griptape_framework"
+      ]
+    },
+    "Bash": {
+      "freq": 1,
+      "skills": [
+        "griptape_framework"
+      ]
+    },
+    "DuckDuckGo": {
+      "freq": 1,
+      "skills": [
+        "griptape_framework"
+      ]
+    },
+    "DuckDuckGoWebSearchDriver": {
+      "freq": 1,
+      "skills": [
+        "griptape_framework"
+      ]
+    },
+    "WebSearchTool": {
+      "freq": 1,
+      "skills": [
+        "griptape_framework"
+      ]
+    },
+    "WebScraperTool": {
+      "freq": 1,
+      "skills": [
+        "griptape_framework"
+      ]
+    },
+    "OpenAiChatPromptDriver": {
+      "freq": 1,
+      "skills": [
+        "griptape_framework"
+      ]
+    },
+    "StructureVisualizer": {
+      "freq": 1,
+      "skills": [
+        "griptape_framework"
+      ]
+    },
+    "vllm": {
+      "freq": 1,
+      "skills": [
+        "forge"
+      ]
+    },
+    "function-calling": {
+      "freq": 1,
+      "skills": [
+        "forge"
+      ]
+    },
+    "llama-cpp": {
+      "freq": 1,
+      "skills": [
+        "forge"
+      ]
+    },
+    "llamafile": {
+      "freq": 1,
+      "skills": [
+        "forge"
+      ]
+    },
+    "Forge": {
+      "freq": 1,
+      "skills": [
+        "forge_llm_tool_calling_framework"
+      ]
+    },
+    "WorkflowRunner": {
+      "freq": 1,
+      "skills": [
+        "forge_llm_tool_calling_framework"
+      ]
+    },
+    "ToolDef": {
+      "freq": 1,
+      "skills": [
+        "forge_llm_tool_calling_framework"
+      ]
+    },
+    "ToolSpec": {
+      "freq": 1,
+      "skills": [
+        "forge_llm_tool_calling_framework"
+      ]
+    },
+    "LlamafileClient": {
+      "freq": 1,
+      "skills": [
+        "forge_llm_tool_calling_framework"
+      ]
+    },
+    "ContextManager": {
+      "freq": 1,
+      "skills": [
+        "forge_llm_tool_calling_framework"
+      ]
+    },
+    "TieredCompact": {
+      "freq": 1,
+      "skills": [
+        "forge_llm_tool_calling_framework"
+      ]
+    },
+    "forge.proxy": {
+      "freq": 1,
+      "skills": [
+        "forge_llm_tool_calling_framework"
+      ]
+    },
+    "XcodeBuildMCP": {
+      "freq": 1,
+      "skills": [
+        "xcodebuildmcp_installation"
+      ]
+    },
+    "MCP server": {
+      "freq": 1,
+      "skills": [
+        "xcodebuildmcp_installation"
+      ]
+    },
+    "CLI": {
+      "freq": 1,
+      "skills": [
+        "xcodebuildmcp_installation"
+      ]
+    },
+    "MacOS": {
+      "freq": 1,
+      "skills": [
+        "xcodebuildmcp_installation"
+      ]
+    },
+    "Xcode": {
+      "freq": 1,
+      "skills": [
+        "xcodebuildmcp_installation"
+      ]
+    },
+    "Node.js": {
+      "freq": 1,
+      "skills": [
+        "xcodebuildmcp_installation"
+      ]
+    },
+    "xcodebuildmcp": {
+      "freq": 1,
+      "skills": [
+        "xcodebuildmcp_installation"
+      ]
+    },
+    "nodejs": {
+      "freq": 1,
+      "skills": [
+        "xcodebuildmcp_installation"
+      ]
+    },
+    "ai-native": {
+      "freq": 1,
+      "skills": [
+        "infinity"
+      ]
+    },
+    "approximate-nearest-neighbor-search": {
+      "freq": 1,
+      "skills": [
+        "infinity"
+      ]
+    },
+    "cpp20": {
+      "freq": 1,
+      "skills": [
+        "infinity"
+      ]
+    },
+    "cpp20-modules": {
+      "freq": 1,
+      "skills": [
+        "infinity"
+      ]
+    },
+    "embedding": {
+      "freq": 1,
+      "skills": [
+        "infinity"
+      ]
+    },
+    "full-text-search": {
+      "freq": 1,
+      "skills": [
+        "infinity"
+      ]
+    },
+    "hnsw": {
+      "freq": 1,
+      "skills": [
+        "infinity"
+      ]
+    },
+    "hybrid-search": {
+      "freq": 1,
+      "skills": [
+        "infinity"
+      ]
+    },
+    "information-retrival": {
+      "freq": 1,
+      "skills": [
+        "infinity"
+      ]
+    },
+    "multi-vector": {
+      "freq": 1,
+      "skills": [
+        "infinity"
+      ]
+    },
+    "nearest-neighbor-search": {
+      "freq": 1,
+      "skills": [
+        "infinity"
+      ]
+    },
+    "search-engine": {
+      "freq": 1,
+      "skills": [
+        "infinity"
       ]
     }
   },
@@ -4951,40 +5645,273 @@
     },
     "agentic_rag_for_dummies": {
       "concepts": [
-        "agent",
-        "agentic-ai",
-        "agentic-rag",
-        "agents",
-        "ai-agents"
+        "Agentic RAG",
+        "Retrieval-Augmented Generation",
+        "LangGraph",
+        "Hierarchical Indexing",
+        "Parent Chunks",
+        "Child Chunks",
+        "Conversation Memory",
+        "Query Clarification",
+        "Agent Orchestration",
+        "Multi-Agent Map-Reduce",
+        "Self-Correction",
+        "Context Compression",
+        "Observability",
+        "Evaluation",
+        "Hybrid Search",
+        "Vector Database"
       ],
       "tools": [
-        "anthropic",
-        "qdrant",
-        "langgraph",
-        "openai",
-        "langchain",
-        "huggingface",
-        "gemini",
-        "ollama",
-        "agent",
-        "agentic-ai",
-        "agentic-rag",
-        "agents",
-        "ai-agents",
-        "bm25",
-        "generative-ai"
+        "LangGraph",
+        "Ollama",
+        "Anthropic",
+        "OpenAI",
+        "Google Gemini",
+        "LangChain",
+        "Qdrant",
+        "HuggingFaceEmbeddings",
+        "FastEmbedSparse",
+        "pymupdf",
+        "pymupdf4llm",
+        "Langfuse",
+        "RAGAS"
       ],
       "tags": [
         "agent",
         "agentic-ai",
         "agentic-rag",
+        "rag",
+        "llm",
+        "langgraph"
+      ],
+      "step_count": 12
+    },
+    "griptape": {
+      "concepts": [
+        "ai",
+        "anthropic",
+        "claude",
+        "gpt",
+        "huggingface"
+      ],
+      "tools": [
+        "fastapi",
+        "crewai",
+        "pydantic",
+        "openai",
+        "langchain",
+        "anthropic",
+        "claude",
+        "gpt",
+        "huggingface",
+        "llm",
+        "python"
+      ],
+      "tags": [
+        "ai",
+        "anthropic",
+        "claude",
+        "gpt",
+        "huggingface",
+        "python",
+        "llm"
+      ],
+      "step_count": 8
+    },
+    "griptape_framework": {
+      "concepts": [
+        "Generative AI",
+        "Large Language Models (LLMs)",
+        "Retrieval-Augmented Generation (RAG)",
+        "AI Agents",
+        "AI Workflows",
+        "Chain-of-Thought Reasoning",
+        "Modular Frameworks",
+        "Prompt Engineering",
+        "Memory Management (Conversation, Task, Meta)",
+        "Drivers (LLM, Storage, Web, Multimodal)",
+        "Tools",
+        "Engines (RAG, Extraction, Summary, Eval)",
+        "Rulesets",
+        "Artifacts",
+        "Structured Output",
+        "Workflows",
+        "Pipelines",
+        "Tasks",
+        "Drivers",
+        "Engines",
+        "Memory (Conversation, Task, Meta)",
+        "Modular Framework"
+      ],
+      "tools": [
+        "FastAPI",
+        "CrewAI",
+        "Pydantic",
+        "OpenAI",
+        "LangChain",
+        "Claude",
+        "Docker",
+        "Bash",
+        "Python",
+        "Hermes Agent",
+        "DuckDuckGo",
+        "LLM",
+        "DuckDuckGoWebSearchDriver",
+        "WebSearchTool",
+        "WebScraperTool",
+        "OpenAiChatPromptDriver",
+        "StructureVisualizer"
+      ],
+      "tags": [
+        "ai",
+        "framework",
+        "python",
         "agents",
-        "ai-agents",
-        "jupyter notebook",
+        "workflows",
+        "llm"
+      ],
+      "step_count": 12
+    },
+    "forge": {
+      "concepts": [
+        "agentic-ai",
+        "agentic-workflow",
+        "agents",
+        "function-calling",
+        "llama-cpp"
+      ],
+      "tools": [
+        "anthropic",
+        "pydantic",
+        "openai",
+        "vllm",
+        "docker",
+        "ollama",
+        "ray",
+        "agentic-ai",
+        "agentic-workflow",
+        "agents",
+        "function-calling",
+        "llama-cpp",
+        "llamafile",
+        "llm",
+        "python"
+      ],
+      "tags": [
+        "agentic-ai",
+        "agentic-workflow",
+        "agents",
+        "function-calling",
+        "llama-cpp",
+        "python",
         "ai",
         "llm"
       ],
-      "step_count": 5
+      "step_count": 8
+    },
+    "forge_llm_tool_calling_framework": {
+      "concepts": [
+        "Self-hosted LLMs",
+        "Tool-calling",
+        "Agentic workflows",
+        "Guardrails",
+        "Proxy server",
+        "WorkflowRunner",
+        "Context management",
+        "Response validation",
+        "Rescue parsing",
+        "Retry loop",
+        "Synthetic tool injection",
+        "Backend compatibility"
+      ],
+      "tools": [
+        "Forge",
+        "WorkflowRunner",
+        "Workflow",
+        "ToolDef",
+        "ToolSpec",
+        "LlamafileClient",
+        "ContextManager",
+        "TieredCompact",
+        "forge.proxy"
+      ],
+      "tags": [
+        "llm",
+        "framework",
+        "python",
+        "agents",
+        "tool-calling"
+      ],
+      "step_count": 11
+    },
+    "xcodebuildmcp_installation": {
+      "concepts": [
+        "Agent use",
+        "iOS development",
+        "macOS development",
+        "Model Context Protocol"
+      ],
+      "tools": [
+        "XcodeBuildMCP",
+        "MCP server",
+        "CLI",
+        "MacOS",
+        "Xcode",
+        "Node.js",
+        "xcodebuildmcp",
+        "mcp",
+        "xcode",
+        "nodejs"
+      ],
+      "tags": [
+        "ios-development",
+        "macos-development",
+        "model-context-protocol",
+        "xcode",
+        "ios",
+        "macos",
+        "mcp",
+        "cli"
+      ],
+      "step_count": 12
+    },
+    "infinity": {
+      "concepts": [
+        "ai-native",
+        "approximate-nearest-neighbor-s",
+        "bm25",
+        "cpp20",
+        "cpp20-modules"
+      ],
+      "tools": [
+        "docker",
+        "ai-native",
+        "approximate-nearest-neighbor-search",
+        "bm25",
+        "cpp20",
+        "cpp20-modules",
+        "embedding",
+        "full-text-search",
+        "hnsw",
+        "hybrid-search",
+        "information-retrival",
+        "multi-vector",
+        "nearest-neighbor-search",
+        "rag",
+        "search-engine"
+      ],
+      "tags": [
+        "ai-native",
+        "approximate-nearest-neighbor-s",
+        "bm25",
+        "cpp20",
+        "cpp20-modules",
+        "c++",
+        "ai",
+        "llm"
+      ],
+      "step_count": 8
     }
   },
   "relationships": {
@@ -5089,6 +6016,16 @@
         "anthropic"
       ],
       "agentic_rag_for_dummies": [
+        "Anthropic"
+      ],
+      "griptape": [
+        "anthropic",
+        "claude"
+      ],
+      "griptape_framework": [
+        "Claude"
+      ],
+      "forge": [
         "anthropic"
       ]
     },
@@ -5182,6 +6119,9 @@
       ],
       "agentic_rag_for_dummies": [
         "agent"
+      ],
+      "griptape_framework": [
+        "Claude"
       ]
     },
     "hermes_agent_tutorial_for_beginners_full_step_by_s": {
@@ -5318,6 +6258,12 @@
       ],
       "agentic_rag_for_dummies": [
         "agent"
+      ],
+      "griptape_framework": [
+        "LLM",
+        "Python",
+        "Claude",
+        "Docker"
       ]
     },
     "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
@@ -5378,6 +6324,13 @@
       ],
       "i_tested_kimi_k3_so_you_don_t_have_to": [
         "AI models"
+      ],
+      "agentic_rag_for_dummies": [
+        "Anthropic",
+        "OpenAI"
+      ],
+      "griptape_framework": [
+        "OpenAI"
       ]
     },
     "kimi_k3_vs_claude_fable_5_raw_results": {
@@ -5626,6 +6579,16 @@
         "anthropic"
       ],
       "agentic_rag_for_dummies": [
+        "OpenAI"
+      ],
+      "griptape": [
+        "anthropic"
+      ],
+      "griptape_framework": [
+        "Claude",
+        "OpenAI"
+      ],
+      "forge": [
         "anthropic"
       ]
     },
@@ -5708,6 +6671,12 @@
         "about"
       ],
       "this_ai_business_model_is_creating_new_millionaire": [
+        "OpenAI"
+      ],
+      "agentic_rag_for_dummies": [
+        "OpenAI"
+      ],
+      "griptape_framework": [
         "OpenAI"
       ]
     },
@@ -5816,6 +6785,14 @@
       ],
       "fastapi_mcp_integration": [
         "Claude"
+      ],
+      "agentic_rag_for_dummies": [
+        "Anthropic",
+        "OpenAI"
+      ],
+      "griptape_framework": [
+        "Claude",
+        "OpenAI"
       ]
     },
     "this_100_self_improving_ai_agent_is_insane_just_wa": {
@@ -5972,7 +6949,14 @@
         "Git"
       ],
       "agentic_rag_for_dummies": [
-        "agent"
+        "Anthropic",
+        "OpenAI"
+      ],
+      "griptape_framework": [
+        "Python",
+        "Claude",
+        "OpenAI",
+        "Docker"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -6075,7 +7059,11 @@
         "Claude"
       ],
       "agentic_rag_for_dummies": [
-        "agent"
+        "Anthropic"
+      ],
+      "griptape_framework": [
+        "Python",
+        "Claude"
       ]
     },
     "new_hermes_paperclip_ai_agent_update_is_insane": {
@@ -6144,6 +7132,12 @@
         "OpenAI"
       ],
       "this_ai_business_model_is_creating_new_millionaire": [
+        "OpenAI"
+      ],
+      "agentic_rag_for_dummies": [
+        "OpenAI"
+      ],
+      "griptape_framework": [
         "OpenAI"
       ]
     },
@@ -6279,6 +7273,18 @@
         "anthropic"
       ],
       "agentic_rag_for_dummies": [
+        "Anthropic",
+        "OpenAI"
+      ],
+      "griptape": [
+        "anthropic",
+        "claude"
+      ],
+      "griptape_framework": [
+        "Claude",
+        "OpenAI"
+      ],
+      "forge": [
         "anthropic"
       ]
     },
@@ -6430,8 +7436,20 @@
         "Docker"
       ],
       "agentic_rag_for_dummies": [
-        "anthropic",
-        "agent"
+        "OpenAI"
+      ],
+      "griptape": [
+        "anthropic"
+      ],
+      "griptape_framework": [
+        "Claude",
+        "OpenAI",
+        "LLM",
+        "Python",
+        "Docker"
+      ],
+      "forge": [
+        "anthropic"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -6556,6 +7574,17 @@
       ],
       "mcp_server_implementations": [
         "Docker"
+      ],
+      "agentic_rag_for_dummies": [
+        "OpenAI"
+      ],
+      "griptape_framework": [
+        "Claude",
+        "OpenAI",
+        "LLM",
+        "Python",
+        "Hermes Agent",
+        "Docker"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -6671,6 +7700,18 @@
         "LLM"
       ],
       "agentic_rag_for_dummies": [
+        "Anthropic",
+        "OpenAI"
+      ],
+      "griptape": [
+        "openai"
+      ],
+      "griptape_framework": [
+        "LLM",
+        "Claude",
+        "OpenAI"
+      ],
+      "forge": [
         "openai"
       ]
     },
@@ -6752,6 +7793,9 @@
       ],
       "fastapi_mcp_integration": [
         "Claude"
+      ],
+      "griptape_framework": [
+        "Claude"
       ]
     },
     "every_hermes_concept_explained_for_normal_people": {
@@ -6808,6 +7852,9 @@
         "memory"
       ],
       "fastapi_mcp_integration": [
+        "Claude"
+      ],
+      "griptape_framework": [
         "Claude"
       ]
     },
@@ -6883,6 +7930,12 @@
         "Claude Code"
       ],
       "fastapi_mcp_integration": [
+        "Claude"
+      ],
+      "agentic_rag_for_dummies": [
+        "Anthropic"
+      ],
+      "griptape_framework": [
         "Claude"
       ]
     },
@@ -7024,7 +8077,15 @@
         "Docker"
       ],
       "agentic_rag_for_dummies": [
-        "agent"
+        "Anthropic",
+        "OpenAI"
+      ],
+      "griptape_framework": [
+        "Claude",
+        "OpenAI",
+        "LLM",
+        "Hermes Agent",
+        "Docker"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -7105,6 +8166,14 @@
       ],
       "fastapi_mcp_integration": [
         "Claude"
+      ],
+      "agentic_rag_for_dummies": [
+        "Anthropic",
+        "OpenAI"
+      ],
+      "griptape_framework": [
+        "Claude",
+        "OpenAI"
       ]
     },
     "dify": {
@@ -7189,6 +8258,21 @@
         "agent",
         "agentic-ai",
         "openai"
+      ],
+      "griptape": [
+        "gpt",
+        "ai",
+        "claude",
+        "openai"
+      ],
+      "forge": [
+        "docker",
+        "agentic-workflow",
+        "agentic-ai",
+        "openai"
+      ],
+      "infinity": [
+        "docker"
       ]
     },
     "dify_deployment": {
@@ -7228,6 +8312,9 @@
       ],
       "mcp_server_implementations": [
         "PostgreSQL",
+        "Docker"
+      ],
+      "griptape_framework": [
         "Docker"
       ]
     },
@@ -7281,6 +8368,19 @@
         "ai-agents",
         "openai",
         "huggingface"
+      ],
+      "griptape": [
+        "ai",
+        "huggingface",
+        "openai"
+      ],
+      "forge": [
+        "docker",
+        "agentic-ai",
+        "openai"
+      ],
+      "infinity": [
+        "docker"
       ]
     },
     "ragflow_self_hosting_guide": {
@@ -7317,6 +8417,10 @@
       "mcp_server_implementations": [
         "Redis",
         "MySQL",
+        "Docker"
+      ],
+      "griptape_framework": [
+        "Large Language Models (LLMs)",
         "Docker"
       ]
     },
@@ -7395,6 +8499,22 @@
       ],
       "agentic_rag_for_dummies": [
         "ollama"
+      ],
+      "griptape": [
+        "llm",
+        "gpt"
+      ],
+      "griptape_framework": [
+        "Python"
+      ],
+      "forge": [
+        "llm",
+        "docker",
+        "ollama"
+      ],
+      "infinity": [
+        "rag",
+        "docker"
       ]
     },
     "lightrag_setup": {
@@ -7437,6 +8557,12 @@
       ],
       "mcp_server_implementations": [
         "PostgreSQL",
+        "Docker"
+      ],
+      "agentic_rag_for_dummies": [
+        "Retrieval-Augmented Generation"
+      ],
+      "griptape_framework": [
         "Docker"
       ]
     },
@@ -7493,6 +8619,19 @@
       ],
       "registry": [
         "llm"
+      ],
+      "griptape": [
+        "llm",
+        "gpt"
+      ],
+      "griptape_framework": [
+        "Python"
+      ],
+      "forge": [
+        "llm"
+      ],
+      "infinity": [
+        "rag"
       ]
     },
     "graphrag_system": {
@@ -7539,6 +8678,13 @@
       ],
       "r2r": [
         "LLM"
+      ],
+      "agentic_rag_for_dummies": [
+        "Retrieval-Augmented Generation"
+      ],
+      "griptape_framework": [
+        "LLM",
+        "Python"
       ]
     },
     "rag_techniques": {
@@ -7599,6 +8745,22 @@
         "agentic-rag",
         "langchain",
         "openai"
+      ],
+      "griptape": [
+        "gpt",
+        "llm",
+        "langchain",
+        "openai",
+        "ai",
+        "python"
+      ],
+      "forge": [
+        "llm",
+        "python",
+        "openai"
+      ],
+      "infinity": [
+        "rag"
       ]
     },
     "advanced_retrieval_augmented_generation": {
@@ -7616,6 +8778,12 @@
       ],
       "mcp_server_implementations": [
         "GitHub"
+      ],
+      "agentic_rag_for_dummies": [
+        "Retrieval-Augmented Generation"
+      ],
+      "griptape_framework": [
+        "Retrieval-Augmented Generation (RAG)"
       ]
     },
     "fastapi_mcp": {
@@ -7684,6 +8852,21 @@
       "awesome_mcp_servers": [
         "ai",
         "mcp"
+      ],
+      "griptape": [
+        "llm",
+        "ai",
+        "claude",
+        "fastapi"
+      ],
+      "griptape_framework": [
+        "Python"
+      ],
+      "forge": [
+        "llm"
+      ],
+      "xcodebuildmcp_installation": [
+        "mcp"
       ]
     },
     "fastapi_mcp_integration": {
@@ -7741,6 +8924,13 @@
       ],
       "mcp_server_implementations": [
         "Model Context Protocol"
+      ],
+      "griptape_framework": [
+        "FastAPI",
+        "Claude"
+      ],
+      "xcodebuildmcp_installation": [
+        "Model Context Protocol"
       ]
     },
     "mcp_go": {
@@ -7779,6 +8969,14 @@
       ],
       "awesome_mcp_servers": [
         "ai",
+        "ray"
+      ],
+      "griptape": [
+        "llm",
+        "ai"
+      ],
+      "forge": [
+        "llm",
         "ray"
       ]
     },
@@ -7854,6 +9052,25 @@
         "anthropic",
         "ai-agents",
         "openai"
+      ],
+      "griptape": [
+        "anthropic",
+        "llm",
+        "pydantic",
+        "openai",
+        "ai",
+        "python"
+      ],
+      "forge": [
+        "anthropic",
+        "llm",
+        "agents",
+        "pydantic",
+        "openai",
+        "python"
+      ],
+      "xcodebuildmcp_installation": [
+        "mcp"
       ]
     },
     "mcp_agent_framework": {
@@ -7862,6 +9079,9 @@
       ],
       "model_context_protocol_go": [
         "Model Context Protocol (MCP)"
+      ],
+      "forge_llm_tool_calling_framework": [
+        "Workflow"
       ]
     },
     "r2r": {
@@ -7945,6 +9165,15 @@
       ],
       "mcp_server_implementations": [
         "Docker"
+      ],
+      "agentic_rag_for_dummies": [
+        "Hybrid Search",
+        "Agentic RAG"
+      ],
+      "griptape_framework": [
+        "LLM",
+        "Retrieval-Augmented Generation (RAG)",
+        "Docker"
       ]
     },
     "registry": {
@@ -7999,6 +9228,20 @@
         "docker",
         "mcp",
         "postgresql"
+      ],
+      "griptape": [
+        "llm",
+        "ai"
+      ],
+      "forge": [
+        "llm",
+        "docker"
+      ],
+      "xcodebuildmcp_installation": [
+        "mcp"
+      ],
+      "infinity": [
+        "docker"
       ]
     },
     "mcp_registry_development_deployment": {
@@ -8033,6 +9276,12 @@
       "awesome_mcp_servers": [
         "docker",
         "postgresql"
+      ],
+      "forge": [
+        "docker"
+      ],
+      "infinity": [
+        "docker"
       ]
     },
     "model_context_protocol_go": {
@@ -8061,6 +9310,10 @@
       "awesome_mcp_servers": [
         "mcp",
         "model-context-protocol"
+      ],
+      "xcodebuildmcp_installation": [
+        "xcode",
+        "mcp"
       ]
     },
     "awesome_mcp_servers": {
@@ -8112,6 +9365,19 @@
       ],
       "agentic_rag_for_dummies": [
         "qdrant"
+      ],
+      "griptape": [
+        "ai"
+      ],
+      "forge": [
+        "docker",
+        "ray"
+      ],
+      "xcodebuildmcp_installation": [
+        "mcp"
+      ],
+      "infinity": [
+        "docker"
       ]
     },
     "mcp_server_implementations": {
@@ -8153,11 +9419,20 @@
       ],
       "r2r": [
         "Docker"
+      ],
+      "agentic_rag_for_dummies": [
+        "Qdrant"
+      ],
+      "griptape_framework": [
+        "Docker"
+      ],
+      "xcodebuildmcp_installation": [
+        "Model Context Protocol"
       ]
     },
     "agentic_rag_for_dummies": {
       "new_claude_opus_5_leaks": [
-        "anthropic"
+        "Anthropic"
       ],
       "100_hours_of_hermes_agent_lessons_in_19_minutes": [
         "agent"
@@ -8166,26 +9441,29 @@
         "agent"
       ],
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
-        "anthropic"
+        "OpenAI"
       ],
       "this_100_self_improving_ai_agent_is_insane_just_wa": [
-        "agent"
+        "Anthropic",
+        "OpenAI"
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
-        "agent"
+        "Anthropic"
       ],
       "china_just_beat_claude_ai_kimi_k3": [
-        "anthropic"
+        "Anthropic",
+        "OpenAI"
       ],
       "you_need_to_use_hermes_right_now_goodbye_openclaw": [
-        "anthropic",
-        "agent"
+        "OpenAI"
       ],
       "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
-        "openai"
+        "Anthropic",
+        "OpenAI"
       ],
       "hermes_agent_full_course_setup_guide_for_complete_": [
-        "agent"
+        "Anthropic",
+        "OpenAI"
       ],
       "dify": [
         "agent",
@@ -8216,9 +9494,394 @@
       ],
       "awesome_mcp_servers": [
         "qdrant"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "Anthropic",
+        "OpenAI"
+      ],
+      "by_august_we_ll_have_frontier_ai_running_locally": [
+        "OpenAI"
+      ],
+      "yes_the_kimi_k3_hype_is_real": [
+        "Anthropic",
+        "OpenAI"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "OpenAI"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "OpenAI"
+      ],
+      "new_claude_update_is_insane": [
+        "Anthropic"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Anthropic",
+        "OpenAI"
+      ],
+      "lightrag_setup": [
+        "Retrieval-Augmented Generation"
+      ],
+      "graphrag_system": [
+        "Retrieval-Augmented Generation"
+      ],
+      "advanced_retrieval_augmented_generation": [
+        "Retrieval-Augmented Generation"
+      ],
+      "r2r": [
+        "Hybrid Search",
+        "Agentic RAG"
+      ],
+      "mcp_server_implementations": [
+        "Qdrant"
+      ],
+      "griptape_framework": [
+        "OpenAI",
+        "LangChain"
+      ]
+    },
+    "griptape": {
+      "new_claude_opus_5_leaks": [
+        "anthropic",
+        "claude"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "anthropic"
+      ],
+      "china_just_beat_claude_ai_kimi_k3": [
+        "anthropic",
+        "claude"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "anthropic"
+      ],
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "openai"
+      ],
+      "dify": [
+        "gpt",
+        "ai",
+        "claude",
+        "openai"
+      ],
+      "ragflow": [
+        "ai",
+        "huggingface",
+        "openai"
+      ],
+      "lightrag": [
+        "llm",
+        "gpt"
+      ],
+      "graphrag": [
+        "llm",
+        "gpt"
+      ],
+      "rag_techniques": [
+        "gpt",
+        "llm",
+        "langchain",
+        "openai",
+        "ai",
+        "python"
+      ],
+      "fastapi_mcp": [
+        "llm",
+        "ai",
+        "claude",
+        "fastapi"
+      ],
+      "mcp_go": [
+        "llm",
+        "ai"
+      ],
+      "mcp_agent": [
+        "anthropic",
+        "llm",
+        "pydantic",
+        "openai",
+        "ai",
+        "python"
+      ],
+      "registry": [
+        "llm",
+        "ai"
+      ],
+      "awesome_mcp_servers": [
+        "ai"
+      ],
+      "forge": [
+        "anthropic",
+        "llm",
+        "pydantic",
+        "openai",
+        "python"
+      ]
+    },
+    "griptape_framework": {
+      "new_claude_opus_5_leaks": [
+        "Claude"
+      ],
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "Claude"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "LLM",
+        "Python",
+        "Claude",
+        "Docker"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "OpenAI"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude",
+        "OpenAI"
+      ],
+      "by_august_we_ll_have_frontier_ai_running_locally": [
+        "OpenAI"
+      ],
+      "yes_the_kimi_k3_hype_is_real": [
+        "Claude",
+        "OpenAI"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "Python",
+        "Claude",
+        "OpenAI",
+        "Docker"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Python",
+        "Claude"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "OpenAI"
+      ],
+      "china_just_beat_claude_ai_kimi_k3": [
+        "Claude",
+        "OpenAI"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "Claude",
+        "OpenAI",
+        "LLM",
+        "Python",
+        "Docker"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Claude",
+        "OpenAI",
+        "LLM",
+        "Python",
+        "Hermes Agent",
+        "Docker"
+      ],
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "LLM",
+        "Claude",
+        "OpenAI"
+      ],
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "Claude"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "Claude"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "Claude",
+        "OpenAI",
+        "LLM",
+        "Hermes Agent",
+        "Docker"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Claude",
+        "OpenAI"
+      ],
+      "dify_deployment": [
+        "Docker"
+      ],
+      "ragflow_self_hosting_guide": [
+        "Large Language Models (LLMs)",
+        "Docker"
+      ],
+      "lightrag": [
+        "Python"
+      ],
+      "lightrag_setup": [
+        "Docker"
+      ],
+      "graphrag": [
+        "Python"
+      ],
+      "graphrag_system": [
+        "LLM",
+        "Python"
+      ],
+      "advanced_retrieval_augmented_generation": [
+        "Retrieval-Augmented Generation (RAG)"
+      ],
+      "fastapi_mcp": [
+        "Python"
+      ],
+      "fastapi_mcp_integration": [
+        "FastAPI",
+        "Claude"
+      ],
+      "r2r": [
+        "LLM",
+        "Retrieval-Augmented Generation (RAG)",
+        "Docker"
+      ],
+      "mcp_server_implementations": [
+        "Docker"
+      ],
+      "agentic_rag_for_dummies": [
+        "OpenAI",
+        "LangChain"
+      ]
+    },
+    "forge": {
+      "new_claude_opus_5_leaks": [
+        "anthropic"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "anthropic"
+      ],
+      "china_just_beat_claude_ai_kimi_k3": [
+        "anthropic"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "anthropic"
+      ],
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "openai"
+      ],
+      "dify": [
+        "docker",
+        "agentic-workflow",
+        "agentic-ai",
+        "openai"
+      ],
+      "ragflow": [
+        "docker",
+        "agentic-ai",
+        "openai"
+      ],
+      "lightrag": [
+        "llm",
+        "docker",
+        "ollama"
+      ],
+      "graphrag": [
+        "llm"
+      ],
+      "rag_techniques": [
+        "llm",
+        "python",
+        "openai"
+      ],
+      "fastapi_mcp": [
+        "llm"
+      ],
+      "mcp_go": [
+        "llm",
+        "ray"
+      ],
+      "mcp_agent": [
+        "anthropic",
+        "llm",
+        "agents",
+        "pydantic",
+        "openai",
+        "python"
+      ],
+      "registry": [
+        "llm",
+        "docker"
+      ],
+      "mcp_registry_development_deployment": [
+        "docker"
+      ],
+      "awesome_mcp_servers": [
+        "docker",
+        "ray"
+      ],
+      "griptape": [
+        "anthropic",
+        "llm",
+        "pydantic",
+        "openai",
+        "python"
+      ],
+      "infinity": [
+        "docker"
+      ]
+    },
+    "forge_llm_tool_calling_framework": {
+      "mcp_agent_framework": [
+        "Workflow"
+      ]
+    },
+    "xcodebuildmcp_installation": {
+      "fastapi_mcp": [
+        "mcp"
+      ],
+      "fastapi_mcp_integration": [
+        "Model Context Protocol"
+      ],
+      "mcp_agent": [
+        "mcp"
+      ],
+      "registry": [
+        "mcp"
+      ],
+      "xcodebuildmcp": [
+        "xcode",
+        "mcp"
+      ],
+      "awesome_mcp_servers": [
+        "mcp"
+      ],
+      "mcp_server_implementations": [
+        "Model Context Protocol"
+      ]
+    },
+    "infinity": {
+      "dify": [
+        "docker"
+      ],
+      "ragflow": [
+        "docker"
+      ],
+      "lightrag": [
+        "rag",
+        "docker"
+      ],
+      "graphrag": [
+        "rag"
+      ],
+      "rag_techniques": [
+        "rag"
+      ],
+      "registry": [
+        "docker"
+      ],
+      "mcp_registry_development_deployment": [
+        "docker"
+      ],
+      "awesome_mcp_servers": [
+        "docker"
+      ],
+      "forge": [
+        "docker"
       ]
     }
   },
-  "updated_at": "2026-07-21T19:49:21.923593+00:00",
-  "total_skills": 45
+  "updated_at": "2026-07-21T21:34:01.201501+00:00",
+  "total_skills": 51
 }
