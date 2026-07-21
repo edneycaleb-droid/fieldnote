@@ -44,3 +44,25 @@ jobs:
         run: python3 -m unittest discover -s tests -v
       - name: Compile Python sources
         run: python3 -m compileall -q agents fieldnote_mcp app.py main.py
+
+  dependency-smoke:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out without persisted credentials
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          persist-credentials: false
+      - name: Select the supported Python runtime
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: "3.11"
+      - name: Resolve and install declared dependencies
+        run: |
+          python -m pip install --disable-pip-version-check poetry==1.8.5
+          poetry install --no-interaction --no-ansi --no-root
+      - name: Run tests in the resolved environment
+        run: poetry run python -m unittest discover -s tests -v
+      - name: Compile sources in the resolved environment
+        run: poetry run python -m compileall -q agents fieldnote_mcp app.py main.py

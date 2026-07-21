@@ -42,6 +42,11 @@ class RepositoryQualityRubricTests(unittest.TestCase):
                 "permissions:\n  contents: read\n"
                 "timeout-minutes: 5\n"
                 "persist-credentials: false\n"
+                "dependency-smoke:\n"
+                "if: github.event_name == 'pull_request'\n"
+                'python-version: "3.11"\n'
+                "poetry==1.8.5\n"
+                "poetry install --no-interaction --no-ansi --no-root\n"
             ),
             "scripts/check_repository_quality.py": "# fixture\n",
             "pyproject.toml": "[project]\nname = \"fieldnote\"\nversion = \"0.0.0\"\n",
@@ -76,6 +81,19 @@ class RepositoryQualityRubricTests(unittest.TestCase):
         result, output = self.run_quality()
         self.assertEqual(1, result)
         self.assertIn("[FAIL] clean_tracking", output)
+        self.assertIn("REPOSITORY_QUALITY_SCORE=9/10", output)
+
+    def test_missing_dependency_resolution_cannot_receive_full_credit(self) -> None:
+        workflow = self.root / ".github/workflows/repository-quality.yml"
+        workflow.write_text(
+            workflow.read_text(encoding="utf-8").replace(
+                "poetry install --no-interaction --no-ansi --no-root\n", ""
+            ),
+            encoding="utf-8",
+        )
+        result, output = self.run_quality()
+        self.assertEqual(1, result)
+        self.assertIn("[FAIL] dependency_policy", output)
         self.assertIn("REPOSITORY_QUALITY_SCORE=9/10", output)
 
 

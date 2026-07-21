@@ -42,7 +42,15 @@ def main() -> int:
         and has(".github/ISSUE_TEMPLATE/feature_request.yml", "Acceptance criteria"),
         "pull_request_template": has(".github/pull_request_template.md", "Trust and cost boundaries", "Rollback"),
         "dependency_policy": pyproject_valid
-        and has(".github/dependabot.yml", "package-ecosystem: pip", "package-ecosystem: github-actions"),
+        and has(".github/dependabot.yml", "package-ecosystem: pip", "package-ecosystem: github-actions")
+        and has(
+            ".github/workflows/repository-quality.yml",
+            "dependency-smoke:",
+            "if: github.event_name == 'pull_request'",
+            'python-version: "3.11"',
+            "poetry==1.8.5",
+            "poetry install --no-interaction --no-ansi --no-root",
+        ),
         "deterministic_fallback": (ROOT / "scripts/check_repository_quality.py").is_file(),
         "safe_workflow": has(
             ".github/workflows/repository-quality.yml",
