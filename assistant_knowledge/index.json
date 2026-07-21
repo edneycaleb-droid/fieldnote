@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "bytedance--pasa",
+      "title": "Discovered: bytedance/pasa",
+      "category": "discoveries",
+      "confidence": "verified",
+      "updated_at": "2026-07-21T21:38:23.260076+00:00",
+      "path": "discoveries/bytedance--pasa.md"
+    },
+    {
       "slug": "infiniflow--infinity",
       "title": "Discovered: infiniflow/infinity",
       "category": "discoveries",
@@ -281,5 +289,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-21T21:38:21.803506+00:00"
+  "updated_at": "2026-07-21T21:38:23.264353+00:00"
 }
