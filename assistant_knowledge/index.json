@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "mark3labs--mcp-go",
+      "title": "Discovered: mark3labs/mcp-go",
+      "category": "discoveries",
+      "confidence": "inferred",
+      "updated_at": "2026-07-21T18:32:22.986024+00:00",
+      "path": "discoveries/mark3labs--mcp-go.md"
+    },
+    {
       "slug": "tadata-org--fastapi-mcp",
       "title": "Discovered: tadata-org/fastapi_mcp",
       "category": "discoveries",
@@ -209,5 +217,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-21T18:32:21.551140+00:00"
+  "updated_at": "2026-07-21T18:32:22.989045+00:00"
 }
