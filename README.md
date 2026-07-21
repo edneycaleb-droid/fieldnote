@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **106 skills** · Last synced: 2026-07-21 18:30 UTC
+> **107 skills** · Last synced: 2026-07-21 18:31 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [R2R](skills/r2r.md) | SoTA production-ready AI retrieval system. Agentic Retrieval-Augmented Generatio | `anthropic` `docker` `openai` `artificial-intelligence` | `artificial-intelligence` `large-language-models` `python` |
 | [mcp-agent Framework for Building Effective Agents](skills/mcp_agent_framework.md) | Learn to build robust and composable AI agents using the mcp-agent Python framew | `MCPApp` `Agent` `AgentSpec` `OpenAIAugmentedLLM` | `agents` `llm` `framework` |
 | [Mcp Agent](skills/mcp_agent.md) | Build effective agents using Model Context Protocol and simple workflow patterns | `anthropic` `openai` `pydantic` `agents` | `agents` `ai` `ai-agents` |
 | [Mcp Go](skills/mcp_go.md) | A Go implementation of the Model Context Protocol (MCP), enabling seamless integ | `ray` `Go` | `go` `ai` `llm` |
