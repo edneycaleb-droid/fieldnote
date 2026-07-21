@@ -1675,11 +1675,12 @@
       ]
     },
     "agents": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "mcp_agent",
         "agentic_rag_for_dummies",
-        "forge"
+        "forge",
+        "lightagent"
       ]
     },
     "ai-agents": {
@@ -2530,6 +2531,30 @@
       "skills": [
         "paper_agent"
       ]
+    },
+    "agent-framework": {
+      "freq": 1,
+      "skills": [
+        "lightagent"
+      ]
+    },
+    "agent-hooks": {
+      "freq": 1,
+      "skills": [
+        "lightagent"
+      ]
+    },
+    "ai-agent": {
+      "freq": 1,
+      "skills": [
+        "lightagent"
+      ]
+    },
+    "lifecycle-hooks": {
+      "freq": 1,
+      "skills": [
+        "lightagent"
+      ]
     }
   },
   "tools": {
@@ -2993,7 +3018,7 @@
       ]
     },
     "openai": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "dify",
         "ragflow",
@@ -3002,7 +3027,8 @@
         "r2r",
         "agentic_rag_for_dummies",
         "griptape",
-        "forge"
+        "forge",
+        "lightagent"
       ]
     },
     "agent": {
@@ -3293,7 +3319,7 @@
       ]
     },
     "llm": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "lightrag",
         "graphrag",
@@ -3302,7 +3328,8 @@
         "mcp_agent",
         "griptape",
         "forge",
-        "trainer"
+        "trainer",
+        "lightagent"
       ]
     },
     "rag": {
@@ -3401,11 +3428,12 @@
       ]
     },
     "langchain": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "rag_techniques",
         "agentic_rag_for_dummies",
-        "griptape"
+        "griptape",
+        "lightagent"
       ]
     },
     "llama-index": {
@@ -3428,14 +3456,15 @@
       ]
     },
     "python": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "rag_techniques",
         "mcp_agent",
         "r2r",
         "griptape",
         "forge",
-        "trainer"
+        "trainer",
+        "lightagent"
       ]
     },
     "semantic-search": {
@@ -3483,14 +3512,15 @@
       ]
     },
     "mcp": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "fastapi_mcp",
         "mcp_agent",
         "registry",
         "xcodebuildmcp",
         "awesome_mcp_servers",
-        "xcodebuildmcp_installation"
+        "xcodebuildmcp_installation",
+        "lightagent"
       ]
     },
     "mcp-server": {
@@ -3569,11 +3599,12 @@
       ]
     },
     "agents": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "mcp_agent",
         "agentic_rag_for_dummies",
-        "forge"
+        "forge",
+        "lightagent"
       ]
     },
     "model-context-protocol": {
@@ -4221,9 +4252,10 @@
       ]
     },
     "vllm": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "forge"
+        "forge",
+        "lightagent"
       ]
     },
     "function-calling": {
@@ -4530,6 +4562,54 @@
       "freq": 1,
       "skills": [
         "paper_agent"
+      ]
+    },
+    "llamaindex": {
+      "freq": 1,
+      "skills": [
+        "lightagent"
+      ]
+    },
+    "agent-framework": {
+      "freq": 1,
+      "skills": [
+        "lightagent"
+      ]
+    },
+    "agent-hooks": {
+      "freq": 1,
+      "skills": [
+        "lightagent"
+      ]
+    },
+    "ai-agent": {
+      "freq": 1,
+      "skills": [
+        "lightagent"
+      ]
+    },
+    "lifecycle-hooks": {
+      "freq": 1,
+      "skills": [
+        "lightagent"
+      ]
+    },
+    "multi-agent": {
+      "freq": 1,
+      "skills": [
+        "lightagent"
+      ]
+    },
+    "openai-api": {
+      "freq": 1,
+      "skills": [
+        "lightagent"
+      ]
+    },
+    "tool-calling": {
+      "freq": 1,
+      "skills": [
+        "lightagent"
       ]
     }
   },
@@ -6254,6 +6334,43 @@
         "paper_search",
         "llm_agent",
         "pasa"
+      ],
+      "step_count": 8
+    },
+    "lightagent": {
+      "concepts": [
+        "agent-framework",
+        "agent-hooks",
+        "agents",
+        "ai-agent",
+        "lifecycle-hooks"
+      ],
+      "tools": [
+        "llamaindex",
+        "langchain",
+        "openai",
+        "vllm",
+        "agent-framework",
+        "agent-hooks",
+        "agents",
+        "ai-agent",
+        "lifecycle-hooks",
+        "llm",
+        "mcp",
+        "multi-agent",
+        "openai-api",
+        "python",
+        "tool-calling"
+      ],
+      "tags": [
+        "agent-framework",
+        "agent-hooks",
+        "agents",
+        "ai-agent",
+        "lifecycle-hooks",
+        "python",
+        "ai",
+        "llm"
       ],
       "step_count": 8
     }
@@ -8084,6 +8201,9 @@
       ],
       "forge": [
         "openai"
+      ],
+      "lightagent": [
+        "openai"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -8654,6 +8774,9 @@
       ],
       "pasa": [
         "ai"
+      ],
+      "lightagent": [
+        "openai"
       ]
     },
     "dify_deployment": {
@@ -8773,6 +8896,9 @@
       "pasa": [
         "ai",
         "huggingface"
+      ],
+      "lightagent": [
+        "openai"
       ]
     },
     "ragflow_self_hosting_guide": {
@@ -8917,6 +9043,9 @@
       "pasa": [
         "llm",
         "Python"
+      ],
+      "lightagent": [
+        "llm"
       ]
     },
     "lightrag_setup": {
@@ -9044,6 +9173,9 @@
       "pasa": [
         "llm",
         "Python"
+      ],
+      "lightagent": [
+        "llm"
       ]
     },
     "graphrag_system": {
@@ -9187,6 +9319,12 @@
         "llm",
         "ai",
         "python"
+      ],
+      "lightagent": [
+        "llm",
+        "python",
+        "langchain",
+        "openai"
       ]
     },
     "advanced_retrieval_augmented_generation": {
@@ -9302,6 +9440,10 @@
         "llm",
         "ai",
         "Python"
+      ],
+      "lightagent": [
+        "mcp",
+        "llm"
       ]
     },
     "fastapi_mcp_integration": {
@@ -9422,6 +9564,9 @@
       "pasa": [
         "llm",
         "ai"
+      ],
+      "lightagent": [
+        "llm"
       ]
     },
     "mcp_agent": {
@@ -9524,6 +9669,13 @@
       "pasa": [
         "llm",
         "ai",
+        "python"
+      ],
+      "lightagent": [
+        "llm",
+        "openai",
+        "mcp",
+        "agents",
         "python"
       ]
     },
@@ -9708,6 +9860,10 @@
       "pasa": [
         "llm",
         "ai"
+      ],
+      "lightagent": [
+        "mcp",
+        "llm"
       ]
     },
     "mcp_registry_development_deployment": {
@@ -9780,6 +9936,9 @@
       "xcodebuildmcp_installation": [
         "xcode",
         "mcp"
+      ],
+      "lightagent": [
+        "mcp"
       ]
     },
     "awesome_mcp_servers": {
@@ -9851,6 +10010,9 @@
       ],
       "pasa": [
         "ai"
+      ],
+      "lightagent": [
+        "mcp"
       ]
     },
     "mcp_server_implementations": {
@@ -10104,6 +10266,12 @@
         "ai",
         "python",
         "huggingface"
+      ],
+      "lightagent": [
+        "llm",
+        "python",
+        "langchain",
+        "openai"
       ]
     },
     "griptape_framework": {
@@ -10322,6 +10490,13 @@
       "pasa": [
         "llm",
         "python"
+      ],
+      "lightagent": [
+        "llm",
+        "vllm",
+        "openai",
+        "agents",
+        "python"
       ]
     },
     "forge_llm_tool_calling_framework": {
@@ -10351,6 +10526,9 @@
       ],
       "mcp_server_implementations": [
         "Model Context Protocol"
+      ],
+      "lightagent": [
+        "mcp"
       ]
     },
     "infinity": {
@@ -10477,6 +10655,10 @@
         "ai",
         "python",
         "huggingface"
+      ],
+      "lightagent": [
+        "llm",
+        "python"
       ]
     },
     "pasa": {
@@ -10557,10 +10739,85 @@
         "ai",
         "python",
         "huggingface"
+      ],
+      "lightagent": [
+        "llm",
+        "python"
       ]
     },
-    "paper_agent": {}
+    "paper_agent": {},
+    "lightagent": {
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "openai"
+      ],
+      "dify": [
+        "openai"
+      ],
+      "ragflow": [
+        "openai"
+      ],
+      "lightrag": [
+        "llm"
+      ],
+      "graphrag": [
+        "llm"
+      ],
+      "rag_techniques": [
+        "llm",
+        "python",
+        "langchain",
+        "openai"
+      ],
+      "fastapi_mcp": [
+        "mcp",
+        "llm"
+      ],
+      "mcp_go": [
+        "llm"
+      ],
+      "mcp_agent": [
+        "llm",
+        "openai",
+        "mcp",
+        "agents",
+        "python"
+      ],
+      "registry": [
+        "mcp",
+        "llm"
+      ],
+      "xcodebuildmcp": [
+        "mcp"
+      ],
+      "awesome_mcp_servers": [
+        "mcp"
+      ],
+      "griptape": [
+        "llm",
+        "python",
+        "langchain",
+        "openai"
+      ],
+      "forge": [
+        "llm",
+        "vllm",
+        "openai",
+        "agents",
+        "python"
+      ],
+      "xcodebuildmcp_installation": [
+        "mcp"
+      ],
+      "trainer": [
+        "llm",
+        "python"
+      ],
+      "pasa": [
+        "llm",
+        "python"
+      ]
+    }
   },
-  "updated_at": "2026-07-21T21:36:59.357890+00:00",
-  "total_skills": 55
+  "updated_at": "2026-07-21T21:37:12.419156+00:00",
+  "total_skills": 56
 }
