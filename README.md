@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **94 skills** · Last synced: 2026-07-21 15:21 UTC
+> **96 skills** · Last synced: 2026-07-21 15:21 UTC
 
 ---
 
@@ -9,6 +9,8 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Setting Up LightRAG for Retrieval-Augmented Generation](skills/lightrag_setup.md) | This skill teaches how to set up and deploy LightRAG, a lightweight knowledge-gr | `uv` `LightRAG` `Docker` `Docker Compose` | `genai` `gpt` `graphrag` |
+| [Lightrag](skills/lightrag.md) | [EMNLP2025] "LightRAG: Simple and Fast Retrieval-Augmented Generation" | `mongodb` `milvus` `docker` `postgresql` | `genai` `gpt` `gpt-4` |
 | [Self-Hosting RAGFlow for Enhanced LLM Context](skills/ragflow_self_hosting_guide.md) | This skill provides a comprehensive guide to self-hosting RAGFlow, an open-sourc | `RAGFlow` `Docker` `Docker Compose` `Elasticsearch` | `ai` `rag` `llm` |
 | [Ragflow](skills/ragflow.md) | RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine tha | `redis` `gemini` `docker` `huggingface` | `agent-harness` `agentic-ai` `agentic-retrieval` |
 | [Deploying Dify for AI Workflow Management and RAG Pipelines](skills/dify_deployment.md) | Dify is an open-source platform for building and deploying AI workflows, RAG pip | `Docker` `Docker Compose` `Kubernetes` `Terraform` | `ai` `agentic-ai` `dify` |
