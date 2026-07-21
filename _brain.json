@@ -94,7 +94,7 @@
       ]
     },
     "agent": {
-      "freq": 15,
+      "freq": 16,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
@@ -102,7 +102,8 @@
         "hermes_claude_code_mcp_integration_loop_engineerin",
         "new_hermes_agent_os_is_insane",
         "hermes_agent_full_course_setup_guide_for_complete_",
-        "you_need_to_use_hermes_right_now_goodbye_openclaw"
+        "you_need_to_use_hermes_right_now_goodbye_openclaw",
+        "dify"
       ]
     },
     "other": {
@@ -1140,6 +1141,30 @@
       "skills": [
         "new_hermes_agent_os_is_insane"
       ]
+    },
+    "agentic-ai": {
+      "freq": 1,
+      "skills": [
+        "dify"
+      ]
+    },
+    "agentic-framework": {
+      "freq": 1,
+      "skills": [
+        "dify"
+      ]
+    },
+    "agentic-workflow": {
+      "freq": 1,
+      "skills": [
+        "dify"
+      ]
+    },
+    "ai": {
+      "freq": 1,
+      "skills": [
+        "dify"
+      ]
     }
   },
   "tools": {
@@ -1519,6 +1544,96 @@
       "freq": 1,
       "skills": [
         "new_hermes_agent_os_is_insane"
+      ]
+    },
+    "terraform": {
+      "freq": 1,
+      "skills": [
+        "dify"
+      ]
+    },
+    "helm": {
+      "freq": 1,
+      "skills": [
+        "dify"
+      ]
+    },
+    "kubernetes": {
+      "freq": 1,
+      "skills": [
+        "dify"
+      ]
+    },
+    "docker": {
+      "freq": 1,
+      "skills": [
+        "dify"
+      ]
+    },
+    "postgresql": {
+      "freq": 1,
+      "skills": [
+        "dify"
+      ]
+    },
+    "grafana": {
+      "freq": 1,
+      "skills": [
+        "dify"
+      ]
+    },
+    "openai": {
+      "freq": 1,
+      "skills": [
+        "dify"
+      ]
+    },
+    "agent": {
+      "freq": 1,
+      "skills": [
+        "dify"
+      ]
+    },
+    "agentic-ai": {
+      "freq": 1,
+      "skills": [
+        "dify"
+      ]
+    },
+    "agentic-framework": {
+      "freq": 1,
+      "skills": [
+        "dify"
+      ]
+    },
+    "agentic-workflow": {
+      "freq": 1,
+      "skills": [
+        "dify"
+      ]
+    },
+    "automation": {
+      "freq": 1,
+      "skills": [
+        "dify"
+      ]
+    },
+    "claude": {
+      "freq": 1,
+      "skills": [
+        "dify"
+      ]
+    },
+    "genai": {
+      "freq": 1,
+      "skills": [
+        "dify"
+      ]
+    },
+    "gpt": {
+      "freq": 1,
+      "skills": [
+        "dify"
       ]
     }
   },
@@ -2112,6 +2227,42 @@
         "creation"
       ],
       "step_count": 3
+    },
+    "dify": {
+      "concepts": [
+        "agent",
+        "agentic-ai",
+        "agentic-framework",
+        "agentic-workflow",
+        "ai"
+      ],
+      "tools": [
+        "terraform",
+        "helm",
+        "kubernetes",
+        "docker",
+        "postgresql",
+        "grafana",
+        "openai",
+        "agent",
+        "agentic-ai",
+        "agentic-framework",
+        "agentic-workflow",
+        "automation",
+        "claude",
+        "genai",
+        "gpt"
+      ],
+      "tags": [
+        "agent",
+        "agentic-ai",
+        "agentic-framework",
+        "agentic-workflow",
+        "ai",
+        "typescript",
+        "llm"
+      ],
+      "step_count": 8
     }
   },
   "relationships": {
@@ -2199,6 +2350,9 @@
         "Claude",
         "anthropic",
         "here"
+      ],
+      "dify": [
+        "claude"
       ]
     },
     "100_hours_of_hermes_agent_lessons_in_19_minutes": {
@@ -2282,6 +2436,9 @@
         "know",
         "agent",
         "hermes"
+      ],
+      "dify": [
+        "agent"
       ]
     },
     "hermes_agent_tutorial_for_beginners_full_step_by_s": {
@@ -2379,6 +2536,9 @@
         "agent",
         "hermes",
         "LLM"
+      ],
+      "dify": [
+        "agent"
       ]
     },
     "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
@@ -2980,6 +3140,9 @@
         "Docker",
         "agent",
         "hermes"
+      ],
+      "dify": [
+        "agent"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -3062,6 +3225,9 @@
         "Claude",
         "agent",
         "hermes"
+      ],
+      "dify": [
+        "agent"
       ]
     },
     "new_hermes_paperclip_ai_agent_update_is_insane": {
@@ -3248,6 +3414,9 @@
         "Claude",
         "about",
         "anthropic"
+      ],
+      "dify": [
+        "claude"
       ]
     },
     "you_need_to_use_hermes_right_now_goodbye_openclaw": {
@@ -3358,6 +3527,9 @@
       "this_ai_business_model_is_creating_new_millionaire": [
         "OpenAI",
         "Claude"
+      ],
+      "dify": [
+        "agent"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -3541,6 +3713,9 @@
         "Claude",
         "about",
         "LLM"
+      ],
+      "dify": [
+        "openai"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -3854,6 +4029,9 @@
       "every_hermes_concept_explained_for_normal_people": [
         "Claude",
         "memory"
+      ],
+      "dify": [
+        "agent"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -3932,8 +4110,37 @@
       "new_hermes_paperclip_ai_agent_update_is_insane": [
         "OpenAI"
       ]
+    },
+    "dify": {
+      "new_claude_opus_5_leaks": [
+        "claude"
+      ],
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "agent"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "agent"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "agent"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "agent"
+      ],
+      "china_just_beat_claude_ai_kimi_k3": [
+        "claude"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "agent"
+      ],
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "openai"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "agent"
+      ]
     }
   },
-  "updated_at": "2026-07-21T15:07:48.470085+00:00",
-  "total_skills": 22
+  "updated_at": "2026-07-21T15:20:18.732452+00:00",
+  "total_skills": 23
 }
