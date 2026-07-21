@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **98 skills** · Last synced: 2026-07-21 15:24 UTC
+> **99 skills** · Last synced: 2026-07-21 15:24 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Rag Techniques](skills/rag_techniques.md) | This repository showcases various advanced techniques for Retrieval-Augmented Ge | `agentic-rag` `embeddings` `generative-ai` `gpt` | `agentic-rag` `ai` `embeddings` |
 | [GraphRAG: A Modular Graph-Based Retrieval-Augmented Generation System](skills/graphrag_system.md) | GraphRAG is a data pipeline and transformation suite that extracts structured da | `graphrag` `Python` `Command Line Interface` | `gpt` `gpt-4` `graphrag` |
 | [Graphrag](skills/graphrag.md) | A modular graph-based Retrieval-Augmented Generation (RAG) system | `gpt` `gpt-4` `gpt4` `graphrag` | `gpt` `gpt-4` `gpt4` |
 | [Setting Up LightRAG for Retrieval-Augmented Generation](skills/lightrag_setup.md) | This skill teaches how to set up and deploy LightRAG, a lightweight knowledge-gr | `uv` `LightRAG` `Docker` `Docker Compose` | `genai` `gpt` `graphrag` |
