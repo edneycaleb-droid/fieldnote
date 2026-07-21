@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **113 skills** · Last synced: 2026-07-21 19:49 UTC
+> **120 skills** · Last synced: 2026-07-21 21:34 UTC
 
 ---
 
@@ -9,6 +9,13 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Infinity](skills/infinity.md) | The AI-native database built for LLM applications, providing incredibly fast hyb | `docker` `ai-native` `approximate-nearest-neighbor-search` `bm25` | `ai-native` `approximate-nearest-neighbor-s` `bm25` |
+| [Installing and Using XcodeBuildMCP for iOS and macOS Projects](skills/xcodebuildmcp_installation.md) | This skill teaches developers how to install and use XcodeBuildMCP, a Model Cont | `XcodeBuildMCP` `MCP server` `CLI` `MacOS` | `ios-development` `macos-development` `model-context-protocol` |
+| [Forge: A Python Framework for Self-Hosted LLM Tool-Calling and Agentic Workflows](skills/forge_llm_tool_calling_framework.md) | Forge is a Python framework designed to enhance the reliability of self-hosted L | `Forge` `WorkflowRunner` `Workflow` `ToolDef` | `llm` `framework` `python` |
+| [Forge](skills/forge.md) | A Python framework for self-hosted LLM tool-calling and multi-step agentic workf | `anthropic` `pydantic` `openai` `vllm` | `agentic-ai` `agentic-workflow` `agents` |
+| [Griptape: A Python Framework for AI Agents and Workflows](skills/griptape_framework.md) | Griptape is a Python framework that simplifies the development of generative AI  | `FastAPI` `CrewAI` `Pydantic` `OpenAI` | `ai` `framework` `python` |
+| [Griptape](skills/griptape.md) | Modular Python framework for AI agents and workflows with chain-of-thought reaso | `fastapi` `crewai` `pydantic` `openai` | `ai` `anthropic` `claude` |
+| [Agentic RAG for Dummies: Modular System with LangGraph](skills/agentic_rag_for_dummies.md) | This repository provides a comprehensive guide and a modular architecture for bu | `LangGraph` `Ollama` `Anthropic` `OpenAI` | `agent` `agentic-ai` `agentic-rag` |
 | [Model Context Protocol (MCP) Server Implementations: A Comprehensive Guide](skills/mcp_server_implementations.md) | This skill teaches how to implement Model Context Protocol (MCP) servers to exte | `Claude Desktop` `Zed Editor` `Sourcegraph Cody` `Backup` | `ai` `api_integrations` `cloud_storage` |
 | [Awesome Mcp Servers](skills/awesome_mcp_servers.md) | Awesome MCP Servers - A curated list of Model Context Protocol servers | `qdrant` `redis` `mongodb` `postgresql` | `ai` `anthropic-claude` `awesome` |
 | [Xcodebuildmcp](skills/xcodebuildmcp.md) | A Model Context Protocol (MCP) server and CLI that provides tools for agent use  | `mcp` `mcp-server` `model-context-protocol` `model-context-protocol-servers` | `mcp` `mcp-server` `model-context-protocol` |
