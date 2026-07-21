@@ -2723,6 +2723,72 @@
       "skills": [
         "sqlite_vector_extension"
       ]
+    },
+    "Large Language Model (LLM) fine-tuning": {
+      "freq": 1,
+      "skills": [
+        "kubeflow_trainer_skill"
+      ]
+    },
+    "Distributed AI training": {
+      "freq": 1,
+      "skills": [
+        "kubeflow_trainer_skill"
+      ]
+    },
+    "Kubernetes-native": {
+      "freq": 1,
+      "skills": [
+        "kubeflow_trainer_skill"
+      ]
+    },
+    "AutoML": {
+      "freq": 1,
+      "skills": [
+        "kubeflow_trainer_skill"
+      ]
+    },
+    "Training": {
+      "freq": 1,
+      "skills": [
+        "kubeflow_trainer_skill"
+      ]
+    },
+    "Fine-tuning": {
+      "freq": 1,
+      "skills": [
+        "kubeflow_trainer_skill"
+      ]
+    },
+    "Distributed data cache": {
+      "freq": 1,
+      "skills": [
+        "kubeflow_trainer_skill"
+      ]
+    },
+    "Zero-copy transfer": {
+      "freq": 1,
+      "skills": [
+        "kubeflow_trainer_skill"
+      ]
+    },
+    "Distributed computing": {
+      "freq": 1,
+      "skills": [
+        "kubeflow_trainer_skill"
+      ]
+    },
+    "Large language models": {
+      "freq": 1,
+      "skills": [
+        "kubeflow_trainer_skill"
+      ]
+    },
+    "Kubernetes integration": {
+      "freq": 1,
+      "skills": [
+        "kubeflow_trainer_skill"
+      ]
     }
   },
   "tools": {
@@ -4888,6 +4954,66 @@
       "skills": [
         "sqlite_vector_extension"
       ]
+    },
+    "Kubeflow Trainer": {
+      "freq": 1,
+      "skills": [
+        "kubeflow_trainer_skill"
+      ]
+    },
+    "Kueue": {
+      "freq": 1,
+      "skills": [
+        "kubeflow_trainer_skill"
+      ]
+    },
+    "Volcano": {
+      "freq": 1,
+      "skills": [
+        "kubeflow_trainer_skill"
+      ]
+    },
+    "Cloud Native AI ecosystem": {
+      "freq": 1,
+      "skills": [
+        "kubeflow_trainer_skill"
+      ]
+    },
+    "PyTorch": {
+      "freq": 1,
+      "skills": [
+        "kubeflow_trainer_skill"
+      ]
+    },
+    "MLX": {
+      "freq": 1,
+      "skills": [
+        "kubeflow_trainer_skill"
+      ]
+    },
+    "HuggingFace": {
+      "freq": 1,
+      "skills": [
+        "kubeflow_trainer_skill"
+      ]
+    },
+    "DeepSpeed": {
+      "freq": 1,
+      "skills": [
+        "kubeflow_trainer_skill"
+      ]
+    },
+    "JAX": {
+      "freq": 1,
+      "skills": [
+        "kubeflow_trainer_skill"
+      ]
+    },
+    "XGBoost": {
+      "freq": 1,
+      "skills": [
+        "kubeflow_trainer_skill"
+      ]
     }
   },
   "skill_map": {
@@ -6752,6 +6878,42 @@
         "vector-search"
       ],
       "step_count": 11
+    },
+    "kubeflow_trainer_skill": {
+      "concepts": [
+        "Large Language Model (LLM) fine-tuning",
+        "Distributed AI training",
+        "Kubernetes-native",
+        "AutoML",
+        "Training",
+        "Fine-tuning",
+        "Distributed data cache",
+        "Zero-copy transfer",
+        "Distributed computing",
+        "Large language models",
+        "Kubernetes integration"
+      ],
+      "tools": [
+        "Kubeflow Trainer",
+        "Kueue",
+        "Volcano",
+        "Cloud Native AI ecosystem",
+        "PyTorch",
+        "MLX",
+        "HuggingFace",
+        "DeepSpeed",
+        "JAX",
+        "XGBoost"
+      ],
+      "tags": [
+        "distributed computing",
+        "large language models",
+        "kubernetes",
+        "ai training",
+        "machine learning",
+        "artificial intelligence"
+      ],
+      "step_count": 6
     }
   },
   "relationships": {
@@ -11447,8 +11609,9 @@
         "Zed Editor",
         "FileStash"
       ]
-    }
+    },
+    "kubeflow_trainer_skill": {}
   },
-  "updated_at": "2026-07-21T21:38:10.352475+00:00",
-  "total_skills": 59
+  "updated_at": "2026-07-21T21:39:57.166016+00:00",
+  "total_skills": 60
 }
