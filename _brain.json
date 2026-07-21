@@ -95,7 +95,7 @@
       ]
     },
     "agent": {
-      "freq": 16,
+      "freq": 17,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
@@ -104,7 +104,8 @@
         "new_hermes_agent_os_is_insane",
         "hermes_agent_full_course_setup_guide_for_complete_",
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
-        "dify"
+        "dify",
+        "agentic_rag_for_dummies"
       ]
     },
     "other": {
@@ -1144,10 +1145,11 @@
       ]
     },
     "agentic-ai": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "dify",
-        "ragflow"
+        "ragflow",
+        "agentic_rag_for_dummies"
       ]
     },
     "agentic-framework": {
@@ -1446,9 +1448,10 @@
       ]
     },
     "agentic-rag": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "rag_techniques"
+        "rag_techniques",
+        "agentic_rag_for_dummies"
       ]
     },
     "embeddings": {
@@ -1659,15 +1662,17 @@
       ]
     },
     "agents": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "mcp_agent"
+        "mcp_agent",
+        "agentic_rag_for_dummies"
       ]
     },
     "ai-agents": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "mcp_agent"
+        "mcp_agent",
+        "agentic_rag_for_dummies"
       ]
     },
     "llms": {
@@ -2204,12 +2209,13 @@
       ]
     },
     "anthropic": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
         "mcp_agent",
-        "r2r"
+        "r2r",
+        "agentic_rag_for_dummies"
       ]
     },
     "pip": {
@@ -2515,26 +2521,29 @@
       ]
     },
     "openai": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "dify",
         "ragflow",
         "rag_techniques",
         "mcp_agent",
-        "r2r"
+        "r2r",
+        "agentic_rag_for_dummies"
       ]
     },
     "agent": {
-      "freq": 1,
-      "skills": [
-        "dify"
-      ]
-    },
-    "agentic-ai": {
       "freq": 2,
       "skills": [
         "dify",
-        "ragflow"
+        "agentic_rag_for_dummies"
+      ]
+    },
+    "agentic-ai": {
+      "freq": 3,
+      "skills": [
+        "dify",
+        "ragflow",
+        "agentic_rag_for_dummies"
       ]
     },
     "agentic-framework": {
@@ -2634,15 +2643,17 @@
       ]
     },
     "gemini": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "ragflow"
+        "ragflow",
+        "agentic_rag_for_dummies"
       ]
     },
     "huggingface": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "ragflow"
+        "ragflow",
+        "agentic_rag_for_dummies"
       ]
     },
     "elasticsearch": {
@@ -2670,10 +2681,11 @@
       ]
     },
     "ai-agents": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "ragflow",
-        "mcp_agent"
+        "mcp_agent",
+        "agentic_rag_for_dummies"
       ]
     },
     "context-engine": {
@@ -2764,9 +2776,10 @@
       ]
     },
     "ollama": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "lightrag"
+        "lightrag",
+        "agentic_rag_for_dummies"
       ]
     },
     "gpt-4": {
@@ -2882,9 +2895,10 @@
       ]
     },
     "agentic-rag": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "rag_techniques"
+        "rag_techniques",
+        "agentic_rag_for_dummies"
       ]
     },
     "embeddings": {
@@ -2894,15 +2908,17 @@
       ]
     },
     "generative-ai": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "rag_techniques"
+        "rag_techniques",
+        "agentic_rag_for_dummies"
       ]
     },
     "langchain": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "rag_techniques"
+        "rag_techniques",
+        "agentic_rag_for_dummies"
       ]
     },
     "llama-index": {
@@ -3055,9 +3071,10 @@
       ]
     },
     "agents": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "mcp_agent"
+        "mcp_agent",
+        "agentic_rag_for_dummies"
       ]
     },
     "model-context-protocol": {
@@ -3207,9 +3224,10 @@
       ]
     },
     "qdrant": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "awesome_mcp_servers"
+        "awesome_mcp_servers",
+        "agentic_rag_for_dummies"
       ]
     },
     "duckdb": {
@@ -3570,6 +3588,18 @@
       "freq": 1,
       "skills": [
         "mcp_server_implementations"
+      ]
+    },
+    "langgraph": {
+      "freq": 1,
+      "skills": [
+        "agentic_rag_for_dummies"
+      ]
+    },
+    "bm25": {
+      "freq": 1,
+      "skills": [
+        "agentic_rag_for_dummies"
       ]
     }
   },
@@ -4918,6 +4948,43 @@
         "version_control"
       ],
       "step_count": 7
+    },
+    "agentic_rag_for_dummies": {
+      "concepts": [
+        "agent",
+        "agentic-ai",
+        "agentic-rag",
+        "agents",
+        "ai-agents"
+      ],
+      "tools": [
+        "anthropic",
+        "qdrant",
+        "langgraph",
+        "openai",
+        "langchain",
+        "huggingface",
+        "gemini",
+        "ollama",
+        "agent",
+        "agentic-ai",
+        "agentic-rag",
+        "agents",
+        "ai-agents",
+        "bm25",
+        "generative-ai"
+      ],
+      "tags": [
+        "agent",
+        "agentic-ai",
+        "agentic-rag",
+        "agents",
+        "ai-agents",
+        "jupyter notebook",
+        "ai",
+        "llm"
+      ],
+      "step_count": 5
     }
   },
   "relationships": {
@@ -5020,6 +5087,9 @@
       ],
       "r2r": [
         "anthropic"
+      ],
+      "agentic_rag_for_dummies": [
+        "anthropic"
       ]
     },
     "100_hours_of_hermes_agent_lessons_in_19_minutes": {
@@ -5109,6 +5179,9 @@
       ],
       "fastapi_mcp_integration": [
         "Claude"
+      ],
+      "agentic_rag_for_dummies": [
+        "agent"
       ]
     },
     "hermes_agent_tutorial_for_beginners_full_step_by_s": {
@@ -5242,6 +5315,9 @@
       ],
       "mcp_server_implementations": [
         "Docker"
+      ],
+      "agentic_rag_for_dummies": [
+        "agent"
       ]
     },
     "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
@@ -5547,6 +5623,9 @@
         "anthropic"
       ],
       "r2r": [
+        "anthropic"
+      ],
+      "agentic_rag_for_dummies": [
         "anthropic"
       ]
     },
@@ -5891,6 +5970,9 @@
         "Docker",
         "SQLite",
         "Git"
+      ],
+      "agentic_rag_for_dummies": [
+        "agent"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -5991,6 +6073,9 @@
       ],
       "fastapi_mcp_integration": [
         "Claude"
+      ],
+      "agentic_rag_for_dummies": [
+        "agent"
       ]
     },
     "new_hermes_paperclip_ai_agent_update_is_insane": {
@@ -6192,6 +6277,9 @@
       ],
       "r2r": [
         "anthropic"
+      ],
+      "agentic_rag_for_dummies": [
+        "anthropic"
       ]
     },
     "you_need_to_use_hermes_right_now_goodbye_openclaw": {
@@ -6340,6 +6428,10 @@
       ],
       "mcp_server_implementations": [
         "Docker"
+      ],
+      "agentic_rag_for_dummies": [
+        "anthropic",
+        "agent"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -6577,6 +6669,9 @@
       ],
       "r2r": [
         "LLM"
+      ],
+      "agentic_rag_for_dummies": [
+        "openai"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -6927,6 +7022,9 @@
       ],
       "mcp_server_implementations": [
         "Docker"
+      ],
+      "agentic_rag_for_dummies": [
+        "agent"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -7086,6 +7184,11 @@
         "docker",
         "postgresql",
         "kubernetes"
+      ],
+      "agentic_rag_for_dummies": [
+        "agent",
+        "agentic-ai",
+        "openai"
       ]
     },
     "dify_deployment": {
@@ -7171,6 +7274,13 @@
         "redis",
         "docker",
         "ai"
+      ],
+      "agentic_rag_for_dummies": [
+        "gemini",
+        "agentic-ai",
+        "ai-agents",
+        "openai",
+        "huggingface"
       ]
     },
     "ragflow_self_hosting_guide": {
@@ -7282,6 +7392,9 @@
         "mongodb",
         "docker",
         "postgresql"
+      ],
+      "agentic_rag_for_dummies": [
+        "ollama"
       ]
     },
     "lightrag_setup": {
@@ -7480,6 +7593,12 @@
       ],
       "awesome_mcp_servers": [
         "ai"
+      ],
+      "agentic_rag_for_dummies": [
+        "generative-ai",
+        "agentic-rag",
+        "langchain",
+        "openai"
       ]
     },
     "advanced_retrieval_augmented_generation": {
@@ -7729,6 +7848,12 @@
         "ai",
         "mcp",
         "model-context-protocol"
+      ],
+      "agentic_rag_for_dummies": [
+        "agents",
+        "anthropic",
+        "ai-agents",
+        "openai"
       ]
     },
     "mcp_agent_framework": {
@@ -7984,6 +8109,9 @@
       "xcodebuildmcp": [
         "mcp",
         "model-context-protocol"
+      ],
+      "agentic_rag_for_dummies": [
+        "qdrant"
       ]
     },
     "mcp_server_implementations": {
@@ -8026,8 +8154,71 @@
       "r2r": [
         "Docker"
       ]
+    },
+    "agentic_rag_for_dummies": {
+      "new_claude_opus_5_leaks": [
+        "anthropic"
+      ],
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "agent"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "agent"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "anthropic"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "agent"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "agent"
+      ],
+      "china_just_beat_claude_ai_kimi_k3": [
+        "anthropic"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "anthropic",
+        "agent"
+      ],
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "openai"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "agent"
+      ],
+      "dify": [
+        "agent",
+        "agentic-ai",
+        "openai"
+      ],
+      "ragflow": [
+        "gemini",
+        "agentic-ai",
+        "ai-agents",
+        "openai",
+        "huggingface"
+      ],
+      "lightrag": [
+        "ollama"
+      ],
+      "rag_techniques": [
+        "generative-ai",
+        "agentic-rag",
+        "langchain",
+        "openai"
+      ],
+      "mcp_agent": [
+        "agents",
+        "anthropic",
+        "ai-agents",
+        "openai"
+      ],
+      "awesome_mcp_servers": [
+        "qdrant"
+      ]
     }
   },
-  "updated_at": "2026-07-21T19:49:10.510181+00:00",
-  "total_skills": 44
+  "updated_at": "2026-07-21T19:49:21.923593+00:00",
+  "total_skills": 45
 }
