@@ -921,8 +921,11 @@ def call_llm_for_lens(
             if status_fn:
                 try:
                     status_fn(provider_status())
-                except Exception:
-                    pass
+                except Exception as _sfn_exc:
+                    log.warning(
+                        "call_llm_for_lens[%s]: status_fn raised after %s success: %s",
+                        lens, provider, _sfn_exc,
+                    )
             log.debug("call_llm_for_lens[%s]: used %s", lens, provider)
             return result
         except Exception as e:
@@ -952,8 +955,11 @@ def call_llm_for_lens(
             if status_fn:
                 try:
                     status_fn(provider_status())
-                except Exception:
-                    pass
+                except Exception as _sfn_exc:
+                    log.warning(
+                        "call_llm_for_lens[%s]: status_fn raised after %s failure: %s",
+                        lens, provider, _sfn_exc,
+                    )
             continue
 
     raise RuntimeError(
