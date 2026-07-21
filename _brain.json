@@ -1163,14 +1163,15 @@
       ]
     },
     "ai": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "dify",
         "ragflow",
         "rag_techniques",
         "fastapi_mcp",
         "mcp_go",
-        "mcp_agent"
+        "mcp_agent",
+        "registry"
       ]
     },
     "AI workflow management": {
@@ -1421,11 +1422,12 @@
       ]
     },
     "llm": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "graphrag",
         "mcp_go",
-        "mcp_agent"
+        "mcp_agent",
+        "registry"
       ]
     },
     "Knowledge Graph Memory Structures": {
@@ -1647,9 +1649,10 @@
       ]
     },
     "go": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "mcp_go"
+        "mcp_go",
+        "registry"
       ]
     },
     "agents": {
@@ -1806,6 +1809,18 @@
       "freq": 1,
       "skills": [
         "r2r"
+      ]
+    },
+    "mcp": {
+      "freq": 1,
+      "skills": [
+        "registry"
+      ]
+    },
+    "mcp-servers": {
+      "freq": 1,
+      "skills": [
+        "registry"
       ]
     }
   },
@@ -2221,19 +2236,21 @@
       ]
     },
     "docker": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "dify",
         "ragflow",
         "lightrag",
-        "r2r"
+        "r2r",
+        "registry"
       ]
     },
     "postgresql": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "dify",
-        "lightrag"
+        "lightrag",
+        "registry"
       ]
     },
     "grafana": {
@@ -2696,10 +2713,11 @@
       ]
     },
     "mcp": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "fastapi_mcp",
-        "mcp_agent"
+        "mcp_agent",
+        "registry"
       ]
     },
     "mcp-server": {
@@ -2709,9 +2727,10 @@
       ]
     },
     "mcp-servers": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "fastapi_mcp"
+        "fastapi_mcp",
+        "registry"
       ]
     },
     "modelcontextprotocol": {
@@ -2757,9 +2776,10 @@
       ]
     },
     "Go": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "mcp_go"
+        "mcp_go",
+        "registry"
       ]
     },
     "pydantic": {
@@ -3962,6 +3982,30 @@
         "rag"
       ],
       "step_count": 12
+    },
+    "registry": {
+      "concepts": [
+        "mcp",
+        "mcp-servers",
+        "go",
+        "ai",
+        "llm"
+      ],
+      "tools": [
+        "postgresql",
+        "docker",
+        "mcp",
+        "mcp-servers",
+        "Go"
+      ],
+      "tags": [
+        "mcp",
+        "mcp-servers",
+        "go",
+        "ai",
+        "llm"
+      ],
+      "step_count": 8
     }
   },
   "relationships": {
@@ -6098,6 +6142,11 @@
       "r2r": [
         "docker",
         "openai"
+      ],
+      "registry": [
+        "docker",
+        "ai",
+        "postgresql"
       ]
     },
     "dify_deployment": {
@@ -6161,6 +6210,10 @@
       "r2r": [
         "docker",
         "openai"
+      ],
+      "registry": [
+        "docker",
+        "ai"
       ]
     },
     "ragflow_self_hosting_guide": {
@@ -6253,6 +6306,11 @@
         "large-language-models",
         "retrieval-augmented-generation",
         "rag"
+      ],
+      "registry": [
+        "docker",
+        "postgresql",
+        "llm"
       ]
     },
     "lightrag_setup": {
@@ -6344,6 +6402,9 @@
       ],
       "r2r": [
         "rag"
+      ],
+      "registry": [
+        "llm"
       ]
     },
     "graphrag_system": {
@@ -6437,6 +6498,10 @@
         "python",
         "retrieval-augmented-generation",
         "rag"
+      ],
+      "registry": [
+        "ai",
+        "llm"
       ]
     },
     "advanced_retrieval_augmented_generation": {
@@ -6504,6 +6569,12 @@
       "mcp_agent": [
         "ai",
         "llm",
+        "mcp"
+      ],
+      "registry": [
+        "mcp-servers",
+        "llm",
+        "ai",
         "mcp"
       ]
     },
@@ -6585,6 +6656,12 @@
       "mcp_agent": [
         "ai",
         "llm"
+      ],
+      "registry": [
+        "ai",
+        "go",
+        "Go",
+        "llm"
       ]
     },
     "mcp_agent": {
@@ -6639,6 +6716,11 @@
         "python",
         "anthropic",
         "openai"
+      ],
+      "registry": [
+        "ai",
+        "llm",
+        "mcp"
       ]
     },
     "mcp_agent_framework": {},
@@ -6721,8 +6803,48 @@
       "advanced_retrieval_augmented_generation": [
         "Retrieval-Augmented Generation (RAG)"
       ]
+    },
+    "registry": {
+      "dify": [
+        "docker",
+        "ai",
+        "postgresql"
+      ],
+      "ragflow": [
+        "docker",
+        "ai"
+      ],
+      "lightrag": [
+        "docker",
+        "postgresql",
+        "llm"
+      ],
+      "graphrag": [
+        "llm"
+      ],
+      "rag_techniques": [
+        "ai",
+        "llm"
+      ],
+      "fastapi_mcp": [
+        "mcp-servers",
+        "llm",
+        "ai",
+        "mcp"
+      ],
+      "mcp_go": [
+        "ai",
+        "go",
+        "Go",
+        "llm"
+      ],
+      "mcp_agent": [
+        "ai",
+        "llm",
+        "mcp"
+      ]
     }
   },
-  "updated_at": "2026-07-21T18:31:33.053598+00:00",
-  "total_skills": 38
+  "updated_at": "2026-07-21T18:31:45.872713+00:00",
+  "total_skills": 39
 }
