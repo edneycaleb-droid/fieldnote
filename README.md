@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **100 skills** · Last synced: 2026-07-21 15:37 UTC
+> **102 skills** · Last synced: 2026-07-21 18:29 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Fastapi Mcp](skills/fastapi_mcp.md) | Expose your FastAPI endpoints as Model Context Protocol (MCP) tools, with Auth! | `fastapi` `authentication` `authorization` `claude` | `ai` `authentication` `authorization` |
 | [Comprehensive Advanced Retrieval-Augmented Generation Techniques Hub](skills/advanced_retrieval_augmented_generation.md) | This hub provides a comprehensive understanding of Retrieval-Augmented Generatio | `RAG Techniques repository` `Claude Code` `GitHub` | `rag` `llm` `ai` |
 | [Rag Techniques](skills/rag_techniques.md) | This repository showcases various advanced techniques for Retrieval-Augmented Ge | `agentic-rag` `embeddings` `generative-ai` `gpt` | `agentic-rag` `ai` `embeddings` |
 | [GraphRAG: A Modular Graph-Based Retrieval-Augmented Generation System](skills/graphrag_system.md) | GraphRAG is a data pipeline and transformation suite that extracts structured da | `graphrag` `Python` `Command Line Interface` | `gpt` `gpt-4` `graphrag` |
@@ -109,6 +110,7 @@
 | [run_kimi_k3_inside_claude_code_max_power](skills/run_kimi_k3_inside_claude_code_max_power.md) |  |  |  |
 | [how_to_use_codex_to_build_insanely_beautiful_websi](skills/how_to_use_codex_to_build_insanely_beautiful_websi.md) |  |  |  |
 | [kimi_k3_crushed_fable](skills/kimi_k3_crushed_fable.md) |  |  |  |
+| [install_lightrag](skills/install_lightrag.md) |  |  |  |
 
 ---
 
