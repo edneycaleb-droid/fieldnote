@@ -1,21 +1,21 @@
-# Hermes Agent - Full Course & Setup Guide - For COMPLETE Beginners
+# Setting Up Hermes Agent for AI Self-Improvement
 
-> ⚠️ **Auto-extracted draft** — pending AI enhancement for full quality.
-
-By Tech With Tim. Key tools: LLM, OpenAI, Anthropic, Docker, curl. (Auto-extracted — pending AI enhancement.)
+## Description
+This skill teaches how to set up Hermes Agent, a self-learning AI assistant, and its key components, including memory, skills, and the self-improvement loop.
 
 ## Steps
+1. Install Hermes Agent on a virtual private server.
+2. Configure the agent's memory and skills.
+3. Understand the self-improvement loop and how it enhances the agent's performance over time.
 
-- Watch the full video for step-by-step instructions.
+## Tools
+Hermes Agent, Virtual Private Server, LLM
 
-## Tools & Technologies
+## Concepts
+Memory, Skills, Self-Improvement Loop
 
-LLM, OpenAI, Anthropic, Docker, curl, SSH, Python
-
-## Source
-
-- **Video**: [Hermes Agent - Full Course & Setup Guide - For COMPLETE Beginners](https://www.youtube.com/watch?v=mTYxpIRK7xA)
-- **Video ID**: `mTYxpIRK7xA`
+## Related Skills
+this_100_self_improving_ai_agent_is_insane_just_wa
 
 ## Sources
 
