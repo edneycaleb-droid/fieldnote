@@ -21,4 +21,4 @@ Claude, Anthropic
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-20 | [New Claude Opus 5 LEAKS!](https://www.youtube.com/watch?v=lLMjHcPlv8E) | yt_dlp_subs |
+| 2026-07-21 | [New Claude Opus 5 LEAKS!](https://www.youtube.com/watch?v=lLMjHcPlv8E) | yt_dlp_subs |

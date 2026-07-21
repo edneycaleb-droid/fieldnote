@@ -9,7 +9,6 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [Getting Started with ChatGPT Work: A Beginner's Guide](skills/chatgpt_work_everything_you_need_to_know_to_get_st.md) | Learn how to use ChatGPT Work to automate tasks, build websites, and create cont | `ChatGPT` `ChatGPT Work` | `ai` `automation` `chatgpt` |
 | [New Claude Opus 5 LEAKS!](skills/new_claude_opus_5_leaks.md) | By Julian Goldie SEO. Key tools: Claude, Anthropic. (Auto-extracted — pending AI | `Claude` `Anthropic` | `opus` `model` `profit` |
 | [Anthropic's Downfall... Kimi K3.1, Grok 4.6, DeepSeek v4 GA, U.S. Gov's Gold Eagle, & Robot MMA!](skills/anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v.md) | By WorldofAI. Key tools: Claude, anthropic, Gemini, OpenAI. (Auto-extracted — pe | `Claude` `anthropic` `Gemini` `OpenAI` | `model` `which` `enthropic` |
 | [Creating a Successful AI Business Model](skills/this_ai_business_model_is_creating_new_millionaire.md) | Learn how to create a profitable AI business model by identifying existing deman | `Claude` `Anthropic` `OpenAI` | `ai` `business` `model` |
@@ -36,6 +35,7 @@
 | [kimi_k3_hermes_ai_agent_is_insane](skills/kimi_k3_hermes_ai_agent_is_insane.md) |  |  |  |
 | [kimi_k3_fully_tested_an_open_model_beats_fable](skills/kimi_k3_fully_tested_an_open_model_beats_fable.md) |  |  |  |
 | [100_hours_of_hermes_agent_lessons_in_19_minutes](skills/100_hours_of_hermes_agent_lessons_in_19_minutes.md) |  |  |  |
+| [chatgpt_work_everything_you_need_to_know_to_get_st](skills/chatgpt_work_everything_you_need_to_know_to_get_st.md) |  |  |  |
 | [this_kimi_k3_agent_os_is_wild](skills/this_kimi_k3_agent_os_is_wild.md) |  |  |  |
 | [higsfield_integration](skills/higsfield_integration.md) |  |  |  |
 | [kimi_k3_is_the_best_model_ever_made_sometimes](skills/kimi_k3_is_the_best_model_ever_made_sometimes.md) |  |  |  |
