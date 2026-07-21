@@ -41,11 +41,12 @@
       ]
     },
     "claude": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "new_claude_opus_5_leaks",
         "new_claude_update_is_insane",
-        "china_just_beat_claude_ai_kimi_k3"
+        "china_just_beat_claude_ai_kimi_k3",
+        "fastapi_mcp"
       ]
     },
     "here": {
@@ -1162,11 +1163,12 @@
       ]
     },
     "ai": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "dify",
         "ragflow",
-        "rag_techniques"
+        "rag_techniques",
+        "fastapi_mcp"
       ]
     },
     "AI workflow management": {
@@ -1588,6 +1590,24 @@
       "skills": [
         "advanced_retrieval_augmented_generation"
       ]
+    },
+    "authentication": {
+      "freq": 1,
+      "skills": [
+        "fastapi_mcp"
+      ]
+    },
+    "authorization": {
+      "freq": 1,
+      "skills": [
+        "fastapi_mcp"
+      ]
+    },
+    "cursor": {
+      "freq": 1,
+      "skills": [
+        "fastapi_mcp"
+      ]
     }
   },
   "tools": {
@@ -1672,7 +1692,7 @@
       ]
     },
     "Python": {
-      "freq": 16,
+      "freq": 17,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -1682,7 +1702,8 @@
         "new_hermes_agent_os_is_insane",
         "lightrag",
         "graphrag",
-        "graphrag_system"
+        "graphrag_system",
+        "fastapi_mcp"
       ]
     },
     "LLM": {
@@ -2056,9 +2077,10 @@
       ]
     },
     "claude": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "dify"
+        "dify",
+        "fastapi_mcp"
       ]
     },
     "genai": {
@@ -2288,11 +2310,12 @@
       ]
     },
     "llm": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "lightrag",
         "graphrag",
-        "rag_techniques"
+        "rag_techniques",
+        "fastapi_mcp"
       ]
     },
     "rag": {
@@ -2429,6 +2452,66 @@
       "freq": 1,
       "skills": [
         "advanced_retrieval_augmented_generation"
+      ]
+    },
+    "fastapi": {
+      "freq": 1,
+      "skills": [
+        "fastapi_mcp"
+      ]
+    },
+    "authentication": {
+      "freq": 1,
+      "skills": [
+        "fastapi_mcp"
+      ]
+    },
+    "authorization": {
+      "freq": 1,
+      "skills": [
+        "fastapi_mcp"
+      ]
+    },
+    "cursor": {
+      "freq": 1,
+      "skills": [
+        "fastapi_mcp"
+      ]
+    },
+    "mcp": {
+      "freq": 1,
+      "skills": [
+        "fastapi_mcp"
+      ]
+    },
+    "mcp-server": {
+      "freq": 1,
+      "skills": [
+        "fastapi_mcp"
+      ]
+    },
+    "mcp-servers": {
+      "freq": 1,
+      "skills": [
+        "fastapi_mcp"
+      ]
+    },
+    "modelcontextprotocol": {
+      "freq": 1,
+      "skills": [
+        "fastapi_mcp"
+      ]
+    },
+    "openapi": {
+      "freq": 1,
+      "skills": [
+        "fastapi_mcp"
+      ]
+    },
+    "windsurf": {
+      "freq": 1,
+      "skills": [
+        "fastapi_mcp"
       ]
     }
   },
@@ -3362,6 +3445,40 @@
         "retrieval"
       ],
       "step_count": 12
+    },
+    "fastapi_mcp": {
+      "concepts": [
+        "ai",
+        "authentication",
+        "authorization",
+        "claude",
+        "cursor"
+      ],
+      "tools": [
+        "fastapi",
+        "authentication",
+        "authorization",
+        "claude",
+        "cursor",
+        "llm",
+        "mcp",
+        "mcp-server",
+        "mcp-servers",
+        "modelcontextprotocol",
+        "openapi",
+        "windsurf",
+        "Python"
+      ],
+      "tags": [
+        "ai",
+        "authentication",
+        "authorization",
+        "claude",
+        "cursor",
+        "python",
+        "llm"
+      ],
+      "step_count": 8
     }
   },
   "relationships": {
@@ -3451,6 +3568,9 @@
         "here"
       ],
       "dify": [
+        "claude"
+      ],
+      "fastapi_mcp": [
         "claude"
       ]
     },
@@ -3658,6 +3778,9 @@
       "graphrag_system": [
         "Python",
         "LLM"
+      ],
+      "fastapi_mcp": [
+        "Python"
       ]
     },
     "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
@@ -4280,6 +4403,9 @@
       ],
       "graphrag_system": [
         "Python"
+      ],
+      "fastapi_mcp": [
+        "Python"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -4373,6 +4499,9 @@
         "Python"
       ],
       "graphrag_system": [
+        "Python"
+      ],
+      "fastapi_mcp": [
         "Python"
       ]
     },
@@ -4563,6 +4692,9 @@
       ],
       "dify": [
         "claude"
+      ],
+      "fastapi_mcp": [
+        "claude"
       ]
     },
     "you_need_to_use_hermes_right_now_goodbye_openclaw": {
@@ -4695,6 +4827,9 @@
       "graphrag_system": [
         "Python",
         "LLM"
+      ],
+      "fastapi_mcp": [
+        "Python"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -4806,6 +4941,9 @@
       "graphrag_system": [
         "Python",
         "LLM"
+      ],
+      "fastapi_mcp": [
+        "Python"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -5367,6 +5505,10 @@
         "gpt",
         "openai",
         "ai"
+      ],
+      "fastapi_mcp": [
+        "ai",
+        "claude"
       ]
     },
     "dify_deployment": {
@@ -5410,6 +5552,9 @@
       ],
       "rag_techniques": [
         "openai",
+        "ai"
+      ],
+      "fastapi_mcp": [
         "ai"
       ]
     },
@@ -5482,6 +5627,10 @@
         "llm",
         "retrieval-augmented-generation",
         "rag"
+      ],
+      "fastapi_mcp": [
+        "llm",
+        "Python"
       ]
     },
     "lightrag_setup": {
@@ -5552,6 +5701,10 @@
         "gpt",
         "llms",
         "rag"
+      ],
+      "fastapi_mcp": [
+        "llm",
+        "Python"
       ]
     },
     "graphrag_system": {
@@ -5592,6 +5745,9 @@
       ],
       "advanced_retrieval_augmented_generation": [
         "Retrieval-Augmented Generation"
+      ],
+      "fastapi_mcp": [
+        "Python"
       ]
     },
     "rag_techniques": {
@@ -5618,6 +5774,10 @@
         "gpt",
         "llms",
         "rag"
+      ],
+      "fastapi_mcp": [
+        "ai",
+        "llm"
       ]
     },
     "advanced_retrieval_augmented_generation": {
@@ -5630,8 +5790,53 @@
       "graphrag_system": [
         "Retrieval-Augmented Generation"
       ]
+    },
+    "fastapi_mcp": {
+      "new_claude_opus_5_leaks": [
+        "claude"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Python"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "Python"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Python"
+      ],
+      "china_just_beat_claude_ai_kimi_k3": [
+        "claude"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "Python"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Python"
+      ],
+      "dify": [
+        "ai",
+        "claude"
+      ],
+      "ragflow": [
+        "ai"
+      ],
+      "lightrag": [
+        "llm",
+        "Python"
+      ],
+      "graphrag": [
+        "llm",
+        "Python"
+      ],
+      "graphrag_system": [
+        "Python"
+      ],
+      "rag_techniques": [
+        "ai",
+        "llm"
+      ]
     }
   },
-  "updated_at": "2026-07-21T15:37:24.384017+00:00",
-  "total_skills": 32
+  "updated_at": "2026-07-21T18:29:39.574590+00:00",
+  "total_skills": 33
 }
