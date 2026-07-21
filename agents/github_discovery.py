@@ -1415,60 +1415,6 @@ def discovery_reliability() -> dict:
 
 def _now_iso() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
-, _re.I),
-        _re.compile(r'^tests?\s*:?\s*(passing|failing|failed)
-
-    # ── Description from first paragraph ─────────────────────────────────────
-    paragraphs = [p.strip() for p in _re.split(r'\n{2,}', readme) if p.strip()]
-    first_para = ""
-    for p in paragraphs[:5]:
-        if not p.startswith("#") and len(p) > 30:
-            first_para = p[:300]
-            break
-    description = desc or first_para or f"Skills and patterns from {full_name} ({stars:,} ⭐)"
-
-    # ── Tags from topics + keywords ───────────────────────────────────────────
-    tags = list(dict.fromkeys(
-        [t.lower()[:30] for t in topics[:5]]
-        + ([language.lower()] if language else [])
-        + (["ai", "llm"] if any(w in readme_lower for w in ["llm", "language model", "ai"]) else [])
-    ))[:8]
-
-    # ── Skill name ────────────────────────────────────────────────────────────
-    skill_name = _re.sub(r'[^a-z0-9]+', '_', name.lower())[:50].strip('_')
-    if not skill_name:
-        skill_name = "github_skill_" + full_name.replace("/", "_").lower()[:30]
-
-    # ── Markdown body ─────────────────────────────────────────────────────────
-    steps_md = "\n".join(f"- {s}" for s in steps) if steps else "- See README for detailed steps."
-    tools_md = ", ".join(detected_tools[:12]) or "See README"
-    readme_excerpt = readme[:2000].strip()
-    skill_markdown = (
-        f"# {name}\n\n"
-        f"## Description\n\n{description}\n\n"
-        f"## Steps\n\n{steps_md}\n\n"
-        f"## Tools\n\n{tools_md}\n\n"
-        f"## Source\n\n"
-        f"GitHub: [{full_name}](https://github.com/{full_name}) ⭐ {stars:,}\n\n"
-        f"## README Excerpt\n\n{readme_excerpt}\n"
-    )
-
-    return {
-        "action":          "create",
-        "enhance_target":  None,
-        "skill_name":      skill_name,
-        "title":           name.replace("-", " ").replace("_", " ").title(),
-        "description":     description[:400],
-        "steps":           steps or [f"Explore the {name} repository", "Follow setup instructions in the README", "Run the examples"],
-        "tools":           detected_tools[:15],
-        "python_packages": [],
-        "concepts":        tags[:5],
-        "tags":            tags,
-        "related_skills":  [],
-        "skill_markdown":  skill_markdown,
-        "_baseline":       True,
-        "_baseline_reason": "ai_unavailable",
-    }
 
 
 def _extract_from_repo(repo: dict, readme: str, index: dict) -> dict | None:
