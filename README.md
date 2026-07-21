@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **111 skills** · Last synced: 2026-07-21 19:47 UTC
+> **112 skills** · Last synced: 2026-07-21 19:48 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Awesome Mcp Servers](skills/awesome_mcp_servers.md) | Awesome MCP Servers - A curated list of Model Context Protocol servers | `qdrant` `redis` `mongodb` `postgresql` | `ai` `anthropic-claude` `awesome` |
 | [Xcodebuildmcp](skills/xcodebuildmcp.md) | A Model Context Protocol (MCP) server and CLI that provides tools for agent use  | `mcp` `mcp-server` `model-context-protocol` `model-context-protocol-servers` | `mcp` `mcp-server` `model-context-protocol` |
 | [Implementing the Model Context Protocol with Go (mcp-go)](skills/model_context_protocol_go.md) | Learn how to build servers that expose data and functionality to LLM application | `mcp-go` | `llm` `go` `sdk` |
 | [MCP Registry Development and Deployment](skills/mcp_registry_development_deployment.md) | Learn how to set up, develop, and deploy the MCP Registry service, a community-d | `docker` `postgresql` `ko` `golangci-lint` | `mcp` `registry` `service discovery` |
