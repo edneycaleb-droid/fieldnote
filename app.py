@@ -4221,6 +4221,24 @@ def api_skill_content(name: str):
     })
 
 
+@app.route("/api/skills/<name>/meta")
+def api_skill_meta(name: str):
+    """Lightweight endpoint returning index metadata for a single skill (includes _baseline flag)."""
+    name = re.sub(r"[^a-z0-9_]", "_", name.lower()).strip("_")
+    index = load_index()
+    meta = index.get(name)
+    if meta is None:
+        return jsonify({"error": f"Skill '{name}' not found"}), 404
+    return jsonify({
+        "name":       name,
+        "title":      meta.get("title", name),
+        "tags":       _nsl(meta.get("tags")),
+        "tools":      _nsl(meta.get("tools")),
+        "_baseline":  meta.get("_baseline", False),
+        "updated_at": meta.get("updated_at", ""),
+    })
+
+
 @app.route("/api/skills/<name>/enrich", methods=["POST"])
 def api_skill_enrich(name: str):
     """Push a baseline skill to the front of the enrichment queue and trigger an

@@ -132,6 +132,26 @@ header { background: var(--surface); border-bottom: 1px solid var(--border);
   color: #b8b8d0; vertical-align: top; }
 .md-body tr:last-child td { border-bottom: none; }
 
+/* ── Baseline badge & enrich button ── */
+.badge-baseline {
+  display: inline-flex; align-items: center; gap: 3px;
+  font-size: 0.72rem; font-weight: 700; border-radius: 6px;
+  padding: 3px 8px; white-space: nowrap;
+  background: #1a1200; color: var(--amber); border: 1px solid #3a2a00;
+  cursor: default;
+}
+.enrich-now-btn {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 0.72rem; font-weight: 700; border-radius: 6px;
+  padding: 3px 10px; white-space: nowrap;
+  background: #0a1628; color: var(--blue); border: 1px solid #1a3a5a;
+  cursor: pointer; transition: border-color .15s, opacity .15s;
+  -webkit-appearance: none;
+}
+.enrich-now-btn:hover:not(:disabled) { border-color: var(--blue); }
+.enrich-now-btn:disabled { opacity: .5; cursor: default; }
+#baseline-status { font-size: 0.78rem; margin-top: 4px; }
+
 /* Delete modal */
 .overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,.7);
   z-index: 100; align-items: center; justify-content: center; }
@@ -185,7 +205,15 @@ header { background: var(--surface); border-bottom: 1px solid var(--border);
           {{ '🎙 Whisper' if meta.method == 'whisper' else '✓ Captions' }}
         </span>
       {% endif %}
+      {% if meta.get('_baseline') %}
+        <span class="badge-baseline" id="baseline-badge"
+              title="AI enrichment pending — will auto-upgrade when providers recover">📄 Baseline</span>
+        <button class="enrich-now-btn" id="enrich-now-btn"
+                title="Trigger AI enrichment now instead of waiting for the scheduler"
+                onclick="enrichSkillNow()">⚡ Enrich now</button>
+      {% endif %}
     </div>
+    <div id="baseline-status"></div>
 
     {% if meta.get('related_skills') %}
     <div style="margin-top:12px">
@@ -326,6 +354,58 @@ async function confirmDelete() {
   const r = await fetch(`/skills/{{ filename }}/delete`, { method: "POST" });
   if (r.ok) window.location.href = "/";
   else { hideDelete(); alert("Delete failed."); }
+}
+
+async function enrichSkillNow() {
+  const btn    = document.getElementById("enrich-now-btn");
+  const badge  = document.getElementById("baseline-badge");
+  const status = document.getElementById("baseline-status");
+  if (!btn) return;
+  btn.disabled = true;
+  btn.textContent = "⏳ Enriching…";
+  if (status) { status.style.color = "var(--amber)"; status.textContent = "Enrichment queued — checking for updates…"; }
+
+  try {
+    const r = await fetch(`/api/skills/{{ name }}/enrich`, { method: "POST" });
+    const d = await r.json();
+    if (!r.ok) {
+      if (status) { status.style.color = "var(--red)"; status.textContent = d.error || "Enrichment failed."; }
+      btn.disabled = false;
+      btn.textContent = "⚡ Enrich now";
+      return;
+    }
+
+    // Poll /api/skills/<name>/meta until _baseline clears (up to 90 s)
+    const deadline = Date.now() + 90000;
+    let cleared = false;
+    while (Date.now() < deadline) {
+      await new Promise(res => setTimeout(res, 2500));
+      try {
+        const mr = await fetch(`/api/skills/{{ name }}/meta`);
+        if (mr.ok) {
+          const md = await mr.json();
+          if (!md._baseline) {
+            cleared = true;
+            break;
+          }
+        }
+      } catch (_) {}
+    }
+
+    if (cleared) {
+      if (badge)  { badge.remove(); }
+      if (btn)    { btn.remove(); }
+      if (status) { status.style.color = "var(--green)"; status.textContent = "✓ Enriched — reload for updated tags."; }
+    } else {
+      if (status) { status.style.color = "var(--amber)"; status.textContent = "Still enriching — check back shortly."; }
+      btn.disabled = false;
+      btn.textContent = "⚡ Enrich now";
+    }
+  } catch (ex) {
+    if (status) { status.style.color = "var(--red)"; status.textContent = "Network error — try again."; }
+    btn.disabled = false;
+    btn.textContent = "⚡ Enrich now";
+  }
 }
 </script>
 </body>
