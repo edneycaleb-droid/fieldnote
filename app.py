@@ -4205,6 +4205,64 @@ def api_skill_content(name: str):
     })
 
 
+@app.route("/api/skills/<name>/enrich", methods=["POST"])
+def api_skill_enrich(name: str):
+    """Push a baseline skill to the front of the enrichment queue and trigger an
+    immediate attempt in a background thread."""
+    try:
+        import agents.discovery_enrichment as de
+        import agents.github_discovery as gd
+
+        name = re.sub(r"[^a-z0-9_]", "_", name.lower()).strip("_")
+        index = load_index()
+        meta = index.get(name)
+        if meta is None:
+            return jsonify({"ok": False, "error": f"Skill '{name}' not found"}), 404
+        if not meta.get("_baseline"):
+            return jsonify({"ok": False, "error": "Skill is not a baseline — nothing to enrich"}), 400
+
+        # Find the full_name (owner/repo) via the discovery log
+        disc_log = gd.load_discovery_log()
+        full_name = None
+        stars = 0
+        fingerprint = ""
+        for fn, v in disc_log.items():
+            if v.get("skill_name") == name:
+                full_name = fn
+                stars = v.get("stars", 0)
+                fingerprint = v.get("fingerprint", "")
+                break
+
+        if not full_name:
+            return jsonify({"ok": False, "error": "Could not find GitHub repo for this baseline skill"}), 400
+
+        # Push to the very front of the enrichment queue
+        de.enqueue_priority(full_name, stars, fingerprint)
+
+        # Fire an immediate enrichment attempt in a background thread
+        queue_item = {
+            "full_name":   full_name,
+            "stars":       stars,
+            "retry_count": 0,
+            "fingerprint": fingerprint,
+        }
+
+        def _bg_enrich():
+            try:
+                de._enrich_one(queue_item)
+                de.mark_succeeded(queue_item)
+            except Exception as exc:
+                log.warning("Manual enrich failed for %s: %s", full_name, exc)
+                de.mark_failed(queue_item, str(exc))
+
+        t = threading.Thread(target=_bg_enrich, daemon=True)
+        t.start()
+
+        return jsonify({"ok": True, "status": "triggered", "full_name": full_name})
+    except Exception as exc:
+        return jsonify({"ok": False, "error": str(exc)}), 500
+
+
 @app.route("/skills/<filename>")
 def view_skill(filename):
     filename = os.path.basename(filename)

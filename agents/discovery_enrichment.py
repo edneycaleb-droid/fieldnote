@@ -112,6 +112,26 @@ def enqueue(full_name: str, stars: int, retry_count: int = 0,
     log.info("Enrichment queue: enqueued %s (stars=%d)", full_name, stars)
 
 
+def enqueue_priority(full_name: str, stars: int, fingerprint: str = "") -> None:
+    """Push a repo to the FRONT of the enrichment queue for immediate processing.
+    Removes any existing entry for the same repo first (de-dup + re-prioritise)."""
+    items = load_queue()
+    # Remove existing entry so we can re-insert at the front
+    items = [it for it in items if it["full_name"] != full_name]
+    priority_item = {
+        "full_name":       full_name,
+        "stars":           stars,
+        "retry_count":     0,
+        "fingerprint":     fingerprint,
+        "next_attempt_at": _now_iso(),   # eligible immediately
+        "enqueued_at":     _now_iso(),
+        "_priority":       True,
+    }
+    items.insert(0, priority_item)
+    save_queue(items)
+    log.info("Enrichment queue: priority-enqueued %s (stars=%d)", full_name, stars)
+
+
 def dequeue_next(provider_available: bool = True) -> dict | None:
     """
     Return the highest-star item whose next_attempt_at <= now and at least one

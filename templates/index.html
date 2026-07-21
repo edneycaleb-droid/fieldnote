@@ -267,6 +267,16 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
   background: #1a1200; color: var(--amber); border: 1px solid #3a2a00;
   cursor: default;
 }
+.enrich-now-btn {
+  display: inline-flex; align-items: center; gap: 3px;
+  font-size: 0.62rem; font-weight: 700; border-radius: 4px;
+  padding: 2px 7px; white-space: nowrap; flex-shrink: 0;
+  background: #0a1628; color: var(--blue); border: 1px solid #1a3a5a;
+  cursor: pointer; transition: border-color .15s, opacity .15s;
+  -webkit-appearance: none;
+}
+.enrich-now-btn:hover:not(:disabled) { border-color: var(--blue); }
+.enrich-now-btn:disabled { opacity: .5; cursor: default; }
 .baseline-banner {
   background: #0f0a00; border: 1px solid #4a3000; border-radius: 12px;
   padding: 10px 14px; margin-bottom: 10px; display: flex; align-items: center;
@@ -2169,6 +2179,9 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
           <div class="skill-row-tags">
             {% if s._baseline %}
             <span class="badge-baseline" title="AI enrichment pending — will auto-upgrade when providers recover">📄 Baseline</span>
+            <button class="enrich-now-btn"
+                    title="Trigger AI enrichment now instead of waiting for the scheduler"
+                    onclick="enrichSkillNow('{{ s.name }}', event)">⚡ Enrich now</button>
             {% else %}
             {% for t in s.tags[:2] %}<span class="sr-tag">{{ t }}</span>{% endfor %}
             {% endif %}
@@ -4114,8 +4127,11 @@ function prependSkill(d) {
   if (empty) empty.remove();
   const fname    = d.skill_name + ".md";
   const isBaseline = !!d._baseline;
+  const skillName  = d.skill_name || "";
   const tagsHtml = isBaseline
-    ? `<span class="badge-baseline" title="AI enrichment pending — will auto-upgrade when providers recover">📄 Baseline</span>`
+    ? `<span class="badge-baseline" title="AI enrichment pending — will auto-upgrade when providers recover">📄 Baseline</span>
+       <button class="enrich-now-btn" title="Trigger AI enrichment now instead of waiting for the scheduler"
+               onclick="enrichSkillNow('${esc(skillName)}', event)">⚡ Enrich now</button>`
     : (d.tags || []).slice(0, 2).map(t => `<span class="sr-tag">${esc(t)}</span>`).join("");
   const existing = list.querySelector(`[href="/skills/${fname}"]`);
   if (existing) existing.remove();
@@ -4134,6 +4150,68 @@ function prependSkill(d) {
       <div class="skill-row-tags">${tagsHtml}</div>
       <span class="skill-row-arrow">›</span>
     </a>`);
+}
+
+// ── Manual enrichment ─────────────────────────────────────────────────────────
+async function enrichSkillNow(skillName, event) {
+  event.preventDefault();
+  event.stopPropagation();
+  const btn = event.currentTarget;
+  if (!skillName || btn.disabled) return;
+
+  // Show spinner
+  const origText = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = "⏳ Enriching…";
+
+  try {
+    const r = await fetch(`/api/skills/${encodeURIComponent(skillName)}/enrich`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+    });
+    const d = await r.json();
+    if (!d.ok) {
+      btn.disabled = false;
+      btn.textContent = origText;
+      alert("Enrich failed: " + (d.error || "unknown error"));
+      return;
+    }
+    // Enrichment triggered — poll until the _baseline flag clears (up to 90 s)
+    btn.textContent = "⏳ Running…";
+    let elapsed = 0;
+    const POLL_MS = 4000;
+    const MAX_MS  = 90000;
+    const poll = setInterval(async () => {
+      elapsed += POLL_MS;
+      try {
+        const sr = await fetch("/api/skills");
+        const skills = await sr.json();
+        const updated = skills.find(s => s.name === skillName);
+        if (updated && !updated._baseline) {
+          // Enrichment complete — refresh the row
+          clearInterval(poll);
+          const row = document.querySelector(`.skill-row[href="/skills/${skillName}.md"]`);
+          if (row) {
+            const tagsDiv = row.querySelector(".skill-row-tags");
+            if (tagsDiv) {
+              tagsDiv.innerHTML = (updated.tags || []).slice(0, 2)
+                .map(t => `<span class="sr-tag">${esc(t)}</span>`).join("");
+            }
+            row.dataset.baseline = "";
+          }
+        }
+      } catch (_) { /* ignore poll errors */ }
+      if (elapsed >= MAX_MS) {
+        clearInterval(poll);
+        btn.disabled = false;
+        btn.textContent = "↺ Retry";
+      }
+    }, POLL_MS);
+  } catch (ex) {
+    btn.disabled = false;
+    btn.textContent = origText;
+    console.error("enrichSkillNow:", ex);
+  }
 }
 
 // ── Library filter ────────────────────────────────────────────────────────────
