@@ -44,7 +44,7 @@ class RepositoryQualityRubricTests(unittest.TestCase):
                 "persist-credentials: false\n"
                 "dependency-smoke:\n"
                 "if: github.event_name == 'pull_request'\n"
-                'python-version: "3.10"\n'
+                'python-version: "3.11"\n'
                 "poetry==1.8.5\n"
                 "poetry install --no-interaction --no-ansi --no-root\n"
             ),
