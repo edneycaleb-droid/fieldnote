@@ -1371,6 +1371,36 @@
       "skills": [
         "lightrag"
       ]
+    },
+    "Retrieval-Augmented Generation": {
+      "freq": 1,
+      "skills": [
+        "lightrag_setup"
+      ]
+    },
+    "Knowledge Graph": {
+      "freq": 1,
+      "skills": [
+        "lightrag_setup"
+      ]
+    },
+    "Vector Embeddings": {
+      "freq": 1,
+      "skills": [
+        "lightrag_setup"
+      ]
+    },
+    "Multimodal Document Parsing": {
+      "freq": 1,
+      "skills": [
+        "lightrag_setup"
+      ]
+    },
+    "Cross-Modal Entity Mapping": {
+      "freq": 1,
+      "skills": [
+        "lightrag_setup"
+      ]
     }
   },
   "tools": {
@@ -1434,7 +1464,7 @@
       ]
     },
     "Docker": {
-      "freq": 13,
+      "freq": 14,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -1442,7 +1472,8 @@
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
         "new_hermes_agent_os_is_insane",
         "dify_deployment",
-        "ragflow_self_hosting_guide"
+        "ragflow_self_hosting_guide",
+        "lightrag_setup"
       ]
     },
     "bash": {
@@ -1854,10 +1885,11 @@
       ]
     },
     "Docker Compose": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "dify_deployment",
-        "ragflow_self_hosting_guide"
+        "ragflow_self_hosting_guide",
+        "lightrag_setup"
       ]
     },
     "Kubernetes": {
@@ -1879,9 +1911,10 @@
       ]
     },
     "PostgreSQL": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "dify_deployment"
+        "dify_deployment",
+        "lightrag_setup"
       ]
     },
     "NextJS": {
@@ -2074,6 +2107,42 @@
       "freq": 1,
       "skills": [
         "lightrag"
+      ]
+    },
+    "uv": {
+      "freq": 1,
+      "skills": [
+        "lightrag_setup"
+      ]
+    },
+    "LightRAG": {
+      "freq": 1,
+      "skills": [
+        "lightrag_setup"
+      ]
+    },
+    "bun": {
+      "freq": 1,
+      "skills": [
+        "lightrag_setup"
+      ]
+    },
+    "Neo4J": {
+      "freq": 1,
+      "skills": [
+        "lightrag_setup"
+      ]
+    },
+    "MinerU": {
+      "freq": 1,
+      "skills": [
+        "lightrag_setup"
+      ]
+    },
+    "Docling": {
+      "freq": 1,
+      "skills": [
+        "lightrag_setup"
       ]
     }
   },
@@ -2854,6 +2923,34 @@
         "llm"
       ],
       "step_count": 8
+    },
+    "lightrag_setup": {
+      "concepts": [
+        "Retrieval-Augmented Generation",
+        "Knowledge Graph",
+        "Vector Embeddings",
+        "Multimodal Document Parsing",
+        "Cross-Modal Entity Mapping"
+      ],
+      "tools": [
+        "uv",
+        "LightRAG",
+        "Docker",
+        "Docker Compose",
+        "bun",
+        "PostgreSQL",
+        "Neo4J",
+        "MinerU",
+        "Docling"
+      ],
+      "tags": [
+        "genai",
+        "gpt",
+        "graphrag",
+        "knowledge-graph",
+        "llm"
+      ],
+      "step_count": 5
     }
   },
   "relationships": {
@@ -3140,6 +3237,9 @@
       ],
       "lightrag": [
         "Python"
+      ],
+      "lightrag_setup": [
+        "Docker"
       ]
     },
     "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
@@ -3753,6 +3853,9 @@
       ],
       "lightrag": [
         "Python"
+      ],
+      "lightrag_setup": [
+        "Docker"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -4152,6 +4255,9 @@
       ],
       "lightrag": [
         "Python"
+      ],
+      "lightrag_setup": [
+        "Docker"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -4253,6 +4359,9 @@
       ],
       "lightrag": [
         "Python"
+      ],
+      "lightrag_setup": [
+        "Docker"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -4673,6 +4782,9 @@
       ],
       "ragflow_self_hosting_guide": [
         "Docker"
+      ],
+      "lightrag_setup": [
+        "Docker"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -4812,6 +4924,11 @@
       "ragflow_self_hosting_guide": [
         "Docker Compose",
         "Docker"
+      ],
+      "lightrag_setup": [
+        "PostgreSQL",
+        "Docker Compose",
+        "Docker"
       ]
     },
     "ragflow": {
@@ -4849,6 +4966,10 @@
       "dify_deployment": [
         "Docker Compose",
         "Docker"
+      ],
+      "lightrag_setup": [
+        "Docker Compose",
+        "Docker"
       ]
     },
     "lightrag": {
@@ -4876,8 +4997,34 @@
       "ragflow": [
         "docker"
       ]
+    },
+    "lightrag_setup": {
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Docker"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "Docker"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "Docker"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Docker"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "Docker"
+      ],
+      "dify_deployment": [
+        "PostgreSQL",
+        "Docker Compose",
+        "Docker"
+      ],
+      "ragflow_self_hosting_guide": [
+        "Docker Compose",
+        "Docker"
+      ]
     }
   },
-  "updated_at": "2026-07-21T15:21:40.678166+00:00",
-  "total_skills": 27
+  "updated_at": "2026-07-21T15:21:54.322536+00:00",
+  "total_skills": 28
 }
