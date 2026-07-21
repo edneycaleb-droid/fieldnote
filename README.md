@@ -9,6 +9,9 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Getting Started with ChatGPT Work: A Beginner's Guide](skills/chatgpt_work_everything_you_need_to_know_to_get_st.md) | Learn how to use ChatGPT Work to automate tasks, build websites, and create cont | `ChatGPT` `ChatGPT Work` | `ai` `automation` `chatgpt` |
+| [New Claude Opus 5 LEAKS!](skills/new_claude_opus_5_leaks.md) | By Julian Goldie SEO. Key tools: Claude, Anthropic. (Auto-extracted — pending AI | `Claude` `Anthropic` | `opus` `model` `profit` |
+| [Anthropic's Downfall... Kimi K3.1, Grok 4.6, DeepSeek v4 GA, U.S. Gov's Gold Eagle, & Robot MMA!](skills/anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v.md) | By WorldofAI. Key tools: Claude, anthropic, Gemini, OpenAI. (Auto-extracted — pe | `Claude` `anthropic` `Gemini` `OpenAI` | `model` `which` `enthropic` |
 | [Creating a Successful AI Business Model](skills/this_ai_business_model_is_creating_new_millionaire.md) | Learn how to create a profitable AI business model by identifying existing deman | `Claude` `Anthropic` `OpenAI` | `ai` `business` `model` |
 | [Setting Up Hermes Agent for AI Self-Improvement](skills/hermes_agent_full_course_setup_guide_for_complete_.md) | This skill teaches how to set up Hermes Agent, a self-learning AI assistant, and | `Hermes Agent` `Virtual Private Server` `LLM` `Claude` | `ai` `self-improvement` `agent` |
 | [Understanding Chemistry 3: A New AI Model for Web Development](skills/nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe.md) | This skill teaches how to use Chemistry 3, a powerful and affordable AI model fo | `Chemistry 3` `Clot Fable 5` `OpenAI` `Anthropic` | `web development` `AI models` `frontend development` |
@@ -22,8 +25,6 @@
 | [Hermes Agent Tutorial for Beginners (Full Step-by-Step Setup)](skills/hermes_agent_tutorial_for_beginners_full_step_by_s.md) | By Metics Media. Key tools: Claude, Docker, bash, Python, LLM. (Auto-extracted — | `Claude` `Docker` `bash` `Python` | `agent` `hermes` `want` |
 | [Kimi K3 vs Claude Fable 5: Raw Results and Live Trading Competition](skills/kimi_k3_vs_claude_fable_5_raw_results.md) | This video compares Kimi K3 and Claude Fable 5 in a live trading competition, hi | `Kimi K3` `Claude Fable 5` `Trading View` `Tradingkit.com` | `AI` `Competition` `Models` |
 | [The 15 Most INSANE Things Created by KIMI K3 ( KIMI K3 Use Cases)](skills/the_15_most_insane_things_created_by_kimi_k3_kimi_.md) | By TheAIGRID. Key tools: Claude. (Auto-extracted — pending AI enhancement.) | `Claude` | `know` `course` `game` |
-| [New Claude Opus 5 LEAKS!](skills/new_claude_opus_5_leaks.md) | By Julian Goldie SEO. Key tools: Claude, Anthropic. (Auto-extracted — pending AI | `Claude` `Anthropic` | `opus` `model` `profit` |
-| [Anthropic's Downfall... Kimi K3.1, Grok 4.6, DeepSeek v4 GA, U.S. Gov's Gold Eagle, & Robot MMA!](skills/anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v.md) | By WorldofAI. Key tools: Claude, anthropic, Gemini, OpenAI. (Auto-extracted — pe | `Claude` `anthropic` `Gemini` `OpenAI` | `model` `which` `enthropic` |
 | [New Hermes Agent OS is INSANE!](skills/new_hermes_agent_os_is_insane.md) | By Julian Goldie SEO. Key tools: Claude. (Auto-extracted — pending AI enhancemen | `Claude` | `same` `outreach` `agent` |
 | [kimi_k3_just_knocked_claude_to_third_place_chinese](skills/kimi_k3_just_knocked_claude_to_third_place_chinese.md) |  |  |  |
 | [building_resilient_ai_agents_with_langgraph](skills/building_resilient_ai_agents_with_langgraph.md) |  |  |  |
@@ -35,7 +36,6 @@
 | [kimi_k3_hermes_ai_agent_is_insane](skills/kimi_k3_hermes_ai_agent_is_insane.md) |  |  |  |
 | [kimi_k3_fully_tested_an_open_model_beats_fable](skills/kimi_k3_fully_tested_an_open_model_beats_fable.md) |  |  |  |
 | [100_hours_of_hermes_agent_lessons_in_19_minutes](skills/100_hours_of_hermes_agent_lessons_in_19_minutes.md) |  |  |  |
-| [chatgpt_work_everything_you_need_to_know_to_get_st](skills/chatgpt_work_everything_you_need_to_know_to_get_st.md) |  |  |  |
 | [this_kimi_k3_agent_os_is_wild](skills/this_kimi_k3_agent_os_is_wild.md) |  |  |  |
 | [higsfield_integration](skills/higsfield_integration.md) |  |  |  |
 | [kimi_k3_is_the_best_model_ever_made_sometimes](skills/kimi_k3_is_the_best_model_ever_made_sometimes.md) |  |  |  |
