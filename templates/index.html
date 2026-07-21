@@ -1875,6 +1875,17 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
       </button>
     </div>
 
+    <!-- Search box -->
+    <div class="hub-search-wrap">
+      <span class="hub-search-icon">🔍</span>
+      <input type="search" id="hub-search-input" class="hub-search-input"
+             placeholder="Search servers by name or description…"
+             oninput="hubSearchDebounced()"
+             onsearch="hubSearchDebounced()">
+      <button class="hub-search-clear" id="hub-search-clear"
+              onclick="hubSearchClear()" title="Clear search" style="display:none">✕</button>
+    </div>
+
     <!-- Category filter chips -->
     <div class="hub-chips" id="hub-chips">
       <button class="hub-chip active" onclick="hubFilter('')">All</button>
