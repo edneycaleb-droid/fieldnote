@@ -1675,10 +1675,11 @@
       ]
     },
     "Model Context Protocol (MCP)": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "mcp_agent_framework",
-        "mcp_registry_development_deployment"
+        "mcp_registry_development_deployment",
+        "model_context_protocol_go"
       ]
     },
     "Composable Agent Patterns": {
@@ -1889,6 +1890,48 @@
       "freq": 1,
       "skills": [
         "mcp_registry_development_deployment"
+      ]
+    },
+    "MCP Server": {
+      "freq": 1,
+      "skills": [
+        "model_context_protocol_go"
+      ]
+    },
+    "MCP Resources": {
+      "freq": 1,
+      "skills": [
+        "model_context_protocol_go"
+      ]
+    },
+    "MCP Tools": {
+      "freq": 1,
+      "skills": [
+        "model_context_protocol_go"
+      ]
+    },
+    "Task-Augmented Tools": {
+      "freq": 1,
+      "skills": [
+        "model_context_protocol_go"
+      ]
+    },
+    "Resource Templates": {
+      "freq": 1,
+      "skills": [
+        "model_context_protocol_go"
+      ]
+    },
+    "Tool Handlers": {
+      "freq": 1,
+      "skills": [
+        "model_context_protocol_go"
+      ]
+    },
+    "STDIO Transport": {
+      "freq": 1,
+      "skills": [
+        "model_context_protocol_go"
       ]
     }
   },
@@ -2976,6 +3019,12 @@
       "freq": 1,
       "skills": [
         "mcp_registry_development_deployment"
+      ]
+    },
+    "mcp-go": {
+      "freq": 1,
+      "skills": [
+        "model_context_protocol_go"
       ]
     }
   },
@@ -4134,6 +4183,29 @@
         "development"
       ],
       "step_count": 12
+    },
+    "model_context_protocol_go": {
+      "concepts": [
+        "Model Context Protocol (MCP)",
+        "MCP Server",
+        "MCP Resources",
+        "MCP Tools",
+        "Task-Augmented Tools",
+        "Resource Templates",
+        "Tool Handlers",
+        "STDIO Transport"
+      ],
+      "tools": [
+        "mcp-go"
+      ],
+      "tags": [
+        "llm",
+        "go",
+        "sdk",
+        "integration",
+        "developer tools"
+      ],
+      "step_count": 9
     }
   },
   "relationships": {
@@ -6871,6 +6943,9 @@
     "mcp_agent_framework": {
       "mcp_registry_development_deployment": [
         "Model Context Protocol (MCP)"
+      ],
+      "model_context_protocol_go": [
+        "Model Context Protocol (MCP)"
       ]
     },
     "r2r": {
@@ -7023,9 +7098,20 @@
         "docker",
         "go",
         "postgresql"
+      ],
+      "model_context_protocol_go": [
+        "Model Context Protocol (MCP)"
+      ]
+    },
+    "model_context_protocol_go": {
+      "mcp_agent_framework": [
+        "Model Context Protocol (MCP)"
+      ],
+      "mcp_registry_development_deployment": [
+        "Model Context Protocol (MCP)"
       ]
     }
   },
-  "updated_at": "2026-07-21T18:32:13.563239+00:00",
-  "total_skills": 40
+  "updated_at": "2026-07-21T18:34:01.868628+00:00",
+  "total_skills": 41
 }
