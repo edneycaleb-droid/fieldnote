@@ -49,7 +49,7 @@
       ]
     },
     "here": {
-      "freq": 17,
+      "freq": 18,
       "skills": [
         "new_claude_opus_5_leaks",
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
@@ -134,7 +134,7 @@
       ]
     },
     "know": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
         "yes_the_kimi_k3_hype_is_real",
@@ -190,7 +190,7 @@
       ]
     },
     "going": {
-      "freq": 13,
+      "freq": 14,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "kimi_k3_vs_claude_fable_5_raw_results",
@@ -387,7 +387,7 @@
       ]
     },
     "something": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "by_august_we_ll_have_frontier_ai_running_locally",
         "new_claude_update_is_insane",
@@ -425,7 +425,7 @@
       ]
     },
     "kimmy": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "yes_the_kimi_k3_hype_is_real",
         "the_15_most_insane_things_created_by_kimi_k3_kimi_"
@@ -438,7 +438,7 @@
       ]
     },
     "actually": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "yes_the_kimi_k3_hype_is_real",
         "new_claude_update_is_insane",
@@ -735,25 +735,25 @@
       ]
     },
     "course": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "the_15_most_insane_things_created_by_kimi_k3_kimi_"
       ]
     },
     "game": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "the_15_most_insane_things_created_by_kimi_k3_kimi_"
       ]
     },
     "guys": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "the_15_most_insane_things_created_by_kimi_k3_kimi_"
       ]
     },
     "think": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "the_15_most_insane_things_created_by_kimi_k3_kimi_"
       ]
@@ -851,7 +851,7 @@
   },
   "tools": {
     "Claude": {
-      "freq": 30,
+      "freq": 31,
       "skills": [
         "new_claude_opus_5_leaks",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
@@ -1990,9 +1990,9 @@
         "Claude"
       ],
       "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "Claude",
         "going",
-        "here",
-        "Claude"
+        "here"
       ],
       "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
         "Claude",
@@ -2968,8 +2968,8 @@
       ],
       "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
         "Claude",
-        "know",
         "actually",
+        "know",
         "here"
       ],
       "new_claude_update_is_insane": [
@@ -3164,9 +3164,9 @@
         "know"
       ],
       "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Claude",
         "going",
-        "here",
-        "Claude"
+        "here"
       ],
       "kimi_k3_vs_claude_fable_5_raw_results": [
         "going",
@@ -3228,8 +3228,8 @@
       ],
       "you_need_to_use_hermes_right_now_goodbye_openclaw": [
         "Claude",
-        "know",
         "actually",
+        "know",
         "here"
       ]
     },
@@ -3534,6 +3534,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-21T14:51:48.354900+00:00",
+  "updated_at": "2026-07-21T14:51:49.293339+00:00",
   "total_skills": 22
 }
