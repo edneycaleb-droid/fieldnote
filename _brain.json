@@ -1169,7 +1169,7 @@
       ]
     },
     "ai": {
-      "freq": 9,
+      "freq": 10,
       "skills": [
         "dify",
         "ragflow",
@@ -1179,7 +1179,8 @@
         "mcp_agent",
         "registry",
         "awesome_mcp_servers",
-        "griptape"
+        "griptape",
+        "trainer"
       ]
     },
     "AI workflow management": {
@@ -2167,9 +2168,10 @@
       ]
     },
     "huggingface": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "griptape"
+        "griptape",
+        "trainer"
       ]
     },
     "Generative AI": {
@@ -2464,6 +2466,24 @@
       "freq": 1,
       "skills": [
         "infinity_database"
+      ]
+    },
+    "distributed": {
+      "freq": 1,
+      "skills": [
+        "trainer"
+      ]
+    },
+    "fine-tuning": {
+      "freq": 1,
+      "skills": [
+        "trainer"
+      ]
+    },
+    "gpu": {
+      "freq": 1,
+      "skills": [
+        "trainer"
       ]
     }
   },
@@ -2889,10 +2909,11 @@
       ]
     },
     "kubernetes": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "dify",
-        "awesome_mcp_servers"
+        "awesome_mcp_servers",
+        "trainer"
       ]
     },
     "docker": {
@@ -3061,11 +3082,12 @@
       ]
     },
     "huggingface": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "ragflow",
         "agentic_rag_for_dummies",
-        "griptape"
+        "griptape",
+        "trainer"
       ]
     },
     "elasticsearch": {
@@ -3224,7 +3246,7 @@
       ]
     },
     "llm": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "lightrag",
         "graphrag",
@@ -3232,7 +3254,8 @@
         "fastapi_mcp",
         "mcp_agent",
         "griptape",
-        "forge"
+        "forge",
+        "trainer"
       ]
     },
     "rag": {
@@ -3345,9 +3368,10 @@
       ]
     },
     "machine-learning": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "rag_techniques"
+        "rag_techniques",
+        "trainer"
       ]
     },
     "nlp": {
@@ -3357,13 +3381,14 @@
       ]
     },
     "python": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "rag_techniques",
         "mcp_agent",
         "r2r",
         "griptape",
-        "forge"
+        "forge",
+        "trainer"
       ]
     },
     "semantic-search": {
@@ -3481,10 +3506,11 @@
       ]
     },
     "Go": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "mcp_go",
-        "registry"
+        "registry",
+        "trainer"
       ]
     },
     "pydantic": {
@@ -4349,6 +4375,60 @@
       "freq": 1,
       "skills": [
         "infinity_database"
+      ]
+    },
+    "tensorflow": {
+      "freq": 1,
+      "skills": [
+        "trainer"
+      ]
+    },
+    "pytorch": {
+      "freq": 1,
+      "skills": [
+        "trainer"
+      ]
+    },
+    "distributed": {
+      "freq": 1,
+      "skills": [
+        "trainer"
+      ]
+    },
+    "fine-tuning": {
+      "freq": 1,
+      "skills": [
+        "trainer"
+      ]
+    },
+    "gpu": {
+      "freq": 1,
+      "skills": [
+        "trainer"
+      ]
+    },
+    "jax": {
+      "freq": 1,
+      "skills": [
+        "trainer"
+      ]
+    },
+    "kubeflow": {
+      "freq": 1,
+      "skills": [
+        "trainer"
+      ]
+    },
+    "mlops": {
+      "freq": 1,
+      "skills": [
+        "trainer"
+      ]
+    },
+    "xgboost": {
+      "freq": 1,
+      "skills": [
+        "trainer"
       ]
     }
   },
@@ -5990,6 +6070,42 @@
         "llm"
       ],
       "step_count": 4
+    },
+    "trainer": {
+      "concepts": [
+        "ai",
+        "distributed",
+        "fine-tuning",
+        "gpu",
+        "huggingface"
+      ],
+      "tools": [
+        "huggingface",
+        "tensorflow",
+        "pytorch",
+        "kubernetes",
+        "distributed",
+        "fine-tuning",
+        "gpu",
+        "jax",
+        "kubeflow",
+        "llm",
+        "machine-learning",
+        "mlops",
+        "python",
+        "xgboost",
+        "Go"
+      ],
+      "tags": [
+        "ai",
+        "distributed",
+        "fine-tuning",
+        "gpu",
+        "huggingface",
+        "go",
+        "llm"
+      ],
+      "step_count": 8
     }
   },
   "relationships": {
@@ -8366,6 +8482,10 @@
       ],
       "infinity": [
         "docker"
+      ],
+      "trainer": [
+        "ai",
+        "kubernetes"
       ]
     },
     "dify_deployment": {
@@ -8477,6 +8597,10 @@
       ],
       "infinity": [
         "docker"
+      ],
+      "trainer": [
+        "ai",
+        "huggingface"
       ]
     },
     "ragflow_self_hosting_guide": {
@@ -8614,6 +8738,9 @@
       "infinity": [
         "rag",
         "docker"
+      ],
+      "trainer": [
+        "llm"
       ]
     },
     "lightrag_setup": {
@@ -8734,6 +8861,9 @@
       ],
       "infinity": [
         "rag"
+      ],
+      "trainer": [
+        "llm"
       ]
     },
     "graphrag_system": {
@@ -8863,6 +8993,12 @@
       ],
       "infinity": [
         "rag"
+      ],
+      "trainer": [
+        "machine-learning",
+        "llm",
+        "ai",
+        "python"
       ]
     },
     "advanced_retrieval_augmented_generation": {
@@ -8969,6 +9105,10 @@
       ],
       "xcodebuildmcp_installation": [
         "mcp"
+      ],
+      "trainer": [
+        "llm",
+        "ai"
       ]
     },
     "fastapi_mcp_integration": {
@@ -9080,6 +9220,11 @@
       "forge": [
         "llm",
         "ray"
+      ],
+      "trainer": [
+        "llm",
+        "ai",
+        "Go"
       ]
     },
     "mcp_agent": {
@@ -9173,6 +9318,11 @@
       ],
       "xcodebuildmcp_installation": [
         "mcp"
+      ],
+      "trainer": [
+        "llm",
+        "ai",
+        "python"
       ]
     },
     "mcp_agent_framework": {
@@ -9347,6 +9497,11 @@
       ],
       "infinity": [
         "docker"
+      ],
+      "trainer": [
+        "llm",
+        "ai",
+        "Go"
       ]
     },
     "mcp_registry_development_deployment": {
@@ -9483,6 +9638,10 @@
       ],
       "infinity": [
         "docker"
+      ],
+      "trainer": [
+        "ai",
+        "kubernetes"
       ]
     },
     "mcp_server_implementations": {
@@ -9724,6 +9883,12 @@
         "pydantic",
         "openai",
         "python"
+      ],
+      "trainer": [
+        "llm",
+        "ai",
+        "python",
+        "huggingface"
       ]
     },
     "griptape_framework": {
@@ -9931,6 +10096,10 @@
       ],
       "infinity": [
         "docker"
+      ],
+      "trainer": [
+        "llm",
+        "python"
       ]
     },
     "forge_llm_tool_calling_framework": {
@@ -10026,8 +10195,63 @@
       "griptape_framework": [
         "Docker"
       ]
+    },
+    "trainer": {
+      "dify": [
+        "ai",
+        "kubernetes"
+      ],
+      "ragflow": [
+        "ai",
+        "huggingface"
+      ],
+      "lightrag": [
+        "llm"
+      ],
+      "graphrag": [
+        "llm"
+      ],
+      "rag_techniques": [
+        "machine-learning",
+        "llm",
+        "ai",
+        "python"
+      ],
+      "fastapi_mcp": [
+        "llm",
+        "ai"
+      ],
+      "mcp_go": [
+        "llm",
+        "ai",
+        "Go"
+      ],
+      "mcp_agent": [
+        "llm",
+        "ai",
+        "python"
+      ],
+      "registry": [
+        "llm",
+        "ai",
+        "Go"
+      ],
+      "awesome_mcp_servers": [
+        "ai",
+        "kubernetes"
+      ],
+      "griptape": [
+        "llm",
+        "ai",
+        "python",
+        "huggingface"
+      ],
+      "forge": [
+        "llm",
+        "python"
+      ]
     }
   },
-  "updated_at": "2026-07-21T21:34:23.524897+00:00",
-  "total_skills": 52
+  "updated_at": "2026-07-21T21:34:31.340046+00:00",
+  "total_skills": 53
 }
