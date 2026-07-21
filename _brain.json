@@ -1121,10 +1121,11 @@
       ]
     },
     "already": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "new_hermes_agent_os_is_insane",
-        "new_claude_update_is_insane"
+        "new_claude_update_is_insane",
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
       ]
     },
     "profit": {
@@ -1205,9 +1206,10 @@
       ]
     },
     "model": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "new_claude_opus_5_leaks"
+        "new_claude_opus_5_leaks",
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
       ]
     },
     "people": {
@@ -1232,6 +1234,54 @@
       "freq": 1,
       "skills": [
         "new_claude_opus_5_leaks"
+      ]
+    },
+    "which": {
+      "freq": 1,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+      ]
+    },
+    "enthropic": {
+      "freq": 1,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+      ]
+    },
+    "even": {
+      "freq": 1,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+      ]
+    },
+    "fable": {
+      "freq": 1,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+      ]
+    },
+    "over": {
+      "freq": 1,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+      ]
+    },
+    "models": {
+      "freq": 1,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+      ]
+    },
+    "today": {
+      "freq": 1,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
+      ]
+    },
+    "next": {
+      "freq": 1,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
       ]
     }
   },
@@ -1308,7 +1358,7 @@
       ]
     },
     "Claude": {
-      "freq": 12,
+      "freq": 13,
       "skills": [
         "building_ai_agents",
         "mastering_loop_engineering",
@@ -1317,7 +1367,8 @@
         "building_ai_agents_with_loop",
         "new_hermes_agent_os_is_insane",
         "new_claude_update_is_insane",
-        "new_claude_opus_5_leaks"
+        "new_claude_opus_5_leaks",
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
       ]
     },
     "Google Drive": {
@@ -1652,10 +1703,11 @@
       ]
     },
     "OpenAI": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
-        "testing_and_comparing_llms"
+        "testing_and_comparing_llms",
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
       ]
     },
     "Mistral": {
@@ -1705,10 +1757,11 @@
       ]
     },
     "Gemini": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "build_production_ready_llm_applications_with_haystack",
-        "higsfield_integration"
+        "higsfield_integration",
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
       ]
     },
     "GPT-4": {
@@ -2241,6 +2294,12 @@
       "freq": 1,
       "skills": [
         "testing_and_comparing_llms"
+      ]
+    },
+    "anthropic": {
+      "freq": 1,
+      "skills": [
+        "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v"
       ]
     }
   },
@@ -3030,6 +3089,35 @@
         "claude"
       ],
       "step_count": 1
+    },
+    "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": {
+      "concepts": [
+        "model",
+        "which",
+        "enthropic",
+        "even",
+        "fable",
+        "already",
+        "over",
+        "models",
+        "today",
+        "next"
+      ],
+      "tools": [
+        "Claude",
+        "anthropic",
+        "Gemini",
+        "OpenAI"
+      ],
+      "tags": [
+        "model",
+        "which",
+        "enthropic",
+        "even",
+        "fable",
+        "already"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -3084,6 +3172,9 @@
         "Claude"
       ],
       "new_claude_opus_5_leaks": [
+        "Claude"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
         "Claude"
       ]
     },
@@ -3246,6 +3337,10 @@
       ],
       "new_claude_opus_5_leaks": [
         "Anthropic"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Gemini",
+        "OpenAI"
       ]
     },
     "swanlab_ai_training_analysis_platform": {
@@ -3287,6 +3382,9 @@
         "Claude"
       ],
       "new_claude_opus_5_leaks": [
+        "Claude"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
         "Claude"
       ]
     },
@@ -3371,6 +3469,10 @@
       ],
       "new_claude_opus_5_leaks": [
         "Claude"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude",
+        "Gemini"
       ]
     },
     "pydantic_ai_framework": {
@@ -3436,6 +3538,9 @@
         "Claude"
       ],
       "new_claude_opus_5_leaks": [
+        "Claude"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
         "Claude"
       ]
     },
@@ -3682,6 +3787,9 @@
       ],
       "new_claude_opus_5_leaks": [
         "Claude"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
       ]
     },
     "testing_and_comparing_llms": {
@@ -3706,6 +3814,9 @@
       ],
       "new_claude_opus_5_leaks": [
         "Anthropic"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "OpenAI"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -3733,6 +3844,10 @@
         "profit",
         "Claude",
         "boardroom"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude",
+        "already"
       ]
     },
     "new_claude_update_is_insane": {
@@ -3767,6 +3882,11 @@
         "anthropic",
         "claude",
         "Anthropic"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude",
+        "anthropic",
+        "already"
       ]
     },
     "new_claude_opus_5_leaks": {
@@ -3801,9 +3921,53 @@
         "anthropic",
         "claude",
         "Anthropic"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "model",
+        "Claude",
+        "anthropic"
+      ]
+    },
+    "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": {
+      "building_ai_agents": [
+        "Claude"
+      ],
+      "build_production_ready_llm_applications_with_haystack": [
+        "Gemini",
+        "OpenAI"
+      ],
+      "mastering_loop_engineering": [
+        "Claude"
+      ],
+      "higsfield_integration": [
+        "Claude",
+        "Gemini"
+      ],
+      "hermes_agent_setup": [
+        "Claude"
+      ],
+      "building_ai_agents_with_loop": [
+        "Claude"
+      ],
+      "testing_and_comparing_llms": [
+        "OpenAI"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Claude",
+        "already"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude",
+        "anthropic",
+        "already"
+      ],
+      "new_claude_opus_5_leaks": [
+        "model",
+        "Claude",
+        "anthropic"
       ]
     }
   },
-  "updated_at": "2026-07-21T14:55:18.369337+00:00",
-  "total_skills": 29
+  "updated_at": "2026-07-21T14:55:18.531836+00:00",
+  "total_skills": 30
 }
