@@ -1341,6 +1341,36 @@
       "skills": [
         "ragflow_self_hosting_guide"
       ]
+    },
+    "genai": {
+      "freq": 1,
+      "skills": [
+        "lightrag"
+      ]
+    },
+    "gpt": {
+      "freq": 1,
+      "skills": [
+        "lightrag"
+      ]
+    },
+    "gpt-4": {
+      "freq": 1,
+      "skills": [
+        "lightrag"
+      ]
+    },
+    "graphrag": {
+      "freq": 1,
+      "skills": [
+        "lightrag"
+      ]
+    },
+    "knowledge-graph": {
+      "freq": 1,
+      "skills": [
+        "lightrag"
+      ]
     }
   },
   "tools": {
@@ -1424,14 +1454,15 @@
       ]
     },
     "Python": {
-      "freq": 13,
+      "freq": 14,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
         "hermes_claude_code_mcp_integration_loop_engineerin",
         "hermes_agent_full_course_setup_guide_for_complete_",
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
-        "new_hermes_agent_os_is_insane"
+        "new_hermes_agent_os_is_insane",
+        "lightrag"
       ]
     },
     "LLM": {
@@ -1744,16 +1775,18 @@
       ]
     },
     "docker": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "dify",
-        "ragflow"
+        "ragflow",
+        "lightrag"
       ]
     },
     "postgresql": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "dify"
+        "dify",
+        "lightrag"
       ]
     },
     "grafana": {
@@ -1807,15 +1840,17 @@
       ]
     },
     "genai": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "dify"
+        "dify",
+        "lightrag"
       ]
     },
     "gpt": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "dify"
+        "dify",
+        "lightrag"
       ]
     },
     "Docker Compose": {
@@ -1979,6 +2014,66 @@
       "freq": 1,
       "skills": [
         "ragflow_self_hosting_guide"
+      ]
+    },
+    "mongodb": {
+      "freq": 1,
+      "skills": [
+        "lightrag"
+      ]
+    },
+    "milvus": {
+      "freq": 1,
+      "skills": [
+        "lightrag"
+      ]
+    },
+    "ollama": {
+      "freq": 1,
+      "skills": [
+        "lightrag"
+      ]
+    },
+    "gpt-4": {
+      "freq": 1,
+      "skills": [
+        "lightrag"
+      ]
+    },
+    "graphrag": {
+      "freq": 1,
+      "skills": [
+        "lightrag"
+      ]
+    },
+    "knowledge-graph": {
+      "freq": 1,
+      "skills": [
+        "lightrag"
+      ]
+    },
+    "large-language-models": {
+      "freq": 1,
+      "skills": [
+        "lightrag"
+      ]
+    },
+    "llm": {
+      "freq": 1,
+      "skills": [
+        "lightrag"
+      ]
+    },
+    "rag": {
+      "freq": 1,
+      "skills": [
+        "lightrag"
+      ]
+    },
+    "retrieval-augmented-generation": {
+      "freq": 1,
+      "skills": [
+        "lightrag"
       ]
     }
   },
@@ -2722,6 +2817,43 @@
         "retrieval-augmented-generation"
       ],
       "step_count": 11
+    },
+    "lightrag": {
+      "concepts": [
+        "genai",
+        "gpt",
+        "gpt-4",
+        "graphrag",
+        "knowledge-graph"
+      ],
+      "tools": [
+        "mongodb",
+        "milvus",
+        "docker",
+        "postgresql",
+        "ollama",
+        "genai",
+        "gpt",
+        "gpt-4",
+        "graphrag",
+        "knowledge-graph",
+        "large-language-models",
+        "llm",
+        "rag",
+        "retrieval-augmented-generation",
+        "Python"
+      ],
+      "tags": [
+        "genai",
+        "gpt",
+        "gpt-4",
+        "graphrag",
+        "knowledge-graph",
+        "python",
+        "ai",
+        "llm"
+      ],
+      "step_count": 8
     }
   },
   "relationships": {
@@ -3005,6 +3137,9 @@
       "ragflow_self_hosting_guide": [
         "bash",
         "Docker"
+      ],
+      "lightrag": [
+        "Python"
       ]
     },
     "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
@@ -3615,6 +3750,9 @@
       ],
       "ragflow_self_hosting_guide": [
         "Docker"
+      ],
+      "lightrag": [
+        "Python"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -3700,6 +3838,9 @@
       ],
       "dify": [
         "agent"
+      ],
+      "lightrag": [
+        "Python"
       ]
     },
     "new_hermes_paperclip_ai_agent_update_is_insane": {
@@ -4008,6 +4149,9 @@
       ],
       "ragflow_self_hosting_guide": [
         "Docker"
+      ],
+      "lightrag": [
+        "Python"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -4106,6 +4250,9 @@
       "ragflow_self_hosting_guide": [
         "bash",
         "Docker"
+      ],
+      "lightrag": [
+        "Python"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -4638,6 +4785,12 @@
         "openai",
         "ai",
         "docker"
+      ],
+      "lightrag": [
+        "gpt",
+        "postgresql",
+        "genai",
+        "docker"
       ]
     },
     "dify_deployment": {
@@ -4670,6 +4823,9 @@
         "openai",
         "ai",
         "docker"
+      ],
+      "lightrag": [
+        "docker"
       ]
     },
     "ragflow_self_hosting_guide": {
@@ -4694,8 +4850,34 @@
         "Docker Compose",
         "Docker"
       ]
+    },
+    "lightrag": {
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Python"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "Python"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Python"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "Python"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Python"
+      ],
+      "dify": [
+        "gpt",
+        "postgresql",
+        "genai",
+        "docker"
+      ],
+      "ragflow": [
+        "docker"
+      ]
     }
   },
-  "updated_at": "2026-07-21T15:21:29.795915+00:00",
-  "total_skills": 26
+  "updated_at": "2026-07-21T15:21:40.678166+00:00",
+  "total_skills": 27
 }
