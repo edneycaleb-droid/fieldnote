@@ -1312,6 +1312,31 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
   -webkit-appearance: none; transition: all .15s; white-space: nowrap;
 }
 .hub-import-btn:hover { border-color: var(--purple); color: var(--purple); }
+/* Hub search box */
+.hub-search-wrap {
+  position: relative; display: flex; align-items: center;
+  margin-bottom: 10px;
+}
+.hub-search-icon {
+  position: absolute; left: 11px; font-size: .82rem; pointer-events: none;
+  line-height: 1; top: 50%; transform: translateY(-50%);
+}
+.hub-search-input {
+  width: 100%; background: var(--bg); border: 1px solid var(--border2);
+  border-radius: 12px; padding: 9px 36px 9px 34px; color: var(--text);
+  font-size: .85rem; outline: none; transition: border-color .18s;
+  -webkit-appearance: none; flex: 1;
+}
+.hub-search-input:focus { border-color: var(--purple); }
+.hub-search-input::placeholder { color: var(--muted2); }
+.hub-search-clear {
+  position: absolute; right: 9px; background: none; border: none;
+  color: var(--muted); cursor: pointer; font-size: .75rem; padding: 4px 6px;
+  line-height: 1; border-radius: 6px; transition: color .15s;
+  -webkit-appearance: none;
+}
+.hub-search-clear:hover { color: var(--text); }
+
 .hub-chips {
   display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px;
 }
@@ -1465,6 +1490,9 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
 
   /* Uninstall X button: fixed small width so it doesn't eat half the row */
   .hcbtn-uninstall { flex: 0 0 auto; min-width: 44px; max-width: 60px; }
+
+  /* Search box: full-width, bigger tap target */
+  .hub-search-input { font-size: .88rem; padding: 11px 36px 11px 34px; }
 
   /* Card: slightly tighter horizontal padding so text has more room */
   .hub-card { padding: 12px 12px; }
@@ -5928,7 +5956,9 @@ async function loadMcpOpsDash() {
 
 let _hubData      = [];   // all servers from registry
 let _hubFilter    = '';   // active category filter
+let _hubSearch    = '';   // current search query
 let _hubLoaded    = false;
+let _hubSearchTimer = null;
 
 async function loadHub() {
   if (_hubLoaded) return;
@@ -5962,6 +5992,26 @@ function renderHubSummary(h) {
   }
 }
 
+function hubSearchDebounced() {
+  clearTimeout(_hubSearchTimer);
+  _hubSearchTimer = setTimeout(() => {
+    const val = (document.getElementById('hub-search-input')?.value || '').trim();
+    _hubSearch = val;
+    const clr = document.getElementById('hub-search-clear');
+    if (clr) clr.style.display = val ? '' : 'none';
+    renderHubGrid();
+  }, 180);
+}
+
+function hubSearchClear() {
+  const inp = document.getElementById('hub-search-input');
+  if (inp) inp.value = '';
+  _hubSearch = '';
+  const clr = document.getElementById('hub-search-clear');
+  if (clr) clr.style.display = 'none';
+  renderHubGrid();
+}
+
 function hubFilter(cat) {
   _hubFilter = cat;
   document.querySelectorAll('.hub-chip').forEach(c => {
@@ -5973,11 +6023,21 @@ function hubFilter(cat) {
 function renderHubGrid() {
   const grid = document.getElementById('hub-grid');
   if (!grid) return;
-  const servers = _hubFilter
+  let servers = _hubFilter
     ? _hubData.filter(s => s.category === _hubFilter)
     : _hubData;
+  if (_hubSearch) {
+    const q = _hubSearch.toLowerCase();
+    servers = servers.filter(s =>
+      (s.name || '').toLowerCase().includes(q) ||
+      (s.description || '').toLowerCase().includes(q)
+    );
+  }
   if (!servers.length) {
-    grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:20px;color:var(--muted);font-size:.8rem">No servers in this category.</div>';
+    const msg = _hubSearch
+      ? 'No servers match <strong>' + esc(_hubSearch) + '</strong>.'
+      : 'No servers in this category.';
+    grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:20px;color:var(--muted);font-size:.8rem">' + msg + '</div>';
     return;
   }
   grid.innerHTML = servers.map(s => renderHubCard(s)).join('');
