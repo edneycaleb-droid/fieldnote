@@ -20,14 +20,14 @@
       ]
     },
     "profit": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "new_claude_opus_5_leaks",
         "new_hermes_agent_os_is_insane"
       ]
     },
     "boardroom": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "new_claude_opus_5_leaks",
         "new_hermes_agent_os_is_insane"
@@ -94,7 +94,7 @@
       ]
     },
     "agent": {
-      "freq": 10,
+      "freq": 11,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
@@ -143,7 +143,7 @@
       ]
     },
     "every": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
         "new_hermes_agent_os_is_insane",
@@ -262,7 +262,7 @@
       ]
     },
     "already": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
@@ -624,32 +624,32 @@
       ]
     },
     "memory": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "every_hermes_concept_explained_for_normal_people",
         "new_hermes_agent_os_is_insane"
       ]
     },
     "same": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "new_hermes_agent_os_is_insane"
       ]
     },
     "outreach": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "new_hermes_agent_os_is_insane"
       ]
     },
     "squad": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "new_hermes_agent_os_is_insane"
       ]
     },
     "each": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "new_hermes_agent_os_is_insane"
       ]
@@ -851,7 +851,7 @@
   },
   "tools": {
     "Claude": {
-      "freq": 25,
+      "freq": 26,
       "skills": [
         "new_claude_opus_5_leaks",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
@@ -1792,8 +1792,8 @@
       ],
       "new_hermes_agent_os_is_insane": [
         "Claude",
-        "boardroom",
-        "profit"
+        "profit",
+        "boardroom"
       ],
       "every_hermes_concept_explained_for_normal_people": [
         "Claude"
@@ -1879,8 +1879,8 @@
       ],
       "new_hermes_agent_os_is_insane": [
         "Claude",
-        "every",
-        "agent"
+        "agent",
+        "every"
       ],
       "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
         "Claude"
@@ -2993,13 +2993,13 @@
     "new_hermes_agent_os_is_insane": {
       "new_claude_opus_5_leaks": [
         "Claude",
-        "boardroom",
-        "profit"
+        "profit",
+        "boardroom"
       ],
       "100_hours_of_hermes_agent_lessons_in_19_minutes": [
         "Claude",
-        "every",
-        "agent"
+        "agent",
+        "every"
       ],
       "hermes_agent_tutorial_for_beginners_full_step_by_s": [
         "Claude",
@@ -3534,6 +3534,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-21T14:51:22.675339+00:00",
+  "updated_at": "2026-07-21T14:51:44.825560+00:00",
   "total_skills": 22
 }
