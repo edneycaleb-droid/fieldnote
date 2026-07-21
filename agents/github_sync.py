@@ -329,6 +329,10 @@ def sync_code(label: str = "auto") -> dict:
 
 def sync_skill(skill_name: str, markdown: str, index: dict) -> bool:
     """Push one skill + refresh README. Called after every _save_skill()."""
+    # Refuse known placeholder payloads before touching the mirror. This
+    # prevents a malformed retry from overwriting a substantive skill.
+    if not isinstance(markdown, str) or markdown.strip() in {"fieldnote_skills", "skills"}:
+        return False
     if not _token():
         return False
     with _lock:
