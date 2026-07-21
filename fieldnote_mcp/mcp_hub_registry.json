@@ -22,7 +22,6 @@
     "installed_version": "",
     "latest_version": "",
     "install_hint": "",
-    "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
     "icon": "\ud83d\udd0d"
@@ -50,7 +49,6 @@
     "installed_version": "",
     "latest_version": "",
     "install_hint": "",
-    "python_alternative_id": "exa-search",
     "enabled": true,
     "write_capable": false,
     "icon": "\ud83e\udd81"
@@ -78,7 +76,6 @@
     "installed_version": "",
     "latest_version": "",
     "install_hint": "",
-    "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
     "icon": "\ud83c\udf10"
@@ -106,7 +103,6 @@
     "installed_version": "",
     "latest_version": "",
     "install_hint": "",
-    "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
     "icon": "\ud83d\udd25"
@@ -135,7 +131,6 @@
     "installed_version": "",
     "latest_version": "",
     "install_hint": "",
-    "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
     "icon": "\ud83d\udcdd"
@@ -164,7 +159,6 @@
     "installed_version": "",
     "latest_version": "",
     "install_hint": "",
-    "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
     "icon": "\ud83c\udf0d"
@@ -193,7 +187,6 @@
     "installed_version": "",
     "latest_version": "",
     "install_hint": "",
-    "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
     "icon": "\u25b6\ufe0f"
@@ -221,7 +214,6 @@
     "installed_version": "",
     "latest_version": "",
     "install_hint": "",
-    "python_alternative_id": "git-mcp",
     "enabled": true,
     "write_capable": false,
     "icon": "\ud83d\udc19"
@@ -249,7 +241,6 @@
     "installed_version": "",
     "latest_version": "",
     "install_hint": "",
-    "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
     "icon": "\ud83c\udf3f"
@@ -277,7 +268,6 @@
     "installed_version": "",
     "latest_version": "",
     "install_hint": "",
-    "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
     "icon": "\ud83d\udccc"
@@ -305,7 +295,6 @@
     "installed_version": "",
     "latest_version": "",
     "install_hint": "",
-    "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
     "icon": "\ud83d\uddc4\ufe0f"
@@ -333,7 +322,6 @@
     "installed_version": "",
     "latest_version": "",
     "install_hint": "",
-    "python_alternative_id": "sqlite-mcp",
     "enabled": true,
     "write_capable": false,
     "icon": "\ud83d\udc18"
@@ -361,7 +349,6 @@
     "installed_version": "",
     "latest_version": "",
     "install_hint": "",
-    "python_alternative_id": "fetch-mcp",
     "enabled": true,
     "write_capable": false,
     "icon": "\ud83d\udcc1"
@@ -389,7 +376,6 @@
     "installed_version": "",
     "latest_version": "",
     "install_hint": "",
-    "python_alternative_id": "",
     "enabled": false,
     "write_capable": true,
     "icon": "\ud83d\udc0d"
@@ -417,7 +403,6 @@
     "installed_version": "",
     "latest_version": "",
     "install_hint": "",
-    "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
     "icon": "\ud83d\udcc4"
@@ -445,7 +430,6 @@
     "installed_version": "",
     "latest_version": "",
     "install_hint": "",
-    "python_alternative_id": "qdrant-mcp",
     "enabled": true,
     "write_capable": false,
     "icon": "\ud83e\udde0"
@@ -473,7 +457,6 @@
     "installed_version": "",
     "latest_version": "",
     "install_hint": "",
-    "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
     "icon": "\ud83e\udd99"
@@ -502,7 +485,6 @@
     "installed_version": "",
     "latest_version": "",
     "install_hint": "",
-    "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
     "icon": "\ud83c\udfaf"
@@ -531,7 +513,6 @@
     "installed_version": "",
     "latest_version": "",
     "install_hint": "",
-    "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
     "icon": "\ud83d\udd77\ufe0f"
@@ -559,7 +540,6 @@
     "installed_version": "",
     "latest_version": "",
     "install_hint": "",
-    "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
     "icon": "\ud83d\udd0e"
@@ -587,7 +567,6 @@
     "installed_version": "",
     "latest_version": "",
     "install_hint": "",
-    "python_alternative_id": "",
     "enabled": false,
     "write_capable": true,
     "icon": "\ud83d\udcd3"
@@ -611,11 +590,10 @@
     "credential_optional": true,
     "quarantine_reason": "",
     "health_state": "offline",
-    "verified_at": "2026-07-21T16:02:42.881308+00:00",
+    "verified_at": "2026-07-21T16:09:14.736692+00:00",
     "installed_version": "",
     "latest_version": "",
     "install_hint": "",
-    "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
     "icon": "\ud83d\udd27"
