@@ -670,6 +670,45 @@ def _deterministic_baseline(repo: dict, readme: str) -> dict:
         if step and len(steps) < 8:
             steps.append(step)
 
+    # ── Heuristic: extract prose from ## Usage / ## Quickstart sections ───────
+    if len(steps) < 3:
+        section_pattern = _re.compile(
+            r'##\s+(?:Usage|Quickstart|Quick\s+Start|Getting\s+Started|Quick\s+Start\s+Guide)'
+            r'(.+?)(?=\n##\s|\Z)',
+            _re.IGNORECASE | _re.DOTALL,
+        )
+        for sec_match in section_pattern.finditer(readme):
+            section_text = sec_match.group(1)
+            # Try list items inside the section first
+            sec_steps: list[str] = []
+            for m in _re.finditer(r'(?:^|\n)(?:\d+\.\s+|\*\s+|-\s+)(.{10,120})', section_text):
+                sec_steps.append(m.group(1).strip())
+            if not sec_steps:
+                # Fall back to prose sentences from the section
+                for sent in _re.split(r'(?<=[.!?])\s+', section_text.replace('\n', ' ')):
+                    sent = sent.strip()
+                    if len(sent) >= 20:
+                        sec_steps.append(sent[:120])
+                    if len(sec_steps) >= 5:
+                        break
+            steps.extend(s for s in sec_steps if s not in steps)
+            if len(steps) >= 5:
+                break
+
+    # ── Paragraph-extraction fallback: use first 5 meaningful sentences ───────
+    if len(steps) < 3:
+        prose = readme.replace('\n', ' ')
+        for sent in _re.split(r'(?<=[.!?])\s+', prose):
+            sent = sent.strip()
+            # Skip heading lines, code-like strings, and very short fragments
+            if (len(sent) >= 25
+                    and not sent.startswith('#')
+                    and not sent.startswith('```')
+                    and sent not in steps):
+                steps.append(sent[:120])
+            if len(steps) >= 5:
+                break
+
     # ── Description from first paragraph ─────────────────────────────────────
     paragraphs = [p.strip() for p in _re.split(r'\n{2,}', readme) if p.strip()]
     first_para = ""
