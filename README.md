@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **90 skills** · Last synced: 2026-07-21 15:07 UTC
+> **91 skills** · Last synced: 2026-07-21 15:20 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Dify](skills/dify.md) | Build Agentic workflows, RAG pipelines, with rich AI model and tool support on o | `terraform` `helm` `kubernetes` `docker` | `agent` `agentic-ai` `agentic-framework` |
 | [New Hermes Agent OS is INSANE! - Multi-Agent Systems and Memory Vaults](skills/new_hermes_agent_os_is_insane.md) | This skill details the advanced capabilities of the New Hermes Agent OS, which u | `Claude` `Docker` `bash` `Python` | `agent` `ai` `ai os` |
 | [New Claude Update: Enhanced Capabilities for Teachers and Business Automation](skills/new_claude_update_is_insane.md) | This skill details Anthropic's significant update to Claude, focusing on its new | `Claude` `Anthropic` `Claude Code` `Claude Co-work` | `claude` `anthropic` `education` |
 | [Kimi K3 vs Claude Fable 5: Raw Results and Live Trading Competition](skills/kimi_k3_vs_claude_fable_5_raw_results.md) | This video compares Kimi K3 and Claude Fable 5 in a live trading competition, hi | `Kimi K3` `Claude Fable 5` `Trading View` `Tradingkit.com` | `AI` `Competition` `Models` |
