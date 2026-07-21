@@ -1143,9 +1143,10 @@
       ]
     },
     "agentic-ai": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "dify"
+        "dify",
+        "ragflow"
       ]
     },
     "agentic-framework": {
@@ -1161,9 +1162,10 @@
       ]
     },
     "ai": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "dify"
+        "dify",
+        "ragflow"
       ]
     },
     "AI workflow management": {
@@ -1218,6 +1220,24 @@
       "freq": 1,
       "skills": [
         "dify_deployment"
+      ]
+    },
+    "agent-harness": {
+      "freq": 1,
+      "skills": [
+        "ragflow"
+      ]
+    },
+    "agentic-retrieval": {
+      "freq": 1,
+      "skills": [
+        "ragflow"
+      ]
+    },
+    "agentic-search": {
+      "freq": 1,
+      "skills": [
+        "ragflow"
       ]
     }
   },
@@ -1620,9 +1640,10 @@
       ]
     },
     "docker": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "dify"
+        "dify",
+        "ragflow"
       ]
     },
     "postgresql": {
@@ -1638,9 +1659,10 @@
       ]
     },
     "openai": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "dify"
+        "dify",
+        "ragflow"
       ]
     },
     "agent": {
@@ -1650,9 +1672,10 @@
       ]
     },
     "agentic-ai": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "dify"
+        "dify",
+        "ragflow"
       ]
     },
     "agentic-framework": {
@@ -1731,6 +1754,78 @@
       "freq": 1,
       "skills": [
         "dify_deployment"
+      ]
+    },
+    "redis": {
+      "freq": 1,
+      "skills": [
+        "ragflow"
+      ]
+    },
+    "gemini": {
+      "freq": 1,
+      "skills": [
+        "ragflow"
+      ]
+    },
+    "huggingface": {
+      "freq": 1,
+      "skills": [
+        "ragflow"
+      ]
+    },
+    "elasticsearch": {
+      "freq": 1,
+      "skills": [
+        "ragflow"
+      ]
+    },
+    "agent-harness": {
+      "freq": 1,
+      "skills": [
+        "ragflow"
+      ]
+    },
+    "agentic-retrieval": {
+      "freq": 1,
+      "skills": [
+        "ragflow"
+      ]
+    },
+    "agentic-search": {
+      "freq": 1,
+      "skills": [
+        "ragflow"
+      ]
+    },
+    "ai-agents": {
+      "freq": 1,
+      "skills": [
+        "ragflow"
+      ]
+    },
+    "context-engine": {
+      "freq": 1,
+      "skills": [
+        "ragflow"
+      ]
+    },
+    "context-engineering": {
+      "freq": 1,
+      "skills": [
+        "ragflow"
+      ]
+    },
+    "context-management": {
+      "freq": 1,
+      "skills": [
+        "ragflow"
+      ]
+    },
+    "harness-engineering": {
+      "freq": 1,
+      "skills": [
+        "ragflow"
       ]
     }
   },
@@ -2392,6 +2487,42 @@
         "containerization"
       ],
       "step_count": 12
+    },
+    "ragflow": {
+      "concepts": [
+        "agent-harness",
+        "agentic-ai",
+        "agentic-retrieval",
+        "agentic-search",
+        "ai"
+      ],
+      "tools": [
+        "redis",
+        "gemini",
+        "docker",
+        "huggingface",
+        "elasticsearch",
+        "openai",
+        "agent-harness",
+        "agentic-ai",
+        "agentic-retrieval",
+        "agentic-search",
+        "ai-agents",
+        "context-engine",
+        "context-engineering",
+        "context-management",
+        "harness-engineering"
+      ],
+      "tags": [
+        "agent-harness",
+        "agentic-ai",
+        "agentic-retrieval",
+        "agentic-search",
+        "ai",
+        "go",
+        "llm"
+      ],
+      "step_count": 8
     }
   },
   "relationships": {
@@ -3857,6 +3988,9 @@
       ],
       "dify": [
         "openai"
+      ],
+      "ragflow": [
+        "openai"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -4282,6 +4416,12 @@
       ],
       "hermes_agent_full_course_setup_guide_for_complete_": [
         "agent"
+      ],
+      "ragflow": [
+        "agentic-ai",
+        "openai",
+        "ai",
+        "docker"
       ]
     },
     "dify_deployment": {
@@ -4300,8 +4440,19 @@
       "hermes_agent_full_course_setup_guide_for_complete_": [
         "Docker"
       ]
+    },
+    "ragflow": {
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "openai"
+      ],
+      "dify": [
+        "agentic-ai",
+        "openai",
+        "ai",
+        "docker"
+      ]
     }
   },
-  "updated_at": "2026-07-21T15:20:51.873779+00:00",
-  "total_skills": 24
+  "updated_at": "2026-07-21T15:21:04.874284+00:00",
+  "total_skills": 25
 }
