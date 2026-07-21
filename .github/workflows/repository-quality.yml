@@ -5,7 +5,13 @@ on:
     branches: [main]
     paths:
       - ".github/**"
-      - "scripts/check_repository_quality.py"
+      - "scripts/**"
+      - "agents/**"
+      - "fieldnote_mcp/**"
+      - "app.py"
+      - "main.py"
+      - "templates/**"
+      - "tests/**"
       - "pyproject.toml"
       - "STATUS.md"
       - "CONTRIBUTING.md"
@@ -32,5 +38,7 @@ jobs:
           persist-credentials: false
       - name: Run deterministic offline quality gate
         run: python3 -I scripts/check_repository_quality.py
+      - name: Run deterministic unit tests
+        run: python3 -m unittest discover -s tests -v
       - name: Compile Python sources
         run: python3 -m compileall -q agents fieldnote_mcp app.py main.py
