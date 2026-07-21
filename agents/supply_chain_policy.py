@@ -135,8 +135,9 @@ def _write_atomic(path: Path, payload: dict[str, Any]) -> None:
         raise
 
 
-def quarantine(candidates: Iterable[dict[str, Any]], path: Path = DEFAULT_QUEUE) -> list[dict[str, Any]]:
+def quarantine(candidates: Iterable[dict[str, Any]], path: Path | None = None) -> list[dict[str, Any]]:
     """Evaluate and persist candidates idempotently without executing project/package code."""
+    path = path or DEFAULT_QUEUE
     payload = _load(path)
     results: list[dict[str, Any]] = []
     for candidate in candidates:
