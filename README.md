@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **125 skills** · Last synced: 2026-07-21 21:37 UTC
+> **126 skills** · Last synced: 2026-07-21 21:37 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [LightAgent: Lightweight Python Agent Framework](skills/lightagent_framework.md) | LightAgent is an ultra-lightweight, open-source Python framework for building AI | `LightAgent` `LightSwarm` `LightFlow` `ToolRegistry` | `agent-framework` `agents` `ai` |
 | [Lightagent](skills/lightagent.md) | LightAgent: Lightweight Python framework for OpenAI-compatible agents with tools | `llamaindex` `langchain` `openai` `vllm` | `agent-framework` `agent-hooks` `agents` |
 | [PaSa: Large Language Model for Comprehensive Academic Paper Search](skills/paper_agent.md) | PaSa is an advanced paper search agent powered by large language models. It can  | `PaSa-Agent AI` `GitHub Repository README` `Google Search API` `PaSa-agent.ai` | `research` `academic_search` `large_language_models` |
 | [Pasa](skills/pasa.md) | PaSa -- an advanced paper search agent powered by large language models. It can  | `transformers` `huggingface` `research` `Python` | `research` `python` `ai` |
