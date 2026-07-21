@@ -1621,9 +1621,10 @@
       ]
     },
     "Model Context Protocol": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "fastapi_mcp_integration"
+        "fastapi_mcp_integration",
+        "mcp_server_implementations"
       ]
     },
     "Authentication": {
@@ -1978,6 +1979,96 @@
       "skills": [
         "awesome_mcp_servers"
       ]
+    },
+    "AI capabilities": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "API integrations": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Communication": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Contextual services": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Databases": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Document Processing": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "File access": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "File Systems": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Monitoring": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "MCP server implementations": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Search and Web": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Security best practices": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Server Implementations": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Sandbox and Virtualization": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Version Control": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
     }
   },
   "tools": {
@@ -2042,7 +2133,7 @@
       ]
     },
     "Docker": {
-      "freq": 15,
+      "freq": 16,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -2052,7 +2143,8 @@
         "dify_deployment",
         "ragflow_self_hosting_guide",
         "lightrag_setup",
-        "r2r"
+        "r2r",
+        "mcp_server_implementations"
       ]
     },
     "bash": {
@@ -2128,9 +2220,10 @@
       ]
     },
     "Git": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
-        "this_100_self_improving_ai_agent_is_insane_just_wa"
+        "this_100_self_improving_ai_agent_is_insane_just_wa",
+        "mcp_server_implementations"
       ]
     },
     "Node": {
@@ -2140,9 +2233,10 @@
       ]
     },
     "SQLite": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
-        "this_100_self_improving_ai_agent_is_insane_just_wa"
+        "this_100_self_improving_ai_agent_is_insane_just_wa",
+        "mcp_server_implementations"
       ]
     },
     "Flask": {
@@ -2512,10 +2606,11 @@
       ]
     },
     "PostgreSQL": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "dify_deployment",
-        "lightrag_setup"
+        "lightrag_setup",
+        "mcp_server_implementations"
       ]
     },
     "NextJS": {
@@ -2624,15 +2719,17 @@
       ]
     },
     "Redis": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "ragflow_self_hosting_guide"
+        "ragflow_self_hosting_guide",
+        "mcp_server_implementations"
       ]
     },
     "MySQL": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "ragflow_self_hosting_guide"
+        "ragflow_self_hosting_guide",
+        "mcp_server_implementations"
       ]
     },
     "git": {
@@ -2847,9 +2944,10 @@
       ]
     },
     "GitHub": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "advanced_retrieval_augmented_generation"
+        "advanced_retrieval_augmented_generation",
+        "mcp_server_implementations"
       ]
     },
     "fastapi": {
@@ -3148,6 +3246,330 @@
       "freq": 1,
       "skills": [
         "awesome_mcp_servers"
+      ]
+    },
+    "Claude Desktop": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Zed Editor": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Sourcegraph Cody": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Backup": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "FileStash": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "FileSystem1": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "FileSystem2": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Microsandbox": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "E2B": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "GitHub1": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "GitHub2": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "GitLab": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Phabricator": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Gitingest-MCP": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Google Drive": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Box": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "VideoDB": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Microsoft 365": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Adeu": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "DuckDB": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Excel": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "BigQuery1": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "BigQuery2": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "BigQuery": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Neon": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Qdrant": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "MongoDB": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "MongoDB Lens": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Airtable": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Snowflake": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "DBUtils": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "TiDB": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "NocoDB": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Couchbase": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "VideoDB Director": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Slack": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "LINE Official Account": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Linear": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Atlassian": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Carbon Voice": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "ntfy": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Metoro": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Raygun": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Sentry": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "sslmon": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Signoz": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "VictoriaMetrics": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Puppeteer": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Brave Search": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Bright Data": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Dumpling AI": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Fetch": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Kagi Search": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
+      ]
+    },
+    "Exa Search": {
+      "freq": 1,
+      "skills": [
+        "mcp_server_implementations"
       ]
     }
   },
@@ -4394,6 +4816,108 @@
         "llm"
       ],
       "step_count": 8
+    },
+    "mcp_server_implementations": {
+      "concepts": [
+        "AI capabilities",
+        "API integrations",
+        "Communication",
+        "Contextual services",
+        "Databases",
+        "Document Processing",
+        "File access",
+        "File Systems",
+        "Model Context Protocol",
+        "Monitoring",
+        "MCP server implementations",
+        "Search and Web",
+        "Security best practices",
+        "Server Implementations",
+        "Sandbox and Virtualization",
+        "Version Control"
+      ],
+      "tools": [
+        "Claude Desktop",
+        "Zed Editor",
+        "Sourcegraph Cody",
+        "Backup",
+        "FileStash",
+        "FileSystem1",
+        "FileSystem2",
+        "Microsandbox",
+        "E2B",
+        "Docker",
+        "GitHub1",
+        "GitHub2",
+        "GitHub",
+        "GitLab",
+        "Git",
+        "Phabricator",
+        "Gitingest-MCP",
+        "Google Drive",
+        "Box",
+        "VideoDB",
+        "Microsoft 365",
+        "Adeu",
+        "PostgreSQL",
+        "SQLite",
+        "DuckDB",
+        "Excel",
+        "BigQuery1",
+        "BigQuery2",
+        "BigQuery",
+        "Neon",
+        "Qdrant",
+        "MongoDB",
+        "MongoDB Lens",
+        "MySQL",
+        "Airtable",
+        "Snowflake",
+        "DBUtils",
+        "TiDB",
+        "NocoDB",
+        "Couchbase",
+        "Redis",
+        "VideoDB Director",
+        "Slack",
+        "LINE Official Account",
+        "Linear",
+        "Atlassian",
+        "Carbon Voice",
+        "ntfy",
+        "Metoro",
+        "Raygun",
+        "Sentry",
+        "sslmon",
+        "Signoz",
+        "VictoriaMetrics",
+        "Puppeteer",
+        "Brave Search",
+        "Bright Data",
+        "Dumpling AI",
+        "Fetch",
+        "Kagi Search",
+        "Exa Search"
+      ],
+      "tags": [
+        "ai",
+        "api_integrations",
+        "cloud_storage",
+        "communication",
+        "contextual_services",
+        "databases",
+        "file_access",
+        "file systems",
+        "implementations",
+        "mcp",
+        "model_context_protocol",
+        "monitoring",
+        "sandbox",
+        "security_best_practices",
+        "servers",
+        "version_control"
+      ],
+      "step_count": 7
     }
   },
   "relationships": {
@@ -4715,6 +5239,9 @@
       "r2r": [
         "Docker",
         "LLM"
+      ],
+      "mcp_server_implementations": [
+        "Docker"
       ]
     },
     "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
@@ -5359,6 +5886,11 @@
       ],
       "r2r": [
         "Docker"
+      ],
+      "mcp_server_implementations": [
+        "Docker",
+        "SQLite",
+        "Git"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -5805,6 +6337,9 @@
       "r2r": [
         "Docker",
         "LLM"
+      ],
+      "mcp_server_implementations": [
+        "Docker"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -5926,6 +6461,9 @@
       "r2r": [
         "Docker",
         "LLM"
+      ],
+      "mcp_server_implementations": [
+        "Docker"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -6386,6 +6924,9 @@
       "r2r": [
         "Docker",
         "LLM"
+      ],
+      "mcp_server_implementations": [
+        "Docker"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -6581,6 +7122,10 @@
       ],
       "xcodebuildmcp": [
         "TypeScript"
+      ],
+      "mcp_server_implementations": [
+        "PostgreSQL",
+        "Docker"
       ]
     },
     "ragflow": {
@@ -6658,6 +7203,11 @@
         "Docker",
         "RAG",
         "Docker Compose"
+      ],
+      "mcp_server_implementations": [
+        "Redis",
+        "MySQL",
+        "Docker"
       ]
     },
     "lightrag": {
@@ -6771,6 +7321,10 @@
       "r2r": [
         "Docker",
         "Docker Compose"
+      ],
+      "mcp_server_implementations": [
+        "PostgreSQL",
+        "Docker"
       ]
     },
     "graphrag": {
@@ -6940,6 +7494,9 @@
       ],
       "r2r": [
         "Retrieval-Augmented Generation (RAG)"
+      ],
+      "mcp_server_implementations": [
+        "GitHub"
       ]
     },
     "fastapi_mcp": {
@@ -7062,6 +7619,9 @@
       ],
       "lightrag_setup": [
         "uv"
+      ],
+      "mcp_server_implementations": [
+        "Model Context Protocol"
       ]
     },
     "mcp_go": {
@@ -7257,6 +7817,9 @@
       ],
       "advanced_retrieval_augmented_generation": [
         "Retrieval-Augmented Generation (RAG)"
+      ],
+      "mcp_server_implementations": [
+        "Docker"
       ]
     },
     "registry": {
@@ -7422,8 +7985,49 @@
         "mcp",
         "model-context-protocol"
       ]
+    },
+    "mcp_server_implementations": {
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Docker"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "Docker",
+        "SQLite",
+        "Git"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "Docker"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Docker"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "Docker"
+      ],
+      "dify_deployment": [
+        "PostgreSQL",
+        "Docker"
+      ],
+      "ragflow_self_hosting_guide": [
+        "Redis",
+        "MySQL",
+        "Docker"
+      ],
+      "lightrag_setup": [
+        "PostgreSQL",
+        "Docker"
+      ],
+      "advanced_retrieval_augmented_generation": [
+        "GitHub"
+      ],
+      "fastapi_mcp_integration": [
+        "Model Context Protocol"
+      ],
+      "r2r": [
+        "Docker"
+      ]
     }
   },
-  "updated_at": "2026-07-21T19:48:39.758157+00:00",
-  "total_skills": 43
+  "updated_at": "2026-07-21T19:49:10.510181+00:00",
+  "total_skills": 44
 }
