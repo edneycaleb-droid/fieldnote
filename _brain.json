@@ -1608,11 +1608,41 @@
       "skills": [
         "fastapi_mcp"
       ]
+    },
+    "Model Context Protocol": {
+      "freq": 1,
+      "skills": [
+        "fastapi_mcp_integration"
+      ]
+    },
+    "Authentication": {
+      "freq": 1,
+      "skills": [
+        "fastapi_mcp_integration"
+      ]
+    },
+    "Authorization": {
+      "freq": 1,
+      "skills": [
+        "fastapi_mcp_integration"
+      ]
+    },
+    "ASGI transport": {
+      "freq": 1,
+      "skills": [
+        "fastapi_mcp_integration"
+      ]
+    },
+    "FastAPI-native": {
+      "freq": 1,
+      "skills": [
+        "fastapi_mcp_integration"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 40,
+      "freq": 41,
       "skills": [
         "new_claude_opus_5_leaks",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
@@ -1630,7 +1660,8 @@
         "the_15_most_insane_things_created_by_kimi_k3_kimi_",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
-        "hermes_agent_full_course_setup_guide_for_complete_"
+        "hermes_agent_full_course_setup_guide_for_complete_",
+        "fastapi_mcp_integration"
       ]
     },
     "Anthropic": {
@@ -1747,9 +1778,10 @@
       ]
     },
     "pip": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
-        "this_100_self_improving_ai_agent_is_insane_just_wa"
+        "this_100_self_improving_ai_agent_is_insane_just_wa",
+        "fastapi_mcp_integration"
       ]
     },
     "Git": {
@@ -2334,9 +2366,10 @@
       ]
     },
     "uv": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "lightrag_setup"
+        "lightrag_setup",
+        "fastapi_mcp_integration"
       ]
     },
     "LightRAG": {
@@ -2512,6 +2545,24 @@
       "freq": 1,
       "skills": [
         "fastapi_mcp"
+      ]
+    },
+    "FastAPI": {
+      "freq": 1,
+      "skills": [
+        "fastapi_mcp_integration"
+      ]
+    },
+    "MCP": {
+      "freq": 1,
+      "skills": [
+        "fastapi_mcp_integration"
+      ]
+    },
+    "FastAPI-MCP": {
+      "freq": 1,
+      "skills": [
+        "fastapi_mcp_integration"
       ]
     }
   },
@@ -3479,6 +3530,31 @@
         "llm"
       ],
       "step_count": 8
+    },
+    "fastapi_mcp_integration": {
+      "concepts": [
+        "Model Context Protocol",
+        "Authentication",
+        "Authorization",
+        "ASGI transport",
+        "FastAPI-native"
+      ],
+      "tools": [
+        "FastAPI",
+        "MCP",
+        "uv",
+        "pip",
+        "FastAPI-MCP",
+        "Claude"
+      ],
+      "tags": [
+        "fastapi",
+        "mcp",
+        "authentication",
+        "ai",
+        "authorization"
+      ],
+      "step_count": 6
     }
   },
   "relationships": {
@@ -3572,6 +3648,9 @@
       ],
       "fastapi_mcp": [
         "claude"
+      ],
+      "fastapi_mcp_integration": [
+        "Claude"
       ]
     },
     "100_hours_of_hermes_agent_lessons_in_19_minutes": {
@@ -3658,6 +3737,9 @@
       ],
       "dify": [
         "agent"
+      ],
+      "fastapi_mcp_integration": [
+        "Claude"
       ]
     },
     "hermes_agent_tutorial_for_beginners_full_step_by_s": {
@@ -3781,6 +3863,9 @@
       ],
       "fastapi_mcp": [
         "Python"
+      ],
+      "fastapi_mcp_integration": [
+        "Claude"
       ]
     },
     "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
@@ -4078,6 +4163,9 @@
         "OpenAI",
         "Claude",
         "anthropic"
+      ],
+      "fastapi_mcp_integration": [
+        "Claude"
       ]
     },
     "by_august_we_ll_have_frontier_ai_running_locally": {
@@ -4264,6 +4352,9 @@
         "know",
         "actually",
         "right"
+      ],
+      "fastapi_mcp_integration": [
+        "Claude"
       ]
     },
     "this_100_self_improving_ai_agent_is_insane_just_wa": {
@@ -4406,6 +4497,10 @@
       ],
       "fastapi_mcp": [
         "Python"
+      ],
+      "fastapi_mcp_integration": [
+        "Claude",
+        "pip"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -4503,6 +4598,9 @@
       ],
       "fastapi_mcp": [
         "Python"
+      ],
+      "fastapi_mcp_integration": [
+        "Claude"
       ]
     },
     "new_hermes_paperclip_ai_agent_update_is_insane": {
@@ -4695,6 +4793,9 @@
       ],
       "fastapi_mcp": [
         "claude"
+      ],
+      "fastapi_mcp_integration": [
+        "Claude"
       ]
     },
     "you_need_to_use_hermes_right_now_goodbye_openclaw": {
@@ -4830,6 +4931,9 @@
       ],
       "fastapi_mcp": [
         "Python"
+      ],
+      "fastapi_mcp_integration": [
+        "Claude"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -4944,6 +5048,9 @@
       ],
       "fastapi_mcp": [
         "Python"
+      ],
+      "fastapi_mcp_integration": [
+        "Claude"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -5048,6 +5155,9 @@
       ],
       "rag_techniques": [
         "openai"
+      ],
+      "fastapi_mcp_integration": [
+        "Claude"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -5125,6 +5235,9 @@
         "actually",
         "know",
         "here"
+      ],
+      "fastapi_mcp_integration": [
+        "Claude"
       ]
     },
     "every_hermes_concept_explained_for_normal_people": {
@@ -5179,6 +5292,9 @@
       "hermes_agent_full_course_setup_guide_for_complete_": [
         "Claude",
         "memory"
+      ],
+      "fastapi_mcp_integration": [
+        "Claude"
       ]
     },
     "new_claude_update_is_insane": {
@@ -5251,6 +5367,9 @@
       ],
       "advanced_retrieval_augmented_generation": [
         "Claude Code"
+      ],
+      "fastapi_mcp_integration": [
+        "Claude"
       ]
     },
     "hermes_agent_full_course_setup_guide_for_complete_": {
@@ -5379,6 +5498,9 @@
       ],
       "graphrag_system": [
         "LLM"
+      ],
+      "fastapi_mcp_integration": [
+        "Claude"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -5456,6 +5578,9 @@
       ],
       "new_hermes_paperclip_ai_agent_update_is_insane": [
         "OpenAI"
+      ],
+      "fastapi_mcp_integration": [
+        "Claude"
       ]
     },
     "dify": {
@@ -5663,6 +5788,9 @@
       ],
       "advanced_retrieval_augmented_generation": [
         "Retrieval-Augmented Generation"
+      ],
+      "fastapi_mcp_integration": [
+        "uv"
       ]
     },
     "graphrag": {
@@ -5835,8 +5963,62 @@
         "ai",
         "llm"
       ]
+    },
+    "fastapi_mcp_integration": {
+      "new_claude_opus_5_leaks": [
+        "Claude"
+      ],
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "Claude"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Claude"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
+      ],
+      "yes_the_kimi_k3_hype_is_real": [
+        "Claude"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "Claude",
+        "pip"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude"
+      ],
+      "china_just_beat_claude_ai_kimi_k3": [
+        "Claude"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "Claude"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Claude"
+      ],
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "Claude"
+      ],
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "Claude"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "Claude"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "Claude"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Claude"
+      ],
+      "lightrag_setup": [
+        "uv"
+      ]
     }
   },
-  "updated_at": "2026-07-21T18:29:39.574590+00:00",
-  "total_skills": 33
+  "updated_at": "2026-07-21T18:30:01.117687+00:00",
+  "total_skills": 34
 }
