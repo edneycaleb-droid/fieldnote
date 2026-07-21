@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **104 skills** · Last synced: 2026-07-21 18:30 UTC
+> **105 skills** · Last synced: 2026-07-21 18:30 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Mcp Agent](skills/mcp_agent.md) | Build effective agents using Model Context Protocol and simple workflow patterns | `anthropic` `openai` `pydantic` `agents` | `agents` `ai` `ai-agents` |
 | [Mcp Go](skills/mcp_go.md) | A Go implementation of the Model Context Protocol (MCP), enabling seamless integ | `ray` `Go` | `go` `ai` `llm` |
 | [Integrating FastAPI with Model Context Protocol (MCP)](skills/fastapi_mcp_integration.md) | This skill teaches how to expose FastAPI endpoints as Model Context Protocol (MC | `FastAPI` `MCP` `uv` `pip` | `fastapi` `mcp` `authentication` |
 | [Fastapi Mcp](skills/fastapi_mcp.md) | Expose your FastAPI endpoints as Model Context Protocol (MCP) tools, with Auth! | `fastapi` `authentication` `authorization` `claude` | `ai` `authentication` `authorization` |
