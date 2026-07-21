@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "tadata-org--fastapi-mcp",
+      "title": "Discovered: tadata-org/fastapi_mcp",
+      "category": "discoveries",
+      "confidence": "verified",
+      "updated_at": "2026-07-21T18:32:21.482973+00:00",
+      "path": "discoveries/tadata-org--fastapi-mcp.md"
+    },
+    {
       "slug": "nirdiamant--rag-techniques",
       "title": "Discovered: NirDiamant/RAG_Techniques",
       "category": "discoveries",
@@ -201,5 +209,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-21T15:24:35.586633+00:00"
+  "updated_at": "2026-07-21T18:32:21.551140+00:00"
 }
