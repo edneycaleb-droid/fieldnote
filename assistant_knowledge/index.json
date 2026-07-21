@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "microsoft--graphrag",
+      "title": "Discovered: microsoft/graphrag",
+      "category": "discoveries",
+      "confidence": "verified",
+      "updated_at": "2026-07-21T15:24:34.086518+00:00",
+      "path": "discoveries/microsoft--graphrag.md"
+    },
+    {
       "slug": "hkuds--lightrag",
       "title": "Discovered: HKUDS/LightRAG",
       "category": "discoveries",
@@ -185,5 +193,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-21T15:24:32.675022+00:00"
+  "updated_at": "2026-07-21T15:24:34.089826+00:00"
 }
