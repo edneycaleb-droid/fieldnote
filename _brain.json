@@ -1162,10 +1162,11 @@
       ]
     },
     "ai": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "dify",
-        "ragflow"
+        "ragflow",
+        "rag_techniques"
       ]
     },
     "AI workflow management": {
@@ -1349,10 +1350,11 @@
       ]
     },
     "gpt": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "lightrag",
-        "graphrag"
+        "graphrag",
+        "rag_techniques"
       ]
     },
     "gpt-4": {
@@ -1428,6 +1430,24 @@
       "freq": 1,
       "skills": [
         "graphrag_system"
+      ]
+    },
+    "agentic-rag": {
+      "freq": 1,
+      "skills": [
+        "rag_techniques"
+      ]
+    },
+    "embeddings": {
+      "freq": 1,
+      "skills": [
+        "rag_techniques"
+      ]
+    },
+    "generative-ai": {
+      "freq": 1,
+      "skills": [
+        "rag_techniques"
       ]
     }
   },
@@ -1857,10 +1877,11 @@
       ]
     },
     "openai": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "dify",
-        "ragflow"
+        "ragflow",
+        "rag_techniques"
       ]
     },
     "agent": {
@@ -1908,11 +1929,12 @@
       ]
     },
     "gpt": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "dify",
         "lightrag",
-        "graphrag"
+        "graphrag",
+        "rag_techniques"
       ]
     },
     "Docker Compose": {
@@ -2126,23 +2148,26 @@
       ]
     },
     "llm": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "lightrag",
-        "graphrag"
+        "graphrag",
+        "rag_techniques"
       ]
     },
     "rag": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "lightrag",
-        "graphrag"
+        "graphrag",
+        "rag_techniques"
       ]
     },
     "retrieval-augmented-generation": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "lightrag"
+        "lightrag",
+        "rag_techniques"
       ]
     },
     "uv": {
@@ -2188,15 +2213,70 @@
       ]
     },
     "llms": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "graphrag"
+        "graphrag",
+        "rag_techniques"
       ]
     },
     "Command Line Interface": {
       "freq": 1,
       "skills": [
         "graphrag_system"
+      ]
+    },
+    "agentic-rag": {
+      "freq": 1,
+      "skills": [
+        "rag_techniques"
+      ]
+    },
+    "embeddings": {
+      "freq": 1,
+      "skills": [
+        "rag_techniques"
+      ]
+    },
+    "generative-ai": {
+      "freq": 1,
+      "skills": [
+        "rag_techniques"
+      ]
+    },
+    "langchain": {
+      "freq": 1,
+      "skills": [
+        "rag_techniques"
+      ]
+    },
+    "llama-index": {
+      "freq": 1,
+      "skills": [
+        "rag_techniques"
+      ]
+    },
+    "machine-learning": {
+      "freq": 1,
+      "skills": [
+        "rag_techniques"
+      ]
+    },
+    "nlp": {
+      "freq": 1,
+      "skills": [
+        "rag_techniques"
+      ]
+    },
+    "python": {
+      "freq": 1,
+      "skills": [
+        "rag_techniques"
+      ]
+    },
+    "semantic-search": {
+      "freq": 1,
+      "skills": [
+        "rag_techniques"
       ]
     }
   },
@@ -3053,6 +3133,42 @@
         "llm"
       ],
       "step_count": 5
+    },
+    "rag_techniques": {
+      "concepts": [
+        "agentic-rag",
+        "ai",
+        "embeddings",
+        "generative-ai",
+        "gpt"
+      ],
+      "tools": [
+        "agentic-rag",
+        "embeddings",
+        "generative-ai",
+        "gpt",
+        "langchain",
+        "llama-index",
+        "llm",
+        "llms",
+        "machine-learning",
+        "nlp",
+        "openai",
+        "python",
+        "rag",
+        "retrieval-augmented-generation",
+        "semantic-search"
+      ],
+      "tags": [
+        "agentic-rag",
+        "ai",
+        "embeddings",
+        "generative-ai",
+        "gpt",
+        "jupyter notebook",
+        "llm"
+      ],
+      "step_count": 4
     }
   },
   "relationships": {
@@ -4598,6 +4714,9 @@
       ],
       "graphrag_system": [
         "LLM"
+      ],
+      "rag_techniques": [
+        "openai"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -5047,6 +5166,11 @@
       ],
       "graphrag": [
         "gpt"
+      ],
+      "rag_techniques": [
+        "gpt",
+        "openai",
+        "ai"
       ]
     },
     "dify_deployment": {
@@ -5087,6 +5211,10 @@
       ],
       "lightrag": [
         "docker"
+      ],
+      "rag_techniques": [
+        "openai",
+        "ai"
       ]
     },
     "ragflow_self_hosting_guide": {
@@ -5152,6 +5280,12 @@
       "graphrag_system": [
         "Python",
         "graphrag"
+      ],
+      "rag_techniques": [
+        "gpt",
+        "llm",
+        "retrieval-augmented-generation",
+        "rag"
       ]
     },
     "lightrag_setup": {
@@ -5213,6 +5347,12 @@
       "graphrag_system": [
         "Python",
         "graphrag"
+      ],
+      "rag_techniques": [
+        "llm",
+        "gpt",
+        "llms",
+        "rag"
       ]
     },
     "graphrag_system": {
@@ -5251,8 +5391,34 @@
         "Python",
         "graphrag"
       ]
+    },
+    "rag_techniques": {
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "openai"
+      ],
+      "dify": [
+        "gpt",
+        "openai",
+        "ai"
+      ],
+      "ragflow": [
+        "openai",
+        "ai"
+      ],
+      "lightrag": [
+        "gpt",
+        "llm",
+        "retrieval-augmented-generation",
+        "rag"
+      ],
+      "graphrag": [
+        "llm",
+        "gpt",
+        "llms",
+        "rag"
+      ]
     }
   },
-  "updated_at": "2026-07-21T15:23:58.666902+00:00",
-  "total_skills": 30
+  "updated_at": "2026-07-21T15:24:09.005961+00:00",
+  "total_skills": 31
 }
