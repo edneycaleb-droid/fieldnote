@@ -40,6 +40,7 @@ def generated_skill_library_valid() -> bool:
         except OSError:
             return False
         if markdown in {"fieldnote_skills", "skills"}:
+            print(f"[FAIL] generated_skill_placeholder: {skill_file.relative_to(ROOT)}")
             return False
     return True
 
