@@ -21,4 +21,4 @@ Claude
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-20 | [The 15 Most INSANE Things Created by KIMI K3 ( KIMI K3 Use Cases)](https://www.youtube.com/watch?v=0eXdjlTXkaw) | yt_dlp_subs |
+| 2026-07-21 | [The 15 Most INSANE Things Created by KIMI K3 ( KIMI K3 Use Cases)](https://www.youtube.com/watch?v=0eXdjlTXkaw) | yt_dlp_subs |
