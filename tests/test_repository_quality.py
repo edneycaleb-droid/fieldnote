@@ -102,7 +102,7 @@ class RepositoryQualityRubricTests(unittest.TestCase):
     def test_generated_content_must_trigger_validation(self) -> None:
         workflow = self.root / ".github/workflows/repository-quality.yml"
         workflow.write_text(
-            workflow.read_text(encoding="utf-8").replace('      - "skills/**"\\n', ""),
+            workflow.read_text(encoding="utf-8").replace('      - "skills/**"\n', ""),
             encoding="utf-8",
         )
         result, output = self.run_quality()
