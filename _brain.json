@@ -1330,9 +1330,10 @@
       ]
     },
     "RAG": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "ragflow_self_hosting_guide"
+        "ragflow_self_hosting_guide",
+        "r2r"
       ]
     },
     "Retrieval Augmented Generation (RAG)": {
@@ -1434,9 +1435,10 @@
       ]
     },
     "LLM": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "graphrag_system"
+        "graphrag_system",
+        "r2r"
       ]
     },
     "agentic-rag": {
@@ -1458,9 +1460,10 @@
       ]
     },
     "Retrieval-Augmented Generation (RAG)": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "advanced_retrieval_augmented_generation"
+        "advanced_retrieval_augmented_generation",
+        "r2r"
       ]
     },
     "RAG Prototypes": {
@@ -1756,6 +1759,54 @@
       "skills": [
         "r2r"
       ]
+    },
+    "Agentic RAG": {
+      "freq": 1,
+      "skills": [
+        "r2r"
+      ]
+    },
+    "Deep Research API": {
+      "freq": 1,
+      "skills": [
+        "r2r"
+      ]
+    },
+    "Hybrid Search": {
+      "freq": 1,
+      "skills": [
+        "r2r"
+      ]
+    },
+    "Knowledge Graphs": {
+      "freq": 1,
+      "skills": [
+        "r2r"
+      ]
+    },
+    "Multimodal Ingestion": {
+      "freq": 1,
+      "skills": [
+        "r2r"
+      ]
+    },
+    "RESTful API": {
+      "freq": 1,
+      "skills": [
+        "r2r"
+      ]
+    },
+    "Reciprocal Rank Fusion": {
+      "freq": 1,
+      "skills": [
+        "r2r"
+      ]
+    },
+    "Search": {
+      "freq": 1,
+      "skills": [
+        "r2r"
+      ]
     }
   },
   "tools": {
@@ -1820,7 +1871,7 @@
       ]
     },
     "Docker": {
-      "freq": 14,
+      "freq": 15,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -1829,7 +1880,8 @@
         "new_hermes_agent_os_is_insane",
         "dify_deployment",
         "ragflow_self_hosting_guide",
-        "lightrag_setup"
+        "lightrag_setup",
+        "r2r"
       ]
     },
     "bash": {
@@ -2255,11 +2307,12 @@
       ]
     },
     "Docker Compose": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "dify_deployment",
         "ragflow_self_hosting_guide",
-        "lightrag_setup"
+        "lightrag_setup",
+        "r2r"
       ]
     },
     "Kubernetes": {
@@ -2788,6 +2841,24 @@
       ]
     },
     "search": {
+      "freq": 1,
+      "skills": [
+        "r2r"
+      ]
+    },
+    "R2R": {
+      "freq": 1,
+      "skills": [
+        "r2r"
+      ]
+    },
+    "RESTful API": {
+      "freq": 1,
+      "skills": [
+        "r2r"
+      ]
+    },
+    "OpenAI API": {
       "freq": 1,
       "skills": [
         "r2r"
@@ -3864,35 +3935,33 @@
     },
     "r2r": {
       "concepts": [
-        "artificial-intelligence",
-        "large-language-models",
-        "python",
-        "question-answering",
-        "rag"
+        "Agentic RAG",
+        "Deep Research API",
+        "Hybrid Search",
+        "Knowledge Graphs",
+        "LLM",
+        "Multimodal Ingestion",
+        "RAG",
+        "RESTful API",
+        "Reciprocal Rank Fusion",
+        "Retrieval-Augmented Generation (RAG)",
+        "Search"
       ],
       "tools": [
-        "anthropic",
-        "docker",
-        "openai",
-        "artificial-intelligence",
-        "large-language-models",
-        "python",
-        "question-answering",
-        "rag",
-        "retrieval-augmented-generation",
-        "retrieval-systems",
-        "search"
+        "R2R",
+        "Docker",
+        "Docker Compose",
+        "RESTful API",
+        "OpenAI API"
       ],
       "tags": [
-        "artificial-intelligence",
-        "large-language-models",
-        "python",
-        "question-answering",
-        "rag",
         "ai",
-        "llm"
+        "api",
+        "llm",
+        "python",
+        "rag"
       ],
-      "step_count": 8
+      "step_count": 12
     }
   },
   "relationships": {
@@ -4210,6 +4279,10 @@
       ],
       "fastapi_mcp_integration": [
         "Claude"
+      ],
+      "r2r": [
+        "Docker",
+        "LLM"
       ]
     },
     "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
@@ -4851,6 +4924,9 @@
       "fastapi_mcp_integration": [
         "Claude",
         "pip"
+      ],
+      "r2r": [
+        "Docker"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -5295,7 +5371,8 @@
         "anthropic"
       ],
       "r2r": [
-        "anthropic"
+        "Docker",
+        "LLM"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -5413,6 +5490,10 @@
       ],
       "fastapi_mcp_integration": [
         "Claude"
+      ],
+      "r2r": [
+        "Docker",
+        "LLM"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -5525,7 +5606,7 @@
         "openai"
       ],
       "r2r": [
-        "openai"
+        "LLM"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -5869,6 +5950,10 @@
       ],
       "fastapi_mcp_integration": [
         "Claude"
+      ],
+      "r2r": [
+        "Docker",
+        "LLM"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -6039,6 +6124,10 @@
         "PostgreSQL",
         "Docker Compose",
         "Docker"
+      ],
+      "r2r": [
+        "Docker",
+        "Docker Compose"
       ]
     },
     "ragflow": {
@@ -6099,6 +6188,11 @@
       "lightrag_setup": [
         "Docker Compose",
         "Docker"
+      ],
+      "r2r": [
+        "Docker",
+        "RAG",
+        "Docker Compose"
       ]
     },
     "lightrag": {
@@ -6194,6 +6288,10 @@
       ],
       "fastapi_mcp_integration": [
         "uv"
+      ],
+      "r2r": [
+        "Docker",
+        "Docker Compose"
       ]
     },
     "graphrag": {
@@ -6289,6 +6387,9 @@
       ],
       "fastapi_mcp": [
         "Python"
+      ],
+      "r2r": [
+        "LLM"
       ]
     },
     "rag_techniques": {
@@ -6347,6 +6448,9 @@
       ],
       "graphrag_system": [
         "Retrieval-Augmented Generation"
+      ],
+      "r2r": [
+        "Retrieval-Augmented Generation (RAG)"
       ]
     },
     "fastapi_mcp": {
@@ -6549,10 +6653,11 @@
         "anthropic"
       ],
       "you_need_to_use_hermes_right_now_goodbye_openclaw": [
-        "anthropic"
+        "Docker",
+        "LLM"
       ],
       "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
-        "openai"
+        "LLM"
       ],
       "dify": [
         "docker",
@@ -6581,9 +6686,43 @@
         "python",
         "anthropic",
         "openai"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Docker",
+        "LLM"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "Docker"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Docker",
+        "LLM"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "Docker",
+        "LLM"
+      ],
+      "dify_deployment": [
+        "Docker",
+        "Docker Compose"
+      ],
+      "ragflow_self_hosting_guide": [
+        "Docker",
+        "RAG",
+        "Docker Compose"
+      ],
+      "lightrag_setup": [
+        "Docker",
+        "Docker Compose"
+      ],
+      "graphrag_system": [
+        "LLM"
+      ],
+      "advanced_retrieval_augmented_generation": [
+        "Retrieval-Augmented Generation (RAG)"
       ]
     }
   },
-  "updated_at": "2026-07-21T18:31:02.495675+00:00",
+  "updated_at": "2026-07-21T18:31:33.053598+00:00",
   "total_skills": 38
 }
