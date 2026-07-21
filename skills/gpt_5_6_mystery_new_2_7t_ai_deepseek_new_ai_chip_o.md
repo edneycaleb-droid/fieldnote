@@ -21,4 +21,4 @@ OpenAI, Claude, Anthropic, LLM, Llama
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-20 | [GPT 5.6 Mystery, New 2.7T AI, DeepSeek New AI Chip, Orca World Model, Grok 4.5 and More AI News...](https://www.youtube.com/watch?v=byAXKYmeZho) | yt_dlp_subs |
+| 2026-07-21 | [GPT 5.6 Mystery, New 2.7T AI, DeepSeek New AI Chip, Orca World Model, Grok 4.5 and More AI News...](https://www.youtube.com/watch?v=byAXKYmeZho) | yt_dlp_subs |
