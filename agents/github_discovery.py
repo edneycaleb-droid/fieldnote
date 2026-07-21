@@ -663,13 +663,92 @@ def _deterministic_baseline(repo: dict, readme: str) -> dict:
     if language and language.lower() not in seen_tools:
         detected_tools.append(language)
 
-    # ── Badge / noise filter ──────────────────────────────────────────────────
+    # ── Badge / noise filter ──────────────────────────────────────────────
     _BADGE_STATUS_WORDS = frozenset({
         "passing", "failing", "failed", "unknown", "pending",
         "success", "error", "stable", "latest",
     })
     _BADGE_PATTERNS = [
-        _re.compile(r'^build\s*:?\s*(passing|failing|failed|unknown)
+        _re.compile(r'^build\s*:?\s*(passing|failing|failed|unknown)$', _re.I),
+        _re.compile(r'^tests?\s*:?\s*(passing|failing|failed)$', _re.I),
+        _re.compile(r'^coverage\s*:?\s*\d+\s*%$', _re.I),
+        _re.compile(r'^\d+\s*%(\s+coverage)?$', _re.I),
+        _re.compile(r'^v?\d+\.\d+[\.\d]*(\s*(stable|latest|release))?$', _re.I),
+        _re.compile(r'^(mit|apache|gpl[\s\d\.]*|bsd[\s\d\.]*|isc)\s*(licen[sc]e)?$', _re.I),
+        _re.compile(r'^licen[sc]e\s*:?\s*(mit|apache|gpl|bsd|isc)[\s\d\.]*$', _re.I),
+        _re.compile(r'^python\s+\d+\.\d+\+?$', _re.I),
+        _re.compile(r'^pypi\s+v[\d\.]+$', _re.I),
+        _re.compile(r'^npm\s+v[\d\.]+$', _re.I),
+        _re.compile(r'^(downloads?|installs?)\s*:?\s*[\d,km]+$', _re.I),
+        _re.compile(r'^(stars?|forks?|watchers?)\s*:?\s*[\d,km]+$', _re.I),
+    ]
+
+    def _is_badge_like(s: str) -> bool:
+        """Return True if s looks like badge alt-text or short image caption noise."""
+        t = s.strip()
+        if not t:
+            return True
+        tl = t.lower()
+        if tl in _BADGE_STATUS_WORDS:
+            return True
+        for pat in _BADGE_PATTERNS:
+            if pat.match(t):
+                return True
+        # Short all-lowercase phrase with <=3 words and no sentence-ending
+        # punctuation is almost always a badge label, not a real step.
+        if (len(t) < 30 and t == tl and not any(c in t for c in '.!?')
+                and len(t.split()) <= 3):
+            return True
+        return False
+
+    # ── Extract steps from numbered/bulleted lists ──────────────────────────────────────────
+    steps: list[str] = []
+    for m in _re.finditer(r'(?:^|\n)(?:\d+\.\s+|\*\s+|-\s+)(.{10,120})', readme):
+        step = m.group(1).strip()
+        if step and not _is_badge_like(step) and len(steps) < 8:
+            steps.append(step)
+
+    # ── Heuristic: extract prose from ## Usage / ## Quickstart sections ───────
+    if len(steps) < 3:
+        section_pattern = _re.compile(
+            r'##\s+(?:Usage|Quickstart|Quick\s+Start|Getting\s+Started|Quick\s+Start\s+Guide)'
+            r'(.+?)(?=\n##\s|\Z)',
+            _re.IGNORECASE | _re.DOTALL,
+        )
+        for sec_match in section_pattern.finditer(readme):
+            section_text = sec_match.group(1)
+            # Try list items inside the section first
+            sec_steps: list[str] = []
+            for m in _re.finditer(r'(?:^|\n)(?:\d+\.\s+|\*\s+|-\s+)(.{10,120})', section_text):
+                candidate = m.group(1).strip()
+                if candidate and not _is_badge_like(candidate):
+                    sec_steps.append(candidate)
+            if not sec_steps:
+                # Fall back to prose sentences from the section
+                for sent in _re.split(r'(?<=[.!?])\s+', section_text.replace('\\n', ' ')):
+                    sent = sent.strip()
+                    if len(sent) >= 20 and not _is_badge_like(sent):
+                        sec_steps.append(sent[:120])
+                    if len(sec_steps) >= 5:
+                        break
+            steps.extend(s for s in sec_steps if s not in steps)
+            if len(steps) >= 5:
+                break
+
+    # ── Paragraph-extraction fallback: use first 5 meaningful sentences ───────
+    if len(steps) < 3:
+        prose = readme.replace('\n', ' ')
+        for sent in _re.split(r'(?<=[.!?])\s+', prose):
+            sent = sent.strip()
+            # Skip heading lines, code-like strings, badge noise, and very short fragments
+            if (len(sent) >= 25
+                    and not sent.startswith('#')
+                    and not sent.startswith('```')
+                    and not _is_badge_like(sent)
+                    and sent not in steps):
+                steps.append(sent[:120])
+            if len(steps) >= 5:
+                break
 
     # ── Description from first paragraph ─────────────────────────────────────
     paragraphs = [p.strip() for p in _re.split(r'\n{2,}', readme) if p.strip()]
