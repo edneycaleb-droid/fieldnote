@@ -26,6 +26,13 @@ def has(path: str, *needles: str) -> bool:
 
 
 def main() -> int:
+    try:
+        tomllib.loads(read("pyproject.toml"))
+    except (OSError, tomllib.TOMLDecodeError):
+        pyproject_valid = False
+    else:
+        pyproject_valid = True
+
     checks = {
         "readme_status": has("README.md", "Fieldnote") and has("STATUS.md", "Known limitations"),
         "contributing": has("CONTRIBUTING.md", "Generated files", "deterministic offline gate"),
@@ -34,7 +41,8 @@ def main() -> int:
         "issue_forms": has(".github/ISSUE_TEMPLATE/bug_report.yml", "validations:", "required: true")
         and has(".github/ISSUE_TEMPLATE/feature_request.yml", "Acceptance criteria"),
         "pull_request_template": has(".github/pull_request_template.md", "Trust and cost boundaries", "Rollback"),
-        "dependency_policy": has(".github/dependabot.yml", "package-ecosystem: pip", "package-ecosystem: github-actions"),
+        "dependency_policy": pyproject_valid
+        and has(".github/dependabot.yml", "package-ecosystem: pip", "package-ecosystem: github-actions"),
         "deterministic_fallback": (ROOT / "scripts/check_repository_quality.py").is_file(),
         "safe_workflow": has(
             ".github/workflows/repository-quality.yml",
@@ -43,18 +51,17 @@ def main() -> int:
             "persist-credentials: false",
             "workflow_dispatch:",
         ),
+        "clean_tracking": has(
+            ".github/ISSUE_TEMPLATE/config.yml",
+            "blank_issues_enabled: false",
+            "security/advisories/new",
+        ),
     }
-
-    try:
-        tomllib.loads(read("pyproject.toml"))
-    except (OSError, tomllib.TOMLDecodeError):
-        checks["pyproject_valid"] = False
-    else:
-        checks["pyproject_valid"] = True
 
     for name, passed in checks.items():
         print(f"[{'PASS' if passed else 'FAIL'}] {name}")
     passed = sum(checks.values())
+    print(f"REPOSITORY_QUALITY_SCORE={passed}/{len(checks)}")
     print(f"REPOSITORY_STRUCTURE_SCORE={passed}/{len(checks)}")
     return 0 if passed == len(checks) else 1
 
