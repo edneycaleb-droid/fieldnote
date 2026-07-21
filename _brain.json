@@ -1163,7 +1163,7 @@
       ]
     },
     "ai": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "dify",
         "ragflow",
@@ -1171,7 +1171,8 @@
         "fastapi_mcp",
         "mcp_go",
         "mcp_agent",
-        "registry"
+        "registry",
+        "awesome_mcp_servers"
       ]
     },
     "AI workflow management": {
@@ -1815,10 +1816,11 @@
       ]
     },
     "mcp": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "registry",
-        "xcodebuildmcp"
+        "xcodebuildmcp",
+        "awesome_mcp_servers"
       ]
     },
     "mcp-servers": {
@@ -1957,6 +1959,24 @@
       "freq": 1,
       "skills": [
         "xcodebuildmcp"
+      ]
+    },
+    "anthropic-claude": {
+      "freq": 1,
+      "skills": [
+        "awesome_mcp_servers"
+      ]
+    },
+    "awesome": {
+      "freq": 1,
+      "skills": [
+        "awesome_mcp_servers"
+      ]
+    },
+    "context": {
+      "freq": 1,
+      "skills": [
+        "awesome_mcp_servers"
       ]
     }
   },
@@ -2366,29 +2386,32 @@
       ]
     },
     "kubernetes": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "dify"
+        "dify",
+        "awesome_mcp_servers"
       ]
     },
     "docker": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "dify",
         "ragflow",
         "lightrag",
         "r2r",
         "registry",
-        "mcp_registry_development_deployment"
+        "mcp_registry_development_deployment",
+        "awesome_mcp_servers"
       ]
     },
     "postgresql": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "dify",
         "lightrag",
         "registry",
-        "mcp_registry_development_deployment"
+        "mcp_registry_development_deployment",
+        "awesome_mcp_servers"
       ]
     },
     "grafana": {
@@ -2509,9 +2532,10 @@
       ]
     },
     "redis": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "ragflow"
+        "ragflow",
+        "awesome_mcp_servers"
       ]
     },
     "gemini": {
@@ -2630,9 +2654,10 @@
       ]
     },
     "mongodb": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "lightrag"
+        "lightrag",
+        "awesome_mcp_servers"
       ]
     },
     "milvus": {
@@ -2852,12 +2877,13 @@
       ]
     },
     "mcp": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "fastapi_mcp",
         "mcp_agent",
         "registry",
-        "xcodebuildmcp"
+        "xcodebuildmcp",
+        "awesome_mcp_servers"
       ]
     },
     "mcp-server": {
@@ -2911,9 +2937,10 @@
       ]
     },
     "ray": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "mcp_go"
+        "mcp_go",
+        "awesome_mcp_servers"
       ]
     },
     "Go": {
@@ -2936,10 +2963,11 @@
       ]
     },
     "model-context-protocol": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "mcp_agent",
-        "xcodebuildmcp"
+        "xcodebuildmcp",
+        "awesome_mcp_servers"
       ]
     },
     "MCPApp": {
@@ -3078,6 +3106,48 @@
       "freq": 1,
       "skills": [
         "xcodebuildmcp"
+      ]
+    },
+    "qdrant": {
+      "freq": 1,
+      "skills": [
+        "awesome_mcp_servers"
+      ]
+    },
+    "duckdb": {
+      "freq": 1,
+      "skills": [
+        "awesome_mcp_servers"
+      ]
+    },
+    "sqlite": {
+      "freq": 1,
+      "skills": [
+        "awesome_mcp_servers"
+      ]
+    },
+    "anthropic-claude": {
+      "freq": 1,
+      "skills": [
+        "awesome_mcp_servers"
+      ]
+    },
+    "awesome": {
+      "freq": 1,
+      "skills": [
+        "awesome_mcp_servers"
+      ]
+    },
+    "context": {
+      "freq": 1,
+      "skills": [
+        "awesome_mcp_servers"
+      ]
+    },
+    "servers": {
+      "freq": 1,
+      "skills": [
+        "awesome_mcp_servers"
       ]
     }
   },
@@ -4286,6 +4356,41 @@
         "tag-production",
         "typescript",
         "ai",
+        "llm"
+      ],
+      "step_count": 8
+    },
+    "awesome_mcp_servers": {
+      "concepts": [
+        "ai",
+        "anthropic-claude",
+        "awesome",
+        "context",
+        "mcp"
+      ],
+      "tools": [
+        "qdrant",
+        "redis",
+        "mongodb",
+        "postgresql",
+        "kubernetes",
+        "duckdb",
+        "docker",
+        "sqlite",
+        "ray",
+        "anthropic-claude",
+        "awesome",
+        "context",
+        "mcp",
+        "model-context-protocol",
+        "servers"
+      ],
+      "tags": [
+        "ai",
+        "anthropic-claude",
+        "awesome",
+        "context",
+        "mcp",
         "llm"
       ],
       "step_count": 8
@@ -6434,6 +6539,12 @@
       "mcp_registry_development_deployment": [
         "docker",
         "postgresql"
+      ],
+      "awesome_mcp_servers": [
+        "ai",
+        "docker",
+        "postgresql",
+        "kubernetes"
       ]
     },
     "dify_deployment": {
@@ -6510,6 +6621,11 @@
       ],
       "mcp_registry_development_deployment": [
         "docker"
+      ],
+      "awesome_mcp_servers": [
+        "redis",
+        "docker",
+        "ai"
       ]
     },
     "ragflow_self_hosting_guide": {
@@ -6609,6 +6725,11 @@
         "llm"
       ],
       "mcp_registry_development_deployment": [
+        "docker",
+        "postgresql"
+      ],
+      "awesome_mcp_servers": [
+        "mongodb",
         "docker",
         "postgresql"
       ]
@@ -6802,6 +6923,9 @@
       "registry": [
         "ai",
         "llm"
+      ],
+      "awesome_mcp_servers": [
+        "ai"
       ]
     },
     "advanced_retrieval_augmented_generation": {
@@ -6879,6 +7003,10 @@
       ],
       "xcodebuildmcp": [
         "mcp-server",
+        "mcp"
+      ],
+      "awesome_mcp_servers": [
+        "ai",
         "mcp"
       ]
     },
@@ -6969,6 +7097,10 @@
       ],
       "mcp_registry_development_deployment": [
         "go"
+      ],
+      "awesome_mcp_servers": [
+        "ai",
+        "ray"
       ]
     },
     "mcp_agent": {
@@ -7030,6 +7162,11 @@
         "mcp"
       ],
       "xcodebuildmcp": [
+        "mcp",
+        "model-context-protocol"
+      ],
+      "awesome_mcp_servers": [
+        "ai",
         "mcp",
         "model-context-protocol"
       ]
@@ -7168,6 +7305,12 @@
       ],
       "xcodebuildmcp": [
         "mcp"
+      ],
+      "awesome_mcp_servers": [
+        "ai",
+        "docker",
+        "mcp",
+        "postgresql"
       ]
     },
     "mcp_registry_development_deployment": {
@@ -7198,6 +7341,10 @@
       ],
       "model_context_protocol_go": [
         "Model Context Protocol (MCP)"
+      ],
+      "awesome_mcp_servers": [
+        "docker",
+        "postgresql"
       ]
     },
     "model_context_protocol_go": {
@@ -7222,9 +7369,61 @@
       ],
       "registry": [
         "mcp"
+      ],
+      "awesome_mcp_servers": [
+        "mcp",
+        "model-context-protocol"
+      ]
+    },
+    "awesome_mcp_servers": {
+      "dify": [
+        "ai",
+        "docker",
+        "postgresql",
+        "kubernetes"
+      ],
+      "ragflow": [
+        "redis",
+        "docker",
+        "ai"
+      ],
+      "lightrag": [
+        "mongodb",
+        "docker",
+        "postgresql"
+      ],
+      "rag_techniques": [
+        "ai"
+      ],
+      "fastapi_mcp": [
+        "ai",
+        "mcp"
+      ],
+      "mcp_go": [
+        "ai",
+        "ray"
+      ],
+      "mcp_agent": [
+        "ai",
+        "mcp",
+        "model-context-protocol"
+      ],
+      "registry": [
+        "ai",
+        "docker",
+        "mcp",
+        "postgresql"
+      ],
+      "mcp_registry_development_deployment": [
+        "docker",
+        "postgresql"
+      ],
+      "xcodebuildmcp": [
+        "mcp",
+        "model-context-protocol"
       ]
     }
   },
-  "updated_at": "2026-07-21T19:47:19.977091+00:00",
-  "total_skills": 42
+  "updated_at": "2026-07-21T19:48:39.758157+00:00",
+  "total_skills": 43
 }
