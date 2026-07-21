@@ -1726,6 +1726,36 @@
       "skills": [
         "mcp_agent_framework"
       ]
+    },
+    "artificial-intelligence": {
+      "freq": 1,
+      "skills": [
+        "r2r"
+      ]
+    },
+    "large-language-models": {
+      "freq": 1,
+      "skills": [
+        "r2r"
+      ]
+    },
+    "python": {
+      "freq": 1,
+      "skills": [
+        "r2r"
+      ]
+    },
+    "question-answering": {
+      "freq": 1,
+      "skills": [
+        "r2r"
+      ]
+    },
+    "rag": {
+      "freq": 1,
+      "skills": [
+        "r2r"
+      ]
     }
   },
   "tools": {
@@ -1859,11 +1889,12 @@
       ]
     },
     "anthropic": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
-        "mcp_agent"
+        "mcp_agent",
+        "r2r"
       ]
     },
     "pip": {
@@ -2138,11 +2169,12 @@
       ]
     },
     "docker": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "dify",
         "ragflow",
-        "lightrag"
+        "lightrag",
+        "r2r"
       ]
     },
     "postgresql": {
@@ -2159,12 +2191,13 @@
       ]
     },
     "openai": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "dify",
         "ragflow",
         "rag_techniques",
-        "mcp_agent"
+        "mcp_agent",
+        "r2r"
       ]
     },
     "agent": {
@@ -2427,9 +2460,10 @@
       ]
     },
     "large-language-models": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "lightrag"
+        "lightrag",
+        "r2r"
       ]
     },
     "llm": {
@@ -2443,18 +2477,20 @@
       ]
     },
     "rag": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "lightrag",
         "graphrag",
-        "rag_techniques"
+        "rag_techniques",
+        "r2r"
       ]
     },
     "retrieval-augmented-generation": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "lightrag",
-        "rag_techniques"
+        "rag_techniques",
+        "r2r"
       ]
     },
     "uv": {
@@ -2557,10 +2593,11 @@
       ]
     },
     "python": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "rag_techniques",
-        "mcp_agent"
+        "mcp_agent",
+        "r2r"
       ]
     },
     "semantic-search": {
@@ -2730,6 +2767,30 @@
       "freq": 1,
       "skills": [
         "mcp_agent_framework"
+      ]
+    },
+    "artificial-intelligence": {
+      "freq": 1,
+      "skills": [
+        "r2r"
+      ]
+    },
+    "question-answering": {
+      "freq": 1,
+      "skills": [
+        "r2r"
+      ]
+    },
+    "retrieval-systems": {
+      "freq": 1,
+      "skills": [
+        "r2r"
+      ]
+    },
+    "search": {
+      "freq": 1,
+      "skills": [
+        "r2r"
       ]
     }
   },
@@ -3800,6 +3861,38 @@
         "mcp"
       ],
       "step_count": 10
+    },
+    "r2r": {
+      "concepts": [
+        "artificial-intelligence",
+        "large-language-models",
+        "python",
+        "question-answering",
+        "rag"
+      ],
+      "tools": [
+        "anthropic",
+        "docker",
+        "openai",
+        "artificial-intelligence",
+        "large-language-models",
+        "python",
+        "question-answering",
+        "rag",
+        "retrieval-augmented-generation",
+        "retrieval-systems",
+        "search"
+      ],
+      "tags": [
+        "artificial-intelligence",
+        "large-language-models",
+        "python",
+        "question-answering",
+        "rag",
+        "ai",
+        "llm"
+      ],
+      "step_count": 8
     }
   },
   "relationships": {
@@ -3898,6 +3991,9 @@
         "Claude"
       ],
       "mcp_agent": [
+        "anthropic"
+      ],
+      "r2r": [
         "anthropic"
       ]
     },
@@ -4416,6 +4512,9 @@
         "Claude"
       ],
       "mcp_agent": [
+        "anthropic"
+      ],
+      "r2r": [
         "anthropic"
       ]
     },
@@ -5050,6 +5149,9 @@
       ],
       "mcp_agent": [
         "anthropic"
+      ],
+      "r2r": [
+        "anthropic"
       ]
     },
     "you_need_to_use_hermes_right_now_goodbye_openclaw": {
@@ -5190,6 +5292,9 @@
         "Claude"
       ],
       "mcp_agent": [
+        "anthropic"
+      ],
+      "r2r": [
         "anthropic"
       ]
     },
@@ -5417,6 +5522,9 @@
         "Claude"
       ],
       "mcp_agent": [
+        "openai"
+      ],
+      "r2r": [
         "openai"
       ]
     },
@@ -5901,6 +6009,10 @@
       "mcp_agent": [
         "ai",
         "openai"
+      ],
+      "r2r": [
+        "docker",
+        "openai"
       ]
     },
     "dify_deployment": {
@@ -5955,6 +6067,10 @@
       "mcp_agent": [
         "ai-agents",
         "ai",
+        "openai"
+      ],
+      "r2r": [
+        "docker",
         "openai"
       ]
     },
@@ -6037,6 +6153,12 @@
       ],
       "mcp_agent": [
         "llm"
+      ],
+      "r2r": [
+        "docker",
+        "large-language-models",
+        "retrieval-augmented-generation",
+        "rag"
       ]
     },
     "lightrag_setup": {
@@ -6121,6 +6243,9 @@
       "mcp_agent": [
         "llms",
         "llm"
+      ],
+      "r2r": [
+        "rag"
       ]
     },
     "graphrag_system": {
@@ -6205,6 +6330,12 @@
         "openai",
         "llm",
         "python"
+      ],
+      "r2r": [
+        "openai",
+        "python",
+        "retrieval-augmented-generation",
+        "rag"
       ]
     },
     "advanced_retrieval_augmented_generation": {
@@ -6399,10 +6530,60 @@
       "mcp_go": [
         "ai",
         "llm"
+      ],
+      "r2r": [
+        "python",
+        "anthropic",
+        "openai"
       ]
     },
-    "mcp_agent_framework": {}
+    "mcp_agent_framework": {},
+    "r2r": {
+      "new_claude_opus_5_leaks": [
+        "anthropic"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "anthropic"
+      ],
+      "china_just_beat_claude_ai_kimi_k3": [
+        "anthropic"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "anthropic"
+      ],
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "openai"
+      ],
+      "dify": [
+        "docker",
+        "openai"
+      ],
+      "ragflow": [
+        "docker",
+        "openai"
+      ],
+      "lightrag": [
+        "docker",
+        "large-language-models",
+        "retrieval-augmented-generation",
+        "rag"
+      ],
+      "graphrag": [
+        "rag"
+      ],
+      "rag_techniques": [
+        "openai",
+        "python",
+        "retrieval-augmented-generation",
+        "rag"
+      ],
+      "mcp_agent": [
+        "python",
+        "anthropic",
+        "openai"
+      ]
+    }
   },
-  "updated_at": "2026-07-21T18:30:49.435932+00:00",
-  "total_skills": 37
+  "updated_at": "2026-07-21T18:31:02.495675+00:00",
+  "total_skills": 38
 }
