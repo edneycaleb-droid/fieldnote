@@ -644,23 +644,18 @@ _PKG_BLOCKLIST = {
 
 
 def install_packages(packages: list[str]) -> tuple[list, list]:
-    installed, failed = [], []
-    for pkg in packages[:8]:
-        pkg = pkg.strip().lower().split("[")[0]
-        if not pkg or not re.match(r'^[a-zA-Z0-9_\-\.]+$', pkg):
+    """Quarantine package proposals; never install AI-suggested code on the host."""
+    from agents import supply_chain_policy
+
+    proposals = []
+    for package in packages[:8]:
+        package = str(package).strip()
+        base_name = package.lower().split("[", 1)[0].split("==", 1)[0]
+        if not package or base_name in _PKG_BLOCKLIST:
             continue
-        if pkg in _PKG_BLOCKLIST:
-            continue
-        try:
-            r = subprocess.run(
-                [sys.executable, "-m", "pip", "install", pkg, "-q",
-                 "--no-warn-script-location"],
-                capture_output=True, text=True, timeout=60,
-            )
-            (installed if r.returncode == 0 else failed).append(pkg)
-        except Exception:
-            failed.append(pkg)
-    return installed, failed
+        proposals.append(package)
+    supply_chain_policy.quarantine_package_requests(proposals, source="video_skill_extraction")
+    return [], proposals
 
 
 # ── AI skill extraction ───────────────────────────────────────────────────────
@@ -1106,15 +1101,13 @@ def _install_pkgs(packages: list[str], emit) -> tuple[list, list]:
     if not packages:
         return [], []
     emit(
-        f"📦  Installing {len(packages)} package(s): {', '.join(packages[:5])} …",
+        f"📦  Quarantining {len(packages)} package proposal(s) for provenance review …",
         "info",
     )
-    installed, failed = install_packages(packages)
-    if installed:
-        emit(f"✅  Installed: {', '.join(installed)}", "success")
-    if failed:
-        emit(f"⚠  Skipped: {', '.join(failed)}", "warning")
-    return installed, failed
+    installed, quarantined = install_packages(packages)
+    if quarantined:
+        emit(f"🛡️  Quarantined (not installed): {', '.join(quarantined)}", "warning")
+    return installed, quarantined
 
 
 # ── Supplemental GitHub search (AI-extracted tools not in quick-scan) ─────────
@@ -1204,8 +1197,8 @@ def run_job(job_id: str, url: str, video_id: str):
         except Exception:
             pass
 
-    # Read X-Allow-Paid from job context (set by /process route) — never mutates global
-    allow_paid = bool(_jobs[job_id].get("allow_paid", False))
+    # Autonomous agents are free/local-only. Paid/OpenRouter execution is never authorized here.
+    allow_paid = False
 
     try:
         set_stage("init")
@@ -1466,7 +1459,7 @@ def run_job(job_id: str, url: str, video_id: str):
 
             # ── Phase 3: all heavy work in parallel ───────────────────────────
             set_stage("save")
-            emit("⚡  Phase 3: save ∥ packages ∥ MCP ∥ clone ∥ supplemental search …", "info")
+            emit("⚡  Phase 3: save ∥ candidate quarantine ∥ metadata clone ∥ supplemental search …", "info")
 
             ai_tools    = _nsl(skill.get("tools"))
             mcp_targets = [r for r in github_results
@@ -4577,6 +4570,14 @@ def _boot_scheduler():
         description="Re-verify all enabled MCP hub servers; update health states",
         interval_hours=0.25,    # every 15 minutes
         fn=_mcp_health_check,
+    )
+
+    from agents import supply_chain_policy as _supply_chain_policy
+    s.register(
+        name="ecosystem_policy",
+        description="Audit the quarantined GitHub/tool/MCP candidate control plane",
+        interval_hours=1,
+        fn=_supply_chain_policy.architecture_score,
     )
 
     s.register(

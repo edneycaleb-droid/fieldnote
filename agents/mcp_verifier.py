@@ -27,6 +27,7 @@ import select
 import shutil
 import signal
 import subprocess
+import tempfile
 import time
 from dataclasses import dataclass, field
 from typing import Any, Optional
@@ -88,33 +89,40 @@ def verify_server(entry: Any, timeout_s: int = _TIMEOUT_S) -> VerifyResult:
         return VerifyResult(ok=False, error_code="config_error",
                             diagnostics={"error": "no command configured"})
 
-    # ── 3. Spawn subprocess — inject credentials at spawn time only ───────────
-    env = {**os.environ}
-    # entry.credential_env is just the env var name; value already in os.environ
-    # (never log or return the value)
+    # ── 3. Spawn with a minimal environment and isolated temporary cwd ───────
+    env = {
+        "PATH": os.environ.get("PATH", "/usr/bin:/bin"),
+        "LANG": "C.UTF-8",
+        "LC_ALL": "C.UTF-8",
+    }
+    credential_env = str(getattr(entry, "credential_env", "") or "")
+    if credential_env and credential_env in os.environ:
+        env[credential_env] = os.environ[credential_env]
 
     proc: Optional[subprocess.Popen] = None
-    try:
-        proc = subprocess.Popen(
-            cmd,
-            stdin=subprocess.PIPE,
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE,
-            env=env,
-            text=False,
-        )
-    except FileNotFoundError as exc:
-        return VerifyResult(ok=False, error_code="runtime_missing",
-                            missing_runtime=cmd[0] if cmd else "?",
-                            diagnostics={"error": str(exc)[:200]})
-    except Exception as exc:
-        return VerifyResult(ok=False, error_code="spawn_error",
-                            diagnostics={"error": str(exc)[:200]})
+    with tempfile.TemporaryDirectory(prefix="fieldnote-mcp-verify-") as workdir:
+        try:
+            proc = subprocess.Popen(
+                cmd,
+                stdin=subprocess.PIPE,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                env=env,
+                cwd=workdir,
+                text=False,
+            )
+        except FileNotFoundError as exc:
+            return VerifyResult(ok=False, error_code="runtime_missing",
+                                missing_runtime=cmd[0] if cmd else "?",
+                                diagnostics={"error": str(exc)[:200]})
+        except Exception as exc:
+            return VerifyResult(ok=False, error_code="spawn_error",
+                                diagnostics={"error": str(exc)[:200]})
 
-    try:
-        return _run_handshake(proc, entry, t0, timeout_s)
-    finally:
-        _kill(proc)
+        try:
+            return _run_handshake(proc, entry, t0, timeout_s)
+        finally:
+            _kill(proc)
 
 
 # ── Internal helpers ───────────────────────────────────────────────────────────
@@ -128,47 +136,46 @@ def _runtime_binary(runtime: str) -> Optional[str]:
 
 
 def _build_command(entry: Any) -> list[str]:
-    """Build the subprocess command list from the registry entry."""
-    pkg = entry.package_name
+    """Build only an already-installed, immutable local command."""
     method = entry.install_method
-
-    if method == "uvx":
-        uvx = shutil.which("uvx") or shutil.which("uv")
-        if uvx:
-            return [uvx, "run", pkg]
-        # Fall back to pip-installed package
-        return ["python", "-m", pkg.replace("-", "_")]
-    if method == "pip":
-        return ["python", "-m", pkg.replace("-", "_")]
-    if method == "npm":
-        npx = shutil.which("npx")
-        if not npx:
-            raise RuntimeError("npx not found — Node.js not installed")
-        return ["npx", "-y", pkg]
-    if method == "local":
-        if hasattr(entry, "local_path") and entry.local_path:
-            return ["python", entry.local_path]
+    if method in {"uvx", "pip", "npm"}:
+        raise RuntimeError("package-manager execution is blocked during health verification")
+    if method == "local" and getattr(entry, "local_path", ""):
+        path = os.path.realpath(entry.local_path)
+        trusted_root = os.path.realpath("fieldnote_mcp/verified_servers")
+        if path != trusted_root and not path.startswith(trusted_root + os.sep):
+            raise RuntimeError("local MCP path is outside verified_servers")
+        return ["python", path]
     return []
 
 
 def _read_response(proc: subprocess.Popen, deadline: float) -> Optional[bytes]:
-    """
-    Read up to _OUTPUT_CAP bytes from proc.stdout with a hard deadline.
-    Returns None on timeout or if the process has no data within the deadline.
-    """
-    remaining = deadline - time.monotonic()
-    if remaining <= 0:
+    """Read one bounded JSON-RPC line without allowing buffered reads to exceed the deadline."""
+    if proc.stdout is None:
         return None
-    try:
-        rlist, _, _ = select.select([proc.stdout], [], [], remaining)
-    except Exception:
-        rlist = [proc.stdout]
-    if not rlist:
-        return None
-    try:
-        return proc.stdout.read(_OUTPUT_CAP)  # type: ignore[union-attr]
-    except Exception:
-        return None
+    fd = proc.stdout.fileno()
+    output = bytearray()
+    while len(output) < _OUTPUT_CAP:
+        remaining = deadline - time.monotonic()
+        if remaining <= 0:
+            return None
+        try:
+            readable, _, _ = select.select([fd], [], [], remaining)
+        except Exception:
+            return None
+        if not readable:
+            return None
+        try:
+            chunk = os.read(fd, min(4096, _OUTPUT_CAP - len(output)))
+        except OSError:
+            return None
+        if not chunk:
+            return bytes(output) or None
+        output.extend(chunk)
+        newline = output.find(b"\n")
+        if newline >= 0:
+            return bytes(output[: newline + 1])
+    return bytes(output)
 
 
 def _send_rpc(proc: subprocess.Popen, method: str, params: dict, req_id: int) -> None:
@@ -257,36 +264,48 @@ def _run_handshake(proc: subprocess.Popen, entry: Any,
     # ── notifications/initialized ──────────────────────────────────────────────
     _notify(proc, "notifications/initialized", {})
 
-    # ── tools/list ────────────────────────────────────────────────────────────
+    # ── advertised capabilities must pass completely ──────────────────────────
     tools_count = 0
-    if "tools" in server_caps and not _timed_out():
+    if "tools" in server_caps:
         try:
             _send_rpc(proc, "tools/list", {}, req_id=2)
             raw2 = _read_response(proc, deadline)
-            if raw2 is not None:
-                tr = _parse_rpc(raw2)
-                if tr and "result" in tr:
-                    tools_count = len(tr["result"].get("tools", []))
-            # If raw2 is None here it's a post-initialize timeout — log but continue
-            elif _timed_out():
-                log.debug("mcp_verifier: %s tools/list timed out (post-initialize)", entry.id)
         except Exception as exc:
-            log.debug("mcp_verifier: %s tools/list error: %s", entry.id, exc)
+            return VerifyResult(ok=False, error_code="rpc_error",
+                                diagnostics={"error": str(exc)[:200], "probe": "tools/list"})
+        if raw2 is None:
+            return VerifyResult(ok=False, error_code="timeout",
+                                diagnostics={"error": "tools/list did not respond"})
+        tr = _parse_rpc(raw2)
+        if not tr or "error" in tr or "result" not in tr:
+            return VerifyResult(ok=False, error_code="rpc_error",
+                                diagnostics={"error": "invalid tools/list response"})
+        tools = tr["result"].get("tools")
+        if not isinstance(tools, list):
+            return VerifyResult(ok=False, error_code="malformed_json",
+                                diagnostics={"error": "tools/list tools is not a list"})
+        tools_count = len(tools)
 
-    # ── resources/list ────────────────────────────────────────────────────────
     resources_count = 0
-    if "resources" in server_caps and not _timed_out():
+    if "resources" in server_caps:
         try:
             _send_rpc(proc, "resources/list", {}, req_id=3)
             raw3 = _read_response(proc, deadline)
-            if raw3 is not None:
-                rr = _parse_rpc(raw3)
-                if rr and "result" in rr:
-                    resources_count = len(rr["result"].get("resources", []))
-            elif _timed_out():
-                log.debug("mcp_verifier: %s resources/list timed out (post-initialize)", entry.id)
         except Exception as exc:
-            log.debug("mcp_verifier: %s resources/list error: %s", entry.id, exc)
+            return VerifyResult(ok=False, error_code="rpc_error",
+                                diagnostics={"error": str(exc)[:200], "probe": "resources/list"})
+        if raw3 is None:
+            return VerifyResult(ok=False, error_code="timeout",
+                                diagnostics={"error": "resources/list did not respond"})
+        rr = _parse_rpc(raw3)
+        if not rr or "error" in rr or "result" not in rr:
+            return VerifyResult(ok=False, error_code="rpc_error",
+                                diagnostics={"error": "invalid resources/list response"})
+        resources = rr["result"].get("resources")
+        if not isinstance(resources, list):
+            return VerifyResult(ok=False, error_code="malformed_json",
+                                diagnostics={"error": "resources/list resources is not a list"})
+        resources_count = len(resources)
 
     latency_ms = int((time.monotonic() - t0) * 1000)
 
