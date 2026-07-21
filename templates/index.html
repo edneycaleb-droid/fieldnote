@@ -1344,6 +1344,11 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
 
 .hub-chips {
   display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 14px;
+  max-height: 200px; overflow: hidden;
+  transition: max-height .22s ease, margin-bottom .22s ease, opacity .18s ease;
+}
+.hub-chips.hub-chips-collapsed {
+  max-height: 0; margin-bottom: 0; opacity: 0; pointer-events: none;
 }
 .hub-chip {
   font-size: .68rem; font-weight: 600; padding: 4px 12px;
@@ -6052,6 +6057,11 @@ function renderHubSummary(h) {
   }
 }
 
+function _hubChipsCollapse(collapse) {
+  const chips = document.getElementById('hub-chips');
+  if (chips) chips.classList.toggle('hub-chips-collapsed', collapse);
+}
+
 function hubSearchDebounced() {
   clearTimeout(_hubSearchTimer);
   _hubSearchTimer = setTimeout(() => {
@@ -6059,6 +6069,7 @@ function hubSearchDebounced() {
     _hubSearch = val;
     const clr = document.getElementById('hub-search-clear');
     if (clr) clr.style.display = val ? '' : 'none';
+    _hubChipsCollapse(!!val);
     renderHubGrid();
   }, 180);
 }
@@ -6069,6 +6080,7 @@ function hubSearchClear() {
   _hubSearch = '';
   const clr = document.getElementById('hub-search-clear');
   if (clr) clr.style.display = 'none';
+  _hubChipsCollapse(false);
   renderHubGrid();
 }
 
