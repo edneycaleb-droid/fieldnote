@@ -52,6 +52,7 @@ class RepositoryQualityRubricTests(unittest.TestCase):
                 "poetry install --no-interaction --no-ansi --no-root\n"
             ),
             "scripts/check_repository_quality.py": "# fixture\n",
+            "skills/example.md": "# Example skill\n\n" + ("Deterministic, source-backed skill content. " * 3) + "\n",
             "pyproject.toml": "[project]\nname = \"fieldnote\"\nversion = \"0.0.0\"\n",
         }
         for relative, text in files.items():
@@ -108,6 +109,14 @@ class RepositoryQualityRubricTests(unittest.TestCase):
         result, output = self.run_quality()
         self.assertEqual(1, result)
         self.assertIn("[FAIL] safe_workflow", output)
+        self.assertIn("REPOSITORY_QUALITY_SCORE=9/10", output)
+
+
+    def test_truncated_generated_skill_cannot_receive_full_credit(self) -> None:
+        (self.root / "skills/example.md").write_text("fieldnote_skills\n", encoding="utf-8")
+        result, output = self.run_quality()
+        self.assertEqual(1, result)
+        self.assertIn("[FAIL] deterministic_fallback", output)
         self.assertIn("REPOSITORY_QUALITY_SCORE=9/10", output)
 
 
