@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **128 skills** · Last synced: 2026-07-21 21:38 UTC
+> **129 skills** · Last synced: 2026-07-21 21:39 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Kubeflow Trainer: Large-Scale Distributed AI Platform for Scalable LLM Fine-Tuning and Training](skills/kubeflow_trainer_skill.md) | Kubeflow Trainer is a Kubernetes-native distributed AI platform that integrates  | `Kubeflow Trainer` `Kueue` `Volcano` `Cloud Native AI ecosystem` | `distributed computing` `large language models` `kubernetes` |
 | [SQLite-Vector Extension for Embedded Vector Search](skills/sqlite_vector_extension.md) | Integrate powerful vector search capabilities directly into SQLite databases usi | `sqlite-vector extension` `SQLite CLI` `Zed Editor` `Sourcegraph Cody` | `ai` `embedded-databases` `edge-ai` |
 | [Sqlite Vector](skills/sqlite_vector.md) | SQLite-Vector is a cross-platform, ultra-efficient SQLite extension that brings  | `redis` `weaviate` `faiss` `sqlite` | `c` `ai` `llm` |
 | [LightAgent: Lightweight Python Agent Framework](skills/lightagent_framework.md) | LightAgent is an ultra-lightweight, open-source Python framework for building AI | `LightAgent` `LightSwarm` `LightFlow` `ToolRegistry` | `agent-framework` `agents` `ai` |
