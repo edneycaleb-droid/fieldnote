@@ -116,10 +116,12 @@ class SchedulerAgent:
         """Trigger a job immediately (non-blocking — spawns a thread)."""
         with self._lock:
             job = next((j for j in self._jobs if j.name == job_name), None)
-        if not job:
-            return {"ok": False, "error": f"Unknown job: {job_name}"}
-        if job.running:
-            return {"ok": False, "error": "Already running"}
+            if not job:
+                return {"ok": False, "error": f"Unknown job: {job_name}"}
+            if job.running:
+                return {"ok": False, "error": "Already running"}
+            job.running = True
+            job.last_run = _now_iso()
         threading.Thread(target=self._run_job, args=(job,),
                          daemon=True, name=f"fn-job-{job_name}").start()
         return {"ok": True, "job": job_name}
@@ -127,9 +129,9 @@ class SchedulerAgent:
     def set_enabled(self, job_name: str, enabled: bool) -> dict:
         with self._lock:
             job = next((j for j in self._jobs if j.name == job_name), None)
-        if not job:
-            return {"ok": False, "error": f"Unknown job: {job_name}"}
-        job.enabled = enabled
+            if not job:
+                return {"ok": False, "error": f"Unknown job: {job_name}"}
+            job.enabled = enabled
         return {"ok": True, "job": job_name, "enabled": enabled}
 
     # ── Internal loop ─────────────────────────────────────────────────────────
@@ -144,29 +146,33 @@ class SchedulerAgent:
                        and not j.running
                        and j.next_run is not None
                        and _iso_to_ts(j.next_run) <= now]
+                for job in due:
+                    job.running = True
+                    job.last_run = _now_iso()
             for job in due:
                 threading.Thread(target=self._run_job, args=(job,),
                                  daemon=True, name=f"fn-job-{job.name}").start()
             self._stop_event.wait(timeout=TICK)
 
     def _run_job(self, job: Job) -> None:
-        job.running  = True
-        job.last_run = _now_iso()
         log.info("Scheduler: running job '%s'", job.name)
         try:
-            result        = job.fn()
-            job.runs_ok  += 1
-            job.last_result = result
-            job.last_error  = None
+            result = job.fn()
+            with self._lock:
+                job.runs_ok += 1
+                job.last_result = result
+                job.last_error = None
             log.info("Scheduler: job '%s' OK → %s", job.name, result)
         except Exception as exc:
-            job.runs_err += 1
-            job.last_error  = str(exc)
-            job.last_result = None
+            with self._lock:
+                job.runs_err += 1
+                job.last_error = str(exc)
+                job.last_result = None
             log.error("Scheduler: job '%s' ERROR → %s", job.name, exc)
         finally:
-            job.running  = False
-            job.next_run = _iso_after_secs(job.interval_secs)
+            with self._lock:
+                job.running = False
+                job.next_run = _iso_after_secs(job.interval_secs)
 
 
 # ── Time helpers ──────────────────────────────────────────────────────────────
