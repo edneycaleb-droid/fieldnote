@@ -21,4 +21,4 @@ Claude, anthropic, Gemini, OpenAI
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-20 | [Anthropic's Downfall... Kimi K3.1, Grok 4.6, DeepSeek v4 GA, U.S. Gov's Gold Eagle, & Robot MMA!](https://www.youtube.com/watch?v=O74g0XqkzzY) | yt_dlp_subs |
+| 2026-07-21 | [Anthropic's Downfall... Kimi K3.1, Grok 4.6, DeepSeek v4 GA, U.S. Gov's Gold Eagle, & Robot MMA!](https://www.youtube.com/watch?v=O74g0XqkzzY) | yt_dlp_subs |
