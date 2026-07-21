@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **28 skills** · Last synced: 2026-07-21 14:55 UTC
+> **29 skills** · Last synced: 2026-07-21 14:55 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [New Claude Update Is INSANE!](skills/new_claude_update_is_insane.md) | By Julian Goldie SEO. Key tools: Claude, Anthropic. (Auto-extracted — pending AI | `Claude` `Anthropic` | `claude` `something` `anthropic` |
 | [New Hermes Agent OS is INSANE!](skills/new_hermes_agent_os_is_insane.md) | By Julian Goldie SEO. Key tools: Claude. (Auto-extracted — pending AI enhancemen | `Claude` | `same` `outreach` `agent` |
 | [Testing and Comparing Large Language Models with PromptTools](skills/testing_and_comparing_llms.md) | This skill teaches how to test, experiment, and compare Large Language Models (L | `PromptTools` `OpenAI` `Anthropic` `LLaMA` | `llms` `prompttools` `testing` |
 | [Building AI Agents with Loop: A Comprehensive Guide to Autonomously Improving AI Self-Improvement](skills/building_ai_agents_with_loop.md) | This skill teaches how to build AI agents with loop, a feature that enables auto | `Hermes Agent` `Claude` `Open Claw` `Contabo` | `ai` `self-improvement` `loop-engineering` |
