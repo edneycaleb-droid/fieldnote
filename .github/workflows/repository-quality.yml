@@ -18,6 +18,8 @@ on:
       - "SECURITY.md"
   pull_request:
     branches: [main]
+  schedule:
+    - cron: "17 */6 * * *"
   workflow_dispatch:
 
 permissions:
@@ -30,7 +32,7 @@ concurrency:
 jobs:
   validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - name: Check out without persisted credentials
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
