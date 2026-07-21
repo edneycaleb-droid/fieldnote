@@ -817,6 +817,36 @@
       "skills": [
         "you_need_to_use_hermes_right_now_goodbye_openclaw"
       ]
+    },
+    "AI agent performance": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "Live trading competition": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "Model comparison": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "Trading strategy": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "Trading strategies": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
     }
   },
   "tools": {
@@ -976,9 +1006,10 @@
       ]
     },
     "Kimi K3": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "i_tested_kimi_k3_so_you_don_t_have_to"
+        "i_tested_kimi_k3_so_you_don_t_have_to",
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "Fable": {
@@ -1083,6 +1114,30 @@
       "freq": 1,
       "skills": [
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o"
+      ]
+    },
+    "Claude Fable 5": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "Trading View": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "Tradingkit.com": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "yt-dlp": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     }
   },
@@ -1201,31 +1256,26 @@
     },
     "kimi_k3_vs_claude_fable_5_raw_results": {
       "concepts": [
-        "fable",
-        "kimi",
-        "right",
-        "going",
-        "look",
-        "well",
-        "these",
-        "here",
-        "little",
-        "output"
+        "AI agent performance",
+        "Live trading competition",
+        "Model comparison",
+        "Trading strategy",
+        "Trading strategies"
       ],
       "tools": [
-        "Claude",
-        "Anthropic",
-        "Ollama"
+        "Kimi K3",
+        "Claude Fable 5",
+        "Trading View",
+        "Tradingkit.com",
+        "yt-dlp"
       ],
       "tags": [
-        "fable",
-        "kimi",
-        "right",
-        "going",
-        "look",
-        "well"
+        "AI",
+        "Competition",
+        "Models",
+        "Trading"
       ],
-      "step_count": 1
+      "step_count": 7
     },
     "chatgpt_work_everything_you_need_to_know_to_get_st": {
       "concepts": [
@@ -2121,6 +2171,9 @@
         "Claude",
         "here",
         "right"
+      ],
+      "i_tested_kimi_k3_so_you_don_t_have_to": [
+        "Kimi K3"
       ]
     },
     "chatgpt_work_everything_you_need_to_know_to_get_st": {
@@ -2719,6 +2772,9 @@
       "china_just_beat_claude_ai_kimi_k3": [
         "Kimi K3",
         "AI models"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Kimi K3"
       ]
     },
     "china_just_beat_claude_ai_kimi_k3": {
@@ -3478,6 +3534,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-20T03:42:29.654077+00:00",
+  "updated_at": "2026-07-21T14:51:22.675339+00:00",
   "total_skills": 22
 }
