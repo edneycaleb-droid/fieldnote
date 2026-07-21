@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "hkuds--lightrag",
+      "title": "Discovered: HKUDS/LightRAG",
+      "category": "discoveries",
+      "confidence": "verified",
+      "updated_at": "2026-07-21T15:24:32.672495+00:00",
+      "path": "discoveries/hkuds--lightrag.md"
+    },
+    {
       "slug": "infiniflow--ragflow",
       "title": "Discovered: infiniflow/ragflow",
       "category": "discoveries",
@@ -177,5 +185,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-21T15:24:31.212776+00:00"
+  "updated_at": "2026-07-21T15:24:32.675022+00:00"
 }
