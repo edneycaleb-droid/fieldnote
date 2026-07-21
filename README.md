@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [you need to use Hermes RIGHT NOW!! (goodbye OpenClaw!!)](skills/you_need_to_use_hermes_right_now_goodbye_openclaw.md) | By NetworkChuck. Key tools: Python, Docker, LLM, OpenAI, anthropic. (Auto-extrac | `Python` `Docker` `LLM` `OpenAI` | `hermes` `gonna` `here` |
 | [GPT 5.6 Mystery, New 2.7T AI, DeepSeek New AI Chip, Orca World Model, Grok 4.5 and More AI News...](skills/gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o.md) | By AI Revolution. Key tools: OpenAI, Claude, Anthropic, LLM, Llama. (Auto-extrac | `OpenAI` `Claude` `Anthropic` `LLM` | `music` `model` `openai` |
 | [China just beat Claude AI: Kimi K3](skills/china_just_beat_claude_ai_kimi_k3.md) | By TechLead. Key tools: Claude, Anthropic, OpenAI, GPT-4, Gemini. (Auto-extracte | `Claude` `Anthropic` `OpenAI` `GPT-4` | `model` `models` `open` |
 | [Yes, the Kimi K3 Hype is Real](skills/yes_the_kimi_k3_hype_is_real.md) | By Chase AI. Key tools: Anthropic, OpenAI, Claude. (Auto-extracted — pending AI  | `Anthropic` `OpenAI` `Claude` | `these` `fable` `kimmy` |
@@ -17,7 +18,6 @@
 | [New Claude Update Is INSANE!](skills/new_claude_update_is_insane.md) | By Julian Goldie SEO. Key tools: Claude, Anthropic. (Auto-extracted — pending AI | `Claude` `Anthropic` | `claude` `something` `anthropic` |
 | [Hermes Agent Tutorial for Beginners (Full Step-by-Step Setup)](skills/hermes_agent_tutorial_for_beginners_full_step_by_s.md) | By Metics Media. Key tools: Claude, Docker, bash, Python, LLM. (Auto-extracted — | `Claude` `Docker` `bash` `Python` | `agent` `hermes` `want` |
 | [Kimi K3 vs Claude Fable 5: Raw Results and Live Trading Competition](skills/kimi_k3_vs_claude_fable_5_raw_results.md) | This video compares Kimi K3 and Claude Fable 5 in a live trading competition, hi | `Kimi K3` `Claude Fable 5` `Trading View` `Tradingkit.com` | `AI` `Competition` `Models` |
-| [you need to use Hermes RIGHT NOW!! (goodbye OpenClaw!!)](skills/you_need_to_use_hermes_right_now_goodbye_openclaw.md) | By NetworkChuck. Key tools: Python, Docker, LLM, OpenAI, anthropic. (Auto-extrac | `Python` `Docker` `LLM` `OpenAI` | `hermes` `gonna` `here` |
 | [The 15 Most INSANE Things Created by KIMI K3 ( KIMI K3 Use Cases)](skills/the_15_most_insane_things_created_by_kimi_k3_kimi_.md) | By TheAIGRID. Key tools: Claude. (Auto-extracted — pending AI enhancement.) | `Claude` | `know` `course` `game` |
 | [This AI Business Model Is Creating New Millionaires In 2026](skills/this_ai_business_model_is_creating_new_millionaire.md) | By Richard Yu. Key tools: Anthropic, Claude. (Auto-extracted — pending AI enhanc | `Anthropic` `Claude` | `people` `product` `most` |
 | [Hermes Agent - Full Course & Setup Guide - For COMPLETE Beginners](skills/hermes_agent_full_course_setup_guide_for_complete_.md) | By Tech With Tim. Key tools: LLM, OpenAI, Anthropic, Docker, curl. (Auto-extract | `LLM` `OpenAI` `Anthropic` `Docker` | `going` `want` `agent` |

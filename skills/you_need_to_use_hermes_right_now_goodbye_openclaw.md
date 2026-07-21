@@ -21,4 +21,4 @@ Python, Docker, LLM, OpenAI, anthropic, Claude
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-20 | [you need to use Hermes RIGHT NOW!! (goodbye OpenClaw!!)](https://www.youtube.com/watch?v=QQEgIo4Juxg) | yt_dlp_subs |
+| 2026-07-21 | [you need to use Hermes RIGHT NOW!! (goodbye OpenClaw!!)](https://www.youtube.com/watch?v=QQEgIo4Juxg) | yt_dlp_subs |
