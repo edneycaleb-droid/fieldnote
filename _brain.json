@@ -823,25 +823,25 @@
       ]
     },
     "AI agent performance": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "Live trading competition": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "Model comparison": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "Trading strategy": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results"
       ]
@@ -1061,7 +1061,7 @@
       ]
     },
     "Kimi K3": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "i_tested_kimi_k3_so_you_don_t_have_to",
         "kimi_k3_vs_claude_fable_5_raw_results"
@@ -1172,25 +1172,25 @@
       ]
     },
     "Claude Fable 5": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "Trading View": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "Tradingkit.com": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "yt-dlp": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results"
       ]
@@ -1342,8 +1342,7 @@
         "AI agent performance",
         "Live trading competition",
         "Model comparison",
-        "Trading strategy",
-        "Trading strategies"
+        "Trading strategy"
       ],
       "tools": [
         "Kimi K3",
@@ -1358,7 +1357,7 @@
         "Models",
         "Trading"
       ],
-      "step_count": 7
+      "step_count": 8
     },
     "chatgpt_work_everything_you_need_to_know_to_get_st": {
       "concepts": [
@@ -3618,6 +3617,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-21T14:52:29.733353+00:00",
+  "updated_at": "2026-07-21T14:52:41.962568+00:00",
   "total_skills": 22
 }
