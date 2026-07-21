@@ -547,10 +547,11 @@
       ]
     },
     "AI automation": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
-        "new_hermes_agent_os_is_insane"
+        "new_hermes_agent_os_is_insane",
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
       ]
     },
     "Hermes setup": {
@@ -886,6 +887,18 @@
       "skills": [
         "this_ai_business_model_is_creating_new_millionaire"
       ]
+    },
+    "ChatGPT Work": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "website building": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
     }
   },
   "tools": {
@@ -1205,6 +1218,18 @@
       "skills": [
         "hermes_agent_full_course_setup_guide_for_complete_"
       ]
+    },
+    "ChatGPT": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
+    },
+    "ChatGPT Work": {
+      "freq": 1,
+      "skills": [
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
+      ]
     }
   },
   "skill_map": {
@@ -1337,27 +1362,20 @@
     },
     "chatgpt_work_everything_you_need_to_know_to_get_st": {
       "concepts": [
-        "work",
-        "here",
-        "site",
-        "right",
-        "chat",
-        "dave",
-        "website",
-        "good",
-        "going",
-        "need"
+        "AI automation",
+        "ChatGPT Work",
+        "website building"
       ],
-      "tools": [],
+      "tools": [
+        "ChatGPT",
+        "ChatGPT Work"
+      ],
       "tags": [
-        "work",
-        "here",
-        "site",
-        "right",
-        "chat",
-        "dave"
+        "ai",
+        "automation",
+        "chatgpt"
       ],
-      "step_count": 1
+      "step_count": 5
     },
     "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": {
       "concepts": [
@@ -3600,6 +3618,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-21T14:52:28.822870+00:00",
+  "updated_at": "2026-07-21T14:52:29.733353+00:00",
   "total_skills": 22
 }
