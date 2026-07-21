@@ -1376,9 +1376,10 @@
       ]
     },
     "Retrieval-Augmented Generation": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "lightrag_setup"
+        "lightrag_setup",
+        "graphrag_system"
       ]
     },
     "Knowledge Graph": {
@@ -1415,6 +1416,18 @@
       "freq": 1,
       "skills": [
         "graphrag"
+      ]
+    },
+    "Knowledge Graph Memory Structures": {
+      "freq": 1,
+      "skills": [
+        "graphrag_system"
+      ]
+    },
+    "LLM": {
+      "freq": 1,
+      "skills": [
+        "graphrag_system"
       ]
     }
   },
@@ -1500,7 +1513,7 @@
       ]
     },
     "Python": {
-      "freq": 15,
+      "freq": 16,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -1509,7 +1522,8 @@
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
         "new_hermes_agent_os_is_insane",
         "lightrag",
-        "graphrag"
+        "graphrag",
+        "graphrag_system"
       ]
     },
     "LLM": {
@@ -2092,10 +2106,11 @@
       ]
     },
     "graphrag": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "lightrag",
-        "graphrag"
+        "graphrag",
+        "graphrag_system"
       ]
     },
     "knowledge-graph": {
@@ -2176,6 +2191,12 @@
       "freq": 1,
       "skills": [
         "graphrag"
+      ]
+    },
+    "Command Line Interface": {
+      "freq": 1,
+      "skills": [
+        "graphrag_system"
       ]
     }
   },
@@ -3013,6 +3034,25 @@
         "ai"
       ],
       "step_count": 8
+    },
+    "graphrag_system": {
+      "concepts": [
+        "Retrieval-Augmented Generation",
+        "Knowledge Graph Memory Structures",
+        "LLM"
+      ],
+      "tools": [
+        "graphrag",
+        "Python",
+        "Command Line Interface"
+      ],
+      "tags": [
+        "gpt",
+        "gpt-4",
+        "graphrag",
+        "llm"
+      ],
+      "step_count": 5
     }
   },
   "relationships": {
@@ -3305,6 +3345,10 @@
       ],
       "graphrag": [
         "Python"
+      ],
+      "graphrag_system": [
+        "Python",
+        "LLM"
       ]
     },
     "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
@@ -3924,6 +3968,9 @@
       ],
       "graphrag": [
         "Python"
+      ],
+      "graphrag_system": [
+        "Python"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -4014,6 +4061,9 @@
         "Python"
       ],
       "graphrag": [
+        "Python"
+      ],
+      "graphrag_system": [
         "Python"
       ]
     },
@@ -4332,6 +4382,10 @@
       ],
       "graphrag": [
         "Python"
+      ],
+      "graphrag_system": [
+        "Python",
+        "LLM"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -4439,6 +4493,10 @@
       ],
       "graphrag": [
         "Python"
+      ],
+      "graphrag_system": [
+        "Python",
+        "LLM"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -4537,6 +4595,9 @@
       ],
       "ragflow": [
         "openai"
+      ],
+      "graphrag_system": [
+        "LLM"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -4862,6 +4923,9 @@
       ],
       "lightrag_setup": [
         "Docker"
+      ],
+      "graphrag_system": [
+        "LLM"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -5084,6 +5148,10 @@
         "Python",
         "graphrag",
         "llm"
+      ],
+      "graphrag_system": [
+        "Python",
+        "graphrag"
       ]
     },
     "lightrag_setup": {
@@ -5110,6 +5178,9 @@
       "ragflow_self_hosting_guide": [
         "Docker Compose",
         "Docker"
+      ],
+      "graphrag_system": [
+        "Retrieval-Augmented Generation"
       ]
     },
     "graphrag": {
@@ -5138,9 +5209,50 @@
         "Python",
         "graphrag",
         "llm"
+      ],
+      "graphrag_system": [
+        "Python",
+        "graphrag"
+      ]
+    },
+    "graphrag_system": {
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Python",
+        "LLM"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "Python"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Python"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "Python",
+        "LLM"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Python",
+        "LLM"
+      ],
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "LLM"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "LLM"
+      ],
+      "lightrag": [
+        "Python",
+        "graphrag"
+      ],
+      "lightrag_setup": [
+        "Retrieval-Augmented Generation"
+      ],
+      "graphrag": [
+        "Python",
+        "graphrag"
       ]
     }
   },
-  "updated_at": "2026-07-21T15:22:04.151539+00:00",
-  "total_skills": 29
+  "updated_at": "2026-07-21T15:23:58.666902+00:00",
+  "total_skills": 30
 }
