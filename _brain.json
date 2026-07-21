@@ -1666,6 +1666,66 @@
       "skills": [
         "mcp_agent"
       ]
+    },
+    "Model Context Protocol (MCP)": {
+      "freq": 1,
+      "skills": [
+        "mcp_agent_framework"
+      ]
+    },
+    "Composable Agent Patterns": {
+      "freq": 1,
+      "skills": [
+        "mcp_agent_framework"
+      ]
+    },
+    "Durable Agents": {
+      "freq": 1,
+      "skills": [
+        "mcp_agent_framework"
+      ]
+    },
+    "Agent Lifecycle Management": {
+      "freq": 1,
+      "skills": [
+        "mcp_agent_framework"
+      ]
+    },
+    "Augmented LLM": {
+      "freq": 1,
+      "skills": [
+        "mcp_agent_framework"
+      ]
+    },
+    "MCP Servers": {
+      "freq": 1,
+      "skills": [
+        "mcp_agent_framework"
+      ]
+    },
+    "Workflow Decorators": {
+      "freq": 1,
+      "skills": [
+        "mcp_agent_framework"
+      ]
+    },
+    "Configuration Management": {
+      "freq": 1,
+      "skills": [
+        "mcp_agent_framework"
+      ]
+    },
+    "Secrets Management": {
+      "freq": 1,
+      "skills": [
+        "mcp_agent_framework"
+      ]
+    },
+    "Temporal (for durable execution)": {
+      "freq": 1,
+      "skills": [
+        "mcp_agent_framework"
+      ]
     }
   },
   "tools": {
@@ -2628,6 +2688,48 @@
       "freq": 1,
       "skills": [
         "mcp_agent"
+      ]
+    },
+    "MCPApp": {
+      "freq": 1,
+      "skills": [
+        "mcp_agent_framework"
+      ]
+    },
+    "Agent": {
+      "freq": 1,
+      "skills": [
+        "mcp_agent_framework"
+      ]
+    },
+    "AgentSpec": {
+      "freq": 1,
+      "skills": [
+        "mcp_agent_framework"
+      ]
+    },
+    "OpenAIAugmentedLLM": {
+      "freq": 1,
+      "skills": [
+        "mcp_agent_framework"
+      ]
+    },
+    "Workflow": {
+      "freq": 1,
+      "skills": [
+        "mcp_agent_framework"
+      ]
+    },
+    "WorkflowResult": {
+      "freq": 1,
+      "skills": [
+        "mcp_agent_framework"
+      ]
+    },
+    "RequestParams": {
+      "freq": 1,
+      "skills": [
+        "mcp_agent_framework"
       ]
     }
   },
@@ -3667,6 +3769,37 @@
         "python"
       ],
       "step_count": 8
+    },
+    "mcp_agent_framework": {
+      "concepts": [
+        "Model Context Protocol (MCP)",
+        "Composable Agent Patterns",
+        "Durable Agents",
+        "Agent Lifecycle Management",
+        "Augmented LLM",
+        "MCP Servers",
+        "Workflow Decorators",
+        "Configuration Management",
+        "Secrets Management",
+        "Temporal (for durable execution)"
+      ],
+      "tools": [
+        "MCPApp",
+        "Agent",
+        "AgentSpec",
+        "OpenAIAugmentedLLM",
+        "Workflow",
+        "WorkflowResult",
+        "RequestParams"
+      ],
+      "tags": [
+        "agents",
+        "llm",
+        "framework",
+        "python",
+        "mcp"
+      ],
+      "step_count": 10
     }
   },
   "relationships": {
@@ -6267,8 +6400,9 @@
         "ai",
         "llm"
       ]
-    }
+    },
+    "mcp_agent_framework": {}
   },
-  "updated_at": "2026-07-21T18:30:32.531896+00:00",
-  "total_skills": 36
+  "updated_at": "2026-07-21T18:30:49.435932+00:00",
+  "total_skills": 37
 }
