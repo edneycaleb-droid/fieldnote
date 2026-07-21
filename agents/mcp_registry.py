@@ -62,6 +62,7 @@ class MCPServer:
     installed_version:   str = ""
     latest_version:      str = ""
     install_hint:        str = ""
+    python_alternative_id: str = ""  # ID of a Python/uvx server with same capability (used when runtime_missing)
     enabled:             bool = True
     write_capable:       bool = False  # write-capable servers disabled by default
     icon:                str = "🔧"
@@ -114,6 +115,7 @@ SEED_ENTRIES: list[dict] = [
         "credential_optional": False,
         "icon": "🦁",
         "health_state": "not_installed",
+        "python_alternative_id": "exa-search",
     },
     {
         "id": "free-search",
@@ -225,6 +227,7 @@ SEED_ENTRIES: list[dict] = [
         "credential_optional": False,
         "icon": "🐙",
         "health_state": "not_installed",
+        "python_alternative_id": "git-mcp",
     },
     {
         "id": "git-mcp",
@@ -299,6 +302,7 @@ SEED_ENTRIES: list[dict] = [
         "credential_optional": False,
         "icon": "🐘",
         "health_state": "not_installed",
+        "python_alternative_id": "sqlite-mcp",
     },
     # ── Code ───────────────────────────────────────────────────────────────────
     {
@@ -318,6 +322,7 @@ SEED_ENTRIES: list[dict] = [
         "credential_optional": True,
         "icon": "📁",
         "health_state": "not_installed",
+        "python_alternative_id": "fetch-mcp",
     },
     {
         "id": "mcp-server-python",
@@ -376,6 +381,7 @@ SEED_ENTRIES: list[dict] = [
         "credential_optional": True,
         "icon": "🧠",
         "health_state": "not_installed",
+        "python_alternative_id": "qdrant-mcp",
     },
     # ── Local LLM ─────────────────────────────────────────────────────────────
     {
@@ -539,6 +545,14 @@ def update_server(entry_id: str, **kwargs) -> Optional[MCPServer]:
     if target is not None:
         save_registry(servers)
     return target
+
+
+def get_python_alternative(entry_id: str) -> Optional[MCPServer]:
+    """Return the recorded Python/uvx alternative for an npm-only server, or None."""
+    srv = get_by_id(entry_id)
+    if srv is None or not srv.python_alternative_id:
+        return None
+    return get_by_id(srv.python_alternative_id)
 
 
 def get_by_capability(capability: str) -> list[MCPServer]:

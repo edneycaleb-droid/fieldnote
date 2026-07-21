@@ -1413,6 +1413,17 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
 .hcbtn-uninstall:hover { background: #2a0a0a; border-color: var(--red); }
 .hc-btn:disabled { opacity: .45; cursor: default; }
 
+/* Alternative server suggestion shown when runtime is missing */
+.hc-alt-link {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: .68rem; font-weight: 600; color: var(--purple);
+  background: #100a20; border: 1px solid #2a1a5a;
+  border-radius: 8px; padding: 5px 10px; text-decoration: none;
+  transition: border-color .15s, background .15s; cursor: pointer;
+  white-space: nowrap;
+}
+.hc-alt-link:hover { border-color: var(--accent); background: #1a1030; color: #fff; }
+
 .integ-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 @media (max-width: 700px) { .integ-grid { grid-template-columns: 1fr; } }
 
@@ -5903,10 +5914,19 @@ function renderHubCard(s) {
 
   // Primary action
   let primaryBtn = '';
+  let altLink    = '';
   const state = s.health_state;
-  if (state === 'not_installed' || state === 'runtime_missing' || state === 'missing_credential') {
+  if (state === 'not_installed' || state === 'missing_credential') {
     primaryBtn = `<button class="hc-btn hcbtn-install" id="hub-btn-primary-${esc(s.id)}"
       onclick="hubInstall('${esc(s.id)}')">⬇ Install</button>`;
+  } else if (state === 'runtime_missing') {
+    primaryBtn = `<button class="hc-btn hcbtn-install" disabled id="hub-btn-primary-${esc(s.id)}">⬇ Install</button>`;
+    if (s.alternative_id && s.alternative_name) {
+      altLink = `<a class="hc-alt-link" href="#"
+        onclick="hubInstall('${esc(s.alternative_id)}');return false;"
+        title="Install ${esc(s.alternative_name)} — a Python alternative with the same capability">
+        Try ${esc(s.alternative_name)} instead →</a>`;
+    }
   } else if (state === 'offline' || state === 'degraded') {
     primaryBtn = `<button class="hc-btn hcbtn-install" id="hub-btn-primary-${esc(s.id)}"
       onclick="hubInstall('${esc(s.id)}', true)">↺ Re-install</button>`;
@@ -5953,6 +5973,7 @@ function renderHubCard(s) {
     <div class="hc-actions">
       ${primaryBtn}${testBtn}${uninstBtn}
     </div>
+    ${altLink ? `<div style="margin-top:2px">${altLink}</div>` : ''}
   </div>`;
 }
 
@@ -5998,6 +6019,14 @@ async function hubInstall(id, force) {
           const ev = JSON.parse(line.slice(6));
           if (ev.done) {
             lastState = ev.health_state || 'offline';
+            // Persist alternative info so the re-rendered card can show the link
+            if (ev.alternative_id) {
+              const srv = _hubData.find(s => s.id === id);
+              if (srv) {
+                srv.alternative_id   = ev.alternative_id;
+                srv.alternative_name = ev.alternative_name;
+              }
+            }
           } else if (ev.msg && stateEl) {
             stateEl.innerHTML = `<span class="hc-dot hcd-${lastState === 'installing' ? 'installing' : 'verifying'}"></span><span class="hc-state-text"> ${esc(ev.msg)}</span>`;
           }
