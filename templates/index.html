@@ -4217,7 +4217,21 @@ async function enrichSkillNow(skillName, event) {
   const btn = event.currentTarget;
   if (!skillName || btn.disabled) return;
 
-  // Show spinner
+  // Show a small inline status message next to the button; auto-dismisses after 5 s
+  function showEnrichMsg(container, msg, isOk) {
+    let msgEl = container.querySelector(".enrich-msg");
+    if (!msgEl) {
+      msgEl = document.createElement("span");
+      msgEl.className = "enrich-msg";
+      container.appendChild(msgEl);
+    }
+    msgEl.textContent = msg;
+    msgEl.style.color = isOk ? "var(--green)" : "var(--amber)";
+    clearTimeout(msgEl._timer);
+    msgEl._timer = setTimeout(() => msgEl.remove(), 5000);
+  }
+
+  const tagsContainer = btn.parentElement;
   const origText = btn.textContent;
   btn.disabled = true;
   btn.textContent = "⏳ Enriching…";
@@ -4230,8 +4244,9 @@ async function enrichSkillNow(skillName, event) {
     const d = await r.json();
     if (!d.ok) {
       btn.disabled = false;
-      btn.textContent = origText;
-      alert("Enrich failed: " + (d.error || "unknown error"));
+      btn.textContent = "↺ Retry";
+      btn.title = d.error || "unknown error";
+      showEnrichMsg(tagsContainer, "⚠ Failed: " + (d.error || "unknown error"), false);
       return;
     }
     // Enrichment triggered — poll until the _baseline flag clears (up to 90 s)
@@ -4248,29 +4263,38 @@ async function enrichSkillNow(skillName, event) {
         if (updated && !updated._baseline) {
           // Enrichment complete — refresh the row
           clearInterval(poll);
-          const row = document.querySelector(`.skill-row[href="/skills/${skillName}.md"]`);
+          // Replace badge+button with real tags
+          tagsContainer.innerHTML = (updated.tags || []).slice(0, 2)
+            .map(t => `<span class="sr-tag">${esc(t)}</span>`).join("");
+          // Show success message alongside tags; auto-dismisses after 5 s
+          const msgEl = document.createElement("span");
+          msgEl.className = "enrich-msg";
+          msgEl.textContent = "✅ Enriched!";
+          msgEl.style.color = "var(--green)";
+          tagsContainer.appendChild(msgEl);
+          setTimeout(() => msgEl.remove(), 5000);
+          // Update row data-attributes so filtering works without a page reload
+          const row = tagsContainer.closest(".skill-row");
           if (row) {
-            const tagsDiv = row.querySelector(".skill-row-tags");
-            if (tagsDiv) {
-              tagsDiv.innerHTML = (updated.tags || []).slice(0, 2)
-                .map(t => `<span class="sr-tag">${esc(t)}</span>`).join("");
-            }
             row.dataset.baseline = "";
-            // Keep data-tags in sync so tag filtering works without a page reload
             row.dataset.tags = (updated.tags || []).join(" ").toLowerCase();
           }
         }
-      } catch (_) { /* ignore poll errors */ }
+      } catch (_) { /* ignore transient poll errors */ }
       if (elapsed >= MAX_MS) {
         clearInterval(poll);
         btn.disabled = false;
         btn.textContent = "↺ Retry";
+        btn.title = "Enrichment timed out — providers may be busy";
+        showEnrichMsg(tagsContainer, "⚠ Timed out — tap ↺ to retry", false);
       }
     }, POLL_MS);
   } catch (ex) {
     btn.disabled = false;
-    btn.textContent = origText;
+    btn.textContent = "↺ Retry";
+    btn.title = ex.message || "Network error";
     console.error("enrichSkillNow:", ex);
+    showEnrichMsg(tagsContainer, "⚠ Failed: " + (ex.message || "network error"), false);
   }
 }
 
