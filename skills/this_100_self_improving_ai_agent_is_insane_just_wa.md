@@ -21,4 +21,4 @@ Claude, Docker, pip, Python, Git, Node, Anthropic, OpenAI, SQLite, SSH
 
 | Date | Video | Transcript |
 |------|-------|------------|
-| 2026-07-20 | [This 100% self-improving AI Agent is insane… just watch](https://www.youtube.com/watch?v=EHlqRx0r4BI) | yt_dlp_subs |
+| 2026-07-21 | [This 100% self-improving AI Agent is insane… just watch](https://www.youtube.com/watch?v=EHlqRx0r4BI) | yt_dlp_subs |
