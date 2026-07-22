@@ -411,7 +411,7 @@ def _process_free_alternative(
         index = _a.load_index()
 
         try:
-            gs.sync_skill(skill_name, _a.SKILLS_DIR, index)
+            gs.sync_skill(skill_name, _a._read_existing_markdown(skill_name), index)
         except Exception as exc:
             log.warning("GitHub sync failed for alt skill: %s", exc)
 
@@ -1236,7 +1236,7 @@ def discover_and_learn() -> dict:
                 # Sync to GitHub
                 try:
                     import agents.github_sync as gs
-                    gs.sync_skill(skill_name, _a.SKILLS_DIR, index)
+                    gs.sync_skill(skill_name, _a._read_existing_markdown(skill_name), index)
                 except Exception as e:
                     log.warning("GitHub sync failed after AI save: %s", e)
 
