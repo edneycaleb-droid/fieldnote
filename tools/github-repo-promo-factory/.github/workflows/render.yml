@@ -1,0 +1,33 @@
+name: Render repository promo
+on:
+  workflow_dispatch:
+    inputs:
+      repository:
+        description: GitHub OWNER/REPO
+        required: true
+        default: edneycaleb-droid/fieldnote
+      accent:
+        description: Six-digit hex color
+        required: true
+        default: '#58f6d2'
+permissions:
+  contents: read
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run promo -- --repo "${{ inputs.repository }}" --accent "${{ inputs.accent }}"
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: repository-promo
+          path: out/
+          retention-days: 30
