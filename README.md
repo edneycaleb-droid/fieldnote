@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **136 skills** · Last synced: 2026-07-22 00:45 UTC
+> **137 skills** · Last synced: 2026-07-22 00:45 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Openakita](skills/openakita.md) | An open-source AI assistant framework with skills and agent architecture | `anthropic` `gemini` `openai` `agent` | `agent` `ai` `assistant` |
 | [Building a Lightweight, Cross-Platform Multi-Modal AI Interaction Framework with py-xiaozhi](skills/cross_platform_py_xiaozhi.md) | This skill teaches how to use py_xiaozhi, a lightweight, cross-platform multi-mo | `py_xiaozhi` `asyncio` `Opus codec` `MCP tool server` | `cross-platform` `multi-modal AI` `real-time voice streaming` |
 | [Py Xiaozhi](skills/py_xiaozhi.md) | Open-source AI assistant ecosystem with MCP integrations, multimodal workflows,  | `gemini` `cross-platform` `edge-computing` `embodied-ai` | `cross-platform` `edge-computing` `embodied-ai` |
 | [Speech To Speech](skills/speech_to_speech.md) | Build local voice agents with open-source models | `vllm` `transformers` `numpy` `huggingface` | `ai` `assistant` `language-model` |
