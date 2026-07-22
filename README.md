@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **130 skills** · Last synced: 2026-07-22 00:39 UTC
+> **131 skills** · Last synced: 2026-07-22 00:40 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Agentic Video Production with OpenMontage](skills/agentic_video_production.md) | This skill teaches how to utilize OpenMontage, an open-source, agentic video pro | `OpenMontage` `FFmpeg` `Node.js` `Remotion` | `ai` `video-production` `agentic-ai` |
 | [Openmontage](skills/openmontage.md) | World's first open-source, agentic video production system. 12 pipelines, 52 too | `openai` `agent` `agentic-ai` `claude` | `agent` `agentic-ai` `ai` |
 | [Kubeflow Trainer: Large-Scale Distributed AI Platform for Scalable LLM Fine-Tuning and Training](skills/kubeflow_trainer_skill.md) | Kubeflow Trainer is a Kubernetes-native distributed AI platform that integrates  | `Kubeflow Trainer` `Kueue` `Volcano` `Cloud Native AI ecosystem` | `distributed computing` `large language models` `kubernetes` |
 | [SQLite-Vector Extension for Embedded Vector Search](skills/sqlite_vector_extension.md) | Integrate powerful vector search capabilities directly into SQLite databases usi | `sqlite-vector extension` `SQLite CLI` `Zed Editor` `Sourcegraph Cody` | `ai` `embedded-databases` `edge-ai` |
