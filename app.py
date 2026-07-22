@@ -68,6 +68,8 @@ _jobs: dict = {}          # {job_id: {"queue": Queue, "done": bool}}
 _playlist_jobs: dict = {}  # {pjob_id: {"events": list, "done": bool, "total": int}}
 _video_active: dict = {}   # {video_id: job_id} — jobs currently in-flight (dedup guard)
 _mcp_sessions: dict = {}   # {session_id: queue.Queue}
+_enrich_in_progress: set = set()   # {full_name} — manual enrich threads currently running
+_enrich_in_progress_lock = threading.Lock()
 
 
 # ── Local key store ────────────────────────────────────────────────────────────
@@ -4339,6 +4341,12 @@ def api_skill_enrich(name: str):
             _idx_pre[name].pop("_enrich_error", None)
             save_index(_idx_pre)
 
+        # De-duplicate: reject if a thread for the same repo is already running
+        with _enrich_in_progress_lock:
+            if full_name in _enrich_in_progress:
+                return jsonify({"ok": False, "error": "enrichment already in progress"}), 409
+            _enrich_in_progress.add(full_name)
+
         # Fire an immediate enrichment attempt in a background thread
         queue_item = {
             "full_name":   full_name,
@@ -4347,25 +4355,52 @@ def api_skill_enrich(name: str):
             "fingerprint": fingerprint,
         }
 
+        _ENRICH_TIMEOUT = 120  # seconds
+
         def _bg_enrich():
+            _skill_name = re.sub(r"[^a-z0-9_]", "_", full_name.split("/")[-1].lower()).strip("_")
+            exc_holder: list = []
+
+            def _run():
+                try:
+                    de._enrich_one(queue_item)
+                except Exception as e:
+                    exc_holder.append(e)
+
+            worker = threading.Thread(target=_run, daemon=True)
+            worker.start()
+            worker.join(timeout=_ENRICH_TIMEOUT)
+
             try:
-                de._enrich_one(queue_item)
-                de.mark_succeeded(queue_item)
-                # Clear any previous error flag on success
-                _idx = load_index()
-                _skill_name = re.sub(r"[^a-z0-9_]", "_", full_name.split("/")[-1].lower()).strip("_")
-                if _skill_name in _idx:
-                    _idx[_skill_name].pop("_enrich_error", None)
-                    save_index(_idx)
-            except Exception as exc:
-                log.warning("Manual enrich failed for %s: %s", full_name, exc)
-                de.mark_failed(queue_item, str(exc))
-                # Store the failure reason in the index so the UI can poll for it
-                _idx = load_index()
-                _skill_name = re.sub(r"[^a-z0-9_]", "_", full_name.split("/")[-1].lower()).strip("_")
-                if _skill_name in _idx:
-                    _idx[_skill_name]["_enrich_error"] = str(exc)[:200]
-                    save_index(_idx)
+                if worker.is_alive():
+                    # Thread is still running after the timeout — treat as failure
+                    err_msg = f"enrichment timed out after {_ENRICH_TIMEOUT}s"
+                    log.warning("Manual enrich timed out for %s", full_name)
+                    de.mark_failed(queue_item, err_msg)
+                    _idx = load_index()
+                    if _skill_name in _idx:
+                        _idx[_skill_name]["_enrich_error"] = err_msg
+                        save_index(_idx)
+                    return
+
+                if exc_holder:
+                    exc = exc_holder[0]
+                    log.warning("Manual enrich failed for %s: %s", full_name, exc)
+                    de.mark_failed(queue_item, str(exc))
+                    _idx = load_index()
+                    if _skill_name in _idx:
+                        _idx[_skill_name]["_enrich_error"] = str(exc)[:200]
+                        save_index(_idx)
+                else:
+                    de.mark_succeeded(queue_item)
+                    # Clear any previous error flag on success
+                    _idx = load_index()
+                    if _skill_name in _idx:
+                        _idx[_skill_name].pop("_enrich_error", None)
+                        save_index(_idx)
+            finally:
+                with _enrich_in_progress_lock:
+                    _enrich_in_progress.discard(full_name)
 
         t = threading.Thread(target=_bg_enrich, daemon=True)
         t.start()
