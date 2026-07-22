@@ -74,3 +74,24 @@ rrf export-skill workflows/publish-promo.yml --output skills/publish-repository-
 | Team distribution | Git repository or Codex plugin package |
 
 No Clay, paid Computer Use plan, cloud recording service, or API credits are required.
+
+## Video-to-playbook mode
+
+Record the task using OBS, ShareX, Snipping Tool, Xbox Game Bar, or any screen recorder, then provide the finished MP4:
+
+```bash
+rrf video-ingest demo.mp4 --runs runs --interval 3 --transcribe
+rrf video-playbook runs/RUN_ID --model qwen3-vl:30b
+rrf export-playbook runs/RUN_ID/playbook.json --output exports/my-workflow
+```
+
+This creates an immutable evidence bundle containing the source hash, sampled frames, optional local Whisper transcript, manifest, and model-neutral playbook. The exporter writes:
+
+- `PLAYBOOK.md`
+- `SKILL.md` for Codex
+- `CLAUDE.md`
+- `GEMINI.md`
+
+The default visual model is your local Ollama `qwen3-vl:30b`; change `--model` to any Ollama vision model. Video processing uses local FFmpeg, and transcription uses optional `faster-whisper`. No video or frames leave the computer.
+
+Trim recordings before ingestion when possible. A concise recording avoids analyzing dead air and produces clearer evidence than an improvised live session.
