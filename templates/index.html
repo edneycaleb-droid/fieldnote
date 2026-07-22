@@ -5476,7 +5476,7 @@ async function loadQueuedJobs() {
   } catch(e) { /* silent */ }
 }
 
-function renderQueuedJobs(data) {
+function renderQueuedJobs(data, enData) {
   const panel  = document.getElementById('qjobs-panel');
   const list   = document.getElementById('qjobs-list');
   const badge  = document.getElementById('qjobs-badge');
@@ -5484,13 +5484,14 @@ function renderQueuedJobs(data) {
   const staleCnt = document.getElementById('qjobs-stale-count');
   if (!panel || !list) return;
 
-  const jobs  = data.queued || [];
-  const count = data.count  || 0;
-  const stale = data.stale_count || 0;
+  const jobs     = data.queued || [];
+  const enItems  = (enData && enData.items) ? enData.items : [];
+  const count    = jobs.length + enItems.length;
+  const stale    = data.stale_count || 0;
 
   panel.style.display = '';   // always show the panel heading
 
-  // Badge
+  // Badge — total across both queues
   if (count > 0) {
     badge.textContent = count;
     badge.classList.remove('hidden');
@@ -5508,12 +5509,13 @@ function renderQueuedJobs(data) {
     staleBar.style.display = 'none';
   }
 
-  if (!jobs.length) {
+  if (!jobs.length && !enItems.length) {
     list.innerHTML = '<div class="qjobs-empty">No queued or degraded jobs — all clear ✓</div>';
     return;
   }
 
-  list.innerHTML = jobs.map(cp => {
+  // ── Checkpoint / video recovery jobs ──────────────────────────────────────
+  const cpHtml = jobs.map(cp => {
     const runId     = cp.run_id    || '';
     const skillName = cp.skill_name|| cp.video_id || runId.slice(0,8);
     const stage     = cp.stage     || 'queued';
@@ -5542,6 +5544,37 @@ function renderQueuedJobs(data) {
       </div>
     </div>`;
   }).join('');
+
+  // ── Enrichment queue items ─────────────────────────────────────────────────
+  const enHtml = enItems.map(item => {
+    const name      = item.full_name || '(unknown)';
+    const retry     = item.retry_count || 0;
+    const lastError = item.last_error  || '';
+    const failedAt  = item.last_failed_at  || '';
+    const nextAt    = item.next_attempt_at || '';
+    const enqueuedAt= item.enqueued_at     || '';
+    const rowCls    = lastError ? 'qjob-row stale' : 'qjob-row';
+    const attCls    = retry >= 3 ? 'qjob-attempts maxed' : 'qjob-attempts';
+    const timeRef   = failedAt || enqueuedAt;
+    return `<div class="${rowCls}">
+      <div class="qjob-info">
+        <div class="qjob-name">${esc(name)}</div>
+        <div class="qjob-meta">
+          <span class="qjob-stage-pill qjob-stage-queued">enrichment</span>
+          <span class="${attCls}">⟳ ${retry} retries</span>
+          ${timeRef ? `<span>🕒 ${relTime(timeRef)}</span>` : ''}
+          ${nextAt  ? `<span title="Next attempt">↻ ${relTime(nextAt)}</span>` : ''}
+          ${lastError ? `<span class="qjob-last-error" title="${esc(lastError)}">⚠ ${esc(lastError)}</span>` : ''}
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+
+  // Section labels only when both queues have items
+  const showLabels = jobs.length > 0 && enItems.length > 0;
+  const cpSection  = jobs.length    ? (showLabels ? '<div class="qjob-section-label">Video jobs</div>' : '') + cpHtml : '';
+  const enSection  = enItems.length ? (showLabels ? '<div class="qjob-section-label">Enrichment queue</div>' : '') + enHtml : '';
+  list.innerHTML   = cpSection + enSection;
 }
 
 async function resumeQueuedJob(runId, btn) {
