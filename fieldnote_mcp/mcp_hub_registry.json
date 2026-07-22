@@ -25,7 +25,7 @@
     "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
-    "icon": "🔍"
+    "icon": "\ud83d\udd0d"
   },
   {
     "id": "brave-search",
@@ -53,7 +53,7 @@
     "python_alternative_id": "exa-search",
     "enabled": true,
     "write_capable": false,
-    "icon": "🦁"
+    "icon": "\ud83e\udd81"
   },
   {
     "id": "free-search",
@@ -81,7 +81,7 @@
     "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
-    "icon": "🌐"
+    "icon": "\ud83c\udf10"
   },
   {
     "id": "firecrawl",
@@ -109,7 +109,7 @@
     "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
-    "icon": "🔥"
+    "icon": "\ud83d\udd25"
   },
   {
     "id": "markdownify",
@@ -138,13 +138,13 @@
     "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
-    "icon": "📝"
+    "icon": "\ud83d\udcdd"
   },
   {
     "id": "fetch-mcp",
     "name": "Fetch MCP",
     "category": "browser",
-    "description": "Simple HTTP fetch tool — retrieves web page content and converts to text. No API key needed.",
+    "description": "Simple HTTP fetch tool \u2014 retrieves web page content and converts to text. No API key needed.",
     "license_spdx": "MIT",
     "homepage": "https://github.com/modelcontextprotocol/servers",
     "repo_url": "https://github.com/modelcontextprotocol/servers",
@@ -167,7 +167,7 @@
     "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
-    "icon": "🌍"
+    "icon": "\ud83c\udf0d"
   },
   {
     "id": "youtube-mcp",
@@ -196,13 +196,13 @@
     "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
-    "icon": "▶️"
+    "icon": "\u25b6\ufe0f"
   },
   {
     "id": "github-mcp",
     "name": "GitHub MCP (Official)",
     "category": "git",
-    "description": "Official GitHub MCP server — read repos, issues, PRs, files. Requires a GitHub PAT with repo scope.",
+    "description": "Official GitHub MCP server \u2014 read repos, issues, PRs, files. Requires a GitHub PAT with repo scope.",
     "license_spdx": "MIT",
     "homepage": "https://github.com/github/github-mcp-server",
     "repo_url": "https://github.com/github/github-mcp-server",
@@ -224,13 +224,13 @@
     "python_alternative_id": "git-mcp",
     "enabled": true,
     "write_capable": false,
-    "icon": "🐙"
+    "icon": "\ud83d\udc19"
   },
   {
     "id": "git-mcp",
     "name": "Git MCP (filesystem)",
     "category": "git",
-    "description": "Read local Git repositories — commits, branches, diffs, blame. Works on any local repo, no API key.",
+    "description": "Read local Git repositories \u2014 commits, branches, diffs, blame. Works on any local repo, no API key.",
     "license_spdx": "MIT",
     "homepage": "https://github.com/modelcontextprotocol/servers",
     "repo_url": "https://github.com/modelcontextprotocol/servers",
@@ -252,13 +252,13 @@
     "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
-    "icon": "🌿"
+    "icon": "\ud83c\udf3f"
   },
   {
     "id": "qdrant-mcp",
     "name": "Qdrant MCP",
     "category": "vector_db",
-    "description": "Connect to a Qdrant vector database — semantic search, similarity search, point upsert. Self-hosted or cloud.",
+    "description": "Connect to a Qdrant vector database \u2014 semantic search, similarity search, point upsert. Self-hosted or cloud.",
     "license_spdx": "Apache-2.0",
     "homepage": "https://qdrant.tech",
     "repo_url": "https://github.com/qdrant/mcp-server-qdrant",
@@ -280,13 +280,13 @@
     "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
-    "icon": "📌"
+    "icon": "\ud83d\udccc"
   },
   {
     "id": "sqlite-mcp",
     "name": "SQLite MCP",
     "category": "database",
-    "description": "Read and query SQLite databases. No server, no credentials — just point at a .db file.",
+    "description": "Read and query SQLite databases. No server, no credentials \u2014 just point at a .db file.",
     "license_spdx": "MIT",
     "homepage": "https://github.com/modelcontextprotocol/servers",
     "repo_url": "https://github.com/modelcontextprotocol/servers",
@@ -308,7 +308,7 @@
     "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
-    "icon": "🗄️"
+    "icon": "\ud83d\uddc4\ufe0f"
   },
   {
     "id": "postgres-mcp",
@@ -336,7 +336,7 @@
     "python_alternative_id": "sqlite-mcp",
     "enabled": true,
     "write_capable": false,
-    "icon": "🐘"
+    "icon": "\ud83d\udc18"
   },
   {
     "id": "filesystem-mcp",
@@ -364,7 +364,7 @@
     "python_alternative_id": "fetch-mcp",
     "enabled": true,
     "write_capable": false,
-    "icon": "📁"
+    "icon": "\ud83d\udcc1"
   },
   {
     "id": "mcp-server-python",
@@ -392,7 +392,7 @@
     "python_alternative_id": "",
     "enabled": false,
     "write_capable": true,
-    "icon": "🐍"
+    "icon": "\ud83d\udc0d"
   },
   {
     "id": "mcp-pandoc",
@@ -420,7 +420,7 @@
     "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
-    "icon": "📄"
+    "icon": "\ud83d\udcc4"
   },
   {
     "id": "memory-mcp",
@@ -448,7 +448,7 @@
     "python_alternative_id": "qdrant-mcp",
     "enabled": true,
     "write_capable": false,
-    "icon": "🧠"
+    "icon": "\ud83e\udde0"
   },
   {
     "id": "ollama-mcp",
@@ -476,7 +476,7 @@
     "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
-    "icon": "🦙"
+    "icon": "\ud83e\udd99"
   },
   {
     "id": "all-in-one-mcp",
@@ -505,7 +505,7 @@
     "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
-    "icon": "🎯"
+    "icon": "\ud83c\udfaf"
   },
   {
     "id": "crawl4ai-mcp",
@@ -534,7 +534,7 @@
     "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
-    "icon": "🕷️"
+    "icon": "\ud83d\udd77\ufe0f"
   },
   {
     "id": "websearch-mcp",
@@ -562,7 +562,7 @@
     "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
-    "icon": "🔎"
+    "icon": "\ud83d\udd0e"
   },
   {
     "id": "notion-mcp",
@@ -590,6 +590,6 @@
     "python_alternative_id": "",
     "enabled": false,
     "write_capable": true,
-    "icon": "📓"
+    "icon": "\ud83d\udcd3"
   }
 ]
