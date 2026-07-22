@@ -245,12 +245,19 @@ def enrich_backlog() -> dict:
     processed = enriched = failed = 0
     MAX_PER_RUN = 3
 
-    # NOTE: is_paused() is intentionally checked only at entry, not inside the
-    # loop.  An item that has already started (_enrich_one is running) will
-    # always finish — a mid-run pause takes effect on the *next* scheduler
-    # invocation.  Do not add a mid-loop re-check without updating the test
-    # "test_pause_mid_run_does_not_abort_in_progress_item".
+    # Pause semantics: is_paused() is checked at entry (above) AND between
+    # items (below), but NEVER mid-item.  An item whose _enrich_one() call has
+    # already started will always run to completion — pausing cannot abort
+    # in-flight work.  Once it finishes, the between-item check prevents the
+    # next item from starting.  This is intentional: do not add an is_paused()
+    # call inside _enrich_one without revisiting this contract and updating the
+    # test "test_pause_mid_run_does_not_abort_in_progress_item".
     for _ in range(MAX_PER_RUN):
+        # Re-check pause between items so a pause requested while the previous
+        # item was running takes effect before we start the next one.
+        if is_paused():
+            log.info("Enrichment queue: paused mid-run — stopping before next item")
+            break
         item = dequeue_next(provider_available=True)
         if not item:
             break
