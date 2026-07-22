@@ -28,3 +28,22 @@ class Workflow(BaseModel):
     inputs: dict[str, str] = Field(default_factory=dict)
     success_criteria: list[str] = Field(default_factory=list)
     actions: list[Action]
+
+class PlaybookStep(BaseModel):
+    order: int
+    title: str
+    instruction: str
+    evidence: list[str] = Field(default_factory=list)
+    inputs: list[str] = Field(default_factory=list)
+    verification: str = ""
+    destructive: bool = False
+
+class Playbook(BaseModel):
+    name: str
+    purpose: str
+    source_video: str
+    model_neutral: bool = True
+    inputs: dict[str,str] = Field(default_factory=dict)
+    steps: list[PlaybookStep]
+    success_criteria: list[str] = Field(default_factory=list)
+    uncertainties: list[str] = Field(default_factory=list)
