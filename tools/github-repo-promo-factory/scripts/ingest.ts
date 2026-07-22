@@ -1,0 +1,20 @@
+import fs from 'node:fs/promises';
+import {Command} from 'commander';
+import {parseRepo,savePromo} from './lib';
+import type {Promo} from '../src/schema';
+
+const program=new Command().requiredOption('-r, --repo <repo>','OWNER/REPO or URL').option('--accent <hex>','#58f6d2').option('--background-video <path>');
+program.parse();
+const opts=program.opts<{repo:string;accent:string;backgroundVideo?:string}>();
+const {owner,repo}=parseRepo(opts.repo);
+const headers:Record<string,string>={'Accept':'application/vnd.github+json','User-Agent':'github-repo-promo-factory'};
+if(process.env.GITHUB_TOKEN) headers.Authorization=`Bearer ${process.env.GITHUB_TOKEN}`;
+const api=async(path:string)=>{const res=await fetch(`https://api.github.com/repos/${owner}/${repo}${path}`,{headers});if(!res.ok)throw new Error(`GitHub ${res.status}: ${await res.text()}`);return res.json();};
+const [meta,readme]=await Promise.all([api(''),api('/readme').catch(()=>null)]);
+const text=readme?.content?Buffer.from(readme.content,'base64').toString('utf8'):'';
+const candidates=text.split('\n').map((x:string)=>x.replace(/[#*`_>\[\]]/g,'').trim()).filter((x:string)=>x.length>=18&&x.length<=78&&!/^https?:/.test(x));
+const fallback=['Automated repository intelligence','Repeatable local-first workflow','Production-ready outputs','Built-in validation'];
+const features=[...new Set(candidates)].slice(0,4); while(features.length<3)features.push(fallback[features.length]);
+const promo:Promo={owner,repo,url:meta.html_url,description:meta.description||candidates[0]||'Open-source software built for practical automation.',stars:meta.stargazers_count||0,forks:meta.forks_count||0,openIssues:meta.open_issues_count||0,language:meta.language||'Open Source',topics:(meta.topics||[]).slice(0,8),features:features.slice(0,5),tagline:(meta.description?meta.description.split(/[.!?]/)[0]:'BUILD. AUTOMATE. IMPROVE.').slice(0,54).toUpperCase(),accent:opts.accent,backgroundVideo:opts.backgroundVideo};
+if(opts.backgroundVideo) await fs.access(new URL(`../public/${opts.backgroundVideo}`,import.meta.url));
+console.log(await savePromo(promo));
