@@ -4314,6 +4314,14 @@ async function enrichSkillNow(skillName, event) {
             row.dataset.baseline = "";
             row.dataset.tags = (updated.tags || []).join(" ").toLowerCase();
           }
+          // Decrement the header baseline-count stat immediately
+          const remainingBaseline = skills.filter(s => s._baseline).length;
+          const pendingEl   = document.getElementById("stat-pending");
+          const pendingWrap = document.getElementById("stat-pending-wrap");
+          if (pendingEl) pendingEl.textContent = remainingBaseline;
+          if (pendingWrap) pendingWrap.style.display = remainingBaseline > 0 ? "" : "none";
+          // Re-evaluate the baseline banner visibility
+          _updateBaselineBanner(remainingBaseline, remainingBaseline);
         } else if (updated && updated._enrich_error) {
           // Background enrichment failed — surface the reason immediately
           clearInterval(poll);
