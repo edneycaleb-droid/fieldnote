@@ -38,6 +38,14 @@ APPROVED_LICENSES: set[str] = {
     "LGPL-2.1-only", "LGPL-3.0-only", "GPL-2.0-only", "GPL-3.0-only",
 }
 
+_TEST_FIXTURE_IDS = {
+    "test-server",
+    "hc-stuck-verifier-server",
+    "hc-after-stuck-server",
+}
+_TEST_FIXTURE_PACKAGE = "test-mcp-server"
+_TEST_FIXTURE_REPO = "https://github.com/test/test-server"
+
 # ── Dataclass ──────────────────────────────────────────────────────────────────
 
 @dataclass
@@ -486,6 +494,23 @@ def _now_iso() -> str:
     return datetime.now(timezone.utc).isoformat()
 
 
+def _is_test_fixture(entry: MCPServer | dict) -> bool:
+    """Return true for verifier-only entries that must never be persisted."""
+    if isinstance(entry, MCPServer):
+        entry_id = entry.id
+        package_name = entry.package_name
+        repo_url = entry.repo_url
+    else:
+        entry_id = entry.get("id")
+        package_name = entry.get("package_name")
+        repo_url = entry.get("repo_url")
+    return (
+        entry_id in _TEST_FIXTURE_IDS
+        or package_name == _TEST_FIXTURE_PACKAGE
+        or repo_url == _TEST_FIXTURE_REPO
+    )
+
+
 def load_registry() -> list[MCPServer]:
     """Load registry from disk, merging seed entries for any missing IDs."""
     existing: dict[str, dict] = {}
@@ -494,6 +519,12 @@ def load_registry() -> list[MCPServer]:
             with open(REGISTRY_FILE) as f:
                 raw = json.load(f)
             for entry in raw:
+                if _is_test_fixture(entry):
+                    log.warning(
+                        "mcp_registry: rejected test fixture during load: %s",
+                        entry.get("id", "<missing-id>"),
+                    )
+                    continue
                 existing[entry["id"]] = entry
         except Exception as exc:
             log.warning("mcp_registry: load failed: %s", exc)
@@ -530,8 +561,14 @@ def load_registry() -> list[MCPServer]:
 
 def save_registry(servers: list[MCPServer]) -> None:
     os.makedirs("fieldnote_mcp", exist_ok=True)
+    persisted = []
+    for server in servers:
+        if _is_test_fixture(server):
+            log.warning("mcp_registry: rejected test fixture before write: %s", server.id)
+            continue
+        persisted.append(server.to_dict())
     with open(REGISTRY_FILE, "w") as f:
-        json.dump([s.to_dict() for s in servers], f, indent=2)
+        json.dump(persisted, f, indent=2)
 
 
 def get_by_id(entry_id: str) -> Optional[MCPServer]:
