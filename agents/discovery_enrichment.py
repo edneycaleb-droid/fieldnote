@@ -45,9 +45,44 @@ def load_queue() -> list[dict]:
         return []
 
 
+def _cleanup_stale_tmp_files(base_path: str, max_age_secs: int = 60) -> int:
+    """Remove orphaned .tmp files in the same directory as *base_path*.
+
+    Matches any file whose name starts with ``<basename>.`` and ends with
+    ``.tmp`` (i.e. the ``<base>.<pid>.<uuid>.tmp`` pattern written by
+    ``save_queue`` and ``_save_state``).  Files younger than *max_age_secs*
+    are left alone so in-flight writes from other threads/processes are not
+    disturbed.
+
+    Returns the number of files removed.
+    """
+    directory = os.path.dirname(base_path) or "."
+    prefix = os.path.basename(base_path) + "."
+    removed = 0
+    now = time.time()
+    try:
+        for fname in os.listdir(directory):
+            if fname.startswith(prefix) and fname.endswith(".tmp"):
+                fpath = os.path.join(directory, fname)
+                try:
+                    age = now - os.path.getmtime(fpath)
+                    if age > max_age_secs:
+                        os.remove(fpath)
+                        removed += 1
+                        log.debug(
+                            "Removed stale tmp file: %s (age=%.1fs)", fpath, age
+                        )
+                except OSError:
+                    pass  # race: another process removed it first
+    except OSError:
+        pass
+    return removed
+
+
 def save_queue(items: list[dict]) -> None:
     path = _queue_path()
     os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+    _cleanup_stale_tmp_files(path)
     import uuid
     tmp = path + f".{os.getpid()}.{uuid.uuid4().hex}.tmp"
     with open(tmp, "w") as f:
@@ -70,6 +105,8 @@ def _load_state() -> dict:
 
 def _save_state(state: dict) -> None:
     path = _state_path()
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+    _cleanup_stale_tmp_files(path)
     import uuid
     tmp = path + f".{os.getpid()}.{uuid.uuid4().hex}.tmp"
     with open(tmp, "w") as f:
