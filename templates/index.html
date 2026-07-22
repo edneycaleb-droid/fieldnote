@@ -6188,6 +6188,9 @@ function renderHubCard(s) {
   // alternative_id/alternative_name (set after a failed install attempt).
   function _buildAltLink(altId, altName) {
     if (!altId) return '';
+    // Suppress the link if the alternative is already connected — no need to redirect
+    const altSrv = _hubData.find(a => a.id === altId);
+    if (altSrv && altSrv.health_state === 'connected') return '';
     const displayName = altName || altId;
     return `<a class="hc-alt-link" href="#"
       onclick="hubInstall('${esc(altId)}');return false;"
@@ -6319,6 +6322,19 @@ async function hubInstall(id, force) {
       }
     }
     _hubUpdateCardState(id, lastState);
+    // If this server just connected, re-render any card that was pointing to it
+    // as an alternative — the stale 'Try X instead →' link must disappear.
+    if (lastState === 'connected') {
+      _hubData.forEach(s => {
+        if (s.id === id) return;
+        const pointsHere = s.alternative_id === id || s.python_alternative_id === id;
+        if (pointsHere) {
+          // Clear the transient alternative_id so _buildAltLink won't try to re-use it
+          if (s.alternative_id === id) s.alternative_id = '';
+          _hubUpdateCardState(s.id, s.health_state, s.enabled);
+        }
+      });
+    }
     // Refresh health badge
     fetch('/api/mcp-hub/health').then(r=>r.json()).then(renderHubSummary).catch(()=>{});
   } catch(e) {
