@@ -41,13 +41,14 @@
       ]
     },
     "claude": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "new_claude_opus_5_leaks",
         "new_claude_update_is_insane",
         "china_just_beat_claude_ai_kimi_k3",
         "fastapi_mcp",
-        "griptape"
+        "griptape",
+        "openmontage"
       ]
     },
     "here": {
@@ -97,7 +98,7 @@
       ]
     },
     "agent": {
-      "freq": 17,
+      "freq": 18,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
@@ -107,7 +108,8 @@
         "hermes_agent_full_course_setup_guide_for_complete_",
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
         "dify",
-        "agentic_rag_for_dummies"
+        "agentic_rag_for_dummies",
+        "openmontage"
       ]
     },
     "other": {
@@ -521,11 +523,10 @@
       ]
     },
     "Kimi K3": {
-      "freq": 3,
+      "freq": 2,
       "skills": [
         "i_tested_kimi_k3_so_you_don_t_have_to",
-        "china_just_beat_claude_ai_kimi_k3",
-        "hermes_kimi_k3_ai_automation_course"
+        "china_just_beat_claude_ai_kimi_k3"
       ]
     },
     "Fable": {
@@ -553,12 +554,11 @@
       ]
     },
     "AI automation": {
-      "freq": 6,
+      "freq": 5,
       "skills": [
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
         "new_hermes_agent_os_is_insane",
-        "chatgpt_work_everything_you_need_to_know_to_get_st",
-        "hermes_kimi_k3_ai_automation_course"
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
       ]
     },
     "Hermes setup": {
@@ -981,17 +981,15 @@
       ]
     },
     "AI agent organization": {
-      "freq": 3,
+      "freq": 2,
       "skills": [
-        "new_hermes_agent_os_is_insane",
-        "hermes_kimi_k3_ai_automation_course"
+        "new_hermes_agent_os_is_insane"
       ]
     },
     "AI agent specialization": {
-      "freq": 3,
+      "freq": 2,
       "skills": [
-        "new_hermes_agent_os_is_insane",
-        "hermes_kimi_k3_ai_automation_course"
+        "new_hermes_agent_os_is_insane"
       ]
     },
     "AI news monitoring": {
@@ -1151,12 +1149,13 @@
       ]
     },
     "agentic-ai": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "dify",
         "ragflow",
         "agentic_rag_for_dummies",
-        "forge"
+        "forge",
+        "openmontage"
       ]
     },
     "agentic-framework": {
@@ -1173,7 +1172,7 @@
       ]
     },
     "ai": {
-      "freq": 12,
+      "freq": 13,
       "skills": [
         "dify",
         "ragflow",
@@ -1186,7 +1185,8 @@
         "griptape",
         "trainer",
         "pasa",
-        "sqlite_vector"
+        "sqlite_vector",
+        "openmontage"
       ]
     },
     "AI workflow management": {
@@ -2794,16 +2794,16 @@
         "kubeflow_trainer_skill"
       ]
     },
-    "Strategy building": {
+    "copilot": {
       "freq": 1,
       "skills": [
-        "hermes_kimi_k3_ai_automation_course"
+        "openmontage"
       ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 43,
+      "freq": 42,
       "skills": [
         "new_claude_opus_5_leaks",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
@@ -2823,8 +2823,7 @@
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
         "hermes_agent_full_course_setup_guide_for_complete_",
         "fastapi_mcp_integration",
-        "griptape_framework",
-        "hermes_kimi_k3_ai_automation_course"
+        "griptape_framework"
       ]
     },
     "Anthropic": {
@@ -2866,7 +2865,7 @@
       ]
     },
     "Docker": {
-      "freq": 19,
+      "freq": 18,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -2879,21 +2878,19 @@
         "r2r",
         "mcp_server_implementations",
         "griptape_framework",
-        "infinity_database",
-        "hermes_kimi_k3_ai_automation_course"
+        "infinity_database"
       ]
     },
     "bash": {
-      "freq": 6,
+      "freq": 5,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "new_hermes_agent_os_is_insane",
-        "ragflow_self_hosting_guide",
-        "hermes_kimi_k3_ai_automation_course"
+        "ragflow_self_hosting_guide"
       ]
     },
     "Python": {
-      "freq": 20,
+      "freq": 19,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -2906,20 +2903,18 @@
         "graphrag_system",
         "fastapi_mcp",
         "griptape_framework",
-        "pasa",
-        "hermes_kimi_k3_ai_automation_course"
+        "pasa"
       ]
     },
     "LLM": {
-      "freq": 12,
+      "freq": 11,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "hermes_agent_full_course_setup_guide_for_complete_",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
         "new_hermes_agent_os_is_insane",
-        "griptape_framework",
-        "hermes_kimi_k3_ai_automation_course"
+        "griptape_framework"
       ]
     },
     "OpenAI": {
@@ -3000,11 +2995,10 @@
       ]
     },
     "Kimi K3": {
-      "freq": 4,
+      "freq": 3,
       "skills": [
         "i_tested_kimi_k3_so_you_don_t_have_to",
-        "kimi_k3_vs_claude_fable_5_raw_results",
-        "hermes_kimi_k3_ai_automation_course"
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "Fable": {
@@ -3119,24 +3113,21 @@
       ]
     },
     "Trading View": {
-      "freq": 3,
+      "freq": 2,
       "skills": [
-        "kimi_k3_vs_claude_fable_5_raw_results",
-        "hermes_kimi_k3_ai_automation_course"
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "Tradingkit.com": {
-      "freq": 3,
+      "freq": 2,
       "skills": [
-        "kimi_k3_vs_claude_fable_5_raw_results",
-        "hermes_kimi_k3_ai_automation_course"
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "yt-dlp": {
-      "freq": 3,
+      "freq": 2,
       "skills": [
-        "kimi_k3_vs_claude_fable_5_raw_results",
-        "hermes_kimi_k3_ai_automation_course"
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "Chemistry 3": {
@@ -3271,7 +3262,7 @@
       ]
     },
     "openai": {
-      "freq": 9,
+      "freq": 10,
       "skills": [
         "dify",
         "ragflow",
@@ -3281,23 +3272,26 @@
         "agentic_rag_for_dummies",
         "griptape",
         "forge",
-        "lightagent"
+        "lightagent",
+        "openmontage"
       ]
     },
     "agent": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "dify",
-        "agentic_rag_for_dummies"
+        "agentic_rag_for_dummies",
+        "openmontage"
       ]
     },
     "agentic-ai": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "dify",
         "ragflow",
         "agentic_rag_for_dummies",
-        "forge"
+        "forge",
+        "openmontage"
       ]
     },
     "agentic-framework": {
@@ -3320,11 +3314,12 @@
       ]
     },
     "claude": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "dify",
         "fastapi_mcp",
-        "griptape"
+        "griptape",
+        "openmontage"
       ]
     },
     "genai": {
@@ -3710,7 +3705,7 @@
       ]
     },
     "python": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "rag_techniques",
         "mcp_agent",
@@ -3718,7 +3713,8 @@
         "griptape",
         "forge",
         "trainer",
-        "lightagent"
+        "lightagent",
+        "openmontage"
       ]
     },
     "semantic-search": {
@@ -3760,9 +3756,10 @@
       ]
     },
     "cursor": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "fastapi_mcp"
+        "fastapi_mcp",
+        "openmontage"
       ]
     },
     "mcp": {
@@ -5032,6 +5029,60 @@
       "freq": 1,
       "skills": [
         "kubeflow_trainer_skill"
+      ]
+    },
+    "copilot": {
+      "freq": 1,
+      "skills": [
+        "openmontage"
+      ]
+    },
+    "elevenlabs": {
+      "freq": 1,
+      "skills": [
+        "openmontage"
+      ]
+    },
+    "ffmpeg": {
+      "freq": 1,
+      "skills": [
+        "openmontage"
+      ]
+    },
+    "flux": {
+      "freq": 1,
+      "skills": [
+        "openmontage"
+      ]
+    },
+    "image-generation": {
+      "freq": 1,
+      "skills": [
+        "openmontage"
+      ]
+    },
+    "open-source": {
+      "freq": 1,
+      "skills": [
+        "openmontage"
+      ]
+    },
+    "remotion": {
+      "freq": 1,
+      "skills": [
+        "openmontage"
+      ]
+    },
+    "stable-diffusion": {
+      "freq": 1,
+      "skills": [
+        "openmontage"
+      ]
+    },
+    "text-to-speech": {
+      "freq": 1,
+      "skills": [
+        "openmontage"
       ]
     }
   },
@@ -6934,32 +6985,41 @@
       ],
       "step_count": 6
     },
-    "hermes_kimi_k3_ai_automation_course": {
+    "openmontage": {
       "concepts": [
-        "AI agent organization",
-        "AI agent specialization",
-        "AI automation",
-        "Kimi K3",
-        "Strategy building"
+        "agent",
+        "agentic-ai",
+        "ai",
+        "claude",
+        "copilot"
       ],
       "tools": [
-        "Claude",
-        "Docker",
-        "bash",
-        "Python",
-        "LLM",
-        "Kimi K3",
-        "Trading View",
-        "Tradingkit.com",
-        "yt-dlp"
+        "openai",
+        "agent",
+        "agentic-ai",
+        "claude",
+        "copilot",
+        "cursor",
+        "elevenlabs",
+        "ffmpeg",
+        "flux",
+        "image-generation",
+        "open-source",
+        "python",
+        "remotion",
+        "stable-diffusion",
+        "text-to-speech"
       ],
       "tags": [
-        "AI",
-        "Automation",
-        "Hermes",
-        "Kimi K3"
+        "agent",
+        "agentic-ai",
+        "ai",
+        "claude",
+        "copilot",
+        "python",
+        "llm"
       ],
-      "step_count": 11
+      "step_count": 8
     }
   },
   "relationships": {
@@ -7076,8 +7136,8 @@
       "forge": [
         "anthropic"
       ],
-      "hermes_kimi_k3_ai_automation_course": [
-        "Claude"
+      "openmontage": [
+        "claude"
       ]
     },
     "100_hours_of_hermes_agent_lessons_in_19_minutes": {
@@ -7174,8 +7234,8 @@
       "griptape_framework": [
         "Claude"
       ],
-      "hermes_kimi_k3_ai_automation_course": [
-        "Claude"
+      "openmontage": [
+        "agent"
       ]
     },
     "hermes_agent_tutorial_for_beginners_full_step_by_s": {
@@ -7329,12 +7389,8 @@
         "LLM",
         "Python"
       ],
-      "hermes_kimi_k3_ai_automation_course": [
-        "Python",
-        "LLM",
-        "Claude",
-        "Docker",
-        "bash"
+      "openmontage": [
+        "agent"
       ]
     },
     "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
@@ -7498,12 +7554,6 @@
       ],
       "i_tested_kimi_k3_so_you_don_t_have_to": [
         "Kimi K3"
-      ],
-      "hermes_kimi_k3_ai_automation_course": [
-        "Trading View",
-        "Tradingkit.com",
-        "yt-dlp",
-        "Kimi K3"
       ]
     },
     "chatgpt_work_everything_you_need_to_know_to_get_st": {
@@ -7554,9 +7604,6 @@
         "here"
       ],
       "new_hermes_agent_os_is_insane": [
-        "AI automation"
-      ],
-      "hermes_kimi_k3_ai_automation_course": [
         "AI automation"
       ]
     },
@@ -7670,9 +7717,6 @@
       ],
       "forge": [
         "anthropic"
-      ],
-      "hermes_kimi_k3_ai_automation_course": [
-        "Claude"
       ]
     },
     "by_august_we_ll_have_frontier_ai_running_locally": {
@@ -7876,9 +7920,6 @@
       "griptape_framework": [
         "Claude",
         "OpenAI"
-      ],
-      "hermes_kimi_k3_ai_automation_course": [
-        "Claude"
       ]
     },
     "this_100_self_improving_ai_agent_is_insane_just_wa": {
@@ -8053,10 +8094,8 @@
       "lightagent_framework": [
         "Python"
       ],
-      "hermes_kimi_k3_ai_automation_course": [
-        "Claude",
-        "Python",
-        "Docker"
+      "openmontage": [
+        "agent"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -8171,9 +8210,8 @@
       "lightagent_framework": [
         "Python"
       ],
-      "hermes_kimi_k3_ai_automation_course": [
-        "Claude",
-        "Python"
+      "openmontage": [
+        "agent"
       ]
     },
     "new_hermes_paperclip_ai_agent_update_is_insane": {
@@ -8261,9 +8299,6 @@
       ],
       "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
         "AI models"
-      ],
-      "hermes_kimi_k3_ai_automation_course": [
-        "Kimi K3"
       ]
     },
     "china_just_beat_claude_ai_kimi_k3": {
@@ -8400,8 +8435,8 @@
       "forge": [
         "anthropic"
       ],
-      "hermes_kimi_k3_ai_automation_course": [
-        "Claude"
+      "openmontage": [
+        "claude"
       ]
     },
     "you_need_to_use_hermes_right_now_goodbye_openclaw": {
@@ -8577,11 +8612,8 @@
         "LLM",
         "Python"
       ],
-      "hermes_kimi_k3_ai_automation_course": [
-        "Claude",
-        "Python",
-        "LLM",
-        "Docker"
+      "openmontage": [
+        "agent"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -8727,14 +8759,6 @@
       "lightagent_framework": [
         "LLM",
         "Python"
-      ],
-      "hermes_kimi_k3_ai_automation_course": [
-        "Python",
-        "LLM",
-        "AI agent organization",
-        "Claude",
-        "AI agent specialization",
-        "Docker"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -8870,9 +8894,8 @@
       "lightagent_framework": [
         "LLM"
       ],
-      "hermes_kimi_k3_ai_automation_course": [
-        "Claude",
-        "LLM"
+      "openmontage": [
+        "openai"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -8956,9 +8979,6 @@
       ],
       "griptape_framework": [
         "Claude"
-      ],
-      "hermes_kimi_k3_ai_automation_course": [
-        "Claude"
       ]
     },
     "every_hermes_concept_explained_for_normal_people": {
@@ -9018,9 +9038,6 @@
         "Claude"
       ],
       "griptape_framework": [
-        "Claude"
-      ],
-      "hermes_kimi_k3_ai_automation_course": [
         "Claude"
       ]
     },
@@ -9102,9 +9119,6 @@
         "Anthropic"
       ],
       "griptape_framework": [
-        "Claude"
-      ],
-      "hermes_kimi_k3_ai_automation_course": [
         "Claude"
       ]
     },
@@ -9262,10 +9276,8 @@
       "lightagent_framework": [
         "LLM"
       ],
-      "hermes_kimi_k3_ai_automation_course": [
-        "Claude",
-        "LLM",
-        "Docker"
+      "openmontage": [
+        "agent"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -9354,9 +9366,6 @@
       "griptape_framework": [
         "Claude",
         "OpenAI"
-      ],
-      "hermes_kimi_k3_ai_automation_course": [
-        "Claude"
       ]
     },
     "dify": {
@@ -9469,6 +9478,13 @@
       ],
       "sqlite_vector": [
         "ai"
+      ],
+      "openmontage": [
+        "agentic-ai",
+        "claude",
+        "ai",
+        "agent",
+        "openai"
       ]
     },
     "dify_deployment": {
@@ -9514,9 +9530,6 @@
         "Docker"
       ],
       "infinity_database": [
-        "Docker"
-      ],
-      "hermes_kimi_k3_ai_automation_course": [
         "Docker"
       ]
     },
@@ -9598,6 +9611,11 @@
       "sqlite_vector": [
         "redis",
         "ai"
+      ],
+      "openmontage": [
+        "openai",
+        "agentic-ai",
+        "ai"
       ]
     },
     "ragflow_self_hosting_guide": {
@@ -9641,10 +9659,6 @@
         "Docker"
       ],
       "infinity_database": [
-        "Docker"
-      ],
-      "hermes_kimi_k3_ai_automation_course": [
-        "bash",
         "Docker"
       ]
     },
@@ -9755,9 +9769,6 @@
       ],
       "sqlite_vector": [
         "llm"
-      ],
-      "hermes_kimi_k3_ai_automation_course": [
-        "Python"
       ]
     },
     "lightrag_setup": {
@@ -9809,9 +9820,6 @@
         "Docker"
       ],
       "infinity_database": [
-        "Docker"
-      ],
-      "hermes_kimi_k3_ai_automation_course": [
         "Docker"
       ]
     },
@@ -9897,9 +9905,6 @@
       ],
       "sqlite_vector": [
         "llm"
-      ],
-      "hermes_kimi_k3_ai_automation_course": [
-        "Python"
       ]
     },
     "graphrag_system": {
@@ -9960,10 +9965,6 @@
       "lightagent_framework": [
         "LLM",
         "Python"
-      ],
-      "hermes_kimi_k3_ai_automation_course": [
-        "Python",
-        "LLM"
       ]
     },
     "rag_techniques": {
@@ -10060,6 +10061,11 @@
       ],
       "sqlite_vector": [
         "llm",
+        "ai"
+      ],
+      "openmontage": [
+        "python",
+        "openai",
         "ai"
       ]
     },
@@ -10188,8 +10194,10 @@
         "llm",
         "ai"
       ],
-      "hermes_kimi_k3_ai_automation_course": [
-        "Python"
+      "openmontage": [
+        "ai",
+        "cursor",
+        "claude"
       ]
     },
     "fastapi_mcp_integration": {
@@ -10254,9 +10262,6 @@
       ],
       "xcodebuildmcp_installation": [
         "Model Context Protocol"
-      ],
-      "hermes_kimi_k3_ai_automation_course": [
-        "Claude"
       ]
     },
     "mcp_go": {
@@ -10319,6 +10324,9 @@
       ],
       "sqlite_vector": [
         "llm",
+        "ai"
+      ],
+      "openmontage": [
         "ai"
       ]
     },
@@ -10434,6 +10442,11 @@
       "sqlite_vector": [
         "llm",
         "ai"
+      ],
+      "openmontage": [
+        "python",
+        "openai",
+        "ai"
       ]
     },
     "mcp_agent_framework": {
@@ -10546,10 +10559,6 @@
       ],
       "lightagent_framework": [
         "LLM"
-      ],
-      "hermes_kimi_k3_ai_automation_course": [
-        "LLM",
-        "Docker"
       ]
     },
     "registry": {
@@ -10634,6 +10643,9 @@
       ],
       "sqlite_vector": [
         "llm",
+        "ai"
+      ],
+      "openmontage": [
         "ai"
       ]
     },
@@ -10795,6 +10807,9 @@
         "redis",
         "sqlite",
         "ai"
+      ],
+      "openmontage": [
+        "ai"
       ]
     },
     "mcp_server_implementations": {
@@ -10855,9 +10870,6 @@
         "Claude Desktop",
         "Zed Editor",
         "FileStash"
-      ],
-      "hermes_kimi_k3_ai_automation_course": [
-        "Docker"
       ]
     },
     "agentic_rag_for_dummies": {
@@ -11068,6 +11080,12 @@
       "sqlite_vector": [
         "llm",
         "ai"
+      ],
+      "openmontage": [
+        "ai",
+        "python",
+        "openai",
+        "claude"
       ]
     },
     "griptape_framework": {
@@ -11206,12 +11224,6 @@
         "LLM",
         "Python",
         "AI Agents"
-      ],
-      "hermes_kimi_k3_ai_automation_course": [
-        "Claude",
-        "Python",
-        "LLM",
-        "Docker"
       ]
     },
     "forge": {
@@ -11307,6 +11319,11 @@
       ],
       "sqlite_vector": [
         "llm"
+      ],
+      "openmontage": [
+        "openai",
+        "python",
+        "agentic-ai"
       ]
     },
     "forge_llm_tool_calling_framework": {
@@ -11407,9 +11424,6 @@
       ],
       "griptape_framework": [
         "Docker"
-      ],
-      "hermes_kimi_k3_ai_automation_course": [
-        "Docker"
       ]
     },
     "trainer": {
@@ -11478,6 +11492,10 @@
       ],
       "sqlite_vector": [
         "llm",
+        "ai"
+      ],
+      "openmontage": [
+        "python",
         "ai"
       ]
     },
@@ -11571,8 +11589,9 @@
         "llm",
         "ai"
       ],
-      "hermes_kimi_k3_ai_automation_course": [
-        "Python"
+      "openmontage": [
+        "python",
+        "ai"
       ]
     },
     "paper_agent": {},
@@ -11648,6 +11667,10 @@
       ],
       "sqlite_vector": [
         "llm"
+      ],
+      "openmontage": [
+        "python",
+        "openai"
       ]
     },
     "lightagent_framework": {
@@ -11701,10 +11724,6 @@
       ],
       "pasa": [
         "Python"
-      ],
-      "hermes_kimi_k3_ai_automation_course": [
-        "Python",
-        "LLM"
       ]
     },
     "sqlite_vector": {
@@ -11763,6 +11782,9 @@
       ],
       "lightagent": [
         "llm"
+      ],
+      "openmontage": [
+        "ai"
       ]
     },
     "sqlite_vector_extension": {
@@ -11784,136 +11806,98 @@
       ]
     },
     "kubeflow_trainer_skill": {},
-    "hermes_kimi_k3_ai_automation_course": {
+    "openmontage": {
       "new_claude_opus_5_leaks": [
-        "Claude"
+        "claude"
       ],
       "100_hours_of_hermes_agent_lessons_in_19_minutes": [
-        "Claude"
+        "agent"
       ],
       "hermes_agent_tutorial_for_beginners_full_step_by_s": [
-        "Python",
-        "LLM",
-        "Claude",
-        "Docker",
-        "bash"
-      ],
-      "kimi_k3_vs_claude_fable_5_raw_results": [
-        "Trading View",
-        "Tradingkit.com",
-        "yt-dlp",
-        "Kimi K3"
-      ],
-      "chatgpt_work_everything_you_need_to_know_to_get_st": [
-        "AI automation"
-      ],
-      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
-        "Claude"
-      ],
-      "yes_the_kimi_k3_hype_is_real": [
-        "Claude"
+        "agent"
       ],
       "this_100_self_improving_ai_agent_is_insane_just_wa": [
-        "Claude",
-        "Python",
-        "Docker"
+        "agent"
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
-        "Claude",
-        "Python"
-      ],
-      "i_tested_kimi_k3_so_you_don_t_have_to": [
-        "Kimi K3"
+        "agent"
       ],
       "china_just_beat_claude_ai_kimi_k3": [
-        "Claude"
+        "claude"
       ],
       "you_need_to_use_hermes_right_now_goodbye_openclaw": [
-        "Claude",
-        "Python",
-        "LLM",
-        "Docker"
-      ],
-      "new_hermes_agent_os_is_insane": [
-        "Python",
-        "LLM",
-        "AI agent organization",
-        "Claude",
-        "AI agent specialization",
-        "Docker"
+        "agent"
       ],
       "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
-        "Claude",
-        "LLM"
-      ],
-      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
-        "Claude"
-      ],
-      "every_hermes_concept_explained_for_normal_people": [
-        "Claude"
-      ],
-      "new_claude_update_is_insane": [
-        "Claude"
+        "openai"
       ],
       "hermes_agent_full_course_setup_guide_for_complete_": [
-        "Claude",
-        "LLM",
-        "Docker"
+        "agent"
       ],
-      "this_ai_business_model_is_creating_new_millionaire": [
-        "Claude"
+      "dify": [
+        "agentic-ai",
+        "claude",
+        "ai",
+        "agent",
+        "openai"
       ],
-      "dify_deployment": [
-        "Docker"
+      "ragflow": [
+        "openai",
+        "agentic-ai",
+        "ai"
       ],
-      "ragflow_self_hosting_guide": [
-        "bash",
-        "Docker"
-      ],
-      "lightrag": [
-        "Python"
-      ],
-      "lightrag_setup": [
-        "Docker"
-      ],
-      "graphrag": [
-        "Python"
-      ],
-      "graphrag_system": [
-        "Python",
-        "LLM"
+      "rag_techniques": [
+        "python",
+        "openai",
+        "ai"
       ],
       "fastapi_mcp": [
-        "Python"
+        "ai",
+        "cursor",
+        "claude"
       ],
-      "fastapi_mcp_integration": [
-        "Claude"
+      "mcp_go": [
+        "ai"
       ],
-      "r2r": [
-        "LLM",
-        "Docker"
+      "mcp_agent": [
+        "python",
+        "openai",
+        "ai"
       ],
-      "mcp_server_implementations": [
-        "Docker"
+      "registry": [
+        "ai"
       ],
-      "griptape_framework": [
-        "Claude",
-        "Python",
-        "LLM",
-        "Docker"
+      "awesome_mcp_servers": [
+        "ai"
       ],
-      "infinity_database": [
-        "Docker"
+      "griptape": [
+        "ai",
+        "python",
+        "openai",
+        "claude"
+      ],
+      "forge": [
+        "openai",
+        "python",
+        "agentic-ai"
+      ],
+      "trainer": [
+        "python",
+        "ai"
       ],
       "pasa": [
-        "Python"
+        "python",
+        "ai"
       ],
-      "lightagent_framework": [
-        "Python",
-        "LLM"
+      "lightagent": [
+        "python",
+        "openai"
+      ],
+      "sqlite_vector": [
+        "ai"
       ]
     }
   },
-  "updated_at": "2026-07-22T00:17:32.474638+00:00",
+  "updated_at": "2026-07-22T00:39:47.247433+00:00",
   "total_skills": 61
 }
