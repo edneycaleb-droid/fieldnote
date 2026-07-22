@@ -383,6 +383,7 @@ def _process_free_alternative(
     Returns a result dict on success, or None on failure.
     """
     import agents.skill_quality as sq
+    import agents.github_sync   as gs
     import app as _a
 
     fn     = alt_repo["full_name"]
@@ -408,6 +409,11 @@ def _process_free_alternative(
 
         skill_name, action = _save_discovered_skill(skill, alt_repo, index)
         index = _a.load_index()
+
+        try:
+            gs.sync_skill(skill_name, _a.SKILLS_DIR, index)
+        except Exception as exc:
+            log.warning("GitHub sync failed for alt skill: %s", exc)
 
         disc_log[fn] = {
             "processed_at":   _now_iso(),
@@ -596,6 +602,59 @@ def _emit_log(msg: str, kind: str = "info") -> None:
     log.log(level, "[discovery] %s", msg)
 
 
+# ── Badge / noise filter (module-level — reused by baseline and save boundary) ─
+
+_BADGE_STATUS_WORDS: frozenset = frozenset({
+    "passing", "failing", "failed", "unknown", "pending",
+    "success", "error", "stable", "latest",
+})
+
+_BADGE_PATTERNS: list = [
+    re.compile(r'^build\s*:?\s*(passing|failing|failed|unknown)$', re.I),
+    re.compile(r'^tests?\s*:?\s*(passing|failing|failed)$', re.I),
+    re.compile(r'^coverage\s*:?\s*\d+\s*%$', re.I),
+    re.compile(r'^\d+\s*%(\s+coverage)?$', re.I),
+    re.compile(r'^v?\d+\.\d+[.\d]*(\s*(stable|latest|release))?$', re.I),
+    re.compile(r'^(mit|apache|gpl[\s\d.]*|bsd[\s\d.]*|isc)\s*(licen[sc]e)?$', re.I),
+    re.compile(r'^licen[sc]e\s*:?\s*(mit|apache|gpl|bsd|isc)[\s\d.]*$', re.I),
+    re.compile(r'^python\s+\d+\.\d+\+?$', re.I),
+    re.compile(r'^pypi\s+v[\d.]+$', re.I),
+    re.compile(r'^npm\s+v[\d.]+$', re.I),
+    re.compile(r'^(downloads?|installs?)\s*:?\s*[\d,km]+$', re.I),
+    re.compile(r'^(stars?|forks?|watchers?)\s*:?\s*[\d,km]+$', re.I),
+]
+
+
+def _is_badge_like(s: str) -> bool:
+    """Return True if *s* matches a badge alt-text or image-caption pattern.
+
+    Intentionally conservative: only rejects strings that match known badge
+    formats (status words, coverage / version / licence / metric patterns).
+    Does NOT reject strings merely for being short or lowercase.
+    """
+    t = s.strip()
+    if not t:
+        return True
+    tl = t.lower()
+    if tl in _BADGE_STATUS_WORDS:
+        return True
+    for pat in _BADGE_PATTERNS:
+        if pat.match(t):
+            return True
+    return False
+
+
+def _filter_badge_steps(steps: list) -> list:
+    """Remove badge-like strings from a steps list.
+
+    Safe to call on any incoming steps list regardless of source (AI or
+    baseline).  Returns a new list; never mutates the input.
+    """
+    if not steps:
+        return steps if steps is not None else []
+    return [s for s in steps if isinstance(s, str) and not _is_badge_like(s)]
+
+
 # ── Content fingerprint ────────────────────────────────────────────────────────
 
 def _fingerprint(repo: dict) -> str:
@@ -657,44 +716,7 @@ def _deterministic_baseline(repo: dict, readme: str) -> dict:
     if language and language.lower() not in seen_tools:
         detected_tools.append(language)
 
-    # ── Badge / noise filter ──────────────────────────────────────────────
-    _BADGE_STATUS_WORDS = frozenset({
-        "passing", "failing", "failed", "unknown", "pending",
-        "success", "error", "stable", "latest",
-    })
-    _BADGE_PATTERNS = [
-        _re.compile('^build\\s*:?\\s*(passing|failing|failed|unknown)$', _re.I),
-        _re.compile('^tests?\\s*:?\\s*(passing|failing|failed)$', _re.I),
-        _re.compile('^coverage\\s*:?\\s*\\d+\\s*%$', _re.I),
-        _re.compile('^\\d+\\s*%(\\s+coverage)?$', _re.I),
-        _re.compile('^v?\\d+\\.\\d+[\\.\\d]*(\\s*(stable|latest|release))?$', _re.I),
-        _re.compile('^(mit|apache|gpl[\\s\\d\\.]*|bsd[\\s\\d\\.]*|isc)\\s*(licen[sc]e)?$', _re.I),
-        _re.compile('^licen[sc]e\\s*:?\\s*(mit|apache|gpl|bsd|isc)[\\s\\d\\.]*$', _re.I),
-        _re.compile('^python\\s+\\d+\\.\\d+\\+?$', _re.I),
-        _re.compile('^pypi\\s+v[\\d\\.]+$', _re.I),
-        _re.compile('^npm\\s+v[\\d\\.]+$', _re.I),
-        _re.compile('^(downloads?|installs?)\\s*:?\\s*[\\d,km]+$', _re.I),
-        _re.compile('^(stars?|forks?|watchers?)\\s*:?\\s*[\\d,km]+$', _re.I),
-    ]
-
-    def _is_badge_like(s: str) -> bool:
-        """Return True if s matches a specific badge alt-text or image caption pattern.
-        Intentionally conservative: only rejects strings that match known badge
-        formats (status words, coverage/version/licence/metric patterns).
-        Does NOT reject strings merely for being short or lowercase."""
-        t = s.strip()
-        if not t:
-            return True
-        tl = t.lower()
-        # Single bare badge-status keyword (e.g. just the word 'passing')
-        if tl in _BADGE_STATUS_WORDS:
-            return True
-        # Specific badge format patterns
-        for pat in _BADGE_PATTERNS:
-            if pat.match(t):
-                return True
-        return False
-
+    # (badge filter delegated to module-level _is_badge_like / _filter_badge_steps)
    # ── Extract steps from numbered/bulleted lists ──────────────────────────────────────────
     steps: list[str] = []
     for m in _re.finditer(r'(?:^|\n)(?:\d+\.\s+|\*\s+|-\s+)(.{10,120})', readme):
@@ -889,6 +911,21 @@ def _save_discovered_skill(skill: dict, repo: dict, index: dict) -> tuple[str, s
     """Persist the extracted skill and return (skill_name, action)."""
     import app as _a
 
+    # Strip badge noise from steps before any further processing so that
+    # AI responses that echo baseline badge strings are cleaned at the boundary.
+    if "steps" in skill:
+        raw_steps = skill.get("steps") or []
+        filtered = _filter_badge_steps(raw_steps)
+        if raw_steps and not filtered:
+            log.warning(
+                "_save_discovered_skill: all %d step(s) were badge strings and "
+                "were stripped for '%s' — post-filter steps is empty; "
+                "quality gate will flag this skill as too_few_steps",
+                len(raw_steps),
+                skill.get("skill_name") or repo.get("full_name", "?"),
+            )
+        skill = {**skill, "steps": filtered}
+
     action         = skill.get("action", "create")
     enhance_target = skill.get("enhance_target")
     skill_name     = _a._compute_skill_name(skill, action, enhance_target, index)
@@ -919,6 +956,23 @@ def _save_discovered_skill(skill: dict, repo: dict, index: dict) -> tuple[str, s
                                                   skill.get("enhance_target"), index)
         except Exception as e:
             log.warning("Enhance re-run failed (%s) — using first-pass result", e)
+
+    # Re-apply badge filter immediately before writing: the enhance re-judge
+    # path above may have reassigned `skill` from _judge_arena, which can
+    # reintroduce badge-like strings.  A second pass here guarantees every
+    # ingestion path (create, enhance first-pass, enhance re-judge) is clean.
+    if "steps" in skill:
+        raw_steps2 = skill.get("steps") or []
+        filtered2  = _filter_badge_steps(raw_steps2)
+        if raw_steps2 and not filtered2:
+            log.warning(
+                "_save_discovered_skill (post-rejudge): all %d step(s) were badge "
+                "strings and were stripped for '%s' — post-filter steps is empty; "
+                "quality gate will flag this skill as too_few_steps",
+                len(raw_steps2),
+                skill.get("skill_name") or repo.get("full_name", "?"),
+            )
+        skill = {**skill, "steps": filtered2}
 
     synthetic_meta = {
         "title":    repo["full_name"],
@@ -1148,6 +1202,13 @@ def discover_and_learn() -> dict:
                 # Overlay AI result (may change skill_name)
                 skill_name, action = _save_discovered_skill(ai_skill, repo, index)
                 index = _a.load_index()
+
+                # Sync to GitHub
+                try:
+                    import agents.github_sync as gs
+                    gs.sync_skill(skill_name, _a.SKILLS_DIR, index)
+                except Exception as e:
+                    log.warning("GitHub sync failed after AI save: %s", e)
 
                 # ── Paid-service detection → free alternative ────────────────
                 readme_text = " ".join(repo.get("_readme_words", []))
