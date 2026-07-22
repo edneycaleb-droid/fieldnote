@@ -1,0 +1,33 @@
+{
+  "name": "github-repo-promo-factory",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "ingest": "node --import tsx scripts/ingest.ts",
+    "render": "node --import tsx scripts/render.ts",
+    "promo": "node --import tsx scripts/promo.ts",
+    "doctor": "node --import tsx scripts/doctor.ts",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/cli": "^4.0.0",
+    "@remotion/gif": "^4.0.0",
+    "@remotion/media": "^4.0.0",
+    "@remotion/transitions": "^4.0.0",
+    "commander": "^14.0.0",
+    "react": "^19.0.0",
+    "remotion": "^4.0.0",
+    "sharp": "^0.34.0",
+    "zod": "4.3.6"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "vitest": "^3.2.0"
+  }
+}
