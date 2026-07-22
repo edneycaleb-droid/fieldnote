@@ -330,7 +330,7 @@ def _enrich_one(item: dict) -> None:
         # Sync to GitHub (non-fatal)
         try:
             import agents.github_sync as gs
-            gs.sync_skill(skill_name, _a.SKILLS_DIR, index)
+            gs.sync_skill(skill_name, _a._read_existing_markdown(skill_name), index)
         except Exception as e:
             log.warning("GitHub sync failed for enriched skill %s: %s", skill_name, e)
 
