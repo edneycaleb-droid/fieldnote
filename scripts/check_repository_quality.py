@@ -4,11 +4,13 @@
 from __future__ import annotations
 
 import json
+import re
 import sys
 import tomllib
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+FULL_COMMIT_SHA = re.compile(r"[0-9a-fA-F]{40}")
 
 
 def read(path: str) -> str:
@@ -67,6 +69,31 @@ def generated_mcp_registry_valid() -> bool:
     return True
 
 
+def workflow_actions_pinned() -> bool:
+    """Require immutable commit pins in root and bundled-tool workflow examples."""
+    workflow_files = list(ROOT.glob(".github/workflows/*.yml"))
+    workflow_files += list(ROOT.glob(".github/workflows/*.yaml"))
+    workflow_files += list(ROOT.glob("tools/**/.github/workflows/*.yml"))
+    workflow_files += list(ROOT.glob("tools/**/.github/workflows/*.yaml"))
+    for workflow_file in workflow_files:
+        try:
+            lines = workflow_file.read_text(encoding="utf-8").splitlines()
+        except OSError:
+            return False
+        for line in lines:
+            stripped = line.strip()
+            if not stripped.startswith("- uses:"):
+                continue
+            target = stripped.removeprefix("- uses:").split("#", 1)[0].strip()
+            if target.startswith("./"):
+                continue
+            _, separator, ref = target.rpartition("@")
+            if not separator or not FULL_COMMIT_SHA.fullmatch(ref):
+                print(f"[FAIL] mutable_workflow_action: {workflow_file.relative_to(ROOT)}: {target}")
+                return False
+    return True
+
+
 def main() -> int:
     try:
         tomllib.loads(read("pyproject.toml"))
@@ -105,7 +132,8 @@ def main() -> int:
             "timeout-minutes: 5",
             "persist-credentials: false",
             "workflow_dispatch:",
-        ),
+        )
+        and workflow_actions_pinned(),
         "clean_tracking": has(
             ".github/ISSUE_TEMPLATE/config.yml",
             "blank_issues_enabled: false",
