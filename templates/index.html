@@ -6196,15 +6196,23 @@ function renderHubCard(s) {
 
   // Helper: resolve alt link from python_alternative_id (proactive) or
   // alternative_id/alternative_name (set after a failed install attempt).
-  function _buildAltLink(altId, altName) {
+  // scrollOnly=true  → scroll to & highlight the alt card (proactive suggestion)
+  // scrollOnly=false → call hubInstall() directly (post-failure, runtime_missing)
+  function _buildAltLink(altId, altName, scrollOnly) {
     if (!altId) return '';
     // Suppress the link if the alternative is already connected — no need to redirect
     const altSrv = _hubData.find(a => a.id === altId);
     if (altSrv && altSrv.health_state === 'connected') return '';
     const displayName = altName || altId;
+    const action = scrollOnly
+      ? `hubScrollToCard('${esc(altId)}');return false;`
+      : `hubInstall('${esc(altId)}');return false;`;
+    const titleText = scrollOnly
+      ? `See ${esc(displayName)} — a Python alternative with the same capability`
+      : `Install ${esc(displayName)} — a Python alternative with the same capability`;
     return `<a class="hc-alt-link" href="#"
-      onclick="hubInstall('${esc(altId)}');return false;"
-      title="Install ${esc(displayName)} — a Python alternative with the same capability">
+      onclick="${action}"
+      title="${titleText}">
       Try ${esc(displayName)} instead →</a>`;
   }
 
@@ -6215,16 +6223,19 @@ function renderHubCard(s) {
     // but only when Node itself is absent (not_installed). For missing_credential
     // Node IS available — the user just needs to supply an API key, so showing
     // "Try Python instead" would be misleading.
+    // Use scrollOnly=true so the user sees the alt card and can inspect it
+    // before deciding to install — the alt may itself require a credential.
     if (state === 'not_installed' && s.runtime_required === 'node' && s.python_alternative_id) {
       const altSrv = _hubData.find(a => a.id === s.python_alternative_id);
-      altLink = _buildAltLink(s.python_alternative_id, altSrv ? altSrv.name : s.python_alternative_id);
+      altLink = _buildAltLink(s.python_alternative_id, altSrv ? altSrv.name : s.python_alternative_id, true);
     }
   } else if (state === 'runtime_missing') {
     primaryBtn = `<button class="hc-btn hcbtn-install" disabled id="hub-btn-primary-${esc(s.id)}">⬇ Install</button>`;
-    // Prefer the post-install alternative_id/name (more precise), fall back to static field
+    // Prefer the post-install alternative_id/name (more precise), fall back to static field.
+    // The user already saw the install failure, so direct-install (scrollOnly=false) is fine.
     const altId   = s.alternative_id   || s.python_alternative_id;
     const altName = s.alternative_name || (altId ? ((_hubData.find(a => a.id === altId) || {}).name || altId) : '');
-    altLink = _buildAltLink(altId, altName);
+    altLink = _buildAltLink(altId, altName, false);
   } else if (state === 'offline' || state === 'degraded') {
     primaryBtn = `<button class="hc-btn hcbtn-install" id="hub-btn-primary-${esc(s.id)}"
       onclick="hubInstall('${esc(s.id)}', true)">↺ Re-install</button>`;
@@ -6292,6 +6303,17 @@ function _hubUpdateCardState(id, newState, enabled) {
     tmp.innerHTML = renderHubCard(srv);
     card.parentNode.replaceChild(tmp.firstChild, card);
   }
+}
+
+function hubScrollToCard(id) {
+  const card = document.getElementById('hub-card-' + id);
+  if (!card) return;
+  card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  // Apply highlight animation; re-trigger if called twice in quick succession
+  card.classList.remove('hc-alt-highlight');
+  void card.offsetWidth; // force reflow so re-adding the class restarts the animation
+  card.classList.add('hc-alt-highlight');
+  card.addEventListener('animationend', () => card.classList.remove('hc-alt-highlight'), { once: true });
 }
 
 async function hubInstall(id, force) {
