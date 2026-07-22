@@ -1,0 +1,23 @@
+name: Publish repository promo
+description: Demonstrates a safe parameterized workflow without storing secrets.
+version: 1
+platform: cross-platform
+inputs:
+  REPO_URL: Public GitHub repository URL
+success_criteria:
+  - The repository URL is visible in the target field.
+  - The operator verifies the preview before publishing.
+actions:
+  - kind: hotkey
+    value: ctrl+l
+    note: Focus the address field.
+  - kind: type
+    value: ${REPO_URL}
+    note: Enter the runtime repository URL.
+  - kind: hotkey
+    value: enter
+  - kind: wait
+    seconds: 2
+  - kind: confirm
+    destructive: true
+    note: Verify the preview before any publish action.
