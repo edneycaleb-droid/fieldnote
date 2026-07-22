@@ -65,6 +65,9 @@ class SchedulerAgent:
         self._lock = threading.Lock()
         self._started_at: Optional[str] = None
         self._wake_callbacks: list[Callable] = []
+        # Track which never-run jobs have already been warned about so we
+        # don't flood the log with repeated overdue warnings.
+        self._warned_overdue: set[str] = set()
 
     # ── Wake callbacks ────────────────────────────────────────────────────────
 

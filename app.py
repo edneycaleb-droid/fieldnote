@@ -2131,9 +2131,24 @@ def api_mcp_hub_registry():
     """Full hub registry with live health states."""
     from agents.mcp_registry import load_registry
     servers = load_registry()
+    # Surface the scheduler's last-run time for the mcp_health job so the UI
+    # can show a meaningful tooltip on the 'Checking…' badge instead of leaving
+    # users wondering whether the health checker has ever fired.
+    mcp_health_last_run: str | None = None
+    try:
+        import agents.scheduler as _sched_mod
+        job = next(
+            (j for j in _sched_mod.scheduler._jobs if j.name == "mcp_health"),
+            None,
+        )
+        if job:
+            mcp_health_last_run = job.last_run  # ISO-8601 UTC or None
+    except Exception:
+        pass
     return jsonify({
-        "servers": [s.to_dict() for s in servers],
-        "count":   len(servers),
+        "servers":              [s.to_dict() for s in servers],
+        "count":                len(servers),
+        "mcp_health_last_run":  mcp_health_last_run,
     })
 
 
