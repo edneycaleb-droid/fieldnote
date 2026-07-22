@@ -887,6 +887,14 @@ def _upgrade_baseline_to_ai(skill_dict: dict, repo: dict, index: dict,
     """
     import app as _a
     try:
+        # Strip badge-noise steps before writing so that AI responses that echo
+        # badge strings (e.g. "Build passing", "Coverage 92%") do not pollute
+        # the enriched skill.  We work on a shallow copy to avoid mutating the
+        # caller's dict.
+        skill_dict = dict(skill_dict)
+        if "steps" in skill_dict:
+            skill_dict["steps"] = _filter_badge_steps(skill_dict.get("steps") or [])
+
         # Re-save with the AI-enriched content
         _a._save_skill(
             skill          = skill_dict,
