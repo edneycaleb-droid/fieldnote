@@ -560,8 +560,7 @@
       "skills": [
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
         "new_hermes_agent_os_is_insane",
-        "chatgpt_work_everything_you_need_to_know_to_get_st",
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
       ]
     },
     "Hermes setup": {
@@ -893,7 +892,7 @@
       ]
     },
     "AI-powered product development": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "this_ai_business_model_is_creating_new_millionaire",
         "new_hermes_agent_os_is_insane"
@@ -986,22 +985,19 @@
     "AI agent organization": {
       "freq": 3,
       "skills": [
-        "new_hermes_agent_os_is_insane",
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "new_hermes_agent_os_is_insane"
       ]
     },
     "AI agent specialization": {
       "freq": 3,
       "skills": [
-        "new_hermes_agent_os_is_insane",
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "new_hermes_agent_os_is_insane"
       ]
     },
     "AI news monitoring": {
       "freq": 3,
       "skills": [
-        "new_hermes_agent_os_is_insane",
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "new_hermes_agent_os_is_insane"
       ]
     },
     "AI self-improvement": {
@@ -1071,10 +1067,9 @@
       ]
     },
     "Multi-agent systems": {
-      "freq": 3,
+      "freq": 2,
       "skills": [
-        "new_hermes_agent_os_is_insane",
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "new_hermes_agent_os_is_insane"
       ]
     },
     "Parallel processing": {
@@ -1150,10 +1145,9 @@
       ]
     },
     "AI model integration": {
-      "freq": 2,
+      "freq": 1,
       "skills": [
-        "new_hermes_agent_os_is_insane",
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "new_hermes_agent_os_is_insane"
       ]
     },
     "agentic-ai": {
@@ -3089,46 +3083,106 @@
         "modular_speech_to_speech_pipeline"
       ]
     },
-    "AI model benchmarking": {
+    "Single-Agent vs. Multi-Agent Systems": {
       "freq": 1,
       "skills": [
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "new_hermes_agent_os_is_insane"
       ]
     },
-    "Cost-effectiveness of AI models": {
+    "Shared Memory Vault": {
       "freq": 1,
       "skills": [
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "new_hermes_agent_os_is_insane"
       ]
     },
-    "OpenRouter integration": {
+    "Agent Specialization": {
       "freq": 1,
       "skills": [
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "new_hermes_agent_os_is_insane"
       ]
     },
-    "Parallel tool calls": {
+    "Automation & Productivity": {
       "freq": 1,
       "skills": [
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "new_hermes_agent_os_is_insane"
       ]
     },
-    "Prompt engineering": {
+    "Trading Strategy Hypothesis Generation": {
       "freq": 1,
       "skills": [
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "new_hermes_agent_os_is_insane"
       ]
     },
-    "Shared memory vault": {
+    "Scientific Paper Synthesis": {
       "freq": 1,
       "skills": [
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "new_hermes_agent_os_is_insane"
       ]
     },
-    "X (formerly Twitter) data scraping": {
+    "Latent Demand": {
       "freq": 1,
       "skills": [
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "new_hermes_agent_os_is_insane"
+      ]
+    },
+    "Market Gap": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
+    },
+    "Research Methodology": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
+    },
+    "Literature Review": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
+    },
+    "Momentum Trading": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
+    },
+    "Mean Reversion": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
+    },
+    "Order Flow Microstructure": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
+    },
+    "Market Regimes": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
+    },
+    "Volatility Analysis": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
+    },
+    "market behaviour": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
+    },
+    "ai self-improvement": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
       ]
     }
   },
@@ -3154,8 +3208,7 @@
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
         "hermes_agent_full_course_setup_guide_for_complete_",
         "fastapi_mcp_integration",
-        "griptape_framework",
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "griptape_framework"
       ]
     },
     "Anthropic": {
@@ -3211,8 +3264,7 @@
         "mcp_server_implementations",
         "griptape_framework",
         "infinity_database",
-        "leon_ai_assistant",
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "leon_ai_assistant"
       ]
     },
     "bash": {
@@ -3220,8 +3272,7 @@
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "new_hermes_agent_os_is_insane",
-        "ragflow_self_hosting_guide",
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "ragflow_self_hosting_guide"
       ]
     },
     "Python": {
@@ -3239,8 +3290,7 @@
         "fastapi_mcp",
         "griptape_framework",
         "pasa",
-        "leon_ai_assistant",
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "leon_ai_assistant"
       ]
     },
     "LLM": {
@@ -3251,8 +3301,7 @@
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
         "new_hermes_agent_os_is_insane",
-        "griptape_framework",
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "griptape_framework"
       ]
     },
     "OpenAI": {
@@ -3335,11 +3384,10 @@
       ]
     },
     "Kimi K3": {
-      "freq": 4,
+      "freq": 3,
       "skills": [
         "i_tested_kimi_k3_so_you_don_t_have_to",
-        "kimi_k3_vs_claude_fable_5_raw_results",
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "Fable": {
@@ -3387,10 +3435,9 @@
       ]
     },
     "GPT 5.6": {
-      "freq": 3,
+      "freq": 2,
       "skills": [
-        "new_hermes_agent_os_is_insane",
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "new_hermes_agent_os_is_insane"
       ]
     },
     "Grok": {
@@ -3489,8 +3536,7 @@
       "skills": [
         "hermes_agent_full_course_setup_guide_for_complete_",
         "new_hermes_agent_os_is_insane",
-        "griptape_framework",
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "griptape_framework"
       ]
     },
     "Virtual Private Server": {
@@ -3500,10 +3546,9 @@
       ]
     },
     "ChatGPT": {
-      "freq": 2,
+      "freq": 1,
       "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st",
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "chatgpt_work_everything_you_need_to_know_to_get_st"
       ]
     },
     "ChatGPT Work": {
@@ -3544,10 +3589,9 @@
       ]
     },
     "Hermes Oracle": {
-      "freq": 3,
+      "freq": 2,
       "skills": [
-        "new_hermes_agent_os_is_insane",
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "new_hermes_agent_os_is_insane"
       ]
     },
     "Hunyuan HY3": {
@@ -5781,22 +5825,22 @@
         "modular_speech_to_speech_pipeline"
       ]
     },
-    "OpenRouter": {
+    "arXiv": {
       "freq": 1,
       "skills": [
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "new_hermes_agent_os_is_insane"
       ]
     },
-    "Grok 4.5": {
+    "Archive": {
       "freq": 1,
       "skills": [
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "new_hermes_agent_os_is_insane"
       ]
     },
-    "Aentic OS": {
+    "Charts and Visuals": {
       "freq": 1,
       "skills": [
-        "hermes_agent_just_got_10x_better_4_insane_new_feat"
+        "new_hermes_agent_os_is_insane"
       ]
     }
   },
@@ -6196,17 +6240,24 @@
         "AI agent specialization",
         "AI automation",
         "AI news monitoring",
-        "Multi-agent AI system",
-        "Multi-agent systems",
-        "Memory vault",
-        "SEO optimization",
-        "Lead generation",
-        "Agent collaboration",
-        "Voice interaction with AI",
-        "Automated note-taking",
-        "Parallel task execution",
-        "AI model integration",
-        "AI self-improvement"
+        "Single-Agent vs. Multi-Agent Systems",
+        "Shared Memory Vault",
+        "Agent Specialization",
+        "Automation & Productivity",
+        "Trading Strategy Hypothesis Generation",
+        "Scientific Paper Synthesis",
+        "Latent Demand",
+        "Market Gap",
+        "AI-powered product development",
+        "Research Methodology",
+        "Literature Review",
+        "Momentum Trading",
+        "Mean Reversion",
+        "Order Flow Microstructure",
+        "Market Regimes",
+        "Volatility Analysis",
+        "market behaviour",
+        "ai self-improvement"
       ],
       "tools": [
         "Claude",
@@ -6215,20 +6266,18 @@
         "Python",
         "LLM",
         "Hermes Agent",
-        "Hermes Oracle",
-        "OpenAI",
-        "GPT-4",
-        "Gemini",
-        "Grok",
-        "Hunyuan HY3"
+        "arXiv",
+        "Archive",
+        "Charts and Visuals"
       ],
       "tags": [
         "agent",
-        "ai",
-        "ai os",
-        "automation",
-        "hermes",
-        "multi-agent"
+        "multi-agent",
+        "trading",
+        "hypothesis generation",
+        "research",
+        "market behaviour",
+        "ai self-improvement"
       ],
       "step_count": 12
     },
@@ -8004,49 +8053,6 @@
         "huggingface"
       ],
       "step_count": 12
-    },
-    "hermes_agent_just_got_10x_better_4_insane_new_feat": {
-      "concepts": [
-        "AI agent organization",
-        "AI agent specialization",
-        "AI automation",
-        "AI news monitoring",
-        "AI model benchmarking",
-        "AI model integration",
-        "Cost-effectiveness of AI models",
-        "Multi-agent systems",
-        "OpenRouter integration",
-        "Parallel tool calls",
-        "Prompt engineering",
-        "Shared memory vault",
-        "X (formerly Twitter) data scraping"
-      ],
-      "tools": [
-        "Hermes Agent",
-        "Claude",
-        "Docker",
-        "bash",
-        "Python",
-        "LLM",
-        "OpenRouter",
-        "ChatGPT",
-        "Grok 4.5",
-        "GPT 5.6",
-        "Kimi K3",
-        "Hermes Oracle",
-        "Aentic OS"
-      ],
-      "tags": [
-        "agent",
-        "ai",
-        "automation",
-        "hermes",
-        "llm",
-        "ai agent",
-        "model upgrade",
-        "multi-agent"
-      ],
-      "step_count": 10
     }
   },
   "relationships": {
@@ -8168,9 +8174,6 @@
       ],
       "openakita": [
         "anthropic"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "Claude"
       ]
     },
     "100_hours_of_hermes_agent_lessons_in_19_minutes": {
@@ -8223,8 +8226,7 @@
         "Gemini"
       ],
       "new_hermes_agent_os_is_insane": [
-        "Claude",
-        "Gemini"
+        "Claude"
       ],
       "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
         "Claude"
@@ -8272,9 +8274,6 @@
       ],
       "openakita": [
         "agent"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "Claude"
       ]
     },
     "hermes_agent_tutorial_for_beginners_full_step_by_s": {
@@ -8333,11 +8332,11 @@
         "Claude"
       ],
       "new_hermes_agent_os_is_insane": [
-        "bash",
-        "Claude",
-        "Docker",
         "LLM",
-        "Python"
+        "Python",
+        "bash",
+        "Docker",
+        "Claude"
       ],
       "every_hermes_concept_explained_for_normal_people": [
         "Claude"
@@ -8440,13 +8439,6 @@
       ],
       "modular_speech_to_speech_pipeline": [
         "LLM"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "bash",
-        "Claude",
-        "LLM",
-        "Docker",
-        "Python"
       ]
     },
     "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
@@ -8610,9 +8602,6 @@
       ],
       "i_tested_kimi_k3_so_you_don_t_have_to": [
         "Kimi K3"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "Kimi K3"
       ]
     },
     "chatgpt_work_everything_you_need_to_know_to_get_st": {
@@ -8664,10 +8653,6 @@
       ],
       "new_hermes_agent_os_is_insane": [
         "AI automation"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "AI automation",
-        "ChatGPT"
       ]
     },
     "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": {
@@ -8725,9 +8710,7 @@
         "models"
       ],
       "new_hermes_agent_os_is_insane": [
-        "OpenAI",
-        "Claude",
-        "Gemini"
+        "Claude"
       ],
       "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
         "OpenAI",
@@ -8783,9 +8766,6 @@
       ],
       "openakita": [
         "anthropic"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "Claude"
       ]
     },
     "by_august_we_ll_have_frontier_ai_running_locally": {
@@ -8938,7 +8918,6 @@
         "Anthropic"
       ],
       "new_hermes_agent_os_is_insane": [
-        "OpenAI",
         "Claude"
       ],
       "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
@@ -8989,9 +8968,6 @@
       "griptape_framework": [
         "Claude",
         "OpenAI"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "Claude"
       ]
     },
     "this_100_self_improving_ai_agent_is_insane_just_wa": {
@@ -9068,7 +9044,6 @@
         "open"
       ],
       "new_hermes_agent_os_is_insane": [
-        "OpenAI",
         "Claude",
         "Python",
         "Docker"
@@ -9177,11 +9152,6 @@
       "openakita": [
         "claw",
         "agent"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "Claude",
-        "Python",
-        "Docker"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -9304,10 +9274,6 @@
       ],
       "openakita": [
         "agent"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "Claude",
-        "Python"
       ]
     },
     "new_hermes_paperclip_ai_agent_update_is_insane": {
@@ -9395,9 +9361,6 @@
       ],
       "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
         "AI models"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "Kimi K3"
       ]
     },
     "china_just_beat_claude_ai_kimi_k3": {
@@ -9464,10 +9427,7 @@
         "AI models"
       ],
       "new_hermes_agent_os_is_insane": [
-        "OpenAI",
-        "Claude",
-        "Gemini",
-        "GPT-4"
+        "Claude"
       ],
       "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
         "OpenAI",
@@ -9539,18 +9499,14 @@
       ],
       "openakita": [
         "anthropic"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "Claude"
       ]
     },
     "you_need_to_use_hermes_right_now_goodbye_openclaw": {
       "new_hermes_agent_os_is_insane": [
-        "OpenAI",
         "Claude",
+        "Python",
         "Docker",
-        "LLM",
-        "Python"
+        "LLM"
       ],
       "every_hermes_concept_explained_for_normal_people": [
         "Claude"
@@ -9731,12 +9687,6 @@
       ],
       "modular_speech_to_speech_pipeline": [
         "LLM"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "Claude",
-        "Python",
-        "Docker",
-        "LLM"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -9744,15 +9694,14 @@
         "Claude"
       ],
       "100_hours_of_hermes_agent_lessons_in_19_minutes": [
-        "Claude",
-        "Gemini"
+        "Claude"
       ],
       "hermes_agent_tutorial_for_beginners_full_step_by_s": [
-        "bash",
-        "Claude",
-        "Docker",
         "LLM",
-        "Python"
+        "Python",
+        "bash",
+        "Docker",
+        "Claude"
       ],
       "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
         "OpenAI"
@@ -9761,20 +9710,16 @@
         "Claude"
       ],
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
-        "OpenAI",
-        "Claude",
-        "Gemini"
+        "Claude"
       ],
       "by_august_we_ll_have_frontier_ai_running_locally": [
         "OpenAI",
         "Gemini"
       ],
       "yes_the_kimi_k3_hype_is_real": [
-        "OpenAI",
         "Claude"
       ],
       "this_100_self_improving_ai_agent_is_insane_just_wa": [
-        "OpenAI",
         "Claude",
         "Python",
         "Docker"
@@ -9788,20 +9733,15 @@
         "Gemini"
       ],
       "china_just_beat_claude_ai_kimi_k3": [
-        "OpenAI",
-        "Claude",
-        "Gemini",
-        "GPT-4"
+        "Claude"
       ],
       "you_need_to_use_hermes_right_now_goodbye_openclaw": [
-        "OpenAI",
         "Claude",
+        "Python",
         "Docker",
-        "LLM",
-        "Python"
+        "LLM"
       ],
       "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
-        "OpenAI",
         "Claude",
         "LLM"
       ],
@@ -9812,15 +9752,13 @@
         "Claude"
       ],
       "hermes_agent_full_course_setup_guide_for_complete_": [
-        "OpenAI",
         "Hermes Agent",
-        "Gemini",
         "Claude",
         "Docker",
         "LLM"
       ],
       "this_ai_business_model_is_creating_new_millionaire": [
-        "OpenAI",
+        "AI-powered product development",
         "Claude"
       ],
       "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
@@ -9833,8 +9771,8 @@
         "Docker"
       ],
       "ragflow_self_hosting_guide": [
-        "bash",
-        "Docker"
+        "Docker",
+        "bash"
       ],
       "lightrag": [
         "Python"
@@ -9866,12 +9804,11 @@
         "OpenAI"
       ],
       "griptape_framework": [
-        "Claude",
-        "OpenAI",
         "LLM",
         "Python",
+        "Docker",
         "Hermes Agent",
-        "Docker"
+        "Claude"
       ],
       "infinity_database": [
         "Docker"
@@ -9880,23 +9817,15 @@
         "Python"
       ],
       "lightagent_framework": [
-        "LLM",
-        "Python"
+        "Python",
+        "LLM"
       ],
       "leon_ai_assistant": [
-        "Docker",
-        "Python"
+        "Python",
+        "Docker"
       ],
       "modular_speech_to_speech_pipeline": [
         "LLM"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "Claude",
-        "bash",
-        "Hermes Agent",
-        "AI model integration",
-        "Hermes Oracle",
-        "AI automation"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -9942,7 +9871,6 @@
         "about"
       ],
       "new_hermes_agent_os_is_insane": [
-        "OpenAI",
         "Claude",
         "LLM"
       ],
@@ -10046,10 +9974,6 @@
       ],
       "modular_speech_to_speech_pipeline": [
         "LLM"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "Claude",
-        "LLM"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -10133,9 +10057,6 @@
       ],
       "griptape_framework": [
         "Claude"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "Claude"
       ]
     },
     "every_hermes_concept_explained_for_normal_people": {
@@ -10195,9 +10116,6 @@
         "Claude"
       ],
       "griptape_framework": [
-        "Claude"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
         "Claude"
       ]
     },
@@ -10280,9 +10198,6 @@
       ],
       "griptape_framework": [
         "Claude"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "Claude"
       ]
     },
     "hermes_agent_full_course_setup_guide_for_complete_": {
@@ -10359,9 +10274,7 @@
         "Gemini"
       ],
       "new_hermes_agent_os_is_insane": [
-        "OpenAI",
         "Hermes Agent",
-        "Gemini",
         "Claude",
         "Docker",
         "LLM"
@@ -10450,12 +10363,6 @@
       ],
       "modular_speech_to_speech_pipeline": [
         "LLM"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "Claude",
-        "Hermes Agent",
-        "Docker",
-        "LLM"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -10501,7 +10408,7 @@
         "Anthropic"
       ],
       "new_hermes_agent_os_is_insane": [
-        "OpenAI",
+        "AI-powered product development",
         "Claude"
       ],
       "every_hermes_concept_explained_for_normal_people": [
@@ -10544,9 +10451,6 @@
       "griptape_framework": [
         "Claude",
         "OpenAI"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "Claude"
       ]
     },
     "dify": {
@@ -10732,9 +10636,6 @@
       "leon_ai_assistant": [
         "Docker",
         "TypeScript"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "Docker"
       ]
     },
     "ragflow": {
@@ -10852,8 +10753,8 @@
         "Docker"
       ],
       "new_hermes_agent_os_is_insane": [
-        "bash",
-        "Docker"
+        "Docker",
+        "bash"
       ],
       "hermes_agent_full_course_setup_guide_for_complete_": [
         "Docker"
@@ -10884,10 +10785,6 @@
         "Docker"
       ],
       "leon_ai_assistant": [
-        "Docker"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "bash",
         "Docker"
       ]
     },
@@ -11004,9 +10901,6 @@
       ],
       "speech_to_speech": [
         "docker"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "Python"
       ]
     },
     "lightrag_setup": {
@@ -11065,9 +10959,6 @@
       ],
       "cross_platform_py_xiaozhi": [
         "uv"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "Docker"
       ]
     },
     "graphrag": {
@@ -11155,9 +11046,6 @@
       ],
       "leon_ai_assistant": [
         "Python"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "Python"
       ]
     },
     "graphrag_system": {
@@ -11224,10 +11112,6 @@
       ],
       "modular_speech_to_speech_pipeline": [
         "LLM"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "LLM",
-        "Python"
       ]
     },
     "rag_techniques": {
@@ -11496,9 +11380,6 @@
       ],
       "openakita": [
         "ai"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "Python"
       ]
     },
     "fastapi_mcp_integration": {
@@ -11566,9 +11447,6 @@
       ],
       "cross_platform_py_xiaozhi": [
         "uv"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "Claude"
       ]
     },
     "mcp_go": {
@@ -11902,10 +11780,6 @@
       "modular_speech_to_speech_pipeline": [
         "OpenAI API",
         "LLM"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "LLM",
-        "Docker"
       ]
     },
     "registry": {
@@ -12257,9 +12131,6 @@
       "leon_ai_assistant": [
         "Docker",
         "Git"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "Docker"
       ]
     },
     "agentic_rag_for_dummies": {
@@ -12550,12 +12421,11 @@
         "Docker"
       ],
       "new_hermes_agent_os_is_insane": [
-        "Claude",
-        "OpenAI",
         "LLM",
         "Python",
+        "Docker",
         "Hermes Agent",
-        "Docker"
+        "Claude"
       ],
       "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
         "LLM",
@@ -12641,13 +12511,6 @@
       ],
       "modular_speech_to_speech_pipeline": [
         "LLM"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "Claude",
-        "Hermes Agent",
-        "LLM",
-        "Docker",
-        "Python"
       ]
     },
     "forge": {
@@ -12881,9 +12744,6 @@
       ],
       "leon_ai_assistant": [
         "Docker"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "Docker"
       ]
     },
     "trainer": {
@@ -13089,9 +12949,6 @@
       "openakita": [
         "python",
         "ai"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "Python"
       ]
     },
     "paper_agent": {},
@@ -13207,8 +13064,8 @@
         "Python"
       ],
       "new_hermes_agent_os_is_insane": [
-        "LLM",
-        "Python"
+        "Python",
+        "LLM"
       ],
       "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
         "LLM"
@@ -13249,10 +13106,6 @@
       ],
       "modular_speech_to_speech_pipeline": [
         "LLM"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "LLM",
-        "Python"
       ]
     },
     "sqlite_vector": {
@@ -13562,8 +13415,8 @@
         "Python"
       ],
       "new_hermes_agent_os_is_insane": [
-        "Docker",
-        "Python"
+        "Python",
+        "Docker"
       ],
       "hermes_agent_full_course_setup_guide_for_complete_": [
         "Docker"
@@ -13613,10 +13466,6 @@
       "lightagent_framework": [
         "Memory Management",
         "Python"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "Python",
-        "Docker"
       ]
     },
     "speech_to_speech": {
@@ -13939,148 +13788,9 @@
       ],
       "lightagent_framework": [
         "LLM"
-      ],
-      "hermes_agent_just_got_10x_better_4_insane_new_feat": [
-        "LLM"
-      ]
-    },
-    "hermes_agent_just_got_10x_better_4_insane_new_feat": {
-      "new_claude_opus_5_leaks": [
-        "Claude"
-      ],
-      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
-        "Claude"
-      ],
-      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
-        "bash",
-        "Claude",
-        "LLM",
-        "Docker",
-        "Python"
-      ],
-      "kimi_k3_vs_claude_fable_5_raw_results": [
-        "Kimi K3"
-      ],
-      "chatgpt_work_everything_you_need_to_know_to_get_st": [
-        "AI automation",
-        "ChatGPT"
-      ],
-      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
-        "Claude"
-      ],
-      "yes_the_kimi_k3_hype_is_real": [
-        "Claude"
-      ],
-      "this_100_self_improving_ai_agent_is_insane_just_wa": [
-        "Claude",
-        "Python",
-        "Docker"
-      ],
-      "hermes_claude_code_mcp_integration_loop_engineerin": [
-        "Claude",
-        "Python"
-      ],
-      "i_tested_kimi_k3_so_you_don_t_have_to": [
-        "Kimi K3"
-      ],
-      "china_just_beat_claude_ai_kimi_k3": [
-        "Claude"
-      ],
-      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
-        "Claude",
-        "Python",
-        "Docker",
-        "LLM"
-      ],
-      "new_hermes_agent_os_is_insane": [
-        "Claude",
-        "bash",
-        "Hermes Agent",
-        "AI model integration",
-        "Hermes Oracle",
-        "AI automation"
-      ],
-      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
-        "Claude",
-        "LLM"
-      ],
-      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
-        "Claude"
-      ],
-      "every_hermes_concept_explained_for_normal_people": [
-        "Claude"
-      ],
-      "new_claude_update_is_insane": [
-        "Claude"
-      ],
-      "hermes_agent_full_course_setup_guide_for_complete_": [
-        "Claude",
-        "Hermes Agent",
-        "Docker",
-        "LLM"
-      ],
-      "this_ai_business_model_is_creating_new_millionaire": [
-        "Claude"
-      ],
-      "dify_deployment": [
-        "Docker"
-      ],
-      "ragflow_self_hosting_guide": [
-        "bash",
-        "Docker"
-      ],
-      "lightrag": [
-        "Python"
-      ],
-      "lightrag_setup": [
-        "Docker"
-      ],
-      "graphrag": [
-        "Python"
-      ],
-      "graphrag_system": [
-        "LLM",
-        "Python"
-      ],
-      "fastapi_mcp": [
-        "Python"
-      ],
-      "fastapi_mcp_integration": [
-        "Claude"
-      ],
-      "r2r": [
-        "LLM",
-        "Docker"
-      ],
-      "mcp_server_implementations": [
-        "Docker"
-      ],
-      "griptape_framework": [
-        "Claude",
-        "Hermes Agent",
-        "LLM",
-        "Docker",
-        "Python"
-      ],
-      "infinity_database": [
-        "Docker"
-      ],
-      "pasa": [
-        "Python"
-      ],
-      "lightagent_framework": [
-        "LLM",
-        "Python"
-      ],
-      "leon_ai_assistant": [
-        "Python",
-        "Docker"
-      ],
-      "modular_speech_to_speech_pipeline": [
-        "LLM"
       ]
     }
   },
-  "updated_at": "2026-07-22T01:02:15.929433+00:00",
-  "total_skills": 70
+  "updated_at": "2026-07-22T02:40:28.855110+00:00",
+  "total_skills": 69
 }
