@@ -584,11 +584,28 @@ def mark_connected_as_unverified() -> int:
 
 
 def get_python_alternative(entry_id: str) -> Optional[MCPServer]:
-    """Return the recorded Python/uvx alternative for an npm-only server, or None."""
+    """Return the recorded Python/uvx alternative for an npm-only server, or None.
+
+    Returns None if the alternative's runtime is also absent on this system,
+    preventing the UI from showing a 'Try X instead' link that would immediately
+    fail with runtime_missing again.
+    """
+    import shutil as _shutil
     srv = get_by_id(entry_id)
     if srv is None or not srv.python_alternative_id:
         return None
-    return get_by_id(srv.python_alternative_id)
+    alt = get_by_id(srv.python_alternative_id)
+    if alt is None:
+        return None
+    # Check that the alternative's runtime is actually present before surfacing it
+    if alt.runtime_required and alt.runtime_required not in ("none", ""):
+        if alt.runtime_required == "node":
+            runtime_bin = _shutil.which("node")
+        else:
+            runtime_bin = _shutil.which("python3") or _shutil.which("python")
+        if runtime_bin is None:
+            return None
+    return alt
 
 
 def get_by_capability(capability: str) -> list[MCPServer]:
