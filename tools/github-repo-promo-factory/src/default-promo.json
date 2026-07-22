@@ -1,0 +1,14 @@
+{
+  "owner": "edneycaleb-droid",
+  "repo": "fieldnote",
+  "url": "https://github.com/edneycaleb-droid/fieldnote",
+  "description": "A resilient, evidence-first video research and implementation harness.",
+  "stars": 0,
+  "forks": 0,
+  "openIssues": 0,
+  "language": "TypeScript",
+  "topics": ["ai", "research", "automation"],
+  "features": ["Evidence-first ingestion", "Local AI ready", "Durable run artifacts", "Automated validation"],
+  "tagline": "TURN CONTENT INTO CAPABILITY",
+  "accent": "#58f6d2"
+}
