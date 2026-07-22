@@ -4695,6 +4695,20 @@ def api_discovery_enqueue():
         return jsonify({"ok": False, "error": str(exc)}), 500
 
 
+@app.route("/api/enrichment/queue")
+def api_enrichment_queue():
+    """Return the current enrichment queue items, including last_error for failed entries."""
+    try:
+        import agents.discovery_enrichment as de
+        items = de.load_queue()
+        return jsonify({
+            "items":  items,
+            "count":  len(items),
+        })
+    except Exception as exc:
+        return jsonify({"items": [], "count": 0, "error": str(exc)}), 500
+
+
 @app.route("/api/discovery/enrichment/pause", methods=["POST"])
 def api_discovery_enrichment_pause():
     """Pause the enrichment scheduler."""

@@ -1286,6 +1286,12 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
 .qjob-delete-btn:hover { background: #2a0a0a; border-color: var(--red); }
 .qjob-delete-btn:disabled { opacity: .45; cursor: default; }
 .qjobs-empty { font-size: .8rem; color: var(--muted); text-align: center; padding: 14px 0; }
+.qjob-last-error { font-size: .69rem; color: #f87171; background: #1a0808;
+  border: 1px solid #3a1010; border-radius: 4px; padding: 1px 7px;
+  max-width: 28ch; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  cursor: default; }
+.qjob-section-label { font-size: .65rem; font-weight: 700; letter-spacing: .09em;
+  text-transform: uppercase; color: var(--muted); padding: 8px 2px 4px; }
 .qjobs-stale-note { font-size: .73rem; color: #a06030; background: #0f0800;
   border: 1px solid #2a1a00; border-radius: 8px; padding: 7px 11px; margin-bottom: 10px; }
 .qjobs-purge-btn { padding: 5px 13px; background: #1a0808; border: 1px solid #3a1010;
@@ -5462,8 +5468,11 @@ function toggleQjobs() {
 
 async function loadQueuedJobs() {
   try {
-    const data = await fetch('/api/jobs/queued').then(r => r.json());
-    renderQueuedJobs(data);
+    const [cpData, enData] = await Promise.all([
+      fetch('/api/jobs/queued').then(r => r.json()),
+      fetch('/api/enrichment/queue').then(r => r.json()).catch(() => ({items:[],count:0})),
+    ]);
+    renderQueuedJobs(cpData, enData);
   } catch(e) { /* silent */ }
 }
 
