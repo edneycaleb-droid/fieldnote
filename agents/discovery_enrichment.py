@@ -16,6 +16,10 @@ from typing import Any
 
 log = logging.getLogger("fieldnote.discovery_enrichment")
 
+# ── Constants ─────────────────────────────────────────────────────────────────
+
+MAX_RETRIES: int = 10  # Items exceeding this retry count are quarantined (dropped).
+
 # ── Paths ─────────────────────────────────────────────────────────────────────
 
 def _queue_path() -> str:
@@ -156,11 +160,24 @@ def dequeue_next(provider_available: bool = True) -> dict | None:
 
 
 def mark_failed(item: dict, reason: str) -> None:
-    """Exponential backoff: 5 min × 2^retry (±20% jitter), max 4 hours."""
+    """Exponential backoff: 5 min × 2^retry (±20% jitter), max 4 hours.
+
+    If retry_count exceeds MAX_RETRIES the item is permanently removed from the
+    queue (quarantined) to prevent an unbounded retry storm.
+    """
     items = load_queue()
     for i, q in enumerate(items):
         if q["full_name"] == item["full_name"]:
             retry = q.get("retry_count", 0) + 1
+            if retry > MAX_RETRIES:
+                log.warning(
+                    "Enrichment queue: %s exceeded MAX_RETRIES (%d) — "
+                    "removing from queue to prevent retry storm. Last error: %s",
+                    item["full_name"], MAX_RETRIES, str(reason)[:200],
+                )
+                items = [q2 for q2 in items if q2["full_name"] != item["full_name"]]
+                save_queue(items)
+                return
             base_secs = min(5 * 60 * (2 ** retry), 4 * 3600)
             jitter = base_secs * 0.2 * (random.random() * 2 - 1)
             delay = max(300, int(base_secs + jitter))
@@ -304,6 +321,13 @@ def _enrich_one(item: dict) -> None:
     try:
         skill_name, action = gd._save_discovered_skill(skill, repo, index)
         index = _a.load_index()
+
+        # Sync to GitHub (non-fatal)
+        try:
+            import agents.github_sync as gs
+            gs.sync_skill(skill_name, _a.SKILLS_DIR, index)
+        except Exception as e:
+            log.warning("GitHub sync failed for enriched skill %s: %s", skill_name, e)
 
         # Update discovery log to mark baseline cleared
         disc_log = gd.load_discovery_log()
