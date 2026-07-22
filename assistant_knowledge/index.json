@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "owner--repo",
+      "title": "Discovered: owner/repo",
+      "category": "discoveries",
+      "confidence": "verified",
+      "updated_at": "2026-07-22T13:03:53.838411+00:00",
+      "path": "discoveries/owner--repo.md"
+    },
+    {
       "slug": "huangjunsen0406--py-xiaozhi",
       "title": "Discovered: huangjunsen0406/py-xiaozhi",
       "category": "discoveries",
@@ -337,5 +345,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-22T00:46:57.133539+00:00"
+  "updated_at": "2026-07-22T13:03:53.961415+00:00"
 }
