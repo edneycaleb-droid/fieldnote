@@ -6201,8 +6201,11 @@ function renderHubCard(s) {
   if (state === 'not_installed' || state === 'missing_credential') {
     primaryBtn = `<button class="hc-btn hcbtn-install" id="hub-btn-primary-${esc(s.id)}"
       onclick="hubInstall('${esc(s.id)}')">⬇ Install</button>`;
-    // Proactively show the Python alternative for Node-required servers
-    if (s.runtime_required === 'node' && s.python_alternative_id) {
+    // Proactively show the Python alternative for Node-required servers,
+    // but only when Node itself is absent (not_installed). For missing_credential
+    // Node IS available — the user just needs to supply an API key, so showing
+    // "Try Python instead" would be misleading.
+    if (state === 'not_installed' && s.runtime_required === 'node' && s.python_alternative_id) {
       const altSrv = _hubData.find(a => a.id === s.python_alternative_id);
       altLink = _buildAltLink(s.python_alternative_id, altSrv ? altSrv.name : s.python_alternative_id);
     }
