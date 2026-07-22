@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "huggingface--speech-to-speech",
+      "title": "Discovered: huggingface/speech-to-speech",
+      "category": "discoveries",
+      "confidence": "inferred",
+      "updated_at": "2026-07-22T00:46:55.693433+00:00",
+      "path": "discoveries/huggingface--speech-to-speech.md"
+    },
+    {
       "slug": "leon-ai--leon",
       "title": "Discovered: leon-ai/leon",
       "category": "discoveries",
@@ -321,5 +329,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-22T00:46:54.160795+00:00"
+  "updated_at": "2026-07-22T00:46:55.697724+00:00"
 }
