@@ -1172,7 +1172,7 @@
       ]
     },
     "ai": {
-      "freq": 14,
+      "freq": 15,
       "skills": [
         "dify",
         "ragflow",
@@ -1187,7 +1187,8 @@
         "pasa",
         "sqlite_vector",
         "openmontage",
-        "leon"
+        "leon",
+        "speech_to_speech"
       ]
     },
     "AI workflow management": {
@@ -1781,10 +1782,11 @@
       ]
     },
     "python": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "r2r",
-        "pasa"
+        "pasa",
+        "speech_to_speech"
       ]
     },
     "question-answering": {
@@ -2835,9 +2837,10 @@
       ]
     },
     "assistant": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "leon"
+        "leon",
+        "speech_to_speech"
       ]
     },
     "Personal AI Assistant": {
@@ -2868,6 +2871,18 @@
       "freq": 1,
       "skills": [
         "leon_ai_assistant"
+      ]
+    },
+    "language-model": {
+      "freq": 1,
+      "skills": [
+        "speech_to_speech"
+      ]
+    },
+    "machine-learning": {
+      "freq": 1,
+      "skills": [
+        "speech_to_speech"
       ]
     }
   },
@@ -3305,7 +3320,7 @@
       ]
     },
     "docker": {
-      "freq": 9,
+      "freq": 10,
       "skills": [
         "dify",
         "ragflow",
@@ -3315,7 +3330,8 @@
         "mcp_registry_development_deployment",
         "awesome_mcp_servers",
         "forge",
-        "infinity"
+        "infinity",
+        "speech_to_speech"
       ]
     },
     "postgresql": {
@@ -3335,7 +3351,7 @@
       ]
     },
     "openai": {
-      "freq": 11,
+      "freq": 12,
       "skills": [
         "dify",
         "ragflow",
@@ -3347,7 +3363,8 @@
         "forge",
         "lightagent",
         "openmontage",
-        "leon"
+        "leon",
+        "speech_to_speech"
       ]
     },
     "agent": {
@@ -3479,13 +3496,14 @@
       ]
     },
     "huggingface": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "ragflow",
         "agentic_rag_for_dummies",
         "griptape",
         "trainer",
-        "pasa"
+        "pasa",
+        "speech_to_speech"
       ]
     },
     "elasticsearch": {
@@ -3768,10 +3786,11 @@
       ]
     },
     "machine-learning": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "rag_techniques",
-        "trainer"
+        "trainer",
+        "speech_to_speech"
       ]
     },
     "nlp": {
@@ -3781,7 +3800,7 @@
       ]
     },
     "python": {
-      "freq": 9,
+      "freq": 10,
       "skills": [
         "rag_techniques",
         "mcp_agent",
@@ -3791,7 +3810,8 @@
         "trainer",
         "lightagent",
         "openmontage",
-        "leon"
+        "leon",
+        "speech_to_speech"
       ]
     },
     "semantic-search": {
@@ -4587,10 +4607,11 @@
       ]
     },
     "vllm": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "forge",
-        "lightagent"
+        "lightagent",
+        "speech_to_speech"
       ]
     },
     "function-calling": {
@@ -4848,9 +4869,10 @@
       ]
     },
     "transformers": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "pasa"
+        "pasa",
+        "speech_to_speech"
       ]
     },
     "research": {
@@ -5203,9 +5225,10 @@
       ]
     },
     "assistant": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "leon"
+        "leon",
+        "speech_to_speech"
       ]
     },
     "bot": {
@@ -5260,6 +5283,42 @@
       "freq": 1,
       "skills": [
         "leon_ai_assistant"
+      ]
+    },
+    "numpy": {
+      "freq": 1,
+      "skills": [
+        "speech_to_speech"
+      ]
+    },
+    "language-model": {
+      "freq": 1,
+      "skills": [
+        "speech_to_speech"
+      ]
+    },
+    "speech": {
+      "freq": 1,
+      "skills": [
+        "speech_to_speech"
+      ]
+    },
+    "speech-synthesis": {
+      "freq": 1,
+      "skills": [
+        "speech_to_speech"
+      ]
+    },
+    "speech-to-text": {
+      "freq": 1,
+      "skills": [
+        "speech_to_speech"
+      ]
+    },
+    "speech-translation": {
+      "freq": 1,
+      "skills": [
+        "speech_to_speech"
       ]
     }
   },
@@ -7284,6 +7343,40 @@
         "architecture"
       ],
       "step_count": 12
+    },
+    "speech_to_speech": {
+      "concepts": [
+        "ai",
+        "assistant",
+        "language-model",
+        "machine-learning",
+        "python"
+      ],
+      "tools": [
+        "vllm",
+        "transformers",
+        "numpy",
+        "huggingface",
+        "docker",
+        "openai",
+        "assistant",
+        "language-model",
+        "machine-learning",
+        "python",
+        "speech",
+        "speech-synthesis",
+        "speech-to-text",
+        "speech-translation"
+      ],
+      "tags": [
+        "ai",
+        "assistant",
+        "language-model",
+        "machine-learning",
+        "python",
+        "llm"
+      ],
+      "step_count": 8
     }
   },
   "relationships": {
@@ -9183,6 +9276,9 @@
       ],
       "leon": [
         "openai"
+      ],
+      "speech_to_speech": [
+        "openai"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -9780,6 +9876,11 @@
         "ai",
         "openai",
         "automation"
+      ],
+      "speech_to_speech": [
+        "docker",
+        "openai",
+        "ai"
       ]
     },
     "dify_deployment": {
@@ -9917,6 +10018,12 @@
         "ai"
       ],
       "leon": [
+        "openai",
+        "ai"
+      ],
+      "speech_to_speech": [
+        "huggingface",
+        "docker",
         "openai",
         "ai"
       ]
@@ -10078,6 +10185,9 @@
       ],
       "leon_ai_assistant": [
         "Python"
+      ],
+      "speech_to_speech": [
+        "docker"
       ]
     },
     "lightrag_setup": {
@@ -10390,6 +10500,12 @@
         "python",
         "openai",
         "ai"
+      ],
+      "speech_to_speech": [
+        "python",
+        "openai",
+        "machine-learning",
+        "ai"
       ]
     },
     "advanced_retrieval_augmented_generation": {
@@ -10527,6 +10643,9 @@
       ],
       "leon_ai_assistant": [
         "Python"
+      ],
+      "speech_to_speech": [
+        "ai"
       ]
     },
     "fastapi_mcp_integration": {
@@ -10660,6 +10779,9 @@
       ],
       "leon": [
         "ai"
+      ],
+      "speech_to_speech": [
+        "ai"
       ]
     },
     "mcp_agent": {
@@ -10781,6 +10903,11 @@
         "ai"
       ],
       "leon": [
+        "python",
+        "openai",
+        "ai"
+      ],
+      "speech_to_speech": [
         "python",
         "openai",
         "ai"
@@ -10990,6 +11117,10 @@
       ],
       "leon": [
         "ai"
+      ],
+      "speech_to_speech": [
+        "docker",
+        "ai"
       ]
     },
     "mcp_registry_development_deployment": {
@@ -11033,6 +11164,9 @@
       ],
       "sqlite_vector_extension": [
         "Model Context Protocol (MCP)"
+      ],
+      "speech_to_speech": [
+        "docker"
       ]
     },
     "model_context_protocol_go": {
@@ -11158,6 +11292,10 @@
         "ai"
       ],
       "leon": [
+        "ai"
+      ],
+      "speech_to_speech": [
+        "docker",
         "ai"
       ]
     },
@@ -11444,6 +11582,12 @@
         "python",
         "openai",
         "ai"
+      ],
+      "speech_to_speech": [
+        "huggingface",
+        "python",
+        "openai",
+        "ai"
       ]
     },
     "griptape_framework": {
@@ -11690,6 +11834,12 @@
       "leon": [
         "python",
         "openai"
+      ],
+      "speech_to_speech": [
+        "docker",
+        "vllm",
+        "openai",
+        "python"
       ]
     },
     "forge_llm_tool_calling_framework": {
@@ -11760,6 +11910,9 @@
         "docker"
       ],
       "forge": [
+        "docker"
+      ],
+      "speech_to_speech": [
         "docker"
       ]
     },
@@ -11876,6 +12029,12 @@
       "leon": [
         "python",
         "ai"
+      ],
+      "speech_to_speech": [
+        "huggingface",
+        "python",
+        "machine-learning",
+        "ai"
       ]
     },
     "pasa": {
@@ -11978,6 +12137,12 @@
       ],
       "leon_ai_assistant": [
         "Python"
+      ],
+      "speech_to_speech": [
+        "huggingface",
+        "transformers",
+        "python",
+        "ai"
       ]
     },
     "paper_agent": {},
@@ -12062,6 +12227,11 @@
         "python",
         "openai",
         "ai-agent"
+      ],
+      "speech_to_speech": [
+        "vllm",
+        "openai",
+        "python"
       ]
     },
     "lightagent_framework": {
@@ -12183,6 +12353,9 @@
       ],
       "leon": [
         "ai"
+      ],
+      "speech_to_speech": [
+        "ai"
       ]
     },
     "sqlite_vector_extension": {
@@ -12298,6 +12471,11 @@
         "python",
         "openai",
         "ai"
+      ],
+      "speech_to_speech": [
+        "python",
+        "openai",
+        "ai"
       ]
     },
     "agentic_video_production": {
@@ -12372,6 +12550,12 @@
         "python",
         "openai",
         "ai"
+      ],
+      "speech_to_speech": [
+        "python",
+        "openai",
+        "ai",
+        "assistant"
       ]
     },
     "leon_ai_assistant": {
@@ -12444,8 +12628,101 @@
         "Memory Management",
         "Python"
       ]
+    },
+    "speech_to_speech": {
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "openai"
+      ],
+      "dify": [
+        "docker",
+        "openai",
+        "ai"
+      ],
+      "ragflow": [
+        "huggingface",
+        "docker",
+        "openai",
+        "ai"
+      ],
+      "lightrag": [
+        "docker"
+      ],
+      "rag_techniques": [
+        "python",
+        "openai",
+        "machine-learning",
+        "ai"
+      ],
+      "fastapi_mcp": [
+        "ai"
+      ],
+      "mcp_go": [
+        "ai"
+      ],
+      "mcp_agent": [
+        "python",
+        "openai",
+        "ai"
+      ],
+      "registry": [
+        "docker",
+        "ai"
+      ],
+      "mcp_registry_development_deployment": [
+        "docker"
+      ],
+      "awesome_mcp_servers": [
+        "docker",
+        "ai"
+      ],
+      "griptape": [
+        "huggingface",
+        "python",
+        "openai",
+        "ai"
+      ],
+      "forge": [
+        "docker",
+        "vllm",
+        "openai",
+        "python"
+      ],
+      "infinity": [
+        "docker"
+      ],
+      "trainer": [
+        "huggingface",
+        "python",
+        "machine-learning",
+        "ai"
+      ],
+      "pasa": [
+        "huggingface",
+        "transformers",
+        "python",
+        "ai"
+      ],
+      "lightagent": [
+        "vllm",
+        "openai",
+        "python"
+      ],
+      "sqlite_vector": [
+        "ai"
+      ],
+      "openmontage": [
+        "python",
+        "openai",
+        "ai"
+      ],
+      "leon": [
+        "python",
+        "openai",
+        "ai",
+        "assistant"
+      ]
     }
   },
-  "updated_at": "2026-07-22T00:42:41.408045+00:00",
-  "total_skills": 64
+  "updated_at": "2026-07-22T00:42:49.264421+00:00",
+  "total_skills": 65
 }
