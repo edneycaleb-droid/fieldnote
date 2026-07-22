@@ -2886,9 +2886,10 @@
       ]
     },
     "cross-platform": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "py_xiaozhi"
+        "py_xiaozhi",
+        "cross_platform_py_xiaozhi"
       ]
     },
     "edge-computing": {
@@ -2913,6 +2914,42 @@
       "freq": 1,
       "skills": [
         "py_xiaozhi"
+      ]
+    },
+    "multi-modal AI interaction": {
+      "freq": 1,
+      "skills": [
+        "cross_platform_py_xiaozhi"
+      ]
+    },
+    "real-time voice streaming": {
+      "freq": 1,
+      "skills": [
+        "cross_platform_py_xiaozhi"
+      ]
+    },
+    "Event-driven architecture": {
+      "freq": 1,
+      "skills": [
+        "cross_platform_py_xiaozhi"
+      ]
+    },
+    "Layered design": {
+      "freq": 1,
+      "skills": [
+        "cross_platform_py_xiaozhi"
+      ]
+    },
+    "Dependency injection": {
+      "freq": 1,
+      "skills": [
+        "cross_platform_py_xiaozhi"
+      ]
+    },
+    "Async first": {
+      "freq": 1,
+      "skills": [
+        "cross_platform_py_xiaozhi"
       ]
     }
   },
@@ -3725,10 +3762,11 @@
       ]
     },
     "uv": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "lightrag_setup",
-        "fastapi_mcp_integration"
+        "fastapi_mcp_integration",
+        "cross_platform_py_xiaozhi"
       ]
     },
     "LightRAG": {
@@ -5419,6 +5457,60 @@
       "freq": 1,
       "skills": [
         "py_xiaozhi"
+      ]
+    },
+    "py_xiaozhi": {
+      "freq": 1,
+      "skills": [
+        "cross_platform_py_xiaozhi"
+      ]
+    },
+    "asyncio": {
+      "freq": 1,
+      "skills": [
+        "cross_platform_py_xiaozhi"
+      ]
+    },
+    "Opus codec": {
+      "freq": 1,
+      "skills": [
+        "cross_platform_py_xiaozhi"
+      ]
+    },
+    "MCP tool server": {
+      "freq": 1,
+      "skills": [
+        "cross_platform_py_xiaozhi"
+      ]
+    },
+    "WebSocket/MQTT protocol": {
+      "freq": 1,
+      "skills": [
+        "cross_platform_py_xiaozhi"
+      ]
+    },
+    "PySide6": {
+      "freq": 1,
+      "skills": [
+        "cross_platform_py_xiaozhi"
+      ]
+    },
+    "GPIO interface": {
+      "freq": 1,
+      "skills": [
+        "cross_platform_py_xiaozhi"
+      ]
+    },
+    "Sherpa-ONNX offline models": {
+      "freq": 1,
+      "skills": [
+        "cross_platform_py_xiaozhi"
+      ]
+    },
+    "ESP32": {
+      "freq": 1,
+      "skills": [
+        "cross_platform_py_xiaozhi"
       ]
     }
   },
@@ -7514,6 +7606,38 @@
         "llm"
       ],
       "step_count": 8
+    },
+    "cross_platform_py_xiaozhi": {
+      "concepts": [
+        "multi-modal AI interaction",
+        "cross-platform",
+        "real-time voice streaming",
+        "Event-driven architecture",
+        "Layered design",
+        "Dependency injection",
+        "Async first"
+      ],
+      "tools": [
+        "py_xiaozhi",
+        "asyncio",
+        "Opus codec",
+        "MCP tool server",
+        "WebSocket/MQTT protocol",
+        "uv",
+        "PySide6",
+        "GPIO interface",
+        "Sherpa-ONNX offline models",
+        "ESP32"
+      ],
+      "tags": [
+        "cross-platform",
+        "multi-modal AI",
+        "real-time voice streaming",
+        "edge-computing",
+        "embodied-ai",
+        "esp32"
+      ],
+      "step_count": 6
     }
   },
   "relationships": {
@@ -10383,6 +10507,9 @@
       ],
       "leon_ai_assistant": [
         "Docker"
+      ],
+      "cross_platform_py_xiaozhi": [
+        "uv"
       ]
     },
     "graphrag": {
@@ -10857,6 +10984,9 @@
       ],
       "xcodebuildmcp_installation": [
         "Model Context Protocol"
+      ],
+      "cross_platform_py_xiaozhi": [
+        "uv"
       ]
     },
     "mcp_go": {
@@ -12963,9 +13093,23 @@
       ],
       "speech_to_speech": [
         "python"
+      ],
+      "cross_platform_py_xiaozhi": [
+        "cross-platform"
+      ]
+    },
+    "cross_platform_py_xiaozhi": {
+      "lightrag_setup": [
+        "uv"
+      ],
+      "fastapi_mcp_integration": [
+        "uv"
+      ],
+      "py_xiaozhi": [
+        "cross-platform"
       ]
     }
   },
-  "updated_at": "2026-07-22T00:44:15.846179+00:00",
-  "total_skills": 66
+  "updated_at": "2026-07-22T00:45:35.181313+00:00",
+  "total_skills": 67
 }
