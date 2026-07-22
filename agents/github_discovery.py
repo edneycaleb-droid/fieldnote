@@ -913,6 +913,7 @@ def _save_discovered_skill(skill: dict, repo: dict, index: dict) -> tuple[str, s
 
     # Strip badge noise from steps before any further processing so that
     # AI responses that echo baseline badge strings are cleaned at the boundary.
+    _STEPS_MIN = 3  # must match _gate_steps minimum in skill_quality.py
     if "steps" in skill:
         raw_steps = skill.get("steps") or []
         filtered = _filter_badge_steps(raw_steps)
@@ -923,6 +924,17 @@ def _save_discovered_skill(skill: dict, repo: dict, index: dict) -> tuple[str, s
                 "quality gate will flag this skill as too_few_steps",
                 len(raw_steps),
                 skill.get("skill_name") or repo.get("full_name", "?"),
+            )
+        # Post-filter quality gate enforcement: if badge filtering caused the step
+        # count to drop from gate-passing (≥ minimum) to below the minimum, raise
+        # so the caller can preserve the baseline rather than writing a skill that
+        # would have been DENY'd if quality_gate had seen the post-filter list.
+        if len(raw_steps) >= _STEPS_MIN and len(filtered) < _STEPS_MIN:
+            raise ValueError(
+                f"Post-badge-filter steps gate failed for "
+                f"'{skill.get('skill_name') or repo.get('full_name', '?')}': "
+                f"badge filtering reduced {len(raw_steps)} steps to {len(filtered)} "
+                f"(minimum is {_STEPS_MIN}); caller should preserve the baseline"
             )
         skill = {**skill, "steps": filtered}
 
@@ -971,6 +983,16 @@ def _save_discovered_skill(skill: dict, repo: dict, index: dict) -> tuple[str, s
                 "quality gate will flag this skill as too_few_steps",
                 len(raw_steps2),
                 skill.get("skill_name") or repo.get("full_name", "?"),
+            )
+        # Second enforcement pass: the enhance re-judge path may have introduced
+        # a new badge-dominated steps list.  Enforce again so the rejudge path
+        # cannot bypass the gate either.
+        if len(raw_steps2) >= _STEPS_MIN and len(filtered2) < _STEPS_MIN:
+            raise ValueError(
+                f"Post-rejudge badge-filter steps gate failed for "
+                f"'{skill.get('skill_name') or repo.get('full_name', '?')}': "
+                f"badge filtering reduced {len(raw_steps2)} steps to {len(filtered2)} "
+                f"(minimum is {_STEPS_MIN}); caller should preserve the baseline"
             )
         skill = {**skill, "steps": filtered2}
 
