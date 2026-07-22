@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "huangjunsen0406--py-xiaozhi",
+      "title": "Discovered: huangjunsen0406/py-xiaozhi",
+      "category": "discoveries",
+      "confidence": "verified",
+      "updated_at": "2026-07-22T00:46:57.129008+00:00",
+      "path": "discoveries/huangjunsen0406--py-xiaozhi.md"
+    },
+    {
       "slug": "huggingface--speech-to-speech",
       "title": "Discovered: huggingface/speech-to-speech",
       "category": "discoveries",
@@ -329,5 +337,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-22T00:46:55.697724+00:00"
+  "updated_at": "2026-07-22T00:46:57.133539+00:00"
 }
