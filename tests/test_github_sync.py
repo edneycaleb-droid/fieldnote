@@ -30,9 +30,17 @@ class GitHubSkillSyncTests(unittest.TestCase):
 
     def test_discovery_paths_do_not_resync_the_directory_name(self) -> None:
         root = Path(__file__).resolve().parents[1]
-        for relative in ("agents/github_discovery.py", "agents/discovery_enrichment.py"):
+        expected_rendered_syncs = {
+            "agents/github_discovery.py": 2,
+            "agents/discovery_enrichment.py": 1,
+        }
+        for relative, minimum_count in expected_rendered_syncs.items():
             source = (root / relative).read_text(encoding="utf-8")
             self.assertNotIn("sync_skill(skill_name, _a.SKILLS_DIR", source)
+            self.assertGreaterEqual(
+                source.count("sync_skill(skill_name, _a._read_existing_markdown(skill_name)"),
+                minimum_count,
+            )
 
 
 if __name__ == "__main__":
