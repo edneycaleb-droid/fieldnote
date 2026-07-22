@@ -2286,11 +2286,23 @@ def api_mcp_hub_import():
 
 # ── MCP Hub scheduled job helpers ─────────────────────────────────────────────
 
+# Wall-clock deadline (seconds) imposed by the caller on each verify_server call.
+# This is a module-level var so tests can override it without monkey-patching internals.
+_VERIFIER_DEADLINE_S: int = 30
+
+
 def _mcp_health_check() -> dict:
-    """Verify all enabled hub servers and update their health states."""
+    """Verify all enabled hub servers and update their health states.
+
+    Each verify_server call is dispatched into a one-shot ThreadPoolExecutor so
+    that a verifier that blocks in the OS (e.g. a hung wait()) is still bounded
+    by _VERIFIER_DEADLINE_S.  A deadline breach is treated the same as a crash:
+    log a warning and continue to the next server.
+    """
     try:
         from agents.mcp_registry import load_registry, update_server
         from agents.mcp_verifier import verify_server
+        from concurrent.futures import ThreadPoolExecutor, TimeoutError as _FuturesTimeout
         from datetime import datetime, timezone
         servers  = load_registry()
         checked  = 0
@@ -2299,11 +2311,23 @@ def _mcp_health_check() -> dict:
             if not srv.enabled or srv.health_state in ("not_installed", "quarantined"):
                 continue
             prev_state = srv.health_state
+            _pool = ThreadPoolExecutor(max_workers=1)
             try:
-                result = verify_server(srv)
+                fut = _pool.submit(verify_server, srv)
+                result = fut.result(timeout=_VERIFIER_DEADLINE_S)
+            except _FuturesTimeout:
+                log.warning(
+                    "mcp_health: verifier deadline exceeded for %s (%ds); skipping",
+                    srv.id, _VERIFIER_DEADLINE_S,
+                )
+                _pool.shutdown(wait=False, cancel_futures=True)
+                continue
             except Exception as srv_exc:
                 log.warning("mcp_health: verifier crashed for %s: %s", srv.id, srv_exc)
+                _pool.shutdown(wait=False)
                 continue
+            else:
+                _pool.shutdown(wait=False)
             now_iso = datetime.now(timezone.utc).isoformat()
             new_state = "connected" if result.ok else (
                 "runtime_missing" if result.error_code == "runtime_missing" else "offline"
@@ -4273,6 +4297,13 @@ def api_skill_enrich(name: str):
 
         # Push to the very front of the enrichment queue
         de.enqueue_priority(full_name, stars, fingerprint)
+
+        # Clear any stale error from a prior attempt so the poll doesn't
+        # immediately terminate with a false failure on the new run.
+        _idx_pre = load_index()
+        if name in _idx_pre:
+            _idx_pre[name].pop("_enrich_error", None)
+            save_index(_idx_pre)
 
         # Fire an immediate enrichment attempt in a background thread
         queue_item = {
