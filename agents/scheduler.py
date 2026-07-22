@@ -66,6 +66,18 @@ class SchedulerAgent:
         self._started_at: Optional[str] = None
         self._wake_callbacks: list[Callable] = []
 
+    # ── Wake callbacks ────────────────────────────────────────────────────────
+
+    def register_wake_callback(self, fn: Callable) -> None:
+        """Register *fn* to be called when the scheduler detects a clock jump
+        (i.e. the container was paused/resumed without a full restart).
+
+        All wake callbacks are fired from the scheduler thread before the next
+        job tick is processed, so they should be fast and non-blocking.
+        """
+        with self._lock:
+            self._wake_callbacks.append(fn)
+
     # ── Registration ──────────────────────────────────────────────────────────
 
     def register(self, name: str, description: str, interval_hours: float,
@@ -137,8 +149,32 @@ class SchedulerAgent:
 
     def _loop(self) -> None:
         TICK = 30  # seconds between scheduler wakeups
+        # Clock-drift threshold: if a tick takes more than 2× TICK the process
+        # was almost certainly paused (Replit sleep / container freeze).
+        DRIFT_THRESHOLD = TICK * 2
+        last_tick = time.time()
+
         while not self._stop_event.is_set():
             now = time.time()
+            elapsed = now - last_tick
+            last_tick = now
+
+            # Detect container pause / Replit sleep: wall-clock jumped forward
+            # by far more than the expected tick interval.
+            if elapsed > DRIFT_THRESHOLD:
+                log.warning(
+                    "Scheduler: clock drift detected (%.0f s gap) — "
+                    "container was likely paused; firing %d wake callback(s)",
+                    elapsed, len(self._wake_callbacks),
+                )
+                with self._lock:
+                    cbs = list(self._wake_callbacks)
+                for cb in cbs:
+                    try:
+                        cb()
+                    except Exception as exc:
+                        log.error("Scheduler: wake callback %r raised: %s", cb, exc)
+
             with self._lock:
                 due = [j for j in self._jobs
                        if j.enabled

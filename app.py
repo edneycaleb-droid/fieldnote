@@ -2284,6 +2284,24 @@ def api_mcp_hub_import():
     return jsonify({"ok": True, **report})
 
 
+@app.route("/api/mcp-hub/reset-health", methods=["POST"])
+def api_mcp_hub_reset_health():
+    """Reset all enabled 'connected' servers to 'unverified' so the next health-check
+    tick re-validates them.  Useful for external watchdogs or after a container resume
+    when the scheduler wake-callback may not have fired (e.g. single-shot invocation).
+
+    Returns JSON: {"ok": true, "reset": <count>}
+    """
+    try:
+        from agents.mcp_registry import mark_connected_as_unverified
+        reset = mark_connected_as_unverified()
+        log.info("/api/mcp-hub/reset-health: %d server(s) reset to 'unverified'", reset)
+        return jsonify({"ok": True, "reset": reset})
+    except Exception as exc:
+        log.error("/api/mcp-hub/reset-health error: %s", exc)
+        return jsonify({"ok": False, "error": str(exc)}), 500
+
+
 # ── MCP Hub scheduled job helpers ─────────────────────────────────────────────
 
 # Wall-clock deadline (seconds) imposed by the caller on each verify_server call.
@@ -4826,6 +4844,24 @@ def _boot_scheduler():
     )
 
     s.start()
+
+    # Wake-from-sleep guard: if the container is paused and resumed without a
+    # full restart the registry may still hold stale 'connected' entries that
+    # were never reset this session.  The scheduler detects the resulting clock
+    # drift and fires this callback so the first health-check tick after wake
+    # resolves every badge back to the true state.
+    try:
+        from agents.mcp_registry import mark_connected_as_unverified as _mark_unverified_wake
+        def _on_scheduler_wake():
+            reset = _mark_unverified_wake()
+            if reset:
+                log.info(
+                    "_boot_scheduler: wake detected — %d MCP server(s) reset to "
+                    "'unverified' (pending next health-check tick)", reset,
+                )
+        s.register_wake_callback(_on_scheduler_wake)
+    except Exception as _wce:
+        log.warning("_boot_scheduler: could not register wake callback: %s", _wce)
 
     # File watcher: push within seconds of any file change
     code_sync.start()
