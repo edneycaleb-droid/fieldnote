@@ -98,7 +98,7 @@
       ]
     },
     "agent": {
-      "freq": 19,
+      "freq": 18,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
@@ -109,8 +109,7 @@
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
         "dify",
         "agentic_rag_for_dummies",
-        "openmontage",
-        "openakita"
+        "openmontage"
       ]
     },
     "other": {
@@ -461,10 +460,9 @@
       ]
     },
     "claw": {
-      "freq": 4,
+      "freq": 3,
       "skills": [
-        "this_100_self_improving_ai_agent_is_insane_just_wa",
-        "openakita"
+        "this_100_self_improving_ai_agent_is_insane_just_wa"
       ]
     },
     "skills": {
@@ -1174,7 +1172,7 @@
       ]
     },
     "ai": {
-      "freq": 16,
+      "freq": 15,
       "skills": [
         "dify",
         "ragflow",
@@ -1190,8 +1188,7 @@
         "sqlite_vector",
         "openmontage",
         "leon",
-        "speech_to_speech",
-        "openakita"
+        "speech_to_speech"
       ]
     },
     "AI workflow management": {
@@ -1463,11 +1460,12 @@
       ]
     },
     "LLM": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "graphrag_system",
         "r2r",
-        "lightagent_framework"
+        "lightagent_framework",
+        "modular_speech_to_speech_pipeline"
       ]
     },
     "agentic-rag": {
@@ -2600,9 +2598,10 @@
       ]
     },
     "Modularity": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "lightagent_framework"
+        "lightagent_framework",
+        "modular_speech_to_speech_pipeline"
       ]
     },
     "Multi-Agent Collaboration": {
@@ -2840,11 +2839,10 @@
       ]
     },
     "assistant": {
-      "freq": 3,
+      "freq": 2,
       "skills": [
         "leon",
-        "speech_to_speech",
-        "openakita"
+        "speech_to_speech"
       ]
     },
     "Personal AI Assistant": {
@@ -2889,77 +2887,82 @@
         "speech_to_speech"
       ]
     },
-    "cross-platform": {
-      "freq": 2,
-      "skills": [
-        "py_xiaozhi",
-        "cross_platform_py_xiaozhi"
-      ]
-    },
-    "edge-computing": {
+    "Low-Latency": {
       "freq": 1,
       "skills": [
-        "py_xiaozhi"
+        "modular_speech_to_speech_pipeline"
       ]
     },
-    "embodied-ai": {
+    "Local Inference": {
       "freq": 1,
       "skills": [
-        "py_xiaozhi"
+        "modular_speech_to_speech_pipeline"
       ]
     },
-    "esp32": {
+    "Modular Pipeline": {
       "freq": 1,
       "skills": [
-        "py_xiaozhi"
+        "modular_speech_to_speech_pipeline"
       ]
     },
-    "esp32-s3": {
+    "OpenAI Realtime Protocol": {
       "freq": 1,
       "skills": [
-        "py_xiaozhi"
+        "modular_speech_to_speech_pipeline"
       ]
     },
-    "multi-modal AI interaction": {
+    "Open-Source Models": {
       "freq": 1,
       "skills": [
-        "cross_platform_py_xiaozhi"
+        "modular_speech_to_speech_pipeline"
       ]
     },
-    "real-time voice streaming": {
+    "Self-hosted Servers": {
       "freq": 1,
       "skills": [
-        "cross_platform_py_xiaozhi"
+        "modular_speech_to_speech_pipeline"
       ]
     },
-    "Event-driven architecture": {
+    "Speech-to-Text (STT)": {
       "freq": 1,
       "skills": [
-        "cross_platform_py_xiaozhi"
+        "modular_speech_to_speech_pipeline"
       ]
     },
-    "Layered design": {
+    "Speech-to-Speech": {
       "freq": 1,
       "skills": [
-        "cross_platform_py_xiaozhi"
+        "modular_speech_to_speech_pipeline"
       ]
     },
-    "Dependency injection": {
+    "Text-to-Speech (TTS)": {
       "freq": 1,
       "skills": [
-        "cross_platform_py_xiaozhi"
+        "modular_speech_to_speech_pipeline"
       ]
     },
-    "Async first": {
+    "Voice Activity Detection (VAD)": {
       "freq": 1,
       "skills": [
-        "cross_platform_py_xiaozhi"
+        "modular_speech_to_speech_pipeline"
       ]
     },
-    "automation": {
+    "WebSocket API": {
       "freq": 1,
       "skills": [
-        "openakita"
+        "modular_speech_to_speech_pipeline"
+      ]
+    },
+    "Pip Extras": {
+      "freq": 1,
+      "skills": [
+        "modular_speech_to_speech_pipeline"
+      ]
+    },
+    "CUDA Dependencies": {
+      "freq": 1,
+      "skills": [
+        "modular_speech_to_speech_pipeline"
       ]
     }
   },
@@ -3108,7 +3111,7 @@
       ]
     },
     "anthropic": {
-      "freq": 11,
+      "freq": 10,
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
@@ -3116,8 +3119,7 @@
         "r2r",
         "agentic_rag_for_dummies",
         "griptape",
-        "forge",
-        "openakita"
+        "forge"
       ]
     },
     "pip": {
@@ -3429,7 +3431,7 @@
       ]
     },
     "openai": {
-      "freq": 13,
+      "freq": 12,
       "skills": [
         "dify",
         "ragflow",
@@ -3442,17 +3444,15 @@
         "lightagent",
         "openmontage",
         "leon",
-        "speech_to_speech",
-        "openakita"
+        "speech_to_speech"
       ]
     },
     "agent": {
-      "freq": 4,
+      "freq": 3,
       "skills": [
         "dify",
         "agentic_rag_for_dummies",
-        "openmontage",
-        "openakita"
+        "openmontage"
       ]
     },
     "agentic-ai": {
@@ -3479,11 +3479,10 @@
       ]
     },
     "automation": {
-      "freq": 3,
+      "freq": 2,
       "skills": [
         "dify",
-        "leon",
-        "openakita"
+        "leon"
       ]
     },
     "claude": {
@@ -3570,12 +3569,10 @@
       ]
     },
     "gemini": {
-      "freq": 4,
+      "freq": 2,
       "skills": [
         "ragflow",
-        "agentic_rag_for_dummies",
-        "py_xiaozhi",
-        "openakita"
+        "agentic_rag_for_dummies"
       ]
     },
     "huggingface": {
@@ -3777,11 +3774,10 @@
       ]
     },
     "uv": {
-      "freq": 3,
+      "freq": 2,
       "skills": [
         "lightrag_setup",
-        "fastapi_mcp_integration",
-        "cross_platform_py_xiaozhi"
+        "fastapi_mcp_integration"
       ]
     },
     "LightRAG": {
@@ -3884,7 +3880,7 @@
       ]
     },
     "python": {
-      "freq": 12,
+      "freq": 10,
       "skills": [
         "rag_techniques",
         "mcp_agent",
@@ -3895,9 +3891,7 @@
         "lightagent",
         "openmontage",
         "leon",
-        "speech_to_speech",
-        "py_xiaozhi",
-        "openakita"
+        "speech_to_speech"
       ]
     },
     "semantic-search": {
@@ -3946,7 +3940,7 @@
       ]
     },
     "mcp": {
-      "freq": 8,
+      "freq": 7,
       "skills": [
         "fastapi_mcp",
         "mcp_agent",
@@ -3954,16 +3948,14 @@
         "xcodebuildmcp",
         "awesome_mcp_servers",
         "xcodebuildmcp_installation",
-        "lightagent",
-        "py_xiaozhi"
+        "lightagent"
       ]
     },
     "mcp-server": {
-      "freq": 3,
+      "freq": 2,
       "skills": [
         "fastapi_mcp",
-        "xcodebuildmcp",
-        "py_xiaozhi"
+        "xcodebuildmcp"
       ]
     },
     "mcp-servers": {
@@ -4132,9 +4124,10 @@
       ]
     },
     "OpenAI API": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "r2r"
+        "r2r",
+        "modular_speech_to_speech_pipeline"
       ]
     },
     "ko": {
@@ -5313,11 +5306,10 @@
       ]
     },
     "assistant": {
-      "freq": 3,
+      "freq": 2,
       "skills": [
         "leon",
-        "speech_to_speech",
-        "openakita"
+        "speech_to_speech"
       ]
     },
     "bot": {
@@ -5410,148 +5402,52 @@
         "speech_to_speech"
       ]
     },
-    "cross-platform": {
+    "Silero VAD": {
       "freq": 1,
       "skills": [
-        "py_xiaozhi"
+        "modular_speech_to_speech_pipeline"
       ]
     },
-    "edge-computing": {
+    "Parakeet TDT": {
       "freq": 1,
       "skills": [
-        "py_xiaozhi"
+        "modular_speech_to_speech_pipeline"
       ]
     },
-    "embodied-ai": {
+    "Qwen3-TTS": {
       "freq": 1,
       "skills": [
-        "py_xiaozhi"
+        "modular_speech_to_speech_pipeline"
       ]
     },
-    "esp32": {
+    "llama.cpp": {
       "freq": 1,
       "skills": [
-        "py_xiaozhi"
+        "modular_speech_to_speech_pipeline"
       ]
     },
-    "esp32-s3": {
+    "vLLM": {
       "freq": 1,
       "skills": [
-        "py_xiaozhi"
+        "modular_speech_to_speech_pipeline"
       ]
     },
-    "iot": {
+    "Transformers": {
       "freq": 1,
       "skills": [
-        "py_xiaozhi"
+        "modular_speech_to_speech_pipeline"
       ]
     },
-    "mcp-client": {
+    "llama-cpp-python": {
       "freq": 1,
       "skills": [
-        "py_xiaozhi"
+        "modular_speech_to_speech_pipeline"
       ]
     },
-    "multi-modal": {
+    "OpenAI Realtime WebSocket API": {
       "freq": 1,
       "skills": [
-        "py_xiaozhi"
-      ]
-    },
-    "raspberry-pi": {
-      "freq": 1,
-      "skills": [
-        "py_xiaozhi"
-      ]
-    },
-    "robotics": {
-      "freq": 1,
-      "skills": [
-        "py_xiaozhi"
-      ]
-    },
-    "voice-assistant": {
-      "freq": 1,
-      "skills": [
-        "py_xiaozhi"
-      ]
-    },
-    "py_xiaozhi": {
-      "freq": 1,
-      "skills": [
-        "cross_platform_py_xiaozhi"
-      ]
-    },
-    "asyncio": {
-      "freq": 1,
-      "skills": [
-        "cross_platform_py_xiaozhi"
-      ]
-    },
-    "Opus codec": {
-      "freq": 1,
-      "skills": [
-        "cross_platform_py_xiaozhi"
-      ]
-    },
-    "MCP tool server": {
-      "freq": 1,
-      "skills": [
-        "cross_platform_py_xiaozhi"
-      ]
-    },
-    "WebSocket/MQTT protocol": {
-      "freq": 1,
-      "skills": [
-        "cross_platform_py_xiaozhi"
-      ]
-    },
-    "PySide6": {
-      "freq": 1,
-      "skills": [
-        "cross_platform_py_xiaozhi"
-      ]
-    },
-    "GPIO interface": {
-      "freq": 1,
-      "skills": [
-        "cross_platform_py_xiaozhi"
-      ]
-    },
-    "Sherpa-ONNX offline models": {
-      "freq": 1,
-      "skills": [
-        "cross_platform_py_xiaozhi"
-      ]
-    },
-    "ESP32": {
-      "freq": 1,
-      "skills": [
-        "cross_platform_py_xiaozhi"
-      ]
-    },
-    "claw": {
-      "freq": 1,
-      "skills": [
-        "openakita"
-      ]
-    },
-    "clawd": {
-      "freq": 1,
-      "skills": [
-        "openakita"
-      ]
-    },
-    "clawdbot": {
-      "freq": 1,
-      "skills": [
-        "openakita"
-      ]
-    },
-    "openclaw": {
-      "freq": 1,
-      "skills": [
-        "openakita"
+        "modular_speech_to_speech_pipeline"
       ]
     }
   },
@@ -7611,106 +7507,46 @@
       ],
       "step_count": 8
     },
-    "py_xiaozhi": {
+    "modular_speech_to_speech_pipeline": {
       "concepts": [
-        "cross-platform",
-        "edge-computing",
-        "embodied-ai",
-        "esp32",
-        "esp32-s3"
+        "Low-Latency",
+        "Local Inference",
+        "LLM",
+        "Modular Pipeline",
+        "Modularity",
+        "OpenAI Realtime Protocol",
+        "Open-Source Models",
+        "Self-hosted Servers",
+        "Speech-to-Text (STT)",
+        "Speech-to-Speech",
+        "Text-to-Speech (TTS)",
+        "Voice Activity Detection (VAD)",
+        "WebSocket API",
+        "Pip Extras",
+        "CUDA Dependencies"
       ],
       "tools": [
-        "gemini",
-        "cross-platform",
-        "edge-computing",
-        "embodied-ai",
-        "esp32",
-        "esp32-s3",
-        "iot",
-        "mcp",
-        "mcp-client",
-        "mcp-server",
-        "multi-modal",
-        "python",
-        "raspberry-pi",
-        "robotics",
-        "voice-assistant"
+        "Silero VAD",
+        "Parakeet TDT",
+        "OpenAI API",
+        "Qwen3-TTS",
+        "llama.cpp",
+        "vLLM",
+        "Transformers",
+        "llama-cpp-python",
+        "OpenAI Realtime WebSocket API"
       ],
       "tags": [
-        "cross-platform",
-        "edge-computing",
-        "embodied-ai",
-        "esp32",
-        "esp32-s3",
-        "python",
-        "ai",
+        "speech-processing",
+        "ai-agents",
+        "nlp",
+        "tts",
+        "stt",
+        "modularity",
+        "huggingface",
         "llm"
       ],
-      "step_count": 8
-    },
-    "cross_platform_py_xiaozhi": {
-      "concepts": [
-        "multi-modal AI interaction",
-        "cross-platform",
-        "real-time voice streaming",
-        "Event-driven architecture",
-        "Layered design",
-        "Dependency injection",
-        "Async first"
-      ],
-      "tools": [
-        "py_xiaozhi",
-        "asyncio",
-        "Opus codec",
-        "MCP tool server",
-        "WebSocket/MQTT protocol",
-        "uv",
-        "PySide6",
-        "GPIO interface",
-        "Sherpa-ONNX offline models",
-        "ESP32"
-      ],
-      "tags": [
-        "cross-platform",
-        "multi-modal AI",
-        "real-time voice streaming",
-        "edge-computing",
-        "embodied-ai",
-        "esp32"
-      ],
-      "step_count": 6
-    },
-    "openakita": {
-      "concepts": [
-        "agent",
-        "ai",
-        "assistant",
-        "automation",
-        "claw"
-      ],
-      "tools": [
-        "anthropic",
-        "gemini",
-        "openai",
-        "agent",
-        "assistant",
-        "automation",
-        "claw",
-        "clawd",
-        "clawdbot",
-        "openclaw",
-        "python"
-      ],
-      "tags": [
-        "agent",
-        "ai",
-        "assistant",
-        "automation",
-        "claw",
-        "python",
-        "llm"
-      ],
-      "step_count": 8
+      "step_count": 12
     }
   },
   "relationships": {
@@ -7829,9 +7665,6 @@
       ],
       "openmontage": [
         "claude"
-      ],
-      "openakita": [
-        "anthropic"
       ]
     },
     "100_hours_of_hermes_agent_lessons_in_19_minutes": {
@@ -7929,9 +7762,6 @@
         "Claude"
       ],
       "openmontage": [
-        "agent"
-      ],
-      "openakita": [
         "agent"
       ]
     },
@@ -8093,8 +7923,8 @@
         "Docker",
         "Python"
       ],
-      "openakita": [
-        "agent"
+      "modular_speech_to_speech_pipeline": [
+        "LLM"
       ]
     },
     "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
@@ -8420,9 +8250,6 @@
         "OpenAI"
       ],
       "forge": [
-        "anthropic"
-      ],
-      "openakita": [
         "anthropic"
       ]
     },
@@ -8808,10 +8635,6 @@
         "Docker",
         "Git",
         "Python"
-      ],
-      "openakita": [
-        "claw",
-        "agent"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -8931,9 +8754,6 @@
       ],
       "leon_ai_assistant": [
         "Python"
-      ],
-      "openakita": [
-        "agent"
       ]
     },
     "new_hermes_paperclip_ai_agent_update_is_insane": {
@@ -9159,9 +8979,6 @@
       ],
       "openmontage": [
         "claude"
-      ],
-      "openakita": [
-        "anthropic"
       ]
     },
     "you_need_to_use_hermes_right_now_goodbye_openclaw": {
@@ -9344,10 +9161,8 @@
         "Docker",
         "Python"
       ],
-      "openakita": [
-        "anthropic",
-        "openclaw",
-        "agent"
+      "modular_speech_to_speech_pipeline": [
+        "LLM"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -9497,6 +9312,9 @@
       "leon_ai_assistant": [
         "Docker",
         "Python"
+      ],
+      "modular_speech_to_speech_pipeline": [
+        "LLM"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -9641,8 +9459,8 @@
       "speech_to_speech": [
         "openai"
       ],
-      "openakita": [
-        "openai"
+      "modular_speech_to_speech_pipeline": [
+        "LLM"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -10029,8 +9847,8 @@
       "leon_ai_assistant": [
         "Docker"
       ],
-      "openakita": [
-        "agent"
+      "modular_speech_to_speech_pipeline": [
+        "LLM"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -10248,12 +10066,6 @@
         "docker",
         "openai",
         "ai"
-      ],
-      "openakita": [
-        "ai",
-        "openai",
-        "automation",
-        "agent"
       ]
     },
     "dify_deployment": {
@@ -10397,14 +10209,6 @@
       "speech_to_speech": [
         "huggingface",
         "docker",
-        "openai",
-        "ai"
-      ],
-      "py_xiaozhi": [
-        "gemini"
-      ],
-      "openakita": [
-        "gemini",
         "openai",
         "ai"
       ]
@@ -10624,9 +10428,6 @@
       ],
       "leon_ai_assistant": [
         "Docker"
-      ],
-      "cross_platform_py_xiaozhi": [
-        "uv"
       ]
     },
     "graphrag": {
@@ -10777,6 +10578,9 @@
       ],
       "leon_ai_assistant": [
         "Python"
+      ],
+      "modular_speech_to_speech_pipeline": [
+        "LLM"
       ]
     },
     "rag_techniques": {
@@ -10889,14 +10693,6 @@
         "python",
         "openai",
         "machine-learning",
-        "ai"
-      ],
-      "py_xiaozhi": [
-        "python"
-      ],
-      "openakita": [
-        "python",
-        "openai",
         "ai"
       ]
     },
@@ -11038,13 +10834,6 @@
       ],
       "speech_to_speech": [
         "ai"
-      ],
-      "py_xiaozhi": [
-        "mcp-server",
-        "mcp"
-      ],
-      "openakita": [
-        "ai"
       ]
     },
     "fastapi_mcp_integration": {
@@ -11109,9 +10898,6 @@
       ],
       "xcodebuildmcp_installation": [
         "Model Context Protocol"
-      ],
-      "cross_platform_py_xiaozhi": [
-        "uv"
       ]
     },
     "mcp_go": {
@@ -11183,9 +10969,6 @@
         "ai"
       ],
       "speech_to_speech": [
-        "ai"
-      ],
-      "openakita": [
         "ai"
       ]
     },
@@ -11316,16 +11099,6 @@
         "python",
         "openai",
         "ai"
-      ],
-      "py_xiaozhi": [
-        "python",
-        "mcp"
-      ],
-      "openakita": [
-        "python",
-        "openai",
-        "ai",
-        "anthropic"
       ]
     },
     "mcp_agent_framework": {
@@ -11441,6 +11214,10 @@
       ],
       "leon_ai_assistant": [
         "Docker"
+      ],
+      "modular_speech_to_speech_pipeline": [
+        "LLM",
+        "OpenAI API"
       ]
     },
     "registry": {
@@ -11536,12 +11313,6 @@
       "speech_to_speech": [
         "docker",
         "ai"
-      ],
-      "py_xiaozhi": [
-        "mcp"
-      ],
-      "openakita": [
-        "ai"
       ]
     },
     "mcp_registry_development_deployment": {
@@ -11629,10 +11400,6 @@
       ],
       "leon_ai_assistant": [
         "TypeScript"
-      ],
-      "py_xiaozhi": [
-        "mcp-server",
-        "mcp"
       ]
     },
     "awesome_mcp_servers": {
@@ -11721,12 +11488,6 @@
       ],
       "speech_to_speech": [
         "docker",
-        "ai"
-      ],
-      "py_xiaozhi": [
-        "mcp"
-      ],
-      "openakita": [
         "ai"
       ]
     },
@@ -12019,15 +11780,6 @@
         "python",
         "openai",
         "ai"
-      ],
-      "py_xiaozhi": [
-        "python"
-      ],
-      "openakita": [
-        "python",
-        "openai",
-        "ai",
-        "anthropic"
       ]
     },
     "griptape_framework": {
@@ -12170,6 +11922,9 @@
       "leon_ai_assistant": [
         "Docker",
         "Python"
+      ],
+      "modular_speech_to_speech_pipeline": [
+        "LLM"
       ]
     },
     "forge": {
@@ -12280,14 +12035,6 @@
         "vllm",
         "openai",
         "python"
-      ],
-      "py_xiaozhi": [
-        "python"
-      ],
-      "openakita": [
-        "python",
-        "openai",
-        "anthropic"
       ]
     },
     "forge_llm_tool_calling_framework": {
@@ -12329,9 +12076,6 @@
       ],
       "leon": [
         "nodejs"
-      ],
-      "py_xiaozhi": [
-        "mcp"
       ]
     },
     "infinity": {
@@ -12486,13 +12230,6 @@
         "python",
         "machine-learning",
         "ai"
-      ],
-      "py_xiaozhi": [
-        "python"
-      ],
-      "openakita": [
-        "python",
-        "ai"
       ]
     },
     "pasa": {
@@ -12601,13 +12338,6 @@
         "transformers",
         "python",
         "ai"
-      ],
-      "py_xiaozhi": [
-        "python"
-      ],
-      "openakita": [
-        "python",
-        "ai"
       ]
     },
     "paper_agent": {},
@@ -12697,14 +12427,6 @@
         "vllm",
         "openai",
         "python"
-      ],
-      "py_xiaozhi": [
-        "python",
-        "mcp"
-      ],
-      "openakita": [
-        "python",
-        "openai"
       ]
     },
     "lightagent_framework": {
@@ -12762,6 +12484,10 @@
       "leon_ai_assistant": [
         "Memory Management",
         "Python"
+      ],
+      "modular_speech_to_speech_pipeline": [
+        "LLM",
+        "Modularity"
       ]
     },
     "sqlite_vector": {
@@ -12828,9 +12554,6 @@
         "ai"
       ],
       "speech_to_speech": [
-        "ai"
-      ],
-      "openakita": [
         "ai"
       ]
     },
@@ -12952,15 +12675,6 @@
         "python",
         "openai",
         "ai"
-      ],
-      "py_xiaozhi": [
-        "python"
-      ],
-      "openakita": [
-        "python",
-        "openai",
-        "ai",
-        "agent"
       ]
     },
     "agentic_video_production": {
@@ -13041,16 +12755,6 @@
         "openai",
         "ai",
         "assistant"
-      ],
-      "py_xiaozhi": [
-        "python"
-      ],
-      "openakita": [
-        "python",
-        "automation",
-        "assistant",
-        "ai",
-        "openai"
       ]
     },
     "leon_ai_assistant": {
@@ -13215,208 +12919,40 @@
         "openai",
         "ai",
         "assistant"
-      ],
-      "py_xiaozhi": [
-        "python"
-      ],
-      "openakita": [
-        "python",
-        "openai",
-        "ai",
-        "assistant"
       ]
     },
-    "py_xiaozhi": {
-      "ragflow": [
-        "gemini"
-      ],
-      "rag_techniques": [
-        "python"
-      ],
-      "fastapi_mcp": [
-        "mcp-server",
-        "mcp"
-      ],
-      "mcp_agent": [
-        "python",
-        "mcp"
-      ],
-      "registry": [
-        "mcp"
-      ],
-      "xcodebuildmcp": [
-        "mcp-server",
-        "mcp"
-      ],
-      "awesome_mcp_servers": [
-        "mcp"
-      ],
-      "griptape": [
-        "python"
-      ],
-      "forge": [
-        "python"
-      ],
-      "xcodebuildmcp_installation": [
-        "mcp"
-      ],
-      "trainer": [
-        "python"
-      ],
-      "pasa": [
-        "python"
-      ],
-      "lightagent": [
-        "python",
-        "mcp"
-      ],
-      "openmontage": [
-        "python"
-      ],
-      "leon": [
-        "python"
-      ],
-      "speech_to_speech": [
-        "python"
-      ],
-      "cross_platform_py_xiaozhi": [
-        "cross-platform"
-      ],
-      "openakita": [
-        "python",
-        "gemini"
-      ]
-    },
-    "cross_platform_py_xiaozhi": {
-      "lightrag_setup": [
-        "uv"
-      ],
-      "fastapi_mcp_integration": [
-        "uv"
-      ],
-      "py_xiaozhi": [
-        "cross-platform"
-      ]
-    },
-    "openakita": {
-      "new_claude_opus_5_leaks": [
-        "anthropic"
-      ],
-      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
-        "agent"
-      ],
+    "modular_speech_to_speech_pipeline": {
       "hermes_agent_tutorial_for_beginners_full_step_by_s": [
-        "agent"
-      ],
-      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
-        "anthropic"
-      ],
-      "this_100_self_improving_ai_agent_is_insane_just_wa": [
-        "claw",
-        "agent"
-      ],
-      "hermes_claude_code_mcp_integration_loop_engineerin": [
-        "agent"
-      ],
-      "china_just_beat_claude_ai_kimi_k3": [
-        "anthropic"
+        "LLM"
       ],
       "you_need_to_use_hermes_right_now_goodbye_openclaw": [
-        "anthropic",
-        "openclaw",
-        "agent"
+        "LLM"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "LLM"
       ],
       "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
-        "openai"
+        "LLM"
       ],
       "hermes_agent_full_course_setup_guide_for_complete_": [
-        "agent"
+        "LLM"
       ],
-      "dify": [
-        "ai",
-        "openai",
-        "automation",
-        "agent"
+      "graphrag_system": [
+        "LLM"
       ],
-      "ragflow": [
-        "gemini",
-        "openai",
-        "ai"
+      "r2r": [
+        "LLM",
+        "OpenAI API"
       ],
-      "rag_techniques": [
-        "python",
-        "openai",
-        "ai"
+      "griptape_framework": [
+        "LLM"
       ],
-      "fastapi_mcp": [
-        "ai"
-      ],
-      "mcp_go": [
-        "ai"
-      ],
-      "mcp_agent": [
-        "python",
-        "openai",
-        "ai",
-        "anthropic"
-      ],
-      "registry": [
-        "ai"
-      ],
-      "awesome_mcp_servers": [
-        "ai"
-      ],
-      "griptape": [
-        "python",
-        "openai",
-        "ai",
-        "anthropic"
-      ],
-      "forge": [
-        "python",
-        "openai",
-        "anthropic"
-      ],
-      "trainer": [
-        "python",
-        "ai"
-      ],
-      "pasa": [
-        "python",
-        "ai"
-      ],
-      "lightagent": [
-        "python",
-        "openai"
-      ],
-      "sqlite_vector": [
-        "ai"
-      ],
-      "openmontage": [
-        "python",
-        "openai",
-        "ai",
-        "agent"
-      ],
-      "leon": [
-        "python",
-        "automation",
-        "assistant",
-        "ai",
-        "openai"
-      ],
-      "speech_to_speech": [
-        "python",
-        "openai",
-        "ai",
-        "assistant"
-      ],
-      "py_xiaozhi": [
-        "python",
-        "gemini"
+      "lightagent_framework": [
+        "LLM",
+        "Modularity"
       ]
     }
   },
-  "updated_at": "2026-07-22T00:45:45.738464+00:00",
-  "total_skills": 68
+  "updated_at": "2026-07-22T00:47:34.472123+00:00",
+  "total_skills": 66
 }
