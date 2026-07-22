@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "leon-ai--leon",
+      "title": "Discovered: leon-ai/leon",
+      "category": "discoveries",
+      "confidence": "verified",
+      "updated_at": "2026-07-22T00:46:54.156662+00:00",
+      "path": "discoveries/leon-ai--leon.md"
+    },
+    {
       "slug": "calesthio--openmontage",
       "title": "Discovered: calesthio/OpenMontage",
       "category": "discoveries",
@@ -313,5 +321,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-22T00:46:52.565460+00:00"
+  "updated_at": "2026-07-22T00:46:54.160795+00:00"
 }
