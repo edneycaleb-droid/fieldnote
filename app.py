@@ -4288,12 +4288,13 @@ def api_skill_meta(name: str):
     if meta is None:
         return jsonify({"error": f"Skill '{name}' not found"}), 404
     return jsonify({
-        "name":       name,
-        "title":      meta.get("title", name),
-        "tags":       _nsl(meta.get("tags")),
-        "tools":      _nsl(meta.get("tools")),
-        "_baseline":  meta.get("_baseline", False),
-        "updated_at": meta.get("updated_at", ""),
+        "name":        name,
+        "title":       meta.get("title", name),
+        "description": meta.get("description", ""),
+        "tags":        _nsl(meta.get("tags")),
+        "tools":       _nsl(meta.get("tools")),
+        "_baseline":   meta.get("_baseline", False),
+        "updated_at":  meta.get("updated_at", ""),
     })
 
 

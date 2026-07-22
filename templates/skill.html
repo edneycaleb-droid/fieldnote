@@ -185,7 +185,7 @@ header { background: var(--surface); border-bottom: 1px solid var(--border);
   <div class="meta-card">
     <div class="meta-title">{{ meta.get('title', filename) }}</div>
     {% if meta.get('description') %}
-    <div class="meta-desc">{{ meta['description'] }}</div>
+    <div class="meta-desc" id="meta-desc">{{ meta['description'] }}</div>
     {% endif %}
 
     <div class="chips">
@@ -395,7 +395,46 @@ async function enrichSkillNow() {
     if (cleared) {
       if (badge)  { badge.remove(); }
       if (btn)    { btn.remove(); }
-      if (status) { status.style.color = "var(--green)"; status.textContent = "✓ Enriched — reload for updated tags."; }
+
+      // Live-patch chips and description — no reload needed
+      try {
+        const metaR = await fetch(`/api/skills/{{ name }}/meta`);
+        if (metaR.ok) {
+          const md = await metaR.json();
+
+          // Replace tag/tool chips in place, preserve action/method/other pills
+          const chipsEl = document.querySelector('.meta-card .chips');
+          if (chipsEl) {
+            chipsEl.querySelectorAll('.chip-tag, .chip-tool').forEach(c => c.remove());
+            const toInsert = [];
+            (md.tags  || []).forEach(t => {
+              const s = document.createElement('span');
+              s.className = 'chip chip-tag'; s.textContent = t; toInsert.push(s);
+            });
+            (md.tools || []).slice(0, 8).forEach(t => {
+              const s = document.createElement('span');
+              s.className = 'chip chip-tool'; s.textContent = t; toInsert.push(s);
+            });
+            toInsert.reverse().forEach(el => chipsEl.prepend(el));
+          }
+
+          // Update or insert description
+          if (md.description) {
+            let descEl = document.getElementById('meta-desc');
+            if (descEl) {
+              descEl.textContent = md.description;
+            } else {
+              descEl = document.createElement('div');
+              descEl.id = 'meta-desc'; descEl.className = 'meta-desc';
+              descEl.textContent = md.description;
+              const titleEl = document.querySelector('.meta-title');
+              if (titleEl) titleEl.after(descEl);
+            }
+          }
+        }
+      } catch (_) {}
+
+      if (status) { status.style.color = "var(--green)"; status.textContent = "✓ Enriched — tags and description updated."; }
     } else {
       if (status) { status.style.color = "var(--amber)"; status.textContent = "Still enriching — check back shortly."; }
       btn.disabled = false;
