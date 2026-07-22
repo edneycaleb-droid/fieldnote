@@ -25,7 +25,7 @@
     "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
-    "icon": "\ud83d\udd0d"
+    "icon": "🔍"
   },
   {
     "id": "brave-search",
@@ -53,7 +53,7 @@
     "python_alternative_id": "exa-search",
     "enabled": true,
     "write_capable": false,
-    "icon": "\ud83e\udd81"
+    "icon": "🦁"
   },
   {
     "id": "free-search",
@@ -81,7 +81,7 @@
     "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
-    "icon": "\ud83c\udf10"
+    "icon": "🌐"
   },
   {
     "id": "firecrawl",
@@ -109,7 +109,7 @@
     "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
-    "icon": "\ud83d\udd25"
+    "icon": "🔥"
   },
   {
     "id": "markdownify",
@@ -138,13 +138,13 @@
     "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
-    "icon": "\ud83d\udcdd"
+    "icon": "📝"
   },
   {
     "id": "fetch-mcp",
     "name": "Fetch MCP",
     "category": "browser",
-    "description": "Simple HTTP fetch tool \u2014 retrieves web page content and converts to text. No API key needed.",
+    "description": "Simple HTTP fetch tool — retrieves web page content and converts to text. No API key needed.",
     "license_spdx": "MIT",
     "homepage": "https://github.com/modelcontextprotocol/servers",
     "repo_url": "https://github.com/modelcontextprotocol/servers",
@@ -167,7 +167,7 @@
     "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
-    "icon": "\ud83c\udf0d"
+    "icon": "🌍"
   },
   {
     "id": "youtube-mcp",
@@ -196,13 +196,13 @@
     "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
-    "icon": "\u25b6\ufe0f"
+    "icon": "▶️"
   },
   {
     "id": "github-mcp",
     "name": "GitHub MCP (Official)",
     "category": "git",
-    "description": "Official GitHub MCP server \u2014 read repos, issues, PRs, files. Requires a GitHub PAT with repo scope.",
+    "description": "Official GitHub MCP server — read repos, issues, PRs, files. Requires a GitHub PAT with repo scope.",
     "license_spdx": "MIT",
     "homepage": "https://github.com/github/github-mcp-server",
     "repo_url": "https://github.com/github/github-mcp-server",
@@ -224,13 +224,13 @@
     "python_alternative_id": "git-mcp",
     "enabled": true,
     "write_capable": false,
-    "icon": "\ud83d\udc19"
+    "icon": "🐙"
   },
   {
     "id": "git-mcp",
     "name": "Git MCP (filesystem)",
     "category": "git",
-    "description": "Read local Git repositories \u2014 commits, branches, diffs, blame. Works on any local repo, no API key.",
+    "description": "Read local Git repositories — commits, branches, diffs, blame. Works on any local repo, no API key.",
     "license_spdx": "MIT",
     "homepage": "https://github.com/modelcontextprotocol/servers",
     "repo_url": "https://github.com/modelcontextprotocol/servers",
@@ -252,13 +252,13 @@
     "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
-    "icon": "\ud83c\udf3f"
+    "icon": "🌿"
   },
   {
     "id": "qdrant-mcp",
     "name": "Qdrant MCP",
     "category": "vector_db",
-    "description": "Connect to a Qdrant vector database \u2014 semantic search, similarity search, point upsert. Self-hosted or cloud.",
+    "description": "Connect to a Qdrant vector database — semantic search, similarity search, point upsert. Self-hosted or cloud.",
     "license_spdx": "Apache-2.0",
     "homepage": "https://qdrant.tech",
     "repo_url": "https://github.com/qdrant/mcp-server-qdrant",
@@ -280,13 +280,13 @@
     "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
-    "icon": "\ud83d\udccc"
+    "icon": "📌"
   },
   {
     "id": "sqlite-mcp",
     "name": "SQLite MCP",
     "category": "database",
-    "description": "Read and query SQLite databases. No server, no credentials \u2014 just point at a .db file.",
+    "description": "Read and query SQLite databases. No server, no credentials — just point at a .db file.",
     "license_spdx": "MIT",
     "homepage": "https://github.com/modelcontextprotocol/servers",
     "repo_url": "https://github.com/modelcontextprotocol/servers",
@@ -308,7 +308,7 @@
     "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
-    "icon": "\ud83d\uddc4\ufe0f"
+    "icon": "🗄️"
   },
   {
     "id": "postgres-mcp",
@@ -336,7 +336,7 @@
     "python_alternative_id": "sqlite-mcp",
     "enabled": true,
     "write_capable": false,
-    "icon": "\ud83d\udc18"
+    "icon": "🐘"
   },
   {
     "id": "filesystem-mcp",
@@ -364,7 +364,7 @@
     "python_alternative_id": "fetch-mcp",
     "enabled": true,
     "write_capable": false,
-    "icon": "\ud83d\udcc1"
+    "icon": "📁"
   },
   {
     "id": "mcp-server-python",
@@ -392,7 +392,7 @@
     "python_alternative_id": "",
     "enabled": false,
     "write_capable": true,
-    "icon": "\ud83d\udc0d"
+    "icon": "🐍"
   },
   {
     "id": "mcp-pandoc",
@@ -420,7 +420,7 @@
     "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
-    "icon": "\ud83d\udcc4"
+    "icon": "📄"
   },
   {
     "id": "memory-mcp",
@@ -448,7 +448,7 @@
     "python_alternative_id": "qdrant-mcp",
     "enabled": true,
     "write_capable": false,
-    "icon": "\ud83e\udde0"
+    "icon": "🧠"
   },
   {
     "id": "ollama-mcp",
@@ -476,7 +476,7 @@
     "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
-    "icon": "\ud83e\udd99"
+    "icon": "🦙"
   },
   {
     "id": "all-in-one-mcp",
@@ -505,7 +505,7 @@
     "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
-    "icon": "\ud83c\udfaf"
+    "icon": "🎯"
   },
   {
     "id": "crawl4ai-mcp",
@@ -534,7 +534,7 @@
     "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
-    "icon": "\ud83d\udd77\ufe0f"
+    "icon": "🕷️"
   },
   {
     "id": "websearch-mcp",
@@ -562,7 +562,7 @@
     "python_alternative_id": "",
     "enabled": true,
     "write_capable": false,
-    "icon": "\ud83d\udd0e"
+    "icon": "🔎"
   },
   {
     "id": "notion-mcp",
@@ -590,34 +590,6 @@
     "python_alternative_id": "",
     "enabled": false,
     "write_capable": true,
-    "icon": "\ud83d\udcd3"
-  },
-  {
-    "id": "test-server",
-    "name": "Test Server",
-    "category": "search",
-    "description": "A test server",
-    "license_spdx": "MIT",
-    "homepage": "https://example.com",
-    "repo_url": "https://github.com/test/test-server",
-    "package_name": "test-mcp-server",
-    "install_method": "uvx",
-    "runtime_required": "python",
-    "runtime_check_cmd": "python --version",
-    "capabilities": [
-      "web_search"
-    ],
-    "credential_env": "",
-    "credential_optional": true,
-    "quarantine_reason": "",
-    "health_state": "offline",
-    "verified_at": "2026-07-22T13:01:01.556290+00:00",
-    "installed_version": "",
-    "latest_version": "",
-    "install_hint": "",
-    "python_alternative_id": "",
-    "enabled": true,
-    "write_capable": false,
-    "icon": "\ud83d\udd27"
+    "icon": "📓"
   }
 ]
