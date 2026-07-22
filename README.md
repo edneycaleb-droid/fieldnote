@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **138 skills** · Last synced: 2026-07-22 00:54 UTC
+> **138 skills** · Last synced: 2026-07-22 01:02 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Hermes Agent: Upgrading with New AI Models and Parallel Tool Calls for Enhanced Speed and Efficiency](skills/hermes_agent_just_got_10x_better_4_insane_new_feat.md) | This skill details significant upgrades to the Hermes Agent OS, focusing on inte | `Hermes Agent` `Claude` `Docker` `bash` | `agent` `ai` `automation` |
 | [Modular Speech-to-Speech Agent Pipeline with Hugging Face](skills/modular_speech_to_speech_pipeline.md) | This skill details the architecture and implementation of a modular, low-latency | `Silero VAD` `Parakeet TDT` `Transformers` `llama.cpp` | `speech-ai` `speech-processing` `voice-agents` |
 | [Openakita](skills/openakita.md) | An open-source AI assistant framework with skills and agent architecture | `anthropic` `gemini` `openai` `agent` | `agent` `ai` `assistant` |
 | [Building a Lightweight, Cross-Platform Multi-Modal AI Interaction Framework with py-xiaozhi](skills/cross_platform_py_xiaozhi.md) | This skill teaches how to use py_xiaozhi, a lightweight, cross-platform multi-mo | `py_xiaozhi` `asyncio` `Opus codec` `MCP tool server` | `cross-platform` `multi-modal AI` `real-time voice streaming` |
@@ -78,7 +79,6 @@
 | [experimenting_with_longs](skills/experimenting_with_longs.md) |  |  |  |
 | [running_large_models_locally](skills/running_large_models_locally.md) |  |  |  |
 | [every_hermes_concept_explained_for_normal_people](skills/every_hermes_concept_explained_for_normal_people.md) |  |  |  |
-| [hermes_agent_just_got_10x_better_4_insane_new_feat](skills/hermes_agent_just_got_10x_better_4_insane_new_feat.md) |  |  |  |
 | [kimi_k3_ai_full_course_1_hour_build_automate_anyth](skills/kimi_k3_ai_full_course_1_hour_build_automate_anyth.md) |  |  |  |
 | [kimi_k3_hermes_ai_agent_is_insane](skills/kimi_k3_hermes_ai_agent_is_insane.md) |  |  |  |
 | [kimi_k3_fully_tested_an_open_model_beats_fable](skills/kimi_k3_fully_tested_an_open_model_beats_fable.md) |  |  |  |
