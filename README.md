@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **138 skills** · Last synced: 2026-07-22 01:02 UTC
+> **138 skills** · Last synced: 2026-07-22 02:40 UTC
 
 ---
 
@@ -9,7 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [Hermes Agent: Upgrading with New AI Models and Parallel Tool Calls for Enhanced Speed and Efficiency](skills/hermes_agent_just_got_10x_better_4_insane_new_feat.md) | This skill details significant upgrades to the Hermes Agent OS, focusing on inte | `Hermes Agent` `Claude` `Docker` `bash` | `agent` `ai` `automation` |
+| [New Hermes Agent OS is INSANE! - Advanced Multi-Agent Systems and Hypothesis Generation](skills/new_hermes_agent_os_is_insane.md) | This skill details the advanced capabilities of the New Hermes Agent OS, a multi | `Claude` `Docker` `bash` `Python` | `agent` `multi-agent` `trading` |
 | [Modular Speech-to-Speech Agent Pipeline with Hugging Face](skills/modular_speech_to_speech_pipeline.md) | This skill details the architecture and implementation of a modular, low-latency | `Silero VAD` `Parakeet TDT` `Transformers` `llama.cpp` | `speech-ai` `speech-processing` `voice-agents` |
 | [Openakita](skills/openakita.md) | An open-source AI assistant framework with skills and agent architecture | `anthropic` `gemini` `openai` `agent` | `agent` `ai` `assistant` |
 | [Building a Lightweight, Cross-Platform Multi-Modal AI Interaction Framework with py-xiaozhi](skills/cross_platform_py_xiaozhi.md) | This skill teaches how to use py_xiaozhi, a lightweight, cross-platform multi-mo | `py_xiaozhi` `asyncio` `Opus codec` `MCP tool server` | `cross-platform` `multi-modal AI` `real-time voice streaming` |
@@ -57,7 +57,6 @@
 | [Ragflow](skills/ragflow.md) | RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine tha | `redis` `gemini` `docker` `huggingface` | `agent-harness` `agentic-ai` `agentic-retrieval` |
 | [Deploying Dify for AI Workflow Management and RAG Pipelines](skills/dify_deployment.md) | Dify is an open-source platform for building and deploying AI workflows, RAG pip | `Docker` `Docker Compose` `Kubernetes` `Terraform` | `ai` `agentic-ai` `dify` |
 | [Dify](skills/dify.md) | Build Agentic workflows, RAG pipelines, with rich AI model and tool support on o | `terraform` `helm` `kubernetes` `docker` | `agent` `agentic-ai` `agentic-framework` |
-| [New Hermes Agent OS is INSANE! - Multi-Agent Systems and Memory Vaults](skills/new_hermes_agent_os_is_insane.md) | This skill details the advanced capabilities of the New Hermes Agent OS, which u | `Claude` `Docker` `bash` `Python` | `agent` `ai` `ai os` |
 | [New Claude Update: Enhanced Capabilities for Teachers and Business Automation](skills/new_claude_update_is_insane.md) | This skill details Anthropic's significant update to Claude, focusing on its new | `Claude` `Anthropic` `Claude Code` `Claude Co-work` | `claude` `anthropic` `education` |
 | [Kimi K3 vs Claude Fable 5: Raw Results and Live Trading Competition](skills/kimi_k3_vs_claude_fable_5_raw_results.md) | This video compares Kimi K3 and Claude Fable 5 in a live trading competition, hi | `Kimi K3` `Claude Fable 5` `Trading View` `Tradingkit.com` | `AI` `Competition` `Models` |
 | [Getting Started with ChatGPT Work: A Beginner's Guide](skills/chatgpt_work_everything_you_need_to_know_to_get_st.md) | Learn how to use ChatGPT Work to automate tasks, build websites, and create cont | `ChatGPT` `ChatGPT Work` | `ai` `automation` `chatgpt` |
@@ -79,6 +78,7 @@
 | [experimenting_with_longs](skills/experimenting_with_longs.md) |  |  |  |
 | [running_large_models_locally](skills/running_large_models_locally.md) |  |  |  |
 | [every_hermes_concept_explained_for_normal_people](skills/every_hermes_concept_explained_for_normal_people.md) |  |  |  |
+| [hermes_agent_just_got_10x_better_4_insane_new_feat](skills/hermes_agent_just_got_10x_better_4_insane_new_feat.md) |  |  |  |
 | [kimi_k3_ai_full_course_1_hour_build_automate_anyth](skills/kimi_k3_ai_full_course_1_hour_build_automate_anyth.md) |  |  |  |
 | [kimi_k3_hermes_ai_agent_is_insane](skills/kimi_k3_hermes_ai_agent_is_insane.md) |  |  |  |
 | [kimi_k3_fully_tested_an_open_model_beats_fable](skills/kimi_k3_fully_tested_an_open_model_beats_fable.md) |  |  |  |
