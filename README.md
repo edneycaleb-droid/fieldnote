@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **131 skills** · Last synced: 2026-07-22 00:40 UTC
+> **132 skills** · Last synced: 2026-07-22 00:41 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Leon](skills/leon.md) | 🧠 Leon is your open-source personal assistant. | `openai` `ai-agent` `ai-assistant` `artificial-intelligence` | `ai` `ai-agent` `ai-assistant` |
 | [Agentic Video Production with OpenMontage](skills/agentic_video_production.md) | This skill teaches how to utilize OpenMontage, an open-source, agentic video pro | `OpenMontage` `FFmpeg` `Node.js` `Remotion` | `ai` `video-production` `agentic-ai` |
 | [Openmontage](skills/openmontage.md) | World's first open-source, agentic video production system. 12 pipelines, 52 too | `openai` `agent` `agentic-ai` `claude` | `agent` `agentic-ai` `ai` |
 | [Kubeflow Trainer: Large-Scale Distributed AI Platform for Scalable LLM Fine-Tuning and Training](skills/kubeflow_trainer_skill.md) | Kubeflow Trainer is a Kubernetes-native distributed AI platform that integrates  | `Kubeflow Trainer` `Kueue` `Volcano` `Cloud Native AI ecosystem` | `distributed computing` `large language models` `kubernetes` |
