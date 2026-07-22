@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "calesthio--openmontage",
+      "title": "Discovered: calesthio/OpenMontage",
+      "category": "discoveries",
+      "confidence": "verified",
+      "updated_at": "2026-07-22T00:46:52.521436+00:00",
+      "path": "discoveries/calesthio--openmontage.md"
+    },
+    {
       "slug": "sqliteai--sqlite-vector",
       "title": "Discovered: sqliteai/sqlite-vector",
       "category": "discoveries",
@@ -305,5 +313,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-21T21:38:26.130933+00:00"
+  "updated_at": "2026-07-22T00:46:52.565460+00:00"
 }
