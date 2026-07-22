@@ -6019,11 +6019,12 @@ async function loadMcpOpsDash() {
 
 // ── MCP Hub ───────────────────────────────────────────────────────────────────
 
-let _hubData      = [];   // all servers from registry
-let _hubFilter    = '';   // active category filter
-let _hubSearch    = '';   // current search query
-let _hubLoaded    = false;
-let _hubSearchTimer = null;
+let _hubData           = [];   // all servers from registry
+let _hubFilter         = '';   // active category filter
+let _hubSearch         = '';   // current search query
+let _hubLoaded         = false;
+let _hubSearchTimer    = null;
+let _hubHealthLastRun  = null; // ISO-8601 UTC timestamp of last mcp_health run, or null
 
 async function loadHub() {
   if (_hubLoaded) return;
@@ -6032,7 +6033,8 @@ async function loadHub() {
       fetch('/api/mcp-hub/registry').then(r => r.json()),
       fetch('/api/mcp-hub/health').then(r => r.json()),
     ]);
-    _hubData = regData.servers || [];
+    _hubData          = regData.servers || [];
+    _hubHealthLastRun = regData.mcp_health_last_run || null;
     _hubLoaded = true;
     renderHubSummary(healthData);
     renderHubGrid();
@@ -6131,6 +6133,21 @@ function renderHubGrid() {
 
 function _hubStateDot(state) {
   return `<span class="hc-dot hcd-${esc(state)}"></span>`;
+}
+
+function _hubCheckingTooltip() {
+  // Returns the tooltip text for the ⏳ Checking… badge on 'unverified' servers.
+  // Uses _hubHealthLastRun (set by loadHub from the registry response) to tell
+  // the user when the health checker last ran — or warn that it may be delayed.
+  if (!_hubHealthLastRun) {
+    return 'Last check: never — health check may be delayed';
+  }
+  try {
+    const ago = _relTime(_hubHealthLastRun);
+    return `Last check: ${ago} — waiting for next cycle`;
+  } catch (_) {
+    return 'Last check: unknown';
+  }
 }
 
 function _hubStateLabel(state) {
@@ -6234,7 +6251,9 @@ function renderHubCard(s) {
     ${caps ? `<div class="hc-caps">${caps}</div>` : ''}
     <div class="hc-cred">${credBadge}</div>
     <div class="hc-state" id="hub-state-${esc(s.id)}">
-      ${_hubStateDot(state)} <span class="hc-state-text">${_hubStateLabel(state)}</span>
+      ${_hubStateDot(state)} <span class="hc-state-text"
+        ${state === 'unverified' ? `title="${_hubCheckingTooltip()}"` : ''}
+      >${_hubStateLabel(state)}</span>
     </div>
     <div class="hc-actions">
       ${primaryBtn}${testBtn}${uninstBtn}

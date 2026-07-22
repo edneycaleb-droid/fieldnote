@@ -184,6 +184,24 @@ class SchedulerAgent:
                        and not j.running
                        and j.next_run is not None
                        and _iso_to_ts(j.next_run) <= now]
+                # Warn once per job when a never-run job is still stuck 2× its
+                # full interval past its originally-scheduled first-run time.
+                # This catches scheduler hangs, crashed threads, or a boot-time
+                # health-check that was never dispatched.
+                for j in self._jobs:
+                    if (
+                        j.enabled
+                        and j.last_run is None
+                        and j.next_run is not None
+                        and now > _iso_to_ts(j.next_run) + 2 * j.interval_secs
+                        and j.name not in self._warned_overdue
+                    ):
+                        log.warning(
+                            "Scheduler: job '%s' has not fired within 2× its "
+                            "interval (%d s) — health check may be delayed or stuck",
+                            j.name, j.interval_secs,
+                        )
+                        self._warned_overdue.add(j.name)
             for job in due:
                 threading.Thread(target=self._run_job, args=(job,),
                                  daemon=True, name=f"fn-job-{job.name}").start()
