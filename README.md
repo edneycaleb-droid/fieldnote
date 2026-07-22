@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **135 skills** · Last synced: 2026-07-22 00:44 UTC
+> **136 skills** · Last synced: 2026-07-22 00:45 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Building a Lightweight, Cross-Platform Multi-Modal AI Interaction Framework with py-xiaozhi](skills/cross_platform_py_xiaozhi.md) | This skill teaches how to use py_xiaozhi, a lightweight, cross-platform multi-mo | `py_xiaozhi` `asyncio` `Opus codec` `MCP tool server` | `cross-platform` `multi-modal AI` `real-time voice streaming` |
 | [Py Xiaozhi](skills/py_xiaozhi.md) | Open-source AI assistant ecosystem with MCP integrations, multimodal workflows,  | `gemini` `cross-platform` `edge-computing` `embodied-ai` | `cross-platform` `edge-computing` `embodied-ai` |
 | [Speech To Speech](skills/speech_to_speech.md) | Build local voice agents with open-source models | `vllm` `transformers` `numpy` `huggingface` | `ai` `assistant` `language-model` |
 | [Setting Up and Operating Leon AI Assistant: A Personal AI Companion](skills/leon_ai_assistant.md) | Leon AI Assistant is an open-source personal AI companion that understands goals | `Git` `npm` `pnpm` `Docker` | `ai` `ai-assistant` `personal-assistant` |
