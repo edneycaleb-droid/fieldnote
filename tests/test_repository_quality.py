@@ -52,6 +52,7 @@ class RepositoryQualityRubricTests(unittest.TestCase):
                 "poetry install --no-interaction --no-ansi --no-root\n"
             ),
             "scripts/check_repository_quality.py": "# fixture\n",
+            "fieldnote_mcp/mcp_hub_registry.json": '[{"id": "real-server", "package_name": "real", "repo_url": "https://github.com/example/real"}]\n',
             "skills/example.md": "# Example skill\n\n" + ("Deterministic, source-backed skill content. " * 3) + "\n",
             "pyproject.toml": "[project]\nname = \"fieldnote\"\nversion = \"0.0.0\"\n",
         }
@@ -116,6 +117,20 @@ class RepositoryQualityRubricTests(unittest.TestCase):
         (self.root / "skills/example.md").write_text("fieldnote_skills\n", encoding="utf-8")
         result, output = self.run_quality()
         self.assertEqual(1, result)
+        self.assertIn("[FAIL] deterministic_fallback", output)
+        self.assertIn("REPOSITORY_QUALITY_SCORE=9/10", output)
+
+
+    def test_committed_mcp_test_fixture_cannot_receive_full_credit(self) -> None:
+        registry = self.root / "fieldnote_mcp/mcp_hub_registry.json"
+        registry.write_text(
+            '[{"id": "hc-stuck-verifier-server", "package_name": "test-mcp-server", '
+            '"repo_url": "https://github.com/test/test-server"}]\n',
+            encoding="utf-8",
+        )
+        result, output = self.run_quality()
+        self.assertEqual(1, result)
+        self.assertIn("[FAIL] generated_mcp_test_fixture", output)
         self.assertIn("[FAIL] deterministic_fallback", output)
         self.assertIn("REPOSITORY_QUALITY_SCORE=9/10", output)
 
