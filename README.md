@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **135 skills** · Last synced: 2026-07-22 00:47 UTC
+> **138 skills** · Last synced: 2026-07-22 00:54 UTC
 
 ---
 
@@ -9,7 +9,10 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [Modular Speech-to-Speech Agent Pipeline with Hugging Face](skills/modular_speech_to_speech_pipeline.md) | This skill describes how to build a low-latency, modular voice agent pipeline us | `Silero VAD` `Parakeet TDT` `OpenAI API` `Qwen3-TTS` | `speech-processing` `ai-agents` `nlp` |
+| [Modular Speech-to-Speech Agent Pipeline with Hugging Face](skills/modular_speech_to_speech_pipeline.md) | This skill details the architecture and implementation of a modular, low-latency | `Silero VAD` `Parakeet TDT` `Transformers` `llama.cpp` | `speech-ai` `speech-processing` `voice-agents` |
+| [Openakita](skills/openakita.md) | An open-source AI assistant framework with skills and agent architecture | `anthropic` `gemini` `openai` `agent` | `agent` `ai` `assistant` |
+| [Building a Lightweight, Cross-Platform Multi-Modal AI Interaction Framework with py-xiaozhi](skills/cross_platform_py_xiaozhi.md) | This skill teaches how to use py_xiaozhi, a lightweight, cross-platform multi-mo | `py_xiaozhi` `asyncio` `Opus codec` `MCP tool server` | `cross-platform` `multi-modal AI` `real-time voice streaming` |
+| [Py Xiaozhi](skills/py_xiaozhi.md) | Open-source AI assistant ecosystem with MCP integrations, multimodal workflows,  | `gemini` `cross-platform` `edge-computing` `embodied-ai` | `cross-platform` `edge-computing` `embodied-ai` |
 | [Speech To Speech](skills/speech_to_speech.md) | Build local voice agents with open-source models | `vllm` `transformers` `numpy` `huggingface` | `ai` `assistant` `language-model` |
 | [Setting Up and Operating Leon AI Assistant: A Personal AI Companion](skills/leon_ai_assistant.md) | Leon AI Assistant is an open-source personal AI companion that understands goals | `Git` `npm` `pnpm` `Docker` | `ai` `ai-assistant` `personal-assistant` |
 | [Leon](skills/leon.md) | 🧠 Leon is your open-source personal assistant. | `openai` `ai-agent` `ai-assistant` `artificial-intelligence` | `ai` `ai-agent` `ai-assistant` |
