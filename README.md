@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **130 skills** · Last synced: 2026-07-22 00:17 UTC
+> **130 skills** · Last synced: 2026-07-22 00:39 UTC
 
 ---
 
@@ -9,7 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [Hermes and Kimi K3 AI Automation Course: Full Setup and Strategy Building](skills/hermes_kimi_k3_ai_automation_course.md) | This skill teaches how to set up Hermes Agent, a self-learning AI assistant, and | `Claude` `Docker` `bash` `Python` | `AI` `Automation` `Hermes` |
+| [Openmontage](skills/openmontage.md) | World's first open-source, agentic video production system. 12 pipelines, 52 too | `openai` `agent` `agentic-ai` `claude` | `agent` `agentic-ai` `ai` |
 | [Kubeflow Trainer: Large-Scale Distributed AI Platform for Scalable LLM Fine-Tuning and Training](skills/kubeflow_trainer_skill.md) | Kubeflow Trainer is a Kubernetes-native distributed AI platform that integrates  | `Kubeflow Trainer` `Kueue` `Volcano` `Cloud Native AI ecosystem` | `distributed computing` `large language models` `kubernetes` |
 | [SQLite-Vector Extension for Embedded Vector Search](skills/sqlite_vector_extension.md) | Integrate powerful vector search capabilities directly into SQLite databases usi | `sqlite-vector extension` `SQLite CLI` `Zed Editor` `Sourcegraph Cody` | `ai` `embedded-databases` `edge-ai` |
 | [Sqlite Vector](skills/sqlite_vector.md) | SQLite-Vector is a cross-platform, ultra-efficient SQLite extension that brings  | `redis` `weaviate` `faiss` `sqlite` | `c` `ai` `llm` |
