@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **134 skills** · Last synced: 2026-07-22 00:42 UTC
+> **135 skills** · Last synced: 2026-07-22 00:44 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Py Xiaozhi](skills/py_xiaozhi.md) | Open-source AI assistant ecosystem with MCP integrations, multimodal workflows,  | `gemini` `cross-platform` `edge-computing` `embodied-ai` | `cross-platform` `edge-computing` `embodied-ai` |
 | [Speech To Speech](skills/speech_to_speech.md) | Build local voice agents with open-source models | `vllm` `transformers` `numpy` `huggingface` | `ai` `assistant` `language-model` |
 | [Setting Up and Operating Leon AI Assistant: A Personal AI Companion](skills/leon_ai_assistant.md) | Leon AI Assistant is an open-source personal AI companion that understands goals | `Git` `npm` `pnpm` `Docker` | `ai` `ai-assistant` `personal-assistant` |
 | [Leon](skills/leon.md) | 🧠 Leon is your open-source personal assistant. | `openai` `ai-agent` `ai-assistant` `artificial-intelligence` | `ai` `ai-agent` `ai-assistant` |
