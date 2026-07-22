@@ -50,6 +50,12 @@ class RepositoryQualityRubricTests(unittest.TestCase):
                 'python-version: "3.11"\n'
                 "poetry==1.8.5\n"
                 "poetry install --no-interaction --no-ansi --no-root\n"
+                "      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1\n"
+            ),
+            ".github/workflows/example.yml": (
+                "permissions:\n  contents: read\n"
+                "jobs:\n  validate:\n    timeout-minutes: 5\n    steps:\n"
+                "      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1\n"
             ),
             "scripts/check_repository_quality.py": "# fixture\n",
             "fieldnote_mcp/mcp_hub_registry.json": '[{"id": "real-server", "package_name": "real", "repo_url": "https://github.com/example/real"}]\n',
@@ -112,14 +118,12 @@ class RepositoryQualityRubricTests(unittest.TestCase):
         self.assertIn("[FAIL] safe_workflow", output)
         self.assertIn("REPOSITORY_QUALITY_SCORE=9/10", output)
 
-
     def test_truncated_generated_skill_cannot_receive_full_credit(self) -> None:
         (self.root / "skills/example.md").write_text("fieldnote_skills\n", encoding="utf-8")
         result, output = self.run_quality()
         self.assertEqual(1, result)
         self.assertIn("[FAIL] deterministic_fallback", output)
         self.assertIn("REPOSITORY_QUALITY_SCORE=9/10", output)
-
 
     def test_committed_mcp_test_fixture_cannot_receive_full_credit(self) -> None:
         registry = self.root / "fieldnote_mcp/mcp_hub_registry.json"
@@ -132,6 +136,21 @@ class RepositoryQualityRubricTests(unittest.TestCase):
         self.assertEqual(1, result)
         self.assertIn("[FAIL] generated_mcp_test_fixture", output)
         self.assertIn("[FAIL] deterministic_fallback", output)
+        self.assertIn("REPOSITORY_QUALITY_SCORE=9/10", output)
+
+    def test_mutable_workflow_action_cannot_receive_full_credit(self) -> None:
+        workflow = self.root / ".github/workflows/example.yml"
+        workflow.write_text(
+            workflow.read_text(encoding="utf-8").replace(
+                "actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1",
+                "actions/checkout@v4",
+            ),
+            encoding="utf-8",
+        )
+        result, output = self.run_quality()
+        self.assertEqual(1, result)
+        self.assertIn("[FAIL] mutable_workflow_action", output)
+        self.assertIn("[FAIL] safe_workflow", output)
         self.assertIn("REPOSITORY_QUALITY_SCORE=9/10", output)
 
 
