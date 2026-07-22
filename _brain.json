@@ -2799,6 +2799,30 @@
       "skills": [
         "openmontage"
       ]
+    },
+    "Agentic AI": {
+      "freq": 1,
+      "skills": [
+        "agentic_video_production"
+      ]
+    },
+    "Video Production": {
+      "freq": 1,
+      "skills": [
+        "agentic_video_production"
+      ]
+    },
+    "AI-assisted Content Creation": {
+      "freq": 1,
+      "skills": [
+        "agentic_video_production"
+      ]
+    },
+    "Pipeline Management": {
+      "freq": 1,
+      "skills": [
+        "agentic_video_production"
+      ]
     }
   },
   "tools": {
@@ -4612,9 +4636,10 @@
       ]
     },
     "Node.js": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "xcodebuildmcp_installation"
+        "xcodebuildmcp_installation",
+        "agentic_video_production"
       ]
     },
     "xcodebuildmcp": {
@@ -5083,6 +5108,36 @@
       "freq": 1,
       "skills": [
         "openmontage"
+      ]
+    },
+    "OpenMontage": {
+      "freq": 1,
+      "skills": [
+        "agentic_video_production"
+      ]
+    },
+    "FFmpeg": {
+      "freq": 1,
+      "skills": [
+        "agentic_video_production"
+      ]
+    },
+    "Remotion": {
+      "freq": 1,
+      "skills": [
+        "agentic_video_production"
+      ]
+    },
+    "HyperFrames": {
+      "freq": 1,
+      "skills": [
+        "agentic_video_production"
+      ]
+    },
+    "Piper TTS": {
+      "freq": 1,
+      "skills": [
+        "agentic_video_production"
       ]
     }
   },
@@ -7020,6 +7075,29 @@
         "llm"
       ],
       "step_count": 8
+    },
+    "agentic_video_production": {
+      "concepts": [
+        "Agentic AI",
+        "Video Production",
+        "AI-assisted Content Creation",
+        "Pipeline Management"
+      ],
+      "tools": [
+        "OpenMontage",
+        "FFmpeg",
+        "Node.js",
+        "Remotion",
+        "HyperFrames",
+        "Piper TTS"
+      ],
+      "tags": [
+        "ai",
+        "video-production",
+        "agentic-ai",
+        "open-source"
+      ],
+      "step_count": 6
     }
   },
   "relationships": {
@@ -11359,6 +11437,9 @@
       ],
       "lightagent": [
         "mcp"
+      ],
+      "agentic_video_production": [
+        "Node.js"
       ]
     },
     "infinity": {
@@ -11896,8 +11977,13 @@
       "sqlite_vector": [
         "ai"
       ]
+    },
+    "agentic_video_production": {
+      "xcodebuildmcp_installation": [
+        "Node.js"
+      ]
     }
   },
-  "updated_at": "2026-07-22T00:39:47.247433+00:00",
-  "total_skills": 61
+  "updated_at": "2026-07-22T00:40:51.223879+00:00",
+  "total_skills": 62
 }
