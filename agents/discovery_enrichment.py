@@ -245,6 +245,11 @@ def enrich_backlog() -> dict:
     processed = enriched = failed = 0
     MAX_PER_RUN = 3
 
+    # NOTE: is_paused() is intentionally checked only at entry, not inside the
+    # loop.  An item that has already started (_enrich_one is running) will
+    # always finish — a mid-run pause takes effect on the *next* scheduler
+    # invocation.  Do not add a mid-loop re-check without updating the test
+    # "test_pause_mid_run_does_not_abort_in_progress_item".
     for _ in range(MAX_PER_RUN):
         item = dequeue_next(provider_available=True)
         if not item:
