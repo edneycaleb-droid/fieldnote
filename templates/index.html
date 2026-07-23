@@ -1793,6 +1793,40 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
 /* Make no_key provider dots show a pointer to hint they're clickable */
 .hc-item.clickable { cursor: pointer; }
 .hc-item.clickable:hover .hc-name { color: var(--accent); }
+.hc-addkey { font-size: .6rem; color: var(--accent); opacity: .85;
+  white-space: nowrap; margin-left: 1px; }
+.hc-item.clickable:hover .hc-addkey { opacity: 1; }
+
+/* ── Optional AI Keys section ── */
+.opt-keys-section { margin-bottom: 12px; }
+.opt-key-row { background: var(--bg); border: 1px solid var(--border2);
+  border-radius: 12px; padding: 12px 14px; margin-bottom: 8px;
+  transition: border-color .2s; }
+.opt-key-row.saved { border-color: #1a4a2a; background: #060f08; }
+.opt-key-head { display: flex; align-items: center; gap: 8px; margin-bottom: 6px; }
+.opt-key-icon { font-size: 1.05rem; }
+.opt-key-label { font-size: .88rem; font-weight: 700; color: var(--text); flex: 1; }
+.opt-key-optional { font-size: .62rem; font-weight: 700; color: var(--muted);
+  background: var(--border2); border-radius: 4px; padding: 1px 7px; }
+.opt-key-desc { font-size: .76rem; color: var(--muted); line-height: 1.5; margin-bottom: 7px; }
+.opt-key-link { font-size: .74rem; color: var(--accent); text-decoration: none;
+  display: inline-block; margin-bottom: 8px; }
+.opt-key-link:hover { text-decoration: underline; }
+.opt-key-paste { display: flex; gap: 6px; }
+.opt-key-input { flex: 1; background: var(--surface); border: 1px solid var(--border2);
+  border-radius: 8px; padding: 8px 12px; color: var(--text); font-size: .8rem;
+  font-family: "SF Mono","Fira Code",monospace; outline: none;
+  transition: border-color .15s; -webkit-appearance: none; }
+.opt-key-input:focus { border-color: var(--accent); }
+.opt-key-save { background: var(--accent); border: none; border-radius: 8px;
+  padding: 8px 14px; color: #fff; font-size: .8rem; font-weight: 700;
+  cursor: pointer; white-space: nowrap; transition: opacity .15s;
+  -webkit-appearance: none; }
+.opt-key-save:hover:not(:disabled) { opacity: .85; }
+.opt-key-save:disabled { opacity: .38; cursor: default; }
+.opt-key-status { font-size: .73rem; margin-top: 6px; min-height: 16px; }
+.opt-key-status.ok  { color: var(--green); }
+.opt-key-status.err { color: var(--red); }
 
 </style>
 </head>
