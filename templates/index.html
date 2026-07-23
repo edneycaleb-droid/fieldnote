@@ -1931,8 +1931,53 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
       Adding a <strong style="color:#c084fc">HuggingFace token</strong> or
       <strong style="color:#60a5fa">OpenRouter key</strong> gives the pipeline
       extra free inference capacity — reducing quota exhaustion events.
-      Find both in the <strong>Connected</strong> / <strong>Awaiting Setup</strong>
-      sections below, or paste them directly in a key field.
+      Paste your keys in the fields below, or find them in the
+      <strong>Connected</strong> / <strong>Awaiting Setup</strong> sections.
+    </div>
+  </div>
+
+  <!-- Optional AI Keys (HuggingFace + OpenRouter inline paste) -->
+  <div id="opt-keys-section" class="opt-keys-section">
+    <div class="integ-section-label" style="margin-bottom:8px">🔑 Optional AI Keys</div>
+
+    <!-- HuggingFace -->
+    <div class="opt-key-row" id="opt-key-hf">
+      <div class="opt-key-head">
+        <span class="opt-key-icon">🤗</span>
+        <span class="opt-key-label">HuggingFace Token</span>
+        <span class="opt-key-optional">Optional · Free</span>
+      </div>
+      <p class="opt-key-desc">Free read token gives access to Llama&nbsp;3.1 and Mistral via serverless inference — great backup when Groq is rate-limited. Works anonymously too, but a token gives higher limits.</p>
+      <a class="opt-key-link" href="https://huggingface.co/settings/tokens" target="_blank" rel="noopener">Get a free token at huggingface.co/settings/tokens →</a>
+      <div class="opt-key-paste">
+        <input class="opt-key-input" type="password" id="opt-key-input-hf"
+               placeholder="hf_…" autocomplete="off" spellcheck="false"
+               oninput="optKeyInputChange('hf')"
+               onkeydown="if(event.key==='Enter')saveOptKey('huggingface','hf')">
+        <button class="opt-key-save" id="opt-key-save-hf"
+                onclick="saveOptKey('huggingface','hf')" disabled>Activate</button>
+      </div>
+      <div class="opt-key-status" id="opt-key-status-hf"></div>
+    </div>
+
+    <!-- OpenRouter -->
+    <div class="opt-key-row" id="opt-key-or">
+      <div class="opt-key-head">
+        <span class="opt-key-icon">🔀</span>
+        <span class="opt-key-label">OpenRouter Key</span>
+        <span class="opt-key-optional">Optional · Free</span>
+      </div>
+      <p class="opt-key-desc">Routes to many free models (Llama, Mistral, and more) via a single free key — no credit card needed. Activates as a last-free-resort when other providers are rate-limited.</p>
+      <a class="opt-key-link" href="https://openrouter.ai/keys" target="_blank" rel="noopener">Get a free key at openrouter.ai/keys →</a>
+      <div class="opt-key-paste">
+        <input class="opt-key-input" type="password" id="opt-key-input-or"
+               placeholder="sk-or-…" autocomplete="off" spellcheck="false"
+               oninput="optKeyInputChange('or')"
+               onkeydown="if(event.key==='Enter')saveOptKey('openrouter','or')">
+        <button class="opt-key-save" id="opt-key-save-or"
+                onclick="saveOptKey('openrouter','or')" disabled>Activate</button>
+      </div>
+      <div class="opt-key-status" id="opt-key-status-or"></div>
     </div>
   </div>
 
@@ -2764,6 +2809,7 @@ async function checkHealth() {
       { key: "huggingface", label: "HuggingFace" },
       { key: "openrouter",  label: "OpenRouter"  },
     ];
+    const _OPT_ID = { huggingface: "hf", openrouter: "or" };
     const aiItems = AI_PROVIDERS.map(c => {
       const info      = prov[c.key] || { state: h[c.key] ? "healthy" : "no_key" };
       const cls       = _providerDotCls(info.state);
@@ -2771,8 +2817,12 @@ async function checkHealth() {
       const warn      = (info.state !== "healthy" && info.state !== "no_key");
       const nameCls   = warn ? (info.state === "quota_exhausted" || info.state === "auth_error" ? "bad" : "warn") : "";
       const clickable = (info.state === "no_key" || info.state === "auth_error") ? "clickable" : "";
-      const onclick   = clickable ? ` onclick="openKeyModal('${c.key}')"` : "";
-      return `<span class="hc-item ${clickable}" title="${tip}"${onclick}><span class="hc-dot ${cls}"></span><span class="hc-name ${nameCls}">${c.label}</span></span>`;
+      const optId     = _OPT_ID[c.key];
+      const useScroll = optId && info.state === "no_key";
+      const onclick   = !clickable ? "" :
+        useScroll ? ` onclick="scrollToOptKeys('${optId}')"` : ` onclick="openKeyModal('${c.key}')"`;
+      const addKey    = useScroll ? `<span class="hc-addkey">Add key →</span>` : "";
+      return `<span class="hc-item ${clickable}" title="${tip}"${onclick}><span class="hc-dot ${cls}"></span><span class="hc-name ${nameCls}">${c.label}</span>${addKey}</span>`;
     }).join("");
 
     _cachedToolItems = toolItems; // cache for instant health-bar updates from SSE
@@ -2797,6 +2847,7 @@ function updateProviderDotsFromStatus(prov) {
     { key: "huggingface", label: "HuggingFace" },
     { key: "openrouter",  label: "OpenRouter"  },
   ];
+  const _OPT_ID2 = { huggingface: "hf", openrouter: "or" };
   const aiItems = AI_PROVIDERS.map(c => {
     const info      = prov[c.key] || { state: "no_key" };
     const cls       = _providerDotCls(info.state);
@@ -2804,8 +2855,12 @@ function updateProviderDotsFromStatus(prov) {
     const warn      = (info.state !== "healthy" && info.state !== "no_key");
     const nameCls   = warn ? (info.state === "quota_exhausted" || info.state === "auth_error" ? "bad" : "warn") : "";
     const clickable = (info.state === "no_key" || info.state === "auth_error") ? "clickable" : "";
-    const onclick   = clickable ? ` onclick="openKeyModal('${c.key}')"` : "";
-    return `<span class="hc-item ${clickable}" title="${tip}"${onclick}><span class="hc-dot ${cls}"></span><span class="hc-name ${nameCls}">${c.label}</span></span>`;
+    const optId     = _OPT_ID2[c.key];
+    const useScroll = optId && info.state === "no_key";
+    const onclick   = !clickable ? "" :
+      useScroll ? ` onclick="scrollToOptKeys('${optId}')"` : ` onclick="openKeyModal('${c.key}')"`;
+    const addKey    = useScroll ? `<span class="hc-addkey">Add key →</span>` : "";
+    return `<span class="hc-item ${clickable}" title="${tip}"${onclick}><span class="hc-dot ${cls}"></span><span class="hc-name ${nameCls}">${c.label}</span>${addKey}</span>`;
   }).join("");
   const sep = `<span style="color:var(--muted);opacity:.35;margin:0 2px">│</span>`;
   if (_cachedToolItems) {
@@ -3009,6 +3064,66 @@ function openKeyModal(provider) {
 function closeKeyModal() {
   document.getElementById("key-modal-backdrop").classList.remove("open");
   _kmProvider = null;
+}
+
+// ── Optional AI Keys (HuggingFace / OpenRouter inline section) ──────────────
+function optKeyInputChange(id) {
+  const input = document.getElementById(`opt-key-input-${id}`);
+  const btn   = document.getElementById(`opt-key-save-${id}`);
+  if (input && btn) btn.disabled = !input.value.trim();
+}
+
+async function saveOptKey(provider, id) {
+  const input = document.getElementById(`opt-key-input-${id}`);
+  const btn   = document.getElementById(`opt-key-save-${id}`);
+  const st    = document.getElementById(`opt-key-status-${id}`);
+  const row   = document.getElementById(`opt-key-${id}`);
+  const val   = input?.value.trim();
+  if (!val) { input?.focus(); return; }
+  btn.disabled = true;
+  st.textContent = "Saving…"; st.className = "opt-key-status";
+  try {
+    const r = await fetch("/api/save-key", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify({ provider, value: val }),
+    });
+    const d = await r.json();
+    if (d.ok) {
+      st.textContent = `✓ ${_KEY_PROVIDERS[provider]?.label || provider} key saved — activating…`;
+      st.className = "opt-key-status ok";
+      row?.classList.add("saved");
+      input.value = "";
+      // Re-enable button in case user wants to update the key later
+      setTimeout(() => { btn.disabled = true; }, 100);
+      // Refresh health bar so the dot turns green
+      setTimeout(checkHealth, 900);
+    } else {
+      st.textContent = "⚠ " + (d.error || "Save failed");
+      st.className = "opt-key-status err";
+      btn.disabled = false;
+    }
+  } catch (e) {
+    st.textContent = "⚠ Network error";
+    st.className = "opt-key-status err";
+    btn.disabled = false;
+  }
+}
+
+function scrollToOptKeys(id) {
+  // Switch to Integrations tab first, then scroll to the key row
+  switchMainTab("integrations");
+  setTimeout(() => {
+    const el = document.getElementById(`opt-key-${id}`);
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "center" });
+      el.style.transition = "border-color .3s";
+      el.style.borderColor = "var(--accent)";
+      setTimeout(() => { el.style.borderColor = ""; }, 1400);
+      const inp = document.getElementById(`opt-key-input-${id}`);
+      if (inp) setTimeout(() => inp.focus(), 350);
+    }
+  }, 160);
 }
 
 async function saveProviderKey() {
