@@ -977,9 +977,10 @@
       ]
     },
     "Task automation": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "new_claude_update_is_insane"
+        "new_claude_update_is_insane",
+        "web_rover_ai_agent"
       ]
     },
     "AI agent organization": {
@@ -3217,11 +3218,65 @@
       "skills": [
         "new_hermes_agent_os_is_insane"
       ]
+    },
+    "Autonomous web agents": {
+      "freq": 1,
+      "skills": [
+        "web_rover_ai_agent"
+      ]
+    },
+    "Autonomous web navigation": {
+      "freq": 1,
+      "skills": [
+        "web_rover_ai_agent"
+      ]
+    },
+    "Information retrieval": {
+      "freq": 1,
+      "skills": [
+        "web_rover_ai_agent"
+      ]
+    },
+    "Deep research": {
+      "freq": 1,
+      "skills": [
+        "web_rover_ai_agent"
+      ]
+    },
+    "Language models": {
+      "freq": 1,
+      "skills": [
+        "web_rover_ai_agent"
+      ]
+    },
+    "Research workflows": {
+      "freq": 1,
+      "skills": [
+        "web_rover_ai_agent"
+      ]
+    },
+    "State management": {
+      "freq": 1,
+      "skills": [
+        "web_rover_ai_agent"
+      ]
+    },
+    "Web automation": {
+      "freq": 1,
+      "skills": [
+        "web_rover_ai_agent"
+      ]
+    },
+    "Content processing": {
+      "freq": 1,
+      "skills": [
+        "web_rover_ai_agent"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 44,
+      "freq": 45,
       "skills": [
         "new_claude_opus_5_leaks",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
@@ -3241,7 +3296,8 @@
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
         "hermes_agent_full_course_setup_guide_for_complete_",
         "fastapi_mcp_integration",
-        "griptape_framework"
+        "griptape_framework",
+        "web_rover_ai_agent"
       ]
     },
     "Anthropic": {
@@ -3518,10 +3574,11 @@
       ]
     },
     "GPT-4": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "china_just_beat_claude_ai_kimi_k3",
-        "new_hermes_agent_os_is_insane"
+        "new_hermes_agent_os_is_insane",
+        "web_rover_ai_agent"
       ]
     },
     "Llama": {
@@ -4841,9 +4898,10 @@
       ]
     },
     "LangGraph": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "agentic_rag_for_dummies"
+        "agentic_rag_for_dummies",
+        "web_rover_ai_agent"
       ]
     },
     "Google Gemini": {
@@ -5624,9 +5682,10 @@
       ]
     },
     "npm": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "leon_ai_assistant"
+        "leon_ai_assistant",
+        "web_rover_ai_agent"
       ]
     },
     "pnpm": {
@@ -5897,6 +5956,30 @@
       "freq": 1,
       "skills": [
         "webrover"
+      ]
+    },
+    "Playwright": {
+      "freq": 1,
+      "skills": [
+        "web_rover_ai_agent"
+      ]
+    },
+    "RAG pipeline": {
+      "freq": 1,
+      "skills": [
+        "web_rover_ai_agent"
+      ]
+    },
+    "Poetry": {
+      "freq": 1,
+      "skills": [
+        "web_rover_ai_agent"
+      ]
+    },
+    "Uvicorn": {
+      "freq": 1,
+      "skills": [
+        "web_rover_ai_agent"
       ]
     }
   },
@@ -8121,6 +8204,39 @@
         "llm"
       ],
       "step_count": 8
+    },
+    "web_rover_ai_agent": {
+      "concepts": [
+        "Autonomous web agents",
+        "Autonomous web navigation",
+        "Task automation",
+        "Information retrieval",
+        "Deep research",
+        "Language models",
+        "Research workflows",
+        "State management",
+        "Web automation",
+        "Content processing"
+      ],
+      "tools": [
+        "Playwright",
+        "LangGraph",
+        "RAG pipeline",
+        "GPT-4",
+        "Claude",
+        "Poetry",
+        "Uvicorn",
+        "npm"
+      ],
+      "tags": [
+        "ai",
+        "ai models",
+        "automation",
+        "research",
+        "research automation",
+        "web development"
+      ],
+      "step_count": 11
     }
   },
   "relationships": {
@@ -8245,6 +8361,9 @@
       ],
       "webrover": [
         "anthropic"
+      ],
+      "web_rover_ai_agent": [
+        "Claude"
       ]
     },
     "100_hours_of_hermes_agent_lessons_in_19_minutes": {
@@ -8345,6 +8464,9 @@
       ],
       "openakita": [
         "agent"
+      ],
+      "web_rover_ai_agent": [
+        "Claude"
       ]
     },
     "hermes_agent_tutorial_for_beginners_full_step_by_s": {
@@ -8513,6 +8635,9 @@
       ],
       "webrover": [
         "Python"
+      ],
+      "web_rover_ai_agent": [
+        "Claude"
       ]
     },
     "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
@@ -8843,6 +8968,9 @@
       ],
       "webrover": [
         "anthropic"
+      ],
+      "web_rover_ai_agent": [
+        "Claude"
       ]
     },
     "by_august_we_ll_have_frontier_ai_running_locally": {
@@ -9045,6 +9173,9 @@
       "griptape_framework": [
         "Claude",
         "OpenAI"
+      ],
+      "web_rover_ai_agent": [
+        "Claude"
       ]
     },
     "this_100_self_improving_ai_agent_is_insane_just_wa": {
@@ -9232,6 +9363,9 @@
       ],
       "webrover": [
         "Python"
+      ],
+      "web_rover_ai_agent": [
+        "Claude"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -9357,6 +9491,9 @@
       ],
       "webrover": [
         "Python"
+      ],
+      "web_rover_ai_agent": [
+        "Claude"
       ]
     },
     "new_hermes_paperclip_ai_agent_update_is_insane": {
@@ -9585,6 +9722,10 @@
       ],
       "webrover": [
         "anthropic"
+      ],
+      "web_rover_ai_agent": [
+        "GPT-4",
+        "Claude"
       ]
     },
     "you_need_to_use_hermes_right_now_goodbye_openclaw": {
@@ -9777,6 +9918,9 @@
       "webrover": [
         "Python",
         "anthropic"
+      ],
+      "web_rover_ai_agent": [
+        "Claude"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -9918,6 +10062,9 @@
       ],
       "webrover": [
         "Python"
+      ],
+      "web_rover_ai_agent": [
+        "Claude"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -10069,6 +10216,9 @@
       ],
       "webrover": [
         "openai"
+      ],
+      "web_rover_ai_agent": [
+        "Claude"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -10152,6 +10302,9 @@
       ],
       "griptape_framework": [
         "Claude"
+      ],
+      "web_rover_ai_agent": [
+        "Claude"
       ]
     },
     "every_hermes_concept_explained_for_normal_people": {
@@ -10211,6 +10364,9 @@
         "Claude"
       ],
       "griptape_framework": [
+        "Claude"
+      ],
+      "web_rover_ai_agent": [
         "Claude"
       ]
     },
@@ -10292,6 +10448,10 @@
         "Anthropic"
       ],
       "griptape_framework": [
+        "Claude"
+      ],
+      "web_rover_ai_agent": [
+        "Task automation",
         "Claude"
       ]
     },
@@ -10458,6 +10618,9 @@
       ],
       "modular_speech_to_speech_pipeline": [
         "LLM"
+      ],
+      "web_rover_ai_agent": [
+        "Claude"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -10545,6 +10708,9 @@
       "griptape_framework": [
         "Claude",
         "OpenAI"
+      ],
+      "web_rover_ai_agent": [
+        "Claude"
       ]
     },
     "dify": {
@@ -11572,6 +11738,9 @@
       ],
       "cross_platform_py_xiaozhi": [
         "uv"
+      ],
+      "web_rover_ai_agent": [
+        "Claude"
       ]
     },
     "mcp_go": {
@@ -12384,6 +12553,9 @@
       "griptape_framework": [
         "OpenAI",
         "LangChain"
+      ],
+      "web_rover_ai_agent": [
+        "LangGraph"
       ]
     },
     "griptape": {
@@ -12665,6 +12837,9 @@
       ],
       "webrover": [
         "Python"
+      ],
+      "web_rover_ai_agent": [
+        "Claude"
       ]
     },
     "forge": {
@@ -13663,6 +13838,9 @@
       ],
       "webrover": [
         "Python"
+      ],
+      "web_rover_ai_agent": [
+        "npm"
       ]
     },
     "speech_to_speech": {
@@ -14147,8 +14325,72 @@
         "python",
         "anthropic"
       ]
+    },
+    "web_rover_ai_agent": {
+      "new_claude_opus_5_leaks": [
+        "Claude"
+      ],
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "Claude"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Claude"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
+      ],
+      "yes_the_kimi_k3_hype_is_real": [
+        "Claude"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "Claude"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude"
+      ],
+      "china_just_beat_claude_ai_kimi_k3": [
+        "GPT-4",
+        "Claude"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "Claude"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Claude"
+      ],
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "Claude"
+      ],
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "Claude"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "Claude"
+      ],
+      "new_claude_update_is_insane": [
+        "Task automation",
+        "Claude"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "Claude"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Claude"
+      ],
+      "fastapi_mcp_integration": [
+        "Claude"
+      ],
+      "agentic_rag_for_dummies": [
+        "LangGraph"
+      ],
+      "griptape_framework": [
+        "Claude"
+      ],
+      "leon_ai_assistant": [
+        "npm"
+      ]
     }
   },
-  "updated_at": "2026-07-23T23:58:25.357795+00:00",
-  "total_skills": 70
+  "updated_at": "2026-07-23T23:58:54.575567+00:00",
+  "total_skills": 71
 }
