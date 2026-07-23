@@ -556,7 +556,7 @@
       ]
     },
     "AI automation": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
         "new_hermes_agent_os_is_insane",
@@ -983,19 +983,19 @@
       ]
     },
     "AI agent organization": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "new_hermes_agent_os_is_insane"
       ]
     },
     "AI agent specialization": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "new_hermes_agent_os_is_insane"
       ]
     },
     "AI news monitoring": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "new_hermes_agent_os_is_insane"
       ]
@@ -3108,7 +3108,7 @@
       ]
     },
     "Trading Strategy Hypothesis Generation": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "new_hermes_agent_os_is_insane"
       ]
@@ -3184,11 +3184,41 @@
       "skills": [
         "new_hermes_agent_os_is_insane"
       ]
+    },
+    "Market Behaviour Research": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
+    },
+    "Trading Bot": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
+    },
+    "Memory": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
+    },
+    "Strategy": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
+    },
+    "Market Conditions": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 43,
+      "freq": 44,
       "skills": [
         "new_claude_opus_5_leaks",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
@@ -3250,7 +3280,7 @@
       ]
     },
     "Docker": {
-      "freq": 20,
+      "freq": 21,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -3268,7 +3298,7 @@
       ]
     },
     "bash": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "new_hermes_agent_os_is_insane",
@@ -3276,7 +3306,7 @@
       ]
     },
     "Python": {
-      "freq": 21,
+      "freq": 22,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -3294,7 +3324,7 @@
       ]
     },
     "LLM": {
-      "freq": 12,
+      "freq": 13,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "hermes_agent_full_course_setup_guide_for_complete_",
@@ -3532,7 +3562,7 @@
       ]
     },
     "Hermes Agent": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "hermes_agent_full_course_setup_guide_for_complete_",
         "new_hermes_agent_os_is_insane",
@@ -5826,18 +5856,30 @@
       ]
     },
     "arXiv": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "new_hermes_agent_os_is_insane"
       ]
     },
     "Archive": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "new_hermes_agent_os_is_insane"
       ]
     },
     "Charts and Visuals": {
+      "freq": 2,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
+    },
+    "APIName": {
+      "freq": 1,
+      "skills": [
+        "new_hermes_agent_os_is_insane"
+      ]
+    },
+    "FrameworkName": {
       "freq": 1,
       "skills": [
         "new_hermes_agent_os_is_insane"
@@ -6240,24 +6282,12 @@
         "AI agent specialization",
         "AI automation",
         "AI news monitoring",
-        "Single-Agent vs. Multi-Agent Systems",
-        "Shared Memory Vault",
-        "Agent Specialization",
-        "Automation & Productivity",
+        "Market Behaviour Research",
         "Trading Strategy Hypothesis Generation",
-        "Scientific Paper Synthesis",
-        "Latent Demand",
-        "Market Gap",
-        "AI-powered product development",
-        "Research Methodology",
-        "Literature Review",
-        "Momentum Trading",
-        "Mean Reversion",
-        "Order Flow Microstructure",
-        "Market Regimes",
-        "Volatility Analysis",
-        "market behaviour",
-        "ai self-improvement"
+        "Trading Bot",
+        "Memory",
+        "Strategy",
+        "Market Conditions"
       ],
       "tools": [
         "Claude",
@@ -6268,7 +6298,9 @@
         "Hermes Agent",
         "arXiv",
         "Archive",
-        "Charts and Visuals"
+        "Charts and Visuals",
+        "APIName",
+        "FrameworkName"
       ],
       "tags": [
         "agent",
@@ -6276,8 +6308,9 @@
         "trading",
         "hypothesis generation",
         "research",
-        "market behaviour",
-        "ai self-improvement"
+        "market",
+        "bot",
+        "strategy"
       ],
       "step_count": 12
     },
@@ -8332,11 +8365,11 @@
         "Claude"
       ],
       "new_hermes_agent_os_is_insane": [
-        "LLM",
+        "Docker",
+        "Claude",
         "Python",
         "bash",
-        "Docker",
-        "Claude"
+        "LLM"
       ],
       "every_hermes_concept_explained_for_normal_people": [
         "Claude"
@@ -9044,9 +9077,9 @@
         "open"
       ],
       "new_hermes_agent_os_is_insane": [
+        "Docker",
         "Claude",
-        "Python",
-        "Docker"
+        "Python"
       ],
       "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
         "OpenAI",
@@ -9202,8 +9235,8 @@
         "Anthropic"
       ],
       "new_hermes_agent_os_is_insane": [
-        "Python",
-        "Claude"
+        "Claude",
+        "Python"
       ],
       "every_hermes_concept_explained_for_normal_people": [
         "Claude"
@@ -9503,9 +9536,9 @@
     },
     "you_need_to_use_hermes_right_now_goodbye_openclaw": {
       "new_hermes_agent_os_is_insane": [
+        "Docker",
         "Claude",
         "Python",
-        "Docker",
         "LLM"
       ],
       "every_hermes_concept_explained_for_normal_people": [
@@ -9697,11 +9730,11 @@
         "Claude"
       ],
       "hermes_agent_tutorial_for_beginners_full_step_by_s": [
-        "LLM",
+        "Docker",
+        "Claude",
         "Python",
         "bash",
-        "Docker",
-        "Claude"
+        "LLM"
       ],
       "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
         "OpenAI"
@@ -9720,13 +9753,13 @@
         "Claude"
       ],
       "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "Docker",
         "Claude",
-        "Python",
-        "Docker"
+        "Python"
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
-        "Python",
-        "Claude"
+        "Claude",
+        "Python"
       ],
       "new_hermes_paperclip_ai_agent_update_is_insane": [
         "OpenAI",
@@ -9736,9 +9769,9 @@
         "Claude"
       ],
       "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "Docker",
         "Claude",
         "Python",
-        "Docker",
         "LLM"
       ],
       "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
@@ -9752,13 +9785,12 @@
         "Claude"
       ],
       "hermes_agent_full_course_setup_guide_for_complete_": [
+        "Docker",
         "Hermes Agent",
         "Claude",
-        "Docker",
         "LLM"
       ],
       "this_ai_business_model_is_creating_new_millionaire": [
-        "AI-powered product development",
         "Claude"
       ],
       "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
@@ -9804,11 +9836,11 @@
         "OpenAI"
       ],
       "griptape_framework": [
-        "LLM",
-        "Python",
-        "Docker",
         "Hermes Agent",
-        "Claude"
+        "Docker",
+        "Claude",
+        "Python",
+        "LLM"
       ],
       "infinity_database": [
         "Docker"
@@ -9821,8 +9853,8 @@
         "LLM"
       ],
       "leon_ai_assistant": [
-        "Python",
-        "Docker"
+        "Docker",
+        "Python"
       ],
       "modular_speech_to_speech_pipeline": [
         "LLM"
@@ -10274,9 +10306,9 @@
         "Gemini"
       ],
       "new_hermes_agent_os_is_insane": [
+        "Docker",
         "Hermes Agent",
         "Claude",
-        "Docker",
         "LLM"
       ],
       "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
@@ -10408,7 +10440,6 @@
         "Anthropic"
       ],
       "new_hermes_agent_os_is_insane": [
-        "AI-powered product development",
         "Claude"
       ],
       "every_hermes_concept_explained_for_normal_people": [
@@ -12421,11 +12452,11 @@
         "Docker"
       ],
       "new_hermes_agent_os_is_insane": [
-        "LLM",
-        "Python",
-        "Docker",
         "Hermes Agent",
-        "Claude"
+        "Docker",
+        "Claude",
+        "Python",
+        "LLM"
       ],
       "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
         "LLM",
@@ -13415,8 +13446,8 @@
         "Python"
       ],
       "new_hermes_agent_os_is_insane": [
-        "Python",
-        "Docker"
+        "Docker",
+        "Python"
       ],
       "hermes_agent_full_course_setup_guide_for_complete_": [
         "Docker"
@@ -13791,6 +13822,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-22T02:40:28.855110+00:00",
+  "updated_at": "2026-07-23T23:29:04.897347+00:00",
   "total_skills": 69
 }
