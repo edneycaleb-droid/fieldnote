@@ -78,12 +78,13 @@
       ]
     },
     "anthropic": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "new_claude_opus_5_leaks",
         "new_claude_update_is_insane",
         "china_just_beat_claude_ai_kimi_k3",
-        "griptape"
+        "griptape",
+        "pydantic_deepagents"
       ]
     },
     "hermes": {
@@ -1700,10 +1701,11 @@
       ]
     },
     "ai-agents": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "mcp_agent",
-        "agentic_rag_for_dummies"
+        "agentic_rag_for_dummies",
+        "pydantic_deepagents"
       ]
     },
     "llms": {
@@ -2555,9 +2557,10 @@
       ]
     },
     "agent-framework": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "lightagent"
+        "lightagent",
+        "pydantic_deepagents"
       ]
     },
     "agent-hooks": {
@@ -3272,6 +3275,18 @@
       "skills": [
         "web_rover_ai_agent"
       ]
+    },
+    "claude-code": {
+      "freq": 1,
+      "skills": [
+        "pydantic_deepagents"
+      ]
+    },
+    "cli": {
+      "freq": 1,
+      "skills": [
+        "pydantic_deepagents"
+      ]
     }
   },
   "tools": {
@@ -3421,7 +3436,7 @@
       ]
     },
     "anthropic": {
-      "freq": 12,
+      "freq": 13,
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
@@ -3431,7 +3446,8 @@
         "griptape",
         "forge",
         "openakita",
-        "webrover"
+        "webrover",
+        "pydantic_deepagents"
       ]
     },
     "pip": {
@@ -3713,7 +3729,7 @@
       ]
     },
     "docker": {
-      "freq": 10,
+      "freq": 11,
       "skills": [
         "dify",
         "ragflow",
@@ -3724,7 +3740,8 @@
         "awesome_mcp_servers",
         "forge",
         "infinity",
-        "speech_to_speech"
+        "speech_to_speech",
+        "pydantic_deepagents"
       ]
     },
     "postgresql": {
@@ -3744,7 +3761,7 @@
       ]
     },
     "openai": {
-      "freq": 14,
+      "freq": 15,
       "skills": [
         "dify",
         "ragflow",
@@ -3759,7 +3776,8 @@
         "leon",
         "speech_to_speech",
         "openakita",
-        "webrover"
+        "webrover",
+        "pydantic_deepagents"
       ]
     },
     "agent": {
@@ -3886,12 +3904,13 @@
       ]
     },
     "gemini": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "ragflow",
         "agentic_rag_for_dummies",
         "py_xiaozhi",
-        "openakita"
+        "openakita",
+        "pydantic_deepagents"
       ]
     },
     "huggingface": {
@@ -3930,11 +3949,12 @@
       ]
     },
     "ai-agents": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "ragflow",
         "mcp_agent",
-        "agentic_rag_for_dummies"
+        "agentic_rag_for_dummies",
+        "pydantic_deepagents"
       ]
     },
     "context-engine": {
@@ -4025,11 +4045,12 @@
       ]
     },
     "ollama": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "lightrag",
         "agentic_rag_for_dummies",
-        "forge"
+        "forge",
+        "pydantic_deepagents"
       ]
     },
     "gpt-4": {
@@ -4344,11 +4365,12 @@
       ]
     },
     "pydantic": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "mcp_agent",
         "griptape",
-        "forge"
+        "forge",
+        "pydantic_deepagents"
       ]
     },
     "agents": {
@@ -4884,10 +4906,11 @@
       ]
     },
     "langgraph": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "agentic_rag_for_dummies",
-        "webrover"
+        "webrover",
+        "pydantic_deepagents"
       ]
     },
     "bm25": {
@@ -4954,9 +4977,10 @@
       ]
     },
     "crewai": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "griptape"
+        "griptape",
+        "pydantic_deepagents"
       ]
     },
     "CrewAI": {
@@ -5337,9 +5361,10 @@
       ]
     },
     "agent-framework": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "lightagent"
+        "lightagent",
+        "pydantic_deepagents"
       ]
     },
     "agent-hooks": {
@@ -5980,6 +6005,36 @@
       "freq": 1,
       "skills": [
         "web_rover_ai_agent"
+      ]
+    },
+    "claude-code": {
+      "freq": 1,
+      "skills": [
+        "pydantic_deepagents"
+      ]
+    },
+    "cli": {
+      "freq": 1,
+      "skills": [
+        "pydantic_deepagents"
+      ]
+    },
+    "coding-agent": {
+      "freq": 1,
+      "skills": [
+        "pydantic_deepagents"
+      ]
+    },
+    "deep-research": {
+      "freq": 1,
+      "skills": [
+        "pydantic_deepagents"
+      ]
+    },
+    "docker-sandbox": {
+      "freq": 1,
+      "skills": [
+        "pydantic_deepagents"
       ]
     }
   },
@@ -8237,6 +8292,43 @@
         "web development"
       ],
       "step_count": 11
+    },
+    "pydantic_deepagents": {
+      "concepts": [
+        "agent-framework",
+        "ai-agents",
+        "anthropic",
+        "claude-code",
+        "cli"
+      ],
+      "tools": [
+        "pydantic",
+        "crewai",
+        "docker",
+        "ollama",
+        "gemini",
+        "langgraph",
+        "openai",
+        "anthropic",
+        "agent-framework",
+        "ai-agents",
+        "claude-code",
+        "cli",
+        "coding-agent",
+        "deep-research",
+        "docker-sandbox"
+      ],
+      "tags": [
+        "agent-framework",
+        "ai-agents",
+        "anthropic",
+        "claude-code",
+        "cli",
+        "python",
+        "ai",
+        "llm"
+      ],
+      "step_count": 5
     }
   },
   "relationships": {
@@ -8364,6 +8456,9 @@
       ],
       "web_rover_ai_agent": [
         "Claude"
+      ],
+      "pydantic_deepagents": [
+        "anthropic"
       ]
     },
     "100_hours_of_hermes_agent_lessons_in_19_minutes": {
@@ -8971,6 +9066,9 @@
       ],
       "web_rover_ai_agent": [
         "Claude"
+      ],
+      "pydantic_deepagents": [
+        "anthropic"
       ]
     },
     "by_august_we_ll_have_frontier_ai_running_locally": {
@@ -9726,6 +9824,9 @@
       "web_rover_ai_agent": [
         "GPT-4",
         "Claude"
+      ],
+      "pydantic_deepagents": [
+        "anthropic"
       ]
     },
     "you_need_to_use_hermes_right_now_goodbye_openclaw": {
@@ -9921,6 +10022,9 @@
       ],
       "web_rover_ai_agent": [
         "Claude"
+      ],
+      "pydantic_deepagents": [
+        "anthropic"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -10219,6 +10323,9 @@
       ],
       "web_rover_ai_agent": [
         "Claude"
+      ],
+      "pydantic_deepagents": [
+        "openai"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -10850,6 +10957,10 @@
       "webrover": [
         "ai",
         "openai"
+      ],
+      "pydantic_deepagents": [
+        "openai",
+        "docker"
       ]
     },
     "dify_deployment": {
@@ -11007,6 +11118,12 @@
       "webrover": [
         "ai",
         "openai"
+      ],
+      "pydantic_deepagents": [
+        "docker",
+        "gemini",
+        "openai",
+        "ai-agents"
       ]
     },
     "ragflow_self_hosting_guide": {
@@ -11173,6 +11290,10 @@
       "webrover": [
         "llm",
         "Python"
+      ],
+      "pydantic_deepagents": [
+        "ollama",
+        "docker"
       ]
     },
     "lightrag_setup": {
@@ -11519,6 +11640,9 @@
         "ai",
         "llm",
         "python"
+      ],
+      "pydantic_deepagents": [
+        "openai"
       ]
     },
     "advanced_retrieval_augmented_generation": {
@@ -11966,6 +12090,12 @@
         "llm",
         "python",
         "anthropic"
+      ],
+      "pydantic_deepagents": [
+        "pydantic",
+        "openai",
+        "anthropic",
+        "ai-agents"
       ]
     },
     "mcp_agent_framework": {
@@ -12190,6 +12320,9 @@
       "webrover": [
         "ai",
         "llm"
+      ],
+      "pydantic_deepagents": [
+        "docker"
       ]
     },
     "mcp_registry_development_deployment": {
@@ -12235,6 +12368,9 @@
         "Model Context Protocol (MCP)"
       ],
       "speech_to_speech": [
+        "docker"
+      ],
+      "pydantic_deepagents": [
         "docker"
       ]
     },
@@ -12379,6 +12515,9 @@
       ],
       "webrover": [
         "ai"
+      ],
+      "pydantic_deepagents": [
+        "docker"
       ]
     },
     "mcp_server_implementations": {
@@ -12690,6 +12829,12 @@
         "llm",
         "python",
         "anthropic"
+      ],
+      "pydantic_deepagents": [
+        "crewai",
+        "pydantic",
+        "openai",
+        "anthropic"
       ]
     },
     "griptape_framework": {
@@ -12964,6 +13109,13 @@
         "openai",
         "llm",
         "anthropic"
+      ],
+      "pydantic_deepagents": [
+        "pydantic",
+        "openai",
+        "ollama",
+        "anthropic",
+        "docker"
       ]
     },
     "forge_llm_tool_calling_framework": {
@@ -13040,6 +13192,9 @@
         "docker"
       ],
       "speech_to_speech": [
+        "docker"
+      ],
+      "pydantic_deepagents": [
         "docker"
       ]
     },
@@ -13398,6 +13553,10 @@
         "langchain",
         "openai",
         "llm"
+      ],
+      "pydantic_deepagents": [
+        "openai",
+        "agent-framework"
       ]
     },
     "lightagent_framework": {
@@ -13669,6 +13828,9 @@
         "ai",
         "openai",
         "python"
+      ],
+      "pydantic_deepagents": [
+        "openai"
       ]
     },
     "agentic_video_production": {
@@ -13764,6 +13926,9 @@
         "ai",
         "openai",
         "python"
+      ],
+      "pydantic_deepagents": [
+        "openai"
       ]
     },
     "leon_ai_assistant": {
@@ -13948,6 +14113,10 @@
         "ai",
         "openai",
         "python"
+      ],
+      "pydantic_deepagents": [
+        "openai",
+        "docker"
       ]
     },
     "py_xiaozhi": {
@@ -14012,6 +14181,9 @@
       ],
       "webrover": [
         "python"
+      ],
+      "pydantic_deepagents": [
+        "gemini"
       ]
     },
     "cross_platform_py_xiaozhi": {
@@ -14146,6 +14318,11 @@
         "ai",
         "openai",
         "python",
+        "anthropic"
+      ],
+      "pydantic_deepagents": [
+        "gemini",
+        "openai",
         "anthropic"
       ]
     },
@@ -14324,6 +14501,11 @@
         "openai",
         "python",
         "anthropic"
+      ],
+      "pydantic_deepagents": [
+        "anthropic",
+        "openai",
+        "langgraph"
       ]
     },
     "web_rover_ai_agent": {
@@ -14389,8 +14571,100 @@
       "leon_ai_assistant": [
         "npm"
       ]
+    },
+    "pydantic_deepagents": {
+      "new_claude_opus_5_leaks": [
+        "anthropic"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "anthropic"
+      ],
+      "china_just_beat_claude_ai_kimi_k3": [
+        "anthropic"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "anthropic"
+      ],
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "openai"
+      ],
+      "dify": [
+        "openai",
+        "docker"
+      ],
+      "ragflow": [
+        "docker",
+        "gemini",
+        "openai",
+        "ai-agents"
+      ],
+      "lightrag": [
+        "ollama",
+        "docker"
+      ],
+      "rag_techniques": [
+        "openai"
+      ],
+      "mcp_agent": [
+        "pydantic",
+        "openai",
+        "anthropic",
+        "ai-agents"
+      ],
+      "registry": [
+        "docker"
+      ],
+      "mcp_registry_development_deployment": [
+        "docker"
+      ],
+      "awesome_mcp_servers": [
+        "docker"
+      ],
+      "griptape": [
+        "crewai",
+        "pydantic",
+        "openai",
+        "anthropic"
+      ],
+      "forge": [
+        "pydantic",
+        "openai",
+        "ollama",
+        "anthropic",
+        "docker"
+      ],
+      "infinity": [
+        "docker"
+      ],
+      "lightagent": [
+        "openai",
+        "agent-framework"
+      ],
+      "openmontage": [
+        "openai"
+      ],
+      "leon": [
+        "openai"
+      ],
+      "speech_to_speech": [
+        "openai",
+        "docker"
+      ],
+      "py_xiaozhi": [
+        "gemini"
+      ],
+      "openakita": [
+        "gemini",
+        "openai",
+        "anthropic"
+      ],
+      "webrover": [
+        "anthropic",
+        "openai",
+        "langgraph"
+      ]
     }
   },
-  "updated_at": "2026-07-23T23:58:54.575567+00:00",
-  "total_skills": 71
+  "updated_at": "2026-07-23T23:59:06.701224+00:00",
+  "total_skills": 72
 }
