@@ -364,6 +364,11 @@ def _enrich_one(item: dict) -> None:
         )
     log.info("Enrichment quality gate: %s → %s", full_name, gate_report.summary)
 
+    # Attach quality report so _save_discovered_skill (and ultimately _save_skill)
+    # can persist it on the skill and in the index.  This lets the Hub show
+    # confidence scores at a glance and future passes detect regressions.
+    skill = {**skill, "_quality": gate_report.to_dict()}
+
     # Save upgraded skill + update discovery log — both wrapped together so a
     # mid-run failure (e.g. disk write error) keeps _baseline=True in the index
     # and records the error in the discovery log for the next retry.
@@ -374,7 +379,7 @@ def _enrich_one(item: dict) -> None:
         # Sync to GitHub (non-fatal)
         try:
             import agents.github_sync as gs
-            gs.sync_skill(skill_name, _a._read_existing_markdown(skill_name), index)
+            gs.sync_skill(skill_name, _a.SKILLS_DIR, index)
         except Exception as e:
             log.warning("GitHub sync failed for enriched skill %s: %s", skill_name, e)
 

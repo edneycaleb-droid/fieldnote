@@ -1101,6 +1101,10 @@ def _save_skill(
         # Baseline flag — set by _deterministic_baseline; cleared on AI enrichment
         "_baseline":       skill.get("_baseline", False),
         "_baseline_reason": skill.get("_baseline_reason", ""),
+        # Quality gate report — set by enrichment; None for baseline-only skills.
+        # Stored as {"score": float, "decision": str, "findings": [...], "summary": str}.
+        # Hub reads _quality.score and _quality.decision for confidence display.
+        "_quality":        skill.get("_quality"),
     }
     save_index(index)
     try:
