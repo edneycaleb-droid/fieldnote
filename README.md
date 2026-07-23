@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **138 skills** · Last synced: 2026-07-22 02:40 UTC
+> **138 skills** · Last synced: 2026-07-23 23:29 UTC
 
 ---
 
@@ -9,7 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [New Hermes Agent OS is INSANE! - Advanced Multi-Agent Systems and Hypothesis Generation](skills/new_hermes_agent_os_is_insane.md) | This skill details the advanced capabilities of the New Hermes Agent OS, a multi | `Claude` `Docker` `bash` `Python` | `agent` `multi-agent` `trading` |
+| [Advanced Multi-Agent Trading Hypothesis Generation](skills/new_hermes_agent_os_is_insane.md) | This skill details the advanced capabilities of the New Hermes Agent OS, a multi | `Claude` `Docker` `bash` `Python` | `agent` `multi-agent` `trading` |
 | [Modular Speech-to-Speech Agent Pipeline with Hugging Face](skills/modular_speech_to_speech_pipeline.md) | This skill details the architecture and implementation of a modular, low-latency | `Silero VAD` `Parakeet TDT` `Transformers` `llama.cpp` | `speech-ai` `speech-processing` `voice-agents` |
 | [Openakita](skills/openakita.md) | An open-source AI assistant framework with skills and agent architecture | `anthropic` `gemini` `openai` `agent` | `agent` `ai` `assistant` |
 | [Building a Lightweight, Cross-Platform Multi-Modal AI Interaction Framework with py-xiaozhi](skills/cross_platform_py_xiaozhi.md) | This skill teaches how to use py_xiaozhi, a lightweight, cross-platform multi-mo | `py_xiaozhi` `asyncio` `Opus codec` `MCP tool server` | `cross-platform` `multi-modal AI` `real-time voice streaming` |
