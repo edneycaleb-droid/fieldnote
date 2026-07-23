@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **139 skills** · Last synced: 2026-07-23 23:58 UTC
+> **140 skills** · Last synced: 2026-07-23 23:58 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Autonomous Web Agent for Task Automation and Research](skills/web_rover_ai_agent.md) | This skill teaches how to create an AI-powered web agent, WebRover, that combine | `Playwright` `LangGraph` `RAG pipeline` `GPT-4` | `ai` `ai models` `automation` |
 | [Webrover](skills/webrover.md) | WebRover is an autonomous AI agent designed to interpret user input and execute  | `uvicorn` `langchain` `langgraph` `openai` | `python` `ai` `llm` |
 | [Advanced Multi-Agent Trading Hypothesis Generation](skills/new_hermes_agent_os_is_insane.md) | This skill details the advanced capabilities of the New Hermes Agent OS, a multi | `Claude` `Docker` `bash` `Python` | `agent` `multi-agent` `trading` |
 | [Modular Speech-to-Speech Agent Pipeline with Hugging Face](skills/modular_speech_to_speech_pipeline.md) | This skill details the architecture and implementation of a modular, low-latency | `Silero VAD` `Parakeet TDT` `Transformers` `llama.cpp` | `speech-ai` `speech-processing` `voice-agents` |
