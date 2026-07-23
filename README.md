@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **140 skills** · Last synced: 2026-07-23 23:58 UTC
+> **141 skills** · Last synced: 2026-07-23 23:59 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Pydantic Deepagents](skills/pydantic_deepagents.md) | Open-source, self-hosted Claude Code - a terminal AI assistant and the Python fr | `pydantic` `crewai` `docker` `ollama` | `agent-framework` `ai-agents` `anthropic` |
 | [Autonomous Web Agent for Task Automation and Research](skills/web_rover_ai_agent.md) | This skill teaches how to create an AI-powered web agent, WebRover, that combine | `Playwright` `LangGraph` `RAG pipeline` `GPT-4` | `ai` `ai models` `automation` |
 | [Webrover](skills/webrover.md) | WebRover is an autonomous AI agent designed to interpret user input and execute  | `uvicorn` `langchain` `langgraph` `openai` | `python` `ai` `llm` |
 | [Advanced Multi-Agent Trading Hypothesis Generation](skills/new_hermes_agent_os_is_insane.md) | This skill details the advanced capabilities of the New Hermes Agent OS, a multi | `Claude` `Docker` `bash` `Python` | `agent` `multi-agent` `trading` |
