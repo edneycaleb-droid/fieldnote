@@ -144,6 +144,40 @@ def save_index(index: dict):
     os.replace(_tmp, METADATA_FILE)
 
 
+def _delete_degraded_skill_if_orphaned(skill_name: str) -> bool:
+    """
+    Delete a degraded .md file from fieldnote_skills/ and remove it from the
+    index — but ONLY if the skill is still marked _degraded in the index
+    (i.e. it has not been enhanced by a later AI pass).
+    Returns True if the file was deleted, False if skipped or not found.
+    """
+    if not skill_name:
+        return False
+    md_path = os.path.join(SKILLS_DIR, f"{skill_name}.md")
+    if not os.path.exists(md_path):
+        return False
+    # Only remove if still degraded in the index
+    index = load_index()
+    meta  = index.get(skill_name, {})
+    if not meta.get("_degraded"):
+        log.info(
+            "_delete_degraded_skill_if_orphaned: '%s' is no longer degraded — skipping",
+            skill_name,
+        )
+        return False
+    try:
+        os.unlink(md_path)
+        log.info("Deleted orphaned degraded skill file: %s.md", skill_name)
+    except Exception as exc:
+        log.warning("Failed to delete degraded skill file %s.md: %s", skill_name, exc)
+        return False
+    # Remove from index
+    if skill_name in index:
+        del index[skill_name]
+        save_index(index)
+    return True
+
+
 def repair_index() -> tuple[int, int]:
     """Remove index entries with no .md file; add stub entries for .md files not in index.
     Returns (removed, added) counts. Safe to call at startup."""
@@ -1105,6 +1139,12 @@ def _save_skill(
         # Stored as {"score": float, "decision": str, "findings": [...], "summary": str}.
         # Hub reads _quality.score and _quality.decision for confidence display.
         "_quality":        skill.get("_quality"),
+        # Degraded-mode flag — True when skill was auto-extracted without AI.
+        # Written here so _delete_degraded_skill_if_orphaned() can check index
+        # without relying on the .md file content.  Cleared automatically when
+        # an AI enhancement pass saves a fresh (non-degraded) skill dict.
+        "_degraded":       skill.get("_degraded", False),
+        "_pending_enhancement": skill.get("_pending_enhancement", False),
     }
     save_index(index)
     try:
@@ -1993,17 +2033,35 @@ def api_job_delete(run_id: str):
     if stage not in ("queued", "degraded", "resuming"):
         return jsonify({"ok": False, "error": f"Checkpoint stage '{stage}' cannot be deleted via this endpoint"}), 400
     run_checkpoint.delete_checkpoint(run_id)
+
+    # Also remove the degraded .md skill file from the library if it was never enhanced
+    skill_name        = cp.get("skill_name")
+    skill_file_deleted = False
+    if cp.get("degraded") and skill_name:
+        skill_file_deleted = _delete_degraded_skill_if_orphaned(skill_name)
+        if skill_file_deleted:
+            log.info(
+                "api_job_delete: removed orphaned degraded skill file '%s.md' "
+                "for checkpoint %s", skill_name, run_id,
+            )
+
     # Record in purge log as a manual deletion
     run_checkpoint._append_purge_log([{
-        "run_id":            run_id,
-        "skill_name":        cp.get("skill_name"),
-        "video_id":          cp.get("video_id"),
-        "queued_at":         cp.get("queued_at"),
-        "recovery_attempts": cp.get("recovery_attempts", 0),
-        "reason":            "manually_deleted",
-        "purged_at":         datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "run_id":              run_id,
+        "skill_name":          skill_name,
+        "video_id":            cp.get("video_id"),
+        "queued_at":           cp.get("queued_at"),
+        "recovery_attempts":   cp.get("recovery_attempts", 0),
+        "reason":              "manually_deleted",
+        "skill_file_deleted":  skill_file_deleted,
+        "purged_at":           datetime.now(timezone.utc).isoformat(timespec="seconds"),
     }])
-    return jsonify({"ok": True, "run_id": run_id, "skill_name": cp.get("skill_name")})
+    return jsonify({
+        "ok":                True,
+        "run_id":            run_id,
+        "skill_name":        skill_name,
+        "skill_file_deleted": skill_file_deleted,
+    })
 
 
 @app.route("/api/settings/paid-fallback", methods=["POST"])
@@ -4825,6 +4883,15 @@ def _boot_scheduler():
                     p.get("run_id"), p.get("skill_name"),
                     p.get("recovery_attempts", 0), p.get("reason"),
                 )
+                # Also clean up the degraded .md file left behind by this checkpoint
+                stale_skill = p.get("skill_name")
+                if stale_skill:
+                    deleted = _delete_degraded_skill_if_orphaned(stale_skill)
+                    if deleted:
+                        log.info(
+                            "recover_queued_jobs: removed orphaned degraded skill file '%s.md' "
+                            "for auto-purged checkpoint %s", stale_skill, p.get("run_id"),
+                        )
         except Exception as exc:
             log.error("recover_queued_jobs: purge step failed: %s", exc)
             purged = []

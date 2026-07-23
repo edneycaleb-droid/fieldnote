@@ -5689,7 +5689,7 @@ function renderQueuedJobs(data, enData) {
         <button class="qjob-resume-btn" ${resumeDisabled}
           onclick="resumeQueuedJob('${esc(runId)}', this)">▶ Resume</button>
         <button class="qjob-delete-btn"
-          onclick="deleteQueuedJob('${esc(runId)}', this)">✕ Delete</button>
+          onclick="deleteQueuedJob('${esc(runId)}', this, ${cp.degraded ? 'true' : 'false'}, '${esc(skillName)}')">✕ Delete</button>
       </div>
     </div>`;
   }).join('');
@@ -5747,8 +5747,15 @@ async function resumeQueuedJob(runId, btn) {
   }
 }
 
-async function deleteQueuedJob(runId, btn) {
-  if (!confirm('Delete this queued job? The degraded draft file (if any) will remain in your library.')) return;
+async function deleteQueuedJob(runId, btn, isDegraded, skillName) {
+  // Warn the user when a degraded .md file will also be removed from the library
+  let msg = 'Delete this queued job?';
+  if (isDegraded && skillName) {
+    msg = `Delete this queued job?\n\nThe degraded draft "${skillName}.md" will also be removed from your skill library because it has not yet been enhanced by AI.\n\nThis cannot be undone.`;
+  } else if (isDegraded) {
+    msg = 'Delete this queued job?\n\nThe associated degraded draft .md file will also be removed from your skill library.\n\nThis cannot be undone.';
+  }
+  if (!confirm(msg)) return;
   btn.disabled = true;
   btn.textContent = '…';
   try {
