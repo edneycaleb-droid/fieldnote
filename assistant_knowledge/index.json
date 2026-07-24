@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "vinta--awesome-python",
+      "title": "Discovered: vinta/awesome-python",
+      "category": "discoveries",
+      "confidence": "verified",
+      "updated_at": "2026-07-24T02:37:52.232839+00:00",
+      "path": "discoveries/vinta--awesome-python.md"
+    },
+    {
       "slug": "donnemartin--system-design-primer",
       "title": "Discovered: donnemartin/system-design-primer",
       "category": "discoveries",
@@ -433,5 +441,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-24T02:37:50.820002+00:00"
+  "updated_at": "2026-07-24T02:37:52.239819+00:00"
 }
