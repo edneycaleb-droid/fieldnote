@@ -78,13 +78,14 @@
       ]
     },
     "anthropic": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "new_claude_opus_5_leaks",
         "new_claude_update_is_insane",
         "china_just_beat_claude_ai_kimi_k3",
         "griptape",
-        "pydantic_deepagents"
+        "pydantic_deepagents",
+        "headroom"
       ]
     },
     "hermes": {
@@ -99,7 +100,7 @@
       ]
     },
     "agent": {
-      "freq": 20,
+      "freq": 21,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
@@ -112,7 +113,8 @@
         "agentic_rag_for_dummies",
         "openmontage",
         "openakita",
-        "loushang"
+        "loushang",
+        "headroom"
       ]
     },
     "other": {
@@ -1178,7 +1180,7 @@
       ]
     },
     "ai": {
-      "freq": 19,
+      "freq": 20,
       "skills": [
         "dify",
         "ragflow",
@@ -1198,7 +1200,8 @@
         "openakita",
         "webrover",
         "loushang",
-        "autogpt"
+        "autogpt",
+        "headroom"
       ]
     },
     "AI workflow management": {
@@ -3291,9 +3294,10 @@
       ]
     },
     "claude-code": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "pydantic_deepagents"
+        "pydantic_deepagents",
+        "headroom"
       ]
     },
     "cli": {
@@ -3613,6 +3617,12 @@
       "skills": [
         "document_conversion"
       ]
+    },
+    "compression": {
+      "freq": 1,
+      "skills": [
+        "headroom"
+      ]
     }
   },
   "tools": {
@@ -3774,7 +3784,7 @@
       ]
     },
     "anthropic": {
-      "freq": 13,
+      "freq": 14,
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
@@ -3785,7 +3795,8 @@
         "forge",
         "openakita",
         "webrover",
-        "pydantic_deepagents"
+        "pydantic_deepagents",
+        "headroom"
       ]
     },
     "pip": {
@@ -4104,7 +4115,7 @@
       ]
     },
     "openai": {
-      "freq": 19,
+      "freq": 20,
       "skills": [
         "dify",
         "ragflow",
@@ -4124,17 +4135,19 @@
         "deepseek_671b_sft_guide",
         "loushang",
         "autogpt",
-        "markitdown"
+        "markitdown",
+        "headroom"
       ]
     },
     "agent": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "dify",
         "agentic_rag_for_dummies",
         "openmontage",
         "openakita",
-        "loushang"
+        "loushang",
+        "headroom"
       ]
     },
     "agentic-ai": {
@@ -4257,13 +4270,14 @@
       ]
     },
     "gemini": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "ragflow",
         "agentic_rag_for_dummies",
         "py_xiaozhi",
         "openakita",
-        "pydantic_deepagents"
+        "pydantic_deepagents",
+        "headroom"
       ]
     },
     "huggingface": {
@@ -4319,9 +4333,10 @@
       ]
     },
     "context-engineering": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "ragflow"
+        "ragflow",
+        "headroom"
       ]
     },
     "context-management": {
@@ -4438,7 +4453,7 @@
       ]
     },
     "llm": {
-      "freq": 11,
+      "freq": 12,
       "skills": [
         "lightrag",
         "graphrag",
@@ -4450,7 +4465,8 @@
         "trainer",
         "lightagent",
         "deepseek_671b_sft_guide",
-        "autogpt"
+        "autogpt",
+        "headroom"
       ]
     },
     "rag": {
@@ -4551,14 +4567,15 @@
       ]
     },
     "langchain": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "rag_techniques",
         "agentic_rag_for_dummies",
         "griptape",
         "lightagent",
         "webrover",
-        "markitdown"
+        "markitdown",
+        "headroom"
       ]
     },
     "llama-index": {
@@ -4620,10 +4637,11 @@
       ]
     },
     "fastapi": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "fastapi_mcp",
-        "griptape"
+        "griptape",
+        "headroom"
       ]
     },
     "authentication": {
@@ -4639,14 +4657,15 @@
       ]
     },
     "cursor": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "fastapi_mcp",
-        "openmontage"
+        "openmontage",
+        "headroom"
       ]
     },
     "mcp": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "fastapi_mcp",
         "mcp_agent",
@@ -4655,7 +4674,8 @@
         "awesome_mcp_servers",
         "xcodebuildmcp_installation",
         "lightagent",
-        "py_xiaozhi"
+        "py_xiaozhi",
+        "headroom"
       ]
     },
     "mcp-server": {
@@ -5624,9 +5644,10 @@
       ]
     },
     "pytorch": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "trainer"
+        "trainer",
+        "headroom"
       ]
     },
     "distributed": {
@@ -6385,10 +6406,11 @@
       ]
     },
     "claude-code": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "pydantic_deepagents",
-        "loushang"
+        "loushang",
+        "headroom"
       ]
     },
     "cli": {
@@ -6689,6 +6711,24 @@
       "freq": 1,
       "skills": [
         "document_conversion"
+      ]
+    },
+    "compression": {
+      "freq": 1,
+      "skills": [
+        "headroom"
+      ]
+    },
+    "context-window": {
+      "freq": 1,
+      "skills": [
+        "headroom"
+      ]
+    },
+    "prompt-engineering": {
+      "freq": 1,
+      "skills": [
+        "headroom"
       ]
     }
   },
@@ -9316,6 +9356,42 @@
         "text-analysis"
       ],
       "step_count": 9
+    },
+    "headroom": {
+      "concepts": [
+        "agent",
+        "ai",
+        "anthropic",
+        "claude-code",
+        "compression"
+      ],
+      "tools": [
+        "gemini",
+        "pytorch",
+        "anthropic",
+        "openai",
+        "langchain",
+        "agent",
+        "claude-code",
+        "compression",
+        "context-engineering",
+        "context-window",
+        "cursor",
+        "fastapi",
+        "llm",
+        "mcp",
+        "prompt-engineering"
+      ],
+      "tags": [
+        "agent",
+        "ai",
+        "anthropic",
+        "claude-code",
+        "compression",
+        "python",
+        "llm"
+      ],
+      "step_count": 8
     }
   },
   "relationships": {
@@ -9458,6 +9534,9 @@
       ],
       "auto_gpt_deployment": [
         "Claude"
+      ],
+      "headroom": [
+        "anthropic"
       ]
     },
     "100_hours_of_hermes_agent_lessons_in_19_minutes": {
@@ -9570,6 +9649,9 @@
       ],
       "auto_gpt_deployment": [
         "Claude"
+      ],
+      "headroom": [
+        "agent"
       ]
     },
     "hermes_agent_tutorial_for_beginners_full_step_by_s": {
@@ -9765,6 +9847,9 @@
       ],
       "document_conversion": [
         "Python"
+      ],
+      "headroom": [
+        "agent"
       ]
     },
     "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
@@ -10121,6 +10206,9 @@
       ],
       "document_conversion": [
         "OpenAI"
+      ],
+      "headroom": [
+        "anthropic"
       ]
     },
     "by_august_we_ll_have_frontier_ai_running_locally": {
@@ -10564,6 +10652,9 @@
         "OpenAI",
         "pip",
         "Python"
+      ],
+      "headroom": [
+        "agent"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -10708,6 +10799,9 @@
       ],
       "document_conversion": [
         "Python"
+      ],
+      "headroom": [
+        "agent"
       ]
     },
     "new_hermes_paperclip_ai_agent_update_is_insane": {
@@ -10969,6 +11063,9 @@
       ],
       "document_conversion": [
         "OpenAI"
+      ],
+      "headroom": [
+        "anthropic"
       ]
     },
     "you_need_to_use_hermes_right_now_goodbye_openclaw": {
@@ -11193,6 +11290,10 @@
       "document_conversion": [
         "OpenAI",
         "Python"
+      ],
+      "headroom": [
+        "anthropic",
+        "agent"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -11538,6 +11639,9 @@
       ],
       "document_conversion": [
         "OpenAI"
+      ],
+      "headroom": [
+        "openai"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -11979,6 +12083,9 @@
       ],
       "document_conversion": [
         "OpenAI"
+      ],
+      "headroom": [
+        "agent"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -12247,6 +12354,11 @@
       "markitdown": [
         "docker",
         "openai"
+      ],
+      "headroom": [
+        "openai",
+        "ai",
+        "agent"
       ]
     },
     "dify_deployment": {
@@ -12442,6 +12554,12 @@
       "markitdown": [
         "docker",
         "openai"
+      ],
+      "headroom": [
+        "context-engineering",
+        "openai",
+        "gemini",
+        "ai"
       ]
     },
     "ragflow_self_hosting_guide": {
@@ -12649,6 +12767,9 @@
       ],
       "document_conversion": [
         "Python"
+      ],
+      "headroom": [
+        "llm"
       ]
     },
     "lightrag_setup": {
@@ -12826,6 +12947,9 @@
       ],
       "document_conversion": [
         "Python"
+      ],
+      "headroom": [
+        "llm"
       ]
     },
     "graphrag_system": {
@@ -13055,6 +13179,12 @@
       "markitdown": [
         "langchain",
         "openai"
+      ],
+      "headroom": [
+        "llm",
+        "langchain",
+        "openai",
+        "ai"
       ]
     },
     "advanced_retrieval_augmented_generation": {
@@ -13231,6 +13361,13 @@
       ],
       "document_conversion": [
         "Python"
+      ],
+      "headroom": [
+        "llm",
+        "cursor",
+        "fastapi",
+        "mcp",
+        "ai"
       ]
     },
     "fastapi_mcp_integration": {
@@ -13403,6 +13540,10 @@
         "ai"
       ],
       "autogpt": [
+        "llm",
+        "ai"
+      ],
+      "headroom": [
         "llm",
         "ai"
       ]
@@ -13579,6 +13720,13 @@
       ],
       "markitdown": [
         "openai"
+      ],
+      "headroom": [
+        "anthropic",
+        "llm",
+        "openai",
+        "mcp",
+        "ai"
       ]
     },
     "mcp_agent_framework": {
@@ -13835,6 +13983,11 @@
       ],
       "markitdown": [
         "docker"
+      ],
+      "headroom": [
+        "mcp",
+        "llm",
+        "ai"
       ]
     },
     "mcp_registry_development_deployment": {
@@ -13941,6 +14094,9 @@
       ],
       "nornicdb": [
         "mcp-server"
+      ],
+      "headroom": [
+        "mcp"
       ]
     },
     "awesome_mcp_servers": {
@@ -14060,6 +14216,10 @@
       ],
       "markitdown": [
         "docker"
+      ],
+      "headroom": [
+        "mcp",
+        "ai"
       ]
     },
     "mcp_server_implementations": {
@@ -14425,6 +14585,14 @@
       "markitdown": [
         "langchain",
         "openai"
+      ],
+      "headroom": [
+        "anthropic",
+        "llm",
+        "openai",
+        "langchain",
+        "fastapi",
+        "ai"
       ]
     },
     "griptape_framework": {
@@ -14759,6 +14927,11 @@
       "markitdown": [
         "docker",
         "openai"
+      ],
+      "headroom": [
+        "anthropic",
+        "llm",
+        "openai"
       ]
     },
     "forge_llm_tool_calling_framework": {
@@ -14805,6 +14978,9 @@
         "nodejs"
       ],
       "py_xiaozhi": [
+        "mcp"
+      ],
+      "headroom": [
         "mcp"
       ]
     },
@@ -15010,6 +15186,11 @@
         "python",
         "llm",
         "ai"
+      ],
+      "headroom": [
+        "pytorch",
+        "llm",
+        "ai"
       ]
     },
     "pasa": {
@@ -15154,6 +15335,10 @@
       ],
       "document_conversion": [
         "Python"
+      ],
+      "headroom": [
+        "llm",
+        "ai"
       ]
     },
     "paper_agent": {
@@ -15283,6 +15468,12 @@
         "openai"
       ],
       "markitdown": [
+        "langchain",
+        "openai"
+      ],
+      "headroom": [
+        "mcp",
+        "llm",
         "langchain",
         "openai"
       ]
@@ -15441,6 +15632,10 @@
         "redis"
       ],
       "autogpt": [
+        "llm",
+        "ai"
+      ],
+      "headroom": [
         "llm",
         "ai"
       ]
@@ -15604,6 +15799,12 @@
       ],
       "markitdown": [
         "openai"
+      ],
+      "headroom": [
+        "ai",
+        "openai",
+        "cursor",
+        "agent"
       ]
     },
     "agentic_video_production": {
@@ -15722,6 +15923,10 @@
       ],
       "markitdown": [
         "openai"
+      ],
+      "headroom": [
+        "openai",
+        "ai"
       ]
     },
     "leon_ai_assistant": {
@@ -15950,6 +16155,10 @@
       "markitdown": [
         "docker",
         "openai"
+      ],
+      "headroom": [
+        "openai",
+        "ai"
       ]
     },
     "py_xiaozhi": {
@@ -16026,6 +16235,10 @@
       ],
       "autogpt": [
         "python"
+      ],
+      "headroom": [
+        "mcp",
+        "gemini"
       ]
     },
     "cross_platform_py_xiaozhi": {
@@ -16186,6 +16399,13 @@
       ],
       "markitdown": [
         "openai"
+      ],
+      "headroom": [
+        "anthropic",
+        "openai",
+        "gemini",
+        "ai",
+        "agent"
       ]
     },
     "modular_speech_to_speech_pipeline": {
@@ -16397,6 +16617,13 @@
       ],
       "document_conversion": [
         "Python"
+      ],
+      "headroom": [
+        "anthropic",
+        "llm",
+        "openai",
+        "langchain",
+        "ai"
       ]
     },
     "web_rover_ai_agent": {
@@ -16583,6 +16810,12 @@
       "markitdown": [
         "docker",
         "openai"
+      ],
+      "headroom": [
+        "anthropic",
+        "openai",
+        "gemini",
+        "claude-code"
       ]
     },
     "live_run_forking_with_pydantic_deep_agents": {
@@ -16872,6 +17105,10 @@
       ],
       "markitdown": [
         "openai"
+      ],
+      "headroom": [
+        "llm",
+        "openai"
       ]
     },
     "deepseek_v3_r1_fine_tuning": {
@@ -17006,6 +17243,12 @@
       ],
       "markitdown": [
         "openai"
+      ],
+      "headroom": [
+        "claude-code",
+        "openai",
+        "ai",
+        "agent"
       ]
     },
     "loushang_ai_native_agent_harness": {
@@ -17268,6 +17511,11 @@
       "markitdown": [
         "docker",
         "openai"
+      ],
+      "headroom": [
+        "llm",
+        "openai",
+        "ai"
       ]
     },
     "auto_gpt_deployment": {
@@ -17553,6 +17801,10 @@
       ],
       "document_conversion": [
         "Python"
+      ],
+      "headroom": [
+        "langchain",
+        "openai"
       ]
     },
     "document_conversion": {
@@ -17650,8 +17902,186 @@
       "markitdown": [
         "Python"
       ]
+    },
+    "headroom": {
+      "new_claude_opus_5_leaks": [
+        "anthropic"
+      ],
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "agent"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "agent"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "anthropic"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "agent"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "agent"
+      ],
+      "china_just_beat_claude_ai_kimi_k3": [
+        "anthropic"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "anthropic",
+        "agent"
+      ],
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "openai"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "agent"
+      ],
+      "dify": [
+        "openai",
+        "ai",
+        "agent"
+      ],
+      "ragflow": [
+        "context-engineering",
+        "openai",
+        "gemini",
+        "ai"
+      ],
+      "lightrag": [
+        "llm"
+      ],
+      "graphrag": [
+        "llm"
+      ],
+      "rag_techniques": [
+        "llm",
+        "langchain",
+        "openai",
+        "ai"
+      ],
+      "fastapi_mcp": [
+        "llm",
+        "cursor",
+        "fastapi",
+        "mcp",
+        "ai"
+      ],
+      "mcp_go": [
+        "llm",
+        "ai"
+      ],
+      "mcp_agent": [
+        "anthropic",
+        "llm",
+        "openai",
+        "mcp",
+        "ai"
+      ],
+      "registry": [
+        "mcp",
+        "llm",
+        "ai"
+      ],
+      "xcodebuildmcp": [
+        "mcp"
+      ],
+      "awesome_mcp_servers": [
+        "mcp",
+        "ai"
+      ],
+      "griptape": [
+        "anthropic",
+        "llm",
+        "openai",
+        "langchain",
+        "fastapi",
+        "ai"
+      ],
+      "forge": [
+        "anthropic",
+        "llm",
+        "openai"
+      ],
+      "xcodebuildmcp_installation": [
+        "mcp"
+      ],
+      "trainer": [
+        "pytorch",
+        "llm",
+        "ai"
+      ],
+      "pasa": [
+        "llm",
+        "ai"
+      ],
+      "lightagent": [
+        "mcp",
+        "llm",
+        "langchain",
+        "openai"
+      ],
+      "sqlite_vector": [
+        "llm",
+        "ai"
+      ],
+      "openmontage": [
+        "ai",
+        "openai",
+        "cursor",
+        "agent"
+      ],
+      "leon": [
+        "openai",
+        "ai"
+      ],
+      "speech_to_speech": [
+        "openai",
+        "ai"
+      ],
+      "py_xiaozhi": [
+        "mcp",
+        "gemini"
+      ],
+      "openakita": [
+        "anthropic",
+        "openai",
+        "gemini",
+        "ai",
+        "agent"
+      ],
+      "webrover": [
+        "anthropic",
+        "llm",
+        "openai",
+        "langchain",
+        "ai"
+      ],
+      "pydantic_deepagents": [
+        "anthropic",
+        "openai",
+        "gemini",
+        "claude-code"
+      ],
+      "deepseek_671b_sft_guide": [
+        "llm",
+        "openai"
+      ],
+      "loushang": [
+        "claude-code",
+        "openai",
+        "ai",
+        "agent"
+      ],
+      "autogpt": [
+        "llm",
+        "openai",
+        "ai"
+      ],
+      "markitdown": [
+        "langchain",
+        "openai"
+      ]
     }
   },
-  "updated_at": "2026-07-24T01:08:25.317101+00:00",
-  "total_skills": 83
+  "updated_at": "2026-07-24T01:08:37.841926+00:00",
+  "total_skills": 84
 }
