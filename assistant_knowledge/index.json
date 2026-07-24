@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "scienceone-ai--deepseek-671b-sft-guide",
+      "title": "Discovered: ScienceOne-AI/DeepSeek-671B-SFT-Guide",
+      "category": "discoveries",
+      "confidence": "verified",
+      "updated_at": "2026-07-24T00:03:57.994242+00:00",
+      "path": "discoveries/scienceone-ai--deepseek-671b-sft-guide.md"
+    },
+    {
       "slug": "orneryd--nornicdb",
       "title": "Discovered: orneryd/NornicDB",
       "category": "discoveries",
@@ -369,5 +377,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-24T00:03:56.494229+00:00"
+  "updated_at": "2026-07-24T00:03:57.998465+00:00"
 }
