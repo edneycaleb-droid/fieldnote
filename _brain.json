@@ -4504,6 +4504,60 @@
       "skills": [
         "project_based_learning"
       ]
+    },
+    "2D Rendering": {
+      "freq": 1,
+      "skills": [
+        "project_based_learning_python"
+      ]
+    },
+    "Collision Detection": {
+      "freq": 1,
+      "skills": [
+        "project_based_learning_python"
+      ]
+    },
+    "DOM Manipulation": {
+      "freq": 1,
+      "skills": [
+        "project_based_learning_python"
+      ]
+    },
+    "Event Handling": {
+      "freq": 1,
+      "skills": [
+        "project_based_learning_python"
+      ]
+    },
+    "Game Loop": {
+      "freq": 1,
+      "skills": [
+        "project_based_learning_python"
+      ]
+    },
+    "Hands-on Learning": {
+      "freq": 1,
+      "skills": [
+        "project_based_learning_python"
+      ]
+    },
+    "Project-Based Learning": {
+      "freq": 1,
+      "skills": [
+        "project_based_learning_python"
+      ]
+    },
+    "Python Programming": {
+      "freq": 1,
+      "skills": [
+        "project_based_learning_python"
+      ]
+    },
+    "Software Development Lifecycle": {
+      "freq": 1,
+      "skills": [
+        "project_based_learning_python"
+      ]
     }
   },
   "tools": {
@@ -7939,6 +7993,12 @@
       "skills": [
         "project_based_learning"
       ]
+    },
+    "HTML Canvas API": {
+      "freq": 1,
+      "skills": [
+        "project_based_learning_python"
+      ]
     }
   },
   "skill_map": {
@@ -10954,6 +11014,33 @@
         "llm"
       ],
       "step_count": 8
+    },
+    "project_based_learning_python": {
+      "concepts": [
+        "2D Rendering",
+        "Collision Detection",
+        "DOM Manipulation",
+        "Event Handling",
+        "Game Loop",
+        "Hands-on Learning",
+        "Project-Based Learning",
+        "Python Programming",
+        "Software Development Lifecycle"
+      ],
+      "tools": [
+        "HTML Canvas API"
+      ],
+      "tags": [
+        "beginner-project",
+        "css",
+        "game-development",
+        "html",
+        "javascript",
+        "project-based-learning",
+        "python",
+        "tutorial"
+      ],
+      "step_count": 12
     }
   },
   "relationships": {
@@ -21820,8 +21907,9 @@
         "tensorflow",
         "django"
       ]
-    }
+    },
+    "project_based_learning_python": {}
   },
-  "updated_at": "2026-07-24T02:36:14.218515+00:00",
-  "total_skills": 91
+  "updated_at": "2026-07-24T02:36:38.352903+00:00",
+  "total_skills": 92
 }
