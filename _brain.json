@@ -535,10 +535,11 @@
       ]
     },
     "Kimi K3": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "i_tested_kimi_k3_so_you_don_t_have_to",
-        "china_just_beat_claude_ai_kimi_k3"
+        "china_just_beat_claude_ai_kimi_k3",
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "Fable": {
@@ -580,9 +581,10 @@
       ]
     },
     "Hermes Agent OS": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "new_hermes_agent_os_is_insane"
+        "new_hermes_agent_os_is_insane",
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "AI management": {
@@ -4814,11 +4816,143 @@
       "skills": [
         "kimi_k3_mcp_king_of_algo_trading"
       ]
+    },
+    "AI agent prompt engineering": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "AI-driven trading strategy generation": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "Algorithmic trading research": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "Backtesting and optimization": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "Bollinger Bands": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "CLI tools for AI": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "Claude": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "Docker": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "Model comparison (Kimi K3 vs. Claude Fable 5)": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "Monte Carlo simulations": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "Open-source AI models": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "Overfitting in trading models": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "Permissionless AI execution (YOLO mode)": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "Risk management in trading": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "Sharpe ratio": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "Squeeze strategies": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "Statistical significance testing": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "Strategy generation": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "Trend-following strategies": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "Trading framework integration": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "VS Code": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "Zed Code Editor": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 53,
+      "freq": 54,
       "skills": [
         "new_claude_opus_5_leaks",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
@@ -4889,7 +5023,7 @@
       ]
     },
     "Docker": {
-      "freq": 28,
+      "freq": 29,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -4910,7 +5044,8 @@
         "headroom_context_compression",
         "litellm",
         "airecon_autonomous_pentesting",
-        "awesome_python"
+        "awesome_python",
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "bash": {
@@ -4927,7 +5062,7 @@
       ]
     },
     "Python": {
-      "freq": 33,
+      "freq": 34,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -4950,7 +5085,8 @@
         "litellm",
         "airecon_autonomous_pentesting",
         "awesome_python",
-        "kimi_k3_mcp_king_of_algo_trading"
+        "kimi_k3_mcp_king_of_algo_trading",
+        "kimi_k3_vs_claude_fable_5_raw_results"
       ]
     },
     "LLM": {
@@ -5061,7 +5197,7 @@
       ]
     },
     "Kimi K3": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "i_tested_kimi_k3_so_you_don_t_have_to",
         "kimi_k3_vs_claude_fable_5_raw_results"
@@ -8389,6 +8525,36 @@
       "skills": [
         "tensorflow"
       ]
+    },
+    "Kimi CLI": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "Jesse Trade": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "Jesse MCP": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "VS Code": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
+    },
+    "Zed Code Editor": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_vs_claude_fable_5_raw_results"
+      ]
     }
   },
   "skill_map": {
@@ -8498,25 +8664,52 @@
     },
     "kimi_k3_vs_claude_fable_5_raw_results": {
       "concepts": [
-        "AI agent performance",
-        "Live trading competition",
-        "Model comparison",
-        "Trading strategy"
+        "AI agent prompt engineering",
+        "AI-driven trading strategy generation",
+        "Algorithmic trading research",
+        "Backtesting and optimization",
+        "Bollinger Bands",
+        "CLI tools for AI",
+        "Claude",
+        "Docker",
+        "Hermes Agent OS",
+        "Kimi K3",
+        "Model comparison (Kimi K3 vs. Claude Fable 5)",
+        "Monte Carlo simulations",
+        "Open-source AI models",
+        "Overfitting in trading models",
+        "Permissionless AI execution (YOLO mode)",
+        "Risk management in trading",
+        "Sharpe ratio",
+        "Squeeze strategies",
+        "Statistical significance testing",
+        "Strategy generation",
+        "Trend-following strategies",
+        "Trading framework integration",
+        "VS Code",
+        "Zed Code Editor"
       ],
       "tools": [
+        "Kimi CLI",
+        "Claude",
+        "Python",
+        "Jesse Trade",
+        "Jesse MCP",
+        "Docker",
+        "VS Code",
         "Kimi K3",
-        "Claude Fable 5",
-        "Trading View",
-        "Tradingkit.com",
-        "yt-dlp"
+        "Zed Code Editor"
       ],
       "tags": [
-        "AI",
-        "Competition",
-        "Models",
-        "Trading"
+        "algo trading",
+        "ai agent",
+        "automation",
+        "kimi k3",
+        "python",
+        "strategy generation",
+        "trading strategy"
       ],
-      "step_count": 8
+      "step_count": 12
     },
     "chatgpt_work_everything_you_need_to_know_to_get_st": {
       "concepts": [
@@ -11569,9 +11762,7 @@
         "Anthropic"
       ],
       "kimi_k3_vs_claude_fable_5_raw_results": [
-        "Claude",
-        "here",
-        "Anthropic"
+        "Claude"
       ],
       "chatgpt_work_everything_you_need_to_know_to_get_st": [
         "here"
@@ -11857,10 +12048,9 @@
         "Claude"
       ],
       "kimi_k3_vs_claude_fable_5_raw_results": [
-        "going",
-        "here",
+        "Docker",
         "Claude",
-        "right"
+        "Python"
       ],
       "chatgpt_work_everything_you_need_to_know_to_get_st": [
         "going",
@@ -12164,18 +12354,15 @@
     },
     "kimi_k3_vs_claude_fable_5_raw_results": {
       "new_claude_opus_5_leaks": [
-        "Claude",
-        "here",
-        "Anthropic"
+        "Claude"
       ],
       "100_hours_of_hermes_agent_lessons_in_19_minutes": [
         "Claude"
       ],
       "hermes_agent_tutorial_for_beginners_full_step_by_s": [
-        "going",
-        "here",
+        "Docker",
         "Claude",
-        "right"
+        "Python"
       ],
       "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
         "fable",
@@ -12187,75 +12374,160 @@
         "right"
       ],
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
-        "Claude",
-        "fable"
+        "Claude"
       ],
       "by_august_we_ll_have_frontier_ai_running_locally": [
         "going"
       ],
       "yes_the_kimi_k3_hype_is_real": [
-        "fable",
-        "right",
-        "these",
-        "Anthropic",
-        "Claude",
-        "here"
+        "Claude"
       ],
       "this_100_self_improving_ai_agent_is_insane_just_wa": [
-        "right",
-        "Anthropic",
-        "going",
-        "here",
-        "Claude"
+        "Docker",
+        "Claude",
+        "Python"
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
         "Claude",
-        "Anthropic"
+        "Python"
       ],
       "new_hermes_paperclip_ai_agent_update_is_insane": [
         "going"
       ],
       "china_just_beat_claude_ai_kimi_k3": [
-        "Claude",
-        "look",
-        "Anthropic"
+        "Claude"
       ],
       "new_hermes_agent_os_is_insane": [
-        "Claude"
+        "Docker",
+        "Claude",
+        "Python"
       ],
       "every_hermes_concept_explained_for_normal_people": [
         "Claude"
       ],
       "new_claude_update_is_insane": [
-        "Claude",
-        "Anthropic"
+        "Claude"
       ],
       "hermes_agent_full_course_setup_guide_for_complete_": [
-        "going",
-        "here",
-        "Anthropic",
-        "right"
+        "Docker",
+        "Claude"
       ],
       "this_ai_business_model_is_creating_new_millionaire": [
-        "Claude",
-        "Anthropic"
+        "Claude"
       ],
       "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
-        "going",
-        "here",
         "Claude"
       ],
       "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
-        "Claude",
-        "Anthropic"
+        "Claude"
       ],
       "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "Docker",
         "Claude",
-        "here",
-        "right"
+        "Python"
       ],
       "i_tested_kimi_k3_so_you_don_t_have_to": [
         "Kimi K3"
+      ],
+      "dify_deployment": [
+        "Docker"
+      ],
+      "ragflow_self_hosting_guide": [
+        "Docker"
+      ],
+      "lightrag": [
+        "Python"
+      ],
+      "lightrag_setup": [
+        "Docker"
+      ],
+      "graphrag": [
+        "Python"
+      ],
+      "graphrag_system": [
+        "Python"
+      ],
+      "fastapi_mcp": [
+        "Python"
+      ],
+      "fastapi_mcp_integration": [
+        "Claude"
+      ],
+      "r2r": [
+        "Docker"
+      ],
+      "mcp_server_implementations": [
+        "Docker"
+      ],
+      "griptape_framework": [
+        "Docker",
+        "Claude",
+        "Python"
+      ],
+      "infinity_database": [
+        "Docker"
+      ],
+      "pasa": [
+        "Python"
+      ],
+      "lightagent_framework": [
+        "Python"
+      ],
+      "leon_ai_assistant": [
+        "Docker",
+        "Python"
+      ],
+      "webrover": [
+        "Python"
+      ],
+      "web_rover_ai_agent": [
+        "Claude"
+      ],
+      "live_run_forking_with_pydantic_deep_agents": [
+        "Docker"
+      ],
+      "nornicdb_deployment": [
+        "Docker"
+      ],
+      "loushang_ai_native_agent_harness": [
+        "Claude"
+      ],
+      "auto_gpt_deployment": [
+        "Docker",
+        "Claude",
+        "Python"
+      ],
+      "markitdown": [
+        "Python"
+      ],
+      "document_conversion": [
+        "Python"
+      ],
+      "headroom_context_compression": [
+        "Docker",
+        "Claude",
+        "Python"
+      ],
+      "litellm": [
+        "Docker",
+        "Claude",
+        "Python"
+      ],
+      "airecon_autonomous_pentesting": [
+        "Docker",
+        "Python"
+      ],
+      "awesome_python": [
+        "Docker",
+        "Claude",
+        "Python"
+      ],
+      "tensorflow": [
+        "Python"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
+        "Claude",
+        "Python"
       ]
     },
     "chatgpt_work_everything_you_need_to_know_to_get_st": {
@@ -12327,8 +12599,7 @@
         "OpenAI"
       ],
       "kimi_k3_vs_claude_fable_5_raw_results": [
-        "Claude",
-        "fable"
+        "Claude"
       ],
       "by_august_we_ll_have_frontier_ai_running_locally": [
         "OpenAI",
@@ -12585,12 +12856,7 @@
         "Anthropic"
       ],
       "kimi_k3_vs_claude_fable_5_raw_results": [
-        "fable",
-        "right",
-        "these",
-        "Anthropic",
-        "Claude",
-        "here"
+        "Claude"
       ],
       "chatgpt_work_everything_you_need_to_know_to_get_st": [
         "right",
@@ -12738,11 +13004,9 @@
         "Anthropic"
       ],
       "kimi_k3_vs_claude_fable_5_raw_results": [
-        "right",
-        "Anthropic",
-        "going",
-        "here",
-        "Claude"
+        "Docker",
+        "Claude",
+        "Python"
       ],
       "chatgpt_work_everything_you_need_to_know_to_get_st": [
         "right",
@@ -12988,7 +13252,7 @@
       ],
       "kimi_k3_vs_claude_fable_5_raw_results": [
         "Claude",
-        "Anthropic"
+        "Python"
       ],
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
         "Claude"
@@ -13260,9 +13524,7 @@
         "Anthropic"
       ],
       "kimi_k3_vs_claude_fable_5_raw_results": [
-        "Claude",
-        "look",
-        "Anthropic"
+        "Claude"
       ],
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
         "OpenAI",
@@ -13458,9 +13720,9 @@
         "OpenAI"
       ],
       "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Docker",
         "Claude",
-        "here",
-        "right"
+        "Python"
       ],
       "chatgpt_work_everything_you_need_to_know_to_get_st": [
         "right",
@@ -13705,7 +13967,9 @@
         "OpenAI"
       ],
       "kimi_k3_vs_claude_fable_5_raw_results": [
-        "Claude"
+        "Docker",
+        "Claude",
+        "Python"
       ],
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
         "Claude"
@@ -13947,8 +14211,7 @@
         "LLM"
       ],
       "kimi_k3_vs_claude_fable_5_raw_results": [
-        "Claude",
-        "Anthropic"
+        "Claude"
       ],
       "hermes_claude_code_mcp_integration_loop_engineerin": [
         "Claude",
@@ -14106,8 +14369,6 @@
         "here"
       ],
       "kimi_k3_vs_claude_fable_5_raw_results": [
-        "going",
-        "here",
         "Claude"
       ],
       "chatgpt_work_everything_you_need_to_know_to_get_st": [
@@ -14292,8 +14553,7 @@
         "Anthropic"
       ],
       "kimi_k3_vs_claude_fable_5_raw_results": [
-        "Claude",
-        "Anthropic"
+        "Claude"
       ],
       "chatgpt_work_everything_you_need_to_know_to_get_st": [
         "work"
@@ -14408,10 +14668,8 @@
         "Anthropic"
       ],
       "kimi_k3_vs_claude_fable_5_raw_results": [
-        "going",
-        "here",
-        "Anthropic",
-        "right"
+        "Docker",
+        "Claude"
       ],
       "chatgpt_work_everything_you_need_to_know_to_get_st": [
         "here"
@@ -14617,8 +14875,7 @@
         "Anthropic"
       ],
       "kimi_k3_vs_claude_fable_5_raw_results": [
-        "Claude",
-        "Anthropic"
+        "Claude"
       ],
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
         "OpenAI",
@@ -14977,6 +15234,9 @@
       ],
       "awesome_python": [
         "Docker"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Docker"
       ]
     },
     "ragflow": {
@@ -15220,6 +15480,9 @@
       "awesome_python": [
         "bash",
         "Docker"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Docker"
       ]
     },
     "lightrag": {
@@ -15394,6 +15657,9 @@
       ],
       "kimi_k3_mcp_king_of_algo_trading": [
         "Python"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Python"
       ]
     },
     "lightrag_setup": {
@@ -15476,6 +15742,9 @@
         "Docker"
       ],
       "awesome_python": [
+        "Docker"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
         "Docker"
       ]
     },
@@ -15605,6 +15874,9 @@
       ],
       "kimi_k3_mcp_king_of_algo_trading": [
         "Python"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Python"
       ]
     },
     "graphrag_system": {
@@ -15703,6 +15975,9 @@
         "Python"
       ],
       "kimi_k3_mcp_king_of_algo_trading": [
+        "Python"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
         "Python"
       ]
     },
@@ -16085,6 +16360,9 @@
       ],
       "kimi_k3_mcp_king_of_algo_trading": [
         "Python"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Python"
       ]
     },
     "fastapi_mcp_integration": {
@@ -16183,6 +16461,9 @@
         "pip"
       ],
       "kimi_k3_mcp_king_of_algo_trading": [
+        "Claude"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
         "Claude"
       ]
     },
@@ -16635,6 +16916,9 @@
       "awesome_python": [
         "LLM",
         "Search",
+        "Docker"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
         "Docker"
       ]
     },
@@ -17136,6 +17420,9 @@
       ],
       "tensorflow": [
         "Git"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Docker"
       ]
     },
     "agentic_rag_for_dummies": {
@@ -17681,6 +17968,11 @@
         "Claude",
         "Python",
         "OpenAI"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Docker",
+        "Claude",
+        "Python"
       ]
     },
     "forge": {
@@ -18042,6 +18334,9 @@
       ],
       "awesome_python": [
         "Docker"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Docker"
       ]
     },
     "trainer": {
@@ -18358,6 +18653,9 @@
       ],
       "kimi_k3_mcp_king_of_algo_trading": [
         "Python"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Python"
       ]
     },
     "paper_agent": {
@@ -18614,6 +18912,9 @@
         "Python"
       ],
       "kimi_k3_mcp_king_of_algo_trading": [
+        "Python"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
         "Python"
       ]
     },
@@ -19156,6 +19457,10 @@
         "Git"
       ],
       "kimi_k3_mcp_king_of_algo_trading": [
+        "Python"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Docker",
         "Python"
       ]
     },
@@ -19883,6 +20188,9 @@
       ],
       "kimi_k3_mcp_king_of_algo_trading": [
         "Python"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Python"
       ]
     },
     "web_rover_ai_agent": {
@@ -19967,6 +20275,9 @@
         "Claude"
       ],
       "kimi_k3_mcp_king_of_algo_trading": [
+        "Claude"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
         "Claude"
       ]
     },
@@ -20191,6 +20502,9 @@
       "awesome_python": [
         "pydantic",
         "Docker"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Docker"
       ]
     },
     "nornicdb": {
@@ -20321,6 +20635,9 @@
         "Docker"
       ],
       "awesome_python": [
+        "Docker"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
         "Docker"
       ]
     },
@@ -20739,6 +21056,9 @@
       "kimi_k3_mcp_king_of_algo_trading": [
         "Claude",
         "OpenAI"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Claude"
       ]
     },
     "autogpt": {
@@ -21124,6 +21444,11 @@
         "Python",
         "OpenAI",
         "Claude"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Docker",
+        "Claude",
+        "Python"
       ]
     },
     "markitdown": {
@@ -21283,6 +21608,9 @@
       ],
       "kimi_k3_mcp_king_of_algo_trading": [
         "Python"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Python"
       ]
     },
     "document_conversion": {
@@ -21400,6 +21728,9 @@
       "kimi_k3_mcp_king_of_algo_trading": [
         "Python",
         "OpenAI"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Python"
       ]
     },
     "headroom": {
@@ -21814,6 +22145,11 @@
         "Python",
         "Anthropic",
         "OpenAI"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Docker",
+        "Claude",
+        "Python"
       ]
     },
     "litellm": {
@@ -22103,6 +22439,11 @@
       "kimi_k3_mcp_king_of_algo_trading": [
         "Claude",
         "Python"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Docker",
+        "Claude",
+        "Python"
       ]
     },
     "airecon": {
@@ -22375,6 +22716,10 @@
         "Python"
       ],
       "kimi_k3_mcp_king_of_algo_trading": [
+        "Python"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Docker",
         "Python"
       ]
     },
@@ -22726,6 +23071,11 @@
       "kimi_k3_mcp_king_of_algo_trading": [
         "Claude",
         "Python"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Docker",
+        "Claude",
+        "Python"
       ]
     },
     "project_based_learning": {
@@ -23039,6 +23389,9 @@
       ],
       "kimi_k3_mcp_king_of_algo_trading": [
         "Python"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Python"
       ]
     },
     "kimi_k3_mcp_king_of_algo_trading": {
@@ -23213,9 +23566,13 @@
       ],
       "tensorflow": [
         "Python"
+      ],
+      "kimi_k3_vs_claude_fable_5_raw_results": [
+        "Claude",
+        "Python"
       ]
     }
   },
-  "updated_at": "2026-07-24T03:49:11.022741+00:00",
+  "updated_at": "2026-07-24T03:54:43.741119+00:00",
   "total_skills": 95
 }
