@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **153 skills** · Last synced: 2026-07-24 01:08 UTC
+> **154 skills** · Last synced: 2026-07-24 01:09 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Headroom: Context Compression for AI Agents](skills/headroom_context_compression.md) | Headroom provides a context compression layer for AI agents, significantly reduc | `Claude` `Docker` `bash` `Python` | `agent` `ai` `compression` |
 | [Headroom](skills/headroom.md) | Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20 | `gemini` `pytorch` `anthropic` `openai` | `agent` `ai` `anthropic` |
 | [Converting Documents to Markdown for AI Pipelines](skills/document_conversion.md) | This skill teaches how to use MarkItDown, a Python utility, to convert various f | `MarkItDown` `Python` `pip` `OpenAI` | `document_conversion` `markdown` `llm` |
 | [Markitdown](skills/markitdown.md) | Python tool for converting files and office documents to Markdown. | `autogen` `openai` `docker` `autogen-extension` | `autogen` `autogen-extension` `langchain` |
