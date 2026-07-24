@@ -1805,13 +1805,14 @@
       ]
     },
     "python": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "r2r",
         "pasa",
         "speech_to_speech",
         "webrover",
-        "deepseek_671b_sft_guide"
+        "deepseek_671b_sft_guide",
+        "awesome_python"
       ]
     },
     "question-answering": {
@@ -2032,9 +2033,10 @@
       ]
     },
     "awesome": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "awesome_mcp_servers"
+        "awesome_mcp_servers",
+        "awesome_python"
       ]
     },
     "context": {
@@ -4048,6 +4050,24 @@
       "skills": [
         "system_design_primer"
       ]
+    },
+    "collections": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "python-frameworks": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "python-libraries": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
     }
   },
   "tools": {
@@ -4560,7 +4580,7 @@
       ]
     },
     "openai": {
-      "freq": 23,
+      "freq": 24,
       "skills": [
         "dify",
         "ragflow",
@@ -4583,7 +4603,8 @@
         "markitdown",
         "headroom",
         "litellm",
-        "airecon"
+        "airecon",
+        "awesome_python"
       ]
     },
     "agent": {
@@ -4718,7 +4739,7 @@
       ]
     },
     "gemini": {
-      "freq": 9,
+      "freq": 10,
       "skills": [
         "ragflow",
         "agentic_rag_for_dummies",
@@ -4727,7 +4748,8 @@
         "pydantic_deepagents",
         "headroom",
         "litellm",
-        "airecon"
+        "airecon",
+        "awesome_python"
       ]
     },
     "huggingface": {
@@ -5023,7 +5045,7 @@
       ]
     },
     "langchain": {
-      "freq": 9,
+      "freq": 10,
       "skills": [
         "rag_techniques",
         "agentic_rag_for_dummies",
@@ -5032,13 +5054,15 @@
         "webrover",
         "markitdown",
         "headroom",
-        "litellm"
+        "litellm",
+        "awesome_python"
       ]
     },
     "llama-index": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "rag_techniques"
+        "rag_techniques",
+        "awesome_python"
       ]
     },
     "machine-learning": {
@@ -5096,11 +5120,12 @@
       ]
     },
     "fastapi": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "fastapi_mcp",
         "griptape",
-        "headroom"
+        "headroom",
+        "awesome_python"
       ]
     },
     "authentication": {
@@ -5192,13 +5217,14 @@
       ]
     },
     "ray": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "mcp_go",
         "awesome_mcp_servers",
         "forge",
         "deepseek_671b_sft_guide",
-        "system_design_primer"
+        "system_design_primer",
+        "awesome_python"
       ]
     },
     "Go": {
@@ -5211,14 +5237,15 @@
       ]
     },
     "pydantic": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "mcp_agent",
         "griptape",
         "forge",
         "pydantic_deepagents",
         "live_run_forking_with_pydantic_deep_agents",
-        "litellm"
+        "litellm",
+        "awesome_python"
       ]
     },
     "agents": {
@@ -5759,12 +5786,13 @@
       ]
     },
     "langgraph": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "agentic_rag_for_dummies",
         "webrover",
         "pydantic_deepagents",
-        "litellm"
+        "litellm",
+        "awesome_python"
       ]
     },
     "bm25": {
@@ -5832,10 +5860,11 @@
       ]
     },
     "crewai": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "griptape",
-        "pydantic_deepagents"
+        "pydantic_deepagents",
+        "awesome_python"
       ]
     },
     "CrewAI": {
@@ -6106,9 +6135,10 @@
       ]
     },
     "tensorflow": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "trainer"
+        "trainer",
+        "awesome_python"
       ]
     },
     "pytorch": {
@@ -7148,9 +7178,10 @@
       ]
     },
     "autogen": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "markitdown"
+        "markitdown",
+        "awesome_python"
       ]
     },
     "autogen-extension": {
@@ -7391,6 +7422,30 @@
       "freq": 1,
       "skills": [
         "system_design_primer"
+      ]
+    },
+    "sklearn": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "flask": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "celery": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "django": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
       ]
     }
   },
@@ -10272,6 +10327,42 @@
         "scalability"
       ],
       "step_count": 12
+    },
+    "awesome_python": {
+      "concepts": [
+        "awesome",
+        "collections",
+        "python",
+        "python-frameworks",
+        "python-libraries"
+      ],
+      "tools": [
+        "langgraph",
+        "llama-index",
+        "sklearn",
+        "tensorflow",
+        "gemini",
+        "pydantic",
+        "ray",
+        "langchain",
+        "autogen",
+        "flask",
+        "celery",
+        "fastapi",
+        "django",
+        "crewai",
+        "openai"
+      ],
+      "tags": [
+        "awesome",
+        "collections",
+        "python",
+        "python-frameworks",
+        "python-libraries",
+        "ai",
+        "llm"
+      ],
+      "step_count": 8
     }
   },
   "relationships": {
@@ -12669,6 +12760,9 @@
       ],
       "airecon": [
         "openai"
+      ],
+      "awesome_python": [
+        "openai"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -13437,6 +13531,9 @@
         "docker",
         "automation",
         "openai"
+      ],
+      "awesome_python": [
+        "openai"
       ]
     },
     "dify_deployment": {
@@ -13657,6 +13754,10 @@
         "ai-agents",
         "openai",
         "docker",
+        "gemini"
+      ],
+      "awesome_python": [
+        "openai",
         "gemini"
       ]
     },
@@ -14350,6 +14451,12 @@
       ],
       "system_design_primer": [
         "python"
+      ],
+      "awesome_python": [
+        "python",
+        "llama-index",
+        "langchain",
+        "openai"
       ]
     },
     "advanced_retrieval_augmented_generation": {
@@ -14542,6 +14649,9 @@
       ],
       "airecon_autonomous_pentesting": [
         "Python"
+      ],
+      "awesome_python": [
+        "fastapi"
       ]
     },
     "fastapi_mcp_integration": {
@@ -14730,6 +14840,9 @@
         "ai"
       ],
       "system_design_primer": [
+        "ray"
+      ],
+      "awesome_python": [
         "ray"
       ]
     },
@@ -14924,6 +15037,11 @@
       ],
       "system_design_primer": [
         "python"
+      ],
+      "awesome_python": [
+        "python",
+        "pydantic",
+        "openai"
       ]
     },
     "mcp_agent_framework": {
@@ -15450,6 +15568,10 @@
       ],
       "system_design_primer": [
         "ray"
+      ],
+      "awesome_python": [
+        "ray",
+        "awesome"
       ]
     },
     "mcp_server_implementations": {
@@ -15855,6 +15977,14 @@
       ],
       "system_design_primer": [
         "python"
+      ],
+      "awesome_python": [
+        "python",
+        "pydantic",
+        "openai",
+        "langchain",
+        "fastapi",
+        "crewai"
       ]
     },
     "griptape_framework": {
@@ -16228,6 +16358,12 @@
       "system_design_primer": [
         "python",
         "ray"
+      ],
+      "awesome_python": [
+        "python",
+        "pydantic",
+        "openai",
+        "ray"
       ]
     },
     "forge_llm_tool_calling_framework": {
@@ -16511,6 +16647,10 @@
       ],
       "system_design_primer": [
         "python"
+      ],
+      "awesome_python": [
+        "python",
+        "tensorflow"
       ]
     },
     "pasa": {
@@ -16675,6 +16815,9 @@
       ],
       "system_design_primer": [
         "python"
+      ],
+      "awesome_python": [
+        "python"
       ]
     },
     "paper_agent": {
@@ -16824,6 +16967,11 @@
       ],
       "system_design_primer": [
         "python"
+      ],
+      "awesome_python": [
+        "python",
+        "openai",
+        "langchain"
       ]
     },
     "lightagent_framework": {
@@ -17182,6 +17330,10 @@
       ],
       "system_design_primer": [
         "python"
+      ],
+      "awesome_python": [
+        "python",
+        "openai"
       ]
     },
     "agentic_video_production": {
@@ -17315,6 +17467,10 @@
       ],
       "system_design_primer": [
         "python"
+      ],
+      "awesome_python": [
+        "python",
+        "openai"
       ]
     },
     "leon_ai_assistant": {
@@ -17573,6 +17729,10 @@
       ],
       "system_design_primer": [
         "python"
+      ],
+      "awesome_python": [
+        "python",
+        "openai"
       ]
     },
     "py_xiaozhi": {
@@ -17663,6 +17823,10 @@
       ],
       "system_design_primer": [
         "python"
+      ],
+      "awesome_python": [
+        "python",
+        "gemini"
       ]
     },
     "cross_platform_py_xiaozhi": {
@@ -17847,6 +18011,11 @@
       ],
       "system_design_primer": [
         "python"
+      ],
+      "awesome_python": [
+        "python",
+        "openai",
+        "gemini"
       ]
     },
     "modular_speech_to_speech_pipeline": {
@@ -18092,6 +18261,12 @@
       ],
       "system_design_primer": [
         "python"
+      ],
+      "awesome_python": [
+        "python",
+        "openai",
+        "langchain",
+        "langgraph"
       ]
     },
     "web_rover_ai_agent": {
@@ -18304,6 +18479,13 @@
         "cli",
         "ai-agents",
         "ollama"
+      ],
+      "awesome_python": [
+        "langgraph",
+        "pydantic",
+        "openai",
+        "crewai",
+        "gemini"
       ]
     },
     "live_run_forking_with_pydantic_deep_agents": {
@@ -18379,6 +18561,9 @@
       "airecon_autonomous_pentesting": [
         "Autonomous Agents",
         "Docker"
+      ],
+      "awesome_python": [
+        "pydantic"
       ]
     },
     "nornicdb": {
@@ -18632,6 +18817,11 @@
       "system_design_primer": [
         "python",
         "ray"
+      ],
+      "awesome_python": [
+        "python",
+        "openai",
+        "ray"
       ]
     },
     "deepseek_v3_r1_fine_tuning": {
@@ -18777,6 +18967,9 @@
         "openai"
       ],
       "airecon": [
+        "openai"
+      ],
+      "awesome_python": [
         "openai"
       ]
     },
@@ -19067,6 +19260,10 @@
       ],
       "system_design_primer": [
         "python"
+      ],
+      "awesome_python": [
+        "python",
+        "openai"
       ]
     },
     "auto_gpt_deployment": {
@@ -19390,6 +19587,11 @@
       ],
       "airecon_autonomous_pentesting": [
         "Python"
+      ],
+      "awesome_python": [
+        "openai",
+        "langchain",
+        "autogen"
       ]
     },
     "document_conversion": {
@@ -19684,6 +19886,12 @@
       "airecon": [
         "openai",
         "gemini"
+      ],
+      "awesome_python": [
+        "openai",
+        "gemini",
+        "langchain",
+        "fastapi"
       ]
     },
     "headroom_context_compression": {
@@ -20163,6 +20371,12 @@
       ],
       "system_design_primer": [
         "Load Balancing"
+      ],
+      "awesome_python": [
+        "langgraph",
+        "gemini",
+        "langchain",
+        "openai"
       ]
     },
     "airecon": {
@@ -20294,6 +20508,11 @@
       ],
       "system_design_primer": [
         "python"
+      ],
+      "awesome_python": [
+        "python",
+        "openai",
+        "gemini"
       ]
     },
     "airecon_autonomous_pentesting": {
@@ -20475,9 +20694,147 @@
       ],
       "litellm": [
         "Load Balancing"
+      ],
+      "awesome_python": [
+        "python",
+        "ray"
+      ]
+    },
+    "awesome_python": {
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "openai"
+      ],
+      "dify": [
+        "openai"
+      ],
+      "ragflow": [
+        "openai",
+        "gemini"
+      ],
+      "rag_techniques": [
+        "python",
+        "llama-index",
+        "langchain",
+        "openai"
+      ],
+      "fastapi_mcp": [
+        "fastapi"
+      ],
+      "mcp_go": [
+        "ray"
+      ],
+      "mcp_agent": [
+        "python",
+        "pydantic",
+        "openai"
+      ],
+      "awesome_mcp_servers": [
+        "ray",
+        "awesome"
+      ],
+      "griptape": [
+        "python",
+        "pydantic",
+        "openai",
+        "langchain",
+        "fastapi",
+        "crewai"
+      ],
+      "forge": [
+        "python",
+        "pydantic",
+        "openai",
+        "ray"
+      ],
+      "trainer": [
+        "python",
+        "tensorflow"
+      ],
+      "pasa": [
+        "python"
+      ],
+      "lightagent": [
+        "python",
+        "openai",
+        "langchain"
+      ],
+      "openmontage": [
+        "python",
+        "openai"
+      ],
+      "leon": [
+        "python",
+        "openai"
+      ],
+      "speech_to_speech": [
+        "python",
+        "openai"
+      ],
+      "py_xiaozhi": [
+        "python",
+        "gemini"
+      ],
+      "openakita": [
+        "python",
+        "openai",
+        "gemini"
+      ],
+      "webrover": [
+        "python",
+        "openai",
+        "langchain",
+        "langgraph"
+      ],
+      "pydantic_deepagents": [
+        "langgraph",
+        "pydantic",
+        "openai",
+        "crewai",
+        "gemini"
+      ],
+      "live_run_forking_with_pydantic_deep_agents": [
+        "pydantic"
+      ],
+      "deepseek_671b_sft_guide": [
+        "python",
+        "openai",
+        "ray"
+      ],
+      "loushang": [
+        "openai"
+      ],
+      "autogpt": [
+        "python",
+        "openai"
+      ],
+      "markitdown": [
+        "openai",
+        "langchain",
+        "autogen"
+      ],
+      "headroom": [
+        "openai",
+        "gemini",
+        "langchain",
+        "fastapi"
+      ],
+      "litellm": [
+        "langgraph",
+        "gemini",
+        "langchain",
+        "openai"
+      ],
+      "airecon": [
+        "python",
+        "openai",
+        "gemini"
+      ],
+      "system_design_primer": [
+        "python",
+        "ray"
       ]
     }
   },
-  "updated_at": "2026-07-24T02:35:11.495068+00:00",
-  "total_skills": 89
+  "updated_at": "2026-07-24T02:35:19.419392+00:00",
+  "total_skills": 90
 }
