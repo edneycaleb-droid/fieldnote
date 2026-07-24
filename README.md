@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **163 skills** · Last synced: 2026-07-24 02:37 UTC
+> **164 skills** · Last synced: 2026-07-24 03:43 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Kimi K3 + MCP = King of Algo Trading!](skills/kimi_k3_mcp_king_of_algo_trading.md) | By Algo-trading with Saleh. Key tools: Claude, Python, OpenAI, Anthropic. (Auto- | `Claude` `Python` `OpenAI` `Anthropic` | `strategy` `here` `want` |
 | [TensorFlow: An End-to-End Open Source Machine Learning Platform](skills/tensorflow.md) | TensorFlow is a comprehensive, flexible, open-source platform for machine learni | `tensorflow` `numpy` `docker` `deep-learning` | `machine-learning` `deep-learning` `neural-networks` |
 | [Python](skills/python.md) | All Algorithms implemented in Python | `algorithm` `algorithm-competitions` `algorithms-implemented` `algos` | `algorithm` `algorithm-competitions` `algorithms-implemented` |
 | [Project-Based Learning with Python](skills/project_based_learning_python.md) | This skill focuses on learning programming through building practical projects,  | `HTML Canvas API` | `beginner-project` `css` `game-development` |
