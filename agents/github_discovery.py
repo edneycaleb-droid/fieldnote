@@ -411,7 +411,7 @@ def _process_free_alternative(
         index = _a.load_index()
 
         try:
-            gs.sync_skill(skill_name, _a._read_existing_markdown(skill_name), index)
+            gs.sync_skill(skill_name, _a.SKILLS_DIR, index)
         except Exception as exc:
             log.warning("GitHub sync failed for alt skill: %s", exc)
 
@@ -819,13 +819,18 @@ def _deterministic_baseline(repo: dict, readme: str) -> dict:
     }
 
 
-def _extract_from_repo(repo: dict, readme: str, index: dict) -> dict | None:
+def _extract_from_repo(repo: dict, readme: str, index: dict,
+                       emit_fn=None) -> dict | None:
     """
     Run the full Arena extraction on a README.
     Returns the merged skill dict, or None if both lenses fail.
     Never raises from provider failures — callers check for None.
+
+    emit_fn(msg, kind) is optional; when supplied, provider fallback events
+    are forwarded to the caller's job stream instead of only the Python logger.
     """
     import app as _a
+    _emit = emit_fn or _emit_log
     transcript    = _readme_as_transcript(repo, readme)
     knowledge_ctx = _knowledge_ctx_for_repo(repo, index)
     github_ctx    = (
@@ -849,7 +854,7 @@ def _extract_from_repo(repo: dict, readme: str, index: dict) -> dict | None:
     try:
         raw_a = provider_router.call_llm_smart(
             preamble_educator + base_educator, max_tokens=4000, json_mode=True,
-            emit_fn=_emit_log)
+            emit_fn=_emit)
         skill_a = _json.loads(raw_a)
     except Exception as e:
         log.warning("Educator-lens extraction failed (all providers tried): %s", e)
@@ -865,7 +870,7 @@ def _extract_from_repo(repo: dict, readme: str, index: dict) -> dict | None:
     try:
         raw_b = provider_router.call_llm_smart(
             preamble_practitioner + base_practitioner, max_tokens=4000, json_mode=True,
-            emit_fn=_emit_log)
+            emit_fn=_emit)
         skill_b = _json.loads(raw_b)
     except Exception as e:
         log.warning("Practitioner-lens extraction failed (all providers tried): %s", e)
@@ -875,7 +880,7 @@ def _extract_from_repo(repo: dict, readme: str, index: dict) -> dict | None:
                     repo["full_name"])
         return None   # callers check for None and fall through to baseline
 
-    merged = _a._judge_arena(skill_a, skill_b, github_ctx, _emit_log)
+    merged = _a._judge_arena(skill_a, skill_b, github_ctx, _emit)
     return merged
 
 
@@ -915,9 +920,15 @@ def _upgrade_baseline_to_ai(skill_dict: dict, repo: dict, index: dict,
 
 # ── Save wrapper ───────────────────────────────────────────────────────────────
 
-def _save_discovered_skill(skill: dict, repo: dict, index: dict) -> tuple[str, str]:
-    """Persist the extracted skill and return (skill_name, action)."""
+def _save_discovered_skill(skill: dict, repo: dict, index: dict,
+                           emit_fn=None) -> tuple[str, str]:
+    """Persist the extracted skill and return (skill_name, action).
+
+    emit_fn(msg, kind) is optional; when supplied, provider fallback events
+    from the enhance re-judge LLM pass are forwarded to the caller's job stream.
+    """
     import app as _a
+    _emit = emit_fn or _emit_log
 
     # Strip badge noise from steps before any further processing so that
     # AI responses that echo baseline badge strings are cleaned at the boundary.
@@ -967,10 +978,10 @@ def _save_discovered_skill(skill: dict, repo: dict, index: dict) -> tuple[str, s
             )
             import json as _json2
             raw2 = _pr.call_llm_smart(preamble2 + base2, max_tokens=4000, json_mode=True,
-                                       emit_fn=_emit_log)
+                                       emit_fn=_emit)
             skill_a2 = _json2.loads(raw2)
             skill_b2 = skill  # use the original merged as the "B" candidate
-            skill    = _a2._judge_arena(skill_a2, skill_b2, github_ctx, _emit_log)
+            skill    = _a2._judge_arena(skill_a2, skill_b2, github_ctx, _emit)
             action   = skill.get("action", "enhance")
             skill_name = _a2._compute_skill_name(skill, action,
                                                   skill.get("enhance_target"), index)
@@ -1236,7 +1247,7 @@ def discover_and_learn() -> dict:
                 # Sync to GitHub
                 try:
                     import agents.github_sync as gs
-                    gs.sync_skill(skill_name, _a._read_existing_markdown(skill_name), index)
+                    gs.sync_skill(skill_name, _a.SKILLS_DIR, index)
                 except Exception as e:
                     log.warning("GitHub sync failed after AI save: %s", e)
 

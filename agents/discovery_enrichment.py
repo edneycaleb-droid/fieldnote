@@ -265,11 +265,15 @@ def any_free_provider_available() -> bool:
 
 # ── Scheduled enrichment run ───────────────────────────────────────────────────
 
-def enrich_backlog() -> dict:
+def enrich_backlog(emit_fn=None) -> dict:
     """
     Process up to 3 backlog items per call.
     Called by the scheduler every 10 minutes.
     Respects the pause flag and provider availability.
+
+    emit_fn(msg, kind) is optional; when supplied, provider fallback events
+    from LLM calls inside each enrichment pass are forwarded to the caller's
+    job stream so the user can see which provider was used or fell back.
     """
     if is_paused():
         log.info("Enrichment queue: paused — skipping run")
@@ -301,7 +305,7 @@ def enrich_backlog() -> dict:
         full_name = item["full_name"]
         log.info("Enrichment queue: enriching %s (retry=%d)", full_name, item.get("retry_count", 0))
         try:
-            _enrich_one(item)
+            _enrich_one(item, emit_fn=emit_fn)
             mark_succeeded(item)
             enriched += 1
         except Exception as exc:
@@ -314,8 +318,13 @@ def enrich_backlog() -> dict:
     return {"status": "ok", "processed": processed, "enriched": enriched, "failed": failed}
 
 
-def _enrich_one(item: dict) -> None:
-    """Attempt AI enrichment for one backlog item. Raises on failure."""
+def _enrich_one(item: dict, emit_fn=None) -> None:
+    """Attempt AI enrichment for one backlog item. Raises on failure.
+
+    emit_fn(msg, kind) is optional; when supplied, provider fallback events
+    from the LLM extraction and judge passes are forwarded to the caller's
+    job stream so the user can see which provider was used or fell back.
+    """
     import agents.github_discovery as gd
     import app as _a
 
@@ -348,8 +357,8 @@ def _enrich_one(item: dict) -> None:
         "_readme_words": readme.split(),
     }
 
-    # Extract using AI
-    skill = gd._extract_from_repo(repo, readme, index)
+    # Extract using AI — thread emit_fn so provider fallbacks surface upstream
+    skill = gd._extract_from_repo(repo, readme, index, emit_fn=emit_fn)
     if skill is None:
         raise RuntimeError(f"Both lenses returned None for {full_name}")
 
@@ -373,7 +382,7 @@ def _enrich_one(item: dict) -> None:
     # mid-run failure (e.g. disk write error) keeps _baseline=True in the index
     # and records the error in the discovery log for the next retry.
     try:
-        skill_name, action = gd._save_discovered_skill(skill, repo, index)
+        skill_name, action = gd._save_discovered_skill(skill, repo, index, emit_fn=emit_fn)
         index = _a.load_index()
 
         # Sync to GitHub (non-fatal)
