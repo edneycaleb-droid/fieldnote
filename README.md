@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **164 skills** · Last synced: 2026-07-24 03:49 UTC
+> **164 skills** · Last synced: 2026-07-24 03:54 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Kimi K3 for Algorithmic Trading Research using MCP and Jesse Trade](skills/kimi_k3_vs_claude_fable_5_raw_results.md) | This skill demonstrates how to leverage the Kimi K3 open-source AI model for adv | `Kimi CLI` `Claude` `Python` `Jesse Trade` | `algo trading` `ai agent` `automation` |
 | [Kimi K3 + MCP = King of Algo Trading!](skills/kimi_k3_mcp_king_of_algo_trading.md) | By Algo-trading with Saleh. Key tools: Claude, Python, OpenAI, Anthropic. (Auto- | `Claude` `Python` `OpenAI` `Anthropic` | `strategy` `here` `want` |
 | [TensorFlow: An End-to-End Open Source Machine Learning Platform](skills/tensorflow.md) | TensorFlow is a comprehensive, flexible, open-source platform for machine learni | `tensorflow` `numpy` `docker` `deep-learning` | `machine-learning` `deep-learning` `neural-networks` |
 | [Python](skills/python.md) | All Algorithms implemented in Python | `algorithm` `algorithm-competitions` `algorithms-implemented` `algos` | `algorithm` `algorithm-competitions` `algorithms-implemented` |
@@ -84,7 +85,6 @@
 | [Deploying Dify for AI Workflow Management and RAG Pipelines](skills/dify_deployment.md) | Dify is an open-source platform for building and deploying AI workflows, RAG pip | `Docker` `Docker Compose` `Kubernetes` `Terraform` | `ai` `agentic-ai` `dify` |
 | [Dify](skills/dify.md) | Build Agentic workflows, RAG pipelines, with rich AI model and tool support on o | `terraform` `helm` `kubernetes` `docker` | `agent` `agentic-ai` `agentic-framework` |
 | [New Claude Update: Enhanced Capabilities for Teachers and Business Automation](skills/new_claude_update_is_insane.md) | This skill details Anthropic's significant update to Claude, focusing on its new | `Claude` `Anthropic` `Claude Code` `Claude Co-work` | `claude` `anthropic` `education` |
-| [Kimi K3 vs Claude Fable 5: Raw Results and Live Trading Competition](skills/kimi_k3_vs_claude_fable_5_raw_results.md) | This video compares Kimi K3 and Claude Fable 5 in a live trading competition, hi | `Kimi K3` `Claude Fable 5` `Trading View` `Tradingkit.com` | `AI` `Competition` `Models` |
 | [Getting Started with ChatGPT Work: A Beginner's Guide](skills/chatgpt_work_everything_you_need_to_know_to_get_st.md) | Learn how to use ChatGPT Work to automate tasks, build websites, and create cont | `ChatGPT` `ChatGPT Work` | `ai` `automation` `chatgpt` |
 | [New Claude Opus 5 LEAKS!](skills/new_claude_opus_5_leaks.md) | By Julian Goldie SEO. Key tools: Claude, Anthropic. (Auto-extracted — pending AI | `Claude` `Anthropic` | `opus` `model` `profit` |
 | [Anthropic's Downfall... Kimi K3.1, Grok 4.6, DeepSeek v4 GA, U.S. Gov's Gold Eagle, & Robot MMA!](skills/anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v.md) | By WorldofAI. Key tools: Claude, anthropic, Gemini, OpenAI. (Auto-extracted — pe | `Claude` `anthropic` `Gemini` `OpenAI` | `model` `which` `enthropic` |
