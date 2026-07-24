@@ -1449,7 +1449,7 @@
       ]
     },
     "llm": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "graphrag",
         "mcp_go",
@@ -1457,7 +1457,8 @@
         "registry",
         "pasa",
         "sqlite_vector",
-        "webrover"
+        "webrover",
+        "deepseek_671b_sft_guide"
       ]
     },
     "Knowledge Graph Memory Structures": {
@@ -1791,12 +1792,13 @@
       ]
     },
     "python": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "r2r",
         "pasa",
         "speech_to_speech",
-        "webrover"
+        "webrover",
+        "deepseek_671b_sft_guide"
       ]
     },
     "question-answering": {
@@ -3408,6 +3410,24 @@
       "skills": [
         "nornicdb_deployment"
       ]
+    },
+    "deepseek-r1": {
+      "freq": 1,
+      "skills": [
+        "deepseek_671b_sft_guide"
+      ]
+    },
+    "moe": {
+      "freq": 1,
+      "skills": [
+        "deepseek_671b_sft_guide"
+      ]
+    },
+    "sft": {
+      "freq": 1,
+      "skills": [
+        "deepseek_671b_sft_guide"
+      ]
     }
   },
   "tools": {
@@ -3885,7 +3905,7 @@
       ]
     },
     "openai": {
-      "freq": 15,
+      "freq": 16,
       "skills": [
         "dify",
         "ragflow",
@@ -3901,7 +3921,8 @@
         "speech_to_speech",
         "openakita",
         "webrover",
-        "pydantic_deepagents"
+        "pydantic_deepagents",
+        "deepseek_671b_sft_guide"
       ]
     },
     "agent": {
@@ -4038,14 +4059,15 @@
       ]
     },
     "huggingface": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "ragflow",
         "agentic_rag_for_dummies",
         "griptape",
         "trainer",
         "pasa",
-        "speech_to_speech"
+        "speech_to_speech",
+        "deepseek_671b_sft_guide"
       ]
     },
     "elasticsearch": {
@@ -4206,7 +4228,7 @@
       ]
     },
     "llm": {
-      "freq": 9,
+      "freq": 10,
       "skills": [
         "lightrag",
         "graphrag",
@@ -4216,7 +4238,8 @@
         "griptape",
         "forge",
         "trainer",
-        "lightagent"
+        "lightagent",
+        "deepseek_671b_sft_guide"
       ]
     },
     "rag": {
@@ -4346,7 +4369,7 @@
       ]
     },
     "python": {
-      "freq": 12,
+      "freq": 13,
       "skills": [
         "rag_techniques",
         "mcp_agent",
@@ -4359,7 +4382,8 @@
         "leon",
         "speech_to_speech",
         "py_xiaozhi",
-        "openakita"
+        "openakita",
+        "deepseek_671b_sft_guide"
       ]
     },
     "semantic-search": {
@@ -4474,11 +4498,12 @@
       ]
     },
     "ray": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "mcp_go",
         "awesome_mcp_servers",
-        "forge"
+        "forge",
+        "deepseek_671b_sft_guide"
       ]
     },
     "Go": {
@@ -5167,11 +5192,12 @@
       ]
     },
     "vllm": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "forge",
         "lightagent",
-        "speech_to_speech"
+        "speech_to_speech",
+        "deepseek_671b_sft_guide"
       ]
     },
     "function-calling": {
@@ -5430,10 +5456,11 @@
       ]
     },
     "transformers": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "pasa",
-        "speech_to_speech"
+        "speech_to_speech",
+        "deepseek_671b_sft_guide"
       ]
     },
     "research": {
@@ -6280,6 +6307,24 @@
       "freq": 1,
       "skills": [
         "nornicdb_deployment"
+      ]
+    },
+    "deepseek-r1": {
+      "freq": 1,
+      "skills": [
+        "deepseek_671b_sft_guide"
+      ]
+    },
+    "moe": {
+      "freq": 1,
+      "skills": [
+        "deepseek_671b_sft_guide"
+      ]
+    },
+    "sft": {
+      "freq": 1,
+      "skills": [
+        "deepseek_671b_sft_guide"
       ]
     }
   },
@@ -8669,6 +8714,36 @@
         "Vector"
       ],
       "step_count": 8
+    },
+    "deepseek_671b_sft_guide": {
+      "concepts": [
+        "deepseek-r1",
+        "llm",
+        "moe",
+        "python",
+        "sft"
+      ],
+      "tools": [
+        "vllm",
+        "huggingface",
+        "openai",
+        "ray",
+        "transformers",
+        "deepseek-r1",
+        "llm",
+        "moe",
+        "python",
+        "sft"
+      ],
+      "tags": [
+        "deepseek-r1",
+        "llm",
+        "moe",
+        "python",
+        "sft",
+        "ai"
+      ],
+      "step_count": 8
     }
   },
   "relationships": {
@@ -10690,6 +10765,9 @@
       ],
       "pydantic_deepagents": [
         "openai"
+      ],
+      "deepseek_671b_sft_guide": [
+        "openai"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -11334,6 +11412,9 @@
       ],
       "nornicdb": [
         "docker"
+      ],
+      "deepseek_671b_sft_guide": [
+        "openai"
       ]
     },
     "dify_deployment": {
@@ -11506,6 +11587,10 @@
       ],
       "nornicdb": [
         "docker"
+      ],
+      "deepseek_671b_sft_guide": [
+        "huggingface",
+        "openai"
       ]
     },
     "ragflow_self_hosting_guide": {
@@ -11685,6 +11770,9 @@
       ],
       "nornicdb": [
         "docker"
+      ],
+      "deepseek_671b_sft_guide": [
+        "llm"
       ]
     },
     "lightrag_setup": {
@@ -11840,6 +11928,9 @@
       "webrover": [
         "llm",
         "Python"
+      ],
+      "deepseek_671b_sft_guide": [
+        "llm"
       ]
     },
     "graphrag_system": {
@@ -12040,6 +12131,11 @@
       ],
       "pydantic_deepagents": [
         "openai"
+      ],
+      "deepseek_671b_sft_guide": [
+        "llm",
+        "openai",
+        "python"
       ]
     },
     "advanced_retrieval_augmented_generation": {
@@ -12195,6 +12291,9 @@
       ],
       "nornicdb": [
         "mcp-server"
+      ],
+      "deepseek_671b_sft_guide": [
+        "llm"
       ]
     },
     "fastapi_mcp_integration": {
@@ -12347,6 +12446,10 @@
       ],
       "nornicdb_deployment": [
         "Go"
+      ],
+      "deepseek_671b_sft_guide": [
+        "ray",
+        "llm"
       ]
     },
     "mcp_agent": {
@@ -12502,6 +12605,11 @@
       ],
       "live_run_forking_with_pydantic_deep_agents": [
         "pydantic"
+      ],
+      "deepseek_671b_sft_guide": [
+        "llm",
+        "openai",
+        "python"
       ]
     },
     "mcp_agent_framework": {
@@ -12741,6 +12849,9 @@
       ],
       "nornicdb_deployment": [
         "Go"
+      ],
+      "deepseek_671b_sft_guide": [
+        "llm"
       ]
     },
     "mcp_registry_development_deployment": {
@@ -12946,6 +13057,9 @@
       "nornicdb": [
         "qdrant",
         "docker"
+      ],
+      "deepseek_671b_sft_guide": [
+        "ray"
       ]
     },
     "mcp_server_implementations": {
@@ -13276,6 +13390,12 @@
       ],
       "live_run_forking_with_pydantic_deep_agents": [
         "pydantic"
+      ],
+      "deepseek_671b_sft_guide": [
+        "huggingface",
+        "llm",
+        "openai",
+        "python"
       ]
     },
     "griptape_framework": {
@@ -13569,6 +13689,13 @@
       ],
       "nornicdb": [
         "docker"
+      ],
+      "deepseek_671b_sft_guide": [
+        "openai",
+        "vllm",
+        "ray",
+        "llm",
+        "python"
       ]
     },
     "forge_llm_tool_calling_framework": {
@@ -13798,6 +13925,11 @@
       ],
       "nornicdb_deployment": [
         "Go"
+      ],
+      "deepseek_671b_sft_guide": [
+        "huggingface",
+        "llm",
+        "python"
       ]
     },
     "pasa": {
@@ -13919,6 +14051,12 @@
         "python",
         "llm",
         "Python"
+      ],
+      "deepseek_671b_sft_guide": [
+        "huggingface",
+        "transformers",
+        "python",
+        "llm"
       ]
     },
     "paper_agent": {},
@@ -14026,6 +14164,12 @@
       "pydantic_deepagents": [
         "openai",
         "agent-framework"
+      ],
+      "deepseek_671b_sft_guide": [
+        "python",
+        "llm",
+        "openai",
+        "vllm"
       ]
     },
     "lightagent_framework": {
@@ -14162,6 +14306,9 @@
       ],
       "webrover": [
         "ai",
+        "llm"
+      ],
+      "deepseek_671b_sft_guide": [
         "llm"
       ]
     },
@@ -14300,6 +14447,10 @@
       ],
       "pydantic_deepagents": [
         "openai"
+      ],
+      "deepseek_671b_sft_guide": [
+        "openai",
+        "python"
       ]
     },
     "agentic_video_production": {
@@ -14398,6 +14549,10 @@
       ],
       "pydantic_deepagents": [
         "openai"
+      ],
+      "deepseek_671b_sft_guide": [
+        "openai",
+        "python"
       ]
     },
     "leon_ai_assistant": {
@@ -14595,6 +14750,13 @@
       ],
       "nornicdb": [
         "docker"
+      ],
+      "deepseek_671b_sft_guide": [
+        "huggingface",
+        "openai",
+        "vllm",
+        "python",
+        "transformers"
       ]
     },
     "py_xiaozhi": {
@@ -14665,6 +14827,9 @@
       ],
       "nornicdb": [
         "mcp-server"
+      ],
+      "deepseek_671b_sft_guide": [
+        "python"
       ]
     },
     "cross_platform_py_xiaozhi": {
@@ -14805,6 +14970,10 @@
         "gemini",
         "openai",
         "anthropic"
+      ],
+      "deepseek_671b_sft_guide": [
+        "openai",
+        "python"
       ]
     },
     "modular_speech_to_speech_pipeline": {
@@ -14987,6 +15156,11 @@
         "anthropic",
         "openai",
         "langgraph"
+      ],
+      "deepseek_671b_sft_guide": [
+        "python",
+        "openai",
+        "llm"
       ]
     },
     "web_rover_ai_agent": {
@@ -15152,6 +15326,9 @@
       ],
       "nornicdb": [
         "docker"
+      ],
+      "deepseek_671b_sft_guide": [
+        "openai"
       ]
     },
     "live_run_forking_with_pydantic_deep_agents": {
@@ -15315,8 +15492,112 @@
       "live_run_forking_with_pydantic_deep_agents": [
         "Docker"
       ]
+    },
+    "deepseek_671b_sft_guide": {
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "openai"
+      ],
+      "dify": [
+        "openai"
+      ],
+      "ragflow": [
+        "huggingface",
+        "openai"
+      ],
+      "lightrag": [
+        "llm"
+      ],
+      "graphrag": [
+        "llm"
+      ],
+      "rag_techniques": [
+        "llm",
+        "openai",
+        "python"
+      ],
+      "fastapi_mcp": [
+        "llm"
+      ],
+      "mcp_go": [
+        "ray",
+        "llm"
+      ],
+      "mcp_agent": [
+        "llm",
+        "openai",
+        "python"
+      ],
+      "registry": [
+        "llm"
+      ],
+      "awesome_mcp_servers": [
+        "ray"
+      ],
+      "griptape": [
+        "huggingface",
+        "llm",
+        "openai",
+        "python"
+      ],
+      "forge": [
+        "openai",
+        "vllm",
+        "ray",
+        "llm",
+        "python"
+      ],
+      "trainer": [
+        "huggingface",
+        "llm",
+        "python"
+      ],
+      "pasa": [
+        "huggingface",
+        "transformers",
+        "python",
+        "llm"
+      ],
+      "lightagent": [
+        "python",
+        "llm",
+        "openai",
+        "vllm"
+      ],
+      "sqlite_vector": [
+        "llm"
+      ],
+      "openmontage": [
+        "openai",
+        "python"
+      ],
+      "leon": [
+        "openai",
+        "python"
+      ],
+      "speech_to_speech": [
+        "huggingface",
+        "openai",
+        "vllm",
+        "python",
+        "transformers"
+      ],
+      "py_xiaozhi": [
+        "python"
+      ],
+      "openakita": [
+        "openai",
+        "python"
+      ],
+      "webrover": [
+        "python",
+        "openai",
+        "llm"
+      ],
+      "pydantic_deepagents": [
+        "openai"
+      ]
     }
   },
-  "updated_at": "2026-07-24T00:02:01.007869+00:00",
-  "total_skills": 75
+  "updated_at": "2026-07-24T00:02:14.057808+00:00",
+  "total_skills": 76
 }
