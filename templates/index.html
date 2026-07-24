@@ -1294,6 +1294,7 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
   text-transform: uppercase; color: var(--muted); padding: 8px 2px 4px; }
 .qjobs-stale-note { font-size: .73rem; color: #a06030; background: #0f0800;
   border: 1px solid #2a1a00; border-radius: 8px; padding: 7px 11px; margin-bottom: 10px; }
+.qjobs-refresh-hint { font-size: .68rem; color: var(--muted2); margin-left: auto; white-space: nowrap; }
 .qjobs-purge-btn { padding: 5px 13px; background: #1a0808; border: 1px solid #3a1010;
   border-radius: 8px; color: #f87171; font-size: .74rem; font-weight: 700;
   cursor: pointer; -webkit-appearance: none; transition: all .15s; }
@@ -2072,6 +2073,7 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
     <div class="qjobs-header" onclick="toggleQjobs()">
       <span class="qjobs-title">🕐 Queued Jobs</span>
       <span class="qjobs-badge hidden" id="qjobs-badge">0</span>
+      <span class="qjobs-refresh-hint" id="qjobs-refresh-hint" style="display:none"></span>
       <span class="qjobs-toggle" id="qjobs-toggle-icon">▼</span>
     </div>
     <div id="qjobs-body" class="qjobs-body" style="display:none">
@@ -5597,22 +5599,53 @@ function switchMainTab(name) {
     if (!_integLoaded) loadIntegrations();
     else refreshIntegBadge();
     startAgentPoll();
-    loadQueuedJobs();
+    // If the panel is expanded, let startQjobsPoll() drive the first load;
+    // otherwise fire a one-shot fetch so the badge/count stays current.
+    if (_qjobsOpen) startQjobsPoll();
+    else            loadQueuedJobs();
     loadHub();
   } else {
     if (lib)   lib.style.display   = '';
     if (integ) integ.style.display = 'none';
     stopAgentPoll();
+    stopQjobsPoll();
   }
 }
 
 /* ── Queued Jobs panel ─────────────────────────────────────────────────── */
-let _qjobsOpen = false;
+let _qjobsOpen          = false;
+let _qjobsPoller        = null;   // setInterval handle for auto-refresh
+let _qjobsRefreshTicker = null;   // setInterval handle for hint counter
+let _qjobsLastRefreshed = null;   // Date.now() of last successful fetch
+
+function _updateQjobsRefreshHint() {
+  const el = document.getElementById('qjobs-refresh-hint');
+  if (!el || !_qjobsLastRefreshed) return;
+  const secs = Math.floor((Date.now() - _qjobsLastRefreshed) / 1000);
+  el.textContent = secs < 5 ? 'refreshed just now' : `refreshed ${secs}s ago`;
+  el.style.display = '';
+}
+
+function startQjobsPoll() {
+  if (_qjobsPoller) return;  // already running
+  loadQueuedJobs();
+  _qjobsPoller        = setInterval(loadQueuedJobs, 15000);
+  _qjobsRefreshTicker = setInterval(_updateQjobsRefreshHint, 1000);
+}
+
+function stopQjobsPoll() {
+  if (_qjobsPoller)        { clearInterval(_qjobsPoller);        _qjobsPoller = null; }
+  if (_qjobsRefreshTicker) { clearInterval(_qjobsRefreshTicker); _qjobsRefreshTicker = null; }
+  const el = document.getElementById('qjobs-refresh-hint');
+  if (el) el.style.display = 'none';
+}
 
 function toggleQjobs() {
   _qjobsOpen = !_qjobsOpen;
   document.getElementById('qjobs-body').style.display = _qjobsOpen ? '' : 'none';
   document.getElementById('qjobs-toggle-icon').textContent = _qjobsOpen ? '▲' : '▼';
+  if (_qjobsOpen) startQjobsPoll();
+  else            stopQjobsPoll();
 }
 
 async function loadQueuedJobs() {
@@ -5622,6 +5655,8 @@ async function loadQueuedJobs() {
       fetch('/api/enrichment/queue').then(r => r.json()).catch(() => ({items:[],count:0})),
     ]);
     renderQueuedJobs(cpData, enData);
+    _qjobsLastRefreshed = Date.now();
+    _updateQjobsRefreshHint();
   } catch(e) { /* silent */ }
 }
 
