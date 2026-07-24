@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "microsoft--markitdown",
+      "title": "Discovered: microsoft/markitdown",
+      "category": "discoveries",
+      "confidence": "verified",
+      "updated_at": "2026-07-24T01:11:00.289585+00:00",
+      "path": "discoveries/microsoft--markitdown.md"
+    },
+    {
       "slug": "significant-gravitas--autogpt",
       "title": "Discovered: Significant-Gravitas/AutoGPT",
       "category": "discoveries",
@@ -393,5 +401,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-24T01:10:58.465304+00:00"
+  "updated_at": "2026-07-24T01:11:00.294098+00:00"
 }
