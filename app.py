@@ -2387,95 +2387,111 @@ def api_mcp_hub_reset_health():
 # This is a module-level var so tests can override it without monkey-patching internals.
 _VERIFIER_DEADLINE_S: int = 30
 
-# Maximum concurrent verifier threads at any one time.
-# Health checks are issued in batches of this size.  Within each batch every
-# future is submitted before any result is collected, so all workers start
-# immediately and result(timeout=...) measures real execution time — not
-# queue-wait time.  A fresh executor per batch ensures hung threads from a
-# deadline breach cannot fill slots in the next batch and cause queued futures
-# to be wrongly timed out.  Thread accumulation is therefore bounded to
-# _HC_POOL_WORKERS lingering threads at any moment, regardless of server count.
+# Maximum number of verifier threads that may run concurrently.
+# Once all _HC_POOL_WORKERS slots are occupied (e.g. by hung verifiers that
+# timed out but cannot be force-killed), further submissions are detected via a
+# start-event and skipped — not queued — so result(timeout=...) always measures
+# real execution time and total thread count stays bounded to this value.
 # Module-level so tests can override without monkey-patching internals.
 _HC_POOL_WORKERS: int = 4
+
+# How long (seconds) to wait for a submitted future to actually start a thread
+# before concluding the pool is saturated and skipping the server for this cycle.
+_HC_START_POLL_S: float = 0.5
 
 
 def _mcp_health_check() -> dict:
     """Verify all enabled hub servers and update their health states.
 
-    Servers are verified in batches of _HC_POOL_WORKERS.  Within each batch all
-    futures are submitted before any result is collected so every worker starts
-    immediately — no future is ever queued, which prevents result(timeout=...)
-    from firing against a task that never ran.  A fresh executor per batch
-    ensures that hung threads from a previous batch do not fill worker slots and
-    cause the next batch to queue.  At most _HC_POOL_WORKERS abandoned threads
-    can exist at any point in time regardless of how many servers time out.
+    A single ThreadPoolExecutor(max_workers=_HC_POOL_WORKERS) is created once
+    per call and torn down (wait=False) after the loop.  Each worker wrapper
+    sets a threading.Event the instant it begins, so the caller can detect
+    whether the future actually started within _HC_START_POLL_S.
+
+    If the event is not set in time the pool slots are all occupied by hung
+    threads from earlier deadline breaches (which cannot be force-killed).  In
+    that case the future is cancelled and the server is skipped with a warning
+    — it is NOT marked offline — rather than queuing it where result(timeout=...)
+    would fire against work that never ran.
+
+    Thread accumulation is therefore bounded to _HC_POOL_WORKERS threads at any
+    moment regardless of how many servers time out in one cycle.
     """
     try:
         from agents.mcp_registry import load_registry, update_server
         from agents.mcp_verifier import verify_server
         from concurrent.futures import ThreadPoolExecutor, TimeoutError as _FuturesTimeout
         from datetime import datetime, timezone
-        import time as _time
-        servers   = load_registry()
-        active    = [s for s in servers
-                     if s.enabled and s.health_state not in ("not_installed", "quarantined")]
-        checked   = 0
-        changed   = 0
-        step      = max(1, _HC_POOL_WORKERS)
-        for batch_start in range(0, max(1, len(active)), step):
-            batch = active[batch_start: batch_start + step]
-            if not batch:
-                break
-            # Pool is sized to the batch so every submit() starts a thread immediately.
-            _pool = ThreadPoolExecutor(max_workers=len(batch), thread_name_prefix="hc")
-            try:
-                # Submit all futures before collecting — they all run in parallel.
-                t0      = _time.monotonic()
-                pending = [(srv, _pool.submit(verify_server, srv)) for srv in batch]
-                for srv, fut in pending:
-                    prev_state = srv.health_state
-                    # Remaining time is shared across the batch so parallel runs
-                    # don't each get a fresh full deadline.
-                    elapsed   = _time.monotonic() - t0
-                    remaining = max(0.5, _VERIFIER_DEADLINE_S - elapsed)
-                    try:
-                        result = fut.result(timeout=remaining)
-                    except _FuturesTimeout:
-                        log.warning(
-                            "mcp_health: verifier deadline exceeded for %s (%ds); "
-                            "marking offline",
-                            srv.id, _VERIFIER_DEADLINE_S,
-                        )
-                        update_server(srv.id, health_state="offline")
-                        checked += 1
-                        if prev_state != "offline":
-                            changed += 1
-                            log.info(
-                                "mcp_health: %s %s → offline (deadline)",
-                                srv.id, prev_state,
-                            )
-                        continue
-                    except Exception as srv_exc:
-                        log.warning(
-                            "mcp_health: verifier crashed for %s [%s]: %s",
-                            srv.id, type(srv_exc).__name__, srv_exc,
-                        )
-                        continue
-                    now_iso   = datetime.now(timezone.utc).isoformat()
-                    new_state = "connected" if result.ok else (
-                        "runtime_missing"
-                        if result.error_code == "runtime_missing"
-                        else "offline"
+        import threading as _threading
+        servers = load_registry()
+        active  = [s for s in servers
+                   if s.enabled and s.health_state not in ("not_installed", "quarantined")]
+        checked = 0
+        changed = 0
+        _pool   = ThreadPoolExecutor(
+            max_workers=_HC_POOL_WORKERS, thread_name_prefix="hc"
+        )
+        try:
+            for srv in active:
+                prev_state = srv.health_state
+                started_ev = _threading.Event()
+
+                # Wrapper signals us the instant the thread starts executing so
+                # we can distinguish "running" from "queued behind hung threads".
+                def _run(s=srv, ev=started_ev):
+                    ev.set()
+                    return verify_server(s)
+
+                fut = _pool.submit(_run)
+
+                # Brief wait for the thread to start.  No signal within
+                # _HC_START_POLL_S means all pool slots are occupied by hung
+                # threads; cancel and skip to keep thread count bounded.
+                if not started_ev.wait(timeout=_HC_START_POLL_S):
+                    fut.cancel()
+                    log.warning(
+                        "mcp_health: pool saturated (%d workers busy); "
+                        "skipping %s for this cycle",
+                        _HC_POOL_WORKERS, srv.id,
                     )
-                    update_server(srv.id, health_state=new_state, verified_at=now_iso)
+                    continue
+
+                try:
+                    result = fut.result(timeout=_VERIFIER_DEADLINE_S)
+                except _FuturesTimeout:
+                    log.warning(
+                        "mcp_health: verifier deadline exceeded for %s (%ds); "
+                        "marking offline",
+                        srv.id, _VERIFIER_DEADLINE_S,
+                    )
+                    update_server(srv.id, health_state="offline")
                     checked += 1
-                    if new_state != prev_state:
+                    if prev_state != "offline":
                         changed += 1
                         log.info(
-                            "mcp_health: %s %s → %s", srv.id, prev_state, new_state
+                            "mcp_health: %s %s → offline (deadline)",
+                            srv.id, prev_state,
                         )
-            finally:
-                _pool.shutdown(wait=False)
+                    continue
+                except Exception as srv_exc:
+                    log.warning(
+                        "mcp_health: verifier crashed for %s [%s]: %s",
+                        srv.id, type(srv_exc).__name__, srv_exc,
+                    )
+                    continue
+                now_iso   = datetime.now(timezone.utc).isoformat()
+                new_state = "connected" if result.ok else (
+                    "runtime_missing"
+                    if result.error_code == "runtime_missing"
+                    else "offline"
+                )
+                update_server(srv.id, health_state=new_state, verified_at=now_iso)
+                checked += 1
+                if new_state != prev_state:
+                    changed += 1
+                    log.info("mcp_health: %s %s → %s", srv.id, prev_state, new_state)
+        finally:
+            _pool.shutdown(wait=False)
         return {"checked": checked, "changed": changed}
     except Exception as exc:
         log.warning("mcp_health: error: %s", exc)
