@@ -6321,6 +6321,8 @@ let _hubSearch         = '';   // current search query
 let _hubLoaded         = false;
 let _hubSearchTimer    = null;
 let _hubHealthLastRun  = null; // ISO-8601 UTC timestamp of last mcp_health run, or null
+let _hubCheckingPoller = null; // setInterval handle — polls registry while unverified servers exist
+let _hubPollerTicks    = 0;    // guard: stop after 20 polls (~10 min) regardless
 
 async function loadHub() {
   if (_hubLoaded) return;
@@ -6334,10 +6336,63 @@ async function loadHub() {
     _hubLoaded = true;
     renderHubSummary(healthData);
     renderHubGrid();
+    // If any servers are still unverified, start a background poller so the
+    // tooltip (and badge state) update automatically once health-check fires.
+    _hubStartCheckingPoller();
   } catch (e) {
     document.getElementById('hub-grid').innerHTML =
       '<div style="grid-column:1/-1;color:#f87171;font-size:.78rem;text-align:center;padding:16px">Could not load hub — ' + esc(String(e)) + '</div>';
   }
+}
+
+// ── Hub auto-refresh poller (while unverified servers exist) ──────────────────
+
+function _hubStartCheckingPoller() {
+  if (_hubCheckingPoller) return; // already running
+  const unverified = _hubData.filter(s => s.health_state === 'unverified');
+  if (!unverified.length) return; // nothing to poll for
+  _hubPollerTicks = 0;
+  _hubCheckingPoller = setInterval(_hubPollRegistry, 30000); // every 30 s
+}
+
+function _hubStopCheckingPoller() {
+  if (_hubCheckingPoller) {
+    clearInterval(_hubCheckingPoller);
+    _hubCheckingPoller = null;
+  }
+}
+
+async function _hubPollRegistry() {
+  _hubPollerTicks++;
+  // Safety ceiling: stop after 20 ticks (~10 min) so we don't poll forever
+  if (_hubPollerTicks > 20) { _hubStopCheckingPoller(); return; }
+  try {
+    const regData = await fetch('/api/mcp-hub/registry').then(r => r.json());
+    const fresh   = regData.servers || [];
+    _hubHealthLastRun = regData.mcp_health_last_run || _hubHealthLastRun;
+
+    let anyUnverified = false;
+    fresh.forEach(srv => {
+      const old = _hubData.find(s => s.id === srv.id);
+      if (!old) return;
+      if (old.health_state !== srv.health_state) {
+        // State changed — merge fresh data into _hubData and re-render the card
+        Object.assign(old, srv);
+        _hubUpdateCardState(old.id, old.health_state, old.enabled);
+      } else if (srv.health_state === 'unverified') {
+        // State unchanged but still checking — live-patch the tooltip so the
+        // "Last check: never" message updates once mcp_health has run at least once.
+        const stateText = document.querySelector('#hub-state-' + CSS.escape(srv.id) + ' .hc-state-text');
+        if (stateText) stateText.title = _hubCheckingTooltip();
+        anyUnverified = true;
+      }
+    });
+
+    // Also refresh the summary badge counts
+    fetch('/api/mcp-hub/health').then(r => r.json()).then(renderHubSummary).catch(() => {});
+
+    if (!anyUnverified) _hubStopCheckingPoller();
+  } catch (_) { /* non-critical — try again next tick */ }
 }
 
 function renderHubSummary(h) {
