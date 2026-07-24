@@ -2524,9 +2524,10 @@
       ]
     },
     "Large Language Models": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "paper_agent"
+        "paper_agent",
+        "deepseek_v3_r1_fine_tuning"
       ]
     },
     "Automated Paper Search": {
@@ -3427,6 +3428,48 @@
       "freq": 1,
       "skills": [
         "deepseek_671b_sft_guide"
+      ]
+    },
+    "Data Parallelism": {
+      "freq": 1,
+      "skills": [
+        "deepseek_v3_r1_fine_tuning"
+      ]
+    },
+    "Sequence Parallelism": {
+      "freq": 1,
+      "skills": [
+        "deepseek_v3_r1_fine_tuning"
+      ]
+    },
+    "Full parameter fine-tuning": {
+      "freq": 1,
+      "skills": [
+        "deepseek_v3_r1_fine_tuning"
+      ]
+    },
+    "Distributed Training": {
+      "freq": 1,
+      "skills": [
+        "deepseek_v3_r1_fine_tuning"
+      ]
+    },
+    "Model Fine-Tuning": {
+      "freq": 1,
+      "skills": [
+        "deepseek_v3_r1_fine_tuning"
+      ]
+    },
+    "Model weight conversion": {
+      "freq": 1,
+      "skills": [
+        "deepseek_v3_r1_fine_tuning"
+      ]
+    },
+    "Model deployment": {
+      "freq": 1,
+      "skills": [
+        "deepseek_v3_r1_fine_tuning"
       ]
     }
   },
@@ -5500,9 +5543,10 @@
       ]
     },
     "Hugging Face Transformers": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "paper_agent"
+        "paper_agent",
+        "deepseek_v3_r1_fine_tuning"
       ]
     },
     "ArXiv Search API": {
@@ -5706,9 +5750,10 @@
       ]
     },
     "DeepSpeed": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "kubeflow_trainer_skill"
+        "kubeflow_trainer_skill",
+        "deepseek_v3_r1_fine_tuning"
       ]
     },
     "JAX": {
@@ -6081,9 +6126,10 @@
       ]
     },
     "vLLM": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "modular_speech_to_speech_pipeline"
+        "modular_speech_to_speech_pipeline",
+        "deepseek_v3_r1_fine_tuning"
       ]
     },
     "OpenAI Realtime API": {
@@ -6325,6 +6371,24 @@
       "freq": 1,
       "skills": [
         "deepseek_671b_sft_guide"
+      ]
+    },
+    "Xtuner": {
+      "freq": 1,
+      "skills": [
+        "deepseek_v3_r1_fine_tuning"
+      ]
+    },
+    "pdsh": {
+      "freq": 1,
+      "skills": [
+        "deepseek_v3_r1_fine_tuning"
+      ]
+    },
+    "slurm": {
+      "freq": 1,
+      "skills": [
+        "deepseek_v3_r1_fine_tuning"
       ]
     }
   },
@@ -8744,6 +8808,37 @@
         "ai"
       ],
       "step_count": 8
+    },
+    "deepseek_v3_r1_fine_tuning": {
+      "concepts": [
+        "Data Parallelism",
+        "Sequence Parallelism",
+        "Full parameter fine-tuning",
+        "Large Language Models",
+        "Distributed Training",
+        "Model Fine-Tuning",
+        "Model weight conversion",
+        "Model deployment"
+      ],
+      "tools": [
+        "DeepSpeed",
+        "vLLM",
+        "Hugging Face Transformers",
+        "Xtuner",
+        "pdsh",
+        "slurm"
+      ],
+      "tags": [
+        "deep_learning",
+        "nlp",
+        "model_fine_tuning",
+        "deepseek-r1",
+        "llm",
+        "moe",
+        "python",
+        "sft"
+      ],
+      "step_count": 9
     }
   },
   "relationships": {
@@ -14059,7 +14154,12 @@
         "llm"
       ]
     },
-    "paper_agent": {},
+    "paper_agent": {
+      "deepseek_v3_r1_fine_tuning": [
+        "Hugging Face Transformers",
+        "Large Language Models"
+      ]
+    },
     "lightagent": {
       "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
         "openai"
@@ -14330,7 +14430,11 @@
         "FileStash"
       ]
     },
-    "kubeflow_trainer_skill": {},
+    "kubeflow_trainer_skill": {
+      "deepseek_v3_r1_fine_tuning": [
+        "DeepSpeed"
+      ]
+    },
     "openmontage": {
       "new_claude_opus_5_leaks": [
         "claude"
@@ -15004,6 +15108,9 @@
       ],
       "lightagent_framework": [
         "LLM"
+      ],
+      "deepseek_v3_r1_fine_tuning": [
+        "vLLM"
       ]
     },
     "webrover": {
@@ -15596,8 +15703,20 @@
       "pydantic_deepagents": [
         "openai"
       ]
+    },
+    "deepseek_v3_r1_fine_tuning": {
+      "paper_agent": [
+        "Hugging Face Transformers",
+        "Large Language Models"
+      ],
+      "kubeflow_trainer_skill": [
+        "DeepSpeed"
+      ],
+      "modular_speech_to_speech_pipeline": [
+        "vLLM"
+      ]
     }
   },
-  "updated_at": "2026-07-24T00:02:14.057808+00:00",
-  "total_skills": 76
+  "updated_at": "2026-07-24T00:03:15.635258+00:00",
+  "total_skills": 77
 }
