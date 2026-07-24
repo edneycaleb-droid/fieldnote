@@ -3330,6 +3330,36 @@
       "skills": [
         "live_run_forking_with_pydantic_deep_agents"
       ]
+    },
+    "bolt": {
+      "freq": 1,
+      "skills": [
+        "nornicdb"
+      ]
+    },
+    "cypher": {
+      "freq": 1,
+      "skills": [
+        "nornicdb"
+      ]
+    },
+    "database": {
+      "freq": 1,
+      "skills": [
+        "nornicdb"
+      ]
+    },
+    "enterprise-solutions": {
+      "freq": 1,
+      "skills": [
+        "nornicdb"
+      ]
+    },
+    "golang": {
+      "freq": 1,
+      "skills": [
+        "nornicdb"
+      ]
     }
   },
   "tools": {
@@ -3773,7 +3803,7 @@
       ]
     },
     "docker": {
-      "freq": 11,
+      "freq": 12,
       "skills": [
         "dify",
         "ragflow",
@@ -3785,7 +3815,8 @@
         "forge",
         "infinity",
         "speech_to_speech",
-        "pydantic_deepagents"
+        "pydantic_deepagents",
+        "nornicdb"
       ]
     },
     "postgresql": {
@@ -4341,11 +4372,12 @@
       ]
     },
     "mcp-server": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "fastapi_mcp",
         "xcodebuildmcp",
-        "py_xiaozhi"
+        "py_xiaozhi",
+        "nornicdb"
       ]
     },
     "mcp-servers": {
@@ -4577,10 +4609,11 @@
       ]
     },
     "qdrant": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "awesome_mcp_servers",
-        "agentic_rag_for_dummies"
+        "agentic_rag_for_dummies",
+        "nornicdb"
       ]
     },
     "duckdb": {
@@ -5243,9 +5276,10 @@
       ]
     },
     "hnsw": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "infinity"
+        "infinity",
+        "nornicdb"
       ]
     },
     "hybrid-search": {
@@ -6099,6 +6133,72 @@
       "freq": 1,
       "skills": [
         "live_run_forking_with_pydantic_deep_agents"
+      ]
+    },
+    "bolt": {
+      "freq": 1,
+      "skills": [
+        "nornicdb"
+      ]
+    },
+    "cypher": {
+      "freq": 1,
+      "skills": [
+        "nornicdb"
+      ]
+    },
+    "database": {
+      "freq": 1,
+      "skills": [
+        "nornicdb"
+      ]
+    },
+    "enterprise-solutions": {
+      "freq": 1,
+      "skills": [
+        "nornicdb"
+      ]
+    },
+    "golang": {
+      "freq": 1,
+      "skills": [
+        "nornicdb"
+      ]
+    },
+    "graph-rag": {
+      "freq": 1,
+      "skills": [
+        "nornicdb"
+      ]
+    },
+    "graphql": {
+      "freq": 1,
+      "skills": [
+        "nornicdb"
+      ]
+    },
+    "local-llm": {
+      "freq": 1,
+      "skills": [
+        "nornicdb"
+      ]
+    },
+    "memoryos": {
+      "freq": 1,
+      "skills": [
+        "nornicdb"
+      ]
+    },
+    "mvcc": {
+      "freq": 1,
+      "skills": [
+        "nornicdb"
+      ]
+    },
+    "neo4j": {
+      "freq": 1,
+      "skills": [
+        "nornicdb"
       ]
     }
   },
@@ -8422,6 +8522,43 @@
         "problem-solving"
       ],
       "step_count": 10
+    },
+    "nornicdb": {
+      "concepts": [
+        "bolt",
+        "cypher",
+        "database",
+        "enterprise-solutions",
+        "golang"
+      ],
+      "tools": [
+        "qdrant",
+        "docker",
+        "bolt",
+        "cypher",
+        "database",
+        "enterprise-solutions",
+        "golang",
+        "graph-rag",
+        "graphql",
+        "hnsw",
+        "local-llm",
+        "mcp-server",
+        "memoryos",
+        "mvcc",
+        "neo4j"
+      ],
+      "tags": [
+        "bolt",
+        "cypher",
+        "database",
+        "enterprise-solutions",
+        "golang",
+        "go",
+        "ai",
+        "llm"
+      ],
+      "step_count": 8
     }
   },
   "relationships": {
@@ -11069,6 +11206,9 @@
       "pydantic_deepagents": [
         "openai",
         "docker"
+      ],
+      "nornicdb": [
+        "docker"
       ]
     },
     "dify_deployment": {
@@ -11235,6 +11375,9 @@
         "gemini",
         "openai",
         "ai-agents"
+      ],
+      "nornicdb": [
+        "docker"
       ]
     },
     "ragflow_self_hosting_guide": {
@@ -11407,6 +11550,9 @@
       ],
       "pydantic_deepagents": [
         "ollama",
+        "docker"
+      ],
+      "nornicdb": [
         "docker"
       ]
     },
@@ -11912,6 +12058,9 @@
         "ai",
         "llm",
         "Python"
+      ],
+      "nornicdb": [
+        "mcp-server"
       ]
     },
     "fastapi_mcp_integration": {
@@ -12446,6 +12595,9 @@
       ],
       "pydantic_deepagents": [
         "docker"
+      ],
+      "nornicdb": [
+        "docker"
       ]
     },
     "mcp_registry_development_deployment": {
@@ -12495,6 +12647,9 @@
       ],
       "pydantic_deepagents": [
         "docker"
+      ],
+      "nornicdb": [
+        "docker"
       ]
     },
     "model_context_protocol_go": {
@@ -12540,6 +12695,9 @@
       "py_xiaozhi": [
         "mcp-server",
         "mcp"
+      ],
+      "nornicdb": [
+        "mcp-server"
       ]
     },
     "awesome_mcp_servers": {
@@ -12640,6 +12798,10 @@
         "ai"
       ],
       "pydantic_deepagents": [
+        "docker"
+      ],
+      "nornicdb": [
+        "qdrant",
         "docker"
       ]
     },
@@ -13251,6 +13413,9 @@
       ],
       "live_run_forking_with_pydantic_deep_agents": [
         "pydantic"
+      ],
+      "nornicdb": [
+        "docker"
       ]
     },
     "forge_llm_tool_calling_framework": {
@@ -13333,6 +13498,10 @@
         "docker"
       ],
       "pydantic_deepagents": [
+        "docker"
+      ],
+      "nornicdb": [
+        "hnsw",
         "docker"
       ]
     },
@@ -14261,6 +14430,9 @@
       "pydantic_deepagents": [
         "openai",
         "docker"
+      ],
+      "nornicdb": [
+        "docker"
       ]
     },
     "py_xiaozhi": {
@@ -14328,6 +14500,9 @@
       ],
       "pydantic_deepagents": [
         "gemini"
+      ],
+      "nornicdb": [
+        "mcp-server"
       ]
     },
     "cross_platform_py_xiaozhi": {
@@ -14812,6 +14987,9 @@
       ],
       "live_run_forking_with_pydantic_deep_agents": [
         "pydantic"
+      ],
+      "nornicdb": [
+        "docker"
       ]
     },
     "live_run_forking_with_pydantic_deep_agents": {
@@ -14872,8 +15050,51 @@
       "pydantic_deepagents": [
         "pydantic"
       ]
+    },
+    "nornicdb": {
+      "dify": [
+        "docker"
+      ],
+      "ragflow": [
+        "docker"
+      ],
+      "lightrag": [
+        "docker"
+      ],
+      "fastapi_mcp": [
+        "mcp-server"
+      ],
+      "registry": [
+        "docker"
+      ],
+      "mcp_registry_development_deployment": [
+        "docker"
+      ],
+      "xcodebuildmcp": [
+        "mcp-server"
+      ],
+      "awesome_mcp_servers": [
+        "qdrant",
+        "docker"
+      ],
+      "forge": [
+        "docker"
+      ],
+      "infinity": [
+        "hnsw",
+        "docker"
+      ],
+      "speech_to_speech": [
+        "docker"
+      ],
+      "py_xiaozhi": [
+        "mcp-server"
+      ],
+      "pydantic_deepagents": [
+        "docker"
+      ]
     }
   },
-  "updated_at": "2026-07-24T00:00:38.898831+00:00",
-  "total_skills": 73
+  "updated_at": "2026-07-24T00:00:48.997548+00:00",
+  "total_skills": 74
 }
