@@ -4558,6 +4558,36 @@
       "skills": [
         "project_based_learning_python"
       ]
+    },
+    "algorithm": {
+      "freq": 1,
+      "skills": [
+        "python"
+      ]
+    },
+    "algorithm-competitions": {
+      "freq": 1,
+      "skills": [
+        "python"
+      ]
+    },
+    "algorithms-implemented": {
+      "freq": 1,
+      "skills": [
+        "python"
+      ]
+    },
+    "algos": {
+      "freq": 1,
+      "skills": [
+        "python"
+      ]
+    },
+    "community-driven": {
+      "freq": 1,
+      "skills": [
+        "python"
+      ]
     }
   },
   "tools": {
@@ -5578,7 +5608,7 @@
       ]
     },
     "python": {
-      "freq": 17,
+      "freq": 18,
       "skills": [
         "rag_techniques",
         "mcp_agent",
@@ -5595,7 +5625,8 @@
         "deepseek_671b_sft_guide",
         "autogpt",
         "airecon",
-        "system_design_primer"
+        "system_design_primer",
+        "python"
       ]
     },
     "semantic-search": {
@@ -7866,9 +7897,10 @@
       ]
     },
     "interview": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
-        "system_design_primer"
+        "system_design_primer",
+        "python"
       ]
     },
     "interview-practice": {
@@ -7998,6 +8030,78 @@
       "freq": 1,
       "skills": [
         "project_based_learning_python"
+      ]
+    },
+    "algorithm": {
+      "freq": 1,
+      "skills": [
+        "python"
+      ]
+    },
+    "algorithm-competitions": {
+      "freq": 1,
+      "skills": [
+        "python"
+      ]
+    },
+    "algorithms-implemented": {
+      "freq": 1,
+      "skills": [
+        "python"
+      ]
+    },
+    "algos": {
+      "freq": 1,
+      "skills": [
+        "python"
+      ]
+    },
+    "community-driven": {
+      "freq": 1,
+      "skills": [
+        "python"
+      ]
+    },
+    "education": {
+      "freq": 1,
+      "skills": [
+        "python"
+      ]
+    },
+    "hacktoberfest": {
+      "freq": 1,
+      "skills": [
+        "python"
+      ]
+    },
+    "learn": {
+      "freq": 1,
+      "skills": [
+        "python"
+      ]
+    },
+    "practice": {
+      "freq": 1,
+      "skills": [
+        "python"
+      ]
+    },
+    "searches": {
+      "freq": 1,
+      "skills": [
+        "python"
+      ]
+    },
+    "sorting-algorithms": {
+      "freq": 1,
+      "skills": [
+        "python"
+      ]
+    },
+    "sorts": {
+      "freq": 1,
+      "skills": [
+        "python"
       ]
     }
   },
@@ -11041,6 +11145,40 @@
         "tutorial"
       ],
       "step_count": 12
+    },
+    "python": {
+      "concepts": [
+        "algorithm",
+        "algorithm-competitions",
+        "algorithms-implemented",
+        "algos",
+        "community-driven"
+      ],
+      "tools": [
+        "algorithm",
+        "algorithm-competitions",
+        "algorithms-implemented",
+        "algos",
+        "community-driven",
+        "education",
+        "hacktoberfest",
+        "interview",
+        "learn",
+        "practice",
+        "python",
+        "searches",
+        "sorting-algorithms",
+        "sorts"
+      ],
+      "tags": [
+        "algorithm",
+        "algorithm-competitions",
+        "algorithms-implemented",
+        "algos",
+        "community-driven",
+        "python"
+      ],
+      "step_count": 4
     }
   },
   "relationships": {
@@ -15225,6 +15363,9 @@
       "awesome_python": [
         "llama-index",
         "langchain"
+      ],
+      "python": [
+        "python"
       ]
     },
     "advanced_retrieval_augmented_generation": {
@@ -15816,6 +15957,9 @@
       ],
       "awesome_python": [
         "pydantic"
+      ],
+      "python": [
+        "python"
       ]
     },
     "mcp_agent_framework": {
@@ -16775,6 +16919,9 @@
         "pydantic",
         "langchain",
         "fastapi"
+      ],
+      "python": [
+        "python"
       ]
     },
     "griptape_framework": {
@@ -17162,6 +17309,9 @@
       "project_based_learning": [
         "ray",
         "docker"
+      ],
+      "python": [
+        "python"
       ]
     },
     "forge_llm_tool_calling_framework": {
@@ -17457,6 +17607,9 @@
       ],
       "project_based_learning": [
         "tensorflow"
+      ],
+      "python": [
+        "python"
       ]
     },
     "pasa": {
@@ -17624,6 +17777,9 @@
       ],
       "awesome_python": [
         "Python"
+      ],
+      "python": [
+        "python"
       ]
     },
     "paper_agent": {
@@ -17776,6 +17932,9 @@
       ],
       "awesome_python": [
         "langchain"
+      ],
+      "python": [
+        "python"
       ]
     },
     "lightagent_framework": {
@@ -18145,6 +18304,9 @@
       "awesome_python": [
         "python",
         "openai"
+      ],
+      "python": [
+        "python"
       ]
     },
     "agentic_video_production": {
@@ -18282,6 +18444,9 @@
       "awesome_python": [
         "python",
         "openai"
+      ],
+      "python": [
+        "python"
       ]
     },
     "leon_ai_assistant": {
@@ -18551,6 +18716,9 @@
       ],
       "project_based_learning": [
         "docker"
+      ],
+      "python": [
+        "python"
       ]
     },
     "py_xiaozhi": {
@@ -18644,6 +18812,9 @@
       ],
       "awesome_python": [
         "gemini"
+      ],
+      "python": [
+        "python"
       ]
     },
     "cross_platform_py_xiaozhi": {
@@ -18831,6 +19002,9 @@
       ],
       "awesome_python": [
         "gemini"
+      ],
+      "python": [
+        "python"
       ]
     },
     "modular_speech_to_speech_pipeline": {
@@ -19084,6 +19258,9 @@
         "langgraph",
         "Python",
         "langchain"
+      ],
+      "python": [
+        "python"
       ]
     },
     "web_rover_ai_agent": {
@@ -19652,6 +19829,9 @@
       ],
       "project_based_learning": [
         "ray"
+      ],
+      "python": [
+        "python"
       ]
     },
     "deepseek_v3_r1_fine_tuning": {
@@ -20103,6 +20283,9 @@
       ],
       "project_based_learning": [
         "docker"
+      ],
+      "python": [
+        "python"
       ]
     },
     "auto_gpt_deployment": {
@@ -21373,6 +21556,9 @@
       ],
       "project_based_learning": [
         "docker"
+      ],
+      "python": [
+        "python"
       ]
     },
     "airecon_autonomous_pentesting": {
@@ -21566,6 +21752,10 @@
       ],
       "project_based_learning": [
         "ray"
+      ],
+      "python": [
+        "python",
+        "interview"
       ]
     },
     "awesome_python": {
@@ -21908,8 +22098,62 @@
         "django"
       ]
     },
-    "project_based_learning_python": {}
+    "project_based_learning_python": {},
+    "python": {
+      "rag_techniques": [
+        "python"
+      ],
+      "mcp_agent": [
+        "python"
+      ],
+      "griptape": [
+        "python"
+      ],
+      "forge": [
+        "python"
+      ],
+      "trainer": [
+        "python"
+      ],
+      "pasa": [
+        "python"
+      ],
+      "lightagent": [
+        "python"
+      ],
+      "openmontage": [
+        "python"
+      ],
+      "leon": [
+        "python"
+      ],
+      "speech_to_speech": [
+        "python"
+      ],
+      "py_xiaozhi": [
+        "python"
+      ],
+      "openakita": [
+        "python"
+      ],
+      "webrover": [
+        "python"
+      ],
+      "deepseek_671b_sft_guide": [
+        "python"
+      ],
+      "autogpt": [
+        "python"
+      ],
+      "airecon": [
+        "python"
+      ],
+      "system_design_primer": [
+        "python",
+        "interview"
+      ]
+    }
   },
-  "updated_at": "2026-07-24T02:36:38.352903+00:00",
-  "total_skills": 92
+  "updated_at": "2026-07-24T02:36:46.323916+00:00",
+  "total_skills": 93
 }
