@@ -2526,9 +2526,10 @@
       ]
     },
     "distributed": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "trainer"
+        "trainer",
+        "tensorflow"
       ]
     },
     "fine-tuning": {
@@ -2926,9 +2927,10 @@
       ]
     },
     "machine-learning": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "speech_to_speech"
+        "speech_to_speech",
+        "tensorflow"
       ]
     },
     "cross-platform": {
@@ -4588,6 +4590,24 @@
       "skills": [
         "python"
       ]
+    },
+    "deep-learning": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "deep-neural-networks": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "ml": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
     }
   },
   "tools": {
@@ -5069,7 +5089,7 @@
       ]
     },
     "docker": {
-      "freq": 16,
+      "freq": 17,
       "skills": [
         "dify",
         "ragflow",
@@ -5086,7 +5106,8 @@
         "autogpt",
         "markitdown",
         "airecon",
-        "project_based_learning"
+        "project_based_learning",
+        "tensorflow"
       ]
     },
     "postgresql": {
@@ -5594,11 +5615,12 @@
       ]
     },
     "machine-learning": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "rag_techniques",
         "trainer",
-        "speech_to_speech"
+        "speech_to_speech",
+        "tensorflow"
       ]
     },
     "nlp": {
@@ -5608,7 +5630,7 @@
       ]
     },
     "python": {
-      "freq": 18,
+      "freq": 19,
       "skills": [
         "rag_techniques",
         "mcp_agent",
@@ -5626,7 +5648,8 @@
         "autogpt",
         "airecon",
         "system_design_primer",
-        "python"
+        "python",
+        "tensorflow"
       ]
     },
     "semantic-search": {
@@ -6665,11 +6688,12 @@
       ]
     },
     "tensorflow": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "trainer",
         "awesome_python",
-        "project_based_learning"
+        "project_based_learning",
+        "tensorflow"
       ]
     },
     "pytorch": {
@@ -6680,9 +6704,10 @@
       ]
     },
     "distributed": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "trainer"
+        "trainer",
+        "tensorflow"
       ]
     },
     "fine-tuning": {
@@ -7145,9 +7170,10 @@
       ]
     },
     "numpy": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "speech_to_speech"
+        "speech_to_speech",
+        "tensorflow"
       ]
     },
     "language-model": {
@@ -8102,6 +8128,30 @@
       "freq": 1,
       "skills": [
         "python"
+      ]
+    },
+    "deep-learning": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "deep-neural-networks": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "neural-network": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "C++": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
       ]
     }
   },
@@ -11179,6 +11229,38 @@
         "python"
       ],
       "step_count": 4
+    },
+    "tensorflow": {
+      "concepts": [
+        "deep-learning",
+        "deep-neural-networks",
+        "distributed",
+        "machine-learning",
+        "ml"
+      ],
+      "tools": [
+        "tensorflow",
+        "numpy",
+        "docker",
+        "deep-learning",
+        "deep-neural-networks",
+        "distributed",
+        "machine-learning",
+        "neural-network",
+        "python",
+        "C++"
+      ],
+      "tags": [
+        "deep-learning",
+        "deep-neural-networks",
+        "distributed",
+        "machine-learning",
+        "ml",
+        "c++",
+        "ai",
+        "llm"
+      ],
+      "step_count": 8
     }
   },
   "relationships": {
@@ -14415,6 +14497,9 @@
       ],
       "project_based_learning": [
         "docker"
+      ],
+      "tensorflow": [
+        "docker"
       ]
     },
     "dify_deployment": {
@@ -14646,6 +14731,9 @@
       "project_based_learning": [
         "docker",
         "redis"
+      ],
+      "tensorflow": [
+        "docker"
       ]
     },
     "ragflow_self_hosting_guide": {
@@ -14893,6 +14981,9 @@
       "project_based_learning": [
         "docker",
         "mongodb"
+      ],
+      "tensorflow": [
+        "docker"
       ]
     },
     "lightrag_setup": {
@@ -15366,6 +15457,10 @@
       ],
       "python": [
         "python"
+      ],
+      "tensorflow": [
+        "python",
+        "machine-learning"
       ]
     },
     "advanced_retrieval_augmented_generation": {
@@ -15960,6 +16055,9 @@
       ],
       "python": [
         "python"
+      ],
+      "tensorflow": [
+        "python"
       ]
     },
     "mcp_agent_framework": {
@@ -16243,6 +16341,9 @@
       ],
       "project_based_learning": [
         "docker"
+      ],
+      "tensorflow": [
+        "docker"
       ]
     },
     "mcp_registry_development_deployment": {
@@ -16309,6 +16410,9 @@
         "Service Discovery"
       ],
       "project_based_learning": [
+        "docker"
+      ],
+      "tensorflow": [
         "docker"
       ]
     },
@@ -16506,6 +16610,9 @@
         "mongodb",
         "docker",
         "redis"
+      ],
+      "tensorflow": [
+        "docker"
       ]
     },
     "mcp_server_implementations": {
@@ -16922,6 +17029,9 @@
       ],
       "python": [
         "python"
+      ],
+      "tensorflow": [
+        "python"
       ]
     },
     "griptape_framework": {
@@ -17312,6 +17422,10 @@
       ],
       "python": [
         "python"
+      ],
+      "tensorflow": [
+        "python",
+        "docker"
       ]
     },
     "forge_llm_tool_calling_framework": {
@@ -17416,6 +17530,9 @@
         "docker"
       ],
       "project_based_learning": [
+        "docker"
+      ],
+      "tensorflow": [
         "docker"
       ]
     },
@@ -17610,6 +17727,12 @@
       ],
       "python": [
         "python"
+      ],
+      "tensorflow": [
+        "python",
+        "distributed",
+        "tensorflow",
+        "machine-learning"
       ]
     },
     "pasa": {
@@ -17780,6 +17903,9 @@
       ],
       "python": [
         "python"
+      ],
+      "tensorflow": [
+        "python"
       ]
     },
     "paper_agent": {
@@ -17934,6 +18060,9 @@
         "langchain"
       ],
       "python": [
+        "python"
+      ],
+      "tensorflow": [
         "python"
       ]
     },
@@ -18307,6 +18436,9 @@
       ],
       "python": [
         "python"
+      ],
+      "tensorflow": [
+        "python"
       ]
     },
     "agentic_video_production": {
@@ -18446,6 +18578,9 @@
         "openai"
       ],
       "python": [
+        "python"
+      ],
+      "tensorflow": [
         "python"
       ]
     },
@@ -18719,6 +18854,12 @@
       ],
       "python": [
         "python"
+      ],
+      "tensorflow": [
+        "python",
+        "docker",
+        "numpy",
+        "machine-learning"
       ]
     },
     "py_xiaozhi": {
@@ -18814,6 +18955,9 @@
         "gemini"
       ],
       "python": [
+        "python"
+      ],
+      "tensorflow": [
         "python"
       ]
     },
@@ -19004,6 +19148,9 @@
         "gemini"
       ],
       "python": [
+        "python"
+      ],
+      "tensorflow": [
         "python"
       ]
     },
@@ -19261,6 +19408,9 @@
       ],
       "python": [
         "python"
+      ],
+      "tensorflow": [
+        "python"
       ]
     },
     "web_rover_ai_agent": {
@@ -19484,6 +19634,9 @@
       ],
       "project_based_learning": [
         "docker"
+      ],
+      "tensorflow": [
+        "docker"
       ]
     },
     "live_run_forking_with_pydantic_deep_agents": {
@@ -19619,6 +19772,9 @@
       "project_based_learning": [
         "docker",
         "golang"
+      ],
+      "tensorflow": [
+        "docker"
       ]
     },
     "nornicdb_deployment": {
@@ -19831,6 +19987,9 @@
         "ray"
       ],
       "python": [
+        "python"
+      ],
+      "tensorflow": [
         "python"
       ]
     },
@@ -20286,6 +20445,10 @@
       ],
       "python": [
         "python"
+      ],
+      "tensorflow": [
+        "python",
+        "docker"
       ]
     },
     "auto_gpt_deployment": {
@@ -20622,6 +20785,9 @@
         "autogen"
       ],
       "project_based_learning": [
+        "docker"
+      ],
+      "tensorflow": [
         "docker"
       ]
     },
@@ -21559,6 +21725,10 @@
       ],
       "python": [
         "python"
+      ],
+      "tensorflow": [
+        "python",
+        "docker"
       ]
     },
     "airecon_autonomous_pentesting": {
@@ -21756,6 +21926,9 @@
       "python": [
         "python",
         "interview"
+      ],
+      "tensorflow": [
+        "python"
       ]
     },
     "awesome_python": {
@@ -22020,6 +22193,9 @@
         "flask",
         "tensorflow",
         "django"
+      ],
+      "tensorflow": [
+        "tensorflow"
       ]
     },
     "project_based_learning": {
@@ -22096,6 +22272,10 @@
         "flask",
         "tensorflow",
         "django"
+      ],
+      "tensorflow": [
+        "docker",
+        "tensorflow"
       ]
     },
     "project_based_learning_python": {},
@@ -22151,9 +22331,115 @@
       "system_design_primer": [
         "python",
         "interview"
+      ],
+      "tensorflow": [
+        "python"
+      ]
+    },
+    "tensorflow": {
+      "dify": [
+        "docker"
+      ],
+      "ragflow": [
+        "docker"
+      ],
+      "lightrag": [
+        "docker"
+      ],
+      "rag_techniques": [
+        "python",
+        "machine-learning"
+      ],
+      "mcp_agent": [
+        "python"
+      ],
+      "registry": [
+        "docker"
+      ],
+      "mcp_registry_development_deployment": [
+        "docker"
+      ],
+      "awesome_mcp_servers": [
+        "docker"
+      ],
+      "griptape": [
+        "python"
+      ],
+      "forge": [
+        "python",
+        "docker"
+      ],
+      "infinity": [
+        "docker"
+      ],
+      "trainer": [
+        "python",
+        "distributed",
+        "tensorflow",
+        "machine-learning"
+      ],
+      "pasa": [
+        "python"
+      ],
+      "lightagent": [
+        "python"
+      ],
+      "openmontage": [
+        "python"
+      ],
+      "leon": [
+        "python"
+      ],
+      "speech_to_speech": [
+        "python",
+        "docker",
+        "numpy",
+        "machine-learning"
+      ],
+      "py_xiaozhi": [
+        "python"
+      ],
+      "openakita": [
+        "python"
+      ],
+      "webrover": [
+        "python"
+      ],
+      "pydantic_deepagents": [
+        "docker"
+      ],
+      "nornicdb": [
+        "docker"
+      ],
+      "deepseek_671b_sft_guide": [
+        "python"
+      ],
+      "autogpt": [
+        "python",
+        "docker"
+      ],
+      "markitdown": [
+        "docker"
+      ],
+      "airecon": [
+        "python",
+        "docker"
+      ],
+      "system_design_primer": [
+        "python"
+      ],
+      "awesome_python": [
+        "tensorflow"
+      ],
+      "project_based_learning": [
+        "docker",
+        "tensorflow"
+      ],
+      "python": [
+        "python"
       ]
     }
   },
-  "updated_at": "2026-07-24T02:36:46.323916+00:00",
-  "total_skills": 93
+  "updated_at": "2026-07-24T02:37:09.533754+00:00",
+  "total_skills": 94
 }
