@@ -3552,6 +3552,36 @@
       "skills": [
         "auto_gpt_deployment"
       ]
+    },
+    "autogen": {
+      "freq": 1,
+      "skills": [
+        "markitdown"
+      ]
+    },
+    "autogen-extension": {
+      "freq": 1,
+      "skills": [
+        "markitdown"
+      ]
+    },
+    "langchain": {
+      "freq": 1,
+      "skills": [
+        "markitdown"
+      ]
+    },
+    "markdown": {
+      "freq": 1,
+      "skills": [
+        "markitdown"
+      ]
+    },
+    "microsoft-office": {
+      "freq": 1,
+      "skills": [
+        "markitdown"
+      ]
     }
   },
   "tools": {
@@ -3651,7 +3681,7 @@
       ]
     },
     "Python": {
-      "freq": 24,
+      "freq": 25,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -3667,7 +3697,8 @@
         "pasa",
         "leon_ai_assistant",
         "webrover",
-        "auto_gpt_deployment"
+        "auto_gpt_deployment",
+        "markitdown"
       ]
     },
     "LLM": {
@@ -4004,7 +4035,7 @@
       ]
     },
     "docker": {
-      "freq": 13,
+      "freq": 14,
       "skills": [
         "dify",
         "ragflow",
@@ -4018,7 +4049,8 @@
         "speech_to_speech",
         "pydantic_deepagents",
         "nornicdb",
-        "autogpt"
+        "autogpt",
+        "markitdown"
       ]
     },
     "postgresql": {
@@ -4038,7 +4070,7 @@
       ]
     },
     "openai": {
-      "freq": 18,
+      "freq": 19,
       "skills": [
         "dify",
         "ragflow",
@@ -4057,7 +4089,8 @@
         "pydantic_deepagents",
         "deepseek_671b_sft_guide",
         "loushang",
-        "autogpt"
+        "autogpt",
+        "markitdown"
       ]
     },
     "agent": {
@@ -4484,13 +4517,14 @@
       ]
     },
     "langchain": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "rag_techniques",
         "agentic_rag_for_dummies",
         "griptape",
         "lightagent",
-        "webrover"
+        "webrover",
+        "markitdown"
       ]
     },
     "llama-index": {
@@ -6585,6 +6619,36 @@
       "freq": 1,
       "skills": [
         "auto_gpt_deployment"
+      ]
+    },
+    "autogen": {
+      "freq": 1,
+      "skills": [
+        "markitdown"
+      ]
+    },
+    "autogen-extension": {
+      "freq": 1,
+      "skills": [
+        "markitdown"
+      ]
+    },
+    "markdown": {
+      "freq": 1,
+      "skills": [
+        "markitdown"
+      ]
+    },
+    "microsoft-office": {
+      "freq": 1,
+      "skills": [
+        "markitdown"
+      ]
+    },
+    "pdf": {
+      "freq": 1,
+      "skills": [
+        "markitdown"
       ]
     }
   },
@@ -9157,6 +9221,37 @@
         "autonomous-agents"
       ],
       "step_count": 11
+    },
+    "markitdown": {
+      "concepts": [
+        "autogen",
+        "autogen-extension",
+        "langchain",
+        "markdown",
+        "microsoft-office"
+      ],
+      "tools": [
+        "autogen",
+        "openai",
+        "docker",
+        "autogen-extension",
+        "langchain",
+        "markdown",
+        "microsoft-office",
+        "pdf",
+        "Python"
+      ],
+      "tags": [
+        "autogen",
+        "autogen-extension",
+        "langchain",
+        "markdown",
+        "microsoft-office",
+        "python",
+        "ai",
+        "llm"
+      ],
+      "step_count": 8
     }
   },
   "relationships": {
@@ -9599,6 +9694,9 @@
         "Docker",
         "bash",
         "Claude",
+        "Python"
+      ],
+      "markitdown": [
         "Python"
       ]
     },
@@ -10379,6 +10477,9 @@
         "Docker",
         "Claude",
         "Python"
+      ],
+      "markitdown": [
+        "Python"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -10516,6 +10617,9 @@
       ],
       "auto_gpt_deployment": [
         "Claude",
+        "Python"
+      ],
+      "markitdown": [
         "Python"
       ]
     },
@@ -10989,6 +11093,9 @@
         "Docker",
         "Claude",
         "Python"
+      ],
+      "markitdown": [
+        "Python"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -11147,6 +11254,9 @@
         "Docker",
         "bash",
         "Claude",
+        "Python"
+      ],
+      "markitdown": [
         "Python"
       ]
     },
@@ -11322,6 +11432,9 @@
       "auto_gpt_deployment": [
         "OpenAI",
         "Claude"
+      ],
+      "markitdown": [
+        "openai"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -12021,6 +12134,10 @@
         "gpt",
         "ai",
         "agentic-ai"
+      ],
+      "markitdown": [
+        "docker",
+        "openai"
       ]
     },
     "dify_deployment": {
@@ -12212,6 +12329,10 @@
         "agentic-ai",
         "openai",
         "ai"
+      ],
+      "markitdown": [
+        "docker",
+        "openai"
       ]
     },
     "ragflow_self_hosting_guide": {
@@ -12409,6 +12530,10 @@
       ],
       "auto_gpt_deployment": [
         "Python"
+      ],
+      "markitdown": [
+        "docker",
+        "Python"
       ]
     },
     "lightrag_setup": {
@@ -12580,6 +12705,9 @@
       ],
       "auto_gpt_deployment": [
         "Python"
+      ],
+      "markitdown": [
+        "Python"
       ]
     },
     "graphrag_system": {
@@ -12651,6 +12779,9 @@
         "Python"
       ],
       "auto_gpt_deployment": [
+        "Python"
+      ],
+      "markitdown": [
         "Python"
       ]
     },
@@ -12799,6 +12930,10 @@
         "python",
         "gpt",
         "ai"
+      ],
+      "markitdown": [
+        "langchain",
+        "openai"
       ]
     },
     "advanced_retrieval_augmented_generation": {
@@ -12968,6 +13103,9 @@
         "ai"
       ],
       "auto_gpt_deployment": [
+        "Python"
+      ],
+      "markitdown": [
         "Python"
       ]
     },
@@ -13311,6 +13449,9 @@
         "python",
         "agents",
         "ai"
+      ],
+      "markitdown": [
+        "openai"
       ]
     },
     "mcp_agent_framework": {
@@ -13564,6 +13705,9 @@
         "docker",
         "llm",
         "ai"
+      ],
+      "markitdown": [
+        "docker"
       ]
     },
     "mcp_registry_development_deployment": {
@@ -13618,6 +13762,9 @@
         "docker"
       ],
       "autogpt": [
+        "docker"
+      ],
+      "markitdown": [
         "docker"
       ]
     },
@@ -13783,6 +13930,9 @@
       "autogpt": [
         "docker",
         "ai"
+      ],
+      "markitdown": [
+        "docker"
       ]
     },
     "mcp_server_implementations": {
@@ -14141,6 +14291,10 @@
         "python",
         "gpt",
         "ai"
+      ],
+      "markitdown": [
+        "langchain",
+        "openai"
       ]
     },
     "griptape_framework": {
@@ -14308,6 +14462,9 @@
         "Docker",
         "AI Agents",
         "Python"
+      ],
+      "markitdown": [
+        "Python"
       ]
     },
     "forge": {
@@ -14463,6 +14620,10 @@
         "docker",
         "agents",
         "agentic-ai"
+      ],
+      "markitdown": [
+        "docker",
+        "openai"
       ]
     },
     "forge_llm_tool_calling_framework": {
@@ -14552,6 +14713,9 @@
         "docker"
       ],
       "autogpt": [
+        "docker"
+      ],
+      "markitdown": [
         "docker"
       ]
     },
@@ -14849,6 +15013,9 @@
       ],
       "auto_gpt_deployment": [
         "Python"
+      ],
+      "markitdown": [
+        "Python"
       ]
     },
     "paper_agent": {
@@ -14976,6 +15143,10 @@
         "llm",
         "agents",
         "openai"
+      ],
+      "markitdown": [
+        "langchain",
+        "openai"
       ]
     },
     "lightagent_framework": {
@@ -15042,6 +15213,9 @@
       ],
       "auto_gpt_deployment": [
         "AI Agents",
+        "Python"
+      ],
+      "markitdown": [
         "Python"
       ]
     },
@@ -15286,6 +15460,9 @@
         "python",
         "agentic-ai",
         "ai"
+      ],
+      "markitdown": [
+        "openai"
       ]
     },
     "agentic_video_production": {
@@ -15401,6 +15578,9 @@
         "python",
         "openai",
         "ai"
+      ],
+      "markitdown": [
+        "openai"
       ]
     },
     "leon_ai_assistant": {
@@ -15487,6 +15667,9 @@
       ],
       "auto_gpt_deployment": [
         "Docker",
+        "Python"
+      ],
+      "markitdown": [
         "Python"
       ]
     },
@@ -15619,6 +15802,10 @@
         "python",
         "openai",
         "ai"
+      ],
+      "markitdown": [
+        "docker",
+        "openai"
       ]
     },
     "py_xiaozhi": {
@@ -15852,6 +16039,9 @@
         "python",
         "openai",
         "ai"
+      ],
+      "markitdown": [
+        "openai"
       ]
     },
     "modular_speech_to_speech_pipeline": {
@@ -16055,6 +16245,11 @@
       ],
       "auto_gpt_deployment": [
         "Python"
+      ],
+      "markitdown": [
+        "langchain",
+        "openai",
+        "Python"
       ]
     },
     "web_rover_ai_agent": {
@@ -16237,6 +16432,10 @@
       "autogpt": [
         "docker",
         "openai"
+      ],
+      "markitdown": [
+        "docker",
+        "openai"
       ]
     },
     "live_run_forking_with_pydantic_deep_agents": {
@@ -16347,6 +16546,9 @@
         "docker"
       ],
       "autogpt": [
+        "docker"
+      ],
+      "markitdown": [
         "docker"
       ]
     },
@@ -16520,6 +16722,9 @@
         "python",
         "llm",
         "openai"
+      ],
+      "markitdown": [
+        "openai"
       ]
     },
     "deepseek_v3_r1_fine_tuning": {
@@ -16651,6 +16856,9 @@
         "claude",
         "openai",
         "ai"
+      ],
+      "markitdown": [
+        "openai"
       ]
     },
     "loushang_ai_native_agent_harness": {
@@ -16905,6 +17113,10 @@
         "claude",
         "openai",
         "ai"
+      ],
+      "markitdown": [
+        "docker",
+        "openai"
       ]
     },
     "auto_gpt_deployment": {
@@ -17058,9 +17270,134 @@
       "loushang_ai_native_agent_harness": [
         "OpenAI",
         "Claude"
+      ],
+      "markitdown": [
+        "Python"
+      ]
+    },
+    "markitdown": {
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Python"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "Python"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Python"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "Python"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Python"
+      ],
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "openai"
+      ],
+      "dify": [
+        "docker",
+        "openai"
+      ],
+      "ragflow": [
+        "docker",
+        "openai"
+      ],
+      "lightrag": [
+        "docker",
+        "Python"
+      ],
+      "graphrag": [
+        "Python"
+      ],
+      "graphrag_system": [
+        "Python"
+      ],
+      "rag_techniques": [
+        "langchain",
+        "openai"
+      ],
+      "fastapi_mcp": [
+        "Python"
+      ],
+      "mcp_agent": [
+        "openai"
+      ],
+      "registry": [
+        "docker"
+      ],
+      "mcp_registry_development_deployment": [
+        "docker"
+      ],
+      "awesome_mcp_servers": [
+        "docker"
+      ],
+      "griptape": [
+        "langchain",
+        "openai"
+      ],
+      "griptape_framework": [
+        "Python"
+      ],
+      "forge": [
+        "docker",
+        "openai"
+      ],
+      "infinity": [
+        "docker"
+      ],
+      "pasa": [
+        "Python"
+      ],
+      "lightagent": [
+        "langchain",
+        "openai"
+      ],
+      "lightagent_framework": [
+        "Python"
+      ],
+      "openmontage": [
+        "openai"
+      ],
+      "leon": [
+        "openai"
+      ],
+      "leon_ai_assistant": [
+        "Python"
+      ],
+      "speech_to_speech": [
+        "docker",
+        "openai"
+      ],
+      "openakita": [
+        "openai"
+      ],
+      "webrover": [
+        "langchain",
+        "openai",
+        "Python"
+      ],
+      "pydantic_deepagents": [
+        "docker",
+        "openai"
+      ],
+      "nornicdb": [
+        "docker"
+      ],
+      "deepseek_671b_sft_guide": [
+        "openai"
+      ],
+      "loushang": [
+        "openai"
+      ],
+      "autogpt": [
+        "docker",
+        "openai"
+      ],
+      "auto_gpt_deployment": [
+        "Python"
       ]
     }
   },
-  "updated_at": "2026-07-24T01:07:43.930947+00:00",
-  "total_skills": 81
+  "updated_at": "2026-07-24T01:07:56.756514+00:00",
+  "total_skills": 82
 }
