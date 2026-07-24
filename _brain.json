@@ -1945,9 +1945,10 @@
       ]
     },
     "Service Discovery": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "mcp_registry_development_deployment"
+        "mcp_registry_development_deployment",
+        "system_design_primer"
       ]
     },
     "Seed Data": {
@@ -3754,9 +3755,10 @@
       ]
     },
     "Load Balancing": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "litellm"
+        "litellm",
+        "system_design_primer"
       ]
     },
     "LLM Abstraction": {
@@ -3922,6 +3924,126 @@
       ]
     },
     "interview": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "Availability vs. Consistency": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "Caching Strategies": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "CAP Theorem": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "Communication Protocols": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "Consistency Patterns": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "Databases (RDBMS, NoSQL)": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "DNS": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "High-level Trade-offs": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "Horizontal Scaling": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "Latency vs. Throughput": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "Microservices": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "Object-oriented Design": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "Performance vs. Scalability": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "Reverse Proxies": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "Scalability": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "Security": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "Spaced Repetition Learning": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "System Design Interview Preparation": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "System Design Topics": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "Vertical Scaling": {
       "freq": 1,
       "skills": [
         "system_design_primer"
@@ -4934,7 +5056,7 @@
       ]
     },
     "python": {
-      "freq": 16,
+      "freq": 17,
       "skills": [
         "rag_techniques",
         "mcp_agent",
@@ -5070,7 +5192,7 @@
       ]
     },
     "ray": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "mcp_go",
         "awesome_mcp_servers",
@@ -7188,61 +7310,61 @@
       ]
     },
     "design": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "system_design_primer"
       ]
     },
     "design-patterns": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "system_design_primer"
       ]
     },
     "design-system": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "system_design_primer"
       ]
     },
     "development": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "system_design_primer"
       ]
     },
     "interview": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "system_design_primer"
       ]
     },
     "interview-practice": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "system_design_primer"
       ]
     },
     "interview-questions": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "system_design_primer"
       ]
     },
     "programming": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "system_design_primer"
       ]
     },
     "system": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "system_design_primer"
       ]
     },
     "web": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "system_design_primer"
       ]
@@ -7254,6 +7376,18 @@
       ]
     },
     "webapp": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "Anki flashcards": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "Interactive Coding Challenges": {
       "freq": 1,
       "skills": [
         "system_design_primer"
@@ -10091,11 +10225,28 @@
     },
     "system_design_primer": {
       "concepts": [
-        "design",
-        "design-patterns",
-        "design-system",
-        "development",
-        "interview"
+        "Availability vs. Consistency",
+        "Caching Strategies",
+        "CAP Theorem",
+        "Communication Protocols",
+        "Consistency Patterns",
+        "Databases (RDBMS, NoSQL)",
+        "DNS",
+        "High-level Trade-offs",
+        "Horizontal Scaling",
+        "Latency vs. Throughput",
+        "Load Balancing",
+        "Microservices",
+        "Object-oriented Design",
+        "Performance vs. Scalability",
+        "Reverse Proxies",
+        "Scalability",
+        "Security",
+        "Service Discovery",
+        "Spaced Repetition Learning",
+        "System Design Interview Preparation",
+        "System Design Topics",
+        "Vertical Scaling"
       ],
       "tools": [
         "ray",
@@ -10110,20 +10261,17 @@
         "python",
         "system",
         "web",
-        "web-application",
-        "webapp"
+        "Anki flashcards",
+        "Interactive Coding Challenges"
       ],
       "tags": [
         "design",
-        "design-patterns",
-        "design-system",
         "development",
         "interview",
-        "python",
-        "ai",
-        "llm"
+        "programming",
+        "scalability"
       ],
-      "step_count": 8
+      "step_count": 12
     }
   },
   "relationships": {
@@ -15112,6 +15260,9 @@
       ],
       "airecon": [
         "docker"
+      ],
+      "system_design_primer": [
+        "Service Discovery"
       ]
     },
     "model_context_protocol_go": {
@@ -20009,6 +20160,9 @@
         "Docker",
         "bash",
         "Python"
+      ],
+      "system_design_primer": [
+        "Load Balancing"
       ]
     },
     "airecon": {
@@ -20315,9 +20469,15 @@
       ],
       "airecon": [
         "python"
+      ],
+      "mcp_registry_development_deployment": [
+        "Service Discovery"
+      ],
+      "litellm": [
+        "Load Balancing"
       ]
     }
   },
-  "updated_at": "2026-07-24T02:34:34.432615+00:00",
+  "updated_at": "2026-07-24T02:35:11.495068+00:00",
   "total_skills": 89
 }
