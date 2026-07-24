@@ -2414,10 +2414,15 @@ def _mcp_health_check() -> dict:
                 result = fut.result(timeout=_VERIFIER_DEADLINE_S)
             except _FuturesTimeout:
                 log.warning(
-                    "mcp_health: verifier deadline exceeded for %s (%ds); skipping",
+                    "mcp_health: verifier deadline exceeded for %s (%ds); marking offline",
                     srv.id, _VERIFIER_DEADLINE_S,
                 )
                 _pool.shutdown(wait=False, cancel_futures=True)
+                update_server(srv.id, health_state="offline")
+                checked += 1
+                if prev_state != "offline":
+                    changed += 1
+                    log.info("mcp_health: %s %s → offline (deadline)", srv.id, prev_state)
                 continue
             except Exception as srv_exc:
                 log.warning("mcp_health: verifier crashed for %s [%s]: %s",
