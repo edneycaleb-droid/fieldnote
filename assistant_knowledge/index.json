@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "tensorflow--tensorflow",
+      "title": "Discovered: tensorflow/tensorflow",
+      "category": "discoveries",
+      "confidence": "verified",
+      "updated_at": "2026-07-24T02:37:55.168387+00:00",
+      "path": "discoveries/tensorflow--tensorflow.md"
+    },
+    {
       "slug": "practical-tutorials--project-based-learning",
       "title": "Discovered: practical-tutorials/project-based-learning",
       "category": "discoveries",
@@ -449,5 +457,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-24T02:37:53.718399+00:00"
+  "updated_at": "2026-07-24T02:37:55.174609+00:00"
 }
