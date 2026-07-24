@@ -2340,9 +2340,10 @@
       ]
     },
     "Tool-calling": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "forge_llm_tool_calling_framework"
+        "forge_llm_tool_calling_framework",
+        "live_run_forking_with_pydantic_deep_agents"
       ]
     },
     "Agentic workflows": {
@@ -3287,6 +3288,48 @@
       "skills": [
         "pydantic_deepagents"
       ]
+    },
+    "Autonomous AI agents": {
+      "freq": 1,
+      "skills": [
+        "live_run_forking_with_pydantic_deep_agents"
+      ]
+    },
+    "Autonomous Agents": {
+      "freq": 1,
+      "skills": [
+        "live_run_forking_with_pydantic_deep_agents"
+      ]
+    },
+    "Live run forking": {
+      "freq": 1,
+      "skills": [
+        "live_run_forking_with_pydantic_deep_agents"
+      ]
+    },
+    "Parallel Execution": {
+      "freq": 1,
+      "skills": [
+        "live_run_forking_with_pydantic_deep_agents"
+      ]
+    },
+    "Merge Strategies": {
+      "freq": 1,
+      "skills": [
+        "live_run_forking_with_pydantic_deep_agents"
+      ]
+    },
+    "Sandboxed execution": {
+      "freq": 1,
+      "skills": [
+        "live_run_forking_with_pydantic_deep_agents"
+      ]
+    },
+    "Persistent memory": {
+      "freq": 1,
+      "skills": [
+        "live_run_forking_with_pydantic_deep_agents"
+      ]
     }
   },
   "tools": {
@@ -3354,7 +3397,7 @@
       ]
     },
     "Docker": {
-      "freq": 21,
+      "freq": 22,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -3368,7 +3411,8 @@
         "mcp_server_implementations",
         "griptape_framework",
         "infinity_database",
-        "leon_ai_assistant"
+        "leon_ai_assistant",
+        "live_run_forking_with_pydantic_deep_agents"
       ]
     },
     "bash": {
@@ -4365,12 +4409,13 @@
       ]
     },
     "pydantic": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "mcp_agent",
         "griptape",
         "forge",
-        "pydantic_deepagents"
+        "pydantic_deepagents",
+        "live_run_forking_with_pydantic_deep_agents"
       ]
     },
     "agents": {
@@ -5984,9 +6029,10 @@
       ]
     },
     "Playwright": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "web_rover_ai_agent"
+        "web_rover_ai_agent",
+        "live_run_forking_with_pydantic_deep_agents"
       ]
     },
     "RAG pipeline": {
@@ -6035,6 +6081,24 @@
       "freq": 1,
       "skills": [
         "pydantic_deepagents"
+      ]
+    },
+    "Pydantic Deep Agents": {
+      "freq": 1,
+      "skills": [
+        "live_run_forking_with_pydantic_deep_agents"
+      ]
+    },
+    "pydantic-ai": {
+      "freq": 1,
+      "skills": [
+        "live_run_forking_with_pydantic_deep_agents"
+      ]
+    },
+    "LiteParse": {
+      "freq": 1,
+      "skills": [
+        "live_run_forking_with_pydantic_deep_agents"
       ]
     }
   },
@@ -8329,6 +8393,35 @@
         "llm"
       ],
       "step_count": 5
+    },
+    "live_run_forking_with_pydantic_deep_agents": {
+      "concepts": [
+        "Autonomous AI agents",
+        "Autonomous Agents",
+        "Live run forking",
+        "Parallel Execution",
+        "Merge Strategies",
+        "Tool-calling",
+        "Sandboxed execution",
+        "Persistent memory"
+      ],
+      "tools": [
+        "Pydantic Deep Agents",
+        "Docker",
+        "Playwright",
+        "pydantic",
+        "pydantic-ai",
+        "LiteParse"
+      ],
+      "tags": [
+        "ai-agents",
+        "autonomous-ai",
+        "autonomous-systems",
+        "pydantic",
+        "python-framework",
+        "problem-solving"
+      ],
+      "step_count": 10
     }
   },
   "relationships": {
@@ -8733,6 +8826,9 @@
       ],
       "web_rover_ai_agent": [
         "Claude"
+      ],
+      "live_run_forking_with_pydantic_deep_agents": [
+        "Docker"
       ]
     },
     "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
@@ -9464,6 +9560,9 @@
       ],
       "web_rover_ai_agent": [
         "Claude"
+      ],
+      "live_run_forking_with_pydantic_deep_agents": [
+        "Docker"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -10025,6 +10124,9 @@
       ],
       "pydantic_deepagents": [
         "anthropic"
+      ],
+      "live_run_forking_with_pydantic_deep_agents": [
+        "Docker"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -10169,6 +10271,9 @@
       ],
       "web_rover_ai_agent": [
         "Claude"
+      ],
+      "live_run_forking_with_pydantic_deep_agents": [
+        "Docker"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -10728,6 +10833,9 @@
       ],
       "web_rover_ai_agent": [
         "Claude"
+      ],
+      "live_run_forking_with_pydantic_deep_agents": [
+        "Docker"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -11011,6 +11119,9 @@
       "leon_ai_assistant": [
         "Docker",
         "TypeScript"
+      ],
+      "live_run_forking_with_pydantic_deep_agents": [
+        "Docker"
       ]
     },
     "ragflow": {
@@ -11170,6 +11281,9 @@
         "Docker"
       ],
       "leon_ai_assistant": [
+        "Docker"
+      ],
+      "live_run_forking_with_pydantic_deep_agents": [
         "Docker"
       ]
     },
@@ -11352,6 +11466,9 @@
       ],
       "cross_platform_py_xiaozhi": [
         "uv"
+      ],
+      "live_run_forking_with_pydantic_deep_agents": [
+        "Docker"
       ]
     },
     "graphrag": {
@@ -12096,6 +12213,9 @@
         "openai",
         "anthropic",
         "ai-agents"
+      ],
+      "live_run_forking_with_pydantic_deep_agents": [
+        "pydantic"
       ]
     },
     "mcp_agent_framework": {
@@ -12215,6 +12335,9 @@
       "modular_speech_to_speech_pipeline": [
         "OpenAI API",
         "LLM"
+      ],
+      "live_run_forking_with_pydantic_deep_agents": [
+        "Docker"
       ]
     },
     "registry": {
@@ -12582,6 +12705,9 @@
       "leon_ai_assistant": [
         "Docker",
         "Git"
+      ],
+      "live_run_forking_with_pydantic_deep_agents": [
+        "Docker"
       ]
     },
     "agentic_rag_for_dummies": {
@@ -12835,6 +12961,9 @@
         "pydantic",
         "openai",
         "anthropic"
+      ],
+      "live_run_forking_with_pydantic_deep_agents": [
+        "pydantic"
       ]
     },
     "griptape_framework": {
@@ -12985,6 +13114,9 @@
       ],
       "web_rover_ai_agent": [
         "Claude"
+      ],
+      "live_run_forking_with_pydantic_deep_agents": [
+        "Docker"
       ]
     },
     "forge": {
@@ -13116,6 +13248,9 @@
         "ollama",
         "anthropic",
         "docker"
+      ],
+      "live_run_forking_with_pydantic_deep_agents": [
+        "pydantic"
       ]
     },
     "forge_llm_tool_calling_framework": {
@@ -13124,6 +13259,9 @@
       ],
       "lightagent_framework": [
         "Guardrails"
+      ],
+      "live_run_forking_with_pydantic_deep_agents": [
+        "Tool-calling"
       ]
     },
     "xcodebuildmcp_installation": {
@@ -13233,6 +13371,9 @@
         "Docker"
       ],
       "leon_ai_assistant": [
+        "Docker"
+      ],
+      "live_run_forking_with_pydantic_deep_agents": [
         "Docker"
       ]
     },
@@ -14006,6 +14147,9 @@
       ],
       "web_rover_ai_agent": [
         "npm"
+      ],
+      "live_run_forking_with_pydantic_deep_agents": [
+        "Docker"
       ]
     },
     "speech_to_speech": {
@@ -14570,6 +14714,9 @@
       ],
       "leon_ai_assistant": [
         "npm"
+      ],
+      "live_run_forking_with_pydantic_deep_agents": [
+        "Playwright"
       ]
     },
     "pydantic_deepagents": {
@@ -14662,9 +14809,71 @@
         "anthropic",
         "openai",
         "langgraph"
+      ],
+      "live_run_forking_with_pydantic_deep_agents": [
+        "pydantic"
+      ]
+    },
+    "live_run_forking_with_pydantic_deep_agents": {
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Docker"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "Docker"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "Docker"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Docker"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "Docker"
+      ],
+      "dify_deployment": [
+        "Docker"
+      ],
+      "ragflow_self_hosting_guide": [
+        "Docker"
+      ],
+      "lightrag_setup": [
+        "Docker"
+      ],
+      "mcp_agent": [
+        "pydantic"
+      ],
+      "r2r": [
+        "Docker"
+      ],
+      "mcp_server_implementations": [
+        "Docker"
+      ],
+      "griptape": [
+        "pydantic"
+      ],
+      "griptape_framework": [
+        "Docker"
+      ],
+      "forge": [
+        "pydantic"
+      ],
+      "forge_llm_tool_calling_framework": [
+        "Tool-calling"
+      ],
+      "infinity_database": [
+        "Docker"
+      ],
+      "leon_ai_assistant": [
+        "Docker"
+      ],
+      "web_rover_ai_agent": [
+        "Playwright"
+      ],
+      "pydantic_deepagents": [
+        "pydantic"
       ]
     }
   },
-  "updated_at": "2026-07-23T23:59:06.701224+00:00",
-  "total_skills": 72
+  "updated_at": "2026-07-24T00:00:38.898831+00:00",
+  "total_skills": 73
 }
