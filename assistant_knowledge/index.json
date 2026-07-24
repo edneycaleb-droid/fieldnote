@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "pikpikcu--airecon",
+      "title": "Discovered: pikpikcu/airecon",
+      "category": "discoveries",
+      "confidence": "verified",
+      "updated_at": "2026-07-24T01:11:04.846088+00:00",
+      "path": "discoveries/pikpikcu--airecon.md"
+    },
+    {
       "slug": "berriai--litellm",
       "title": "Discovered: BerriAI/litellm",
       "category": "discoveries",
@@ -417,5 +425,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-24T01:11:03.257947+00:00"
+  "updated_at": "2026-07-24T01:11:04.851298+00:00"
 }
