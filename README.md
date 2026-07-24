@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **149 skills** · Last synced: 2026-07-24 01:06 UTC
+> **150 skills** · Last synced: 2026-07-24 01:07 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Building and Deploying AI Agents with AutoGPT for AI-Powered Automation](skills/auto_gpt_deployment.md) | AutoGPT is a platform for building, deploying, and running AI agents that can au | `AutoGPT` `Docker` `bash` `PowerShell` | `ai` `agentic-ai` `autogpt` |
 | [Autogpt](skills/autogpt.md) | AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our | `openai` `docker` `agentic-ai` `agents` | `agentic-ai` `agents` `ai` |
 | [Building and Utilizing AI-Native Agent Harness for Coding Workflows](skills/loushang_ai_native_agent_harness.md) | Loushang is a method-native AI work system for running complex work from intent  | `Loushang` `uv` `pip` `git` | `agent` `ai` `harness` |
 | [Loushang](skills/loushang.md) | AI-native agent harness for coding workflows by python: multi-model LLM orchestr | `redis` `openai` `agent` `agent-harness` | `agent` `agent-harness` `agentic` |
