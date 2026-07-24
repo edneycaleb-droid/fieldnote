@@ -9,7 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
-| [Tensorflow](skills/tensorflow.md) | An Open Source Machine Learning Framework for Everyone | `tensorflow` `numpy` `docker` `deep-learning` | `deep-learning` `deep-neural-networks` `distributed` |
+| [TensorFlow: An End-to-End Open Source Machine Learning Platform](skills/tensorflow.md) | TensorFlow is a comprehensive, flexible, open-source platform for machine learni | `tensorflow` `numpy` `docker` `deep-learning` | `machine-learning` `deep-learning` `neural-networks` |
 | [Python](skills/python.md) | All Algorithms implemented in Python | `algorithm` `algorithm-competitions` `algorithms-implemented` `algos` | `algorithm` `algorithm-competitions` `algorithms-implemented` |
 | [Project-Based Learning with Python](skills/project_based_learning_python.md) | This skill focuses on learning programming through building practical projects,  | `HTML Canvas API` | `beginner-project` `css` `game-development` |
 | [Project Based Learning](skills/project_based_learning.md) | Curated list of project-based tutorials | `rabbitmq` `redis` `sklearn` `tensorflow` | `beginner-project` `cpp` `golang` |
