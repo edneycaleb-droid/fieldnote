@@ -6722,7 +6722,20 @@ async function hubVerify(id) {
   _hubUpdateCardState(id, 'verifying');
   try {
     const d = await fetch(`/api/mcp-hub/verify/${encodeURIComponent(id)}`, {method:'POST'}).then(r=>r.json());
-    _hubUpdateCardState(id, d.health_state || (d.ok ? 'connected' : 'offline'));
+    const newState = d.health_state || (d.ok ? 'connected' : 'offline');
+    _hubUpdateCardState(id, newState);
+    // If this server just connected, re-render any card that was pointing to it
+    // as an alternative — the stale 'Try X instead →' link must disappear.
+    if (newState === 'connected') {
+      _hubData.forEach(s => {
+        if (s.id === id) return;
+        const pointsHere = s.alternative_id === id || s.python_alternative_id === id;
+        if (pointsHere) {
+          if (s.alternative_id === id) s.alternative_id = '';
+          _hubUpdateCardState(s.id, s.health_state, s.enabled);
+        }
+      });
+    }
   } catch(e) {
     _hubUpdateCardState(id, 'offline');
   }
