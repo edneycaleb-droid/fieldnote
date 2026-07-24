@@ -2061,7 +2061,7 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
       <input type="search" id="hub-search-input" class="hub-search-input"
              placeholder="Search servers by name or description…"
              oninput="hubSearchDebounced()"
-             onsearch="hubSearchDebounced()">
+             onsearch="this.value===''?hubSearchClear():hubSearchDebounced()">
       <button class="hub-search-clear" id="hub-search-clear"
               onclick="hubSearchClear()" title="Clear search" style="display:none">✕</button>
     </div>
