@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "significant-gravitas--autogpt",
+      "title": "Discovered: Significant-Gravitas/AutoGPT",
+      "category": "discoveries",
+      "confidence": "verified",
+      "updated_at": "2026-07-24T01:10:58.351879+00:00",
+      "path": "discoveries/significant-gravitas--autogpt.md"
+    },
+    {
       "slug": "zhnt--loushang",
       "title": "Discovered: zhnt/loushang",
       "category": "discoveries",
@@ -385,5 +393,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-24T00:03:59.484942+00:00"
+  "updated_at": "2026-07-24T01:10:58.465304+00:00"
 }
