@@ -1348,10 +1348,11 @@
       ]
     },
     "Large Language Models (LLMs)": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "ragflow_self_hosting_guide",
-        "griptape_framework"
+        "griptape_framework",
+        "document_conversion"
       ]
     },
     "LLM Apps": {
@@ -3582,6 +3583,36 @@
       "skills": [
         "markitdown"
       ]
+    },
+    "Document Conversion": {
+      "freq": 1,
+      "skills": [
+        "document_conversion"
+      ]
+    },
+    "Markdown": {
+      "freq": 1,
+      "skills": [
+        "document_conversion"
+      ]
+    },
+    "Text Analysis Pipelines": {
+      "freq": 1,
+      "skills": [
+        "document_conversion"
+      ]
+    },
+    "LLMs": {
+      "freq": 1,
+      "skills": [
+        "document_conversion"
+      ]
+    },
+    "Text Analysis": {
+      "freq": 1,
+      "skills": [
+        "document_conversion"
+      ]
     }
   },
   "tools": {
@@ -3681,7 +3712,7 @@
       ]
     },
     "Python": {
-      "freq": 25,
+      "freq": 26,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -3698,7 +3729,8 @@
         "leon_ai_assistant",
         "webrover",
         "auto_gpt_deployment",
-        "markitdown"
+        "markitdown",
+        "document_conversion"
       ]
     },
     "LLM": {
@@ -3713,7 +3745,7 @@
       ]
     },
     "OpenAI": {
-      "freq": 31,
+      "freq": 32,
       "skills": [
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
@@ -3730,7 +3762,8 @@
         "agentic_rag_for_dummies",
         "griptape_framework",
         "loushang_ai_native_agent_harness",
-        "auto_gpt_deployment"
+        "auto_gpt_deployment",
+        "document_conversion"
       ]
     },
     "Ollama": {
@@ -3756,11 +3789,12 @@
       ]
     },
     "pip": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "this_100_self_improving_ai_agent_is_insane_just_wa",
         "fastapi_mcp_integration",
-        "loushang_ai_native_agent_harness"
+        "loushang_ai_native_agent_harness",
+        "document_conversion"
       ]
     },
     "Git": {
@@ -6650,6 +6684,12 @@
       "skills": [
         "markitdown"
       ]
+    },
+    "MarkItDown": {
+      "freq": 1,
+      "skills": [
+        "document_conversion"
+      ]
     }
   },
   "skill_map": {
@@ -9252,6 +9292,30 @@
         "llm"
       ],
       "step_count": 8
+    },
+    "document_conversion": {
+      "concepts": [
+        "Document Conversion",
+        "Markdown",
+        "Large Language Models (LLMs)",
+        "Text Analysis Pipelines",
+        "LLMs",
+        "Text Analysis"
+      ],
+      "tools": [
+        "MarkItDown",
+        "Python",
+        "pip",
+        "OpenAI"
+      ],
+      "tags": [
+        "document_conversion",
+        "markdown",
+        "llm",
+        "text_analysis",
+        "text-analysis"
+      ],
+      "step_count": 9
     }
   },
   "relationships": {
@@ -9698,6 +9762,9 @@
       ],
       "markitdown": [
         "Python"
+      ],
+      "document_conversion": [
+        "Python"
       ]
     },
     "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
@@ -9770,6 +9837,9 @@
         "OpenAI"
       ],
       "auto_gpt_deployment": [
+        "OpenAI"
+      ],
+      "document_conversion": [
         "OpenAI"
       ]
     },
@@ -10048,6 +10118,9 @@
       "auto_gpt_deployment": [
         "OpenAI",
         "Claude"
+      ],
+      "document_conversion": [
+        "OpenAI"
       ]
     },
     "by_august_we_ll_have_frontier_ai_running_locally": {
@@ -10141,6 +10214,9 @@
         "OpenAI"
       ],
       "auto_gpt_deployment": [
+        "OpenAI"
+      ],
+      "document_conversion": [
         "OpenAI"
       ]
     },
@@ -10267,6 +10343,9 @@
       "auto_gpt_deployment": [
         "OpenAI",
         "Claude"
+      ],
+      "document_conversion": [
+        "OpenAI"
       ]
     },
     "this_100_self_improving_ai_agent_is_insane_just_wa": {
@@ -10480,6 +10559,11 @@
       ],
       "markitdown": [
         "Python"
+      ],
+      "document_conversion": [
+        "OpenAI",
+        "pip",
+        "Python"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -10621,6 +10705,9 @@
       ],
       "markitdown": [
         "Python"
+      ],
+      "document_conversion": [
+        "Python"
       ]
     },
     "new_hermes_paperclip_ai_agent_update_is_insane": {
@@ -10701,6 +10788,9 @@
         "OpenAI"
       ],
       "auto_gpt_deployment": [
+        "OpenAI"
+      ],
+      "document_conversion": [
         "OpenAI"
       ]
     },
@@ -10876,6 +10966,9 @@
       "auto_gpt_deployment": [
         "OpenAI",
         "Claude"
+      ],
+      "document_conversion": [
+        "OpenAI"
       ]
     },
     "you_need_to_use_hermes_right_now_goodbye_openclaw": {
@@ -11096,6 +11189,10 @@
       ],
       "markitdown": [
         "Python"
+      ],
+      "document_conversion": [
+        "OpenAI",
+        "Python"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -11257,6 +11354,9 @@
         "Python"
       ],
       "markitdown": [
+        "Python"
+      ],
+      "document_conversion": [
         "Python"
       ]
     },
@@ -11435,6 +11535,9 @@
       ],
       "markitdown": [
         "openai"
+      ],
+      "document_conversion": [
+        "OpenAI"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -11873,6 +11976,9 @@
         "OpenAI",
         "Docker",
         "Claude"
+      ],
+      "document_conversion": [
+        "OpenAI"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -11971,6 +12077,9 @@
       "auto_gpt_deployment": [
         "OpenAI",
         "Claude"
+      ],
+      "document_conversion": [
+        "OpenAI"
       ]
     },
     "dify": {
@@ -12393,6 +12502,9 @@
       "auto_gpt_deployment": [
         "Docker",
         "bash"
+      ],
+      "document_conversion": [
+        "Large Language Models (LLMs)"
       ]
     },
     "lightrag": {
@@ -12533,6 +12645,9 @@
       ],
       "markitdown": [
         "docker",
+        "Python"
+      ],
+      "document_conversion": [
         "Python"
       ]
     },
@@ -12708,6 +12823,9 @@
       ],
       "markitdown": [
         "Python"
+      ],
+      "document_conversion": [
+        "Python"
       ]
     },
     "graphrag_system": {
@@ -12782,6 +12900,9 @@
         "Python"
       ],
       "markitdown": [
+        "Python"
+      ],
+      "document_conversion": [
         "Python"
       ]
     },
@@ -13107,6 +13228,9 @@
       ],
       "markitdown": [
         "Python"
+      ],
+      "document_conversion": [
+        "Python"
       ]
     },
     "fastapi_mcp_integration": {
@@ -13185,6 +13309,9 @@
       ],
       "auto_gpt_deployment": [
         "Claude"
+      ],
+      "document_conversion": [
+        "pip"
       ]
     },
     "mcp_go": {
@@ -14129,6 +14256,9 @@
       ],
       "auto_gpt_deployment": [
         "OpenAI"
+      ],
+      "document_conversion": [
+        "OpenAI"
       ]
     },
     "griptape": {
@@ -14464,6 +14594,11 @@
         "Python"
       ],
       "markitdown": [
+        "Python"
+      ],
+      "document_conversion": [
+        "OpenAI",
+        "Large Language Models (LLMs)",
         "Python"
       ]
     },
@@ -15016,6 +15151,9 @@
       ],
       "markitdown": [
         "Python"
+      ],
+      "document_conversion": [
+        "Python"
       ]
     },
     "paper_agent": {
@@ -15216,6 +15354,9 @@
         "Python"
       ],
       "markitdown": [
+        "Python"
+      ],
+      "document_conversion": [
         "Python"
       ]
     },
@@ -15670,6 +15811,9 @@
         "Python"
       ],
       "markitdown": [
+        "Python"
+      ],
+      "document_conversion": [
         "Python"
       ]
     },
@@ -16249,6 +16393,9 @@
       "markitdown": [
         "langchain",
         "openai",
+        "Python"
+      ],
+      "document_conversion": [
         "Python"
       ]
     },
@@ -16955,6 +17102,10 @@
       "auto_gpt_deployment": [
         "OpenAI",
         "Claude"
+      ],
+      "document_conversion": [
+        "OpenAI",
+        "pip"
       ]
     },
     "autogpt": {
@@ -17273,6 +17424,10 @@
       ],
       "markitdown": [
         "Python"
+      ],
+      "document_conversion": [
+        "OpenAI",
+        "Python"
       ]
     },
     "markitdown": {
@@ -17395,9 +17550,108 @@
       ],
       "auto_gpt_deployment": [
         "Python"
+      ],
+      "document_conversion": [
+        "Python"
+      ]
+    },
+    "document_conversion": {
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Python"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "OpenAI"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "OpenAI"
+      ],
+      "by_august_we_ll_have_frontier_ai_running_locally": [
+        "OpenAI"
+      ],
+      "yes_the_kimi_k3_hype_is_real": [
+        "OpenAI"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "OpenAI",
+        "pip",
+        "Python"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Python"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "OpenAI"
+      ],
+      "china_just_beat_claude_ai_kimi_k3": [
+        "OpenAI"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "OpenAI",
+        "Python"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Python"
+      ],
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "OpenAI"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "OpenAI"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "OpenAI"
+      ],
+      "ragflow_self_hosting_guide": [
+        "Large Language Models (LLMs)"
+      ],
+      "lightrag": [
+        "Python"
+      ],
+      "graphrag": [
+        "Python"
+      ],
+      "graphrag_system": [
+        "Python"
+      ],
+      "fastapi_mcp": [
+        "Python"
+      ],
+      "fastapi_mcp_integration": [
+        "pip"
+      ],
+      "agentic_rag_for_dummies": [
+        "OpenAI"
+      ],
+      "griptape_framework": [
+        "OpenAI",
+        "Large Language Models (LLMs)",
+        "Python"
+      ],
+      "pasa": [
+        "Python"
+      ],
+      "lightagent_framework": [
+        "Python"
+      ],
+      "leon_ai_assistant": [
+        "Python"
+      ],
+      "webrover": [
+        "Python"
+      ],
+      "loushang_ai_native_agent_harness": [
+        "OpenAI",
+        "pip"
+      ],
+      "auto_gpt_deployment": [
+        "OpenAI",
+        "Python"
+      ],
+      "markitdown": [
+        "Python"
       ]
     }
   },
-  "updated_at": "2026-07-24T01:07:56.756514+00:00",
-  "total_skills": 82
+  "updated_at": "2026-07-24T01:08:25.317101+00:00",
+  "total_skills": 83
 }
