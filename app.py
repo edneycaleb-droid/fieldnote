@@ -2369,8 +2369,19 @@ def api_mcp_hub_reset_health():
     tick re-validates them.  Useful for external watchdogs or after a container resume
     when the scheduler wake-callback may not have fired (e.g. single-shot invocation).
 
+    Requires an Authorization header matching SESSION_SECRET when that secret is set:
+        Authorization: Bearer <SESSION_SECRET>
+
     Returns JSON: {"ok": true, "reset": <count>}
     """
+    _secret = os.getenv("SESSION_SECRET", "")
+    if _secret:
+        auth_header = request.headers.get("Authorization", "")
+        if not auth_header.startswith("Bearer ") or auth_header[len("Bearer "):] != _secret:
+            log.warning("/api/mcp-hub/reset-health: rejected unauthenticated request from %s",
+                        request.remote_addr)
+            return jsonify({"ok": False, "error": "Unauthorized"}), 401
+
     try:
         from agents.mcp_registry import mark_connected_as_unverified
         reset = mark_connected_as_unverified()
