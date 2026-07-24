@@ -78,14 +78,15 @@
       ]
     },
     "anthropic": {
-      "freq": 9,
+      "freq": 10,
       "skills": [
         "new_claude_opus_5_leaks",
         "new_claude_update_is_insane",
         "china_just_beat_claude_ai_kimi_k3",
         "griptape",
         "pydantic_deepagents",
-        "headroom"
+        "headroom",
+        "litellm"
       ]
     },
     "hermes": {
@@ -3698,6 +3699,30 @@
       "skills": [
         "headroom_context_compression"
       ]
+    },
+    "ai-gateway": {
+      "freq": 1,
+      "skills": [
+        "litellm"
+      ]
+    },
+    "azure-openai": {
+      "freq": 1,
+      "skills": [
+        "litellm"
+      ]
+    },
+    "bedrock": {
+      "freq": 1,
+      "skills": [
+        "litellm"
+      ]
+    },
+    "gateway": {
+      "freq": 1,
+      "skills": [
+        "litellm"
+      ]
     }
   },
   "tools": {
@@ -3866,7 +3891,7 @@
       ]
     },
     "anthropic": {
-      "freq": 14,
+      "freq": 15,
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
@@ -3878,7 +3903,8 @@
         "openakita",
         "webrover",
         "pydantic_deepagents",
-        "headroom"
+        "headroom",
+        "litellm"
       ]
     },
     "pip": {
@@ -4142,9 +4168,10 @@
       ]
     },
     "terraform": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "dify"
+        "dify",
+        "litellm"
       ]
     },
     "helm": {
@@ -4197,7 +4224,7 @@
       ]
     },
     "openai": {
-      "freq": 20,
+      "freq": 21,
       "skills": [
         "dify",
         "ragflow",
@@ -4218,7 +4245,8 @@
         "loushang",
         "autogpt",
         "markitdown",
-        "headroom"
+        "headroom",
+        "litellm"
       ]
     },
     "agent": {
@@ -4352,18 +4380,19 @@
       ]
     },
     "gemini": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "ragflow",
         "agentic_rag_for_dummies",
         "py_xiaozhi",
         "openakita",
         "pydantic_deepagents",
-        "headroom"
+        "headroom",
+        "litellm"
       ]
     },
     "huggingface": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "ragflow",
         "agentic_rag_for_dummies",
@@ -4371,7 +4400,8 @@
         "trainer",
         "pasa",
         "speech_to_speech",
-        "deepseek_671b_sft_guide"
+        "deepseek_671b_sft_guide",
+        "litellm"
       ]
     },
     "elasticsearch": {
@@ -4498,12 +4528,13 @@
       ]
     },
     "ollama": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "lightrag",
         "agentic_rag_for_dummies",
         "forge",
-        "pydantic_deepagents"
+        "pydantic_deepagents",
+        "litellm"
       ]
     },
     "gpt-4": {
@@ -4649,7 +4680,7 @@
       ]
     },
     "langchain": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "rag_techniques",
         "agentic_rag_for_dummies",
@@ -4657,7 +4688,8 @@
         "lightagent",
         "webrover",
         "markitdown",
-        "headroom"
+        "headroom",
+        "litellm"
       ]
     },
     "llama-index": {
@@ -4833,13 +4865,14 @@
       ]
     },
     "pydantic": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "mcp_agent",
         "griptape",
         "forge",
         "pydantic_deepagents",
-        "live_run_forking_with_pydantic_deep_agents"
+        "live_run_forking_with_pydantic_deep_agents",
+        "litellm"
       ]
     },
     "agents": {
@@ -5379,11 +5412,12 @@
       ]
     },
     "langgraph": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "agentic_rag_for_dummies",
         "webrover",
-        "pydantic_deepagents"
+        "pydantic_deepagents",
+        "litellm"
       ]
     },
     "bm25": {
@@ -5514,12 +5548,13 @@
       ]
     },
     "vllm": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "forge",
         "lightagent",
         "speech_to_speech",
-        "deepseek_671b_sft_guide"
+        "deepseek_671b_sft_guide",
+        "litellm"
       ]
     },
     "function-calling": {
@@ -6833,6 +6868,36 @@
       "freq": 1,
       "skills": [
         "headroom_context_compression"
+      ]
+    },
+    "groq": {
+      "freq": 1,
+      "skills": [
+        "litellm"
+      ]
+    },
+    "ai-gateway": {
+      "freq": 1,
+      "skills": [
+        "litellm"
+      ]
+    },
+    "azure-openai": {
+      "freq": 1,
+      "skills": [
+        "litellm"
+      ]
+    },
+    "bedrock": {
+      "freq": 1,
+      "skills": [
+        "litellm"
+      ]
+    },
+    "gateway": {
+      "freq": 1,
+      "skills": [
+        "litellm"
       ]
     }
   },
@@ -9539,6 +9604,43 @@
         "optimization"
       ],
       "step_count": 12
+    },
+    "litellm": {
+      "concepts": [
+        "ai-gateway",
+        "anthropic",
+        "azure-openai",
+        "bedrock",
+        "gateway"
+      ],
+      "tools": [
+        "gemini",
+        "vllm",
+        "terraform",
+        "langgraph",
+        "huggingface",
+        "ollama",
+        "groq",
+        "anthropic",
+        "pydantic",
+        "openai",
+        "ai-gateway",
+        "azure-openai",
+        "bedrock",
+        "gateway",
+        "langchain"
+      ],
+      "tags": [
+        "ai-gateway",
+        "anthropic",
+        "azure-openai",
+        "bedrock",
+        "gateway",
+        "python",
+        "ai",
+        "llm"
+      ],
+      "step_count": 4
     }
   },
   "relationships": {
@@ -9688,6 +9790,9 @@
       "headroom_context_compression": [
         "Anthropic",
         "Claude"
+      ],
+      "litellm": [
+        "anthropic"
       ]
     },
     "100_hours_of_hermes_agent_lessons_in_19_minutes": {
@@ -10378,6 +10483,9 @@
       "headroom_context_compression": [
         "OpenAI",
         "Claude"
+      ],
+      "litellm": [
+        "anthropic"
       ]
     },
     "by_august_we_ll_have_frontier_ai_running_locally": {
@@ -11263,6 +11371,9 @@
         "Anthropic",
         "OpenAI",
         "Claude"
+      ],
+      "litellm": [
+        "anthropic"
       ]
     },
     "you_need_to_use_hermes_right_now_goodbye_openclaw": {
@@ -11498,6 +11609,9 @@
         "LLM",
         "Docker",
         "Python"
+      ],
+      "litellm": [
+        "anthropic"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -11859,6 +11973,9 @@
         "OpenAI",
         "LLM",
         "Claude"
+      ],
+      "litellm": [
+        "openai"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -12598,6 +12715,10 @@
         "openai",
         "ai",
         "agent"
+      ],
+      "litellm": [
+        "terraform",
+        "openai"
       ]
     },
     "dify_deployment": {
@@ -12802,6 +12923,11 @@
         "openai",
         "gemini",
         "ai"
+      ],
+      "litellm": [
+        "huggingface",
+        "openai",
+        "gemini"
       ]
     },
     "ragflow_self_hosting_guide": {
@@ -13019,6 +13145,9 @@
       ],
       "headroom_context_compression": [
         "Python"
+      ],
+      "litellm": [
+        "ollama"
       ]
     },
     "lightrag_setup": {
@@ -13444,6 +13573,10 @@
         "langchain",
         "openai",
         "ai"
+      ],
+      "litellm": [
+        "langchain",
+        "openai"
       ]
     },
     "advanced_retrieval_augmented_generation": {
@@ -13993,6 +14126,11 @@
         "openai",
         "mcp",
         "ai"
+      ],
+      "litellm": [
+        "anthropic",
+        "pydantic",
+        "openai"
       ]
     },
     "mcp_agent_framework": {
@@ -14875,6 +15013,13 @@
         "langchain",
         "fastapi",
         "ai"
+      ],
+      "litellm": [
+        "anthropic",
+        "pydantic",
+        "openai",
+        "langchain",
+        "huggingface"
       ]
     },
     "griptape_framework": {
@@ -15222,6 +15367,13 @@
         "anthropic",
         "llm",
         "openai"
+      ],
+      "litellm": [
+        "anthropic",
+        "pydantic",
+        "openai",
+        "vllm",
+        "ollama"
       ]
     },
     "forge_llm_tool_calling_framework": {
@@ -15484,6 +15636,9 @@
         "pytorch",
         "llm",
         "ai"
+      ],
+      "litellm": [
+        "huggingface"
       ]
     },
     "pasa": {
@@ -15635,6 +15790,9 @@
       ],
       "headroom_context_compression": [
         "Python"
+      ],
+      "litellm": [
+        "huggingface"
       ]
     },
     "paper_agent": {
@@ -15770,6 +15928,11 @@
       "headroom": [
         "mcp",
         "llm",
+        "langchain",
+        "openai"
+      ],
+      "litellm": [
+        "vllm",
         "langchain",
         "openai"
       ]
@@ -16105,6 +16268,9 @@
         "openai",
         "cursor",
         "agent"
+      ],
+      "litellm": [
+        "openai"
       ]
     },
     "agentic_video_production": {
@@ -16227,6 +16393,9 @@
       "headroom": [
         "openai",
         "ai"
+      ],
+      "litellm": [
+        "openai"
       ]
     },
     "leon_ai_assistant": {
@@ -16463,6 +16632,11 @@
       "headroom": [
         "openai",
         "ai"
+      ],
+      "litellm": [
+        "huggingface",
+        "vllm",
+        "openai"
       ]
     },
     "py_xiaozhi": {
@@ -16542,6 +16716,9 @@
       ],
       "headroom": [
         "mcp",
+        "gemini"
+      ],
+      "litellm": [
         "gemini"
       ]
     },
@@ -16710,6 +16887,11 @@
         "gemini",
         "ai",
         "agent"
+      ],
+      "litellm": [
+        "anthropic",
+        "openai",
+        "gemini"
       ]
     },
     "modular_speech_to_speech_pipeline": {
@@ -16934,6 +17116,12 @@
       ],
       "headroom_context_compression": [
         "Python"
+      ],
+      "litellm": [
+        "anthropic",
+        "langgraph",
+        "langchain",
+        "openai"
       ]
     },
     "web_rover_ai_agent": {
@@ -17129,6 +17317,14 @@
         "openai",
         "gemini",
         "claude-code"
+      ],
+      "litellm": [
+        "anthropic",
+        "pydantic",
+        "openai",
+        "gemini",
+        "langgraph",
+        "ollama"
       ]
     },
     "live_run_forking_with_pydantic_deep_agents": {
@@ -17197,6 +17393,9 @@
       ],
       "headroom_context_compression": [
         "Docker"
+      ],
+      "litellm": [
+        "pydantic"
       ]
     },
     "nornicdb": {
@@ -17428,6 +17627,11 @@
       "headroom": [
         "llm",
         "openai"
+      ],
+      "litellm": [
+        "huggingface",
+        "vllm",
+        "openai"
       ]
     },
     "deepseek_v3_r1_fine_tuning": {
@@ -17568,6 +17772,9 @@
         "openai",
         "ai",
         "agent"
+      ],
+      "litellm": [
+        "openai"
       ]
     },
     "loushang_ai_native_agent_harness": {
@@ -17839,6 +18046,9 @@
         "llm",
         "openai",
         "ai"
+      ],
+      "litellm": [
+        "openai"
       ]
     },
     "auto_gpt_deployment": {
@@ -18138,6 +18348,10 @@
       ],
       "headroom_context_compression": [
         "Python"
+      ],
+      "litellm": [
+        "langchain",
+        "openai"
       ]
     },
     "document_conversion": {
@@ -18416,6 +18630,12 @@
       "markitdown": [
         "langchain",
         "openai"
+      ],
+      "litellm": [
+        "anthropic",
+        "openai",
+        "langchain",
+        "gemini"
       ]
     },
     "headroom_context_compression": {
@@ -18609,8 +18829,128 @@
         "OpenAI",
         "Python"
       ]
+    },
+    "litellm": {
+      "new_claude_opus_5_leaks": [
+        "anthropic"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "anthropic"
+      ],
+      "china_just_beat_claude_ai_kimi_k3": [
+        "anthropic"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "anthropic"
+      ],
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "openai"
+      ],
+      "dify": [
+        "terraform",
+        "openai"
+      ],
+      "ragflow": [
+        "huggingface",
+        "openai",
+        "gemini"
+      ],
+      "lightrag": [
+        "ollama"
+      ],
+      "rag_techniques": [
+        "langchain",
+        "openai"
+      ],
+      "mcp_agent": [
+        "anthropic",
+        "pydantic",
+        "openai"
+      ],
+      "griptape": [
+        "anthropic",
+        "pydantic",
+        "openai",
+        "langchain",
+        "huggingface"
+      ],
+      "forge": [
+        "anthropic",
+        "pydantic",
+        "openai",
+        "vllm",
+        "ollama"
+      ],
+      "trainer": [
+        "huggingface"
+      ],
+      "pasa": [
+        "huggingface"
+      ],
+      "lightagent": [
+        "vllm",
+        "langchain",
+        "openai"
+      ],
+      "openmontage": [
+        "openai"
+      ],
+      "leon": [
+        "openai"
+      ],
+      "speech_to_speech": [
+        "huggingface",
+        "vllm",
+        "openai"
+      ],
+      "py_xiaozhi": [
+        "gemini"
+      ],
+      "openakita": [
+        "anthropic",
+        "openai",
+        "gemini"
+      ],
+      "webrover": [
+        "anthropic",
+        "langgraph",
+        "langchain",
+        "openai"
+      ],
+      "pydantic_deepagents": [
+        "anthropic",
+        "pydantic",
+        "openai",
+        "gemini",
+        "langgraph",
+        "ollama"
+      ],
+      "live_run_forking_with_pydantic_deep_agents": [
+        "pydantic"
+      ],
+      "deepseek_671b_sft_guide": [
+        "huggingface",
+        "vllm",
+        "openai"
+      ],
+      "loushang": [
+        "openai"
+      ],
+      "autogpt": [
+        "openai"
+      ],
+      "markitdown": [
+        "langchain",
+        "openai"
+      ],
+      "headroom": [
+        "anthropic",
+        "openai",
+        "langchain",
+        "gemini"
+      ]
     }
   },
-  "updated_at": "2026-07-24T01:09:08.079248+00:00",
-  "total_skills": 85
+  "updated_at": "2026-07-24T01:09:20.975040+00:00",
+  "total_skills": 86
 }
