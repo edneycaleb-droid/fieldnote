@@ -52,7 +52,7 @@
       ]
     },
     "here": {
-      "freq": 23,
+      "freq": 24,
       "skills": [
         "new_claude_opus_5_leaks",
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
@@ -165,7 +165,7 @@
       ]
     },
     "want": {
-      "freq": 10,
+      "freq": 11,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
@@ -193,7 +193,7 @@
       ]
     },
     "right": {
-      "freq": 17,
+      "freq": 18,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "kimi_k3_vs_claude_fable_5_raw_results",
@@ -356,14 +356,14 @@
       ]
     },
     "good": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "chatgpt_work_everything_you_need_to_know_to_get_st",
         "kimi_k3_mcp_king_of_algo_trading"
       ]
     },
     "which": {
-      "freq": 12,
+      "freq": 13,
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
         "by_august_we_ll_have_frontier_ai_running_locally",
@@ -733,7 +733,7 @@
       ]
     },
     "time": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "this_ai_business_model_is_creating_new_millionaire",
         "kimi_k3_mcp_king_of_algo_trading"
@@ -4792,25 +4792,25 @@
       ]
     },
     "strategy": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "kimi_k3_mcp_king_of_algo_trading"
       ]
     },
     "really": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "kimi_k3_mcp_king_of_algo_trading"
       ]
     },
     "trade": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "kimi_k3_mcp_king_of_algo_trading"
       ]
     },
     "trading": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "kimi_k3_mcp_king_of_algo_trading"
       ]
@@ -4818,7 +4818,7 @@
   },
   "tools": {
     "Claude": {
-      "freq": 52,
+      "freq": 53,
       "skills": [
         "new_claude_opus_5_leaks",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
@@ -4849,7 +4849,7 @@
       ]
     },
     "Anthropic": {
-      "freq": 32,
+      "freq": 33,
       "skills": [
         "new_claude_opus_5_leaks",
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
@@ -4927,7 +4927,7 @@
       ]
     },
     "Python": {
-      "freq": 32,
+      "freq": 33,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -4968,7 +4968,7 @@
       ]
     },
     "OpenAI": {
-      "freq": 35,
+      "freq": 36,
       "skills": [
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
@@ -23216,6 +23216,6 @@
       ]
     }
   },
-  "updated_at": "2026-07-24T03:44:10.826869+00:00",
+  "updated_at": "2026-07-24T03:49:11.022741+00:00",
   "total_skills": 95
 }
