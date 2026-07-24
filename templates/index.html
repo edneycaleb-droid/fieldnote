@@ -1499,6 +1499,26 @@ input[type=search] { flex: 1; padding: 10px 14px; font-size: 0.88rem; }
    card beyond the grid track width, causing horizontal body overflow. */
 .integ-card { min-width: 0; }
 
+/* ── Integrations: mid-size tablet fixes (≤ 768px / iPad Mini portrait) ── *
+ * At this width the ≤700px single-column breakpoint does NOT fire, so the   *
+ * 2-column integ-grid is active.  Ensure the chip row is width-contained    *
+ * and cards/key-rows cannot overflow their ~340–363 px column tracks.        *
+ */
+@media (max-width: 768px) {
+  /* Chip row: clamp to viewport width and allow internal horizontal scroll
+     so chips never push document.body wider than the viewport. */
+  .hub-chips {
+    width: 100%; min-width: 0;
+    overflow-x: auto; -webkit-overflow-scrolling: touch;
+  }
+
+  /* Key-input row: allow wrapping so a long "Get API key →" link can drop
+     below the input rather than forcing the card wider than its grid track. */
+  .ic-key-row { flex-wrap: wrap; }
+  .ic-key-input { flex: 1 1 auto; min-width: 0; }
+  .ic-key-link  { flex: 0 0 auto; }
+}
+
 /* ── MCP Hub: mobile touch-target & layout fixes (≤ 480px) ──────── */
 @media (max-width: 480px) {
   /* Category chip row: bigger tap targets, allow horizontal scroll as fallback.
