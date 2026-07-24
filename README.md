@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **146 skills** · Last synced: 2026-07-24 00:03 UTC
+> **147 skills** · Last synced: 2026-07-24 00:03 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Loushang](skills/loushang.md) | AI-native agent harness for coding workflows by python: multi-model LLM orchestr | `redis` `openai` `agent` `agent-harness` | `agent` `agent-harness` `agentic` |
 | [Fine-Tuning DeepSeek-V3/R1 671B for Advanced AI Tasks](skills/deepseek_v3_r1_fine_tuning.md) | Fine-tuning large language models like DeepSeek-V3/R1 671B is crucial for achiev | `DeepSpeed` `vLLM` `Hugging Face Transformers` `Xtuner` | `deep_learning` `nlp` `model_fine_tuning` |
 | [Deepseek 671B Sft Guide](skills/deepseek_671b_sft_guide.md) | An open-source solution for full parameter fine-tuning of DeepSeek-V3/R1 671B, i | `vllm` `huggingface` `openai` `ray` | `deepseek-r1` `llm` `moe` |
 | [Deploying NornicDB for Graph and Vector Workloads](skills/nornicdb_deployment.md) | NornicDB is a distributed, low-latency graph and vector database that supports t | `Docker` `Go` `Neo4j` `Bolt` | `Database` `Deployment` `Graph` |
