@@ -2420,7 +2420,8 @@ def _mcp_health_check() -> dict:
                 _pool.shutdown(wait=False, cancel_futures=True)
                 continue
             except Exception as srv_exc:
-                log.warning("mcp_health: verifier crashed for %s: %s", srv.id, srv_exc)
+                log.warning("mcp_health: verifier crashed for %s [%s]: %s",
+                            srv.id, type(srv_exc).__name__, srv_exc)
                 _pool.shutdown(wait=False)
                 continue
             else:
