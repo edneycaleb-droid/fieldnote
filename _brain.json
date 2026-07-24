@@ -2187,10 +2187,11 @@
       ]
     },
     "Context Compression": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "agentic_rag_for_dummies",
-        "headroom_context_compression"
+        "headroom_context_compression",
+        "airecon_autonomous_pentesting"
       ]
     },
     "Observability": {
@@ -2225,11 +2226,12 @@
       ]
     },
     "AI Agents": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "griptape_framework",
         "lightagent_framework",
-        "auto_gpt_deployment"
+        "auto_gpt_deployment",
+        "airecon_autonomous_pentesting"
       ]
     },
     "AI Workflows": {
@@ -2624,10 +2626,11 @@
       ]
     },
     "Memory Management": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "lightagent_framework",
-        "leon_ai_assistant"
+        "leon_ai_assistant",
+        "airecon_autonomous_pentesting"
       ]
     },
     "Modularity": {
@@ -2668,9 +2671,10 @@
       ]
     },
     "Tool Calling": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "lightagent_framework"
+        "lightagent_framework",
+        "airecon_autonomous_pentesting"
       ]
     },
     "Tool Integration": {
@@ -3323,9 +3327,10 @@
       ]
     },
     "Autonomous Agents": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "live_run_forking_with_pydantic_deep_agents"
+        "live_run_forking_with_pydantic_deep_agents",
+        "airecon_autonomous_pentesting"
       ]
     },
     "Live run forking": {
@@ -3801,6 +3806,96 @@
       "skills": [
         "airecon"
       ]
+    },
+    "Adaptive Learning": {
+      "freq": 1,
+      "skills": [
+        "airecon_autonomous_pentesting"
+      ]
+    },
+    "Autonomous Penetration Testing": {
+      "freq": 1,
+      "skills": [
+        "airecon_autonomous_pentesting"
+      ]
+    },
+    "Docker Sandbox": {
+      "freq": 1,
+      "skills": [
+        "airecon_autonomous_pentesting"
+      ]
+    },
+    "Docker Sandboxing": {
+      "freq": 1,
+      "skills": [
+        "airecon_autonomous_pentesting"
+      ]
+    },
+    "Function Calling": {
+      "freq": 1,
+      "skills": [
+        "airecon_autonomous_pentesting"
+      ]
+    },
+    "Local Data Persistence": {
+      "freq": 1,
+      "skills": [
+        "airecon_autonomous_pentesting"
+      ]
+    },
+    "Local Knowledge Base": {
+      "freq": 1,
+      "skills": [
+        "airecon_autonomous_pentesting"
+      ]
+    },
+    "Local LLM": {
+      "freq": 1,
+      "skills": [
+        "airecon_autonomous_pentesting"
+      ]
+    },
+    "MCP Integration": {
+      "freq": 1,
+      "skills": [
+        "airecon_autonomous_pentesting"
+      ]
+    },
+    "Offline Operation": {
+      "freq": 1,
+      "skills": [
+        "airecon_autonomous_pentesting"
+      ]
+    },
+    "Penetration Testing": {
+      "freq": 1,
+      "skills": [
+        "airecon_autonomous_pentesting"
+      ]
+    },
+    "Privacy-Preserving AI": {
+      "freq": 1,
+      "skills": [
+        "airecon_autonomous_pentesting"
+      ]
+    },
+    "RECON \u2192 ANALYSIS \u2192 EXPLOIT \u2192 REPORT Pipeline": {
+      "freq": 1,
+      "skills": [
+        "airecon_autonomous_pentesting"
+      ]
+    },
+    "Self-Hosted LLM": {
+      "freq": 1,
+      "skills": [
+        "airecon_autonomous_pentesting"
+      ]
+    },
+    "Textual User Interface (TUI)": {
+      "freq": 1,
+      "skills": [
+        "airecon_autonomous_pentesting"
+      ]
     }
   },
   "tools": {
@@ -3873,7 +3968,7 @@
       ]
     },
     "Docker": {
-      "freq": 26,
+      "freq": 27,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -3892,22 +3987,24 @@
         "nornicdb_deployment",
         "auto_gpt_deployment",
         "headroom_context_compression",
-        "litellm"
+        "litellm",
+        "airecon_autonomous_pentesting"
       ]
     },
     "bash": {
-      "freq": 10,
+      "freq": 11,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "new_hermes_agent_os_is_insane",
         "ragflow_self_hosting_guide",
         "auto_gpt_deployment",
         "headroom_context_compression",
-        "litellm"
+        "litellm",
+        "airecon_autonomous_pentesting"
       ]
     },
     "Python": {
-      "freq": 28,
+      "freq": 29,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -3927,7 +4024,8 @@
         "markitdown",
         "document_conversion",
         "headroom_context_compression",
-        "litellm"
+        "litellm",
+        "airecon_autonomous_pentesting"
       ]
     },
     "LLM": {
@@ -3967,10 +4065,11 @@
       ]
     },
     "Ollama": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "kimi_k3_vs_claude_fable_5_raw_results",
-        "agentic_rag_for_dummies"
+        "agentic_rag_for_dummies",
+        "airecon_autonomous_pentesting"
       ]
     },
     "anthropic": {
@@ -4126,9 +4225,10 @@
       ]
     },
     "curl": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "hermes_agent_full_course_setup_guide_for_complete_"
+        "hermes_agent_full_course_setup_guide_for_complete_",
+        "airecon_autonomous_pentesting"
       ]
     },
     "GPT-4": {
@@ -4584,10 +4684,11 @@
       ]
     },
     "git": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "ragflow_self_hosting_guide",
-        "loushang_ai_native_agent_harness"
+        "loushang_ai_native_agent_harness",
+        "airecon_autonomous_pentesting"
       ]
     },
     "sed": {
@@ -7022,6 +7123,36 @@
       "freq": 1,
       "skills": [
         "airecon"
+      ]
+    },
+    "Textual TUI": {
+      "freq": 1,
+      "skills": [
+        "airecon_autonomous_pentesting"
+      ]
+    },
+    "Caido": {
+      "freq": 1,
+      "skills": [
+        "airecon_autonomous_pentesting"
+      ]
+    },
+    "Caido Proxy": {
+      "freq": 1,
+      "skills": [
+        "airecon_autonomous_pentesting"
+      ]
+    },
+    "Semgrep": {
+      "freq": 1,
+      "skills": [
+        "airecon_autonomous_pentesting"
+      ]
+    },
+    "Schemathesis": {
+      "freq": 1,
+      "skills": [
+        "airecon_autonomous_pentesting"
       ]
     }
   },
@@ -9806,6 +9937,53 @@
         "llm"
       ],
       "step_count": 8
+    },
+    "airecon_autonomous_pentesting": {
+      "concepts": [
+        "Adaptive Learning",
+        "AI Agents",
+        "Autonomous Agents",
+        "Autonomous Penetration Testing",
+        "Context Compression",
+        "Docker Sandbox",
+        "Docker Sandboxing",
+        "Function Calling",
+        "Local Data Persistence",
+        "Local Knowledge Base",
+        "Local LLM",
+        "Memory Management",
+        "MCP Integration",
+        "Offline Operation",
+        "Penetration Testing",
+        "Privacy-Preserving AI",
+        "RECON \u2192 ANALYSIS \u2192 EXPLOIT \u2192 REPORT Pipeline",
+        "Self-Hosted LLM",
+        "Tool Calling",
+        "Textual User Interface (TUI)"
+      ],
+      "tools": [
+        "Ollama",
+        "Docker",
+        "Textual TUI",
+        "Caido",
+        "Caido Proxy",
+        "Semgrep",
+        "Schemathesis",
+        "bash",
+        "Python",
+        "curl",
+        "git"
+      ],
+      "tags": [
+        "ai-agents",
+        "automation",
+        "bugbounty",
+        "cli",
+        "ollama",
+        "docker",
+        "penetration-testing"
+      ],
+      "step_count": 12
     }
   },
   "relationships": {
@@ -10291,6 +10469,11 @@
         "bash",
         "LLM",
         "Docker",
+        "Python"
+      ],
+      "airecon_autonomous_pentesting": [
+        "Docker",
+        "bash",
         "Python"
       ]
     },
@@ -11132,6 +11315,10 @@
         "Docker",
         "Claude",
         "Python"
+      ],
+      "airecon_autonomous_pentesting": [
+        "Docker",
+        "Python"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -11287,6 +11474,9 @@
       ],
       "litellm": [
         "Claude",
+        "Python"
+      ],
+      "airecon_autonomous_pentesting": [
         "Python"
       ]
     },
@@ -11806,6 +11996,10 @@
         "LLM",
         "Docker",
         "Python"
+      ],
+      "airecon_autonomous_pentesting": [
+        "Docker",
+        "Python"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -11984,6 +12178,11 @@
         "bash",
         "LLM",
         "Docker",
+        "Python"
+      ],
+      "airecon_autonomous_pentesting": [
+        "Docker",
+        "bash",
         "Python"
       ]
     },
@@ -12657,6 +12856,9 @@
         "LLM",
         "Docker",
         "Claude"
+      ],
+      "airecon_autonomous_pentesting": [
+        "Docker"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -13012,6 +13214,9 @@
       ],
       "litellm": [
         "Docker"
+      ],
+      "airecon_autonomous_pentesting": [
+        "Docker"
       ]
     },
     "ragflow": {
@@ -13236,6 +13441,11 @@
       "litellm": [
         "Docker",
         "bash"
+      ],
+      "airecon_autonomous_pentesting": [
+        "Docker",
+        "git",
+        "bash"
       ]
     },
     "lightrag": {
@@ -13393,6 +13603,9 @@
       "airecon": [
         "docker",
         "ollama"
+      ],
+      "airecon_autonomous_pentesting": [
+        "Python"
       ]
     },
     "lightrag_setup": {
@@ -13470,6 +13683,9 @@
       "litellm": [
         "Docker",
         "uv"
+      ],
+      "airecon_autonomous_pentesting": [
+        "Docker"
       ]
     },
     "graphrag": {
@@ -13586,6 +13802,9 @@
       ],
       "litellm": [
         "Python"
+      ],
+      "airecon_autonomous_pentesting": [
+        "Python"
       ]
     },
     "graphrag_system": {
@@ -13671,6 +13890,9 @@
       ],
       "litellm": [
         "LLM",
+        "Python"
+      ],
+      "airecon_autonomous_pentesting": [
         "Python"
       ]
     },
@@ -14025,6 +14247,9 @@
         "Python"
       ],
       "litellm": [
+        "Python"
+      ],
+      "airecon_autonomous_pentesting": [
         "Python"
       ]
     },
@@ -14538,6 +14763,9 @@
       "litellm": [
         "Docker",
         "LLM"
+      ],
+      "airecon_autonomous_pentesting": [
+        "Docker"
       ]
     },
     "registry": {
@@ -14999,6 +15227,9 @@
       ],
       "litellm": [
         "Docker"
+      ],
+      "airecon_autonomous_pentesting": [
+        "Docker"
       ]
     },
     "agentic_rag_for_dummies": {
@@ -15129,6 +15360,10 @@
         "Anthropic",
         "OpenAI",
         "LangChain",
+        "Context Compression"
+      ],
+      "airecon_autonomous_pentesting": [
+        "Ollama",
         "Context Compression"
       ]
     },
@@ -15503,6 +15738,11 @@
         "Claude",
         "LLM",
         "Python"
+      ],
+      "airecon_autonomous_pentesting": [
+        "Docker",
+        "AI Agents",
+        "Python"
       ]
     },
     "forge": {
@@ -15833,6 +16073,9 @@
       ],
       "litellm": [
         "Docker"
+      ],
+      "airecon_autonomous_pentesting": [
+        "Docker"
       ]
     },
     "trainer": {
@@ -16113,6 +16356,9 @@
       ],
       "airecon": [
         "python"
+      ],
+      "airecon_autonomous_pentesting": [
+        "Python"
       ]
     },
     "paper_agent": {
@@ -16341,6 +16587,12 @@
         "LLM",
         "Guardrails",
         "OpenAI Compatibility",
+        "Python"
+      ],
+      "airecon_autonomous_pentesting": [
+        "Tool Calling",
+        "Memory Management",
+        "AI Agents",
         "Python"
       ]
     },
@@ -16838,6 +17090,11 @@
       ],
       "litellm": [
         "Docker",
+        "Python"
+      ],
+      "airecon_autonomous_pentesting": [
+        "Docker",
+        "Memory Management",
         "Python"
       ]
     },
@@ -17495,6 +17752,9 @@
       "airecon": [
         "python",
         "openai"
+      ],
+      "airecon_autonomous_pentesting": [
+        "Python"
       ]
     },
     "web_rover_ai_agent": {
@@ -17778,6 +18038,10 @@
       ],
       "litellm": [
         "Docker"
+      ],
+      "airecon_autonomous_pentesting": [
+        "Autonomous Agents",
+        "Docker"
       ]
     },
     "nornicdb": {
@@ -17895,6 +18159,9 @@
         "Docker"
       ],
       "litellm": [
+        "Docker"
+      ],
+      "airecon_autonomous_pentesting": [
         "Docker"
       ]
     },
@@ -18278,6 +18545,9 @@
       "litellm": [
         "Claude",
         "uv"
+      ],
+      "airecon_autonomous_pentesting": [
+        "git"
       ]
     },
     "autogpt": {
@@ -18626,6 +18896,12 @@
         "bash",
         "Claude",
         "Python"
+      ],
+      "airecon_autonomous_pentesting": [
+        "Docker",
+        "bash",
+        "AI Agents",
+        "Python"
       ]
     },
     "markitdown": {
@@ -18767,6 +19043,9 @@
       "airecon": [
         "docker",
         "openai"
+      ],
+      "airecon_autonomous_pentesting": [
+        "Python"
       ]
     },
     "document_conversion": {
@@ -18869,6 +19148,9 @@
         "Python"
       ],
       "litellm": [
+        "Python"
+      ],
+      "airecon_autonomous_pentesting": [
         "Python"
       ]
     },
@@ -19257,6 +19539,12 @@
         "LLM",
         "Docker",
         "Python"
+      ],
+      "airecon_autonomous_pentesting": [
+        "Docker",
+        "bash",
+        "Context Compression",
+        "Python"
       ]
     },
     "litellm": {
@@ -19523,6 +19811,11 @@
       "airecon": [
         "openai",
         "gemini"
+      ],
+      "airecon_autonomous_pentesting": [
+        "Docker",
+        "bash",
+        "Python"
       ]
     },
     "airecon": {
@@ -19652,8 +19945,125 @@
         "openai",
         "gemini"
       ]
+    },
+    "airecon_autonomous_pentesting": {
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Docker",
+        "bash",
+        "Python"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "Docker",
+        "Python"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Python"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "Docker",
+        "Python"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Docker",
+        "bash",
+        "Python"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "Docker"
+      ],
+      "dify_deployment": [
+        "Docker"
+      ],
+      "ragflow_self_hosting_guide": [
+        "Docker",
+        "git",
+        "bash"
+      ],
+      "lightrag": [
+        "Python"
+      ],
+      "lightrag_setup": [
+        "Docker"
+      ],
+      "graphrag": [
+        "Python"
+      ],
+      "graphrag_system": [
+        "Python"
+      ],
+      "fastapi_mcp": [
+        "Python"
+      ],
+      "r2r": [
+        "Docker"
+      ],
+      "mcp_server_implementations": [
+        "Docker"
+      ],
+      "agentic_rag_for_dummies": [
+        "Ollama",
+        "Context Compression"
+      ],
+      "griptape_framework": [
+        "Docker",
+        "AI Agents",
+        "Python"
+      ],
+      "infinity_database": [
+        "Docker"
+      ],
+      "pasa": [
+        "Python"
+      ],
+      "lightagent_framework": [
+        "Tool Calling",
+        "Memory Management",
+        "AI Agents",
+        "Python"
+      ],
+      "leon_ai_assistant": [
+        "Docker",
+        "Memory Management",
+        "Python"
+      ],
+      "webrover": [
+        "Python"
+      ],
+      "live_run_forking_with_pydantic_deep_agents": [
+        "Autonomous Agents",
+        "Docker"
+      ],
+      "nornicdb_deployment": [
+        "Docker"
+      ],
+      "loushang_ai_native_agent_harness": [
+        "git"
+      ],
+      "auto_gpt_deployment": [
+        "Docker",
+        "bash",
+        "AI Agents",
+        "Python"
+      ],
+      "markitdown": [
+        "Python"
+      ],
+      "document_conversion": [
+        "Python"
+      ],
+      "headroom_context_compression": [
+        "Docker",
+        "bash",
+        "Context Compression",
+        "Python"
+      ],
+      "litellm": [
+        "Docker",
+        "bash",
+        "Python"
+      ]
     }
   },
-  "updated_at": "2026-07-24T01:10:11.506950+00:00",
-  "total_skills": 87
+  "updated_at": "2026-07-24T01:10:45.936175+00:00",
+  "total_skills": 88
 }
