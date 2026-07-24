@@ -510,11 +510,16 @@ def get_all_statuses(local_keys_file: str | None = None) -> list[dict]:
                 )
             else:
                 e["status_detail"] = "Authentication failed — key rejected by provider"
+        elif router_state == "unverified":
+            # Key is present but hasn't been checked yet since the last restart.
+            # Background thread will promote to healthy/auth_error within ~10 s.
+            e["status"]        = "pending"
+            e["status_detail"] = "Key saved — not yet verified"
         elif router_state in ("healthy", "rate_limited", "quota_exhausted"):
             e["status"]        = "connected"
             e["status_detail"] = chk.get("detail") or "Connected"
         else:
-            # Key saved but router hasn't attempted it yet (non-LLM or first boot)
+            # Non-LLM provider or unknown state — show as configured.
             e["status"]        = "connected"
             e["status_detail"] = chk.get("detail") or "Key configured"
 

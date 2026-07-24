@@ -54,11 +54,12 @@ KEY_ENV_MAP: dict[str, str] = {
 
 # ── Provider state constants ───────────────────────────────────────────────────
 
-_STATE_HEALTHY = "healthy"
-_STATE_RATE    = "rate_limited"     # short backout, auto-clears
-_STATE_QUOTA   = "quota_exhausted"  # 2-hour blackout
-_STATE_AUTH    = "auth_error"       # permanent until restart
-_STATE_NO_KEY  = "no_key"           # key not configured
+_STATE_HEALTHY    = "healthy"
+_STATE_UNVERIFIED = "unverified"    # key present but not yet checked since last restart
+_STATE_RATE       = "rate_limited"  # short backout, auto-clears
+_STATE_QUOTA      = "quota_exhausted"  # 2-hour blackout
+_STATE_AUTH       = "auth_error"    # permanent until restart
+_STATE_NO_KEY     = "no_key"        # key not configured
 
 _QUOTA_BLACKOUT = 7200   # 2 hours in seconds
 _RATE_BACKOUT   = 30     # 30 seconds
@@ -72,7 +73,12 @@ def _now() -> float:
 
 
 def _init_status() -> None:
-    """Initialise state for each provider; picks up keys added without restart."""
+    """Initialise state for each provider; picks up keys added without restart.
+
+    Providers with a key present start as ``unverified`` — the UI will show
+    "Key saved — not yet verified" until the first successful LLM call (which
+    promotes the state to ``healthy``) or the background startup-check fires.
+    """
     providers = {
         "groq":        os.getenv("GROQ_API_KEY") or os.getenv("GROQ"),
         "gemini":      os.getenv("Google_API_Key") or os.getenv("Gemini") or os.getenv("GOOGLE_API_KEY"),
@@ -84,13 +90,123 @@ def _init_status() -> None:
         for provider, key in providers.items():
             if provider not in _status:
                 _status[provider] = {
-                    "state":      _STATE_HEALTHY if key else _STATE_NO_KEY,
+                    "state":      _STATE_UNVERIFIED if key else _STATE_NO_KEY,
                     "until":      0.0,
                     "last_error": "",
                 }
 
 
 _init_status()
+
+
+# ── Startup background verification ────────────────────────────────────────────
+
+def _lightweight_check(provider: str, key: str) -> bool:
+    """
+    Minimal HTTP probe to confirm a key is valid at startup.
+    Returns True → promote to healthy; False → promote to auth_error.
+    Network errors are treated as inconclusive (leave as unverified).
+    """
+    import urllib.request
+    import urllib.error
+
+    def _get(url: str, headers: dict) -> int:
+        req = urllib.request.Request(url, headers={**headers, "User-Agent": "Fieldnote/1.0"})
+        try:
+            with urllib.request.urlopen(req, timeout=8) as r:
+                return r.status
+        except urllib.error.HTTPError as exc:
+            return exc.code
+        except Exception:
+            return 0  # network/timeout — inconclusive
+
+    if provider == "groq":
+        code = _get("https://api.groq.com/openai/v1/models",
+                    {"Authorization": f"Bearer {key}", "Content-Type": "application/json"})
+        if code == 200:
+            return True
+        if code == 401:
+            return False
+        return None  # type: ignore[return-value]  # inconclusive
+    if provider == "gemini":
+        code = _get(f"https://generativelanguage.googleapis.com/v1beta/models?key={key}&pageSize=1",
+                    {"Content-Type": "application/json"})
+        if code == 200:
+            return True
+        if code in (400, 401, 403):
+            # 403 from Cloud Console key = zero quota, not wrong key — treat as auth-ish
+            return False
+        return None  # type: ignore[return-value]
+    if provider == "openai":
+        code = _get("https://api.openai.com/v1/models",
+                    {"Authorization": f"Bearer {key}", "Content-Type": "application/json"})
+        if code == 200:
+            return True
+        if code == 401:
+            return False
+        return None  # type: ignore[return-value]
+    if provider == "openrouter":
+        code = _get("https://openrouter.ai/api/v1/models",
+                    {"Authorization": f"Bearer {key}", "Content-Type": "application/json"})
+        if code == 200:
+            return True
+        if code == 401:
+            return False
+        return None  # type: ignore[return-value]
+    if provider == "huggingface":
+        code = _get("https://huggingface.co/api/whoami-v2",
+                    {"Authorization": f"Bearer {key}"})
+        if code == 200:
+            return True
+        if code == 401:
+            return False
+        return None  # type: ignore[return-value]
+    return None  # type: ignore[return-value]
+
+
+def _run_startup_verification() -> None:
+    """
+    Background thread: verify all providers that are still ``unverified``
+    shortly after startup.  Promotes to ``healthy`` or ``auth_error``.
+    Network errors leave the state as ``unverified`` so the first LLM call
+    can still promote it naturally.
+    """
+    import time as _time
+    _time.sleep(4)  # let the app finish starting before hitting external APIs
+    for provider in list(_PROVIDERS):
+        with _lock:
+            state = _status.get(provider, {}).get("state")
+        if state != _STATE_UNVERIFIED:
+            continue
+        key = _get_key(provider)
+        if not key and provider not in _ANONYMOUS_OK:
+            continue
+        try:
+            ok = _lightweight_check(provider, key)
+            if ok is True:
+                with _lock:
+                    if _status[provider]["state"] == _STATE_UNVERIFIED:
+                        _status[provider]["state"] = _STATE_HEALTHY
+                        _status[provider]["until"] = 0.0
+                log.info("Startup verify: %s → healthy", provider)
+            elif ok is False:
+                with _lock:
+                    if _status[provider]["state"] == _STATE_UNVERIFIED:
+                        _status[provider]["state"] = _STATE_AUTH
+                        _status[provider]["until"] = float("inf")
+                        _status[provider]["last_error"] = "Key rejected at startup verification"
+                log.warning("Startup verify: %s → auth_error (key rejected)", provider)
+            # ok is None → inconclusive; leave as unverified
+        except Exception as exc:
+            log.debug("Startup verify error for %s (inconclusive): %s", provider, exc)
+
+
+import threading as _threading
+_threading.Thread(
+    target=_run_startup_verification,
+    daemon=True,
+    name="fieldnote-startup-verify",
+).start()
 
 
 def _get_key(provider: str) -> str:
@@ -161,7 +277,7 @@ def _mark_error(provider: str, err: str) -> str:
 
 def _mark_healthy(provider: str) -> None:
     with _lock:
-        if _status[provider]["state"] in (_STATE_RATE, _STATE_QUOTA):
+        if _status[provider]["state"] in (_STATE_RATE, _STATE_QUOTA, _STATE_UNVERIFIED):
             _status[provider]["state"] = _STATE_HEALTHY
             _status[provider]["until"] = 0.0
 
@@ -171,10 +287,14 @@ def _is_available(provider: str) -> bool:
         return False
     with _lock:
         s     = _status.get(provider, {})
-        state = s.get("state", _STATE_HEALTHY)
-        if state == _STATE_HEALTHY:
+        state = s.get("state", _STATE_UNVERIFIED)
+        if state in (_STATE_HEALTHY, _STATE_UNVERIFIED):
+            # unverified: allow the call — success will promote to healthy,
+            # failure will demote to auth_error / quota_exhausted / rate_limited
             return True
         if state == _STATE_AUTH:
+            return False
+        if state == _STATE_NO_KEY:
             return False
         # rate_limited or quota_exhausted: check if blackout expired
         if _now() >= s.get("until", 0.0):
