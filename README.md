@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **151 skills** · Last synced: 2026-07-24 01:07 UTC
+> **152 skills** · Last synced: 2026-07-24 01:08 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Converting Documents to Markdown for AI Pipelines](skills/document_conversion.md) | This skill teaches how to use MarkItDown, a Python utility, to convert various f | `MarkItDown` `Python` `pip` `OpenAI` | `document_conversion` `markdown` `llm` |
 | [Markitdown](skills/markitdown.md) | Python tool for converting files and office documents to Markdown. | `autogen` `openai` `docker` `autogen-extension` | `autogen` `autogen-extension` `langchain` |
 | [Building and Deploying AI Agents with AutoGPT for AI-Powered Automation](skills/auto_gpt_deployment.md) | AutoGPT is a platform for building, deploying, and running AI agents that can au | `AutoGPT` `Docker` `bash` `PowerShell` | `ai` `agentic-ai` `autogpt` |
 | [Autogpt](skills/autogpt.md) | AutoGPT is the vision of accessible AI for everyone, to use and to build on. Our | `openai` `docker` `agentic-ai` `agents` | `agentic-ai` `agents` `ai` |
