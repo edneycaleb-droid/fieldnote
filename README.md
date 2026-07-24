@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **161 skills** · Last synced: 2026-07-24 02:36 UTC
+> **162 skills** · Last synced: 2026-07-24 02:36 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Python](skills/python.md) | All Algorithms implemented in Python | `algorithm` `algorithm-competitions` `algorithms-implemented` `algos` | `algorithm` `algorithm-competitions` `algorithms-implemented` |
 | [Project-Based Learning with Python](skills/project_based_learning_python.md) | This skill focuses on learning programming through building practical projects,  | `HTML Canvas API` | `beginner-project` `css` `game-development` |
 | [Project Based Learning](skills/project_based_learning.md) | Curated list of project-based tutorials | `rabbitmq` `redis` `sklearn` `tensorflow` | `beginner-project` `cpp` `golang` |
 | [Awesome Python: A Curated Ecosystem Explorer for AI & Beyond](skills/awesome_python.md) | This skill provides a comprehensive, curated list of Python frameworks, librarie | `langgraph` `llama-index` `sklearn` `tensorflow` | `awesome` `collections` `python` |
