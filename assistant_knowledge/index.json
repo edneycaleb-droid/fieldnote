@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "orneryd--nornicdb",
+      "title": "Discovered: orneryd/NornicDB",
+      "category": "discoveries",
+      "confidence": "verified",
+      "updated_at": "2026-07-24T00:03:56.490016+00:00",
+      "path": "discoveries/orneryd--nornicdb.md"
+    },
+    {
       "slug": "vstorm-co--pydantic-deepagents",
       "title": "Discovered: vstorm-co/pydantic-deepagents",
       "category": "discoveries",
@@ -361,5 +369,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-24T00:03:55.023182+00:00"
+  "updated_at": "2026-07-24T00:03:56.494229+00:00"
 }
