@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **158 skills** · Last synced: 2026-07-24 02:35 UTC
+> **159 skills** · Last synced: 2026-07-24 02:35 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Awesome Python](skills/awesome_python.md) | An opinionated list of Python frameworks, libraries, tools, and resources | `langgraph` `llama-index` `sklearn` `tensorflow` | `awesome` `collections` `python` |
 | [System Design Primer: Fundamentals and Interview Preparation](skills/system_design_primer.md) | A comprehensive resource for learning the fundamentals of designing large-scale  | `ray` `design` `design-patterns` `design-system` | `design` `development` `interview` |
 | [AIRecon: Autonomous Penetration Testing with Local LLM and Docker](skills/airecon_autonomous_pentesting.md) | AIRecon is an autonomous cybersecurity agent that automates penetration testing  | `Ollama` `Docker` `Textual TUI` `Caido` | `ai-agents` `automation` `bugbounty` |
 | [Airecon](skills/airecon.md) | AIRecon is an autonomous cybersecurity agent that combines a self-hosted Large L | `gemini` `ollama` `sqlite` `openai` | `ai-agents` `automation` `bugbounty` |
