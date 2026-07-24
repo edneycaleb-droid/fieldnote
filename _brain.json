@@ -3896,6 +3896,36 @@
       "skills": [
         "airecon_autonomous_pentesting"
       ]
+    },
+    "design": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "design-patterns": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "design-system": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "development": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "interview": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
     }
   },
   "tools": {
@@ -4904,7 +4934,7 @@
       ]
     },
     "python": {
-      "freq": 15,
+      "freq": 16,
       "skills": [
         "rag_techniques",
         "mcp_agent",
@@ -4920,7 +4950,8 @@
         "openakita",
         "deepseek_671b_sft_guide",
         "autogpt",
-        "airecon"
+        "airecon",
+        "system_design_primer"
       ]
     },
     "semantic-search": {
@@ -5039,12 +5070,13 @@
       ]
     },
     "ray": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "mcp_go",
         "awesome_mcp_servers",
         "forge",
-        "deepseek_671b_sft_guide"
+        "deepseek_671b_sft_guide",
+        "system_design_primer"
       ]
     },
     "Go": {
@@ -7153,6 +7185,78 @@
       "freq": 1,
       "skills": [
         "airecon_autonomous_pentesting"
+      ]
+    },
+    "design": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "design-patterns": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "design-system": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "development": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "interview": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "interview-practice": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "interview-questions": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "programming": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "system": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "web": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "web-application": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
+      ]
+    },
+    "webapp": {
+      "freq": 1,
+      "skills": [
+        "system_design_primer"
       ]
     }
   },
@@ -9984,6 +10088,42 @@
         "penetration-testing"
       ],
       "step_count": 12
+    },
+    "system_design_primer": {
+      "concepts": [
+        "design",
+        "design-patterns",
+        "design-system",
+        "development",
+        "interview"
+      ],
+      "tools": [
+        "ray",
+        "design",
+        "design-patterns",
+        "design-system",
+        "development",
+        "interview",
+        "interview-practice",
+        "interview-questions",
+        "programming",
+        "python",
+        "system",
+        "web",
+        "web-application",
+        "webapp"
+      ],
+      "tags": [
+        "design",
+        "design-patterns",
+        "design-system",
+        "development",
+        "interview",
+        "python",
+        "ai",
+        "llm"
+      ],
+      "step_count": 8
     }
   },
   "relationships": {
@@ -14059,6 +14199,9 @@
       "airecon": [
         "python",
         "openai"
+      ],
+      "system_design_primer": [
+        "python"
       ]
     },
     "advanced_retrieval_augmented_generation": {
@@ -14437,6 +14580,9 @@
       "headroom": [
         "llm",
         "ai"
+      ],
+      "system_design_primer": [
+        "ray"
       ]
     },
     "mcp_agent": {
@@ -14627,6 +14773,9 @@
         "python",
         "ai-agents",
         "openai"
+      ],
+      "system_design_primer": [
+        "python"
       ]
     },
     "mcp_agent_framework": {
@@ -15147,6 +15296,9 @@
       "airecon": [
         "docker",
         "sqlite"
+      ],
+      "system_design_primer": [
+        "ray"
       ]
     },
     "mcp_server_implementations": {
@@ -15549,6 +15701,9 @@
       "airecon": [
         "python",
         "openai"
+      ],
+      "system_design_primer": [
+        "python"
       ]
     },
     "griptape_framework": {
@@ -15918,6 +16073,10 @@
         "python",
         "openai",
         "ollama"
+      ],
+      "system_design_primer": [
+        "python",
+        "ray"
       ]
     },
     "forge_llm_tool_calling_framework": {
@@ -16198,6 +16357,9 @@
       ],
       "airecon": [
         "python"
+      ],
+      "system_design_primer": [
+        "python"
       ]
     },
     "pasa": {
@@ -16359,6 +16521,9 @@
       ],
       "airecon_autonomous_pentesting": [
         "Python"
+      ],
+      "system_design_primer": [
+        "python"
       ]
     },
     "paper_agent": {
@@ -16505,6 +16670,9 @@
       "airecon": [
         "python",
         "openai"
+      ],
+      "system_design_primer": [
+        "python"
       ]
     },
     "lightagent_framework": {
@@ -16860,6 +17028,9 @@
       "airecon": [
         "python",
         "openai"
+      ],
+      "system_design_primer": [
+        "python"
       ]
     },
     "agentic_video_production": {
@@ -16990,6 +17161,9 @@
         "python",
         "automation",
         "openai"
+      ],
+      "system_design_primer": [
+        "python"
       ]
     },
     "leon_ai_assistant": {
@@ -17245,6 +17419,9 @@
         "docker",
         "python",
         "openai"
+      ],
+      "system_design_primer": [
+        "python"
       ]
     },
     "py_xiaozhi": {
@@ -17332,6 +17509,9 @@
       "airecon": [
         "python",
         "gemini"
+      ],
+      "system_design_primer": [
+        "python"
       ]
     },
     "cross_platform_py_xiaozhi": {
@@ -17513,6 +17693,9 @@
         "openai",
         "python",
         "gemini"
+      ],
+      "system_design_primer": [
+        "python"
       ]
     },
     "modular_speech_to_speech_pipeline": {
@@ -17755,6 +17938,9 @@
       ],
       "airecon_autonomous_pentesting": [
         "Python"
+      ],
+      "system_design_primer": [
+        "python"
       ]
     },
     "web_rover_ai_agent": {
@@ -18291,6 +18477,10 @@
       "airecon": [
         "python",
         "openai"
+      ],
+      "system_design_primer": [
+        "python",
+        "ray"
       ]
     },
     "deepseek_v3_r1_fine_tuning": {
@@ -18723,6 +18913,9 @@
         "docker",
         "python",
         "openai"
+      ],
+      "system_design_primer": [
+        "python"
       ]
     },
     "auto_gpt_deployment": {
@@ -19944,6 +20137,9 @@
       "litellm": [
         "openai",
         "gemini"
+      ],
+      "system_design_primer": [
+        "python"
       ]
     },
     "airecon_autonomous_pentesting": {
@@ -20062,8 +20258,66 @@
         "bash",
         "Python"
       ]
+    },
+    "system_design_primer": {
+      "rag_techniques": [
+        "python"
+      ],
+      "mcp_go": [
+        "ray"
+      ],
+      "mcp_agent": [
+        "python"
+      ],
+      "awesome_mcp_servers": [
+        "ray"
+      ],
+      "griptape": [
+        "python"
+      ],
+      "forge": [
+        "python",
+        "ray"
+      ],
+      "trainer": [
+        "python"
+      ],
+      "pasa": [
+        "python"
+      ],
+      "lightagent": [
+        "python"
+      ],
+      "openmontage": [
+        "python"
+      ],
+      "leon": [
+        "python"
+      ],
+      "speech_to_speech": [
+        "python"
+      ],
+      "py_xiaozhi": [
+        "python"
+      ],
+      "openakita": [
+        "python"
+      ],
+      "webrover": [
+        "python"
+      ],
+      "deepseek_671b_sft_guide": [
+        "python",
+        "ray"
+      ],
+      "autogpt": [
+        "python"
+      ],
+      "airecon": [
+        "python"
+      ]
     }
   },
-  "updated_at": "2026-07-24T01:10:45.936175+00:00",
-  "total_skills": 88
+  "updated_at": "2026-07-24T02:34:34.432615+00:00",
+  "total_skills": 89
 }
