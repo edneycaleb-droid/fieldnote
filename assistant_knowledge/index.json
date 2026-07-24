@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "practical-tutorials--project-based-learning",
+      "title": "Discovered: practical-tutorials/project-based-learning",
+      "category": "discoveries",
+      "confidence": "verified",
+      "updated_at": "2026-07-24T02:37:53.712426+00:00",
+      "path": "discoveries/practical-tutorials--project-based-learning.md"
+    },
+    {
       "slug": "vinta--awesome-python",
       "title": "Discovered: vinta/awesome-python",
       "category": "discoveries",
@@ -441,5 +449,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-24T02:37:52.239819+00:00"
+  "updated_at": "2026-07-24T02:37:53.718399+00:00"
 }
