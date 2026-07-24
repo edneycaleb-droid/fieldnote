@@ -1672,9 +1672,10 @@
       ]
     },
     "Authentication": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "fastapi_mcp_integration"
+        "fastapi_mcp_integration",
+        "awesome_python"
       ]
     },
     "Authorization": {
@@ -1872,9 +1873,10 @@
       ]
     },
     "Search": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "r2r"
+        "r2r",
+        "awesome_python"
       ]
     },
     "mcp": {
@@ -3872,9 +3874,10 @@
       ]
     },
     "Penetration Testing": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "airecon_autonomous_pentesting"
+        "airecon_autonomous_pentesting",
+        "awesome_python"
       ]
     },
     "Privacy-Preserving AI": {
@@ -4068,11 +4071,419 @@
       "skills": [
         "awesome_python"
       ]
+    },
+    "AI and Agents": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Algorithms and Design Patterns": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Asynchronous Programming": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Audio & Video Processing": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Build Tools": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Caching": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "CMS": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Code Analysis": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Computer Vision": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Configuration Files": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Cryptography": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Data Analysis": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Data Ingestion / ETL": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Data Validation": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Data Visualization": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Database": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Database Drivers": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Debugging Tools": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Deep Learning": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "DevOps Tools": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Distributed Computing": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Email": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Environment Management": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "File Format Processing": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "File Manipulation": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Functional Programming": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Game Development": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Geolocation": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "GUI Development": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Hardware": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "HTML Manipulation": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "HTTP Clients": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Image Processing": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Implementations": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Interactive Interpreter": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Job Schedulers": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Logging": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Machine Learning": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Messaging": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Microsoft Windows": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Miscellaneous": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Natural Language Processing": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Network Virtualization": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "ORM": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Package Management": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Package Repositories": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Python Frameworks": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Python Language": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Python Libraries": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Python Toolchain": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Python Tools": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Quantum Computing": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Recommender Systems": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Science": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Serialization": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Static Site Generators": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Task Queues": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Template Engines": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Testing": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Text Processing": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Web APIs": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Web Asset Management": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Web Development": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Web Frameworks": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Web Security": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Web Scraping": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "WebSocket": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "Web Servers": {
+      "freq": 1,
+      "skills": [
+        "awesome_python"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 49,
+      "freq": 50,
       "skills": [
         "new_claude_opus_5_leaks",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
@@ -4097,7 +4508,8 @@
         "loushang_ai_native_agent_harness",
         "auto_gpt_deployment",
         "headroom_context_compression",
-        "litellm"
+        "litellm",
+        "awesome_python"
       ]
     },
     "Anthropic": {
@@ -4140,7 +4552,7 @@
       ]
     },
     "Docker": {
-      "freq": 27,
+      "freq": 28,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -4160,11 +4572,12 @@
         "auto_gpt_deployment",
         "headroom_context_compression",
         "litellm",
-        "airecon_autonomous_pentesting"
+        "airecon_autonomous_pentesting",
+        "awesome_python"
       ]
     },
     "bash": {
-      "freq": 11,
+      "freq": 12,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "new_hermes_agent_os_is_insane",
@@ -4172,11 +4585,12 @@
         "auto_gpt_deployment",
         "headroom_context_compression",
         "litellm",
-        "airecon_autonomous_pentesting"
+        "airecon_autonomous_pentesting",
+        "awesome_python"
       ]
     },
     "Python": {
-      "freq": 29,
+      "freq": 30,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -4197,11 +4611,12 @@
         "document_conversion",
         "headroom_context_compression",
         "litellm",
-        "airecon_autonomous_pentesting"
+        "airecon_autonomous_pentesting",
+        "awesome_python"
       ]
     },
     "LLM": {
-      "freq": 15,
+      "freq": 16,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "hermes_agent_full_course_setup_guide_for_complete_",
@@ -4210,7 +4625,8 @@
         "new_hermes_agent_os_is_insane",
         "griptape_framework",
         "headroom_context_compression",
-        "litellm"
+        "litellm",
+        "awesome_python"
       ]
     },
     "OpenAI": {
@@ -4739,7 +5155,7 @@
       ]
     },
     "gemini": {
-      "freq": 10,
+      "freq": 11,
       "skills": [
         "ragflow",
         "agentic_rag_for_dummies",
@@ -5045,7 +5461,7 @@
       ]
     },
     "langchain": {
-      "freq": 10,
+      "freq": 11,
       "skills": [
         "rag_techniques",
         "agentic_rag_for_dummies",
@@ -5059,7 +5475,7 @@
       ]
     },
     "llama-index": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "rag_techniques",
         "awesome_python"
@@ -5120,7 +5536,7 @@
       ]
     },
     "fastapi": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "fastapi_mcp",
         "griptape",
@@ -5217,7 +5633,7 @@
       ]
     },
     "ray": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "mcp_go",
         "awesome_mcp_servers",
@@ -5237,7 +5653,7 @@
       ]
     },
     "pydantic": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "mcp_agent",
         "griptape",
@@ -5786,7 +6202,7 @@
       ]
     },
     "langgraph": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "agentic_rag_for_dummies",
         "webrover",
@@ -6135,7 +6551,7 @@
       ]
     },
     "tensorflow": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "trainer",
         "awesome_python"
@@ -7178,7 +7594,7 @@
       ]
     },
     "autogen": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "markitdown",
         "awesome_python"
@@ -7425,24 +7841,30 @@
       ]
     },
     "sklearn": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "awesome_python"
       ]
     },
     "flask": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "awesome_python"
       ]
     },
     "celery": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "awesome_python"
       ]
     },
     "django": {
+      "freq": 2,
+      "skills": [
+        "awesome_python"
+      ]
+    },
+    "vinta/awesome-python": {
       "freq": 1,
       "skills": [
         "awesome_python"
@@ -10330,11 +10752,77 @@
     },
     "awesome_python": {
       "concepts": [
-        "awesome",
-        "collections",
-        "python",
-        "python-frameworks",
-        "python-libraries"
+        "AI and Agents",
+        "Algorithms and Design Patterns",
+        "Asynchronous Programming",
+        "Authentication",
+        "Audio & Video Processing",
+        "Build Tools",
+        "Caching",
+        "CMS",
+        "Code Analysis",
+        "Computer Vision",
+        "Configuration Files",
+        "Cryptography",
+        "Data Analysis",
+        "Data Ingestion / ETL",
+        "Data Validation",
+        "Data Visualization",
+        "Database",
+        "Database Drivers",
+        "Debugging Tools",
+        "Deep Learning",
+        "DevOps Tools",
+        "Distributed Computing",
+        "Email",
+        "Environment Management",
+        "File Format Processing",
+        "File Manipulation",
+        "Functional Programming",
+        "Game Development",
+        "Geolocation",
+        "GUI Development",
+        "Hardware",
+        "HTML Manipulation",
+        "HTTP Clients",
+        "Image Processing",
+        "Implementations",
+        "Interactive Interpreter",
+        "Job Schedulers",
+        "Logging",
+        "Machine Learning",
+        "Messaging",
+        "Microsoft Windows",
+        "Miscellaneous",
+        "Natural Language Processing",
+        "Network Virtualization",
+        "ORM",
+        "Package Management",
+        "Package Repositories",
+        "Penetration Testing",
+        "Python Frameworks",
+        "Python Language",
+        "Python Libraries",
+        "Python Toolchain",
+        "Python Tools",
+        "Quantum Computing",
+        "Recommender Systems",
+        "Science",
+        "Serialization",
+        "Search",
+        "Static Site Generators",
+        "Task Queues",
+        "Template Engines",
+        "Testing",
+        "Text Processing",
+        "Web APIs",
+        "Web Asset Management",
+        "Web Development",
+        "Web Frameworks",
+        "Web Security",
+        "Web Scraping",
+        "WebSocket",
+        "Web Servers"
       ],
       "tools": [
         "langgraph",
@@ -10350,19 +10838,15 @@
         "celery",
         "fastapi",
         "django",
-        "crewai",
-        "openai"
+        "Claude",
+        "Docker",
+        "bash",
+        "Python",
+        "LLM",
+        "vinta/awesome-python"
       ],
-      "tags": [
-        "awesome",
-        "collections",
-        "python",
-        "python-frameworks",
-        "python-libraries",
-        "ai",
-        "llm"
-      ],
-      "step_count": 8
+      "tags": [],
+      "step_count": 12
     }
   },
   "relationships": {
@@ -10516,6 +11000,9 @@
       "litellm": [
         "anthropic",
         "Claude"
+      ],
+      "awesome_python": [
+        "Claude"
       ]
     },
     "100_hours_of_hermes_agent_lessons_in_19_minutes": {
@@ -10636,6 +11123,9 @@
         "Claude"
       ],
       "litellm": [
+        "Claude"
+      ],
+      "awesome_python": [
         "Claude"
       ]
     },
@@ -10854,6 +11344,13 @@
         "Docker",
         "bash",
         "Python"
+      ],
+      "awesome_python": [
+        "LLM",
+        "bash",
+        "Python",
+        "Claude",
+        "Docker"
       ]
     },
     "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
@@ -11225,6 +11722,9 @@
       "litellm": [
         "anthropic",
         "Claude"
+      ],
+      "awesome_python": [
+        "Claude"
       ]
     },
     "by_august_we_ll_have_frontier_ai_running_locally": {
@@ -11460,6 +11960,9 @@
         "Claude"
       ],
       "litellm": [
+        "Claude"
+      ],
+      "awesome_python": [
         "Claude"
       ]
     },
@@ -11698,6 +12201,11 @@
       "airecon_autonomous_pentesting": [
         "Docker",
         "Python"
+      ],
+      "awesome_python": [
+        "Python",
+        "Claude",
+        "Docker"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -11857,6 +12365,10 @@
       ],
       "airecon_autonomous_pentesting": [
         "Python"
+      ],
+      "awesome_python": [
+        "Python",
+        "Claude"
       ]
     },
     "new_hermes_paperclip_ai_agent_update_is_insane": {
@@ -12133,6 +12645,9 @@
       "litellm": [
         "anthropic",
         "Claude"
+      ],
+      "awesome_python": [
+        "Claude"
       ]
     },
     "you_need_to_use_hermes_right_now_goodbye_openclaw": {
@@ -12379,6 +12894,12 @@
       "airecon_autonomous_pentesting": [
         "Docker",
         "Python"
+      ],
+      "awesome_python": [
+        "LLM",
+        "Python",
+        "Claude",
+        "Docker"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -12563,6 +13084,13 @@
         "Docker",
         "bash",
         "Python"
+      ],
+      "awesome_python": [
+        "LLM",
+        "bash",
+        "Python",
+        "Claude",
+        "Docker"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -12762,7 +13290,8 @@
         "openai"
       ],
       "awesome_python": [
-        "openai"
+        "LLM",
+        "Claude"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -12861,6 +13390,9 @@
       ],
       "litellm": [
         "Claude"
+      ],
+      "awesome_python": [
+        "Claude"
       ]
     },
     "every_hermes_concept_explained_for_normal_people": {
@@ -12935,6 +13467,9 @@
         "Claude"
       ],
       "litellm": [
+        "Claude"
+      ],
+      "awesome_python": [
         "Claude"
       ]
     },
@@ -13033,6 +13568,9 @@
         "Claude"
       ],
       "litellm": [
+        "Claude"
+      ],
+      "awesome_python": [
         "Claude"
       ]
     },
@@ -13241,6 +13779,11 @@
       ],
       "airecon_autonomous_pentesting": [
         "Docker"
+      ],
+      "awesome_python": [
+        "LLM",
+        "Claude",
+        "Docker"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -13349,6 +13892,9 @@
         "Claude"
       ],
       "litellm": [
+        "Claude"
+      ],
+      "awesome_python": [
         "Claude"
       ]
     },
@@ -13602,6 +14148,9 @@
       ],
       "airecon_autonomous_pentesting": [
         "Docker"
+      ],
+      "awesome_python": [
+        "Docker"
       ]
     },
     "ragflow": {
@@ -13757,7 +14306,6 @@
         "gemini"
       ],
       "awesome_python": [
-        "openai",
         "gemini"
       ]
     },
@@ -13835,6 +14383,10 @@
         "Docker",
         "git",
         "bash"
+      ],
+      "awesome_python": [
+        "bash",
+        "Docker"
       ]
     },
     "lightrag": {
@@ -13995,6 +14547,9 @@
       ],
       "airecon_autonomous_pentesting": [
         "Python"
+      ],
+      "awesome_python": [
+        "Python"
       ]
     },
     "lightrag_setup": {
@@ -14074,6 +14629,9 @@
         "uv"
       ],
       "airecon_autonomous_pentesting": [
+        "Docker"
+      ],
+      "awesome_python": [
         "Docker"
       ]
     },
@@ -14194,6 +14752,9 @@
       ],
       "airecon_autonomous_pentesting": [
         "Python"
+      ],
+      "awesome_python": [
+        "Python"
       ]
     },
     "graphrag_system": {
@@ -14282,6 +14843,10 @@
         "Python"
       ],
       "airecon_autonomous_pentesting": [
+        "Python"
+      ],
+      "awesome_python": [
+        "LLM",
         "Python"
       ]
     },
@@ -14453,10 +15018,8 @@
         "python"
       ],
       "awesome_python": [
-        "python",
         "llama-index",
-        "langchain",
-        "openai"
+        "langchain"
       ]
     },
     "advanced_retrieval_augmented_generation": {
@@ -14651,6 +15214,7 @@
         "Python"
       ],
       "awesome_python": [
+        "Python",
         "fastapi"
       ]
     },
@@ -14741,6 +15305,10 @@
       "litellm": [
         "Claude",
         "uv"
+      ],
+      "awesome_python": [
+        "Authentication",
+        "Claude"
       ]
     },
     "mcp_go": {
@@ -15039,9 +15607,7 @@
         "python"
       ],
       "awesome_python": [
-        "python",
-        "pydantic",
-        "openai"
+        "pydantic"
       ]
     },
     "mcp_agent_framework": {
@@ -15180,6 +15746,11 @@
         "LLM"
       ],
       "airecon_autonomous_pentesting": [
+        "Docker"
+      ],
+      "awesome_python": [
+        "LLM",
+        "Search",
         "Docker"
       ]
     },
@@ -15570,8 +16141,7 @@
         "ray"
       ],
       "awesome_python": [
-        "ray",
-        "awesome"
+        "ray"
       ]
     },
     "mcp_server_implementations": {
@@ -15654,6 +16224,9 @@
         "Docker"
       ],
       "airecon_autonomous_pentesting": [
+        "Docker"
+      ],
+      "awesome_python": [
         "Docker"
       ]
     },
@@ -15979,12 +16552,9 @@
         "python"
       ],
       "awesome_python": [
-        "python",
         "pydantic",
-        "openai",
         "langchain",
-        "fastapi",
-        "crewai"
+        "fastapi"
       ]
     },
     "griptape_framework": {
@@ -16179,6 +16749,12 @@
         "Docker",
         "AI Agents",
         "Python"
+      ],
+      "awesome_python": [
+        "LLM",
+        "Python",
+        "Claude",
+        "Docker"
       ]
     },
     "forge": {
@@ -16360,10 +16936,8 @@
         "ray"
       ],
       "awesome_python": [
-        "python",
-        "pydantic",
-        "openai",
-        "ray"
+        "ray",
+        "pydantic"
       ]
     },
     "forge_llm_tool_calling_framework": {
@@ -16522,6 +17096,9 @@
       ],
       "airecon_autonomous_pentesting": [
         "Docker"
+      ],
+      "awesome_python": [
+        "Docker"
       ]
     },
     "trainer": {
@@ -16649,7 +17226,6 @@
         "python"
       ],
       "awesome_python": [
-        "python",
         "tensorflow"
       ]
     },
@@ -16817,7 +17393,7 @@
         "python"
       ],
       "awesome_python": [
-        "python"
+        "Python"
       ]
     },
     "paper_agent": {
@@ -16969,8 +17545,6 @@
         "python"
       ],
       "awesome_python": [
-        "python",
-        "openai",
         "langchain"
       ]
     },
@@ -17060,6 +17634,10 @@
         "Tool Calling",
         "Memory Management",
         "AI Agents",
+        "Python"
+      ],
+      "awesome_python": [
+        "LLM",
         "Python"
       ]
     },
@@ -17577,6 +18155,10 @@
         "Docker",
         "Memory Management",
         "Python"
+      ],
+      "awesome_python": [
+        "Python",
+        "Docker"
       ]
     },
     "speech_to_speech": {
@@ -17825,7 +18407,6 @@
         "python"
       ],
       "awesome_python": [
-        "python",
         "gemini"
       ]
     },
@@ -18013,8 +18594,6 @@
         "python"
       ],
       "awesome_python": [
-        "python",
-        "openai",
         "gemini"
       ]
     },
@@ -18054,6 +18633,9 @@
         "LLM"
       ],
       "litellm": [
+        "LLM"
+      ],
+      "awesome_python": [
         "LLM"
       ]
     },
@@ -18263,10 +18845,9 @@
         "python"
       ],
       "awesome_python": [
-        "python",
-        "openai",
-        "langchain",
-        "langgraph"
+        "langgraph",
+        "Python",
+        "langchain"
       ]
     },
     "web_rover_ai_agent": {
@@ -18345,6 +18926,9 @@
         "Claude"
       ],
       "litellm": [
+        "Claude"
+      ],
+      "awesome_python": [
         "Claude"
       ]
     },
@@ -18483,8 +19067,6 @@
       "awesome_python": [
         "langgraph",
         "pydantic",
-        "openai",
-        "crewai",
         "gemini"
       ]
     },
@@ -18563,7 +19145,8 @@
         "Docker"
       ],
       "awesome_python": [
-        "pydantic"
+        "pydantic",
+        "Docker"
       ]
     },
     "nornicdb": {
@@ -18684,6 +19267,9 @@
         "Docker"
       ],
       "airecon_autonomous_pentesting": [
+        "Docker"
+      ],
+      "awesome_python": [
         "Docker"
       ]
     },
@@ -18819,8 +19405,6 @@
         "ray"
       ],
       "awesome_python": [
-        "python",
-        "openai",
         "ray"
       ]
     },
@@ -19082,6 +19666,9 @@
       ],
       "airecon_autonomous_pentesting": [
         "git"
+      ],
+      "awesome_python": [
+        "Claude"
       ]
     },
     "autogpt": {
@@ -19443,6 +20030,12 @@
         "bash",
         "AI Agents",
         "Python"
+      ],
+      "awesome_python": [
+        "Python",
+        "bash",
+        "Claude",
+        "Docker"
       ]
     },
     "markitdown": {
@@ -19589,7 +20182,7 @@
         "Python"
       ],
       "awesome_python": [
-        "openai",
+        "Python",
         "langchain",
         "autogen"
       ]
@@ -19697,6 +20290,9 @@
         "Python"
       ],
       "airecon_autonomous_pentesting": [
+        "Python"
+      ],
+      "awesome_python": [
         "Python"
       ]
     },
@@ -19888,7 +20484,6 @@
         "gemini"
       ],
       "awesome_python": [
-        "openai",
         "gemini",
         "langchain",
         "fastapi"
@@ -20097,6 +20692,13 @@
         "bash",
         "Context Compression",
         "Python"
+      ],
+      "awesome_python": [
+        "LLM",
+        "bash",
+        "Python",
+        "Claude",
+        "Docker"
       ]
     },
     "litellm": {
@@ -20374,9 +20976,11 @@
       ],
       "awesome_python": [
         "langgraph",
-        "gemini",
+        "LLM",
         "langchain",
-        "openai"
+        "bash",
+        "Python",
+        "Claude"
       ]
     },
     "airecon": {
@@ -20510,8 +21114,6 @@
         "python"
       ],
       "awesome_python": [
-        "python",
-        "openai",
         "gemini"
       ]
     },
@@ -20630,6 +21232,12 @@
         "Docker",
         "bash",
         "Python"
+      ],
+      "awesome_python": [
+        "Python",
+        "bash",
+        "Penetration Testing",
+        "Docker"
       ]
     },
     "system_design_primer": {
@@ -20696,66 +21304,53 @@
         "Load Balancing"
       ],
       "awesome_python": [
-        "python",
         "ray"
       ]
     },
     "awesome_python": {
       "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
-        "openai"
+        "LLM",
+        "Claude"
       ],
       "dify": [
         "openai"
       ],
       "ragflow": [
-        "openai",
         "gemini"
       ],
       "rag_techniques": [
-        "python",
         "llama-index",
-        "langchain",
-        "openai"
+        "langchain"
       ],
       "fastapi_mcp": [
+        "Python",
         "fastapi"
       ],
       "mcp_go": [
         "ray"
       ],
       "mcp_agent": [
-        "python",
-        "pydantic",
-        "openai"
+        "pydantic"
       ],
       "awesome_mcp_servers": [
-        "ray",
-        "awesome"
-      ],
-      "griptape": [
-        "python",
-        "pydantic",
-        "openai",
-        "langchain",
-        "fastapi",
-        "crewai"
-      ],
-      "forge": [
-        "python",
-        "pydantic",
-        "openai",
         "ray"
       ],
+      "griptape": [
+        "pydantic",
+        "langchain",
+        "fastapi"
+      ],
+      "forge": [
+        "ray",
+        "pydantic"
+      ],
       "trainer": [
-        "python",
         "tensorflow"
       ],
       "pasa": [
-        "python"
+        "Python"
       ],
       "lightagent": [
-        "python",
-        "openai",
         "langchain"
       ],
       "openmontage": [
@@ -20771,33 +21366,26 @@
         "openai"
       ],
       "py_xiaozhi": [
-        "python",
         "gemini"
       ],
       "openakita": [
-        "python",
-        "openai",
         "gemini"
       ],
       "webrover": [
-        "python",
-        "openai",
-        "langchain",
-        "langgraph"
+        "langgraph",
+        "Python",
+        "langchain"
       ],
       "pydantic_deepagents": [
         "langgraph",
         "pydantic",
-        "openai",
-        "crewai",
         "gemini"
       ],
       "live_run_forking_with_pydantic_deep_agents": [
-        "pydantic"
+        "pydantic",
+        "Docker"
       ],
       "deepseek_671b_sft_guide": [
-        "python",
-        "openai",
         "ray"
       ],
       "loushang": [
@@ -20808,33 +21396,175 @@
         "openai"
       ],
       "markitdown": [
-        "openai",
+        "Python",
         "langchain",
         "autogen"
       ],
       "headroom": [
-        "openai",
         "gemini",
         "langchain",
         "fastapi"
       ],
       "litellm": [
         "langgraph",
-        "gemini",
+        "LLM",
         "langchain",
-        "openai"
+        "bash",
+        "Python",
+        "Claude"
       ],
       "airecon": [
-        "python",
-        "openai",
         "gemini"
       ],
       "system_design_primer": [
-        "python",
         "ray"
+      ],
+      "new_claude_opus_5_leaks": [
+        "Claude"
+      ],
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "Claude"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "LLM",
+        "bash",
+        "Python",
+        "Claude",
+        "Docker"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude"
+      ],
+      "yes_the_kimi_k3_hype_is_real": [
+        "Claude"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "Python",
+        "Claude",
+        "Docker"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Python",
+        "Claude"
+      ],
+      "china_just_beat_claude_ai_kimi_k3": [
+        "Claude"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "LLM",
+        "Python",
+        "Claude",
+        "Docker"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "LLM",
+        "bash",
+        "Python",
+        "Claude",
+        "Docker"
+      ],
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "Claude"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "Claude"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "LLM",
+        "Claude",
+        "Docker"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Claude"
+      ],
+      "dify_deployment": [
+        "Docker"
+      ],
+      "ragflow_self_hosting_guide": [
+        "bash",
+        "Docker"
+      ],
+      "lightrag": [
+        "Python"
+      ],
+      "lightrag_setup": [
+        "Docker"
+      ],
+      "graphrag": [
+        "Python"
+      ],
+      "graphrag_system": [
+        "LLM",
+        "Python"
+      ],
+      "fastapi_mcp_integration": [
+        "Authentication",
+        "Claude"
+      ],
+      "r2r": [
+        "LLM",
+        "Search",
+        "Docker"
+      ],
+      "mcp_server_implementations": [
+        "Docker"
+      ],
+      "griptape_framework": [
+        "LLM",
+        "Python",
+        "Claude",
+        "Docker"
+      ],
+      "infinity_database": [
+        "Docker"
+      ],
+      "lightagent_framework": [
+        "LLM",
+        "Python"
+      ],
+      "leon_ai_assistant": [
+        "Python",
+        "Docker"
+      ],
+      "modular_speech_to_speech_pipeline": [
+        "LLM"
+      ],
+      "web_rover_ai_agent": [
+        "Claude"
+      ],
+      "nornicdb_deployment": [
+        "Docker"
+      ],
+      "loushang_ai_native_agent_harness": [
+        "Claude"
+      ],
+      "auto_gpt_deployment": [
+        "Python",
+        "bash",
+        "Claude",
+        "Docker"
+      ],
+      "document_conversion": [
+        "Python"
+      ],
+      "headroom_context_compression": [
+        "LLM",
+        "bash",
+        "Python",
+        "Claude",
+        "Docker"
+      ],
+      "airecon_autonomous_pentesting": [
+        "Python",
+        "bash",
+        "Penetration Testing",
+        "Docker"
       ]
     }
   },
-  "updated_at": "2026-07-24T02:35:19.419392+00:00",
+  "updated_at": "2026-07-24T02:36:01.667856+00:00",
   "total_skills": 90
 }
