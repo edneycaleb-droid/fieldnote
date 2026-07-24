@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **144 skills** · Last synced: 2026-07-24 00:02 UTC
+> **145 skills** · Last synced: 2026-07-24 00:02 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Deepseek 671B Sft Guide](skills/deepseek_671b_sft_guide.md) | An open-source solution for full parameter fine-tuning of DeepSeek-V3/R1 671B, i | `vllm` `huggingface` `openai` `ray` | `deepseek-r1` `llm` `moe` |
 | [Deploying NornicDB for Graph and Vector Workloads](skills/nornicdb_deployment.md) | NornicDB is a distributed, low-latency graph and vector database that supports t | `Docker` `Go` `Neo4j` `Bolt` | `Database` `Deployment` `Graph` |
 | [Nornicdb](skills/nornicdb.md) | Nornicdb is a distributed low-latency, Graph+Vector, Temporal MVCC with all sub- | `qdrant` `docker` `bolt` `cypher` | `bolt` `cypher` `database` |
 | [Live Run Forking with Pydantic Deep Agents for Autonomous AI Development](skills/live_run_forking_with_pydantic_deep_agents.md) | Live run forking enables autonomous agents to explore multiple approaches to a p | `Pydantic Deep Agents` `Docker` `Playwright` `pydantic` | `ai-agents` `autonomous-ai` `autonomous-systems` |
