@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **162 skills** · Last synced: 2026-07-24 02:36 UTC
+> **163 skills** · Last synced: 2026-07-24 02:37 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Tensorflow](skills/tensorflow.md) | An Open Source Machine Learning Framework for Everyone | `tensorflow` `numpy` `docker` `deep-learning` | `deep-learning` `deep-neural-networks` `distributed` |
 | [Python](skills/python.md) | All Algorithms implemented in Python | `algorithm` `algorithm-competitions` `algorithms-implemented` `algos` | `algorithm` `algorithm-competitions` `algorithms-implemented` |
 | [Project-Based Learning with Python](skills/project_based_learning_python.md) | This skill focuses on learning programming through building practical projects,  | `HTML Canvas API` | `beginner-project` `css` `game-development` |
 | [Project Based Learning](skills/project_based_learning.md) | Curated list of project-based tutorials | `rabbitmq` `redis` `sklearn` `tensorflow` | `beginner-project` `cpp` `golang` |
