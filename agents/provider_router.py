@@ -1034,10 +1034,16 @@ def call_llm_for_lens(
             result = _IMPL[provider](prompt, max_tokens, json_mode)
             # If previous providers failed (this is a fallback success), tell the user
             if emit_fn and tried:
-                emit_fn(
-                    f"✓ {_PROVIDER_LABELS.get(provider, provider)} fallback working",
-                    "success",
-                )
+                try:
+                    emit_fn(
+                        f"✓ {_PROVIDER_LABELS.get(provider, provider)} fallback working",
+                        "success",
+                    )
+                except Exception as _efn_exc:
+                    log.warning(
+                        "call_llm_for_lens[%s]: emit_fn raised after %s success: %s",
+                        lens, provider, _efn_exc,
+                    )
             if status_fn:
                 try:
                     status_fn(provider_status())
@@ -1061,16 +1067,22 @@ def call_llm_for_lens(
                     (p for p in preferred[idx + 1:] if _is_available(p)), None
                 )
                 err_short = str(e)[:60].split("\n")[0]
-                if next_avail:
-                    to_label = _PROVIDER_LABELS.get(next_avail, next_avail)
-                    emit_fn(
-                        f"⚡ {from_label} → {to_label} fallback ({err_short})",
-                        "warning",
-                    )
-                else:
-                    emit_fn(
-                        f"⚠ {from_label} failed — no further fallbacks ({err_short})",
-                        "warning",
+                try:
+                    if next_avail:
+                        to_label = _PROVIDER_LABELS.get(next_avail, next_avail)
+                        emit_fn(
+                            f"⚡ {from_label} → {to_label} fallback ({err_short})",
+                            "warning",
+                        )
+                    else:
+                        emit_fn(
+                            f"⚠ {from_label} failed — no further fallbacks ({err_short})",
+                            "warning",
+                        )
+                except Exception as _efn_exc:
+                    log.warning(
+                        "call_llm_for_lens[%s]: emit_fn raised after %s failure: %s",
+                        lens, provider, _efn_exc,
                     )
             if status_fn:
                 try:
