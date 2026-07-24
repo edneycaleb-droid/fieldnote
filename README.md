@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **147 skills** · Last synced: 2026-07-24 00:03 UTC
+> **148 skills** · Last synced: 2026-07-24 00:03 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Building and Utilizing AI-Native Agent Harness for Coding Workflows](skills/loushang_ai_native_agent_harness.md) | Loushang is a method-native AI work system for running complex work from intent  | `Loushang` `uv` `pip` `git` | `agent` `ai` `harness` |
 | [Loushang](skills/loushang.md) | AI-native agent harness for coding workflows by python: multi-model LLM orchestr | `redis` `openai` `agent` `agent-harness` | `agent` `agent-harness` `agentic` |
 | [Fine-Tuning DeepSeek-V3/R1 671B for Advanced AI Tasks](skills/deepseek_v3_r1_fine_tuning.md) | Fine-tuning large language models like DeepSeek-V3/R1 671B is crucial for achiev | `DeepSpeed` `vLLM` `Hugging Face Transformers` `Xtuner` | `deep_learning` `nlp` `model_fine_tuning` |
 | [Deepseek 671B Sft Guide](skills/deepseek_671b_sft_guide.md) | An open-source solution for full parameter fine-tuning of DeepSeek-V3/R1 671B, i | `vllm` `huggingface` `openai` `ray` | `deepseek-r1` `llm` `moe` |
