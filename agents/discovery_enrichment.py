@@ -373,6 +373,20 @@ def _enrich_one(item: dict, emit_fn=None) -> None:
         )
     log.info("Enrichment quality gate: %s → %s", full_name, gate_report.summary)
 
+    # Quality regression guard: if the stored skill already has a higher score
+    # than the new pass produced, skip the overwrite.  A second enrichment pass
+    # must never silently downgrade a higher-quality result (e.g. REDUCE over an
+    # existing ALLOW).  We mark the item failed with reason "quality_regression"
+    # so enrich_backlog() applies backoff rather than removing it from the queue.
+    existing_skill_name = disc_log.get(full_name, {}).get("skill_name")
+    if existing_skill_name:
+        existing_score = index.get(existing_skill_name, {}).get("_quality", {}).get("score")
+        if existing_score is not None and gate_report.score < existing_score:
+            raise RuntimeError(
+                f"quality_regression: new score {gate_report.score:.3f} is lower than "
+                f"existing score {existing_score:.3f} for {full_name} — skipping overwrite"
+            )
+
     # Attach quality report so _save_discovered_skill (and ultimately _save_skill)
     # can persist it on the skill and in the index.  This lets the Hub show
     # confidence scores at a glance and future passes detect regressions.
