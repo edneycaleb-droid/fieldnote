@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **155 skills** · Last synced: 2026-07-24 01:10 UTC
+> **156 skills** · Last synced: 2026-07-24 01:10 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Airecon](skills/airecon.md) | AIRecon is an autonomous cybersecurity agent that combines a self-hosted Large L | `gemini` `ollama` `sqlite` `openai` | `ai-agents` `automation` `bugbounty` |
 | [LiteLLM AI Gateway for Unified LLM Access](skills/litellm.md) | LiteLLM provides a unified interface to interact with over 100 Large Language Mo | `gemini` `vllm` `terraform` `langgraph` | `ai-gateway` `developer-tools` `llm` |
 | [Headroom: Context Compression for AI Agents](skills/headroom_context_compression.md) | Headroom provides a context compression layer for AI agents, significantly reduc | `Claude` `Docker` `bash` `Python` | `agent` `ai` `compression` |
 | [Headroom](skills/headroom.md) | Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20 | `gemini` `pytorch` `anthropic` `openai` | `agent` `ai` `anthropic` |
