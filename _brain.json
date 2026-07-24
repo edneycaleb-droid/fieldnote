@@ -1955,9 +1955,10 @@
       ]
     },
     "MCP Server": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "model_context_protocol_go"
+        "model_context_protocol_go",
+        "headroom_context_compression"
       ]
     },
     "MCP Resources": {
@@ -2183,9 +2184,10 @@
       ]
     },
     "Context Compression": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "agentic_rag_for_dummies"
+        "agentic_rag_for_dummies",
+        "headroom_context_compression"
       ]
     },
     "Observability": {
@@ -2246,9 +2248,10 @@
       ]
     },
     "Prompt Engineering": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "griptape_framework"
+        "griptape_framework",
+        "headroom_context_compression"
       ]
     },
     "Memory Management (Conversation, Task, Meta)": {
@@ -3623,11 +3626,83 @@
       "skills": [
         "headroom"
       ]
+    },
+    "AI Agent Proxy": {
+      "freq": 1,
+      "skills": [
+        "headroom_context_compression"
+      ]
+    },
+    "AI Agent Workflow": {
+      "freq": 1,
+      "skills": [
+        "headroom_context_compression"
+      ]
+    },
+    "Agent Memory": {
+      "freq": 1,
+      "skills": [
+        "headroom_context_compression"
+      ]
+    },
+    "Agent Wrapping": {
+      "freq": 1,
+      "skills": [
+        "headroom_context_compression"
+      ]
+    },
+    "Context Window": {
+      "freq": 1,
+      "skills": [
+        "headroom_context_compression"
+      ]
+    },
+    "Content-Aware Compression": {
+      "freq": 1,
+      "skills": [
+        "headroom_context_compression"
+      ]
+    },
+    "Local-First AI": {
+      "freq": 1,
+      "skills": [
+        "headroom_context_compression"
+      ]
+    },
+    "Output Token Reduction": {
+      "freq": 1,
+      "skills": [
+        "headroom_context_compression"
+      ]
+    },
+    "Reversible Compression": {
+      "freq": 1,
+      "skills": [
+        "headroom_context_compression"
+      ]
+    },
+    "Reversible Compression (CCR)": {
+      "freq": 1,
+      "skills": [
+        "headroom_context_compression"
+      ]
+    },
+    "Token Optimization": {
+      "freq": 1,
+      "skills": [
+        "headroom_context_compression"
+      ]
+    },
+    "Tokens": {
+      "freq": 1,
+      "skills": [
+        "headroom_context_compression"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 47,
+      "freq": 48,
       "skills": [
         "new_claude_opus_5_leaks",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
@@ -3650,11 +3725,12 @@
         "griptape_framework",
         "web_rover_ai_agent",
         "loushang_ai_native_agent_harness",
-        "auto_gpt_deployment"
+        "auto_gpt_deployment",
+        "headroom_context_compression"
       ]
     },
     "Anthropic": {
-      "freq": 29,
+      "freq": 30,
       "skills": [
         "new_claude_opus_5_leaks",
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
@@ -3667,7 +3743,8 @@
         "hermes_agent_full_course_setup_guide_for_complete_",
         "this_ai_business_model_is_creating_new_millionaire",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
-        "agentic_rag_for_dummies"
+        "agentic_rag_for_dummies",
+        "headroom_context_compression"
       ]
     },
     "Gemini": {
@@ -3692,7 +3769,7 @@
       ]
     },
     "Docker": {
-      "freq": 24,
+      "freq": 25,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -3709,20 +3786,22 @@
         "leon_ai_assistant",
         "live_run_forking_with_pydantic_deep_agents",
         "nornicdb_deployment",
-        "auto_gpt_deployment"
+        "auto_gpt_deployment",
+        "headroom_context_compression"
       ]
     },
     "bash": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "new_hermes_agent_os_is_insane",
         "ragflow_self_hosting_guide",
-        "auto_gpt_deployment"
+        "auto_gpt_deployment",
+        "headroom_context_compression"
       ]
     },
     "Python": {
-      "freq": 26,
+      "freq": 27,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -3740,22 +3819,24 @@
         "webrover",
         "auto_gpt_deployment",
         "markitdown",
-        "document_conversion"
+        "document_conversion",
+        "headroom_context_compression"
       ]
     },
     "LLM": {
-      "freq": 13,
+      "freq": 14,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "hermes_agent_full_course_setup_guide_for_complete_",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
         "new_hermes_agent_os_is_insane",
-        "griptape_framework"
+        "griptape_framework",
+        "headroom_context_compression"
       ]
     },
     "OpenAI": {
-      "freq": 32,
+      "freq": 33,
       "skills": [
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
@@ -3773,7 +3854,8 @@
         "griptape_framework",
         "loushang_ai_native_agent_harness",
         "auto_gpt_deployment",
-        "document_conversion"
+        "document_conversion",
+        "headroom_context_compression"
       ]
     },
     "Ollama": {
@@ -4713,10 +4795,11 @@
       ]
     },
     "FastAPI": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "fastapi_mcp_integration",
-        "griptape_framework"
+        "griptape_framework",
+        "headroom_context_compression"
       ]
     },
     "MCP": {
@@ -5324,10 +5407,11 @@
       ]
     },
     "LangChain": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "agentic_rag_for_dummies",
-        "griptape_framework"
+        "griptape_framework",
+        "headroom_context_compression"
       ]
     },
     "HuggingFaceEmbeddings": {
@@ -5374,15 +5458,17 @@
       ]
     },
     "CrewAI": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "griptape_framework"
+        "griptape_framework",
+        "headroom_context_compression"
       ]
     },
     "Pydantic": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "griptape_framework"
+        "griptape_framework",
+        "headroom_context_compression"
       ]
     },
     "Bash": {
@@ -6729,6 +6815,24 @@
       "freq": 1,
       "skills": [
         "headroom"
+      ]
+    },
+    "Bedrock": {
+      "freq": 1,
+      "skills": [
+        "headroom_context_compression"
+      ]
+    },
+    "headroom": {
+      "freq": 1,
+      "skills": [
+        "headroom_context_compression"
+      ]
+    },
+    "GitHub Copilot CLI": {
+      "freq": 1,
+      "skills": [
+        "headroom_context_compression"
       ]
     }
   },
@@ -9392,6 +9496,49 @@
         "llm"
       ],
       "step_count": 8
+    },
+    "headroom_context_compression": {
+      "concepts": [
+        "AI Agent Proxy",
+        "AI Agent Workflow",
+        "Agent Memory",
+        "Agent Wrapping",
+        "Context Compression",
+        "Context Window",
+        "Content-Aware Compression",
+        "Local-First AI",
+        "MCP Server",
+        "Output Token Reduction",
+        "Prompt Engineering",
+        "Reversible Compression",
+        "Reversible Compression (CCR)",
+        "Token Optimization",
+        "Tokens"
+      ],
+      "tools": [
+        "Claude",
+        "Docker",
+        "bash",
+        "Python",
+        "LLM",
+        "FastAPI",
+        "CrewAI",
+        "Pydantic",
+        "OpenAI",
+        "LangChain",
+        "Anthropic",
+        "Bedrock",
+        "headroom",
+        "GitHub Copilot CLI"
+      ],
+      "tags": [
+        "agent",
+        "ai",
+        "compression",
+        "llm",
+        "optimization"
+      ],
+      "step_count": 12
     }
   },
   "relationships": {
@@ -9537,6 +9684,10 @@
       ],
       "headroom": [
         "anthropic"
+      ],
+      "headroom_context_compression": [
+        "Anthropic",
+        "Claude"
       ]
     },
     "100_hours_of_hermes_agent_lessons_in_19_minutes": {
@@ -9652,6 +9803,9 @@
       ],
       "headroom": [
         "agent"
+      ],
+      "headroom_context_compression": [
+        "Claude"
       ]
     },
     "hermes_agent_tutorial_for_beginners_full_step_by_s": {
@@ -9850,6 +10004,13 @@
       ],
       "headroom": [
         "agent"
+      ],
+      "headroom_context_compression": [
+        "Claude",
+        "bash",
+        "LLM",
+        "Docker",
+        "Python"
       ]
     },
     "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
@@ -9925,6 +10086,10 @@
         "OpenAI"
       ],
       "document_conversion": [
+        "OpenAI"
+      ],
+      "headroom_context_compression": [
+        "Anthropic",
         "OpenAI"
       ]
     },
@@ -10209,6 +10374,10 @@
       ],
       "headroom": [
         "anthropic"
+      ],
+      "headroom_context_compression": [
+        "OpenAI",
+        "Claude"
       ]
     },
     "by_august_we_ll_have_frontier_ai_running_locally": {
@@ -10305,6 +10474,9 @@
         "OpenAI"
       ],
       "document_conversion": [
+        "OpenAI"
+      ],
+      "headroom_context_compression": [
         "OpenAI"
       ]
     },
@@ -10434,6 +10606,11 @@
       ],
       "document_conversion": [
         "OpenAI"
+      ],
+      "headroom_context_compression": [
+        "Anthropic",
+        "OpenAI",
+        "Claude"
       ]
     },
     "this_100_self_improving_ai_agent_is_insane_just_wa": {
@@ -10655,6 +10832,13 @@
       ],
       "headroom": [
         "agent"
+      ],
+      "headroom_context_compression": [
+        "Claude",
+        "OpenAI",
+        "Anthropic",
+        "Docker",
+        "Python"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -10802,6 +10986,11 @@
       ],
       "headroom": [
         "agent"
+      ],
+      "headroom_context_compression": [
+        "Anthropic",
+        "Claude",
+        "Python"
       ]
     },
     "new_hermes_paperclip_ai_agent_update_is_insane": {
@@ -10885,6 +11074,9 @@
         "OpenAI"
       ],
       "document_conversion": [
+        "OpenAI"
+      ],
+      "headroom_context_compression": [
         "OpenAI"
       ]
     },
@@ -11066,6 +11258,11 @@
       ],
       "headroom": [
         "anthropic"
+      ],
+      "headroom_context_compression": [
+        "Anthropic",
+        "OpenAI",
+        "Claude"
       ]
     },
     "you_need_to_use_hermes_right_now_goodbye_openclaw": {
@@ -11294,6 +11491,13 @@
       "headroom": [
         "anthropic",
         "agent"
+      ],
+      "headroom_context_compression": [
+        "Claude",
+        "OpenAI",
+        "LLM",
+        "Docker",
+        "Python"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -11458,6 +11662,13 @@
         "Python"
       ],
       "document_conversion": [
+        "Python"
+      ],
+      "headroom_context_compression": [
+        "Claude",
+        "bash",
+        "LLM",
+        "Docker",
         "Python"
       ]
     },
@@ -11642,6 +11853,12 @@
       ],
       "headroom": [
         "openai"
+      ],
+      "headroom_context_compression": [
+        "Anthropic",
+        "OpenAI",
+        "LLM",
+        "Claude"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -11734,6 +11951,9 @@
       ],
       "auto_gpt_deployment": [
         "Claude"
+      ],
+      "headroom_context_compression": [
+        "Claude"
       ]
     },
     "every_hermes_concept_explained_for_normal_people": {
@@ -11802,6 +12022,9 @@
         "Claude"
       ],
       "auto_gpt_deployment": [
+        "Claude"
+      ],
+      "headroom_context_compression": [
         "Claude"
       ]
     },
@@ -11893,6 +12116,10 @@
         "Claude"
       ],
       "auto_gpt_deployment": [
+        "Claude"
+      ],
+      "headroom_context_compression": [
+        "Anthropic",
         "Claude"
       ]
     },
@@ -12086,6 +12313,13 @@
       ],
       "headroom": [
         "agent"
+      ],
+      "headroom_context_compression": [
+        "Claude",
+        "OpenAI",
+        "LLM",
+        "Anthropic",
+        "Docker"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -12187,6 +12421,11 @@
       ],
       "document_conversion": [
         "OpenAI"
+      ],
+      "headroom_context_compression": [
+        "Anthropic",
+        "OpenAI",
+        "Claude"
       ]
     },
     "dify": {
@@ -12418,6 +12657,9 @@
       ],
       "auto_gpt_deployment": [
         "Docker"
+      ],
+      "headroom_context_compression": [
+        "Docker"
       ]
     },
     "ragflow": {
@@ -12623,6 +12865,10 @@
       ],
       "document_conversion": [
         "Large Language Models (LLMs)"
+      ],
+      "headroom_context_compression": [
+        "Docker",
+        "bash"
       ]
     },
     "lightrag": {
@@ -12770,6 +13016,9 @@
       ],
       "headroom": [
         "llm"
+      ],
+      "headroom_context_compression": [
+        "Python"
       ]
     },
     "lightrag_setup": {
@@ -12839,6 +13088,9 @@
         "uv"
       ],
       "auto_gpt_deployment": [
+        "Docker"
+      ],
+      "headroom_context_compression": [
         "Docker"
       ]
     },
@@ -12950,6 +13202,9 @@
       ],
       "headroom": [
         "llm"
+      ],
+      "headroom_context_compression": [
+        "Python"
       ]
     },
     "graphrag_system": {
@@ -13027,6 +13282,10 @@
         "Python"
       ],
       "document_conversion": [
+        "Python"
+      ],
+      "headroom_context_compression": [
+        "LLM",
         "Python"
       ]
     },
@@ -13368,6 +13627,9 @@
         "fastapi",
         "mcp",
         "ai"
+      ],
+      "headroom_context_compression": [
+        "Python"
       ]
     },
     "fastapi_mcp_integration": {
@@ -13449,6 +13711,10 @@
       ],
       "document_conversion": [
         "pip"
+      ],
+      "headroom_context_compression": [
+        "FastAPI",
+        "Claude"
       ]
     },
     "mcp_go": {
@@ -13855,6 +14121,10 @@
       ],
       "auto_gpt_deployment": [
         "Docker"
+      ],
+      "headroom_context_compression": [
+        "Docker",
+        "LLM"
       ]
     },
     "registry": {
@@ -14057,6 +14327,9 @@
       ],
       "sqlite_vector_extension": [
         "Model Context Protocol (MCP)"
+      ],
+      "headroom_context_compression": [
+        "MCP Server"
       ]
     },
     "xcodebuildmcp": {
@@ -14294,6 +14567,9 @@
       ],
       "auto_gpt_deployment": [
         "Docker"
+      ],
+      "headroom_context_compression": [
+        "Docker"
       ]
     },
     "agentic_rag_for_dummies": {
@@ -14419,6 +14695,12 @@
       ],
       "document_conversion": [
         "OpenAI"
+      ],
+      "headroom_context_compression": [
+        "Anthropic",
+        "OpenAI",
+        "LangChain",
+        "Context Compression"
       ]
     },
     "griptape": {
@@ -14768,6 +15050,14 @@
         "OpenAI",
         "Large Language Models (LLMs)",
         "Python"
+      ],
+      "headroom_context_compression": [
+        "Prompt Engineering",
+        "Claude",
+        "FastAPI",
+        "Pydantic",
+        "OpenAI",
+        "LangChain"
       ]
     },
     "forge": {
@@ -15075,6 +15365,9 @@
       ],
       "auto_gpt_deployment": [
         "Docker"
+      ],
+      "headroom_context_compression": [
+        "Docker"
       ]
     },
     "trainer": {
@@ -15339,6 +15632,9 @@
       "headroom": [
         "llm",
         "ai"
+      ],
+      "headroom_context_compression": [
+        "Python"
       ]
     },
     "paper_agent": {
@@ -15548,6 +15844,10 @@
         "Python"
       ],
       "document_conversion": [
+        "Python"
+      ],
+      "headroom_context_compression": [
+        "LLM",
         "Python"
       ]
     },
@@ -16020,6 +16320,10 @@
       ],
       "document_conversion": [
         "Python"
+      ],
+      "headroom_context_compression": [
+        "Docker",
+        "Python"
       ]
     },
     "speech_to_speech": {
@@ -16439,6 +16743,9 @@
       ],
       "deepseek_v3_r1_fine_tuning": [
         "vLLM"
+      ],
+      "headroom_context_compression": [
+        "LLM"
       ]
     },
     "webrover": {
@@ -16624,6 +16931,9 @@
         "openai",
         "langchain",
         "ai"
+      ],
+      "headroom_context_compression": [
+        "Python"
       ]
     },
     "web_rover_ai_agent": {
@@ -16696,6 +17006,9 @@
         "Claude"
       ],
       "auto_gpt_deployment": [
+        "Claude"
+      ],
+      "headroom_context_compression": [
         "Claude"
       ]
     },
@@ -16881,6 +17194,9 @@
       ],
       "auto_gpt_deployment": [
         "Docker"
+      ],
+      "headroom_context_compression": [
+        "Docker"
       ]
     },
     "nornicdb": {
@@ -16989,6 +17305,9 @@
         "Docker"
       ],
       "auto_gpt_deployment": [
+        "Docker"
+      ],
+      "headroom_context_compression": [
         "Docker"
       ]
     },
@@ -17349,6 +17668,10 @@
       "document_conversion": [
         "OpenAI",
         "pip"
+      ],
+      "headroom_context_compression": [
+        "OpenAI",
+        "Claude"
       ]
     },
     "autogpt": {
@@ -17676,6 +17999,13 @@
       "document_conversion": [
         "OpenAI",
         "Python"
+      ],
+      "headroom_context_compression": [
+        "Claude",
+        "OpenAI",
+        "bash",
+        "Docker",
+        "Python"
       ]
     },
     "markitdown": {
@@ -17805,6 +18135,9 @@
       "headroom": [
         "langchain",
         "openai"
+      ],
+      "headroom_context_compression": [
+        "Python"
       ]
     },
     "document_conversion": {
@@ -17900,6 +18233,10 @@
         "Python"
       ],
       "markitdown": [
+        "Python"
+      ],
+      "headroom_context_compression": [
+        "OpenAI",
         "Python"
       ]
     },
@@ -18080,8 +18417,200 @@
         "langchain",
         "openai"
       ]
+    },
+    "headroom_context_compression": {
+      "new_claude_opus_5_leaks": [
+        "Anthropic",
+        "Claude"
+      ],
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "Claude"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Claude",
+        "bash",
+        "LLM",
+        "Docker",
+        "Python"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "Anthropic",
+        "OpenAI"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "OpenAI",
+        "Claude"
+      ],
+      "by_august_we_ll_have_frontier_ai_running_locally": [
+        "OpenAI"
+      ],
+      "yes_the_kimi_k3_hype_is_real": [
+        "Anthropic",
+        "OpenAI",
+        "Claude"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "Claude",
+        "OpenAI",
+        "Anthropic",
+        "Docker",
+        "Python"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Anthropic",
+        "Claude",
+        "Python"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "OpenAI"
+      ],
+      "china_just_beat_claude_ai_kimi_k3": [
+        "Anthropic",
+        "OpenAI",
+        "Claude"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "Claude",
+        "OpenAI",
+        "LLM",
+        "Docker",
+        "Python"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Claude",
+        "bash",
+        "LLM",
+        "Docker",
+        "Python"
+      ],
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "Anthropic",
+        "OpenAI",
+        "LLM",
+        "Claude"
+      ],
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "Claude"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "Claude"
+      ],
+      "new_claude_update_is_insane": [
+        "Anthropic",
+        "Claude"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "Claude",
+        "OpenAI",
+        "LLM",
+        "Anthropic",
+        "Docker"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Anthropic",
+        "OpenAI",
+        "Claude"
+      ],
+      "dify_deployment": [
+        "Docker"
+      ],
+      "ragflow_self_hosting_guide": [
+        "Docker",
+        "bash"
+      ],
+      "lightrag": [
+        "Python"
+      ],
+      "lightrag_setup": [
+        "Docker"
+      ],
+      "graphrag": [
+        "Python"
+      ],
+      "graphrag_system": [
+        "LLM",
+        "Python"
+      ],
+      "fastapi_mcp": [
+        "Python"
+      ],
+      "fastapi_mcp_integration": [
+        "FastAPI",
+        "Claude"
+      ],
+      "r2r": [
+        "Docker",
+        "LLM"
+      ],
+      "model_context_protocol_go": [
+        "MCP Server"
+      ],
+      "mcp_server_implementations": [
+        "Docker"
+      ],
+      "agentic_rag_for_dummies": [
+        "Anthropic",
+        "OpenAI",
+        "LangChain",
+        "Context Compression"
+      ],
+      "griptape_framework": [
+        "Prompt Engineering",
+        "Claude",
+        "FastAPI",
+        "Pydantic",
+        "OpenAI",
+        "LangChain"
+      ],
+      "infinity_database": [
+        "Docker"
+      ],
+      "pasa": [
+        "Python"
+      ],
+      "lightagent_framework": [
+        "LLM",
+        "Python"
+      ],
+      "leon_ai_assistant": [
+        "Docker",
+        "Python"
+      ],
+      "modular_speech_to_speech_pipeline": [
+        "LLM"
+      ],
+      "webrover": [
+        "Python"
+      ],
+      "web_rover_ai_agent": [
+        "Claude"
+      ],
+      "live_run_forking_with_pydantic_deep_agents": [
+        "Docker"
+      ],
+      "nornicdb_deployment": [
+        "Docker"
+      ],
+      "loushang_ai_native_agent_harness": [
+        "OpenAI",
+        "Claude"
+      ],
+      "auto_gpt_deployment": [
+        "Claude",
+        "OpenAI",
+        "bash",
+        "Docker",
+        "Python"
+      ],
+      "markitdown": [
+        "Python"
+      ],
+      "document_conversion": [
+        "OpenAI",
+        "Python"
+      ]
     }
   },
-  "updated_at": "2026-07-24T01:08:37.841926+00:00",
-  "total_skills": 84
+  "updated_at": "2026-07-24T01:09:08.079248+00:00",
+  "total_skills": 85
 }
