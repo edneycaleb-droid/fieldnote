@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "headroomlabs-ai--headroom",
+      "title": "Discovered: headroomlabs-ai/headroom",
+      "category": "discoveries",
+      "confidence": "verified",
+      "updated_at": "2026-07-24T01:11:01.737417+00:00",
+      "path": "discoveries/headroomlabs-ai--headroom.md"
+    },
+    {
       "slug": "microsoft--markitdown",
       "title": "Discovered: microsoft/markitdown",
       "category": "discoveries",
@@ -401,5 +409,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-24T01:11:00.294098+00:00"
+  "updated_at": "2026-07-24T01:11:01.742296+00:00"
 }
