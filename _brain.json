@@ -1713,11 +1713,12 @@
       ]
     },
     "ai-agents": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "mcp_agent",
         "agentic_rag_for_dummies",
-        "pydantic_deepagents"
+        "pydantic_deepagents",
+        "airecon"
       ]
     },
     "llms": {
@@ -2989,9 +2990,10 @@
       ]
     },
     "automation": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "openakita"
+        "openakita",
+        "airecon"
       ]
     },
     "Low-Latency Processing": {
@@ -3308,9 +3310,10 @@
       ]
     },
     "cli": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "pydantic_deepagents"
+        "pydantic_deepagents",
+        "airecon"
       ]
     },
     "Autonomous AI agents": {
@@ -3786,6 +3789,18 @@
       "skills": [
         "litellm"
       ]
+    },
+    "bugbounty": {
+      "freq": 1,
+      "skills": [
+        "airecon"
+      ]
+    },
+    "ollama": {
+      "freq": 1,
+      "skills": [
+        "airecon"
+      ]
     }
   },
   "tools": {
@@ -4257,7 +4272,7 @@
       ]
     },
     "docker": {
-      "freq": 14,
+      "freq": 15,
       "skills": [
         "dify",
         "ragflow",
@@ -4272,7 +4287,8 @@
         "pydantic_deepagents",
         "nornicdb",
         "autogpt",
-        "markitdown"
+        "markitdown",
+        "airecon"
       ]
     },
     "postgresql": {
@@ -4292,7 +4308,7 @@
       ]
     },
     "openai": {
-      "freq": 22,
+      "freq": 23,
       "skills": [
         "dify",
         "ragflow",
@@ -4314,7 +4330,8 @@
         "autogpt",
         "markitdown",
         "headroom",
-        "litellm"
+        "litellm",
+        "airecon"
       ]
     },
     "agent": {
@@ -4353,11 +4370,12 @@
       ]
     },
     "automation": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "dify",
         "leon",
-        "openakita"
+        "openakita",
+        "airecon"
       ]
     },
     "claude": {
@@ -4448,7 +4466,7 @@
       ]
     },
     "gemini": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "ragflow",
         "agentic_rag_for_dummies",
@@ -4456,7 +4474,8 @@
         "openakita",
         "pydantic_deepagents",
         "headroom",
-        "litellm"
+        "litellm",
+        "airecon"
       ]
     },
     "huggingface": {
@@ -4498,12 +4517,13 @@
       ]
     },
     "ai-agents": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "ragflow",
         "mcp_agent",
         "agentic_rag_for_dummies",
-        "pydantic_deepagents"
+        "pydantic_deepagents",
+        "airecon"
       ]
     },
     "context-engine": {
@@ -4596,13 +4616,14 @@
       ]
     },
     "ollama": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "lightrag",
         "agentic_rag_for_dummies",
         "forge",
         "pydantic_deepagents",
-        "litellm"
+        "litellm",
+        "airecon"
       ]
     },
     "gpt-4": {
@@ -4782,7 +4803,7 @@
       ]
     },
     "python": {
-      "freq": 14,
+      "freq": 15,
       "skills": [
         "rag_techniques",
         "mcp_agent",
@@ -4797,7 +4818,8 @@
         "py_xiaozhi",
         "openakita",
         "deepseek_671b_sft_guide",
-        "autogpt"
+        "autogpt",
+        "airecon"
       ]
     },
     "semantic-search": {
@@ -5119,10 +5141,11 @@
       ]
     },
     "sqlite": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "awesome_mcp_servers",
-        "sqlite_vector"
+        "sqlite_vector",
+        "airecon"
       ]
     },
     "anthropic-claude": {
@@ -6605,9 +6628,10 @@
       ]
     },
     "cli": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "pydantic_deepagents"
+        "pydantic_deepagents",
+        "airecon"
       ]
     },
     "coding-agent": {
@@ -6980,6 +7004,24 @@
       "freq": 1,
       "skills": [
         "litellm"
+      ]
+    },
+    "bugbounty": {
+      "freq": 1,
+      "skills": [
+        "airecon"
+      ]
+    },
+    "penetration-testing": {
+      "freq": 1,
+      "skills": [
+        "airecon"
+      ]
+    },
+    "reconnaissance": {
+      "freq": 1,
+      "skills": [
+        "airecon"
       ]
     }
   },
@@ -9730,6 +9772,40 @@
         "python"
       ],
       "step_count": 12
+    },
+    "airecon": {
+      "concepts": [
+        "ai-agents",
+        "automation",
+        "bugbounty",
+        "cli",
+        "ollama"
+      ],
+      "tools": [
+        "gemini",
+        "ollama",
+        "sqlite",
+        "openai",
+        "docker",
+        "ai-agents",
+        "automation",
+        "bugbounty",
+        "cli",
+        "penetration-testing",
+        "python",
+        "reconnaissance"
+      ],
+      "tags": [
+        "ai-agents",
+        "automation",
+        "bugbounty",
+        "cli",
+        "ollama",
+        "python",
+        "ai",
+        "llm"
+      ],
+      "step_count": 8
     }
   },
   "relationships": {
@@ -12103,6 +12179,9 @@
         "LLM",
         "openai",
         "Claude"
+      ],
+      "airecon": [
+        "openai"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -12863,6 +12942,11 @@
       "litellm": [
         "terraform",
         "openai"
+      ],
+      "airecon": [
+        "docker",
+        "automation",
+        "openai"
       ]
     },
     "dify_deployment": {
@@ -13074,6 +13158,12 @@
       "litellm": [
         "huggingface",
         "openai",
+        "gemini"
+      ],
+      "airecon": [
+        "ai-agents",
+        "openai",
+        "docker",
         "gemini"
       ]
     },
@@ -13299,6 +13389,10 @@
       ],
       "litellm": [
         "Python"
+      ],
+      "airecon": [
+        "docker",
+        "ollama"
       ]
     },
     "lightrag_setup": {
@@ -13738,6 +13832,10 @@
       ],
       "litellm": [
         "langchain",
+        "openai"
+      ],
+      "airecon": [
+        "python",
         "openai"
       ]
     },
@@ -14299,6 +14397,11 @@
       "litellm": [
         "anthropic",
         "openai"
+      ],
+      "airecon": [
+        "python",
+        "ai-agents",
+        "openai"
       ]
     },
     "mcp_agent_framework": {
@@ -14568,6 +14671,9 @@
         "mcp",
         "llm",
         "ai"
+      ],
+      "airecon": [
+        "docker"
       ]
     },
     "mcp_registry_development_deployment": {
@@ -14625,6 +14731,9 @@
         "docker"
       ],
       "markitdown": [
+        "docker"
+      ],
+      "airecon": [
         "docker"
       ]
     },
@@ -14806,6 +14915,10 @@
       "headroom": [
         "mcp",
         "ai"
+      ],
+      "airecon": [
+        "docker",
+        "sqlite"
       ]
     },
     "mcp_server_implementations": {
@@ -15197,6 +15310,10 @@
         "huggingface",
         "langchain",
         "openai"
+      ],
+      "airecon": [
+        "python",
+        "openai"
       ]
     },
     "griptape_framework": {
@@ -15555,6 +15672,12 @@
         "anthropic",
         "vllm",
         "openai"
+      ],
+      "airecon": [
+        "docker",
+        "python",
+        "openai",
+        "ollama"
       ]
     },
     "forge_llm_tool_calling_framework": {
@@ -15653,6 +15776,9 @@
         "docker"
       ],
       "markitdown": [
+        "docker"
+      ],
+      "airecon": [
         "docker"
       ]
     },
@@ -15826,6 +15952,9 @@
       ],
       "litellm": [
         "huggingface"
+      ],
+      "airecon": [
+        "python"
       ]
     },
     "pasa": {
@@ -15981,6 +16110,9 @@
       "litellm": [
         "huggingface",
         "Python"
+      ],
+      "airecon": [
+        "python"
       ]
     },
     "paper_agent": {
@@ -16122,6 +16254,10 @@
       "litellm": [
         "vllm",
         "langchain",
+        "openai"
+      ],
+      "airecon": [
+        "python",
         "openai"
       ]
     },
@@ -16295,6 +16431,9 @@
       "headroom": [
         "llm",
         "ai"
+      ],
+      "airecon": [
+        "sqlite"
       ]
     },
     "sqlite_vector_extension": {
@@ -16465,6 +16604,10 @@
       ],
       "litellm": [
         "openai"
+      ],
+      "airecon": [
+        "python",
+        "openai"
       ]
     },
     "agentic_video_production": {
@@ -16589,6 +16732,11 @@
         "ai"
       ],
       "litellm": [
+        "openai"
+      ],
+      "airecon": [
+        "python",
+        "automation",
         "openai"
       ]
     },
@@ -16835,6 +16983,11 @@
         "huggingface",
         "vllm",
         "openai"
+      ],
+      "airecon": [
+        "docker",
+        "python",
+        "openai"
       ]
     },
     "py_xiaozhi": {
@@ -16917,6 +17070,10 @@
         "gemini"
       ],
       "litellm": [
+        "gemini"
+      ],
+      "airecon": [
+        "python",
         "gemini"
       ]
     },
@@ -17092,6 +17249,12 @@
       "litellm": [
         "anthropic",
         "openai",
+        "gemini"
+      ],
+      "airecon": [
+        "automation",
+        "openai",
+        "python",
         "gemini"
       ]
     },
@@ -17328,6 +17491,10 @@
         "langchain",
         "langgraph",
         "Python"
+      ],
+      "airecon": [
+        "python",
+        "openai"
       ]
     },
     "web_rover_ai_agent": {
@@ -17532,6 +17699,14 @@
         "openai",
         "langgraph",
         "gemini"
+      ],
+      "airecon": [
+        "openai",
+        "gemini",
+        "docker",
+        "cli",
+        "ai-agents",
+        "ollama"
       ]
     },
     "live_run_forking_with_pydantic_deep_agents": {
@@ -17651,6 +17826,9 @@
         "docker"
       ],
       "markitdown": [
+        "docker"
+      ],
+      "airecon": [
         "docker"
       ]
     },
@@ -17842,6 +18020,10 @@
         "huggingface",
         "vllm",
         "openai"
+      ],
+      "airecon": [
+        "python",
+        "openai"
       ]
     },
     "deepseek_v3_r1_fine_tuning": {
@@ -17984,6 +18166,9 @@
         "agent"
       ],
       "litellm": [
+        "openai"
+      ],
+      "airecon": [
         "openai"
       ]
     },
@@ -18262,6 +18447,11 @@
         "ai"
       ],
       "litellm": [
+        "openai"
+      ],
+      "airecon": [
+        "docker",
+        "python",
         "openai"
       ]
     },
@@ -18573,6 +18763,10 @@
         "langchain",
         "openai",
         "Python"
+      ],
+      "airecon": [
+        "docker",
+        "openai"
       ]
     },
     "document_conversion": {
@@ -18859,6 +19053,10 @@
         "anthropic",
         "openai",
         "langchain",
+        "gemini"
+      ],
+      "airecon": [
+        "openai",
         "gemini"
       ]
     },
@@ -19321,9 +19519,141 @@
         "LLM",
         "Docker",
         "Python"
+      ],
+      "airecon": [
+        "openai",
+        "gemini"
+      ]
+    },
+    "airecon": {
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "openai"
+      ],
+      "dify": [
+        "docker",
+        "automation",
+        "openai"
+      ],
+      "ragflow": [
+        "ai-agents",
+        "openai",
+        "docker",
+        "gemini"
+      ],
+      "lightrag": [
+        "docker",
+        "ollama"
+      ],
+      "rag_techniques": [
+        "python",
+        "openai"
+      ],
+      "mcp_agent": [
+        "python",
+        "ai-agents",
+        "openai"
+      ],
+      "registry": [
+        "docker"
+      ],
+      "mcp_registry_development_deployment": [
+        "docker"
+      ],
+      "awesome_mcp_servers": [
+        "docker",
+        "sqlite"
+      ],
+      "griptape": [
+        "python",
+        "openai"
+      ],
+      "forge": [
+        "docker",
+        "python",
+        "openai",
+        "ollama"
+      ],
+      "infinity": [
+        "docker"
+      ],
+      "trainer": [
+        "python"
+      ],
+      "pasa": [
+        "python"
+      ],
+      "lightagent": [
+        "python",
+        "openai"
+      ],
+      "sqlite_vector": [
+        "sqlite"
+      ],
+      "openmontage": [
+        "python",
+        "openai"
+      ],
+      "leon": [
+        "python",
+        "automation",
+        "openai"
+      ],
+      "speech_to_speech": [
+        "docker",
+        "python",
+        "openai"
+      ],
+      "py_xiaozhi": [
+        "python",
+        "gemini"
+      ],
+      "openakita": [
+        "automation",
+        "openai",
+        "python",
+        "gemini"
+      ],
+      "webrover": [
+        "python",
+        "openai"
+      ],
+      "pydantic_deepagents": [
+        "openai",
+        "gemini",
+        "docker",
+        "cli",
+        "ai-agents",
+        "ollama"
+      ],
+      "nornicdb": [
+        "docker"
+      ],
+      "deepseek_671b_sft_guide": [
+        "python",
+        "openai"
+      ],
+      "loushang": [
+        "openai"
+      ],
+      "autogpt": [
+        "docker",
+        "python",
+        "openai"
+      ],
+      "markitdown": [
+        "docker",
+        "openai"
+      ],
+      "headroom": [
+        "openai",
+        "gemini"
+      ],
+      "litellm": [
+        "openai",
+        "gemini"
       ]
     }
   },
-  "updated_at": "2026-07-24T01:09:58.372955+00:00",
-  "total_skills": 86
+  "updated_at": "2026-07-24T01:10:11.506950+00:00",
+  "total_skills": 87
 }
