@@ -3360,6 +3360,54 @@
       "skills": [
         "nornicdb"
       ]
+    },
+    "Canonical truth modeling": {
+      "freq": 1,
+      "skills": [
+        "nornicdb_deployment"
+      ]
+    },
+    "Graph database": {
+      "freq": 1,
+      "skills": [
+        "nornicdb_deployment"
+      ]
+    },
+    "Graph traversal": {
+      "freq": 1,
+      "skills": [
+        "nornicdb_deployment"
+      ]
+    },
+    "Retention policies": {
+      "freq": 1,
+      "skills": [
+        "nornicdb_deployment"
+      ]
+    },
+    "Temporal graph": {
+      "freq": 1,
+      "skills": [
+        "nornicdb_deployment"
+      ]
+    },
+    "Temporal MVCC": {
+      "freq": 1,
+      "skills": [
+        "nornicdb_deployment"
+      ]
+    },
+    "Vector database": {
+      "freq": 1,
+      "skills": [
+        "nornicdb_deployment"
+      ]
+    },
+    "Vector search": {
+      "freq": 1,
+      "skills": [
+        "nornicdb_deployment"
+      ]
     }
   },
   "tools": {
@@ -3427,7 +3475,7 @@
       ]
     },
     "Docker": {
-      "freq": 22,
+      "freq": 23,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -3442,7 +3490,8 @@
         "griptape_framework",
         "infinity_database",
         "leon_ai_assistant",
-        "live_run_forking_with_pydantic_deep_agents"
+        "live_run_forking_with_pydantic_deep_agents",
+        "nornicdb_deployment"
       ]
     },
     "bash": {
@@ -4433,11 +4482,12 @@
       ]
     },
     "Go": {
-      "freq": 3,
+      "freq": 4,
       "skills": [
         "mcp_go",
         "registry",
-        "trainer"
+        "trainer",
+        "nornicdb_deployment"
       ]
     },
     "pydantic": {
@@ -4809,10 +4859,11 @@
       ]
     },
     "Qdrant": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "mcp_server_implementations",
-        "agentic_rag_for_dummies"
+        "agentic_rag_for_dummies",
+        "nornicdb_deployment"
       ]
     },
     "MongoDB": {
@@ -6199,6 +6250,36 @@
       "freq": 1,
       "skills": [
         "nornicdb"
+      ]
+    },
+    "Neo4j": {
+      "freq": 1,
+      "skills": [
+        "nornicdb_deployment"
+      ]
+    },
+    "Bolt": {
+      "freq": 1,
+      "skills": [
+        "nornicdb_deployment"
+      ]
+    },
+    "Cypher": {
+      "freq": 1,
+      "skills": [
+        "nornicdb_deployment"
+      ]
+    },
+    "GraphQL": {
+      "freq": 1,
+      "skills": [
+        "nornicdb_deployment"
+      ]
+    },
+    "HNsw": {
+      "freq": 1,
+      "skills": [
+        "nornicdb_deployment"
       ]
     }
   },
@@ -8559,6 +8640,35 @@
         "llm"
       ],
       "step_count": 8
+    },
+    "nornicdb_deployment": {
+      "concepts": [
+        "Canonical truth modeling",
+        "Graph database",
+        "Graph traversal",
+        "Retention policies",
+        "Temporal graph",
+        "Temporal MVCC",
+        "Vector database",
+        "Vector search"
+      ],
+      "tools": [
+        "Docker",
+        "Go",
+        "Neo4j",
+        "Bolt",
+        "Cypher",
+        "Qdrant",
+        "GraphQL",
+        "HNsw"
+      ],
+      "tags": [
+        "Database",
+        "Deployment",
+        "Graph",
+        "Vector"
+      ],
+      "step_count": 8
     }
   },
   "relationships": {
@@ -8965,6 +9075,9 @@
         "Claude"
       ],
       "live_run_forking_with_pydantic_deep_agents": [
+        "Docker"
+      ],
+      "nornicdb_deployment": [
         "Docker"
       ]
     },
@@ -9700,6 +9813,9 @@
       ],
       "live_run_forking_with_pydantic_deep_agents": [
         "Docker"
+      ],
+      "nornicdb_deployment": [
+        "Docker"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -10264,6 +10380,9 @@
       ],
       "live_run_forking_with_pydantic_deep_agents": [
         "Docker"
+      ],
+      "nornicdb_deployment": [
+        "Docker"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -10410,6 +10529,9 @@
         "Claude"
       ],
       "live_run_forking_with_pydantic_deep_agents": [
+        "Docker"
+      ],
+      "nornicdb_deployment": [
         "Docker"
       ]
     },
@@ -10973,6 +11095,9 @@
       ],
       "live_run_forking_with_pydantic_deep_agents": [
         "Docker"
+      ],
+      "nornicdb_deployment": [
+        "Docker"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -11262,6 +11387,9 @@
       ],
       "live_run_forking_with_pydantic_deep_agents": [
         "Docker"
+      ],
+      "nornicdb_deployment": [
+        "Docker"
       ]
     },
     "ragflow": {
@@ -11427,6 +11555,9 @@
         "Docker"
       ],
       "live_run_forking_with_pydantic_deep_agents": [
+        "Docker"
+      ],
+      "nornicdb_deployment": [
         "Docker"
       ]
     },
@@ -11614,6 +11745,9 @@
         "uv"
       ],
       "live_run_forking_with_pydantic_deep_agents": [
+        "Docker"
+      ],
+      "nornicdb_deployment": [
         "Docker"
       ]
     },
@@ -12210,6 +12344,9 @@
       "webrover": [
         "ai",
         "llm"
+      ],
+      "nornicdb_deployment": [
+        "Go"
       ]
     },
     "mcp_agent": {
@@ -12487,6 +12624,9 @@
       ],
       "live_run_forking_with_pydantic_deep_agents": [
         "Docker"
+      ],
+      "nornicdb_deployment": [
+        "Docker"
       ]
     },
     "registry": {
@@ -12598,6 +12738,9 @@
       ],
       "nornicdb": [
         "docker"
+      ],
+      "nornicdb_deployment": [
+        "Go"
       ]
     },
     "mcp_registry_development_deployment": {
@@ -12870,6 +13013,10 @@
       ],
       "live_run_forking_with_pydantic_deep_agents": [
         "Docker"
+      ],
+      "nornicdb_deployment": [
+        "Docker",
+        "Qdrant"
       ]
     },
     "agentic_rag_for_dummies": {
@@ -12983,6 +13130,9 @@
       ],
       "web_rover_ai_agent": [
         "LangGraph"
+      ],
+      "nornicdb_deployment": [
+        "Qdrant"
       ]
     },
     "griptape": {
@@ -13279,6 +13429,9 @@
       ],
       "live_run_forking_with_pydantic_deep_agents": [
         "Docker"
+      ],
+      "nornicdb_deployment": [
+        "Docker"
       ]
     },
     "forge": {
@@ -13544,6 +13697,9 @@
       ],
       "live_run_forking_with_pydantic_deep_agents": [
         "Docker"
+      ],
+      "nornicdb_deployment": [
+        "Docker"
       ]
     },
     "trainer": {
@@ -13639,6 +13795,9 @@
         "ai",
         "python",
         "llm"
+      ],
+      "nornicdb_deployment": [
+        "Go"
       ]
     },
     "pasa": {
@@ -14318,6 +14477,9 @@
         "npm"
       ],
       "live_run_forking_with_pydantic_deep_agents": [
+        "Docker"
+      ],
+      "nornicdb_deployment": [
         "Docker"
       ]
     },
@@ -15049,6 +15211,9 @@
       ],
       "pydantic_deepagents": [
         "pydantic"
+      ],
+      "nornicdb_deployment": [
+        "Docker"
       ]
     },
     "nornicdb": {
@@ -15093,8 +15258,65 @@
       "pydantic_deepagents": [
         "docker"
       ]
+    },
+    "nornicdb_deployment": {
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Docker"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "Docker"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "Docker"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Docker"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "Docker"
+      ],
+      "dify_deployment": [
+        "Docker"
+      ],
+      "ragflow_self_hosting_guide": [
+        "Docker"
+      ],
+      "lightrag_setup": [
+        "Docker"
+      ],
+      "mcp_go": [
+        "Go"
+      ],
+      "r2r": [
+        "Docker"
+      ],
+      "registry": [
+        "Go"
+      ],
+      "mcp_server_implementations": [
+        "Docker",
+        "Qdrant"
+      ],
+      "agentic_rag_for_dummies": [
+        "Qdrant"
+      ],
+      "griptape_framework": [
+        "Docker"
+      ],
+      "infinity_database": [
+        "Docker"
+      ],
+      "trainer": [
+        "Go"
+      ],
+      "leon_ai_assistant": [
+        "Docker"
+      ],
+      "live_run_forking_with_pydantic_deep_agents": [
+        "Docker"
+      ]
     }
   },
-  "updated_at": "2026-07-24T00:00:48.997548+00:00",
-  "total_skills": 74
+  "updated_at": "2026-07-24T00:02:01.007869+00:00",
+  "total_skills": 75
 }
