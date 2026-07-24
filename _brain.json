@@ -2659,9 +2659,10 @@
       ]
     },
     "Python": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "lightagent_framework"
+        "lightagent_framework",
+        "tensorflow"
       ]
     },
     "Runtime Hooks": {
@@ -4184,9 +4185,10 @@
       ]
     },
     "Deep Learning": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "awesome_python"
+        "awesome_python",
+        "tensorflow"
       ]
     },
     "DevOps Tools": {
@@ -4608,6 +4610,180 @@
       "skills": [
         "tensorflow"
       ]
+    },
+    "APIs": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "Build from Source": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "Building from Source": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "Cherry-picking": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "Code Conflicts": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "Code of Conduct": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "Community Forums": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "Continuous Integration": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "Contribution Guidelines": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "CPU-only Package": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "CPU-only": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "Deep Neural Networks": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "Distributed": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "End-to-End ML": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "End-to-End Ecosystem": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "Ecosystem": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "Framework": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "GitHub Issues": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "GPU Support": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "Machine Learning Platform": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "ML": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "Neural Network": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "Nightly Builds": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "Open Source Development": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "Patching": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "Stable APIs": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "TensorBoard Visualization": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "TensorFlow Forum": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "Stack Overflow": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
     }
   },
   "tools": {
@@ -4807,20 +4983,22 @@
       ]
     },
     "pip": {
-      "freq": 6,
+      "freq": 7,
       "skills": [
         "this_100_self_improving_ai_agent_is_insane_just_wa",
         "fastapi_mcp_integration",
         "loushang_ai_native_agent_harness",
-        "document_conversion"
+        "document_conversion",
+        "tensorflow"
       ]
     },
     "Git": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "this_100_self_improving_ai_agent_is_insane_just_wa",
         "mcp_server_implementations",
-        "leon_ai_assistant"
+        "leon_ai_assistant",
+        "tensorflow"
       ]
     },
     "Node": {
@@ -5089,7 +5267,7 @@
       ]
     },
     "docker": {
-      "freq": 17,
+      "freq": 18,
       "skills": [
         "dify",
         "ragflow",
@@ -5615,7 +5793,7 @@
       ]
     },
     "machine-learning": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "rag_techniques",
         "trainer",
@@ -5630,7 +5808,7 @@
       ]
     },
     "python": {
-      "freq": 19,
+      "freq": 20,
       "skills": [
         "rag_techniques",
         "mcp_agent",
@@ -6688,7 +6866,7 @@
       ]
     },
     "tensorflow": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "trainer",
         "awesome_python",
@@ -7170,7 +7348,7 @@
       ]
     },
     "numpy": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "speech_to_speech",
         "tensorflow"
@@ -8131,13 +8309,13 @@
       ]
     },
     "deep-learning": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "tensorflow"
       ]
     },
     "deep-neural-networks": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
         "tensorflow"
       ]
@@ -8149,6 +8327,30 @@
       ]
     },
     "C++": {
+      "freq": 2,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "CUDA": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "DirectX": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "Metal": {
+      "freq": 1,
+      "skills": [
+        "tensorflow"
+      ]
+    },
+    "MacOS-metal": {
       "freq": 1,
       "skills": [
         "tensorflow"
@@ -11232,11 +11434,37 @@
     },
     "tensorflow": {
       "concepts": [
-        "deep-learning",
-        "deep-neural-networks",
-        "distributed",
-        "machine-learning",
-        "ml"
+        "APIs",
+        "Build from Source",
+        "Building from Source",
+        "Cherry-picking",
+        "Code Conflicts",
+        "Code of Conduct",
+        "Community Forums",
+        "Continuous Integration",
+        "Contribution Guidelines",
+        "CPU-only Package",
+        "CPU-only",
+        "Deep Neural Networks",
+        "Deep Learning",
+        "Distributed",
+        "End-to-End ML",
+        "End-to-End Ecosystem",
+        "Ecosystem",
+        "Framework",
+        "GitHub Issues",
+        "GPU Support",
+        "Machine Learning Platform",
+        "ML",
+        "Neural Network",
+        "Nightly Builds",
+        "Open Source Development",
+        "Patching",
+        "Python",
+        "Stable APIs",
+        "TensorBoard Visualization",
+        "TensorFlow Forum",
+        "Stack Overflow"
       ],
       "tools": [
         "tensorflow",
@@ -11244,23 +11472,24 @@
         "docker",
         "deep-learning",
         "deep-neural-networks",
-        "distributed",
         "machine-learning",
-        "neural-network",
         "python",
-        "C++"
+        "C++",
+        "pip",
+        "CUDA",
+        "DirectX",
+        "Metal",
+        "Git",
+        "MacOS-metal"
       ],
       "tags": [
-        "deep-learning",
-        "deep-neural-networks",
-        "distributed",
         "machine-learning",
-        "ml",
-        "c++",
-        "ai",
-        "llm"
+        "deep-learning",
+        "neural-networks",
+        "framework",
+        "distributed"
       ],
-      "step_count": 8
+      "step_count": 12
     }
   },
   "relationships": {
@@ -11765,6 +11994,9 @@
         "Python",
         "Claude",
         "Docker"
+      ],
+      "tensorflow": [
+        "Python"
       ]
     },
     "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
@@ -12620,6 +12852,11 @@
         "Python",
         "Claude",
         "Docker"
+      ],
+      "tensorflow": [
+        "Python",
+        "pip",
+        "Git"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -12783,6 +13020,9 @@
       "awesome_python": [
         "Python",
         "Claude"
+      ],
+      "tensorflow": [
+        "Python"
       ]
     },
     "new_hermes_paperclip_ai_agent_update_is_insane": {
@@ -13314,6 +13554,9 @@
         "Python",
         "Claude",
         "Docker"
+      ],
+      "tensorflow": [
+        "Python"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -13505,6 +13748,9 @@
         "Python",
         "Claude",
         "Docker"
+      ],
+      "tensorflow": [
+        "Python"
       ]
     },
     "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": {
@@ -14983,7 +15229,8 @@
         "mongodb"
       ],
       "tensorflow": [
-        "docker"
+        "docker",
+        "Python"
       ]
     },
     "lightrag_setup": {
@@ -15189,6 +15436,9 @@
       ],
       "awesome_python": [
         "Python"
+      ],
+      "tensorflow": [
+        "Python"
       ]
     },
     "graphrag_system": {
@@ -15281,6 +15531,9 @@
       ],
       "awesome_python": [
         "LLM",
+        "Python"
+      ],
+      "tensorflow": [
         "Python"
       ]
     },
@@ -15657,6 +15910,9 @@
       "awesome_python": [
         "Python",
         "fastapi"
+      ],
+      "tensorflow": [
+        "Python"
       ]
     },
     "fastapi_mcp_integration": {
@@ -15750,6 +16006,9 @@
       "awesome_python": [
         "Authentication",
         "Claude"
+      ],
+      "tensorflow": [
+        "pip"
       ]
     },
     "mcp_go": {
@@ -16699,6 +16958,9 @@
       ],
       "awesome_python": [
         "Docker"
+      ],
+      "tensorflow": [
+        "Git"
       ]
     },
     "agentic_rag_for_dummies": {
@@ -17232,6 +17494,9 @@
         "Python",
         "Claude",
         "Docker"
+      ],
+      "tensorflow": [
+        "Python"
       ]
     },
     "forge": {
@@ -17730,7 +17995,6 @@
       ],
       "tensorflow": [
         "python",
-        "distributed",
         "tensorflow",
         "machine-learning"
       ]
@@ -17905,7 +18169,8 @@
         "python"
       ],
       "tensorflow": [
-        "python"
+        "python",
+        "Python"
       ]
     },
     "paper_agent": {
@@ -18156,6 +18421,9 @@
       ],
       "awesome_python": [
         "LLM",
+        "Python"
+      ],
+      "tensorflow": [
         "Python"
       ]
     },
@@ -18692,6 +18960,10 @@
       "awesome_python": [
         "Python",
         "Docker"
+      ],
+      "tensorflow": [
+        "Python",
+        "Git"
       ]
     },
     "speech_to_speech": {
@@ -19194,6 +19466,9 @@
       ],
       "awesome_python": [
         "LLM"
+      ],
+      "tensorflow": [
+        "CUDA"
       ]
     },
     "webrover": {
@@ -19410,7 +19685,8 @@
         "python"
       ],
       "tensorflow": [
-        "python"
+        "python",
+        "Python"
       ]
     },
     "web_rover_ai_agent": {
@@ -20257,6 +20533,9 @@
       ],
       "awesome_python": [
         "Claude"
+      ],
+      "tensorflow": [
+        "pip"
       ]
     },
     "autogpt": {
@@ -20634,6 +20913,9 @@
         "bash",
         "Claude",
         "Docker"
+      ],
+      "tensorflow": [
+        "Python"
       ]
     },
     "markitdown": {
@@ -20788,7 +21070,8 @@
         "docker"
       ],
       "tensorflow": [
-        "docker"
+        "docker",
+        "Python"
       ]
     },
     "document_conversion": {
@@ -20898,6 +21181,10 @@
       ],
       "awesome_python": [
         "Python"
+      ],
+      "tensorflow": [
+        "Python",
+        "pip"
       ]
     },
     "headroom": {
@@ -21303,6 +21590,9 @@
         "Python",
         "Claude",
         "Docker"
+      ],
+      "tensorflow": [
+        "Python"
       ]
     },
     "litellm": {
@@ -21585,6 +21875,9 @@
         "bash",
         "Python",
         "Claude"
+      ],
+      "tensorflow": [
+        "Python"
       ]
     },
     "airecon": {
@@ -21852,6 +22145,9 @@
         "bash",
         "Penetration Testing",
         "Docker"
+      ],
+      "tensorflow": [
+        "Python"
       ]
     },
     "system_design_primer": {
@@ -22195,7 +22491,9 @@
         "django"
       ],
       "tensorflow": [
-        "tensorflow"
+        "Python",
+        "tensorflow",
+        "Deep Learning"
       ]
     },
     "project_based_learning": {
@@ -22344,7 +22642,8 @@
         "docker"
       ],
       "lightrag": [
-        "docker"
+        "docker",
+        "Python"
       ],
       "rag_techniques": [
         "python",
@@ -22374,12 +22673,12 @@
       ],
       "trainer": [
         "python",
-        "distributed",
         "tensorflow",
         "machine-learning"
       ],
       "pasa": [
-        "python"
+        "python",
+        "Python"
       ],
       "lightagent": [
         "python"
@@ -22403,7 +22702,8 @@
         "python"
       ],
       "webrover": [
-        "python"
+        "python",
+        "Python"
       ],
       "pydantic_deepagents": [
         "docker"
@@ -22419,7 +22719,8 @@
         "docker"
       ],
       "markitdown": [
-        "docker"
+        "docker",
+        "Python"
       ],
       "airecon": [
         "python",
@@ -22429,7 +22730,9 @@
         "python"
       ],
       "awesome_python": [
-        "tensorflow"
+        "Python",
+        "tensorflow",
+        "Deep Learning"
       ],
       "project_based_learning": [
         "docker",
@@ -22437,9 +22740,73 @@
       ],
       "python": [
         "python"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Python"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "Python",
+        "pip",
+        "Git"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Python"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "Python"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Python"
+      ],
+      "graphrag": [
+        "Python"
+      ],
+      "graphrag_system": [
+        "Python"
+      ],
+      "fastapi_mcp": [
+        "Python"
+      ],
+      "fastapi_mcp_integration": [
+        "pip"
+      ],
+      "mcp_server_implementations": [
+        "Git"
+      ],
+      "griptape_framework": [
+        "Python"
+      ],
+      "lightagent_framework": [
+        "Python"
+      ],
+      "leon_ai_assistant": [
+        "Python",
+        "Git"
+      ],
+      "modular_speech_to_speech_pipeline": [
+        "CUDA"
+      ],
+      "loushang_ai_native_agent_harness": [
+        "pip"
+      ],
+      "auto_gpt_deployment": [
+        "Python"
+      ],
+      "document_conversion": [
+        "Python",
+        "pip"
+      ],
+      "headroom_context_compression": [
+        "Python"
+      ],
+      "litellm": [
+        "Python"
+      ],
+      "airecon_autonomous_pentesting": [
+        "Python"
       ]
     }
   },
-  "updated_at": "2026-07-24T02:37:09.533754+00:00",
+  "updated_at": "2026-07-24T02:37:43.348223+00:00",
   "total_skills": 94
 }
