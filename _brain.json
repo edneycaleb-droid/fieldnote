@@ -1154,13 +1154,14 @@
       ]
     },
     "agentic-ai": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "dify",
         "ragflow",
         "agentic_rag_for_dummies",
         "forge",
-        "openmontage"
+        "openmontage",
+        "autogpt"
       ]
     },
     "agentic-framework": {
@@ -1177,7 +1178,7 @@
       ]
     },
     "ai": {
-      "freq": 18,
+      "freq": 19,
       "skills": [
         "dify",
         "ragflow",
@@ -1196,7 +1197,8 @@
         "speech_to_speech",
         "openakita",
         "webrover",
-        "loushang"
+        "loushang",
+        "autogpt"
       ]
     },
     "AI workflow management": {
@@ -1696,12 +1698,13 @@
       ]
     },
     "agents": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "mcp_agent",
         "agentic_rag_for_dummies",
         "forge",
-        "lightagent"
+        "lightagent",
+        "autogpt"
       ]
     },
     "ai-agents": {
@@ -1782,10 +1785,11 @@
       ]
     },
     "artificial-intelligence": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "r2r",
-        "leon"
+        "leon",
+        "autogpt"
       ]
     },
     "large-language-models": {
@@ -3522,6 +3526,12 @@
       "skills": [
         "loushang_ai_native_agent_harness"
       ]
+    },
+    "autonomous-agents": {
+      "freq": 1,
+      "skills": [
+        "autogpt"
+      ]
     }
   },
   "tools": {
@@ -3969,7 +3979,7 @@
       ]
     },
     "docker": {
-      "freq": 12,
+      "freq": 13,
       "skills": [
         "dify",
         "ragflow",
@@ -3982,7 +3992,8 @@
         "infinity",
         "speech_to_speech",
         "pydantic_deepagents",
-        "nornicdb"
+        "nornicdb",
+        "autogpt"
       ]
     },
     "postgresql": {
@@ -4002,7 +4013,7 @@
       ]
     },
     "openai": {
-      "freq": 17,
+      "freq": 18,
       "skills": [
         "dify",
         "ragflow",
@@ -4020,7 +4031,8 @@
         "webrover",
         "pydantic_deepagents",
         "deepseek_671b_sft_guide",
-        "loushang"
+        "loushang",
+        "autogpt"
       ]
     },
     "agent": {
@@ -4034,13 +4046,14 @@
       ]
     },
     "agentic-ai": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "dify",
         "ragflow",
         "agentic_rag_for_dummies",
         "forge",
-        "openmontage"
+        "openmontage",
+        "autogpt"
       ]
     },
     "agentic-framework": {
@@ -4065,13 +4078,14 @@
       ]
     },
     "claude": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "dify",
         "fastapi_mcp",
         "griptape",
         "openmontage",
-        "loushang"
+        "loushang",
+        "autogpt"
       ]
     },
     "genai": {
@@ -4082,13 +4096,14 @@
       ]
     },
     "gpt": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "dify",
         "lightrag",
         "graphrag",
         "rag_techniques",
-        "griptape"
+        "griptape",
+        "autogpt"
       ]
     },
     "Docker Compose": {
@@ -4331,7 +4346,7 @@
       ]
     },
     "llm": {
-      "freq": 10,
+      "freq": 11,
       "skills": [
         "lightrag",
         "graphrag",
@@ -4342,7 +4357,8 @@
         "forge",
         "trainer",
         "lightagent",
-        "deepseek_671b_sft_guide"
+        "deepseek_671b_sft_guide",
+        "autogpt"
       ]
     },
     "rag": {
@@ -4473,7 +4489,7 @@
       ]
     },
     "python": {
-      "freq": 13,
+      "freq": 14,
       "skills": [
         "rag_techniques",
         "mcp_agent",
@@ -4487,7 +4503,8 @@
         "speech_to_speech",
         "py_xiaozhi",
         "openakita",
-        "deepseek_671b_sft_guide"
+        "deepseek_671b_sft_guide",
+        "autogpt"
       ]
     },
     "semantic-search": {
@@ -4630,12 +4647,13 @@
       ]
     },
     "agents": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "mcp_agent",
         "agentic_rag_for_dummies",
         "forge",
-        "lightagent"
+        "lightagent",
+        "autogpt"
       ]
     },
     "model-context-protocol": {
@@ -4690,10 +4708,11 @@
       ]
     },
     "artificial-intelligence": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "r2r",
-        "leon"
+        "leon",
+        "autogpt"
       ]
     },
     "question-answering": {
@@ -6517,6 +6536,18 @@
       "freq": 1,
       "skills": [
         "loushang_ai_native_agent_harness"
+      ]
+    },
+    "autonomous-agents": {
+      "freq": 1,
+      "skills": [
+        "autogpt"
+      ]
+    },
+    "llama-api": {
+      "freq": 1,
+      "skills": [
+        "autogpt"
       ]
     }
   },
@@ -9031,6 +9062,38 @@
         "workflow"
       ],
       "step_count": 9
+    },
+    "autogpt": {
+      "concepts": [
+        "agentic-ai",
+        "agents",
+        "ai",
+        "artificial-intelligence",
+        "autonomous-agents"
+      ],
+      "tools": [
+        "openai",
+        "docker",
+        "agentic-ai",
+        "agents",
+        "artificial-intelligence",
+        "autonomous-agents",
+        "claude",
+        "gpt",
+        "llama-api",
+        "llm",
+        "python"
+      ],
+      "tags": [
+        "agentic-ai",
+        "agents",
+        "ai",
+        "artificial-intelligence",
+        "autonomous-agents",
+        "python",
+        "llm"
+      ],
+      "step_count": 7
     }
   },
   "relationships": {
@@ -9167,6 +9230,9 @@
       ],
       "loushang_ai_native_agent_harness": [
         "Claude"
+      ],
+      "autogpt": [
+        "claude"
       ]
     },
     "100_hours_of_hermes_agent_lessons_in_19_minutes": {
@@ -10597,6 +10663,9 @@
       "loushang_ai_native_agent_harness": [
         "Claude",
         "OpenAI"
+      ],
+      "autogpt": [
+        "claude"
       ]
     },
     "you_need_to_use_hermes_right_now_goodbye_openclaw": {
@@ -11128,6 +11197,9 @@
       "loushang_ai_native_agent_harness": [
         "Claude",
         "OpenAI"
+      ],
+      "autogpt": [
+        "openai"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -11801,6 +11873,14 @@
         "openai",
         "claude",
         "agent"
+      ],
+      "autogpt": [
+        "openai",
+        "docker",
+        "claude",
+        "gpt",
+        "ai",
+        "agentic-ai"
       ]
     },
     "dify_deployment": {
@@ -11983,6 +12063,12 @@
         "agent-harness",
         "openai",
         "redis"
+      ],
+      "autogpt": [
+        "docker",
+        "agentic-ai",
+        "openai",
+        "ai"
       ]
     },
     "ragflow_self_hosting_guide": {
@@ -12168,6 +12254,11 @@
       ],
       "deepseek_671b_sft_guide": [
         "llm"
+      ],
+      "autogpt": [
+        "docker",
+        "llm",
+        "gpt"
       ]
     },
     "lightrag_setup": {
@@ -12329,6 +12420,10 @@
       ],
       "deepseek_671b_sft_guide": [
         "llm"
+      ],
+      "autogpt": [
+        "llm",
+        "gpt"
       ]
     },
     "graphrag_system": {
@@ -12538,6 +12633,13 @@
       "loushang": [
         "ai",
         "openai"
+      ],
+      "autogpt": [
+        "llm",
+        "openai",
+        "python",
+        "gpt",
+        "ai"
       ]
     },
     "advanced_retrieval_augmented_generation": {
@@ -12700,6 +12802,11 @@
       "loushang": [
         "ai",
         "claude"
+      ],
+      "autogpt": [
+        "claude",
+        "llm",
+        "ai"
       ]
     },
     "fastapi_mcp_integration": {
@@ -12863,6 +12970,10 @@
         "llm"
       ],
       "loushang": [
+        "ai"
+      ],
+      "autogpt": [
+        "llm",
         "ai"
       ]
     },
@@ -13028,6 +13139,13 @@
       "loushang": [
         "ai",
         "openai"
+      ],
+      "autogpt": [
+        "llm",
+        "openai",
+        "python",
+        "agents",
+        "ai"
       ]
     },
     "mcp_agent_framework": {
@@ -13273,6 +13391,11 @@
       ],
       "loushang": [
         "ai"
+      ],
+      "autogpt": [
+        "docker",
+        "llm",
+        "ai"
       ]
     },
     "mcp_registry_development_deployment": {
@@ -13324,6 +13447,9 @@
         "docker"
       ],
       "nornicdb": [
+        "docker"
+      ],
+      "autogpt": [
         "docker"
       ]
     },
@@ -13485,6 +13611,10 @@
       "loushang": [
         "ai",
         "redis"
+      ],
+      "autogpt": [
+        "docker",
+        "ai"
       ]
     },
     "mcp_server_implementations": {
@@ -13829,6 +13959,14 @@
         "ai",
         "openai",
         "claude"
+      ],
+      "autogpt": [
+        "llm",
+        "openai",
+        "claude",
+        "python",
+        "gpt",
+        "ai"
       ]
     },
     "griptape_framework": {
@@ -14136,6 +14274,14 @@
       ],
       "loushang": [
         "openai"
+      ],
+      "autogpt": [
+        "llm",
+        "openai",
+        "python",
+        "docker",
+        "agents",
+        "agentic-ai"
       ]
     },
     "forge_llm_tool_calling_framework": {
@@ -14222,6 +14368,9 @@
       ],
       "nornicdb": [
         "hnsw",
+        "docker"
+      ],
+      "autogpt": [
         "docker"
       ]
     },
@@ -14373,6 +14522,11 @@
       ],
       "loushang": [
         "ai"
+      ],
+      "autogpt": [
+        "python",
+        "llm",
+        "ai"
       ]
     },
     "pasa": {
@@ -14503,6 +14657,11 @@
       ],
       "loushang": [
         "ai"
+      ],
+      "autogpt": [
+        "python",
+        "llm",
+        "ai"
       ]
     },
     "paper_agent": {
@@ -14623,6 +14782,12 @@
         "vllm"
       ],
       "loushang": [
+        "openai"
+      ],
+      "autogpt": [
+        "python",
+        "llm",
+        "agents",
         "openai"
       ]
     },
@@ -14768,6 +14933,10 @@
       "loushang": [
         "ai",
         "redis"
+      ],
+      "autogpt": [
+        "llm",
+        "ai"
       ]
     },
     "sqlite_vector_extension": {
@@ -14919,6 +15088,13 @@
         "openai",
         "claude",
         "agent"
+      ],
+      "autogpt": [
+        "openai",
+        "claude",
+        "python",
+        "agentic-ai",
+        "ai"
       ]
     },
     "agentic_video_production": {
@@ -15025,6 +15201,12 @@
       "loushang": [
         "ai",
         "openai"
+      ],
+      "autogpt": [
+        "artificial-intelligence",
+        "python",
+        "openai",
+        "ai"
       ]
     },
     "leon_ai_assistant": {
@@ -15233,6 +15415,12 @@
       "loushang": [
         "ai",
         "openai"
+      ],
+      "autogpt": [
+        "docker",
+        "python",
+        "openai",
+        "ai"
       ]
     },
     "py_xiaozhi": {
@@ -15305,6 +15493,9 @@
         "mcp-server"
       ],
       "deepseek_671b_sft_guide": [
+        "python"
+      ],
+      "autogpt": [
         "python"
       ]
     },
@@ -15458,6 +15649,11 @@
         "ai",
         "openai",
         "agent"
+      ],
+      "autogpt": [
+        "python",
+        "openai",
+        "ai"
       ]
     },
     "modular_speech_to_speech_pipeline": {
@@ -15652,6 +15848,12 @@
       "loushang": [
         "ai",
         "openai"
+      ],
+      "autogpt": [
+        "python",
+        "llm",
+        "openai",
+        "ai"
       ]
     },
     "web_rover_ai_agent": {
@@ -15827,6 +16029,10 @@
       "loushang": [
         "claude-code",
         "openai"
+      ],
+      "autogpt": [
+        "docker",
+        "openai"
       ]
     },
     "live_run_forking_with_pydantic_deep_agents": {
@@ -15931,6 +16137,9 @@
         "mcp-server"
       ],
       "pydantic_deepagents": [
+        "docker"
+      ],
+      "autogpt": [
         "docker"
       ]
     },
@@ -16096,6 +16305,11 @@
       ],
       "loushang": [
         "openai"
+      ],
+      "autogpt": [
+        "python",
+        "llm",
+        "openai"
       ]
     },
     "deepseek_v3_r1_fine_tuning": {
@@ -16222,6 +16436,11 @@
       ],
       "deepseek_671b_sft_guide": [
         "openai"
+      ],
+      "autogpt": [
+        "claude",
+        "openai",
+        "ai"
       ]
     },
     "loushang_ai_native_agent_harness": {
@@ -16315,8 +16534,166 @@
       "web_rover_ai_agent": [
         "Claude"
       ]
+    },
+    "autogpt": {
+      "new_claude_opus_5_leaks": [
+        "claude"
+      ],
+      "china_just_beat_claude_ai_kimi_k3": [
+        "claude"
+      ],
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "openai"
+      ],
+      "dify": [
+        "openai",
+        "docker",
+        "claude",
+        "gpt",
+        "ai",
+        "agentic-ai"
+      ],
+      "ragflow": [
+        "docker",
+        "agentic-ai",
+        "openai",
+        "ai"
+      ],
+      "lightrag": [
+        "docker",
+        "llm",
+        "gpt"
+      ],
+      "graphrag": [
+        "llm",
+        "gpt"
+      ],
+      "rag_techniques": [
+        "llm",
+        "openai",
+        "python",
+        "gpt",
+        "ai"
+      ],
+      "fastapi_mcp": [
+        "claude",
+        "llm",
+        "ai"
+      ],
+      "mcp_go": [
+        "llm",
+        "ai"
+      ],
+      "mcp_agent": [
+        "llm",
+        "openai",
+        "python",
+        "agents",
+        "ai"
+      ],
+      "registry": [
+        "docker",
+        "llm",
+        "ai"
+      ],
+      "mcp_registry_development_deployment": [
+        "docker"
+      ],
+      "awesome_mcp_servers": [
+        "docker",
+        "ai"
+      ],
+      "griptape": [
+        "llm",
+        "openai",
+        "claude",
+        "python",
+        "gpt",
+        "ai"
+      ],
+      "forge": [
+        "llm",
+        "openai",
+        "python",
+        "docker",
+        "agents",
+        "agentic-ai"
+      ],
+      "infinity": [
+        "docker"
+      ],
+      "trainer": [
+        "python",
+        "llm",
+        "ai"
+      ],
+      "pasa": [
+        "python",
+        "llm",
+        "ai"
+      ],
+      "lightagent": [
+        "python",
+        "llm",
+        "agents",
+        "openai"
+      ],
+      "sqlite_vector": [
+        "llm",
+        "ai"
+      ],
+      "openmontage": [
+        "openai",
+        "claude",
+        "python",
+        "agentic-ai",
+        "ai"
+      ],
+      "leon": [
+        "artificial-intelligence",
+        "python",
+        "openai",
+        "ai"
+      ],
+      "speech_to_speech": [
+        "docker",
+        "python",
+        "openai",
+        "ai"
+      ],
+      "py_xiaozhi": [
+        "python"
+      ],
+      "openakita": [
+        "python",
+        "openai",
+        "ai"
+      ],
+      "webrover": [
+        "python",
+        "llm",
+        "openai",
+        "ai"
+      ],
+      "pydantic_deepagents": [
+        "docker",
+        "openai"
+      ],
+      "nornicdb": [
+        "docker"
+      ],
+      "deepseek_671b_sft_guide": [
+        "python",
+        "llm",
+        "openai"
+      ],
+      "loushang": [
+        "claude",
+        "openai",
+        "ai"
+      ]
     }
   },
-  "updated_at": "2026-07-24T00:03:41.313091+00:00",
-  "total_skills": 79
+  "updated_at": "2026-07-24T01:06:56.070369+00:00",
+  "total_skills": 80
 }
