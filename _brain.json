@@ -52,7 +52,7 @@
       ]
     },
     "here": {
-      "freq": 21,
+      "freq": 22,
       "skills": [
         "new_claude_opus_5_leaks",
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
@@ -62,7 +62,8 @@
         "this_100_self_improving_ai_agent_is_insane_just_wa",
         "hermes_agent_full_course_setup_guide_for_complete_",
         "the_15_most_insane_things_created_by_kimi_k3_kimi_",
-        "you_need_to_use_hermes_right_now_goodbye_openclaw"
+        "you_need_to_use_hermes_right_now_goodbye_openclaw",
+        "kimi_k3_mcp_king_of_algo_trading"
       ]
     },
     "honeycomb": {
@@ -164,12 +165,13 @@
       ]
     },
     "want": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
-        "hermes_agent_full_course_setup_guide_for_complete_"
+        "hermes_agent_full_course_setup_guide_for_complete_",
+        "kimi_k3_mcp_king_of_algo_trading"
       ]
     },
     "ahead": {
@@ -191,7 +193,7 @@
       ]
     },
     "right": {
-      "freq": 15,
+      "freq": 16,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "kimi_k3_vs_claude_fable_5_raw_results",
@@ -199,7 +201,8 @@
         "yes_the_kimi_k3_hype_is_real",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
         "hermes_agent_full_course_setup_guide_for_complete_",
-        "you_need_to_use_hermes_right_now_goodbye_openclaw"
+        "you_need_to_use_hermes_right_now_goodbye_openclaw",
+        "kimi_k3_mcp_king_of_algo_trading"
       ]
     },
     "going": {
@@ -353,18 +356,20 @@
       ]
     },
     "good": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
-        "chatgpt_work_everything_you_need_to_know_to_get_st"
+        "chatgpt_work_everything_you_need_to_know_to_get_st",
+        "kimi_k3_mcp_king_of_algo_trading"
       ]
     },
     "which": {
-      "freq": 10,
+      "freq": 11,
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
         "by_august_we_ll_have_frontier_ai_running_locally",
         "yes_the_kimi_k3_hype_is_real",
-        "this_100_self_improving_ai_agent_is_insane_just_wa"
+        "this_100_self_improving_ai_agent_is_insane_just_wa",
+        "kimi_k3_mcp_king_of_algo_trading"
       ]
     },
     "enthropic": {
@@ -728,9 +733,10 @@
       ]
     },
     "time": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "this_ai_business_model_is_creating_new_millionaire"
+        "this_ai_business_model_is_creating_new_millionaire",
+        "kimi_k3_mcp_king_of_algo_trading"
       ]
     },
     "niche": {
@@ -4784,11 +4790,35 @@
       "skills": [
         "tensorflow"
       ]
+    },
+    "strategy": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_mcp_king_of_algo_trading"
+      ]
+    },
+    "really": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_mcp_king_of_algo_trading"
+      ]
+    },
+    "trade": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_mcp_king_of_algo_trading"
+      ]
+    },
+    "trading": {
+      "freq": 1,
+      "skills": [
+        "kimi_k3_mcp_king_of_algo_trading"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 50,
+      "freq": 51,
       "skills": [
         "new_claude_opus_5_leaks",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
@@ -4814,11 +4844,12 @@
         "auto_gpt_deployment",
         "headroom_context_compression",
         "litellm",
-        "awesome_python"
+        "awesome_python",
+        "kimi_k3_mcp_king_of_algo_trading"
       ]
     },
     "Anthropic": {
-      "freq": 30,
+      "freq": 31,
       "skills": [
         "new_claude_opus_5_leaks",
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
@@ -4832,7 +4863,8 @@
         "this_ai_business_model_is_creating_new_millionaire",
         "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o",
         "agentic_rag_for_dummies",
-        "headroom_context_compression"
+        "headroom_context_compression",
+        "kimi_k3_mcp_king_of_algo_trading"
       ]
     },
     "Gemini": {
@@ -4895,7 +4927,7 @@
       ]
     },
     "Python": {
-      "freq": 30,
+      "freq": 31,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -4917,7 +4949,8 @@
         "headroom_context_compression",
         "litellm",
         "airecon_autonomous_pentesting",
-        "awesome_python"
+        "awesome_python",
+        "kimi_k3_mcp_king_of_algo_trading"
       ]
     },
     "LLM": {
@@ -4935,7 +4968,7 @@
       ]
     },
     "OpenAI": {
-      "freq": 33,
+      "freq": 34,
       "skills": [
         "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe",
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
@@ -4954,7 +4987,8 @@
         "loushang_ai_native_agent_harness",
         "auto_gpt_deployment",
         "document_conversion",
-        "headroom_context_compression"
+        "headroom_context_compression",
+        "kimi_k3_mcp_king_of_algo_trading"
       ]
     },
     "Ollama": {
@@ -11490,6 +11524,35 @@
         "distributed"
       ],
       "step_count": 12
+    },
+    "kimi_k3_mcp_king_of_algo_trading": {
+      "concepts": [
+        "strategy",
+        "here",
+        "want",
+        "right",
+        "really",
+        "good",
+        "which",
+        "trade",
+        "time",
+        "trading"
+      ],
+      "tools": [
+        "Claude",
+        "Python",
+        "OpenAI",
+        "Anthropic"
+      ],
+      "tags": [
+        "strategy",
+        "here",
+        "want",
+        "right",
+        "really",
+        "good"
+      ],
+      "step_count": 1
     }
   },
   "relationships": {
@@ -11646,6 +11709,11 @@
       ],
       "awesome_python": [
         "Claude"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
+        "Claude",
+        "here",
+        "Anthropic"
       ]
     },
     "100_hours_of_hermes_agent_lessons_in_19_minutes": {
@@ -11770,6 +11838,10 @@
       ],
       "awesome_python": [
         "Claude"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
+        "Claude",
+        "want"
       ]
     },
     "hermes_agent_tutorial_for_beginners_full_step_by_s": {
@@ -11997,6 +12069,13 @@
       ],
       "tensorflow": [
         "Python"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
+        "Python",
+        "Claude",
+        "want",
+        "here",
+        "right"
       ]
     },
     "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": {
@@ -12077,6 +12156,10 @@
       "headroom_context_compression": [
         "Anthropic",
         "OpenAI"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
+        "OpenAI",
+        "Anthropic"
       ]
     },
     "kimi_k3_vs_claude_fable_5_raw_results": {
@@ -12371,6 +12454,11 @@
       ],
       "awesome_python": [
         "Claude"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
+        "Claude",
+        "OpenAI",
+        "which"
       ]
     },
     "by_august_we_ll_have_frontier_ai_running_locally": {
@@ -12471,6 +12559,10 @@
       ],
       "headroom_context_compression": [
         "OpenAI"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
+        "OpenAI",
+        "which"
       ]
     },
     "yes_the_kimi_k3_hype_is_real": {
@@ -12610,6 +12702,14 @@
       ],
       "awesome_python": [
         "Claude"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
+        "OpenAI",
+        "Anthropic",
+        "Claude",
+        "which",
+        "here",
+        "right"
       ]
     },
     "this_100_self_improving_ai_agent_is_insane_just_wa": {
@@ -12857,6 +12957,14 @@
         "Python",
         "pip",
         "Git"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
+        "Python",
+        "OpenAI",
+        "Anthropic",
+        "Claude",
+        "want",
+        "here"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -13023,6 +13131,11 @@
       ],
       "tensorflow": [
         "Python"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
+        "Claude",
+        "Python",
+        "Anthropic"
       ]
     },
     "new_hermes_paperclip_ai_agent_update_is_insane": {
@@ -13109,6 +13222,9 @@
         "OpenAI"
       ],
       "headroom_context_compression": [
+        "OpenAI"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
         "OpenAI"
       ]
     },
@@ -13302,6 +13418,11 @@
       ],
       "awesome_python": [
         "Claude"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
+        "Claude",
+        "OpenAI",
+        "Anthropic"
       ]
     },
     "you_need_to_use_hermes_right_now_goodbye_openclaw": {
@@ -13557,6 +13678,13 @@
       ],
       "tensorflow": [
         "Python"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
+        "Python",
+        "OpenAI",
+        "Claude",
+        "here",
+        "right"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -13750,6 +13878,10 @@
         "Docker"
       ],
       "tensorflow": [
+        "Python"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
+        "Claude",
         "Python"
       ]
     },
@@ -13952,6 +14084,11 @@
       "awesome_python": [
         "LLM",
         "Claude"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
+        "Claude",
+        "OpenAI",
+        "Anthropic"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -14053,6 +14190,10 @@
       ],
       "awesome_python": [
         "Claude"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
+        "Claude",
+        "here"
       ]
     },
     "every_hermes_concept_explained_for_normal_people": {
@@ -14130,6 +14271,9 @@
         "Claude"
       ],
       "awesome_python": [
+        "Claude"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
         "Claude"
       ]
     },
@@ -14232,6 +14376,10 @@
       ],
       "awesome_python": [
         "Claude"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
+        "Claude",
+        "Anthropic"
       ]
     },
     "hermes_agent_full_course_setup_guide_for_complete_": {
@@ -14444,6 +14592,13 @@
         "LLM",
         "Claude",
         "Docker"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
+        "OpenAI",
+        "Anthropic",
+        "Claude",
+        "want",
+        "here"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -14556,6 +14711,11 @@
       ],
       "awesome_python": [
         "Claude"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
+        "Claude",
+        "OpenAI",
+        "Anthropic"
       ]
     },
     "dify": {
@@ -15231,6 +15391,9 @@
       "tensorflow": [
         "docker",
         "Python"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
+        "Python"
       ]
     },
     "lightrag_setup": {
@@ -15439,6 +15602,9 @@
       ],
       "tensorflow": [
         "Python"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
+        "Python"
       ]
     },
     "graphrag_system": {
@@ -15534,6 +15700,9 @@
         "Python"
       ],
       "tensorflow": [
+        "Python"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
         "Python"
       ]
     },
@@ -15913,6 +16082,9 @@
       ],
       "tensorflow": [
         "Python"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
+        "Python"
       ]
     },
     "fastapi_mcp_integration": {
@@ -16009,6 +16181,9 @@
       ],
       "tensorflow": [
         "pip"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
+        "Claude"
       ]
     },
     "mcp_go": {
@@ -17096,6 +17271,10 @@
       "airecon_autonomous_pentesting": [
         "Ollama",
         "Context Compression"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
+        "OpenAI",
+        "Anthropic"
       ]
     },
     "griptape": {
@@ -17497,6 +17676,11 @@
       ],
       "tensorflow": [
         "Python"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
+        "Claude",
+        "Python",
+        "OpenAI"
       ]
     },
     "forge": {
@@ -18171,6 +18355,9 @@
       "tensorflow": [
         "python",
         "Python"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
+        "Python"
       ]
     },
     "paper_agent": {
@@ -18424,6 +18611,9 @@
         "Python"
       ],
       "tensorflow": [
+        "Python"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
         "Python"
       ]
     },
@@ -18964,6 +19154,9 @@
       "tensorflow": [
         "Python",
         "Git"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
+        "Python"
       ]
     },
     "speech_to_speech": {
@@ -19687,6 +19880,9 @@
       "tensorflow": [
         "python",
         "Python"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
+        "Python"
       ]
     },
     "web_rover_ai_agent": {
@@ -19768,6 +19964,9 @@
         "Claude"
       ],
       "awesome_python": [
+        "Claude"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
         "Claude"
       ]
     },
@@ -20536,6 +20735,10 @@
       ],
       "tensorflow": [
         "pip"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
+        "Claude",
+        "OpenAI"
       ]
     },
     "autogpt": {
@@ -20916,6 +21119,11 @@
       ],
       "tensorflow": [
         "Python"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
+        "Python",
+        "OpenAI",
+        "Claude"
       ]
     },
     "markitdown": {
@@ -21072,6 +21280,9 @@
       "tensorflow": [
         "docker",
         "Python"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
+        "Python"
       ]
     },
     "document_conversion": {
@@ -21185,6 +21396,10 @@
       "tensorflow": [
         "Python",
         "pip"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
+        "Python",
+        "OpenAI"
       ]
     },
     "headroom": {
@@ -21593,6 +21808,12 @@
       ],
       "tensorflow": [
         "Python"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
+        "Claude",
+        "Python",
+        "Anthropic",
+        "OpenAI"
       ]
     },
     "litellm": {
@@ -21878,6 +22099,10 @@
       ],
       "tensorflow": [
         "Python"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
+        "Claude",
+        "Python"
       ]
     },
     "airecon": {
@@ -22147,6 +22372,9 @@
         "Docker"
       ],
       "tensorflow": [
+        "Python"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
         "Python"
       ]
     },
@@ -22494,6 +22722,10 @@
         "Python",
         "tensorflow",
         "Deep Learning"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
+        "Claude",
+        "Python"
       ]
     },
     "project_based_learning": {
@@ -22804,9 +23036,186 @@
       ],
       "airecon_autonomous_pentesting": [
         "Python"
+      ],
+      "kimi_k3_mcp_king_of_algo_trading": [
+        "Python"
+      ]
+    },
+    "kimi_k3_mcp_king_of_algo_trading": {
+      "new_claude_opus_5_leaks": [
+        "Claude",
+        "here",
+        "Anthropic"
+      ],
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "Claude",
+        "want"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Python",
+        "Claude",
+        "want",
+        "here",
+        "right"
+      ],
+      "nuevo_kimi_k3_destruye_a_claude_fable_5_debes_sabe": [
+        "OpenAI",
+        "Anthropic"
+      ],
+      "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
+        "Claude",
+        "OpenAI",
+        "which"
+      ],
+      "by_august_we_ll_have_frontier_ai_running_locally": [
+        "OpenAI",
+        "which"
+      ],
+      "yes_the_kimi_k3_hype_is_real": [
+        "OpenAI",
+        "Anthropic",
+        "Claude",
+        "which",
+        "here",
+        "right"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "Python",
+        "OpenAI",
+        "Anthropic",
+        "Claude",
+        "want",
+        "here"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude",
+        "Python",
+        "Anthropic"
+      ],
+      "new_hermes_paperclip_ai_agent_update_is_insane": [
+        "OpenAI"
+      ],
+      "china_just_beat_claude_ai_kimi_k3": [
+        "Claude",
+        "OpenAI",
+        "Anthropic"
+      ],
+      "you_need_to_use_hermes_right_now_goodbye_openclaw": [
+        "Python",
+        "OpenAI",
+        "Claude",
+        "here",
+        "right"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Claude",
+        "Python"
+      ],
+      "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
+        "Claude",
+        "OpenAI",
+        "Anthropic"
+      ],
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "Claude",
+        "here"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "Claude"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude",
+        "Anthropic"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "OpenAI",
+        "Anthropic",
+        "Claude",
+        "want",
+        "here"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Claude",
+        "OpenAI",
+        "Anthropic"
+      ],
+      "lightrag": [
+        "Python"
+      ],
+      "graphrag": [
+        "Python"
+      ],
+      "graphrag_system": [
+        "Python"
+      ],
+      "fastapi_mcp": [
+        "Python"
+      ],
+      "fastapi_mcp_integration": [
+        "Claude"
+      ],
+      "agentic_rag_for_dummies": [
+        "OpenAI",
+        "Anthropic"
+      ],
+      "griptape_framework": [
+        "Claude",
+        "Python",
+        "OpenAI"
+      ],
+      "pasa": [
+        "Python"
+      ],
+      "lightagent_framework": [
+        "Python"
+      ],
+      "leon_ai_assistant": [
+        "Python"
+      ],
+      "webrover": [
+        "Python"
+      ],
+      "web_rover_ai_agent": [
+        "Claude"
+      ],
+      "loushang_ai_native_agent_harness": [
+        "Claude",
+        "OpenAI"
+      ],
+      "auto_gpt_deployment": [
+        "Python",
+        "OpenAI",
+        "Claude"
+      ],
+      "markitdown": [
+        "Python"
+      ],
+      "document_conversion": [
+        "Python",
+        "OpenAI"
+      ],
+      "headroom_context_compression": [
+        "Claude",
+        "Python",
+        "Anthropic",
+        "OpenAI"
+      ],
+      "litellm": [
+        "Claude",
+        "Python"
+      ],
+      "airecon_autonomous_pentesting": [
+        "Python"
+      ],
+      "awesome_python": [
+        "Claude",
+        "Python"
+      ],
+      "tensorflow": [
+        "Python"
       ]
     }
   },
-  "updated_at": "2026-07-24T02:37:43.348223+00:00",
-  "total_skills": 94
+  "updated_at": "2026-07-24T03:43:17.120991+00:00",
+  "total_skills": 95
 }
