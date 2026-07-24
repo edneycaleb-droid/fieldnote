@@ -1969,9 +1969,10 @@
       ]
     },
     "MCP Tools": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "model_context_protocol_go"
+        "model_context_protocol_go",
+        "litellm"
       ]
     },
     "Task-Augmented Tools": {
@@ -2371,10 +2372,11 @@
       ]
     },
     "Guardrails": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "forge_llm_tool_calling_framework",
-        "lightagent_framework"
+        "lightagent_framework",
+        "litellm"
       ]
     },
     "Proxy server": {
@@ -2640,9 +2642,10 @@
       ]
     },
     "OpenAI Compatibility": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "lightagent_framework"
+        "lightagent_framework",
+        "litellm"
       ]
     },
     "Python": {
@@ -3723,11 +3726,71 @@
       "skills": [
         "litellm"
       ]
+    },
+    "AI Gateway": {
+      "freq": 1,
+      "skills": [
+        "litellm"
+      ]
+    },
+    "A2A Protocol": {
+      "freq": 1,
+      "skills": [
+        "litellm"
+      ]
+    },
+    "Cost Tracking": {
+      "freq": 1,
+      "skills": [
+        "litellm"
+      ]
+    },
+    "Load Balancing": {
+      "freq": 1,
+      "skills": [
+        "litellm"
+      ]
+    },
+    "LLM Abstraction": {
+      "freq": 1,
+      "skills": [
+        "litellm"
+      ]
+    },
+    "Production-Ready AI Infrastructure": {
+      "freq": 1,
+      "skills": [
+        "litellm"
+      ]
+    },
+    "Provider Agnosticism": {
+      "freq": 1,
+      "skills": [
+        "litellm"
+      ]
+    },
+    "Unified API": {
+      "freq": 1,
+      "skills": [
+        "litellm"
+      ]
+    },
+    "Unified LLM API": {
+      "freq": 1,
+      "skills": [
+        "litellm"
+      ]
+    },
+    "Virtual Keys": {
+      "freq": 1,
+      "skills": [
+        "litellm"
+      ]
     }
   },
   "tools": {
     "Claude": {
-      "freq": 48,
+      "freq": 49,
       "skills": [
         "new_claude_opus_5_leaks",
         "100_hours_of_hermes_agent_lessons_in_19_minutes",
@@ -3751,7 +3814,8 @@
         "web_rover_ai_agent",
         "loushang_ai_native_agent_harness",
         "auto_gpt_deployment",
-        "headroom_context_compression"
+        "headroom_context_compression",
+        "litellm"
       ]
     },
     "Anthropic": {
@@ -3794,7 +3858,7 @@
       ]
     },
     "Docker": {
-      "freq": 25,
+      "freq": 26,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -3812,21 +3876,23 @@
         "live_run_forking_with_pydantic_deep_agents",
         "nornicdb_deployment",
         "auto_gpt_deployment",
-        "headroom_context_compression"
+        "headroom_context_compression",
+        "litellm"
       ]
     },
     "bash": {
-      "freq": 9,
+      "freq": 10,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "new_hermes_agent_os_is_insane",
         "ragflow_self_hosting_guide",
         "auto_gpt_deployment",
-        "headroom_context_compression"
+        "headroom_context_compression",
+        "litellm"
       ]
     },
     "Python": {
-      "freq": 27,
+      "freq": 28,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "this_100_self_improving_ai_agent_is_insane_just_wa",
@@ -3845,11 +3911,12 @@
         "auto_gpt_deployment",
         "markitdown",
         "document_conversion",
-        "headroom_context_compression"
+        "headroom_context_compression",
+        "litellm"
       ]
     },
     "LLM": {
-      "freq": 14,
+      "freq": 15,
       "skills": [
         "hermes_agent_tutorial_for_beginners_full_step_by_s",
         "hermes_agent_full_course_setup_guide_for_complete_",
@@ -3857,7 +3924,8 @@
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
         "new_hermes_agent_os_is_insane",
         "griptape_framework",
-        "headroom_context_compression"
+        "headroom_context_compression",
+        "litellm"
       ]
     },
     "OpenAI": {
@@ -3891,7 +3959,7 @@
       ]
     },
     "anthropic": {
-      "freq": 15,
+      "freq": 16,
       "skills": [
         "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v",
         "you_need_to_use_hermes_right_now_goodbye_openclaw",
@@ -4168,7 +4236,7 @@
       ]
     },
     "terraform": {
-      "freq": 2,
+      "freq": 3,
       "skills": [
         "dify",
         "litellm"
@@ -4224,7 +4292,7 @@
       ]
     },
     "openai": {
-      "freq": 21,
+      "freq": 22,
       "skills": [
         "dify",
         "ragflow",
@@ -4380,7 +4448,7 @@
       ]
     },
     "gemini": {
-      "freq": 7,
+      "freq": 8,
       "skills": [
         "ragflow",
         "agentic_rag_for_dummies",
@@ -4392,7 +4460,7 @@
       ]
     },
     "huggingface": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "ragflow",
         "agentic_rag_for_dummies",
@@ -4601,12 +4669,13 @@
       ]
     },
     "uv": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "lightrag_setup",
         "fastapi_mcp_integration",
         "cross_platform_py_xiaozhi",
-        "loushang_ai_native_agent_harness"
+        "loushang_ai_native_agent_harness",
+        "litellm"
       ]
     },
     "LightRAG": {
@@ -4680,7 +4749,7 @@
       ]
     },
     "langchain": {
-      "freq": 8,
+      "freq": 9,
       "skills": [
         "rag_techniques",
         "agentic_rag_for_dummies",
@@ -5412,7 +5481,7 @@
       ]
     },
     "langgraph": {
-      "freq": 4,
+      "freq": 5,
       "skills": [
         "agentic_rag_for_dummies",
         "webrover",
@@ -5548,7 +5617,7 @@
       ]
     },
     "vllm": {
-      "freq": 5,
+      "freq": 6,
       "skills": [
         "forge",
         "lightagent",
@@ -6496,9 +6565,10 @@
       ]
     },
     "uvicorn": {
-      "freq": 1,
+      "freq": 2,
       "skills": [
-        "webrover"
+        "webrover",
+        "litellm"
       ]
     },
     "Playwright": {
@@ -6895,6 +6965,18 @@
       ]
     },
     "gateway": {
+      "freq": 1,
+      "skills": [
+        "litellm"
+      ]
+    },
+    "httpx": {
+      "freq": 1,
+      "skills": [
+        "litellm"
+      ]
+    },
+    "a2a-sdk": {
       "freq": 1,
       "skills": [
         "litellm"
@@ -9607,11 +9689,19 @@
     },
     "litellm": {
       "concepts": [
-        "ai-gateway",
-        "anthropic",
-        "azure-openai",
-        "bedrock",
-        "gateway"
+        "AI Gateway",
+        "A2A Protocol",
+        "Cost Tracking",
+        "Guardrails",
+        "Load Balancing",
+        "LLM Abstraction",
+        "MCP Tools",
+        "OpenAI Compatibility",
+        "Production-Ready AI Infrastructure",
+        "Provider Agnosticism",
+        "Unified API",
+        "Unified LLM API",
+        "Virtual Keys"
       ],
       "tools": [
         "gemini",
@@ -9619,28 +9709,27 @@
         "terraform",
         "langgraph",
         "huggingface",
-        "ollama",
-        "groq",
-        "anthropic",
-        "pydantic",
+        "Claude",
+        "Docker",
+        "bash",
+        "Python",
+        "LLM",
+        "uvicorn",
+        "langchain",
         "openai",
-        "ai-gateway",
-        "azure-openai",
-        "bedrock",
-        "gateway",
-        "langchain"
+        "anthropic",
+        "uv",
+        "httpx",
+        "a2a-sdk"
       ],
       "tags": [
         "ai-gateway",
-        "anthropic",
-        "azure-openai",
-        "bedrock",
-        "gateway",
-        "python",
-        "ai",
-        "llm"
+        "developer-tools",
+        "llm",
+        "orchestration",
+        "python"
       ],
-      "step_count": 4
+      "step_count": 12
     }
   },
   "relationships": {
@@ -9792,7 +9881,8 @@
         "Claude"
       ],
       "litellm": [
-        "anthropic"
+        "anthropic",
+        "Claude"
       ]
     },
     "100_hours_of_hermes_agent_lessons_in_19_minutes": {
@@ -9910,6 +10000,9 @@
         "agent"
       ],
       "headroom_context_compression": [
+        "Claude"
+      ],
+      "litellm": [
         "Claude"
       ]
     },
@@ -10111,6 +10204,13 @@
         "agent"
       ],
       "headroom_context_compression": [
+        "Claude",
+        "bash",
+        "LLM",
+        "Docker",
+        "Python"
+      ],
+      "litellm": [
         "Claude",
         "bash",
         "LLM",
@@ -10485,7 +10585,8 @@
         "Claude"
       ],
       "litellm": [
-        "anthropic"
+        "anthropic",
+        "Claude"
       ]
     },
     "by_august_we_ll_have_frontier_ai_running_locally": {
@@ -10719,6 +10820,9 @@
         "Anthropic",
         "OpenAI",
         "Claude"
+      ],
+      "litellm": [
+        "Claude"
       ]
     },
     "this_100_self_improving_ai_agent_is_insane_just_wa": {
@@ -10947,6 +11051,11 @@
         "Anthropic",
         "Docker",
         "Python"
+      ],
+      "litellm": [
+        "Docker",
+        "Claude",
+        "Python"
       ]
     },
     "hermes_claude_code_mcp_integration_loop_engineerin": {
@@ -11097,6 +11206,10 @@
       ],
       "headroom_context_compression": [
         "Anthropic",
+        "Claude",
+        "Python"
+      ],
+      "litellm": [
         "Claude",
         "Python"
       ]
@@ -11373,7 +11486,8 @@
         "Claude"
       ],
       "litellm": [
-        "anthropic"
+        "anthropic",
+        "Claude"
       ]
     },
     "you_need_to_use_hermes_right_now_goodbye_openclaw": {
@@ -11611,7 +11725,11 @@
         "Python"
       ],
       "litellm": [
-        "anthropic"
+        "anthropic",
+        "Claude",
+        "LLM",
+        "Docker",
+        "Python"
       ]
     },
     "new_hermes_agent_os_is_insane": {
@@ -11779,6 +11897,13 @@
         "Python"
       ],
       "headroom_context_compression": [
+        "Claude",
+        "bash",
+        "LLM",
+        "Docker",
+        "Python"
+      ],
+      "litellm": [
         "Claude",
         "bash",
         "LLM",
@@ -11975,7 +12100,9 @@
         "Claude"
       ],
       "litellm": [
-        "openai"
+        "LLM",
+        "openai",
+        "Claude"
       ]
     },
     "the_15_most_insane_things_created_by_kimi_k3_kimi_": {
@@ -12071,6 +12198,9 @@
       ],
       "headroom_context_compression": [
         "Claude"
+      ],
+      "litellm": [
+        "Claude"
       ]
     },
     "every_hermes_concept_explained_for_normal_people": {
@@ -12142,6 +12272,9 @@
         "Claude"
       ],
       "headroom_context_compression": [
+        "Claude"
+      ],
+      "litellm": [
         "Claude"
       ]
     },
@@ -12237,6 +12370,9 @@
       ],
       "headroom_context_compression": [
         "Anthropic",
+        "Claude"
+      ],
+      "litellm": [
         "Claude"
       ]
     },
@@ -12437,6 +12573,11 @@
         "LLM",
         "Anthropic",
         "Docker"
+      ],
+      "litellm": [
+        "LLM",
+        "Docker",
+        "Claude"
       ]
     },
     "this_ai_business_model_is_creating_new_millionaire": {
@@ -12542,6 +12683,9 @@
       "headroom_context_compression": [
         "Anthropic",
         "OpenAI",
+        "Claude"
+      ],
+      "litellm": [
         "Claude"
       ]
     },
@@ -12781,6 +12925,9 @@
       ],
       "headroom_context_compression": [
         "Docker"
+      ],
+      "litellm": [
+        "Docker"
       ]
     },
     "ragflow": {
@@ -12995,6 +13142,10 @@
       "headroom_context_compression": [
         "Docker",
         "bash"
+      ],
+      "litellm": [
+        "Docker",
+        "bash"
       ]
     },
     "lightrag": {
@@ -13147,7 +13298,7 @@
         "Python"
       ],
       "litellm": [
-        "ollama"
+        "Python"
       ]
     },
     "lightrag_setup": {
@@ -13221,6 +13372,10 @@
       ],
       "headroom_context_compression": [
         "Docker"
+      ],
+      "litellm": [
+        "Docker",
+        "uv"
       ]
     },
     "graphrag": {
@@ -13334,6 +13489,9 @@
       ],
       "headroom_context_compression": [
         "Python"
+      ],
+      "litellm": [
+        "Python"
       ]
     },
     "graphrag_system": {
@@ -13414,6 +13572,10 @@
         "Python"
       ],
       "headroom_context_compression": [
+        "LLM",
+        "Python"
+      ],
+      "litellm": [
         "LLM",
         "Python"
       ]
@@ -13763,6 +13925,9 @@
       ],
       "headroom_context_compression": [
         "Python"
+      ],
+      "litellm": [
+        "Python"
       ]
     },
     "fastapi_mcp_integration": {
@@ -13848,6 +14013,10 @@
       "headroom_context_compression": [
         "FastAPI",
         "Claude"
+      ],
+      "litellm": [
+        "Claude",
+        "uv"
       ]
     },
     "mcp_go": {
@@ -14129,7 +14298,6 @@
       ],
       "litellm": [
         "anthropic",
-        "pydantic",
         "openai"
       ]
     },
@@ -14261,6 +14429,10 @@
         "Docker"
       ],
       "headroom_context_compression": [
+        "Docker",
+        "LLM"
+      ],
+      "litellm": [
         "Docker",
         "LLM"
       ]
@@ -14468,6 +14640,9 @@
       ],
       "headroom_context_compression": [
         "MCP Server"
+      ],
+      "litellm": [
+        "MCP Tools"
       ]
     },
     "xcodebuildmcp": {
@@ -14707,6 +14882,9 @@
         "Docker"
       ],
       "headroom_context_compression": [
+        "Docker"
+      ],
+      "litellm": [
         "Docker"
       ]
     },
@@ -15016,10 +15194,9 @@
       ],
       "litellm": [
         "anthropic",
-        "pydantic",
-        "openai",
+        "huggingface",
         "langchain",
-        "huggingface"
+        "openai"
       ]
     },
     "griptape_framework": {
@@ -15203,6 +15380,12 @@
         "Pydantic",
         "OpenAI",
         "LangChain"
+      ],
+      "litellm": [
+        "Docker",
+        "Claude",
+        "LLM",
+        "Python"
       ]
     },
     "forge": {
@@ -15370,10 +15553,8 @@
       ],
       "litellm": [
         "anthropic",
-        "pydantic",
-        "openai",
         "vllm",
-        "ollama"
+        "openai"
       ]
     },
     "forge_llm_tool_calling_framework": {
@@ -15385,6 +15566,9 @@
       ],
       "live_run_forking_with_pydantic_deep_agents": [
         "Tool-calling"
+      ],
+      "litellm": [
+        "Guardrails"
       ]
     },
     "xcodebuildmcp_installation": {
@@ -15519,6 +15703,9 @@
         "Docker"
       ],
       "headroom_context_compression": [
+        "Docker"
+      ],
+      "litellm": [
         "Docker"
       ]
     },
@@ -15792,7 +15979,8 @@
         "Python"
       ],
       "litellm": [
-        "huggingface"
+        "huggingface",
+        "Python"
       ]
     },
     "paper_agent": {
@@ -16011,6 +16199,12 @@
       ],
       "headroom_context_compression": [
         "LLM",
+        "Python"
+      ],
+      "litellm": [
+        "LLM",
+        "Guardrails",
+        "OpenAI Compatibility",
         "Python"
       ]
     },
@@ -16493,6 +16687,10 @@
       "headroom_context_compression": [
         "Docker",
         "Python"
+      ],
+      "litellm": [
+        "Docker",
+        "Python"
       ]
     },
     "speech_to_speech": {
@@ -16734,6 +16932,9 @@
       ],
       "loushang_ai_native_agent_harness": [
         "uv"
+      ],
+      "litellm": [
+        "uv"
       ]
     },
     "openakita": {
@@ -16928,6 +17129,9 @@
       ],
       "headroom_context_compression": [
         "LLM"
+      ],
+      "litellm": [
+        "LLM"
       ]
     },
     "webrover": {
@@ -17119,9 +17323,11 @@
       ],
       "litellm": [
         "anthropic",
-        "langgraph",
+        "openai",
+        "uvicorn",
         "langchain",
-        "openai"
+        "langgraph",
+        "Python"
       ]
     },
     "web_rover_ai_agent": {
@@ -17197,6 +17403,9 @@
         "Claude"
       ],
       "headroom_context_compression": [
+        "Claude"
+      ],
+      "litellm": [
         "Claude"
       ]
     },
@@ -17320,11 +17529,9 @@
       ],
       "litellm": [
         "anthropic",
-        "pydantic",
         "openai",
-        "gemini",
         "langgraph",
-        "ollama"
+        "gemini"
       ]
     },
     "live_run_forking_with_pydantic_deep_agents": {
@@ -17395,7 +17602,7 @@
         "Docker"
       ],
       "litellm": [
-        "pydantic"
+        "Docker"
       ]
     },
     "nornicdb": {
@@ -17507,6 +17714,9 @@
         "Docker"
       ],
       "headroom_context_compression": [
+        "Docker"
+      ],
+      "litellm": [
         "Docker"
       ]
     },
@@ -17879,6 +18089,10 @@
       "headroom_context_compression": [
         "OpenAI",
         "Claude"
+      ],
+      "litellm": [
+        "Claude",
+        "uv"
       ]
     },
     "autogpt": {
@@ -18216,6 +18430,12 @@
         "bash",
         "Docker",
         "Python"
+      ],
+      "litellm": [
+        "Docker",
+        "bash",
+        "Claude",
+        "Python"
       ]
     },
     "markitdown": {
@@ -18351,7 +18571,8 @@
       ],
       "litellm": [
         "langchain",
-        "openai"
+        "openai",
+        "Python"
       ]
     },
     "document_conversion": {
@@ -18451,6 +18672,9 @@
       ],
       "headroom_context_compression": [
         "OpenAI",
+        "Python"
+      ],
+      "litellm": [
         "Python"
       ]
     },
@@ -18828,23 +19052,39 @@
       "document_conversion": [
         "OpenAI",
         "Python"
+      ],
+      "litellm": [
+        "Claude",
+        "bash",
+        "LLM",
+        "Docker",
+        "Python"
       ]
     },
     "litellm": {
       "new_claude_opus_5_leaks": [
-        "anthropic"
+        "anthropic",
+        "Claude"
       ],
       "anthropic_s_downfall_kimi_k3_1_grok_4_6_deepseek_v": [
-        "anthropic"
+        "anthropic",
+        "Claude"
       ],
       "china_just_beat_claude_ai_kimi_k3": [
-        "anthropic"
+        "anthropic",
+        "Claude"
       ],
       "you_need_to_use_hermes_right_now_goodbye_openclaw": [
-        "anthropic"
+        "anthropic",
+        "Claude",
+        "LLM",
+        "Docker",
+        "Python"
       ],
       "gpt_5_6_mystery_new_2_7t_ai_deepseek_new_ai_chip_o": [
-        "openai"
+        "LLM",
+        "openai",
+        "Claude"
       ],
       "dify": [
         "terraform",
@@ -18856,7 +19096,7 @@
         "gemini"
       ],
       "lightrag": [
-        "ollama"
+        "Python"
       ],
       "rag_techniques": [
         "langchain",
@@ -18864,28 +19104,25 @@
       ],
       "mcp_agent": [
         "anthropic",
-        "pydantic",
         "openai"
       ],
       "griptape": [
         "anthropic",
-        "pydantic",
-        "openai",
+        "huggingface",
         "langchain",
-        "huggingface"
+        "openai"
       ],
       "forge": [
         "anthropic",
-        "pydantic",
-        "openai",
         "vllm",
-        "ollama"
+        "openai"
       ],
       "trainer": [
         "huggingface"
       ],
       "pasa": [
-        "huggingface"
+        "huggingface",
+        "Python"
       ],
       "lightagent": [
         "vllm",
@@ -18913,20 +19150,20 @@
       ],
       "webrover": [
         "anthropic",
-        "langgraph",
+        "openai",
+        "uvicorn",
         "langchain",
-        "openai"
+        "langgraph",
+        "Python"
       ],
       "pydantic_deepagents": [
         "anthropic",
-        "pydantic",
         "openai",
-        "gemini",
         "langgraph",
-        "ollama"
+        "gemini"
       ],
       "live_run_forking_with_pydantic_deep_agents": [
-        "pydantic"
+        "Docker"
       ],
       "deepseek_671b_sft_guide": [
         "huggingface",
@@ -18941,16 +19178,152 @@
       ],
       "markitdown": [
         "langchain",
-        "openai"
+        "openai",
+        "Python"
       ],
       "headroom": [
         "anthropic",
         "openai",
         "langchain",
         "gemini"
+      ],
+      "100_hours_of_hermes_agent_lessons_in_19_minutes": [
+        "Claude"
+      ],
+      "hermes_agent_tutorial_for_beginners_full_step_by_s": [
+        "Claude",
+        "bash",
+        "LLM",
+        "Docker",
+        "Python"
+      ],
+      "yes_the_kimi_k3_hype_is_real": [
+        "Claude"
+      ],
+      "this_100_self_improving_ai_agent_is_insane_just_wa": [
+        "Docker",
+        "Claude",
+        "Python"
+      ],
+      "hermes_claude_code_mcp_integration_loop_engineerin": [
+        "Claude",
+        "Python"
+      ],
+      "new_hermes_agent_os_is_insane": [
+        "Claude",
+        "bash",
+        "LLM",
+        "Docker",
+        "Python"
+      ],
+      "the_15_most_insane_things_created_by_kimi_k3_kimi_": [
+        "Claude"
+      ],
+      "every_hermes_concept_explained_for_normal_people": [
+        "Claude"
+      ],
+      "new_claude_update_is_insane": [
+        "Claude"
+      ],
+      "hermes_agent_full_course_setup_guide_for_complete_": [
+        "LLM",
+        "Docker",
+        "Claude"
+      ],
+      "this_ai_business_model_is_creating_new_millionaire": [
+        "Claude"
+      ],
+      "dify_deployment": [
+        "Docker"
+      ],
+      "ragflow_self_hosting_guide": [
+        "Docker",
+        "bash"
+      ],
+      "lightrag_setup": [
+        "Docker",
+        "uv"
+      ],
+      "graphrag": [
+        "Python"
+      ],
+      "graphrag_system": [
+        "LLM",
+        "Python"
+      ],
+      "fastapi_mcp": [
+        "Python"
+      ],
+      "fastapi_mcp_integration": [
+        "Claude",
+        "uv"
+      ],
+      "r2r": [
+        "Docker",
+        "LLM"
+      ],
+      "model_context_protocol_go": [
+        "MCP Tools"
+      ],
+      "mcp_server_implementations": [
+        "Docker"
+      ],
+      "griptape_framework": [
+        "Docker",
+        "Claude",
+        "LLM",
+        "Python"
+      ],
+      "forge_llm_tool_calling_framework": [
+        "Guardrails"
+      ],
+      "infinity_database": [
+        "Docker"
+      ],
+      "lightagent_framework": [
+        "LLM",
+        "Guardrails",
+        "OpenAI Compatibility",
+        "Python"
+      ],
+      "leon_ai_assistant": [
+        "Docker",
+        "Python"
+      ],
+      "cross_platform_py_xiaozhi": [
+        "uv"
+      ],
+      "modular_speech_to_speech_pipeline": [
+        "LLM"
+      ],
+      "web_rover_ai_agent": [
+        "Claude"
+      ],
+      "nornicdb_deployment": [
+        "Docker"
+      ],
+      "loushang_ai_native_agent_harness": [
+        "Claude",
+        "uv"
+      ],
+      "auto_gpt_deployment": [
+        "Docker",
+        "bash",
+        "Claude",
+        "Python"
+      ],
+      "document_conversion": [
+        "Python"
+      ],
+      "headroom_context_compression": [
+        "Claude",
+        "bash",
+        "LLM",
+        "Docker",
+        "Python"
       ]
     }
   },
-  "updated_at": "2026-07-24T01:09:20.975040+00:00",
+  "updated_at": "2026-07-24T01:09:58.372955+00:00",
   "total_skills": 86
 }
