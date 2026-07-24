@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "hrithikkoduri--webrover",
+      "title": "Discovered: hrithikkoduri/WebRover",
+      "category": "discoveries",
+      "confidence": "verified",
+      "updated_at": "2026-07-24T00:03:53.433300+00:00",
+      "path": "discoveries/hrithikkoduri--webrover.md"
+    },
+    {
       "slug": "owner--repo",
       "title": "Discovered: owner/repo",
       "category": "discoveries",
@@ -345,5 +353,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-22T13:04:22.846080+00:00"
+  "updated_at": "2026-07-24T00:03:53.534327+00:00"
 }
