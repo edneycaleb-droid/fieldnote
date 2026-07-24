@@ -1,7 +1,7 @@
 # ⚡ Fieldnote
 
 > A personal AI skill library — every YouTube video I learn from becomes a structured, searchable skill.
-> **143 skills** · Last synced: 2026-07-24 00:00 UTC
+> **144 skills** · Last synced: 2026-07-24 00:02 UTC
 
 ---
 
@@ -9,6 +9,7 @@
 
 | Skill | Description | Tools | Tags |
 |-------|-------------|-------|------|
+| [Deploying NornicDB for Graph and Vector Workloads](skills/nornicdb_deployment.md) | NornicDB is a distributed, low-latency graph and vector database that supports t | `Docker` `Go` `Neo4j` `Bolt` | `Database` `Deployment` `Graph` |
 | [Nornicdb](skills/nornicdb.md) | Nornicdb is a distributed low-latency, Graph+Vector, Temporal MVCC with all sub- | `qdrant` `docker` `bolt` `cypher` | `bolt` `cypher` `database` |
 | [Live Run Forking with Pydantic Deep Agents for Autonomous AI Development](skills/live_run_forking_with_pydantic_deep_agents.md) | Live run forking enables autonomous agents to explore multiple approaches to a p | `Pydantic Deep Agents` `Docker` `Playwright` `pydantic` | `ai-agents` `autonomous-ai` `autonomous-systems` |
 | [Pydantic Deepagents](skills/pydantic_deepagents.md) | Open-source, self-hosted Claude Code - a terminal AI assistant and the Python fr | `pydantic` `crewai` `docker` `ollama` | `agent-framework` `ai-agents` `anthropic` |
