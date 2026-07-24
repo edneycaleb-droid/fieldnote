@@ -1,6 +1,14 @@
 {
   "entries": [
     {
+      "slug": "zhnt--loushang",
+      "title": "Discovered: zhnt/loushang",
+      "category": "discoveries",
+      "confidence": "verified",
+      "updated_at": "2026-07-24T00:03:59.480550+00:00",
+      "path": "discoveries/zhnt--loushang.md"
+    },
+    {
       "slug": "scienceone-ai--deepseek-671b-sft-guide",
       "title": "Discovered: ScienceOne-AI/DeepSeek-671B-SFT-Guide",
       "category": "discoveries",
@@ -377,5 +385,5 @@
       "path": "preferences.md"
     }
   ],
-  "updated_at": "2026-07-24T00:03:57.998465+00:00"
+  "updated_at": "2026-07-24T00:03:59.484942+00:00"
 }
