@@ -1,0 +1,49 @@
+name: Skill Quality Audit
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "agents/skill_quality.py"
+      - "agents/__init__.py"
+      - "governance/skill_quality_policy.json"
+      - "scripts/audit_skills.py"
+      - "tests/test_skill_quality_governance.py"
+      - "skills/**"
+      - "docs/SKILL_QUALITY_GOVERNANCE.md"
+      - ".github/workflows/skill-quality-audit.yml"
+  push:
+    branches: [main]
+    paths:
+      - "agents/skill_quality.py"
+      - "agents/__init__.py"
+      - "governance/skill_quality_policy.json"
+      - "scripts/audit_skills.py"
+      - "tests/test_skill_quality_governance.py"
+      - "skills/**"
+      - "docs/SKILL_QUALITY_GOVERNANCE.md"
+      - ".github/workflows/skill-quality-audit.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: skill-quality-audit-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out without persisted credentials
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Run governance unit tests
+        run: python3 -m unittest discover -s tests -p 'test_skill_quality_governance.py' -v
+      - name: Audit full generated skill library
+        run: python3 scripts/audit_skills.py skills --output /tmp/fieldnote-skill-quality.json --fail-on critical
+      - name: Compile changed Python policy code
+        run: python3 -m compileall -q agents scripts/audit_skills.py tests/test_skill_quality_governance.py
