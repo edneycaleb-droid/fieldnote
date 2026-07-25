@@ -8,7 +8,9 @@ on:
       - "agents/__init__.py"
       - "governance/skill_quality_policy.json"
       - "scripts/audit_skills.py"
+      - "scripts/check_repository_quality.py"
       - "tests/test_skill_quality_governance.py"
+      - "tests/test_repository_quality.py"
       - "skills/**"
       - "docs/SKILL_QUALITY_GOVERNANCE.md"
       - ".github/workflows/skill-quality-audit.yml"
@@ -19,7 +21,9 @@ on:
       - "agents/__init__.py"
       - "governance/skill_quality_policy.json"
       - "scripts/audit_skills.py"
+      - "scripts/check_repository_quality.py"
       - "tests/test_skill_quality_governance.py"
+      - "tests/test_repository_quality.py"
       - "skills/**"
       - "docs/SKILL_QUALITY_GOVERNANCE.md"
       - ".github/workflows/skill-quality-audit.yml"
@@ -43,6 +47,10 @@ jobs:
           persist-credentials: false
       - name: Run governance unit tests
         run: python3 -m unittest discover -s tests -p 'test_skill_quality_governance.py' -v
+      - name: Run published ten-control repository gate
+        run: python3 scripts/check_repository_quality.py
+      - name: Run published ten-control rubric tests
+        run: python3 -m unittest discover -s tests -p 'test_repository_quality.py' -v
       - name: Audit full historical skill library
         run: python3 scripts/audit_skills.py skills --output /tmp/fieldnote-skill-quality.json --fail-on none
       - name: Compile changed Python policy code
