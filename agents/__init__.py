@@ -4,7 +4,7 @@ Standing owner policies are enforced before any submodule is imported:
 
 - OpenRouter is disabled unless ``FIELDNOTE_ENABLE_OPENROUTER=1`` is explicitly set.
 - Only skills whose stored quality decision is ``allow`` may auto-sync to GitHub.
-  Draft, duplicate, stale, or high-risk skills remain local and reviewable.
+- Stale or unknown evidence can never remain ``allow`` even when structural quality is high.
 """
 from __future__ import annotations
 
@@ -32,6 +32,32 @@ def _quality_decision(index: dict[str, Any], skill_name: str) -> str:
 def quality_allows_sync(index: dict[str, Any], skill_name: str) -> bool:
     """Return True only for explicitly ALLOW-scored skills."""
     return _quality_decision(index, skill_name) == "allow"
+
+
+try:
+    from . import skill_quality as _skill_quality
+
+    _original_quality_gate = _skill_quality.quality_gate
+
+    def _governed_quality_gate(*args, **kwargs):
+        report = _original_quality_gate(*args, **kwargs)
+        freshness_finding = next(
+            (finding for finding in report.findings if finding.gate == "freshness"),
+            None,
+        )
+        if (
+            report.decision == _skill_quality.QualityDecision.ALLOW
+            and (freshness_finding is None or not freshness_finding.passed)
+        ):
+            report.decision = _skill_quality.QualityDecision.REDUCE
+            report.summary = report.summary.replace("→ ALLOW", "→ REDUCE")
+            if "freshness" not in report.summary:
+                report.summary += " | Issues: freshness"
+        return report
+
+    _skill_quality.quality_gate = _governed_quality_gate
+except Exception:
+    pass
 
 
 # Patch the existing sync module at package import so every caller—including app.py—
