@@ -123,6 +123,31 @@ def main() -> int:
         "deterministic_fallback": (ROOT / "scripts/check_repository_quality.py").is_file()
         and generated_skill_library_valid()
         and generated_mcp_registry_valid(),
+        "skill_quality_governance": has(
+            "governance/skill_quality_policy.json",
+            '"allow"',
+            '"reduce"',
+            '"deny"',
+            "OpenRouter is disabled",
+        )
+        and has(
+            "agents/skill_quality.py",
+            "skill_fingerprint",
+            "capability_dna",
+            "audit_skill_directory",
+            "unsafe_capabilities",
+        )
+        and has(
+            "agents/__init__.py",
+            "FIELDNOTE_ENABLE_OPENROUTER",
+            "quality_allows_sync",
+        )
+        and has(
+            ".github/workflows/skill-quality-audit.yml",
+            "permissions:\n  contents: read",
+            "--fail-on critical",
+            "persist-credentials: false",
+        ),
         "safe_workflow": has(
             ".github/workflows/repository-quality.yml",
             "permissions:\n  contents: read",
