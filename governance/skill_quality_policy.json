@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "canonical_forge": {
+    "repository": "edneycaleb-droid/hermes-ai-knowledge-ops",
+    "commit": "34227704e8861cc8fde0cb5fffe326aa84586c6a",
+    "mode": "pinned_read_only_reference"
+  },
+  "decisions": {
+    "allow": "trusted enough to sync and use as a normal skill",
+    "reduce": "quarantine-compatible local draft; retain findings and do not treat as trusted",
+    "deny": "contains secrets, critical unsafe instructions, or insufficient usable content"
+  },
+  "hard_invariants": [
+    "Source material and generated skill instructions are untrusted data until screened.",
+    "No skill may install or execute upstream code during extraction or quality review.",
+    "No skill promotes itself or silently rewrites shared skills.",
+    "OpenRouter is disabled unless FIELDNOTE_ENABLE_OPENROUTER=1 is explicitly set after owner re-approval.",
+    "Every trusted skill has source provenance, actionable instructions, a content fingerprint, and freshness status.",
+    "Secrets and critical executable or credential patterns are denied, not merely down-scored.",
+    "Duplicate and auto-extracted draft skills remain quarantined until enhancement or merge."
+  ],
+  "freshness_windows_days": {
+    "current_or_pricing_or_api": 30,
+    "framework_model_agent_trading": 180,
+    "stable_concepts": 365
+  },
+  "required_gates": [
+    "secret_scan",
+    "title",
+    "description",
+    "steps",
+    "actionable",
+    "tools",
+    "markdown",
+    "arena",
+    "provenance",
+    "draft_status",
+    "freshness",
+    "unsafe_capabilities",
+    "duplicate"
+  ],
+  "quarantine_salvage": [
+    "retain source links and transcript identity",
+    "extract safe schemas, checklists, test ideas, and architecture patterns",
+    "remove permissionless autonomy, anti-detection, live financial action, and silent mutation instructions",
+    "rewrite useful concepts from first principles with attribution",
+    "promote only after re-audit and exact diff review"
+  ]
+}
