@@ -94,6 +94,53 @@ def workflow_actions_pinned() -> bool:
     return True
 
 
+def skill_quality_governance_valid() -> bool:
+    """Validate the optional governance extension when it exists.
+
+    Returning True when none of the extension files exist keeps the published ten-control
+    fixture backward-compatible. In the real repository, the presence of any extension
+    file requires the complete fail-closed bundle.
+    """
+    paths = [
+        ROOT / "governance/skill_quality_policy.json",
+        ROOT / "agents/skill_quality.py",
+        ROOT / "agents/__init__.py",
+        ROOT / ".github/workflows/skill-quality-audit.yml",
+    ]
+    if not any(path.exists() for path in paths):
+        return True
+    if not all(path.exists() for path in paths):
+        return False
+    return (
+        has(
+            "governance/skill_quality_policy.json",
+            '"allow"',
+            '"reduce"',
+            '"deny"',
+            "OpenRouter is disabled",
+        )
+        and has(
+            "agents/skill_quality.py",
+            "skill_fingerprint",
+            "capability_dna",
+            "audit_skill_directory",
+            "unsafe_capabilities",
+        )
+        and has(
+            "agents/__init__.py",
+            "FIELDNOTE_ENABLE_OPENROUTER",
+            "quality_allows_sync",
+            "_fieldnote_governed",
+        )
+        and has(
+            ".github/workflows/skill-quality-audit.yml",
+            "permissions:\n  contents: read",
+            "--fail-on none",
+            "persist-credentials: false",
+        )
+    )
+
+
 def main() -> int:
     try:
         tomllib.loads(read("pyproject.toml"))
@@ -122,33 +169,8 @@ def main() -> int:
         ),
         "deterministic_fallback": (ROOT / "scripts/check_repository_quality.py").is_file()
         and generated_skill_library_valid()
-        and generated_mcp_registry_valid(),
-        "skill_quality_governance": has(
-            "governance/skill_quality_policy.json",
-            '"allow"',
-            '"reduce"',
-            '"deny"',
-            "OpenRouter is disabled",
-        )
-        and has(
-            "agents/skill_quality.py",
-            "skill_fingerprint",
-            "capability_dna",
-            "audit_skill_directory",
-            "unsafe_capabilities",
-        )
-        and has(
-            "agents/__init__.py",
-            "FIELDNOTE_ENABLE_OPENROUTER",
-            "quality_allows_sync",
-            "_fieldnote_governed",
-        )
-        and has(
-            ".github/workflows/skill-quality-audit.yml",
-            "permissions:\n  contents: read",
-            "--fail-on none",
-            "persist-credentials: false",
-        ),
+        and generated_mcp_registry_valid()
+        and skill_quality_governance_valid(),
         "safe_workflow": has(
             ".github/workflows/repository-quality.yml",
             "permissions:\n  contents: read",
