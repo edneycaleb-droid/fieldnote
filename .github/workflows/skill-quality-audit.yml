@@ -10,8 +10,7 @@ on:
       - "scripts/audit_skills.py"
       - "scripts/check_repository_quality.py"
       - "scripts/diagnose_repository_quality.py"
-      - "tests/test_skill_quality_governance.py"
-      - "tests/test_repository_quality.py"
+      - "tests/**"
       - "skills/**"
       - "docs/SKILL_QUALITY_GOVERNANCE.md"
       - ".github/workflows/skill-quality-audit.yml"
@@ -24,8 +23,7 @@ on:
       - "scripts/audit_skills.py"
       - "scripts/check_repository_quality.py"
       - "scripts/diagnose_repository_quality.py"
-      - "tests/test_skill_quality_governance.py"
-      - "tests/test_repository_quality.py"
+      - "tests/**"
       - "skills/**"
       - "docs/SKILL_QUALITY_GOVERNANCE.md"
       - ".github/workflows/skill-quality-audit.yml"
@@ -63,5 +61,22 @@ jobs:
         run: python3 -m unittest discover -s tests -p 'test_repository_quality.py' -v
       - name: Audit full historical skill library
         run: python3 scripts/audit_skills.py skills --output /tmp/fieldnote-skill-quality.json --fail-on none
+      - name: Capture complete unittest suite
+        run: |
+          set +e
+          python3 -m unittest discover -s tests -v > /tmp/fieldnote-unittest.log 2>&1
+          status=$?
+          echo "$status" > /tmp/fieldnote-unittest.status
+          exit 0
+      - name: Upload complete unittest diagnostics
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fieldnote-unittest-diagnostics
+          path: |
+            /tmp/fieldnote-unittest.log
+            /tmp/fieldnote-unittest.status
+          retention-days: 7
+      - name: Enforce complete unittest result
+        run: test "$(cat /tmp/fieldnote-unittest.status)" = "0"
       - name: Compile changed Python policy code
         run: python3 -m compileall -q agents scripts/audit_skills.py scripts/diagnose_repository_quality.py tests/test_skill_quality_governance.py
