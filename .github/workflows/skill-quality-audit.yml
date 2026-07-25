@@ -9,6 +9,7 @@ on:
       - "governance/skill_quality_policy.json"
       - "scripts/audit_skills.py"
       - "scripts/check_repository_quality.py"
+      - "scripts/diagnose_repository_quality.py"
       - "tests/test_skill_quality_governance.py"
       - "tests/test_repository_quality.py"
       - "skills/**"
@@ -22,6 +23,7 @@ on:
       - "governance/skill_quality_policy.json"
       - "scripts/audit_skills.py"
       - "scripts/check_repository_quality.py"
+      - "scripts/diagnose_repository_quality.py"
       - "tests/test_skill_quality_governance.py"
       - "tests/test_repository_quality.py"
       - "skills/**"
@@ -47,6 +49,14 @@ jobs:
           persist-credentials: false
       - name: Run governance unit tests
         run: python3 -m unittest discover -s tests -p 'test_skill_quality_governance.py' -v
+      - name: Generate repository quality diagnostics
+        run: python3 scripts/diagnose_repository_quality.py > /tmp/fieldnote-repository-quality.json
+      - name: Upload repository quality diagnostics
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: fieldnote-repository-quality-diagnostics
+          path: /tmp/fieldnote-repository-quality.json
+          retention-days: 7
       - name: Run published ten-control repository gate
         run: python3 scripts/check_repository_quality.py
       - name: Run published ten-control rubric tests
@@ -54,4 +64,4 @@ jobs:
       - name: Audit full historical skill library
         run: python3 scripts/audit_skills.py skills --output /tmp/fieldnote-skill-quality.json --fail-on none
       - name: Compile changed Python policy code
-        run: python3 -m compileall -q agents scripts/audit_skills.py tests/test_skill_quality_governance.py
+        run: python3 -m compileall -q agents scripts/audit_skills.py scripts/diagnose_repository_quality.py tests/test_skill_quality_governance.py
