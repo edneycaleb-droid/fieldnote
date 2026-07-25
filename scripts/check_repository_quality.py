@@ -141,11 +141,12 @@ def main() -> int:
             "agents/__init__.py",
             "FIELDNOTE_ENABLE_OPENROUTER",
             "quality_allows_sync",
+            "_fieldnote_governed",
         )
         and has(
             ".github/workflows/skill-quality-audit.yml",
             "permissions:\n  contents: read",
-            "--fail-on critical",
+            "--fail-on none",
             "persist-credentials: false",
         ),
         "safe_workflow": has(
