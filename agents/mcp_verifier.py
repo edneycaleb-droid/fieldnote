@@ -321,11 +321,12 @@ def _run_handshake(proc: subprocess.Popen, entry: Any,
 
 
 def _kill(proc: Optional[subprocess.Popen]) -> None:
-    """Graceful SIGTERM then SIGKILL."""
+    """Graceful SIGTERM then SIGKILL, closing every owned pipe."""
     if proc is None:
         return
     try:
-        proc.stdin.close()  # type: ignore[union-attr]
+        if proc.stdin is not None:
+            proc.stdin.close()
     except Exception:
         pass
     try:
@@ -334,5 +335,13 @@ def _kill(proc: Optional[subprocess.Popen]) -> None:
     except Exception:
         try:
             proc.kill()
+            proc.wait(timeout=3)
         except Exception:
             pass
+    finally:
+        for stream in (proc.stdout, proc.stderr):
+            try:
+                if stream is not None:
+                    stream.close()
+            except Exception:
+                pass

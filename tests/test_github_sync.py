@@ -18,13 +18,14 @@ class GitHubSkillSyncTests(unittest.TestCase):
 
     def test_rendered_skill_is_written_to_the_mirror(self) -> None:
         markdown = "# Example\n\nSubstantive, source-backed guidance.\n"
+        index = {"example": {"_quality": {"decision": "allow"}}}
         with tempfile.TemporaryDirectory() as tempdir, \
              mock.patch.object(github_sync, "MIRROR_DIR", Path(tempdir)), \
              mock.patch.object(github_sync, "_token", return_value="test-token"), \
              mock.patch.object(github_sync, "_ensure_mirror", return_value=True), \
              mock.patch.object(github_sync, "_build_readme", return_value="# Fieldnote\n"), \
              mock.patch.object(github_sync, "_commit_and_push", return_value=True):
-            self.assertTrue(github_sync.sync_skill("example", markdown, {}))
+            self.assertTrue(github_sync.sync_skill("example", markdown, index))
             saved = Path(tempdir, "skills", "example.md").read_text(encoding="utf-8")
             self.assertEqual(markdown, saved)
 
